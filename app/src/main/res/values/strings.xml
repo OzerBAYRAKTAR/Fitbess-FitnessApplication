@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">HealthyBackandNeck</string>
+
+    //ViewPager2
+    <string name="skip">Geç</string>
+    <string name="forward">İleri</string>
+    <string name="back">Geri</string>
+
+    <string name="title1">Geri</string>
+    <string name="title2">Geri</string>
+    <string name="title3">Geri</string>
+    <string name="desc1">Geri</string>
+    <string name="desc2">Geri</string>
+    <string name="desc3">Geri</string>
+</resources>
