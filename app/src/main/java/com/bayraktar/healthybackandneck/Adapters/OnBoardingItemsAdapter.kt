@@ -27,9 +27,9 @@ RecyclerView.Adapter<OnBoardingItemsAdapter.OnBoardingsItemAdapter>(){
         val model = onboardList[position]
 
         holder.binding.apply {
-            onbardingImageView.setImageResource(model.onBoardingItems)
-            txtTitle.text = model.title
-            txtDescription.text = model.description
+            onbardingImageView.setImageResource(model.onBoardingImage)
+            txtTitle.text = model.title.toString()
+            txtDescription.text = model.description.toString()
         }
     }
 }
