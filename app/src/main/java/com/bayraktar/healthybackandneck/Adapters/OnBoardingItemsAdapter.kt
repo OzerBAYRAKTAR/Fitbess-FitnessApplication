@@ -28,7 +28,6 @@ RecyclerView.Adapter<OnBoardingItemsAdapter.OnBoardingsItemAdapter>(){
 
         holder.binding.apply {
             onbardingImageView.setImageResource(model.onBoardingImage)
-            txtTitle.text = model.title.toString()
             txtDescription.text = model.description.toString()
         }
     }

@@ -5,10 +5,20 @@
     <string name="skip">Atla</string>
     <string name="start">Hadi Başla</string>
 
+    <string name="open">Aç</string>
+    <string name="close">Kapat</string>
+
     <string name="title1">Yerinden Kalk!</string>
     <string name="title2">Vücudunu Çalıştır!</string>
     <string name="title3">Harekte Geç!</string>
     <string name="desc1">Konfor alanını terket ve kendini keşfet</string>
     <string name="desc2">Sağlıklı bir yaşam için düzenli olarak spor yap ve sağlıklı beslen</string>
     <string name="desc3">Hareketsizliğe karşı harekete GEÇ</string>
+    <string name="healthy_body">Sağlıklı Sırt ve Boyun</string>
+    <string name="home">Anasayfa</string>
+    <string name="exercice">Egzersizler</string>
+    <string name="statistics">İstatistikler</string>
+    <string name="profile">Profil</string>
+    <string name="settings">Ayarlar</string>
+    <string name="reach_us">Bize Ulaşın</string>
 </resources>

@@ -19,6 +19,7 @@
 
 
     <color name="background">#F0F4F3</color>
+    <color name="menu_item_color">#C4000000</color>
     <color name="buttontext">#50C2C9</color>
     <color name="indicator">#FF7448</color>
     <color name="indicator_light">#A84324</color>

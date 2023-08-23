@@ -1,4 +1,4 @@
-package com.bayraktar.healthybackandneck
+package com.bayraktar.healthybackandneck.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.bayraktar.healthybackandneck.Adapters.OnBoardingItemsAdapter
 import com.bayraktar.healthybackandneck.Models.OnBoardingItems
+import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.ActivityMainBinding
 
 
@@ -35,17 +36,14 @@ class MainActivity : AppCompatActivity() {
             listOf(
                 OnBoardingItems(
                     onBoardingImage = R.drawable.v11,
-                    title = getString(R.string.title1),
                     description = getString(R.string.desc1)
                 ),
                 OnBoardingItems(
                     onBoardingImage = R.drawable.v145,
-                    title = getString(R.string.title2),
                     description = getString(R.string.desc2)
                 ),
                 OnBoardingItems(
                     onBoardingImage = R.drawable.v7,
-                    title = getString(R.string.title3),
                     description = getString(R.string.desc3)
                 ),
             )
@@ -73,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun navigateToHomeActivity(){
-        //startActivity(Intent(this,))
+        startActivity(Intent(this,HomeActivity::class.java))
     }
 
     private fun setUpIndicators() = with(binding) {
