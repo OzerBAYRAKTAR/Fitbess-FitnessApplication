@@ -12,7 +12,7 @@
     </style>
 
     <style name="Theme.HealthyBackandNeck" parent="Base.Theme.HealthyBackandNeck" />
-    -<style parent="Widget.Design.BottomSheet.Modal" name="BottomSheetStyle">
+    <style parent="Widget.Design.BottomSheet.Modal" name="BottomSheetStyle">
     <item name="android:background">@android:color/transparent</item>
 
 </style>

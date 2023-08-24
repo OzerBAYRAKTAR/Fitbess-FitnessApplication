@@ -5,11 +5,11 @@
     <group android:checkableBehavior="single">
 
         <item android:id="@+id/mainSC"
-            android:icon="@drawable/mainscreen"
+            android:icon="@drawable/homescreen"
             android:title="@string/home"/>
 
         <item android:id="@+id/exercisescreen"
-            android:icon="@drawable/exercise"
+            android:icon="@drawable/yog"
             android:title="@string/exercice"/>
 
         <item android:id="@+id/statisticscreen"

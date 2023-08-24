@@ -14,11 +14,13 @@
     <string name="desc1">Konfor alanını terket ve kendini keşfet</string>
     <string name="desc2">Sağlıklı bir yaşam için düzenli olarak spor yap ve sağlıklı beslen</string>
     <string name="desc3">Hareketsizliğe karşı harekete GEÇ</string>
-    <string name="healthy_body">Sağlıklı Sırt ve Boyun</string>
+    <string name="healthy_body">Sağlıklı Vücut</string>
     <string name="home">Anasayfa</string>
-    <string name="exercice">Egzersizler</string>
-    <string name="statistics">İstatistikler</string>
+    <string name="exercice">Egzersiz</string>
+    <string name="statistics">İstatistik</string>
     <string name="profile">Profil</string>
     <string name="settings">Ayarlar</string>
     <string name="reach_us">Bize Ulaşın</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
