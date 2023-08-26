@@ -6,22 +6,26 @@
         android:id="@+id/home_fragment"
         android:icon="@drawable/homescreen"
         android:title="@string/home"
+        android:padding="15dp"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/exercise_fragment"
-        android:icon="@drawable/yog"
+        android:icon="@drawable/y1"
         android:title="@string/exercice"
+        android:padding="15dp"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/statistics_fragment"
         android:icon="@drawable/pie_chart"
         android:title="@string/statistics"
+        android:padding="15dp"
         app:showAsAction="always" />
     <item
         android:id="@+id/profile_fragment"
         android:icon="@drawable/profile"
         android:title="@string/profile"
+        android:padding="15dp"
         app:showAsAction="always" />
 
 </menu>

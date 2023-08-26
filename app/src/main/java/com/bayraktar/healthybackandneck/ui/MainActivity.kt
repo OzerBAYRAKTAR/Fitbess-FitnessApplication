@@ -35,15 +35,15 @@ class MainActivity : AppCompatActivity() {
         boardAdapter = OnBoardingItemsAdapter(
             listOf(
                 OnBoardingItems(
-                    onBoardingImage = R.drawable.v11,
+                    onBoardingImage = R.drawable.v11_removed,
                     description = getString(R.string.desc1)
                 ),
                 OnBoardingItems(
-                    onBoardingImage = R.drawable.v145,
+                    onBoardingImage = R.drawable.last_11,
                     description = getString(R.string.desc2)
                 ),
                 OnBoardingItems(
-                    onBoardingImage = R.drawable.v7,
+                    onBoardingImage = R.drawable.last2,
                     description = getString(R.string.desc3)
                 ),
             )

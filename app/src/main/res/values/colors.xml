@@ -13,11 +13,11 @@
     <color name="card_color_back">#D8D6D6</color>
     <color name="item_list_background">#EAF7FD</color>
     <color name="red">#FF0000</color>
-    <color name="login_color">#00AEFF</color>
+    <color name="login_color">#97DAFA</color>
     <color name="orange">#F86436</color>
-    <color name="orange_light">#E3947B</color>
+    <color name="orange_light">#D37C60</color>
 
-
+    <color name="purple">#647CFD</color>
     <color name="background">#F0F4F3</color>
     <color name="menu_item_color">#C4000000</color>
     <color name="buttontext">#50C2C9</color>

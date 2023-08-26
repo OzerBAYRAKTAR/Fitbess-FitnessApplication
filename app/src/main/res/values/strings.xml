@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">HealthyBackandNeck</string>
 
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
     //ViewPager2
     <string name="skip">Atla</string>
     <string name="start">Hadi Başla</string>
@@ -21,6 +25,16 @@
     <string name="profile">Profil</string>
     <string name="settings">Ayarlar</string>
     <string name="reach_us">Bize Ulaşın</string>
+
+    <!-- home fragment viewpager -->
+    <string name="hometitle1">Kolay Seviye</string>
+    <string name="hometitle2">Orta Seviye</string>
+    <string name="hometitle3">İleri Seviye </string>
+    <string name="hometitle4">Kendi Programını Oluştur</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="easy_program">Kolay Program</string>
+    <string name="get_start">Başlat</string>
 </resources>

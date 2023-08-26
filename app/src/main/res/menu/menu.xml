@@ -6,22 +6,26 @@
 
         <item android:id="@+id/mainSC"
             android:icon="@drawable/homescreen"
-            android:title="@string/home"/>
+            android:title="@string/home"
+            android:padding ="10dp"/>
 
         <item android:id="@+id/exercisescreen"
-            android:icon="@drawable/yog"
-            android:title="@string/exercice"/>
+            android:icon="@drawable/y1"
+            android:title="@string/exercice"
+            android:padding ="10dp"/>
 
         <item android:id="@+id/statisticscreen"
             android:icon="@drawable/pie_chart"
-            android:title="@string/statistics"/>
+            android:title="@string/statistics"
+            android:padding ="10dp"/>
 
         <item android:id="@+id/profilescreen"
             android:icon="@drawable/profile"
-            android:title="@string/profile"/>
+            android:title="@string/profile"
+            android:padding ="10dp"/>
 
     </group>
-    <item android:title="">
+    <item android:title="Bilgilendirme">
         <menu>
             <group android:checkableBehavior="single">
                 <item android:id="@+id/settings"
