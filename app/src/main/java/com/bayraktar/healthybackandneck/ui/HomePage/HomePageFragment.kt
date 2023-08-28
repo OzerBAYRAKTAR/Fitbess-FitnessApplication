@@ -17,11 +17,14 @@ import com.bayraktar.healthybackandneck.Models.OnBoardingItems
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentHomePageBinding
 import com.bayraktar.healthybackandneck.ui.HomeActivity
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 
 class HomePageFragment : Fragment() {
 
-    private var _binding : FragmentHomePageBinding? = null
+    private var _binding: FragmentHomePageBinding? = null
     val binding get() = _binding!!
     private lateinit var homeAdapter: HomeViewpagerAdapter
 
@@ -29,7 +32,7 @@ class HomePageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHomePageBinding.inflate(inflater,container,false)
+        _binding = FragmentHomePageBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
         return binding.root
     }
@@ -40,7 +43,9 @@ class HomePageFragment : Fragment() {
         setOnBoardingItems()
         setCurrentIndicator(0)
         setUpIndicators()
+        calendarOfWeek()
     }
+
     private fun setOnBoardingItems() = with(binding) {
         homeAdapter = HomeViewpagerAdapter(
             listOf(
@@ -50,7 +55,8 @@ class HomePageFragment : Fragment() {
                     energy1 = R.drawable.energy,
                     energy2 = R.drawable.energy_empty,
                     energy3 = R.drawable.energy_empty,
-                    progress = 20
+                    progress = (2 / 100 * 28),
+                    dayOfProgram = 2
                 ),
                 HomeItems(
                     imageMain = R.drawable.new_3,
@@ -58,7 +64,8 @@ class HomePageFragment : Fragment() {
                     energy1 = R.drawable.energy,
                     energy2 = R.drawable.energy,
                     energy3 = R.drawable.energy_empty,
-                    progress = 50
+                    progress = (6 * 100 / 28),
+                    dayOfProgram = 6
                 ),
                 HomeItems(
                     imageMain = R.drawable.new5_removed,
@@ -66,7 +73,8 @@ class HomePageFragment : Fragment() {
                     energy1 = R.drawable.energy,
                     energy2 = R.drawable.energy,
                     energy3 = R.drawable.energy,
-                    progress = 75
+                    progress = (12 * 100 / 28),
+                    dayOfProgram = 12
                 ),
                 HomeItems(
                     imageMain = R.drawable.new5_removed,
@@ -74,10 +82,11 @@ class HomePageFragment : Fragment() {
                     energy1 = R.drawable.energy,
                     energy2 = R.drawable.energy_empty,
                     energy3 = R.drawable.energy_empty,
-                    progress = 0
+                    progress = 0,
+                    dayOfProgram = 0
                 ),
 
-            )
+                )
         )
         pageerHome.adapter = homeAdapter
         pageerHome.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
@@ -129,6 +138,68 @@ class HomePageFragment : Fragment() {
                         requireContext(), R.drawable.indicator_inactive_home
                     )
                 )
+            }
+        }
+    }
+
+    private fun calendarOfWeek() = with(binding) {
+        // Get the current day of the month
+        val calendar = Calendar.getInstance()
+        val currentDayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
+        val currentWeekDay = calendar.get(Calendar.DAY_OF_WEEK) // 1 (Sunday) to 7 (Saturday)
+
+        // Set the current month and year
+        val currentMonthYear = SimpleDateFormat("MMMM yyyy", Locale.getDefault()).format(calendar.time)
+        binding.monthYearTV.text = currentMonthYear
+
+        // Calculate the starting day of the week (Sunday) of the current week
+        val daysToSubtract = currentWeekDay - Calendar.SUNDAY
+        calendar.add(Calendar.DAY_OF_MONTH, -daysToSubtract)
+
+        // Set background based on the current day and week
+        val days = listOf(
+            binding.buttonSunday,
+            binding.buttonMonday,
+            binding.buttonTuesday,
+            binding.buttonWednesday,
+            binding.buttonThursday,
+            binding.buttonFriday,
+            binding.buttonSaturday
+        )
+
+        for ((index, button) in days.withIndex()) {
+            val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
+            val isCurrentMonth =
+                calendar.get(Calendar.MONTH) == Calendar.getInstance().get(Calendar.MONTH)
+
+            val backgroundDrawable = if (isCurrentMonth) {
+                if (dayOfMonth == currentDayOfMonth) {
+                    R.drawable.calender_active
+                    //ContextCompat.getColor(requireContext(), R.color.orange)
+                    //ContextCompat.getDrawable(requireContext(),R.drawable.calender_active)
+                } else if (dayOfMonth > currentDayOfMonth) {
+                    R.drawable.calender_circle
+                    //ContextCompat.getColor(requireContext(), R.color.gray)
+                    //ContextCompat.getDrawable(requireContext(),R.drawable.calender_circle)
+                } else {
+                    R.drawable.calender_circle
+                    //ContextCompat.getColor(requireContext(), R.color.gray)
+                    //ContextCompat.getDrawable(requireContext(),R.drawable.calender_circle)
+                }
+            } else {
+                R.drawable.calender_circle
+                //ContextCompat.getColor(requireContext(), R.color.gray)
+                //ContextCompat.getDrawable(requireContext(),R.drawable.calender_circle)
+            }
+
+            button.text = "$dayOfMonth"
+            button.setBackgroundResource(backgroundDrawable)
+            calendar.add(Calendar.DAY_OF_MONTH, 1)
+
+            // Reset calendar to the next Sunday to start the next week
+            if (index == 6) {
+                val daysToAdd = Calendar.SATURDAY - currentWeekDay + 2
+                calendar.add(Calendar.DAY_OF_MONTH, daysToAdd)
             }
         }
     }

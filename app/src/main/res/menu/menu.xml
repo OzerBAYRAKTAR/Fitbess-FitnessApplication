@@ -4,28 +4,28 @@
 
     <group android:checkableBehavior="single">
 
-        <item android:id="@+id/mainSC"
+        <item android:id="@+id/id_homepage_fragment"
             android:icon="@drawable/homescreen"
             android:title="@string/home"
             android:padding ="10dp"/>
 
-        <item android:id="@+id/exercisescreen"
+        <item android:id="@+id/id_exercise_fragment"
             android:icon="@drawable/y1"
             android:title="@string/exercice"
             android:padding ="10dp"/>
 
-        <item android:id="@+id/statisticscreen"
+        <item android:id="@+id/id_statistics_fragment"
             android:icon="@drawable/pie_chart"
             android:title="@string/statistics"
             android:padding ="10dp"/>
 
-        <item android:id="@+id/profilescreen"
+        <item android:id="@+id/id_profile_fragment"
             android:icon="@drawable/profile"
             android:title="@string/profile"
             android:padding ="10dp"/>
 
     </group>
-    <item android:title="Bilgilendirme">
+    <item android:title="@string/information">
         <menu>
             <group android:checkableBehavior="single">
                 <item android:id="@+id/settings"

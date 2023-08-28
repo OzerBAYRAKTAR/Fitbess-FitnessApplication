@@ -37,4 +37,18 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="easy_program">Kolay Program</string>
     <string name="get_start">Başlat</string>
+    <string name="information">Bilgilendirme</string>
+    <string name="training_tracking">Eğitim Takibi</string>
+    <string name="txthour">Saat</string>
+    <string name="txtcalori">Kalori</string>
+    <string name="back">Geri</string>
+    <string name="forward">İleri\n</string>
+    <string name="txt_monday">Pzt</string>
+    <string name="txt_tuesday">Salı</string>
+    <string name="txt_wednesday">Çrş</string>
+    <string name="txt_thursday">Prş</string>
+    <string name="txt_friday">Cum</string>
+    <string name="txt_saturday">Cmt</string>
+    <string name="txt_sunday">Pzr</string>
+    <string name="trains">Antrenmanlar</string>
 </resources>

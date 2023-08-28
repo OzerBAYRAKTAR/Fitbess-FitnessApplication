@@ -1,30 +1,33 @@
 package com.bayraktar.healthybackandneck.ui
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.PopupMenu
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.ActivityHomeBinding
-import com.bayraktar.healthybackandneck.ui.Exercise.ExerciseFragment
-import com.bayraktar.healthybackandneck.ui.HomePage.HomePageFragment
-import com.bayraktar.healthybackandneck.ui.Profile.ProfileFragment
-import com.bayraktar.healthybackandneck.ui.Settings.SettingsFragment
-import com.bayraktar.healthybackandneck.ui.Statistics.StatisticsFragment
 import com.google.android.material.navigation.NavigationView
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
-    private lateinit var toogle: ActionBarDrawerToggle
     private lateinit var navigationView: NavigationView
     private lateinit var toolbar: Toolbar
+    private lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var navController: NavController
+    private lateinit var navControllerBar: NavController
     private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,60 +35,47 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        toolbar = findViewById(R.id.toolbarMain)
+
+        toolbar = findViewById(R.id.myToolbar)
+        navigationView = findViewById(R.id.nav_view)
         setSupportActionBar(toolbar)
         drawerLayout = findViewById(R.id.drawer_home)
-        toogle= ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close)
-        drawerLayout.addDrawerListener(toogle)
-        navigationView= binding.navView
-        toogle.syncState()
 
-        navigationView.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener {item: MenuItem ->
-            var fragment: Fragment? = null
-            when (item.itemId) {
-                R.id.mainSC ->{
-                    fragment = HomePageFragment()
-                    loadFragment(fragment)
-                    true
-                }
-                R.id.exercisescreen ->{
-                    fragment = ExerciseFragment()
-                    loadFragment(fragment)
-                    true
-                }
-                R.id.statisticscreen ->{
-                    fragment = StatisticsFragment()
-                    loadFragment(fragment)
-                    true
-                }
-                R.id.profilescreen ->{
-                    fragment = ProfileFragment()
-                    loadFragment(fragment)
-                    true
-                }
-                R.id.settings ->{
-                    fragment = SettingsFragment()
-                    loadFragment(fragment)
-                    true
-                }
-                R.id.connect ->{
-                    fragment = HomePageFragment()
-                    loadFragment(fragment)
-                    true
-                }
-                else -> {
-                    false
-                }
-            }
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+        toggle= ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close)
+        toggle.isDrawerIndicatorEnabled = true
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
 
-        })
+
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+
+
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.id_homepage_fragment,
+                R.id.id_exercise_fragment,
+                R.id.id_statistics_fragment,
+                R.id.id_profile_fragment
+            ),drawerLayout
+        )
+        setupActionBarWithNavController(navController, drawerLayout)
+        navigationView.setupWithNavController(navController)
+
+        setUpBotMenu()
+
 
     }
-    private fun loadFragment(fragment: Fragment) {
-        val fragmentManager : FragmentManager = supportFragmentManager
-        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame,fragment).commit()
-        drawerLayout.closeDrawer(GravityCompat.START)
-        fragmentTransaction.addToBackStack(null)
+
+    private fun setUpBotMenu() = with(binding) {
+        val popupMenu = android.widget.PopupMenu(applicationContext,null)
+        popupMenu.inflate(R.menu.bottom_menu)
+        val menu = popupMenu.menu
+        binding.bottomBar.setupWithNavController(menu,navController)
     }
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
 }

@@ -7,4 +7,5 @@ data class HomeItems(
     val energy2 : Int,
     val energy3 : Int,
     val progress: Int,
+    val dayOfProgram: Int
 )

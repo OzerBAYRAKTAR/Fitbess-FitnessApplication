@@ -7,24 +7,451 @@
     android:layout_height="match_parent"
     tools:context=".ui.HomePage.HomePageFragment">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/pageerHome"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/indicatorsContainer"
-        android:layout_marginTop="25dp"
-        app:layout_constraintStart_toStartOf="@id/pageerHome"
-        app:layout_constraintEnd_toEndOf="@id/pageerHome"
-        app:layout_constraintTop_toBottomOf="@id/pageerHome"
-        android:orientation="horizontal" />
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/labelPrgram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/robotoslabmedium"
+                android:text="@string/trains"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/pageerHome"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="7dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/labelPrgram" />
+
+            <LinearLayout
+                android:id="@+id/indicatorsContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/pageerHome"
+                app:layout_constraintStart_toStartOf="@id/pageerHome"
+                app:layout_constraintTop_toBottomOf="@id/pageerHome" />
+
+            <TextView
+                android:id="@+id/labelTrain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/robotoslabmedium"
+                android:text="@string/training_tracking"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/indicatorsContainer" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/labelTrain">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="195dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout3"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:background="@color/login_color"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/txtHours"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:text="10"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            app:layout_constraintEnd_toEndOf="@+id/labelHour"
+                            app:layout_constraintStart_toStartOf="@+id/labelHour"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/labelHour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:text="@string/txthour"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txtHours" />
+
+                        <TextView
+                            android:id="@+id/txtCalori"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            app:layout_constraintEnd_toEndOf="@+id/labelCalori"
+                            app:layout_constraintStart_toStartOf="@+id/labelCalori"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/labelCalori"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="90dp"
+                            android:text="@string/txtcalori"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            app:layout_constraintStart_toEndOf="@id/txtHours"
+                            app:layout_constraintTop_toBottomOf="@+id/txtHours" />
+
+                        <TextView
+                            android:id="@+id/txtWorkout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:text="23"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            app:layout_constraintEnd_toEndOf="@+id/labelWorkout"
+                            app:layout_constraintStart_toStartOf="@+id/labelWorkout"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/labelWorkout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="70dp"
+                            android:text="Antrenman"
+                            android:textColor="@color/white"
+                            android:textSize="21sp"
+                            app:layout_constraintStart_toEndOf="@id/txtCalori"
+                            app:layout_constraintTop_toBottomOf="@+id/txtCalori" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/blue_gray_light"
+                            android:orientation="horizontal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/monthYearTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:paddingStart="15dp"
+                                android:text="Feb 2021"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                tools:ignore="RtlSymmetry" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="8dp"
+                                android:text="Hafta Hedefi   1/4"
+                                android:textColor="@color/white"
+                                android:textSize="17sp" />
+
+                            <androidx.appcompat.widget.AppCompatImageButton
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:src="@drawable/leftcalender"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+
+                            <androidx.appcompat.widget.AppCompatImageButton
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:src="@drawable/rightcalender"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:layout_marginEnd="5dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="35dp"
+                                    android:layout_gravity="center"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/txt_sunday"
+                                    android:textColor="@color/gray"
+                                    android:gravity="center"
+                                    android:textSize="16sp" />
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/buttonSunday"
+                                    android:layout_width="39dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="3dp"
+                                    android:background="@drawable/calender_circle"
+                                    android:text="27"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="35dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/txt_monday"
+                                    android:textAlignment="center"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/gray"
+                                    android:textSize="16sp" />
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/buttonMonday"
+                                    android:layout_width="39dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="3dp"
+                                    android:background="@drawable/calender_circle"
+                                    android:text="27"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="35dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/txt_tuesday"
+                                    android:textAlignment="center"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="2dp"
+                                    android:textColor="@color/gray"
+                                    android:textSize="16sp" />
+
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/buttonTuesday"
+                                    android:layout_width="39dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/calender_circle"
+                                    android:text="27"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="35dp"
+                                    android:layout_gravity="center"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/txt_wednesday"
+                                    android:textAlignment="center"
+                                    android:layout_marginStart="2dp"
+                                    android:textColor="@color/gray"
+                                    android:textSize="16sp" />
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/buttonWednesday"
+                                    android:layout_width="39dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/calender_circle"
+                                    android:text="27"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="35dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/txt_thursday"
+                                    android:textAlignment="center"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="2dp"
+                                    android:textColor="@color/gray"
+                                    android:textSize="16sp" />
+
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/buttonThursday"
+                                    android:layout_width="39dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="3dp"
+                                    android:background="@drawable/calender_circle"
+                                    android:text="27"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/txt_friday"
+                                    android:textAlignment="center"
+                                    android:layout_marginStart="2dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/gray"
+                                    android:textSize="16sp" />
+
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/buttonFriday"
+                                    android:layout_width="39dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="3dp"
+                                    android:background="@drawable/calender_circle"
+                                    android:text="27"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="35dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/txt_saturday"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/gray"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="2dp"
+                                    android:textSize="16sp" />
+
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/buttonSaturday"
+                                    android:layout_width="39dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/calender_circle"
+                                    android:text="5"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

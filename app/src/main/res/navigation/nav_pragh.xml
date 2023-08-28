@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_pragh">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_pragh"
+    app:startDestination="@id/id_homepage_fragment">
 
+    <fragment
+        android:id="@+id/id_homepage_fragment"
+        android:name="com.bayraktar.healthybackandneck.ui.HomePage.HomePageFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home_page" />
+    <fragment
+        android:id="@+id/id_exercise_fragment"
+        android:name="com.bayraktar.healthybackandneck.ui.Exercise.ExerciseFragment"
+        android:label="@string/exercice"
+        tools:layout="@layout/fragment_exercise" />
+    <fragment
+        android:id="@+id/id_settings_fragment"
+        android:name="com.bayraktar.healthybackandneck.ui.Settings.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/id_profile_fragment"
+        android:name="com.bayraktar.healthybackandneck.ui.Profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/id_statistics_fragment"
+        android:name="com.bayraktar.healthybackandneck.ui.Statistics.StatisticsFragment"
+        android:label="@string/statistics"
+        tools:layout="@layout/fragment_statistics" />
 </navigation>

@@ -10,10 +10,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="11dp"
         android:layout_centerInParent="true"
-        android:backgroundTint="#92C7E1"
-        app:cardCornerRadius="18dp"
+        app:cardCornerRadius="15dp"
+        android:backgroundTint="@color/login_color"
         app:cardElevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="195dp"
+            android:layout_height="175dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -65,16 +65,35 @@
                 app:layout_constraintBottom_toBottomOf="@+id/eg2"
                 app:layout_constraintStart_toEndOf="@+id/eg2" />
 
+
             <TextView
+                android:id="@+id/labelgün"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Günler    0/28 "
+                android:text="Günler"
                 android:textSize="16sp"
                 android:layout_marginStart="2dp"
                 android:layout_marginBottom="6dp"
                 app:layout_constraintBottom_toTopOf="@+id/progressHome"
                 app:layout_constraintStart_toStartOf="@+id/progressHome" />
 
+
+            <TextView
+                android:id="@+id/txtDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="5"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/labelgün"
+                app:layout_constraintStart_toEndOf="@+id/labelgün" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/28"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtDay"
+                app:layout_constraintStart_toEndOf="@+id/txtDay" />
 
             <ProgressBar
                 android:id="@+id/progressHome"
@@ -110,7 +129,7 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imageMain"
                 android:layout_width="165dp"
-                android:layout_height="125dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="24dp"
                 android:src="@drawable/new5_removed"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -121,16 +140,19 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_width="125dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/butto_background"
                 android:text="@string/get_start"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/imageMain"
-                app:layout_constraintHorizontal_bias="0.857"
+                app:layout_constraintHorizontal_bias="0.8"
                 app:layout_constraintStart_toStartOf="@+id/imageMain"
-                app:layout_constraintTop_toBottomOf="@+id/imageMain" />
+                app:layout_constraintTop_toBottomOf="@+id/imageMain"
+                app:layout_constraintVertical_bias="0.2" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
