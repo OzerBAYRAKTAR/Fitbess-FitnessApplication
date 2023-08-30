@@ -38,7 +38,7 @@
     <string name="easy_program">Kolay Program</string>
     <string name="get_start">Başlat</string>
     <string name="information">Bilgilendirme</string>
-    <string name="training_tracking">Eğitim Takibi</string>
+    <string name="training_tracking">Eğitim Takvimi</string>
     <string name="txthour">Saat</string>
     <string name="txtcalori">Kalori</string>
     <string name="back">Geri</string>
@@ -51,4 +51,74 @@
     <string name="txt_saturday">Cmt</string>
     <string name="txt_sunday">Pzr</string>
     <string name="trains">Antrenmanlar</string>
+    <string name="nutrution_advice">Beslenme Tavsiyeleri</string>
+    <string name="nutrition">Beslenme</string>
+    <string name="nutrition_desc">Sağlıklı bir beslenme tarzı için bazı tavsiyeler</string>
+    <string name="breath">Nefes Egzersizleri</string>
+    <string name="breath_desc">Sağlıklı Yaşam İçin Etkili Nefes Alma Teknikleri</string>
+
+
+    <!-- Diet Detail-->
+    <string name="diet_title1">Öğün Atlamayın</string>
+    <string name="diet_title2">Bol Bol Su İçin</string>
+    <string name="diet_title3">Hazır Yiyeceklere Sınır Getirin</string>
+    <string name="diet_title4">Beslenmede çeşitliliği artırmaya özen gösterin.</string>
+    <string name="diet_title5">Kafein alımını sınırlandırın.</string>
+    <string name="diet_title6">Kalsiyum yönünden zengin beslenmeye özen gösterin.</string>
+    <string name="diet_title7">C vitamini yönünden zengin beslenmeye özen gösterin.</string>
+    <string name="diet_title8">Demir yönünden zengin beslenmeye özen gösterin.</string>
+    <string name="diet_title9">Daha çok posa tüketin</string>
+    <string name="diet_title10">Egzersizi İhmal etmeyin</string>
+    <string name="diet_title11">İdeal Kilonuzu Koruyun</string>
+    <string name="diet_title12">Hayvansal ve Trans Yağları Azaltın</string>
+    <string name="diet_title13">Alkol ve Sigara Alışkanlığından Uzak Durun</string>
+    <string name="diet_title14">Meyve Tüketmeye Özen Gösterin</string>
+    <string name="diet_title15">Süt ve Yoğurt Tüketimine Önem Verin</string>
+    <string name="diet_title16">Lifli Gıdalar Günlük Beslenmenizde Yer Alsın</string>
+    <string name="diet_title17">Listenize Çinko İçeren Besinler Ekleyin</string>
+
+
+    <string name="diet_desc1">Öğün atlamak hem kilo almaya hem de çeşitli rahatsızlara davetiye çıkarır. İşte öğün atlamanın zararları:Daha fazla yemek yeme isteği: Günlük öğünlerinizi az az tüketerek atlatılabilecekken bir öğünü hayatınızdan çıkarmanız bir sonraki öğünde daha fazla acıkmış olmanıza ve daha çok yemek yiyerek hızlı kilo almanıza neden olur. Yapılan araştırmalar öğün atlamanın ilerleyen zamanlarda obeziteye neden olduğunu da ortaya koymaktadır.</string>
+    <string name="diet_desc2">İnsan yaşamı için oksijenden sonra gelen en önemli öğe sudur. İnsan açlığa haftalarca dayanabilirken susuz ancak birkaç gün yaşayabilir. Vücut ısısının dengelenmesi, metabolizmanın devamı ve vücuttan zehirli atık maddelerin atılması için su elzemdir. Bu nedenle günde 2–2.5 litre su tüketin.</string>
+    <string name="diet_desc3">Abur cubur olarak nitelendirilen hazır yiyecekler ve ağır tatlılar, pastalar fazla miktarda yağ ve enerji içerdiğinden hem kilo aldırıcı hem de hastalıklara yatkınlığı arttırıcıdır. Bu nedenle bu yiyeceklere mutlaka sınırlama getirin</string>
+    <string name="diet_desc4">Mümkün olduğu kadar çok çeşitli beslenmeye özen gösterin. Her gün beslenme planınız içerisinde tüm besin gruplarına (süt, et, sebze-meyve, tahıl) yer vermeye çalışın. Bu besinlerin hepsinden bir öğünde tüketemeseniz de gün içerisinde farklı öğünlerde almaya çalışın.</string>
+    <string name="diet_desc5">Uzun süreli ve yoğun kafein kullanımı, kişide fiziksel ve ruhsal bozukluklara yol açmaktadır. asitlerinin artmasına, ülser oluşmasına ve vücutta kalsiyumun azalmasına yol açar. Ayrıca kişide huzursuzluk, anksiyete, ruhsal çökkünlük, sinirlilik hali ve uyku bozuklukları gibi ruhsal sorunlara yol açabilmektedir.</string>
+    <string name="diet_desc6">Kalsiyumun kemik ve diş gelişimi dışında, kan pıhtılaşmasını sağlamak, eklemleri yapılandırmak, kas kasılmasını sağlamak, kalp atışlarını düzenlemek ve sinir sisteminin onarılmasına yardımcı olmak gibi oldukça önemli diğer görevleri de mevcuttur.</string>
+    <string name="diet_desc7">Uzmanlar, C vitamininin en güvenli ve vücut için en faydalı besinlerden biri olduğunu ifade etmektedirler. C vitamininin faydaları arasında bağışıklık sistemini güçlendirmek, kardiyovasküler hastalıklara, doğum öncesi sağlık sorunlarına, göz hastalıklarına ve hatta cilt kırışıklıklarına karşı koruma sağlamak sayılabilir.
+Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağışıklık sistemi zayıflamış olan bireyler için yararlı olduğunu görülmüştür. Alkol kullananların, sigara içenlerin ve obez bireylerin vücutlarında en hızlı tükenen besin maddelerinden birisi olduğu için genel sağlık ölçümünde önemli bir kriter olarak görülür. </string>
+    <string name="diet_desc8">Vücudun kan oluşumu ve hücrelere oksijen sağlamak gibi bir dizi metabolik süreç için demire ihtiyacı vardır. Kandaki oksijenin taşınması, oksijenin kaslarda depolanması, hormonların üretiminde ve enzimlerin oluşumunda yardım, enfeksiyonlara karşı savunmayı desteklenmesi ve bağışıklık sistemini güçlenmesinde rol alır.</string>
+    <string name="diet_desc9">Posa suyu emerek dışkının şeklini, hacmini, dışkılama sayısını düzenler. Kabızlığın önlenmesini sağlar.Kolon sağlığını koruduğu için kolon kanseri, divertiküloz, hemoroit, irritable bağırsak sendromu gibi hastalıkların önlenmesine yardımcı olur.</string>
+    <string name="diet_desc10">Düzenli egzersiz kardiyovasküler sisteminizi güçlendirir, iyi kolesterolü arttırır, ve tansiyonu düşürür. Aktif olmak kalp rahatsızlığı riskini %50 oranında azaltır. (Healthline, 2021) Sindirim Sistemi: Egzersiz yapmak kabızlık sorununu azaltmak ve bağırsak hareketlerindeki düzeni destelemek konusunda en iyi yöntemdir.</string>
+    <string name="diet_desc11">Hastalıklara yakalanma riskinizi azaltmak, her zaman zinde ve enerjik olmak için sağlıklı kilo aralığınızda olmanız oldukça önemlidir. Bunun için Beden Kitle İndeksi (BKİ), vücut yağ yüzdesi, bel çevresi ve kalça çevresi ölçümlerinizin sağlıklı dilimde olmasına özen gösterin.</string>
+    <string name="diet_desc12">Trans yağ içeren ürünleri tüketmemeniz için pek çok neden vardır. Bunlardan biri trans yağların kötü kolesterol olarak bilinen LDL kolesterolü yükseltip iyi kolesterolü (HDL) düşürmesidir. LDL kolesterol, atardamar duvarlarında birikerek damarlarda sertlik ve daralma yaratır. HDL kolesterol ise fazla LDL kolesterolü alıp karaciğere geri gönderir. Trans yağ içeren besinler tüketmek uzun vadede kalp hastalıkları ve felç gibi ciddi sorunları doğurabilir. Ayrıca obeziteye zemin hazırlarken tip 2 diyabet gelişmesi riskini de artırır.</string>
+    <string name="diet_desc13">Alkol ve sigara birçok hastalığa neden olduğu için içilmemelidir. Bu hastalıklar ölümcül sonuçlara yol açabilir. Alkol ve sigara basit bir alışkanlık değildir. Kullanan kişilerin bırakması ise oldukça zordur. Bu yüzden alkol ve sigaradan uzak durmakta fayda vardır. </string>
+    <string name="diet_desc14">Doğanın bizlere verdiği en değerli hediyelerden olan meyveler, rengarenk görüntüsü, lezzetli tadının yanında aynı zamanda sağlığımız için de oldukça yararlı. Olmazsa olmaz besin maddelerinden olan meyvelerin vücudumuza sağladığı katkılar sayesinde çeşitli hastalıklardan kurtuluyor, daha sağlıklı ve enerjik bir yapıya sahip olabiliyoruz.</string>
+    <string name="diet_desc15">Yoğurt, laktik asit bakterileri tarafından süt bileşenlerinin insan beslenmesinde yararlı olan metabolik ürünlere dönüştürüldüğü tüm bileşenleri içerir. Özellikle laktoz intoleransı olan kişiler, süt yerine yoğurt benzeri ürünleri daha rahat tüketebilir. Laktoz intoleransı; insan vücudunda laktozu parçalayan enzimin yetersizliğinde görülür. Yoğurtta laktoz, laktik asite dönüştüğü için enzim eksikliği problem yaratmaz.Yoğurt üretilirken mayalanma sonucu ortaya çıkan faydalı bakteriler, bağırsak hareketliliğini artırarak bağırsakların çalışmasını hızlandırır ve kalın bağırsakta oluşan toksik maddeleri emerek dışarı atılmasını sağlar. Ayrıca kolesterol seviyesini düşürür ve kan şekeri seviyesini korur.</string>
+    <string name="diet_desc16">Lif, bağırsakların düzgün çalışmasını sağlayarak kilo kaybını teşvik etmesi, kan şekerini düşürmesi ve kalp sağlığını artırması gibi faydaları olan, vücut tarafından tamamen parçalanamayan bitki bazlı bir karbonhidrat türüdür. Yetişkinlerin yaşına ve cinsiyetine göre günde 22 ila 34 gram lif ihtiyacı bulunur.</string>
+    <string name="diet_desc17">Büyüme ve gelişme, bağışıklık sistemi, Dna sentezi, protein sentezi, doku oluşumu, üreme fonksiyonu ve nöro- davranışsal gelişimlerin tümü çinkodan etkilenmektedir. Biyokimyasal aktivitelerde rol oynayan çok sayıda enzim maksimum katalitik aktivite gösterebilmesi için çinkoya gereksinim duymaktadır.</string>
+
+
+    <string name="next">Sonraki</string>
+    <string name="geri">Geri</string>
+    <string name="howto_breath">En doğru nefes alma şekli, solunum esnasında diyaframınızdan faydalanmaktır. Diyafram nefesi almaya alıştığınızda derin nefes alamama sorunundan kurtularak kendinizi rahatlamış hissedebilirsiniz. Diyafram nefesi alırken karnınızdaki boşluğun genişlediğini hissedersiniz.Bu sayede akciğer, kapasitenizin tamamını kullanır.</string>
+    <string name="breath_technices">Nefes Alma Teknikleri</string>
+    <string name="breath_style">En Doğru Nefes Alma Şekli Nedir?</string>
+    <string name="diyafram_desc">Rahat bir pozisyonda otur veya uzan. Nefes alırken karın bölgesini şişir ve nefes verirken inmesine izin ver. Bu şekilde yavaşça ve derinlemesine nefes alıp ver.</string>
+    <string name="diyafram_title">Diyafram Nefesi</string>
+    <string name="four_breath">Dört Nefes Alma (4-7-8 Nefesi)</string>
+    <string name="fourbreath_desc">Burada nefes alma, tutma ve nefes verme aşamalarını belirli sayılarla sırayla uygularsınız. Nefes alırken 4 sayısını say, nefesi tutarken 7 sayısını say, nefes verirken ise 8 sayısını say.</string>
+    <string name="counting_breath">Nefes Sayma</string>
+    <string name="countingbreath_desc">Nefes alırken ve verirken sayabilirsiniz. Mesela, nefes alırken 1-2 say, nefes verirken 1-2-3-4 say. Bu, nefesi yavaşlatmak ve rahatlamak için kullanışlı bir yöntemdir.</string>
+    <string name="medidation_breath">Nefes Sayımıyla Meditasyon</string>
+    <string name="mediationbreath_desc">Nefes alırken \'bir\' de, nefes verirken \'iki\' de say. Sayıları 10\'a kadar say ve tekrar sıfırdan başla. Dikkatinizi nefese vererek zihninizin sakinleşmesini sağlayabilirsiniz.</string>
+    <string name="seyir_breath">Seyir Nefesi (Sitali Nefesi)</string>
+    <string name="alternatv_nose_breath">Alternatif Burun Nefesi</string>
+    <string name="seyir_desc">Dilinizi rulo şeklinde yapın ve dudaklarınızın arasına yerleştirin. Nefes alırken bu tünelin içinden nefes alın. Nefesin serinlemesi rahatlatıcı etki yaratır.</string>
+    <string name="alternativ_breath_desc">Sağ burun deliğini kapat ve sol burun deliğinden nefes al, sonra sol burun deliğini kapat, sağ burun deliğinden nefes ver. Sonra tersi olarak devam et.</string>
+    <string name="closed_breath">Kapalı Nefes Tekniği</string>
+    <string name="closed_breath_desc">Burada nefes alırken, burun deliklerini kapat ve ağızla nefes verirken tekrar burun deliklerini aç. Sonra tersi olarak burun deliklerini kapat, ağızla nefes alırken de burun deliklerini aç.</string>
+    <string name="focus_breath">Nefes Odaklama</string>
+    <string name="focus_breath_desc">Zihnini sadece nefesine odakla. Nefes alırken ve verirken yaşadığın hislere ve nefesin ritmine dikkat et. Düşünceler dağılırsa sadece tekrar nefesine dön.</string>
+
+
 </resources>

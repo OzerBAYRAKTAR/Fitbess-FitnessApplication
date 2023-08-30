@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="7dp"
-                android:fontFamily="@font/robotoslabmedium"
+                android:fontFamily="@font/robotoslabbold"
                 android:text="@string/trains"
                 android:textColor="@color/black"
                 android:textSize="17sp"
@@ -36,7 +36,7 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/pageerHome"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="230dp"
                 android:layout_marginBottom="7dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -52,20 +52,10 @@
                 app:layout_constraintStart_toStartOf="@id/pageerHome"
                 app:layout_constraintTop_toBottomOf="@id/pageerHome" />
 
-            <TextView
-                android:id="@+id/labelTrain"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/robotoslabmedium"
-                android:text="@string/training_tracking"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/indicatorsContainer" />
+
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardTrain"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -74,14 +64,16 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="20dp"
                 android:backgroundTint="@color/white"
-                app:cardCornerRadius="15dp"
+                app:cardCornerRadius="30dp"
                 app:cardElevation="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/labelTrain">
+                app:layout_constraintTop_toBottomOf="@id/indicatorsContainer">
+
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="195dp"
+                    android:layout_height="235dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -90,30 +82,44 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/constraintLayout3"
                         android:layout_width="match_parent"
-                        android:layout_height="75dp"
+                        android:layout_height="119dp"
                         android:background="@color/login_color"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
+                            android:id="@+id/labelTrain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="25dp"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/robotoslabbold"
+                            android:text="@string/training_tracking"
+                            android:textColor="@color/blue_gray_light"
+                            android:textSize="19sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
                             android:id="@+id/txtHours"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="7dp"
+                            android:layout_marginTop="15dp"
                             android:text="10"
+                            android:fontFamily="sans-serif-condensed-medium"
                             android:textColor="@color/white"
                             android:textSize="22sp"
                             app:layout_constraintEnd_toEndOf="@+id/labelHour"
                             app:layout_constraintStart_toStartOf="@+id/labelHour"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toBottomOf="@+id/labelTrain" />
 
                         <TextView
                             android:id="@+id/labelHour"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
+                            android:layout_marginStart="25dp"
                             android:text="@string/txthour"
+                            android:fontFamily="sans-serif-condensed-medium"
                             android:textColor="@color/white"
                             android:textSize="22sp"
                             app:layout_constraintStart_toStartOf="parent"
@@ -123,13 +129,14 @@
                             android:id="@+id/txtCalori"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="7dp"
+                            android:layout_marginTop="15dp"
                             android:text="0"
                             android:textColor="@color/white"
                             android:textSize="22sp"
+                            android:fontFamily="sans-serif-condensed-medium"
                             app:layout_constraintEnd_toEndOf="@+id/labelCalori"
                             app:layout_constraintStart_toStartOf="@+id/labelCalori"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toBottomOf="@+id/labelTrain" />
 
                         <TextView
                             android:id="@+id/labelCalori"
@@ -138,6 +145,7 @@
                             android:layout_marginStart="90dp"
                             android:text="@string/txtcalori"
                             android:textColor="@color/white"
+                            android:fontFamily="sans-serif-condensed-medium"
                             android:textSize="22sp"
                             app:layout_constraintStart_toEndOf="@id/txtHours"
                             app:layout_constraintTop_toBottomOf="@+id/txtHours" />
@@ -146,21 +154,23 @@
                             android:id="@+id/txtWorkout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="7dp"
+                            android:layout_marginTop="15dp"
                             android:text="23"
                             android:textColor="@color/white"
                             android:textSize="22sp"
+                            android:fontFamily="sans-serif-condensed-medium"
                             app:layout_constraintEnd_toEndOf="@+id/labelWorkout"
                             app:layout_constraintStart_toStartOf="@+id/labelWorkout"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toBottomOf="@+id/labelTrain" />
 
                         <TextView
                             android:id="@+id/labelWorkout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="70dp"
+                            android:layout_marginStart="80dp"
                             android:text="Antrenman"
                             android:textColor="@color/white"
+                            android:fontFamily="sans-serif-condensed-medium"
                             android:textSize="21sp"
                             app:layout_constraintStart_toEndOf="@id/txtCalori"
                             app:layout_constraintTop_toBottomOf="@+id/txtCalori" />
@@ -177,8 +187,8 @@
                         <LinearLayout
                             android:id="@+id/linearLayout2"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@color/blue_gray_light"
+                            android:layout_height="35dp"
+                            android:background="@color/orange"
                             android:orientation="horizontal"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -189,12 +199,13 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
+                                android:layout_gravity="center"
                                 android:paddingStart="15dp"
+                                android:fontFamily="sans-serif-condensed-medium"
                                 android:text="Feb 2021"
-                                android:textAlignment="textStart"
                                 android:textColor="@color/white"
                                 android:textSize="20sp"
-                                tools:ignore="RtlSymmetry" />
+                                tools:ignore="RtlCompat,RtlSymmetry" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -202,6 +213,8 @@
                                 android:layout_marginStart="5dp"
                                 android:layout_marginEnd="8dp"
                                 android:text="Hafta Hedefi   1/4"
+                                android:layout_gravity="center"
+                                android:fontFamily="sans-serif-condensed-medium"
                                 android:textColor="@color/white"
                                 android:textSize="17sp" />
 
@@ -232,7 +245,7 @@
                             android:id="@+id/linearLayout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="7dp"
                             android:orientation="horizontal"
                             android:layout_marginEnd="5dp"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -450,6 +463,213 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/labelDiet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:visibility="gone"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/robotoslabbold"
+                android:text="@string/nutrition"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardTrain" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardNutrition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/cardTrain"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="195dp">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="155dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/appCompatImageView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/diet4_removed"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="175dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:text="@string/nutrition_desc"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/robotslabrgular"
+                            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView"
+                            app:layout_constraintEnd_toEndOf="@+id/appCompatImageView"
+                            app:layout_constraintTop_toTopOf="@+id/appCompatImageView"
+                            app:layout_constraintVertical_bias="0.271" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintDiet"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/orange"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="26dp"
+                            android:layout_marginBottom="2dp"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="@string/nutrution_advice"
+                            android:textColor="@color/white"
+                            android:textSize="19sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/right_white"
+                            android:layout_marginEnd="20dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardBreath"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/cardNutrition"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="195dp">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout4"
+                        android:layout_width="match_parent"
+                        android:layout_height="155dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/appCompatImageView1"
+                            android:layout_width="215dp"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bth3_removed"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="175dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/robotslabrgular"
+                            android:text="@string/breath_desc"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginStart="20dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.494" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintNutrition"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/orange"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="26dp"
+                            android:layout_marginBottom="2dp"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="@string/breath"
+                            android:textColor="@color/white"
+                            android:textSize="19sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/right_white"
+                            android:layout_marginEnd="20dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="asadfasd"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardBreath"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

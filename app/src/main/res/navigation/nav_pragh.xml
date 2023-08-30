@@ -9,7 +9,14 @@
         android:id="@+id/id_homepage_fragment"
         android:name="com.bayraktar.healthybackandneck.ui.HomePage.HomePageFragment"
         android:label="@string/home"
-        tools:layout="@layout/fragment_home_page" />
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_id_homepage_fragment_to_dietDetailFragment"
+            app:destination="@id/dietDetailFragment" />
+        <action
+            android:id="@+id/action_id_homepage_fragment_to_breathFragment"
+            app:destination="@id/breathFragment" />
+    </fragment>
     <fragment
         android:id="@+id/id_exercise_fragment"
         android:name="com.bayraktar.healthybackandneck.ui.Exercise.ExerciseFragment"
@@ -30,4 +37,14 @@
         android:name="com.bayraktar.healthybackandneck.ui.Statistics.StatisticsFragment"
         android:label="@string/statistics"
         tools:layout="@layout/fragment_statistics" />
+    <fragment
+        android:id="@+id/dietDetailFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.DietDetail.DietDetailFragment"
+        android:label="fragment_diet_detail"
+        tools:layout="@layout/fragment_diet_detail" />
+    <fragment
+        android:id="@+id/breathFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.Breath.BreathFragment"
+        android:label="fragment_breath"
+        tools:layout="@layout/fragment_breath" />
 </navigation>

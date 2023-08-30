@@ -9,7 +9,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.bayraktar.healthybackandneck.Adapters.OnBoardingItemsAdapter
 import com.bayraktar.healthybackandneck.Models.HomeItems
@@ -20,6 +23,7 @@ import com.bayraktar.healthybackandneck.ui.HomeActivity
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
+import kotlin.math.abs
 
 
 class HomePageFragment : Fragment() {
@@ -44,6 +48,10 @@ class HomePageFragment : Fragment() {
         setCurrentIndicator(0)
         setUpIndicators()
         calendarOfWeek()
+
+        goDietDetail()
+        goBreath()
+        setUpTransfer()
     }
 
     private fun setOnBoardingItems() = with(binding) {
@@ -84,19 +92,33 @@ class HomePageFragment : Fragment() {
                     energy3 = R.drawable.energy_empty,
                     progress = 0,
                     dayOfProgram = 0
-                ),
-
                 )
+
+                ),pageerHome
         )
+        pageerHome.clipToPadding = false
+        pageerHome.clipChildren = false
+        pageerHome.offscreenPageLimit = 2
         pageerHome.adapter = homeAdapter
+
         pageerHome.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 setCurrentIndicator(position)
             }
         })
-        (pageerHome.getChildAt(0) as RecyclerView).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+        (pageerHome.getChildAt(0) as RecyclerView).overScrollMode = RecyclerView.OVER_SCROLL_ALWAYS
 
+    }
+    private fun setUpTransfer() = with(binding) {
+        val pageMarginPx = resources.getDimensionPixelOffset(R.dimen.viewpager_margin)
+        val transfer = CompositePageTransformer()
+        transfer.addTransformer(MarginPageTransformer(pageMarginPx))
+        transfer.addTransformer { page, position ->
+            val r = 1 - abs(position)
+            page.scaleY =  r
+        }
+        pageerHome.setPageTransformer(transfer)
     }
 
     private fun setUpIndicators() = with(binding) {
@@ -205,4 +227,16 @@ class HomePageFragment : Fragment() {
     }
 
 
+    private fun goDietDetail() {
+        binding.constraintDiet.setOnClickListener {
+            val action = HomePageFragmentDirections.actionIdHomepageFragmentToDietDetailFragment()
+            view?.findNavController()?.navigate(action)
+        }
+    }
+    private fun goBreath() {
+        binding.constraintNutrition.setOnClickListener {
+            val action = HomePageFragmentDirections.actionIdHomepageFragmentToBreathFragment()
+            view?.findNavController()?.navigate(action)
+        }
+    }
 }

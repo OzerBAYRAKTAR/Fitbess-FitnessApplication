@@ -32,4 +32,6 @@
     <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="color">@color/black</item>
     </style>
+
+    <dimen name="viewpager_margin">30dp</dimen>
 </resources>

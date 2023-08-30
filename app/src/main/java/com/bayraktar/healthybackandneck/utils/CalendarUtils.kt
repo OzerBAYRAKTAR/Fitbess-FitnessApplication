@@ -1,4 +1,4 @@
-package com.bayraktar.healthybackandneck
+package com.bayraktar.healthybackandneck.utils
 
 import java.time.DayOfWeek
 import java.time.LocalDate
