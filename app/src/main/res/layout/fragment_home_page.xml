@@ -188,7 +188,7 @@
                             android:id="@+id/linearLayout2"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
-                            android:background="@color/orange"
+                            android:background="@color/inactive"
                             android:orientation="horizontal"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -537,7 +537,7 @@
                         android:id="@+id/constraintDiet"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:background="@color/orange"
+                        android:background="@color/inactive"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 

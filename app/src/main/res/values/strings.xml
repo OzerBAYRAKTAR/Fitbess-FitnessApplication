@@ -120,5 +120,14 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="focus_breath">Nefes Odaklama</string>
     <string name="focus_breath_desc">Zihnini sadece nefesine odakla. Nefes alırken ve verirken yaşadığın hislere ve nefesin ritmine dikkat et. Düşünceler dağılırsa sadece tekrar nefesine dön.</string>
 
+    <!-- Exercise Fragment-->
+    <string name="create_plan">Kişiselleştirilmiş</string>
+    <string name="warmup_exercises">Isınma Hareketleri</string>
+    <string name="warmup_desc1">Egzersiz Öncesi Germe Hareketleri</string>
+    <string name="warmup_desc2">Yeni Başlayanlar İçin Alıştırma</string>
+    <string name="warmup_desc3">Tüm Vücut Esnetme Hareketleri</string>
+
+
+
 
 </resources>

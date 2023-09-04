@@ -1,60 +1,95 @@
 package com.bayraktar.healthybackandneck.ui.Exercise
 
 import android.os.Bundle
+import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.Recycler
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
+import androidx.viewpager2.widget.ViewPager2
+import com.bayraktar.healthybackandneck.Models.WarmUpModel
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.databinding.FragmentExerciseBinding
+import kotlin.math.abs
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ExerciseFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ExerciseFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentExerciseBinding? = null
+    val binding get() = _binding!!
+
+    private var warmupList = ArrayList<WarmUpModel>()
+    private lateinit var warmAdapter: ExerciseAdapter
+    val sliderHandler = Handler()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        _binding = FragmentExerciseBinding.inflate(inflater,container,false)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_exercise, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ExerciseFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ExerciseFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+        binding.apply {
+
+
+            warmAdapter = ExerciseAdapter(warmupList, warmUpPager)
+
+
+            warmupList.add(
+                WarmUpModel(
+                    title = getString(R.string.warmup_desc1),
+                    imageWarmUp = R.drawable.isinma1
+                )
+            )
+            warmupList.add(
+                WarmUpModel(
+                    title = getString(R.string.warmup_desc2),
+                    imageWarmUp = R.drawable.isinma2
+                )
+            )
+            warmupList.add(
+                WarmUpModel(
+                    title = getString(R.string.warmup_desc3),
+                    imageWarmUp = R.drawable.isinma3
+                )
+            )
+
+            warmUpPager.adapter = warmAdapter
+
+            warmUpPager.clipChildren = false
+            warmUpPager.clipToPadding = false
+            warmUpPager.offscreenPageLimit = 2
+            warmUpPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+            val compost = CompositePageTransformer()
+            compost.addTransformer(MarginPageTransformer(20))
+            compost.addTransformer(object : ViewPager2.PageTransformer {
+                override fun transformPage(page: View, position: Float) {
+                    val r = 1 - abs(position)
+                    page.scaleY = 0.95f + r * 0.15f
+
                 }
-            }
+
+            })
+            warmUpPager.setPageTransformer(compost)
+            warmUpPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+
+                }
+            })
+        }
     }
+
+
 }
