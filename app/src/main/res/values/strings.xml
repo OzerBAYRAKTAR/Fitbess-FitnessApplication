@@ -108,7 +108,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="four_breath">Dört Nefes Alma (4-7-8 Nefesi)</string>
     <string name="fourbreath_desc">Burada nefes alma, tutma ve nefes verme aşamalarını belirli sayılarla sırayla uygularsınız. Nefes alırken 4 sayısını say, nefesi tutarken 7 sayısını say, nefes verirken ise 8 sayısını say.</string>
     <string name="counting_breath">Nefes Sayma</string>
-    <string name="countingbreath_desc">Nefes alırken ve verirken sayabilirsiniz. Mesela, nefes alırken 1-2 say, nefes verirken 1-2-3-4 say. Bu, nefesi yavaşlatmak ve rahatlamak için kullanışlı bir yöntemdir.</string>
+    <string name="countingbreath_desc">Nefes alırken ve verirken sayabilirsiniz. Mesela, nefes alırken 1–2 say, nefes verirken 1–2-3-4 say. Bu, nefesi yavaşlatmak ve rahatlamak için kullanışlı bir yöntemdir.</string>
     <string name="medidation_breath">Nefes Sayımıyla Meditasyon</string>
     <string name="mediationbreath_desc">Nefes alırken \'bir\' de, nefes verirken \'iki\' de say. Sayıları 10\'a kadar say ve tekrar sıfırdan başla. Dikkatinizi nefese vererek zihninizin sakinleşmesini sağlayabilirsiniz.</string>
     <string name="seyir_breath">Seyir Nefesi (Sitali Nefesi)</string>
@@ -121,12 +121,45 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="focus_breath_desc">Zihnini sadece nefesine odakla. Nefes alırken ve verirken yaşadığın hislere ve nefesin ritmine dikkat et. Düşünceler dağılırsa sadece tekrar nefesine dön.</string>
 
     <!-- Exercise Fragment-->
-    <string name="create_plan">Kişiselleştirilmiş</string>
+    <string name="create_plan">Kendi Planını Oluştur</string>
+
+    <!--Warm Up-->
     <string name="warmup_exercises">Isınma Hareketleri</string>
     <string name="warmup_desc1">Egzersiz Öncesi Germe Hareketleri</string>
-    <string name="warmup_desc2">Yeni Başlayanlar İçin Alıştırma</string>
+    <string name="warmup_desc2">Yeni Başlayanlar İçin Isınma</string>
     <string name="warmup_desc3">Tüm Vücut Esnetme Hareketleri</string>
 
+    <!-- Fix Posture-->
+    <string name="posture_exercises">Duruş Düzeltme Hareketleri</string>
+    <string name="posture_desc1">Basit Açma-Germe Hareketleri</string>
+    <string name="posture_desc2">Core Güçlendirme</string>
+    <string name="posture_desc3">Duruş Düzeltme</string>
+
+    <!-- Neck-Back -->
+    <string name="neckback_exercise">Bel-Boyun Hareketleri</string>
+    <string name="back_desc1">Bel Egzersizleri</string>
+    <string name="back_desc2">Bel Güçlendirme</string>
+    <string name="neck_desc1">Boyun Egzersizleri</string>
+    <string name="neck_desc2">Boyun Güçlendirme</string>
+
+    <!-- Arm-->
+    <string name="arm_exercises">Kol Güçlendirme Hareketleri</string>
+    <string name="arm_desc1">Basit Direnç Hareketleri</string>
+    <string name="arm_desc2">Kol Kaslarını Güçlendir</string>
+    <string name="arm_desc3">Kollarını Sıkılaştır</string>
+
+    <!-- Abs-->
+    <string name="abs_exercises">Karın Güçlendirme Hareketleri</string>
+    <string name="abs_desc1">Basit Direnç Hareketleri</string>
+    <string name="abs_desc2">Kol Kaslarını Güçlendir</string>
+    <string name="abs_desc3">Kollarını Sıkılaştır</string>
+
+    <!-- Leg-Butt-->
+    <string name="leg_exercises">Bacak-Popo Güçlendirme Hareketleri</string>
+    <string name="leg_desc1">Başlangiç Bacak Hareketleri</string>
+    <string name="leg_desc2">Bacak Kaslarını Güçlendir</string>
+    <string name="leg_desc3">Başlangıç Popo Hareketleri</string>
+    <string name="leg_desc4">Poponu Sıkılaştır</string>
 
 
 

@@ -1,16 +1,14 @@
-package com.bayraktar.healthybackandneck.ui.Exercise
+package com.bayraktar.healthybackandneck.ui.Exercise.Adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.bayraktar.healthybackandneck.Models.HomeItems
-import com.bayraktar.healthybackandneck.Models.WarmUpModel
-import com.bayraktar.healthybackandneck.databinding.ItemHomeListBinding
+import com.bayraktar.healthybackandneck.Models.Exercise.WarmUpModel
 import com.bayraktar.healthybackandneck.databinding.SliderLayoutBinding
 
-class ExerciseAdapter(private val warmList: List<WarmUpModel>, val viewPager2: ViewPager2):
-    RecyclerView.Adapter<ExerciseAdapter.OnBoardingsItemAdapter>(){
+class WarmUpAdapter(private val warmList: List<WarmUpModel>, val viewPager2: ViewPager2):
+    RecyclerView.Adapter<WarmUpAdapter.OnBoardingsItemAdapter>(){
 
 
     inner class OnBoardingsItemAdapter(val binding: SliderLayoutBinding): RecyclerView.ViewHolder(binding.root){
