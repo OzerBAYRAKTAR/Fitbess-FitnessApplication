@@ -160,7 +160,19 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="leg_desc2">Bacak Kaslarını Güçlendir</string>
     <string name="leg_desc3">Başlangıç Popo Hareketleri</string>
     <string name="leg_desc4">Poponu Sıkılaştır</string>
-
+    <string name="txt_time">Zaman</string>
+    <string name="txt_calori">Kalori</string>
+    <string name="txt_alltime">Tüm Zaman</string>
+    <string name="txt_bodyparameters">Vücut Parametleri</string>
+    <string name="booty">Kalça</string>
+    <string name="belly">Bel</string>
+    <string name="chest">chest</string>
+    <string name="body_indeks">Beden Kütle Endeksi</string>
+    <string name="height">Boy Ölçüsü(cm)</string>
+    <string name="weight">Ağırlık(kg)</string>
+    <string name="newTest">Yeni Ölçüm</string>
+    <string name="categorie">Kategori</string>
+    <string name="indeks">Endeks</string>
 
 
 </resources>
