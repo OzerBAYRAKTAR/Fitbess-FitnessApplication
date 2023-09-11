@@ -173,6 +173,22 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="newTest">Yeni Ölçüm</string>
     <string name="categorie">Kategori</string>
     <string name="indeks">Endeks</string>
+    <string name="reminders">Hatırlatıcılar</string>
+    <string name="app_settings">Uygulama Ayarları</string>
+    <string name="water_reminder">Su Hatırlatıcısı</string>
+    <string name="enough_drink_water">Yeterli Su Tüketimi</string>
+    <string name="enough_drink_water_desc">Su içmek sizi susuz kalmaktan koruyacak ve yaptığınız
+        egzersizlerden en iyi şekilde yararlanmanızı sağlayacaktır</string>
+    <string name="notifications">Bildirimler</string>
+    <string name="open_notifications">Bildirimleri Açmak</string>
+    <string name="open_notifications_desc">Sağlığınızı ve formunuzu en üst düzeyde tutmak için bildirimleri açın. Egzersiz planlarınızı hatırlatmak ve size motivasyon sağlamak için gereklidir.</string>
+    <string name="languages">Dil Seçenekleri</string>
+    <string name="restart">İlerlemeyi yeniden başlat</string>
+    <string name="theme">Temayı Değiştir</string>
+    <string name="helpus">Bizi destekle</string>
+    <string name="rateus">Bize oy ver</string>
+    <string name="shareus">Arkadaşlarınla paylaş</string>
+    <string name="privacy">Gizlilik Politikası</string>
 
 
 </resources>
