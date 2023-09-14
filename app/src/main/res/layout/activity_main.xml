@@ -73,6 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="25dp"
         android:background="@drawable/viewpager_start"
+        android:visibility="gone"
         android:fontFamily="serif"
         android:paddingHorizontal="25dp"
         android:text="@string/start"
