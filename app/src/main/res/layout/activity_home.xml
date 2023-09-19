@@ -15,6 +15,7 @@
         android:layout_height="match_parent">
 
         <include
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
@@ -58,6 +59,7 @@
         android:layout_height="match_parent"
         android:id="@+id/nav_view"
         app:itemTextColor="@color/black"
+        android:visibility="gone"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/menu"
         app:itemHorizontalPadding="35dp"

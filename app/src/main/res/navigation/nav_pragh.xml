@@ -16,17 +16,21 @@
         <action
             android:id="@+id/action_id_homepage_fragment_to_breathFragment"
             app:destination="@id/breathFragment" />
+        <action
+            android:id="@+id/action_id_homepage_fragment_to_exerciseDetailFirstFragment"
+            app:destination="@id/exerciseDetailFirstFragment" />
+        <action
+            android:id="@+id/action_id_homepage_fragment_to_exerciseDetailThirdFragment"
+            app:destination="@id/exerciseDetailThirdFragment" />
+        <action
+            android:id="@+id/action_id_homepage_fragment_to_exerciseDetailSecondFragment"
+            app:destination="@id/exerciseDetailSecondFragment" />
     </fragment>
     <fragment
         android:id="@+id/id_exercise_fragment"
         android:name="com.bayraktar.healthybackandneck.ui.Exercise.ExerciseFragment"
         android:label="@string/exercice"
         tools:layout="@layout/fragment_exercise" />
-    <fragment
-        android:id="@+id/id_settings_fragment"
-        android:name="com.bayraktar.healthybackandneck.ui.Settings.SettingsFragment"
-        android:label="@string/settings"
-        tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/id_profile_fragment"
         android:name="com.bayraktar.healthybackandneck.ui.Profile.ProfileFragment"
@@ -47,4 +51,19 @@
         android:name="com.bayraktar.healthybackandneck.ui.Breath.BreathFragment"
         android:label="fragment_breath"
         tools:layout="@layout/fragment_breath" />
+    <fragment
+        android:id="@+id/exerciseDetailFirstFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.ExerciseDetailFirst.ExerciseDetailFirstFragment"
+        android:label="fragment_exercise_days_of_week"
+        tools:layout="@layout/fragment_exercise_days_of_week" />
+    <fragment
+        android:id="@+id/exerciseDetailSecondFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.ExerciseDetailSecond.ExerciseDetailSecondFragment"
+        android:label="fragment_exercise_detail_second"
+        tools:layout="@layout/fragment_exercise_detail_second" />
+    <fragment
+        android:id="@+id/exerciseDetailThirdFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.ExerciseDetailThird.ExerciseDetailThirdFragment"
+        android:label="fragment_exercise_detail_third"
+        tools:layout="@layout/fragment_exercise_detail_third" />
 </navigation>

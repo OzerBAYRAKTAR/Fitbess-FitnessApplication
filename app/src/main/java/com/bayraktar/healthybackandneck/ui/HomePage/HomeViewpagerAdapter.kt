@@ -9,11 +9,12 @@ import com.bayraktar.healthybackandneck.Models.OnBoardingItems
 import com.bayraktar.healthybackandneck.databinding.ItemHomeListBinding
 import com.bayraktar.healthybackandneck.databinding.ItemOnboardingContainerBinding
 
-    class HomeViewpagerAdapter(private val onboardList: List<HomeItems>,val viewPager2: ViewPager2):
+    class HomeViewpagerAdapter(private val onboardList: List<HomeItems>,val viewPager2: ViewPager2,val onItemclick: (Int) -> Unit):
     RecyclerView.Adapter<HomeViewpagerAdapter.OnBoardingsItemAdapter>(){
 
 
         inner class OnBoardingsItemAdapter(val binding: ItemHomeListBinding): RecyclerView.ViewHolder(binding.root){
+
 
         }
 
@@ -36,6 +37,14 @@ import com.bayraktar.healthybackandneck.databinding.ItemOnboardingContainerBindi
                 eg3.setImageResource(model.energy3)
                 progressHome.progress = model.progress
                 txtTitle.text = model.title
+
+                holder.itemView.setOnClickListener{
+                    val position = holder.adapterPosition
+                    if (position != RecyclerView.NO_POSITION) {
+                        onItemclick(position)
+                    }
+                }
+
             }
         }
     }

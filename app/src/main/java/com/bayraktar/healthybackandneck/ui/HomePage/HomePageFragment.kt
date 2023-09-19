@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
@@ -94,8 +95,36 @@ class HomePageFragment : Fragment() {
                     dayOfProgram = 0
                 )
 
-                ),pageerHome
-        )
+            ), pageerHome
+        ) { position ->
+            // Handle item click based on the position
+            when (position) {
+                0 -> {
+                    // Navigate to Fragment 1
+                    val action =
+                        HomePageFragmentDirections.actionIdHomepageFragmentToExerciseDetailFirstFragment()
+                    findNavController().navigate(action)
+                }
+
+                1 -> {
+                    // Navigate to Fragment 2
+                    val action =
+                        HomePageFragmentDirections.actionIdHomepageFragmentToExerciseDetailSecondFragment()
+                    findNavController().navigate(action)
+                }
+
+                2 -> {
+                    // Navigate to Fragment 3
+                    val action =
+                        HomePageFragmentDirections.actionIdHomepageFragmentToExerciseDetailThirdFragment()
+                    findNavController().navigate(action)
+                }
+
+                else -> {
+                    // Handle other positions or provide a default behavior
+                }
+            }
+        }
         pageerHome.clipToPadding = false
         pageerHome.clipChildren = false
         pageerHome.offscreenPageLimit = 2
@@ -107,16 +136,18 @@ class HomePageFragment : Fragment() {
                 setCurrentIndicator(position)
             }
         })
-        (pageerHome.getChildAt(0) as RecyclerView).overScrollMode = RecyclerView.OVER_SCROLL_ALWAYS
+        (pageerHome.getChildAt(0) as RecyclerView).overScrollMode =
+            RecyclerView.OVER_SCROLL_ALWAYS
 
     }
+
     private fun setUpTransfer() = with(binding) {
         val pageMarginPx = resources.getDimensionPixelOffset(R.dimen.viewpager_margin)
         val transfer = CompositePageTransformer()
         transfer.addTransformer(MarginPageTransformer(pageMarginPx))
         transfer.addTransformer { page, position ->
             val r = 1 - abs(position)
-            page.scaleY =  r
+            page.scaleY = r
         }
         pageerHome.setPageTransformer(transfer)
     }
@@ -168,10 +199,12 @@ class HomePageFragment : Fragment() {
         // Get the current day of the month
         val calendar = Calendar.getInstance()
         val currentDayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
-        val currentWeekDay = calendar.get(Calendar.DAY_OF_WEEK) // 1 (Sunday) to 7 (Saturday)
+        val currentWeekDay =
+            calendar.get(Calendar.DAY_OF_WEEK) // 1 (Sunday) to 7 (Saturday)
 
         // Set the current month and year
-        val currentMonthYear = SimpleDateFormat("MMMM yyyy", Locale.getDefault()).format(calendar.time)
+        val currentMonthYear =
+            SimpleDateFormat("MMMM yyyy", Locale.getDefault()).format(calendar.time)
         binding.monthYearTV.text = currentMonthYear
 
         // Calculate the starting day of the week (Sunday) of the current week
@@ -229,13 +262,16 @@ class HomePageFragment : Fragment() {
 
     private fun goDietDetail() {
         binding.constraintDiet.setOnClickListener {
-            val action = HomePageFragmentDirections.actionIdHomepageFragmentToDietDetailFragment()
+            val action =
+                HomePageFragmentDirections.actionIdHomepageFragmentToDietDetailFragment()
             view?.findNavController()?.navigate(action)
         }
     }
+
     private fun goBreath() {
         binding.constraintNutrition.setOnClickListener {
-            val action = HomePageFragmentDirections.actionIdHomepageFragmentToBreathFragment()
+            val action =
+                HomePageFragmentDirections.actionIdHomepageFragmentToBreathFragment()
             view?.findNavController()?.navigate(action)
         }
     }
