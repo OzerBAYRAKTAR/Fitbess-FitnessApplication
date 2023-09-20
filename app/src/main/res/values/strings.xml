@@ -190,8 +190,11 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="shareus">Arkadaşlarınla paylaş</string>
     <string name="privacy">Gizlilik Politikası</string>
     <string name="easy_level">Başlangıç \n Seviyesi</string>
-    <string name="middle_level">Orta \n Seviye</string>
-    <string name="hard_level">İleri \n Seviye</string>
+    <string name="middle_level">Orta \nSeviye</string>
+    <string name="hard_level">İleri \nSeviye</string>
+    <string name="label_day">GÜN</string>
+    <string name="label_exercise">Egzersiz</string>
+    <string name="label_minute">dk</string>
 
 
 </resources>

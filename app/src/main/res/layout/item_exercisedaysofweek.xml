@@ -36,16 +36,28 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/labelPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotoslabmedium"
+            android:text="%"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/roundedImageView"
+            app:layout_constraintEnd_toEndOf="@+id/roundedImageView"
+            app:layout_constraintStart_toStartOf="@+id/roundedImageView"
+            app:layout_constraintTop_toTopOf="@+id/roundedImageView" />
+        <TextView
             android:id="@+id/txtPercent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/robotoslabmedium"
-            android:text="%0"
+            android:text="0"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/roundedImageView"
-            app:layout_constraintEnd_toEndOf="@+id/roundedImageView"
-            app:layout_constraintStart_toStartOf="@+id/roundedImageView"
+            app:layout_constraintStart_toEndOf="@+id/labelPercent"
             app:layout_constraintTop_toTopOf="@+id/roundedImageView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -67,12 +79,21 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/labelDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/robotslabrgular"
+                android:text="@string/label_day"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+            <TextView
                 android:id="@+id/txtDay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:fontFamily="@font/robotslabrgular"
-                android:text="GÜN 1"
+                android:text="1"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -89,17 +110,34 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:fontFamily="@font/robotslabrgular"
-                android:text="7 Egzersiz"
+                android:text="7"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/labelExerciseCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/robotslabrgular"
+                android:text="@string/label_exercise"
                 android:textColor="@color/gray"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/txtExerciseTime"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/robotslabrgular"
+                android:text="7.45"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/labelExerciseTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
                 android:fontFamily="@font/robotslabrgular"
-                android:text="8.30 dk"
+                android:text="@string/label_minute"
                 android:textColor="@color/gray"
                 android:textSize="18sp" />
 
@@ -107,9 +145,18 @@
                 android:id="@+id/txtExerciseKcal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
+                android:layout_marginStart="20dp"
                 android:fontFamily="@font/robotslabrgular"
-                android:text="105 kcal"
+                android:text="105"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/labelExerciseKcal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/robotslabrgular"
+                android:text="kcal"
                 android:textColor="@color/gray"
                 android:textSize="18sp" />
 
@@ -121,14 +168,14 @@
         android:layout_height="35dp"
         android:src="@drawable/right_arrow"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="3dp"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout6"
         app:layout_constraintTop_toTopOf="@+id/linearLayout6" />
 
     <View
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="@color/gray"
+        android:background="@color/indicator"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
         app:layout_constraintStart_toStartOf="@+id/linearLayout6"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout6"

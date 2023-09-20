@@ -9,7 +9,7 @@ import com.bayraktar.healthybackandneck.databinding.ItemExercisedaysofweekBindin
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 
 class ExerciseDetailSecondAdapter(
-    private var lsMenu: ArrayList<ExerciseDetailModel>,
+    private var lsMenu: List<ExerciseDetailModel>,
     private val rclClickListener: RecyclerViewClickListener
 ): RecyclerView.Adapter<ExerciseDetailSecondAdapter.ItemHolder>() {
 
@@ -34,7 +34,7 @@ class ExerciseDetailSecondAdapter(
         return ItemHolder(itemBinding,rclClickListener)
     }
     //update old list with new list
-    fun setData(list: ArrayList<ExerciseDetailModel>) {
+    fun setData(list: List<ExerciseDetailModel>) {
         this.lsMenu = list
         notifyDataSetChanged()
     }
@@ -44,10 +44,10 @@ class ExerciseDetailSecondAdapter(
 
         holder.binding.apply {
             txtPercent.text = model.percent.toString()
-            txtDay.text = model.day
-            txtExerciseCount.text = model.exerciseCount
-            txtExerciseTime.text = model.exerciseTime
-            txtExerciseKcal.text = model.exerciseKcal
+            txtDay.text = model.day.toString()
+            txtExerciseCount.text = model.exerciseCount.toString()
+            txtExerciseTime.text = model.exerciseTime.toString()
+            txtExerciseKcal.text = model.exerciseKcal.toString()
         }
     }
 
