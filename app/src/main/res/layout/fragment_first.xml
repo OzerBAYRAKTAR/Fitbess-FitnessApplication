@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.FirstActivity.FirstFragment.FirstFragment">
+
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/tahoma"
+        android:text="@string/label_tellus"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/tahoma"
+        android:gravity="center"
+        android:text="@string/label_tellus_desc"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+    <View
+        android:id="@+id/viewmale"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/oval_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/maleImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/masculine"
+        android:layout_marginBottom="19dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewmale"
+        app:layout_constraintEnd_toEndOf="@+id/viewmale"
+        app:layout_constraintStart_toStartOf="@+id/viewmale"
+        app:layout_constraintTop_toTopOf="@+id/viewmale" />
+
+    <View
+        android:id="@+id/viewfemale"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/oval_yellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewmale" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_famale"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewfemale"
+        app:layout_constraintEnd_toEndOf="@+id/viewfemale"
+        app:layout_constraintStart_toStartOf="@+id/viewfemale" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_male"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewmale"
+        app:layout_constraintEnd_toEndOf="@+id/viewmale"
+        app:layout_constraintStart_toStartOf="@+id/viewmale" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/femaleImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/femenine"
+        app:layout_constraintBottom_toBottomOf="@+id/viewfemale"
+        app:layout_constraintEnd_toEndOf="@+id/viewfemale"
+        app:layout_constraintStart_toStartOf="@+id/viewfemale"
+        app:layout_constraintTop_toTopOf="@+id/viewfemale" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/goNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:text="@string/label_continue"
+        android:textSize="21sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/tahoma"
+        android:background="@drawable/buttonfirst_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

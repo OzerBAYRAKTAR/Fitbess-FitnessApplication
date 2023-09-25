@@ -36,7 +36,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="easy_program">Kolay Program</string>
-    <string name="get_start">Başlat</string>
+
+    <string name="get_start">Başla</string>
+    <string name="easy_desc">Daha önce hiç egzersiz yapmadıysanız</string>
+    <string name="middle_desc">Nadiren de olsa egzersiz yapıyorsanız</string>
+    <string name="hard_desc">Eğer egzersiz sizin için bir hayat tarzı ise</string>
+
     <string name="information">Bilgilendirme</string>
     <string name="training_tracking">Eğitim Takvimi</string>
     <string name="txthour">Saat</string>
@@ -189,12 +194,34 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="rateus">Bize oy ver</string>
     <string name="shareus">Arkadaşlarınla paylaş</string>
     <string name="privacy">Gizlilik Politikası</string>
-    <string name="easy_level">Başlangıç \n Seviyesi</string>
+    <string name="easy_level">Başlangıç\nSeviyesi</string>
     <string name="middle_level">Orta \nSeviye</string>
     <string name="hard_level">İleri \nSeviye</string>
-    <string name="label_day">GÜN</string>
-    <string name="label_exercise">Egzersiz</string>
+    <string name="label_day">Gün</string>
+    <string name="label_exercise">Egzersizler</string>
     <string name="label_minute">dk</string>
+    <string name="label_kcal">kcal</string>
+    <string name="label_tellus">Tell us about yourself</string>
+    <string name="label_tellus_desc">To give you a better experience ,we need to know you</string>
+    <string name="label_continue">Continue</string>
+    <string name="label_male">Male</string>
+    <string name="label_famale">Female</string>
+    <string name="label_yas">How old are you?</string>
+    <string name="label_height">What is your height?</string>
+    <string name="label_height_desc">Height in cm. You can always change it later.</string>
+    <string name="label_weight">What is your weight?</string>
+    <string name="label_weight_desc">Weight in Kg. You can always change it later.</string>
+    <string name="label_yas_desc">This will help you to provide a personalized plan</string>
+    <string name="label_back">Back</string>
+    <string name="label_aim">What are your goals?</string>
+    <string name="label_aim_desc">You can choose more than one. You can always change it later.</string>
+    <string name="number_picker_formatter">%02d</string>
+    <string name="label_getfit">Get fitter</string>
+    <string name="label_gainweight">Gain weight</string>
+    <string name="label_loseweight">Lose weight</string>
+    <string name="label_buildmuscle">Building muscles</string>
+    <string name="label_improveindruce">Improving indurance</string>
+    <string name="label_others">Others</string>
 
 
 </resources>

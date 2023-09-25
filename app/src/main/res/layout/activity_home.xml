@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,14 +14,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include
-            android:visibility="gone"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/myToolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/white"
+            android:elevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            layout="@layout/mytoolbar"/>
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/Apptheme.popupOverlay" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/nav_host_fragment"
@@ -40,11 +44,12 @@
             android:id="@+id/bottomBar"
             android:layout_width="match_parent"
             android:layout_height="62dp"
-            android:elevation="6dp"
-            app:indicatorColor = "@color/indicator"
-            app:backgroundColor="@color/login_color"
+            android:elevation="3dp"
+            app:indicatorColor = "@color/login_color"
+            app:backgroundColor="#F6F4F4"
             app:itemPadding="5dp"
-            app:cornerRadius="10dp"
+            app:iconTint="@color/gray"
+            app:cornerRadius="5dp"
             app:iconSize="25dp"
             app:corners="top_left|top_right"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -54,16 +59,5 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/nav_view"
-        app:itemTextColor="@color/black"
-        android:visibility="gone"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/menu"
-        app:itemHorizontalPadding="35dp"
-        app:itemTextAppearance="@style/DrawerTextviewStyle"
-        android:layout_gravity="start"/>
 
-</androidx.drawerlayout.widget.DrawerLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

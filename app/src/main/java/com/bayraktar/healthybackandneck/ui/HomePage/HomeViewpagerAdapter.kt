@@ -32,9 +32,7 @@ import com.bayraktar.healthybackandneck.databinding.ItemOnboardingContainerBindi
 
             holder.binding.apply {
                 imageMain.setImageResource(model.imageMain)
-                eg1.setImageResource(model.energy1)
-                eg2.setImageResource(model.energy2)
-                eg3.setImageResource(model.energy3)
+                labelTitle.text = model.desc
                 progressHome.progress = model.progress
                 txtTitle.text = model.title
 

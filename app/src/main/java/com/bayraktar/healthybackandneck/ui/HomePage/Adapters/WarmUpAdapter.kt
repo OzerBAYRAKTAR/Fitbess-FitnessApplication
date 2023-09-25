@@ -1,15 +1,14 @@
-package com.bayraktar.healthybackandneck.ui.Exercise.Adapters
+package com.bayraktar.healthybackandneck.ui.HomePage.Adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.bayraktar.healthybackandneck.Models.Exercise.AbsModel
-import com.bayraktar.healthybackandneck.Models.Exercise.ArmModel
+import com.bayraktar.healthybackandneck.Models.Exercise.WarmUpModel
 import com.bayraktar.healthybackandneck.databinding.SliderLayoutBinding
 
-class AbsAdapter(private val absList: List<AbsModel>, val viewPager2: ViewPager2):
-    RecyclerView.Adapter<AbsAdapter.OnBoardingsItemAdapter>(){
+class WarmUpAdapter(private val warmList: List<WarmUpModel>, val viewPager2: ViewPager2):
+    RecyclerView.Adapter<WarmUpAdapter.OnBoardingsItemAdapter>(){
 
 
     inner class OnBoardingsItemAdapter(val binding: SliderLayoutBinding): RecyclerView.ViewHolder(binding.root){
@@ -21,18 +20,16 @@ class AbsAdapter(private val absList: List<AbsModel>, val viewPager2: ViewPager2
         return OnBoardingsItemAdapter(itemBinding)
     }
 
+    override fun getItemCount(): Int {
+        return warmList.size
+    }
+
     override fun onBindViewHolder(holder: OnBoardingsItemAdapter, position: Int) {
-        val model = absList[position]
+        val model = warmList[position]
 
         holder.binding.apply {
-            sliderImage.setImageResource(model.imageAbs)
+            sliderImage.setImageResource(model.imageWarmUp)
             titleWarmUp.text = model.title
         }
     }
-
-    override fun getItemCount(): Int {
-        return absList.size
-    }
-
-
 }

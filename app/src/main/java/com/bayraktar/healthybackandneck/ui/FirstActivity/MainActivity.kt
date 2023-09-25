@@ -1,4 +1,4 @@
-package com.bayraktar.healthybackandneck.ui
+package com.bayraktar.healthybackandneck.ui.FirstActivity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -25,13 +25,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setOnBoardingItems()
-        setCurrentIndicator(0)
-        setUpIndicators()
+        //setOnBoardingItems()
+        //setCurrentIndicator(0)
+        //setUpIndicators()
+
 
     }
 
-    private fun setOnBoardingItems() = with(binding) {
+    /*private fun setOnBoardingItems() = with(binding) {
         boardAdapter = OnBoardingItemsAdapter(
             listOf(
                 OnBoardingItems(
@@ -111,5 +112,5 @@ class MainActivity : AppCompatActivity() {
                 )
             }
         }
-    }
+    }*/
 }

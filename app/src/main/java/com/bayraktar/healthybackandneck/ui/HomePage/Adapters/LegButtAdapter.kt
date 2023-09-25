@@ -1,15 +1,15 @@
-package com.bayraktar.healthybackandneck.ui.Exercise.Adapters
+package com.bayraktar.healthybackandneck.ui.HomePage.Adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.bayraktar.healthybackandneck.Models.Exercise.ArmModel
+import com.bayraktar.healthybackandneck.Models.Exercise.LegButtModel
 import com.bayraktar.healthybackandneck.Models.Exercise.NeckBackModel
 import com.bayraktar.healthybackandneck.databinding.SliderLayoutBinding
 
-class ArmAdapter(private val armList: List<ArmModel>, val viewPager2: ViewPager2):
-    RecyclerView.Adapter<ArmAdapter.OnBoardingsItemAdapter>(){
+class LegButtAdapter(private val legList: List<LegButtModel>, val viewPager2: ViewPager2):
+    RecyclerView.Adapter<LegButtAdapter.OnBoardingsItemAdapter>(){
 
 
     inner class OnBoardingsItemAdapter(val binding: SliderLayoutBinding): RecyclerView.ViewHolder(binding.root){
@@ -22,16 +22,16 @@ class ArmAdapter(private val armList: List<ArmModel>, val viewPager2: ViewPager2
     }
 
     override fun onBindViewHolder(holder: OnBoardingsItemAdapter, position: Int) {
-        val model = armList[position]
+        val model = legList[position]
 
         holder.binding.apply {
-            sliderImage.setImageResource(model.imageArm)
+            sliderImage.setImageResource(model.imageLeg)
             titleWarmUp.text = model.title
         }
     }
 
     override fun getItemCount(): Int {
-        return armList.size
+        return legList.size
     }
 
 

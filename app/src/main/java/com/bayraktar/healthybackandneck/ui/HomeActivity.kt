@@ -21,10 +21,7 @@ import com.google.android.material.navigation.NavigationView
 
 class HomeActivity : AppCompatActivity() {
 
-    private lateinit var drawerLayout: DrawerLayout
-    private lateinit var navigationView: NavigationView
     private lateinit var toolbar: Toolbar
-    private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
     private lateinit var navControllerBar: NavController
@@ -37,15 +34,9 @@ class HomeActivity : AppCompatActivity() {
 
 
         toolbar = findViewById(R.id.myToolbar)
-        navigationView = findViewById(R.id.nav_view)
         setSupportActionBar(toolbar)
-        drawerLayout = findViewById(R.id.drawer_home)
 
         actionBar?.setDisplayHomeAsUpEnabled(true)
-        toggle= ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close)
-        toggle.isDrawerIndicatorEnabled = true
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
 
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -58,10 +49,9 @@ class HomeActivity : AppCompatActivity() {
                 R.id.id_exercise_fragment,
                 R.id.id_statistics_fragment,
                 R.id.id_profile_fragment
-            ),drawerLayout
+            )
         )
-        setupActionBarWithNavController(navController, drawerLayout)
-        navigationView.setupWithNavController(navController)
+        setupActionBarWithNavController(navController)
 
         setUpBotMenu()
 
@@ -74,6 +64,7 @@ class HomeActivity : AppCompatActivity() {
         val menu = popupMenu.menu
         binding.bottomBar.setupWithNavController(menu,navController)
     }
+
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }

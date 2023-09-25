@@ -11,7 +11,7 @@
         <clip>
             <shape android:shape="rectangle">
                 <corners android:radius="10dp" />
-                <solid android:color="#FF5733" /> <!-- Filled bar color (orange) -->
+                <solid android:color="#0C9824" /> <!-- Filled bar color (orange) -->
             </shape>
         </clip>
     </item>
