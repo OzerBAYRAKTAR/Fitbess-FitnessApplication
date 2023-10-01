@@ -4,9 +4,7 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 
-
-        <item name="android:statusBarColor">@color/white</item>
-        <item name="drawerArrowStyle">@style/DrawerIcon</item>
+        <item name="android:statusBarColor">#24A550</item>
         <item name="android:divider">@drawable/menu_item_padding</item>
         <item name="android:listDivider">@android:color/transparent</item>
         <item name="windowActionBar">false</item>
@@ -26,7 +24,6 @@
 
     <style name="Apptheme.AppOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Apptheme.popupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="DrawerTextviewStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">serif</item>
@@ -38,9 +35,6 @@
         <item name="android:textSize">20sp</item> <!-- Set your desired text size here -->
     </style>
 
-    <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
-        <item name="color">@color/black</item>
-    </style>
 
-    <dimen name="viewpager_margin">30dp</dimen>
+    <dimen name="viewpager_margin">50dp</dimen>
 </resources>

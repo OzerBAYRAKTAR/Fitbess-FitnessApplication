@@ -1,5 +1,6 @@
 package com.bayraktar.healthybackandneck.ui.FirstActivity.FirstFragment
 
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentFirstBinding
+import com.bayraktar.healthybackandneck.ui.HomeActivity
 
 class FirstFragment : Fragment() {
 

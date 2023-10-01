@@ -2,16 +2,16 @@
     <!-- Empty Bar -->
     <item>
         <shape android:shape="rectangle">
-            <corners android:radius="10dp" />
-            <solid android:color="#CCCCCC" /> <!-- Empty bar background color -->
+            <corners android:radius="11dp" />
+            <solid android:color="#999999" /> <!-- Empty bar background color -->
         </shape>
     </item>
     <!-- Filled Bar (Progress) -->
     <item android:id="@android:id/progress">
         <clip>
             <shape android:shape="rectangle">
-                <corners android:radius="10dp" />
-                <solid android:color="#0C9824" /> <!-- Filled bar color (orange) -->
+                <corners android:radius="11dp" />
+                <solid android:color="#1EAC7F" /> <!-- Filled bar color (orange) -->
             </shape>
         </clip>
     </item>

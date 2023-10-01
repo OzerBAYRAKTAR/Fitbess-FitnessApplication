@@ -21,6 +21,10 @@
     <string name="healthy_body">Sağlıklı Vücut</string>
     <string name="home">Anasayfa</string>
     <string name="exercice">Egzersiz</string>
+    <string name="exercices">Egzersizler</string>
+    <string name="kcal">Kalori</string>
+    <string name="time">Zaman</string>
+    <string name="heart">Kalp Ritmi</string>
     <string name="statistics">İstatistik</string>
     <string name="profile">Profil</string>
     <string name="settings">Ayarlar</string>
@@ -45,7 +49,7 @@
     <string name="information">Bilgilendirme</string>
     <string name="training_tracking">Eğitim Takvimi</string>
     <string name="txthour">Saat</string>
-    <string name="txtcalori">Kalori</string>
+    <string name="txtcalori">Harcanan \nKalori</string>
     <string name="back">Geri</string>
     <string name="forward">İleri\n</string>
     <string name="txt_monday">Pzt</string>
@@ -55,7 +59,7 @@
     <string name="txt_friday">Cum</string>
     <string name="txt_saturday">Cmt</string>
     <string name="txt_sunday">Pzr</string>
-    <string name="trains">Antrenmanlar</string>
+    <string name="trains">Egzersiz Planların</string>
     <string name="nutrution_advice">Beslenme Tavsiyeleri</string>
     <string name="nutrition">Beslenme</string>
     <string name="nutrition_desc">Sağlıklı bir beslenme tarzı için bazı tavsiyeler</string>
@@ -127,10 +131,11 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
 
     <!-- Exercise Fragment-->
     <string name="create_plan">Kendi Planını Oluştur</string>
+    <string name="create_plan_desc">Egzersizlerini seç ve kendi planını oluştur!</string>
 
     <!--Warm Up-->
     <string name="warmup_exercises">Isınma Hareketleri</string>
-    <string name="warmup_desc1">Egzersiz Öncesi Germe Hareketleri</string>
+    <string name="warmup_desc1">Egzersiz Öncesi Germe</string>
     <string name="warmup_desc2">Yeni Başlayanlar İçin Isınma</string>
     <string name="warmup_desc3">Tüm Vücut Esnetme Hareketleri</string>
 
@@ -165,16 +170,21 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="leg_desc2">Bacak Kaslarını Güçlendir</string>
     <string name="leg_desc3">Başlangıç Popo Hareketleri</string>
     <string name="leg_desc4">Poponu Sıkılaştır</string>
-    <string name="txt_time">Zaman</string>
+    <string name="txt_time">Harcanan \n    Zaman</string>
     <string name="txt_calori">Kalori</string>
     <string name="txt_alltime">Tüm Zaman</string>
-    <string name="txt_bodyparameters">Vücut Parametleri</string>
+    <string name="txt_bodyparameters">Vücudun</string>
+    <string name="txt_record">Tüm Zaman Kazanımlar</string>
     <string name="booty">Kalça</string>
     <string name="belly">Bel</string>
     <string name="chest">chest</string>
     <string name="body_indeks">Beden Kütle Endeksi</string>
     <string name="height">Boy Ölçüsü(cm)</string>
+    <string name="height_label">Boy</string>
     <string name="weight">Ağırlık(kg)</string>
+    <string name="weight_label">Ağırlık</string>
+    <string name="water_label">Su Oranı</string>
+    <string name="sleep">Uyku</string>
     <string name="newTest">Yeni Ölçüm</string>
     <string name="categorie">Kategori</string>
     <string name="indeks">Endeks</string>
@@ -195,6 +205,8 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="shareus">Arkadaşlarınla paylaş</string>
     <string name="privacy">Gizlilik Politikası</string>
     <string name="easy_level">Başlangıç\nSeviyesi</string>
+    <string name="easy_level_fil">Başlangıç Seviyesi</string>
+    <string name="easy">Başlangıç Seviyesi</string>
     <string name="middle_level">Orta \nSeviye</string>
     <string name="hard_level">İleri \nSeviye</string>
     <string name="label_day">Gün</string>
@@ -222,6 +234,12 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="label_buildmuscle">Building muscles</string>
     <string name="label_improveindruce">Improving indurance</string>
     <string name="label_others">Others</string>
+    <string name="exercise_move">Hareket</string>
+    <string name="time_min">Dakika</string>
+    <string name="general_progress">Genel İlerleme</string>
+    <string name="splash_1">Girdiğin bilgiler inceleniyor… </string>
+    <string name="splash_2">Uygun egzersizler aranıyor… </string>
+    <string name="splash_3">Sana uygun plan hazırlanıyor…</string>
 
 
 </resources>

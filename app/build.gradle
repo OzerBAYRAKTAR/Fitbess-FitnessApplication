@@ -113,6 +113,8 @@ dependencies {
 
     //number picker
     implementation 'io.github.ShawnLin013:number-picker:2.4.13'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.27'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
 
 }

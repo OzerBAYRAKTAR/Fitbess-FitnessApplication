@@ -3,10 +3,12 @@ package com.bayraktar.healthybackandneck.ui
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.appcompat.widget.Toolbar
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -17,9 +19,10 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.ActivityHomeBinding
+import com.bayraktar.healthybackandneck.utils.homeFragmentListener
 import com.google.android.material.navigation.NavigationView
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(),homeFragmentListener {
 
     private lateinit var toolbar: Toolbar
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -33,26 +36,11 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        toolbar = findViewById(R.id.myToolbar)
-        setSupportActionBar(toolbar)
-
-        actionBar?.setDisplayHomeAsUpEnabled(true)
-
-
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
 
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.id_homepage_fragment,
-                R.id.id_exercise_fragment,
-                R.id.id_statistics_fragment,
-                R.id.id_profile_fragment
-            )
-        )
-        setupActionBarWithNavController(navController)
-
+        //window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         setUpBotMenu()
 
 
@@ -67,6 +55,11 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun hideConstraintLayout() {
+        val constraintLayout = findViewById<ConstraintLayout>(R.id.cnnm3)
+        constraintLayout?.visibility = View.GONE
     }
 
 }

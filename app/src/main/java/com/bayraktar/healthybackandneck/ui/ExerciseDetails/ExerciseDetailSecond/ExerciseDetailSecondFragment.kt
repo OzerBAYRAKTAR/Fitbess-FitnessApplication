@@ -1,4 +1,4 @@
-package com.bayraktar.healthybackandneck.ui.ExerciseDetailFirst
+package com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailSecond
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,24 +7,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.Models.ExerciseDetailModel.ExerciseDetailModel
-import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDaysOfWeekBinding
+import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDetailSecondBinding
+import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstAdapter
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 
+class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
 
-class ExerciseDetailFirstFragment : Fragment(),RecyclerViewClickListener {
-
-    private var _binding: FragmentExerciseDaysOfWeekBinding? = null
+    private var _binding: FragmentExerciseDetailSecondBinding?= null
     val binding get() = _binding!!
 
     private var detailList = emptyList<ExerciseDetailModel>()
     private lateinit var firstAdapter: ExerciseDetailFirstAdapter
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentExerciseDaysOfWeekBinding.inflate(inflater, container, false)
+        _binding = FragmentExerciseDetailSecondBinding.inflate(inflater,container,false)
         // Inflate the layout for this fragment
         return binding.root
     }
@@ -133,7 +132,7 @@ class ExerciseDetailFirstFragment : Fragment(),RecyclerViewClickListener {
     }
     private fun setRecyclerview() = with(binding) {
         listDaysOfWeek.layoutManager = LinearLayoutManager(requireContext())
-        firstAdapter = ExerciseDetailFirstAdapter(detailList,this@ExerciseDetailFirstFragment)
+        firstAdapter = ExerciseDetailFirstAdapter(detailList,this@ExerciseDetailSecondFragment)
         listDaysOfWeek.adapter = firstAdapter
     }
 

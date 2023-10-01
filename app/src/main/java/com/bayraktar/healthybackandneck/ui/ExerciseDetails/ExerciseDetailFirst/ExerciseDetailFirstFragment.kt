@@ -1,22 +1,23 @@
-package com.bayraktar.healthybackandneck.ui.ExerciseDetailThird
+package com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.Models.ExerciseDetailModel.ExerciseDetailModel
 import com.bayraktar.healthybackandneck.R
-import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDetailSecondBinding
-import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDetailThirdBinding
-import com.bayraktar.healthybackandneck.ui.ExerciseDetailFirst.ExerciseDetailFirstAdapter
+import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDaysOfWeekBinding
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
+import com.bayraktar.healthybackandneck.utils.homeFragmentListener
 
-class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
 
-    private var _binding: FragmentExerciseDetailThirdBinding?= null
+class ExerciseDetailFirstFragment : Fragment(),RecyclerViewClickListener {
+
+    private var _binding: FragmentExerciseDaysOfWeekBinding? = null
     val binding get() = _binding!!
 
     private var detailList = emptyList<ExerciseDetailModel>()
@@ -27,14 +28,22 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentExerciseDetailThirdBinding.inflate(inflater,container,false)
+        _binding = FragmentExerciseDaysOfWeekBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        activity?.window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        val listener = activity as? homeFragmentListener
+        listener?.hideConstraintLayout()
+
         setRecyclerview()
+
+
+
 
         detailList = listOf(
             ExerciseDetailModel(
@@ -130,12 +139,61 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
                 exerciseTime = 6.30,
                 exerciseKcal = 430
             ),
+            ExerciseDetailModel(
+                percent = 59,
+                day = 15,
+                exerciseCount = 7,
+                exerciseTime = 6.30,
+                exerciseKcal = 430
+            ),
+            ExerciseDetailModel(
+                percent = 59,
+                day = 16,
+                exerciseCount = 7,
+                exerciseTime = 6.30,
+                exerciseKcal = 430
+            ),
+            ExerciseDetailModel(
+                percent = 59,
+                day = 17,
+                exerciseCount = 7,
+                exerciseTime = 6.30,
+                exerciseKcal = 430
+            ),
+            ExerciseDetailModel(
+                percent = 59,
+                day = 18,
+                exerciseCount = 7,
+                exerciseTime = 6.30,
+                exerciseKcal = 430
+            ),
+            ExerciseDetailModel(
+                percent = 59,
+                day = 19,
+                exerciseCount = 7,
+                exerciseTime = 6.30,
+                exerciseKcal = 430
+            ),
+            ExerciseDetailModel(
+                percent = 59,
+                day = 20,
+                exerciseCount = 7,
+                exerciseTime = 6.30,
+                exerciseKcal = 430
+            ),
+            ExerciseDetailModel(
+                percent = 59,
+                day = 21,
+                exerciseCount = 7,
+                exerciseTime = 6.30,
+                exerciseKcal = 430
+            ),
         )
         firstAdapter.setData(detailList)
     }
     private fun setRecyclerview() = with(binding) {
         listDaysOfWeek.layoutManager = LinearLayoutManager(requireContext())
-        firstAdapter = ExerciseDetailFirstAdapter(detailList,this@ExerciseDetailThirdFragment)
+        firstAdapter = ExerciseDetailFirstAdapter(detailList,this@ExerciseDetailFirstFragment)
         listDaysOfWeek.adapter = firstAdapter
     }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,10 +9,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="11dp"
         android:layout_centerInParent="true"
+        android:layout_marginTop="7dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +22,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@drawable/cardmain_gradient"
+            android:background="@drawable/image_bottomradius"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,14 +32,14 @@
                 android:id="@+id/txtTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_back"
-                android:textColor="@color/black"
-                android:paddingStart="15dp"
-                android:paddingVertical="2dp"
-                android:paddingEnd="25dp"
                 android:layout_marginTop="35dp"
+                android:background="@drawable/textview_back"
                 android:fontFamily="@font/tahoma"
+                android:paddingVertical="2dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="35dp"
                 android:text="@string/easy_program"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -48,24 +49,25 @@
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="30dp"
                 android:fontFamily="@font/tahoma"
+                android:paddingStart="10dp"
                 android:text="@string/easy_desc"
+                android:layout_marginBottom="15dp"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                android:paddingStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/txtTitle"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/txtTitle"
-                app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+                app:layout_constraintTop_toTopOf="@+id/appCompatButton3" />
 
             <ImageView
                 android:id="@+id/eg1"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:visibility="gone"
                 android:layout_marginTop="14dp"
                 android:src="@drawable/energy"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="@+id/txtTitle"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
@@ -73,8 +75,8 @@
                 android:id="@+id/eg2"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:visibility="gone"
                 android:src="@drawable/energy_empty"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/eg1"
                 app:layout_constraintStart_toEndOf="@+id/eg1" />
 
@@ -82,8 +84,8 @@
                 android:id="@+id/eg3"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:visibility="gone"
                 android:src="@drawable/energy_empty"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/eg2"
                 app:layout_constraintStart_toEndOf="@+id/eg2" />
 
@@ -92,12 +94,12 @@
                 android:id="@+id/labelgün"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Günler"
-                android:visibility="gone"
-                android:textSize="16sp"
-                android:fontFamily="@font/tahoma"
                 android:layout_marginStart="2dp"
                 android:layout_marginBottom="6dp"
+                android:fontFamily="@font/tahoma"
+                android:text="Günler"
+                android:textSize="16sp"
+                android:visibility="gone"
                 app:layout_constraintBottom_toTopOf="@+id/progressHome"
                 app:layout_constraintStart_toStartOf="@+id/progressHome" />
 
@@ -107,19 +109,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="5"
-                android:visibility="gone"
                 android:fontFamily="@font/tahoma"
+                android:text="5"
                 android:textSize="16sp"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/labelgün"
                 app:layout_constraintStart_toEndOf="@+id/labelgün" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0%"
-                android:visibility="gone"
                 android:fontFamily="@font/tahoma"
+                android:text="0%"
                 android:textSize="16sp"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/txtDay"
                 app:layout_constraintStart_toEndOf="@+id/txtDay" />
 
@@ -130,9 +133,9 @@
                 android:layout_height="11dp"
                 android:layout_marginStart="12dp"
                 android:max="100"
-                android:visibility="gone"
                 android:progress="31"
                 android:progressDrawable="@drawable/progresbar_background"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/eg2"
@@ -141,17 +144,17 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="65dp"
-                android:visibility="gone"
                 android:layout_height="50dp"
                 android:background="@drawable/bubble_background"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:visibility="gone"
                 android:layout_width="65dp"
                 android:layout_height="50dp"
                 android:background="@drawable/bubble_top"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -169,14 +172,15 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/appCompatButton3"
                 android:layout_width="125dp"
                 android:layout_height="42dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/butto_background"
                 android:drawablePadding="10dp"
                 android:fontFamily="serif"
-                android:textAlignment="center"
                 android:text="@string/get_start"
+                android:textAlignment="center"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/imageMain"

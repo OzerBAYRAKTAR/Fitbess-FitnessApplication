@@ -130,6 +130,13 @@ class HomePageFragment : Fragment() {
                     progress = (12 * 100 / 28),
                     dayOfProgram = 12
                 ),
+                HomeItems(
+                    imageMain = R.drawable.removed4,
+                    title = getString(R.string.create_plan),
+                    desc = getString(R.string.create_plan_desc),
+                    progress = (15 * 100 / 28),
+                    dayOfProgram = 12
+                ),
             ), pageerHome
         ) { position ->
             // Handle item click based on the position
@@ -192,9 +199,9 @@ class HomePageFragment : Fragment() {
         val layoutParams: LinearLayout.LayoutParams =
             LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT
-
+                ViewGroup.LayoutParams.WRAP_CONTENT
             )
+
         layoutParams.setMargins(5, 0, 5, 0)
         for (i in indicators.indices) {
             indicators[i] = ImageView(requireContext())

@@ -11,8 +11,10 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.NumberPicker
 import androidx.annotation.RequiresApi
+import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentSecondBinding
+import com.bayraktar.healthybackandneck.ui.FirstActivity.FirstFragment.FirstFragmentDirections
 
 
 class SecondFragment : Fragment() {
@@ -33,12 +35,15 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setNumbPicker()
-
+        binding.appCompatButton.setOnClickListener{
+            val action = SecondFragmentDirections.actionSecondFragmentToThirdFragment()
+            view.findNavController().navigate(action)
+        }
+        binding.appCompatButton2.setOnClickListener{
+            val action = SecondFragmentDirections.actionSecondFragmentToFirstFragment()
+            view.findNavController().navigate(action)
+        }
     }
 
-    private fun setNumbPicker()= with(binding) {
-
-    }
 
 }

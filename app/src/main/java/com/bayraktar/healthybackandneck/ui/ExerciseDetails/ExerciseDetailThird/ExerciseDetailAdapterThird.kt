@@ -1,4 +1,4 @@
-package com.bayraktar.healthybackandneck.ui.ExerciseDetailThird
+package com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailThird
 
 import android.view.LayoutInflater
 import android.view.View

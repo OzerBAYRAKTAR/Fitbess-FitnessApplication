@@ -3,7 +3,7 @@
 <dimen tools:override="true" name="design_navigation_seperator_vertical_padding">
     20dp
 </dimen>
-    <dimen name="indicator_active_width">55dp</dimen>
+    <dimen name="indicator_active_width">45dp</dimen>
     <dimen name="text_size">35dp</dimen>
     <dimen name="selected_text_size">47dp</dimen>
 

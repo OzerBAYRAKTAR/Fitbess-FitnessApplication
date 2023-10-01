@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_secondFragment_to_thirdFragment"
             app:destination="@id/thirdFragment" />
+        <action
+            android:id="@+id/action_secondFragment_to_firstFragment"
+            app:destination="@id/firstFragment" />
     </fragment>
     <fragment
         android:id="@+id/thirdFragment"
@@ -31,6 +34,9 @@
         <action
             android:id="@+id/action_thirdFragment_to_fourthFragment"
             app:destination="@id/fourthFragment" />
+        <action
+            android:id="@+id/action_thirdFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
     </fragment>
     <fragment
         android:id="@+id/fourthFragment"
@@ -40,6 +46,9 @@
         <action
             android:id="@+id/action_fourthFragment_to_fivethFragment"
             app:destination="@id/fivethFragment" />
+        <action
+            android:id="@+id/action_fourthFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
     </fragment>
     <fragment
         android:id="@+id/fivethFragment"
@@ -49,6 +58,9 @@
         <action
             android:id="@+id/action_fivethFragment_to_sixthFragment"
             app:destination="@id/sixthFragment" />
+        <action
+            android:id="@+id/action_fivethFragment_to_fourthFragment"
+            app:destination="@id/fourthFragment" />
     </fragment>
     <fragment
         android:id="@+id/sixthFragment"

@@ -1,4 +1,4 @@
-package com.bayraktar.healthybackandneck.ui.ExerciseDetailSecond
+package com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailSecond
 
 import androidx.lifecycle.ViewModel
 

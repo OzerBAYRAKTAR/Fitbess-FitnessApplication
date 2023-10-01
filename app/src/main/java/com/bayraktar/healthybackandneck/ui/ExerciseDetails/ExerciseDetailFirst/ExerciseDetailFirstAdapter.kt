@@ -1,17 +1,18 @@
-package com.bayraktar.healthybackandneck.ui.ExerciseDetailSecond
+package com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bayraktar.healthybackandneck.Models.ExerciseDetailModel.ExerciseDetailModel
+import com.bayraktar.healthybackandneck.databinding.ItemDietDetailBinding
 import com.bayraktar.healthybackandneck.databinding.ItemExercisedaysofweekBinding
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 
-class ExerciseDetailSecondAdapter(
+class ExerciseDetailFirstAdapter(
     private var lsMenu: List<ExerciseDetailModel>,
     private val rclClickListener: RecyclerViewClickListener
-): RecyclerView.Adapter<ExerciseDetailSecondAdapter.ItemHolder>() {
+): RecyclerView.Adapter<ExerciseDetailFirstAdapter.ItemHolder>() {
 
 
     inner class ItemHolder(val binding: ItemExercisedaysofweekBinding, recyclerViewClickListener: RecyclerViewClickListener): RecyclerView.ViewHolder(binding.root)
