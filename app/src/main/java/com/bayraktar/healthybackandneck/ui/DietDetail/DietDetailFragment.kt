@@ -117,7 +117,7 @@ class DietDetailFragment : Fragment() {
                     title = getString(R.string.diet_title12)
                 ),
                 DietItems(
-                    imageDetail = R.drawable.noalkolcigara,
+                    imageDetail = R.drawable.water,
                     description = getString(R.string.diet_desc13),
                     title = getString(R.string.diet_title13)
                 ),

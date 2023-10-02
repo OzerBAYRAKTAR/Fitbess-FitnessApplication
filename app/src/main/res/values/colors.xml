@@ -30,5 +30,7 @@
     //indicator color
     <color name="inactive">#C4C4C4</color>
     <color name="active">#50C2C9</color>
+    <color name="max_blue">#50C2C9</color>
+    <color name="min_blue">#96e8f3</color>
 
 </resources>

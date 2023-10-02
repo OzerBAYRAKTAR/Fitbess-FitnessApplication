@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.Models.ExerciseDetailModel.ExerciseDetailModel
 import com.bayraktar.healthybackandneck.R
@@ -41,6 +42,9 @@ class ExerciseDetailFirstFragment : Fragment(),RecyclerViewClickListener {
         listener?.hideConstraintLayout()
 
         setRecyclerview()
+
+        val action = ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToDetailDayFragment()
+        view.findNavController().navigate(action)
 
 
 

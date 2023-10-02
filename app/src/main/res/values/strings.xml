@@ -240,6 +240,8 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="splash_1">Girdiğin bilgiler inceleniyor… </string>
     <string name="splash_2">Uygun egzersizler aranıyor… </string>
     <string name="splash_3">Sana uygun plan hazırlanıyor…</string>
+    <string name="getready">Egzersiz için hazırlan!…</string>
+    <string name="sec_time_left">Saniye kaldı</string>
 
 
 </resources>
