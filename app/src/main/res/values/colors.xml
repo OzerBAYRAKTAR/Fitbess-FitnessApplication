@@ -32,5 +32,6 @@
     <color name="active">#50C2C9</color>
     <color name="max_blue">#50C2C9</color>
     <color name="min_blue">#96e8f3</color>
+    <color name="material_dynamic_neutral70">#FFAAABAE</color>
 
 </resources>

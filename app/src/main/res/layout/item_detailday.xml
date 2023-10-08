@@ -87,11 +87,13 @@
 
                 </LinearLayout>
 
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_marginEnd="30dp"
-                    android:src="@drawable/heartempty"
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/favoritebtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:button="@drawable/favorite_selector"
+                    app:useMaterialThemeColors="false"
                     app:layout_constraintBottom_toBottomOf="@+id/linearLayout6"
                     app:layout_constraintEnd_toEndOf="@+id/linearLayout6"
                     app:layout_constraintTop_toTopOf="@+id/linearLayout6" />

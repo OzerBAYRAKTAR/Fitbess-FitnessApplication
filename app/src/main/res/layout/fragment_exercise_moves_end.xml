@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ExerciseMovesEnd.ExerciseMovesEndFragment">
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/movesend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/robotoslabextrabold"
+        android:text="@string/congrulations"
+        android:textColor="@color/active"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/robotoslabmedium"
+        android:text="@string/workout_complete"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="115dp"
+        android:layout_height="135dp"
+        android:layout_marginHorizontal="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/cardView4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView34">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView21"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/timedetail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txttime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/robotoslabmedium"
+                android:text="07:40"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView21"
+                app:layout_constraintStart_toStartOf="@+id/imageView21"
+                app:layout_constraintTop_toBottomOf="@+id/imageView21" />
+
+            <TextView
+                android:id="@+id/labeltime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/robotoslabmedium"
+                android:text="@string/time"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                app:layout_constraintEnd_toEndOf="@+id/txttime"
+                app:layout_constraintStart_toStartOf="@+id/txttime"
+                app:layout_constraintTop_toBottomOf="@+id/txttime" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="115dp"
+        android:layout_height="135dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView3"
+        app:layout_constraintEnd_toStartOf="@+id/cardView5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cardView3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView31"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/fitnessdetail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtexercise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/robotoslabmedium"
+                android:text="7"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView31"
+                app:layout_constraintStart_toStartOf="@+id/imageView31"
+                app:layout_constraintTop_toBottomOf="@+id/imageView31" />
+
+            <TextView
+                android:id="@+id/labelexercise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/robotoslabmedium"
+                android:text="@string/exercice"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                app:layout_constraintEnd_toEndOf="@+id/txtexercise"
+                app:layout_constraintStart_toStartOf="@+id/txtexercise"
+                app:layout_constraintTop_toBottomOf="@+id/txtexercise" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView5"
+        android:layout_width="115dp"
+        android:layout_height="135dp"
+        android:layout_marginHorizontal="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cardView4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/kcaldetail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtkcal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/robotoslabmedium"
+                android:text="700"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView10"
+                app:layout_constraintStart_toStartOf="@+id/imageView10"
+                app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+            <TextView
+                android:id="@+id/labelkcal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/robotoslabmedium"
+                android:text="@string/kcal"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                app:layout_constraintEnd_toEndOf="@+id/txtkcal"
+                app:layout_constraintStart_toStartOf="@+id/txtkcal"
+                app:layout_constraintTop_toBottomOf="@+id/txtkcal" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/skipRest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:text="@string/home"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/tahoma"
+        android:background="@drawable/buttonfirst_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -20,19 +19,63 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/robotoslabsemibold"
+                android:text="Fitbess"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/imageView6"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/women"
+                app:layout_constraintBottom_toBottomOf="@+id/textView17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView17" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:src="@drawable/settttng"
+                app:layout_constraintBottom_toBottomOf="@+id/textView17"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView17" />
+
+            <ImageView
+                android:id="@+id/im1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:src="@drawable/adblock"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+                app:layout_constraintEnd_toStartOf="@+id/imageView9"
+                app:layout_constraintTop_toTopOf="@+id/imageView9" />
+
             <TextView
                 android:id="@+id/labelPrgram"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:fontFamily="@font/robotoslabmedium"
                 android:layout_marginTop="15dp"
+                android:fontFamily="@font/robotoslabmedium"
                 android:text="@string/trains"
                 android:textColor="@color/black"
                 android:textSize="17sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/pageerHome"
@@ -48,25 +91,24 @@
                 android:id="@+id/indicatorsContainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="-10dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="@id/pageerHome"
                 app:layout_constraintStart_toStartOf="@id/pageerHome"
                 app:layout_constraintTop_toBottomOf="@id/pageerHome" />
 
 
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardTrain"
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:layout_centerInParent="true"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
                 android:backgroundTint="@color/white"
+                android:visibility="gone"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -77,12 +119,11 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginBottom="20dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
-
 
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -106,10 +147,10 @@
                                 android:id="@+id/monthYearTV"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2"
                                 android:layout_gravity="center"
-                                android:paddingStart="15dp"
+                                android:layout_weight="2"
                                 android:fontFamily="sans-serif-condensed-medium"
+                                android:paddingStart="15dp"
                                 android:text="Feb 2021"
                                 android:textColor="@color/white"
                                 android:textSize="20sp"
@@ -118,11 +159,11 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center"
                                 android:layout_marginStart="5dp"
                                 android:layout_marginEnd="8dp"
-                                android:text="Hafta Hedefi   1/4"
-                                android:layout_gravity="center"
                                 android:fontFamily="sans-serif-condensed-medium"
+                                android:text="Hafta Hedefi   1/4"
                                 android:textColor="@color/white"
                                 android:textSize="17sp" />
 
@@ -154,9 +195,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="15dp"
+                            android:layout_marginEnd="5dp"
                             android:layout_marginBottom="10dp"
                             android:orientation="horizontal"
-                            android:layout_marginEnd="5dp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
@@ -169,22 +210,22 @@
 
                                 <TextView
                                     android:layout_width="35dp"
-                                    android:layout_gravity="center"
                                     android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
                                     android:text="@string/txt_sunday"
                                     android:textColor="@color/gray"
-                                    android:gravity="center"
                                     android:textSize="16sp" />
 
                                 <androidx.appcompat.widget.AppCompatButton
                                     android:id="@+id/buttonSunday"
                                     android:layout_width="39dp"
                                     android:layout_height="40dp"
+                                    android:layout_gravity="center"
                                     android:layout_marginStart="4dp"
                                     android:layout_marginTop="3dp"
                                     android:background="@drawable/calender_circle"
                                     android:text="27"
-                                    android:layout_gravity="center"
                                     android:textColor="@color/white"
                                     android:textSize="12sp" />
                             </LinearLayout>
@@ -199,9 +240,9 @@
                                 <TextView
                                     android:layout_width="35dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
                                     android:text="@string/txt_monday"
                                     android:textAlignment="center"
-                                    android:layout_gravity="center"
                                     android:textColor="@color/gray"
                                     android:textSize="16sp" />
 
@@ -209,11 +250,11 @@
                                     android:id="@+id/buttonMonday"
                                     android:layout_width="39dp"
                                     android:layout_height="40dp"
+                                    android:layout_gravity="center"
                                     android:layout_marginStart="4dp"
                                     android:layout_marginTop="3dp"
                                     android:background="@drawable/calender_circle"
                                     android:text="27"
-                                    android:layout_gravity="center"
                                     android:textColor="@color/white" />
 
                             </LinearLayout>
@@ -227,10 +268,10 @@
                                 <TextView
                                     android:layout_width="35dp"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/txt_tuesday"
-                                    android:textAlignment="center"
                                     android:layout_gravity="center"
                                     android:layout_marginStart="2dp"
+                                    android:text="@string/txt_tuesday"
+                                    android:textAlignment="center"
                                     android:textColor="@color/gray"
                                     android:textSize="16sp" />
 
@@ -239,9 +280,9 @@
                                     android:id="@+id/buttonTuesday"
                                     android:layout_width="39dp"
                                     android:layout_height="40dp"
+                                    android:layout_gravity="center"
                                     android:layout_marginStart="4dp"
                                     android:layout_marginTop="3dp"
-                                    android:layout_gravity="center"
                                     android:background="@drawable/calender_circle"
                                     android:text="27"
                                     android:textColor="@color/white" />
@@ -256,11 +297,11 @@
 
                                 <TextView
                                     android:layout_width="35dp"
-                                    android:layout_gravity="center"
                                     android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="2dp"
                                     android:text="@string/txt_wednesday"
                                     android:textAlignment="center"
-                                    android:layout_marginStart="2dp"
                                     android:textColor="@color/gray"
                                     android:textSize="16sp" />
 
@@ -268,9 +309,9 @@
                                     android:id="@+id/buttonWednesday"
                                     android:layout_width="39dp"
                                     android:layout_height="40dp"
+                                    android:layout_gravity="center"
                                     android:layout_marginStart="4dp"
                                     android:layout_marginTop="3dp"
-                                    android:layout_gravity="center"
                                     android:background="@drawable/calender_circle"
                                     android:text="27"
                                     android:textColor="@color/white" />
@@ -286,10 +327,10 @@
                                 <TextView
                                     android:layout_width="35dp"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/txt_thursday"
-                                    android:textAlignment="center"
                                     android:layout_gravity="center"
                                     android:layout_marginStart="2dp"
+                                    android:text="@string/txt_thursday"
+                                    android:textAlignment="center"
                                     android:textColor="@color/gray"
                                     android:textSize="16sp" />
 
@@ -298,8 +339,8 @@
                                     android:id="@+id/buttonThursday"
                                     android:layout_width="39dp"
                                     android:layout_height="40dp"
-                                    android:layout_marginStart="4dp"
                                     android:layout_gravity="center"
+                                    android:layout_marginStart="4dp"
                                     android:layout_marginTop="3dp"
                                     android:background="@drawable/calender_circle"
                                     android:text="27"
@@ -316,10 +357,10 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="2dp"
                                     android:text="@string/txt_friday"
                                     android:textAlignment="center"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_gravity="center"
                                     android:textColor="@color/gray"
                                     android:textSize="16sp" />
 
@@ -346,11 +387,11 @@
                                 <TextView
                                     android:layout_width="35dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="2dp"
                                     android:text="@string/txt_saturday"
                                     android:textAlignment="center"
                                     android:textColor="@color/gray"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="2dp"
                                     android:textSize="16sp" />
 
 
@@ -358,9 +399,9 @@
                                     android:id="@+id/buttonSaturday"
                                     android:layout_width="39dp"
                                     android:layout_height="40dp"
+                                    android:layout_gravity="center"
                                     android:layout_marginStart="4dp"
                                     android:layout_marginTop="3dp"
-                                    android:layout_gravity="center"
                                     android:background="@drawable/calender_circle"
                                     android:text="5"
                                     android:textColor="@color/white" />
@@ -378,31 +419,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:visibility="gone"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/robotoslabbold"
                 android:text="@string/nutrition"
                 android:textColor="@color/black"
                 android:textSize="18sp"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardTrain" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardNutrition"
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:layout_centerInParent="true"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
                 android:backgroundTint="@color/white"
-                app:layout_constraintTop_toBottomOf="@id/cardTrain"
+                android:visibility="gone"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="8dp">
+                app:layout_constraintTop_toBottomOf="@id/cardTrain">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -431,10 +472,10 @@
                             android:layout_width="175dp"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="16dp"
+                            android:fontFamily="@font/tahoma"
                             android:text="@string/nutrition_desc"
                             android:textColor="@color/black"
                             android:textSize="16sp"
-                            android:fontFamily="@font/tahoma"
                             app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView"
                             app:layout_constraintEnd_toEndOf="@+id/appCompatImageView"
                             app:layout_constraintTop_toTopOf="@+id/appCompatImageView"
@@ -467,8 +508,8 @@
                         <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="28dp"
                             android:layout_height="28dp"
-                            android:src="@drawable/right_white"
                             android:layout_marginEnd="20dp"
+                            android:src="@drawable/right_white"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -481,20 +522,20 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardBreath"
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:layout_centerInParent="true"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
                 android:backgroundTint="@color/white"
-                app:layout_constraintTop_toBottomOf="@id/cardNutrition"
+                android:visibility="gone"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="8dp">
+                app:layout_constraintTop_toBottomOf="@id/cardNutrition">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -523,11 +564,11 @@
                         <TextView
                             android:layout_width="175dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
                             android:fontFamily="@font/robotslabrgular"
                             android:text="@string/breath_desc"
                             android:textColor="@color/black"
                             android:textSize="16sp"
-                            android:layout_marginStart="20dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -560,8 +601,8 @@
                         <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="28dp"
                             android:layout_height="28dp"
-                            android:src="@drawable/right_white"
                             android:layout_marginEnd="20dp"
+                            android:src="@drawable/right_white"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -580,7 +621,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cardBreath"/>
+                app:layout_constraintTop_toBottomOf="@id/cardBreath" />
+
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
@@ -589,9 +631,9 @@
                 android:fontFamily="@font/robotoslabmedium"
                 android:text="@string/create_plan"
                 android:textColor="@color/black"
-                android:visibility="gone"
                 android:textSize="17sp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/indicatorsContainer" />
 
@@ -599,10 +641,10 @@
                 android:id="@+id/cardView2"
                 android:layout_width="match_parent"
                 android:layout_height="125dp"
-                android:layout_marginEnd="15dp"
                 android:layout_marginStart="15dp"
-                android:visibility="gone"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:visibility="gone"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="6dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -620,12 +662,12 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:textSize="17sp"
                 android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/robotoslabmedium"
                 android:text="@string/warmup_exercises"
                 android:textColor="@color/black"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardView2" />
@@ -645,12 +687,12 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:textSize="17sp"
                 android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/robotoslabmedium"
                 android:text="@string/posture_exercises"
                 android:textColor="@color/black"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/warmUpPager" />
@@ -670,12 +712,12 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:textSize="17sp"
                 android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/robotoslabmedium"
                 android:text="@string/neckback_exercise"
                 android:textColor="@color/black"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fixPosturePager" />
@@ -690,16 +732,17 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:textSize="17sp"
                 android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/robotoslabmedium"
                 android:text="@string/arm_exercises"
                 android:textColor="@color/black"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/neckBackViewPager" />
@@ -719,12 +762,12 @@
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:textSize="17sp"
                 android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/robotoslabmedium"
                 android:text="@string/abs_exercises"
                 android:textColor="@color/black"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/armViewPager" />
@@ -745,12 +788,12 @@
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:textSize="17sp"
                 android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/robotoslabmedium"
                 android:text="@string/leg_exercises"
                 android:textColor="@color/black"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/absViewPager" />

@@ -1,7 +1,6 @@
 package com.bayraktar.healthybackandneck.ui.ExerciseMoves
 
 import android.annotation.SuppressLint
-import android.app.Dialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -10,14 +9,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.compose.ui.window.Dialog
+import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesBinding
+import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesReadyBinding
+import com.bayraktar.healthybackandneck.ui.ExerciseMovesReady.ExerciseMovesReadyFragmentDirections
 
 class ExerciseMovesFragment : Fragment() {
-
-    private var _binding: FragmentExerciseMovesBinding? = null
+    private var _binding: FragmentExerciseMovesBinding?= null
     val binding get() = _binding!!
+
 
     private var timeSelected = 20
     private var timecountDown: CountDownTimer? = null
@@ -37,7 +38,7 @@ class ExerciseMovesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.txtTimeleft.text = "20"
+        binding.txtTimeLeft.text = "20"
         binding.pbTimer.max = timeSelected
 
 
@@ -49,18 +50,6 @@ class ExerciseMovesFragment : Fragment() {
 
     }
 
-   // private fun resetTime() = with(binding) {
-   //     if (timecountDown != null) {
-   //         timeProgress = 0
-   //         timeSelected = 0
-   //         pauseOffSet = 0
-   //         timecountDown = null
-   //         playpause.setBackgroundResource(R.drawable.startexercise)
-   //         isStart = true
-   //         pbTimer.progress = 0
-   //         txtTimeleft.text = "0"
-   //     }
-   // }
     private fun timePause() {
 
         if (timecountDown != null) {
@@ -92,19 +81,18 @@ class ExerciseMovesFragment : Fragment() {
                 timeProgress++
                 pauseOffSet = timeSelected.toLong()-p0/1000
                 progressBar.progress = timeSelected - timeProgress
-                val timeLeft = binding.txtTimeleft
+                val timeLeft = binding.txtTimeLeft
                 timeLeft.text = (timeSelected - timeProgress).toString()
             }
 
             override fun onFinish() {
-                Toast.makeText(requireContext(), "Times up", Toast.LENGTH_SHORT).show()
+                val action = ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesRestFragment()
+                view?.findNavController()?.navigate(action)
             }
 
         }.start()
     }
-    private fun setTimeFunc() {
 
-    }
 
     override fun onDestroy() {
         super.onDestroy()

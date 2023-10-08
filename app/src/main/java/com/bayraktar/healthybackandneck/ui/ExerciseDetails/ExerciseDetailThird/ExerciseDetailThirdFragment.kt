@@ -130,6 +130,53 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
                 exerciseTime = 6.30,
                 exerciseKcal = 430
             ),
+            ExerciseDetailModel(
+                percent = 38,
+                day = 15,
+                exerciseCount = 6,
+                exerciseTime = 6.50,
+                exerciseKcal = 330
+            ), ExerciseDetailModel(
+                percent = 81,
+                day = 16,
+                exerciseCount = 7,
+                exerciseTime = 6.20,
+                exerciseKcal = 410
+            ), ExerciseDetailModel(
+                percent = 43,
+                day = 17,
+                exerciseCount = 8,
+                exerciseTime = 7.10,
+                exerciseKcal = 190
+            ),
+            ExerciseDetailModel(
+                percent = 63,
+                day = 18,
+                exerciseCount = 9,
+                exerciseTime = 6.50,
+                exerciseKcal = 340
+            ),
+            ExerciseDetailModel(
+                percent = 17,
+                day = 19,
+                exerciseCount = 7,
+                exerciseTime = 5.30,
+                exerciseKcal = 240
+            ),
+            ExerciseDetailModel(
+                percent = 5,
+                day = 20,
+                exerciseCount = 8,
+                exerciseTime = 8.30,
+                exerciseKcal = 270
+            ),
+            ExerciseDetailModel(
+                percent = 91,
+                day = 21,
+                exerciseCount = 8,
+                exerciseTime = 7.20,
+                exerciseKcal = 290
+            ),
         )
         firstAdapter.setData(detailList)
     }

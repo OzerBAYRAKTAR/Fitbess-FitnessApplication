@@ -1,18 +1,22 @@
 package com.bayraktar.healthybackandneck.ui.FirstActivity.SixthFragment
 
 import android.animation.ObjectAnimator
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentFivethBinding
 import com.bayraktar.healthybackandneck.databinding.FragmentSixthBinding
 import com.bayraktar.healthybackandneck.ui.HomeActivity
+import kotlin.math.log
 
 
 class SixthFragment : Fragment() {
@@ -32,6 +36,8 @@ class SixthFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        backstack()
+
         val handler = Handler(Looper.getMainLooper())
         var status = 0
 
@@ -47,6 +53,7 @@ class SixthFragment : Fragment() {
                                 binding.imageSplash.setImageResource(R.drawable.splashnew1)
                             }
                         }
+
                         65 -> {
                             handler.post {
                                 binding.labelSplash.text = getString(R.string.splash_3)
@@ -75,5 +82,16 @@ class SixthFragment : Fragment() {
             }, 9000)
         }
     }
+
+    private fun backstack() {
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                Log.d(TAG, "Back pressed")
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+
+    }
+
 
 }

@@ -26,6 +26,8 @@ class FivethFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        changeBackground()
+
         binding.appCompatButton.setOnClickListener{
             val action = FivethFragmentDirections.actionFivethFragmentToSixthFragment()
             view.findNavController().navigate(action)
@@ -34,6 +36,63 @@ class FivethFragment : Fragment() {
             val action = FivethFragmentDirections.actionFivethFragmentToFourthFragment()
             view.findNavController().navigate(action)
         }
+    }
+    private fun changeBackground() = with(binding) {
+        card1.setOnClickListener {
+            if (cns1.background != null) {
+                cns1.background = null
+                check1.isChecked = false
+            }else {
+                cns1.setBackgroundResource(R.drawable.firstselected_background)
+                check1.isChecked = true
+            }
+        }
+        card2.setOnClickListener {
+            if (cns2.background != null) {
+                cns2.background = null
+                check2.isChecked = false
+            } else {
+                cns2.setBackgroundResource(R.drawable.firstselected_background)
+                check2.isChecked = true
+            }
+        }
+        card3.setOnClickListener {
+            if (cns3.background != null) {
+                cns3.background = null
+                check3.isChecked = false
+            } else {
+                cns3.setBackgroundResource(R.drawable.firstselected_background)
+                check3.isChecked = true
+            }
+        }
+        card4.setOnClickListener {
+            if (cns4.background != null) {
+                cns4.background = null
+                check4.isChecked = false
+            } else {
+                cns4.setBackgroundResource(R.drawable.firstselected_background)
+                check4.isChecked = true
+            }
+        }
+        card5.setOnClickListener {
+            if (cns5.background != null) {
+                cns5.background = null
+                check5.isChecked = false
+            } else {
+                cns5.setBackgroundResource(R.drawable.firstselected_background)
+                check5.isChecked = true
+            }
+        }
+        card6.setOnClickListener {
+            if (cns6.background != null) {
+                cns6.background = null
+                check6.isChecked = false
+            } else {
+                cns6.setBackgroundResource(R.drawable.firstselected_background)
+                check6.isChecked = true
+            }
+        }
+
     }
 
 }

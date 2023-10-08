@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentDetailDayBinding
+import com.bayraktar.healthybackandneck.utils.homeFragmentListener
 
 class DetailDayFragment : Fragment() {
 
@@ -26,9 +27,9 @@ class DetailDayFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         binding.startExercise.setOnClickListener {
-            val action =
-                DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment()
+            val action = DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment()
             view.findNavController().navigate(action)
         }
     }

@@ -37,14 +37,8 @@ class ExerciseDetailFirstFragment : Fragment(),RecyclerViewClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        activity?.window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-        val listener = activity as? homeFragmentListener
-        listener?.hideConstraintLayout()
 
         setRecyclerview()
-
-        val action = ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToDetailDayFragment()
-        view.findNavController().navigate(action)
 
 
 
@@ -202,7 +196,9 @@ class ExerciseDetailFirstFragment : Fragment(),RecyclerViewClickListener {
     }
 
     override fun recyclerviewListClicked(v: View, position: Int) {
-        TODO("Not yet implemented")
+
+        val action = ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToDetailDayFragment()
+        view?.findNavController()?.navigate(action)
     }
 
 

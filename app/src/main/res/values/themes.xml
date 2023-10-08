@@ -34,6 +34,14 @@
     <style name="NumberPickerStyle">
         <item name="android:textSize">20sp</item> <!-- Set your desired text size here -->
     </style>
+    
+    <style name="roundedImageStyle" >
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">46%</item>
+        <item name="cornerSizeBottomRight">46%</item>
+        <item name="cornerSizeTopLeft">46%</item>
+        <item name="cornerSizeBottomLeft">46%</item>
+    </style>
 
 
     <dimen name="viewpager_margin">50dp</dimen>

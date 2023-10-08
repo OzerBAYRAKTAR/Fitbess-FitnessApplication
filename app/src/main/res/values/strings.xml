@@ -19,7 +19,6 @@
     <string name="desc2">Sağlıklı bir yaşam için düzenli olarak spor yap ve sağlıklı beslen</string>
     <string name="desc3">Hareketsizliğe karşı harekete GEÇ</string>
     <string name="healthy_body">Sağlıklı Vücut</string>
-    <string name="home">Anasayfa</string>
     <string name="exercice">Egzersiz</string>
     <string name="exercices">Egzersizler</string>
     <string name="kcal">Kalori</string>
@@ -29,6 +28,7 @@
     <string name="profile">Profil</string>
     <string name="settings">Ayarlar</string>
     <string name="reach_us">Bize Ulaşın</string>
+    <string name="search">Besin ara</string>
 
     <!-- home fragment viewpager -->
     <string name="hometitle1">Kolay Seviye</string>
@@ -65,6 +65,7 @@
     <string name="nutrition_desc">Sağlıklı bir beslenme tarzı için bazı tavsiyeler</string>
     <string name="breath">Nefes Egzersizleri</string>
     <string name="breath_desc">Sağlıklı Yaşam İçin Etkili Nefes Alma Teknikleri</string>
+    <string name="search_food">Besinleri keşfet</string>
 
 
     <!-- Diet Detail-->
@@ -165,6 +166,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="abs_desc3">Kollarını Sıkılaştır</string>
 
     <!-- Leg-Butt-->
+
     <string name="leg_exercises">Bacak-Popo Güçlendirme Hareketleri</string>
     <string name="leg_desc1">Başlangiç Bacak Hareketleri</string>
     <string name="leg_desc2">Bacak Kaslarını Güçlendir</string>
@@ -242,6 +244,91 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="splash_3">Sana uygun plan hazırlanıyor…</string>
     <string name="getready">Egzersiz için hazırlan!…</string>
     <string name="sec_time_left">Saniye kaldı</string>
+    <string name="get_rest">Şimdi Dinlen!</string>
+    <string name="congrulations">TEBRİKLER!</string>
+    <string name="workout_complete">Antrenmanı başarıyla tamamladın.</string>
+    <string name="skip_Rest">Dinlenmeyi atla</string>
+    <string name="home">Anasayfa</string>
+
+    <!-- Foody-->
+    <string name="meat">Et</string>
+    <string name="milkprodct">Süt</string>
+    <string name="fresh">Sebze</string>
+    <string name="fruit">Meyve</string>
+    <string name="other">Diğer</string>
+    <string name="legume">Bakliyat</string>
+
+    <!-- Fresh-->
+    <string name="patates">Patates</string>
+    <string name="patlican">Patlican</string>
+    <string name="marul">Marul</string>
+    <string name="havuc">Havuc</string>
+    <string name="roka">Roka</string>
+    <string name="tere">Tere</string>
+    <string name="sogan">Sogan</string>
+    <string name="biber">Biber</string>
+    <string name="domates">Domates</string>
+
+    <!-- Meat-->
+    <string name="antrikot">Antrikot</string>
+    <string name="biftek">Biftek</string>
+    <string name="bonfile">Bonfile</string>
+    <string name="kiyma">Kıyma</string>
+    <string name="hindi">Hindi eti</string>
+    <string name="kuzu">Kuzu eti</string>
+    <string name="tavuk">Tavuk eti</string>
+    <string name="ordek">Ordek eti</string>
+    <string name="ahtapot">Ahtapot</string>
+    <string name="karides">Karides</string>
+    <string name="alabalık">Alabalık</string>
+    <string name="levrek">Levrek</string>
+    <string name="kalamar">Kalamar</string>
+    <string name="hamsi">Hamsi</string>
+    <string name="somon">Somon</string>
+
+    <!-- Milk-->
+    <string name="sut">Sut</string>
+    <string name="yogurt">Yogurt</string>
+    <string name="taze_peynir">Taze peynir</string>
+    <string name="kasar_peynir">Kaşar peynir</string>
+    <string name="lor_peynir">Lor peynir</string>
+    <string name="ayran">Ayran</string>
+    <string name="kefir">Kefir</string>
+    <string name="tereyagi">Tereyagi</string>
+    <string name="yumurta">Yumurta</string>
+
+    <!-- Fruit-->
+    <string name="muz">Muz</string>
+    <string name="elma">Elma</string>
+    <string name="armut">Armut</string>
+    <string name="cilek">Cilek</string>
+    <string name="karpuz">Karpuz</string>
+    <string name="kavun">Kavun</string>
+    <string name="seftali">Seftali</string>
+    <string name="kayisi">Kayisi</string>
+    <string name="erik">Erik</string>
+    <string name="incir">İncir</string>
+    <string name="uzum">Uzum</string>
+    <string name="kiraz">Kiraz</string>
+
+    <!-- Legume-->
+    <string name="bakla">Bakla</string>
+    <string name="bamya">Bamya</string>
+    <string name="barbunya">Barbunya</string>
+    <string name="bezelye">Bezelye</string>
+    <string name="borulce">Borulce</string>
+    <string name="mercimek">Mercimek</string>
+    <string name="kestane">Kestane</string>
+    <string name="fasulye">Fasulye</string>
+    <string name="nohut">Nohut</string>
+    <string name="ceviz">Ceviz</string>
+    <string name="fistik">Fistik</string>
+    <string name="yesil_fasulye">Yesil fasulye</string>
+    <string name="tofu">Tofu</string>
+    <string name="badem">Badem</string>
+
+
+
 
 
 </resources>

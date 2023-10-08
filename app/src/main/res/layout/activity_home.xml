@@ -18,60 +18,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cnnm3"
-            android:layout_width="match_parent"
-            android:background="#FDFCFC"
-            android:paddingBottom="4dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="13dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/robotoslabsemibold"
-                android:text="Fitbess"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                app:layout_constraintStart_toEndOf="@+id/imageView6"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:src="@drawable/women"
-                app:layout_constraintBottom_toBottomOf="@+id/textView17"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView17" />
-
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="25dp"
-                android:src="@drawable/settttng"
-                app:layout_constraintBottom_toBottomOf="@+id/textView17"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView17" />
-
-            <ImageView
-                android:id="@+id/im1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="30dp"
-                android:src="@drawable/adblock"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-                app:layout_constraintEnd_toStartOf="@+id/imageView9"
-                app:layout_constraintTop_toTopOf="@+id/imageView9" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- SmoothBottomBar -->
         <androidx.fragment.app.FragmentContainerView
@@ -86,7 +32,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cnnm3"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:navGraph="@navigation/nav_pragh" />
 
