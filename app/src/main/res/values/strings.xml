@@ -326,9 +326,15 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="yesil_fasulye">Yesil fasulye</string>
     <string name="tofu">Tofu</string>
     <string name="badem">Badem</string>
-
-
-
+    <string name="txtiron">Demir</string>
+    <string name="txtmagnesium">Magnezyum</string>
+    <string name="txtpotasium">Potasyum</string>
+    <string name="txtsodium">Sodyum</string>
+    <string name="txtcalsium">Kalsiyum</string>
+    <string name="txtoil">Yağ</string>
+    <string name="txtcarb">Karbonhidrat</string>
+    <string name="txtprotein">Protein</string>
+    <string name="txtvitaminc">C Vitamini</string>
 
 
 </resources>

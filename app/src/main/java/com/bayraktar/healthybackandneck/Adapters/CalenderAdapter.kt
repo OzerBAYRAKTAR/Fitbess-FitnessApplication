@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bayraktar.healthybackandneck.utils.CalendarUtils
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.utils.selectedDate
 import java.time.LocalDate
 
 
@@ -50,7 +50,7 @@ class CalenderAdapter(
     override fun onBindViewHolder(holder: CalendarViewHolder, position: Int) {
         val date = days[position]
         holder.dayOfMonth.text = date.dayOfMonth.toString()
-        if (date == CalendarUtils.selectedDate) holder.parentView.setBackgroundColor(Color.LTGRAY)
+        if (date == selectedDate) holder.parentView.setBackgroundColor(Color.LTGRAY)
     }
 
     override fun getItemCount(): Int {

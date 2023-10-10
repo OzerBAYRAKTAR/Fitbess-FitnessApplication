@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.Models.FoodModel.FoodItems
 import com.bayraktar.healthybackandneck.R
@@ -40,50 +41,122 @@ class MilkProductsFragment : Fragment(),RecyclerViewClickListener {
             FoodItems(
                 id = 1,
                 title = getString(R.string.sut),
-                calori = 700,
-                imageFood = R.drawable.sut
+                calori = 42,
+                imageFood = R.drawable.sut,
+                protein = "3.4 gr",
+                carb = "5 gr",
+                yag = "1 gr",
+                vitaminC = "0 mg",
+                sodium = "44 mg",
+                calsium = "125 mg",
+                potasium = "150 mg",
+                magnesium = "11 mg",
+                iron = "0 mg"
             ),
             FoodItems(
                 id = 2,
                 title = getString(R.string.yogurt),
-                calori = 700,
-                imageFood = R.drawable.yogurt
+                calori = 58,
+                imageFood = R.drawable.yogurt,
+                protein = "10 gr",
+                carb = "3.6 gr",
+                yag = "0.4 gr",
+                vitaminC = "0 mg",
+                sodium = "36 mg",
+                calsium = "110 mg",
+                potasium = "141 mg",
+                magnesium = "11 mg",
+                iron = "0.1 mg"
             ),
             FoodItems(
                 id = 3,
                 title = getString(R.string.taze_peynir),
-                calori = 700,
-                imageFood = R.drawable.peynir
+                calori = 311,
+                imageFood = R.drawable.peynir,
+                protein = "20 gr",
+                carb = "2.5 gr",
+                yag = "24 gr",
+                vitaminC = "0 mg",
+                sodium = "704 mg",
+                calsium = "690 mg",
+                potasium = "126 mg",
+                magnesium = "29 mg",
+                iron = "0.2 mg"
             ),
             FoodItems(
                 id = 4,
                 title = getString(R.string.ayran),
-                calori = 700,
-                imageFood = R.drawable.biber
+                calori = 37,
+                imageFood = R.drawable.ayran,
+                protein = "2 gr",
+                carb = "3.1 gr",
+                yag = "1.6 gr",
+                vitaminC = "0 mg",
+                sodium = "312 mg",
+                calsium = "100 mg",
+                potasium = "0 mg",
+                magnesium = "0 mg",
+                iron = "0 mg"
             ),
             FoodItems(
                 id = 5,
                 title = getString(R.string.kefir),
-                calori = 700,
-                imageFood = R.drawable.biber
+                calori = 38,
+                imageFood = R.drawable.kefir,
+                protein = "3.5 gr",
+                carb = "4.1 gr",
+                yag = "0.1 gr",
+                vitaminC = "0 mg",
+                sodium = "51 mg",
+                calsium = "122 mg",
+                potasium = "152 mg",
+                magnesium = "0 mg",
+                iron = "0 mg"
             ),
             FoodItems(
                 id = 6,
                 title = getString(R.string.tereyagi),
-                calori = 700,
-                imageFood = R.drawable.biber
+                calori = 717,
+                imageFood = R.drawable.tereyagi,
+                protein = "0.9 gr",
+                carb = "0 gr",
+                yag = "81 gr",
+                vitaminC = "0 mg",
+                sodium = "11 mg",
+                calsium = "20 mg",
+                potasium = "24 mg",
+                magnesium = "0 mg",
+                iron = "0 mg"
             ),
             FoodItems(
                 id = 7,
                 title = getString(R.string.lor_peynir),
                 calori = 700,
-                imageFood = R.drawable.biber
+                imageFood = R.drawable.lor,
+                protein = "11 gr",
+                carb = "3.4 gr",
+                yag = "4.3 gr",
+                vitaminC = "0 mg",
+                sodium = "364 mg",
+                calsium = "83 mg",
+                potasium = "104 mg",
+                magnesium = "8 mg",
+                iron = "0.1 mg"
             ),
             FoodItems(
                 id = 8,
                 title = getString(R.string.yumurta),
-                calori = 700,
-                imageFood = R.drawable.biber
+                calori = 115,
+                imageFood = R.drawable.yumurta,
+                protein = "13 gr",
+                carb = "1.1 gr",
+                yag = "11 gr",
+                vitaminC = "0 mg",
+                sodium = "124 mg",
+                calsium = "50 mg",
+                potasium = "126 mg",
+                magnesium = "10 mg",
+                iron = "1.2 mg"
             ),
         )
         foodAdapter = FoodTablayoutAdapter(foodList,this)
@@ -91,6 +164,7 @@ class MilkProductsFragment : Fragment(),RecyclerViewClickListener {
         foodAdapter.setData(foodList)
 
     }
+
     private fun setRecyclerview() = with(binding) {
         rvMealList.layoutManager = LinearLayoutManager(requireContext())
         foodAdapter = FoodTablayoutAdapter(foodList,this@MilkProductsFragment)
@@ -98,7 +172,13 @@ class MilkProductsFragment : Fragment(),RecyclerViewClickListener {
     }
 
     override fun recyclerviewListClicked(v: View, position: Int) {
-        TODO("Not yet implemented")
+        if (foodList.isNotEmpty()) {
+            val action = MilkProductsFragmentDirections.actionMilkProductsFragmentToFoodDetailFragment(
+                foodList = foodList[position]
+            )
+            view?.findNavController()?.navigate(action)
+        }
+
     }
 
 
