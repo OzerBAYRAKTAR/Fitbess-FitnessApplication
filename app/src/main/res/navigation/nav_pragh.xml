@@ -134,8 +134,37 @@
         android:id="@+id/id_food_fragment"
         android:name="com.bayraktar.healthybackandneck.ui.Food.FoodFragment"
         android:label="fragment_food"
-        tools:layout="@layout/fragment_food" >
-    </fragment>
+        tools:layout="@layout/fragment_food" />
+    <fragment
+        android:id="@+id/freshFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.Food.TablayoutAdapters.FreshFragment"
+        android:label="fragment_fresh"
+        tools:layout="@layout/fragment_fresh" />
+    <fragment
+        android:id="@+id/fruitFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.Food.TablayoutAdapters.FruitFragment"
+        android:label="fragment_fruit"
+        tools:layout="@layout/fragment_fruit" />
+    <fragment
+        android:id="@+id/legumesFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.Food.TablayoutAdapters.LegumesFragment"
+        android:label="fragment_legumes"
+        tools:layout="@layout/fragment_legumes" />
+    <fragment
+        android:id="@+id/meetFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.Food.TablayoutAdapters.MeetFragment"
+        android:label="fragment_meet"
+        tools:layout="@layout/fragment_meet" />
+    <fragment
+        android:id="@+id/milkProductsFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.Food.TablayoutAdapters.MilkProductsFragment"
+        android:label="fragment_milk_products"
+        tools:layout="@layout/fragment_milk_products" />
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.FoodDetail.FoodDetailFragment"
+        android:label="fragment_food_detail"
+        tools:layout="@layout/fragment_food_detail" />
 
 
 </navigation>

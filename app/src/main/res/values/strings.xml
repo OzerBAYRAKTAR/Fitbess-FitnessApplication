@@ -337,4 +337,12 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="txtvitaminc">C Vitamini</string>
 
 
+    <string name="attention">Uyarı</string>
+    <string name="alertmessage">Çıkış yapmak istediğinize emin misiniz?</string>
+    <string name="yes">Yes</string>
+    <string name="no">Hayır</string>
+
+
+
+
 </resources>

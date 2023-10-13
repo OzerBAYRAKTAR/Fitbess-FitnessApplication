@@ -23,11 +23,11 @@ import com.bayraktar.healthybackandneck.utils.showToast
 import com.google.gson.Gson
 
 
-class MilkProductsFragment : Fragment(),RecyclerViewClickListener {
-    private var _binding: FragmentMilkProductsBinding?= null
+class MilkProductsFragment : Fragment(), RecyclerViewClickListener {
+    private var _binding: FragmentMilkProductsBinding? = null
     val binding get() = _binding!!
     private lateinit var foodAdapter: FoodTablayoutAdapter
-    private var foodList= emptyList<FoodItems>()
+    private var foodList = emptyList<FoodItems>()
     lateinit var context: AppCompatActivity
 
 
@@ -36,7 +36,7 @@ class MilkProductsFragment : Fragment(),RecyclerViewClickListener {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentMilkProductsBinding.inflate(inflater,container,false)
+        _binding = FragmentMilkProductsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -169,7 +169,7 @@ class MilkProductsFragment : Fragment(),RecyclerViewClickListener {
                 iron = "1.2 mg"
             ),
         )
-        foodAdapter = FoodTablayoutAdapter(foodList,this)
+        foodAdapter = FoodTablayoutAdapter(foodList, this)
         binding.rvMealList.adapter = foodAdapter
         foodAdapter.setData(foodList)
 
@@ -177,7 +177,7 @@ class MilkProductsFragment : Fragment(),RecyclerViewClickListener {
 
     private fun setRecyclerview() = with(binding) {
         rvMealList.layoutManager = LinearLayoutManager(requireContext())
-        foodAdapter = FoodTablayoutAdapter(foodList,this@MilkProductsFragment)
+        foodAdapter = FoodTablayoutAdapter(foodList, this@MilkProductsFragment)
         rvMealList.adapter = foodAdapter
     }
 
@@ -187,7 +187,8 @@ class MilkProductsFragment : Fragment(),RecyclerViewClickListener {
     }
 
     override fun recyclerviewListClicked(v: View, position: Int) {
-        val listProduct = foodList[position]
+        val listProduct = foodList
+        val id = foodList[position].id
 
         val fm = context.supportFragmentManager
 
@@ -195,14 +196,15 @@ class MilkProductsFragment : Fragment(),RecyclerViewClickListener {
         val bundle = Bundle()
         val gson = Gson()
         val json = gson.toJson(listProduct)
+        bundle.putInt("intValue", id)
         bundle.putString("jsonList", json)
 
 
         val receiver = FoodDetailFragment()
         receiver.arguments = bundle
 
-        val transaction : FragmentTransaction = fm.beginTransaction()
-        transaction.replace(R.id.containerfood,receiver).addToBackStack(null)
+        val transaction: FragmentTransaction = fm.beginTransaction()
+        transaction.replace(R.id.containerfood, receiver).addToBackStack("transactionTag")
         transaction.commit()
 
     }

@@ -241,7 +241,8 @@ class FruitFragment : Fragment(),RecyclerViewClickListener {
     }
 
     override fun recyclerviewListClicked(v: View, position: Int) {
-        val listProduct = foodList[position]
+        val listProduct = foodList
+        val id = foodList[position].id
 
         val fm = context.supportFragmentManager
 
@@ -249,6 +250,7 @@ class FruitFragment : Fragment(),RecyclerViewClickListener {
         val bundle = Bundle()
         val gson = Gson()
         val json = gson.toJson(listProduct)
+        bundle.putInt("intValue",id)
         bundle.putString("jsonList", json)
 
 
@@ -256,9 +258,8 @@ class FruitFragment : Fragment(),RecyclerViewClickListener {
         receiver.arguments = bundle
 
         val transaction : FragmentTransaction = fm.beginTransaction()
-        transaction.replace(R.id.containerfood,receiver).addToBackStack(null)
+        transaction.replace(R.id.containerfood,receiver).addToBackStack("transactionTag")
         transaction.commit()
-
     }
 
 

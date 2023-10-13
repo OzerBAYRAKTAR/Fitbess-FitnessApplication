@@ -4,7 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
+    android:background="#FFFFFF"
+    android:clickable="true"
+    android:focusable="true"
+    android:id="@+id/containerDetail"
     android:layout_height="match_parent"
     tools:context=".ui.FoodDetail.FoodDetailFragment">
 
@@ -23,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
+        android:layout_marginStart="5dp"
         android:fontFamily="@font/tahoma"
         android:text="Muz"
         android:textColor="@color/black"
@@ -67,14 +71,15 @@
 
             <TextView
                 android:id="@+id/textView35"
-                android:layout_width="wrap_content"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/tahoma"
-                android:text="100 gramında"
+                android:text="100 gram için besin değerleri"
                 android:textColor="@color/black"
                 android:textSize="23sp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageOtherFood"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageOtherFood"
                 app:layout_constraintTop_toTopOf="@+id/imageOtherFood" />
 
@@ -483,7 +488,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvOtherFood"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/item_otherfoods"
         app:layout_constraintStart_toStartOf="parent"

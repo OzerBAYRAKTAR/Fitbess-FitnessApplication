@@ -1,5 +1,6 @@
 package com.bayraktar.healthybackandneck.ui.HomePage
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -9,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -89,6 +91,8 @@ class HomePageFragment : Fragment() {
         setCurrentIndicator(0)
         setUpIndicators()
         calendarOfWeek()
+
+        backstack()
 
 
         warmUpViewPager()
@@ -591,5 +595,22 @@ class HomePageFragment : Fragment() {
                 calendar.add(Calendar.DAY_OF_MONTH, daysToAdd)
             }
         }
+    }
+    private fun backstack() {
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                AlertDialog.Builder(requireContext())
+                    .setTitle(getString(R.string.attention))
+                    .setMessage(getString(R.string.alertmessage))
+                    .setCancelable(false)
+                    .setPositiveButton(getString(R.string.yes)){_,_ ->
+                        requireActivity().finishAffinity()
+                    }.setNegativeButton(getString(R.string.no)){dialog,_ ->
+                        dialog.dismiss()
+                    }.show()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,callback)
+
     }
 }
