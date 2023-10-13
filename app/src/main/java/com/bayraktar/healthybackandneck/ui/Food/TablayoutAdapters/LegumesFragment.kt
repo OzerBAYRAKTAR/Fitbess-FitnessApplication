@@ -1,17 +1,22 @@
 package com.bayraktar.healthybackandneck.ui.Food.TablayoutAdapters
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.Models.FoodModel.FoodItems
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentFruitBinding
 import com.bayraktar.healthybackandneck.databinding.FragmentLegumesBinding
+import com.bayraktar.healthybackandneck.ui.FoodDetail.FoodDetailFragment
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
+import com.google.gson.Gson
 
 
 class LegumesFragment : Fragment(),RecyclerViewClickListener {
@@ -19,6 +24,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
     val binding get() = _binding!!
     private lateinit var foodAdapter: FoodTablayoutAdapter
     private var foodList= emptyList<FoodItems>()
+    lateinit var context: AppCompatActivity
 
 
     override fun onCreateView(
@@ -231,8 +237,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
                 potasium = "121 mg",
                 magnesium = "30 mg",
                 iron = "5.4 mg"
-            ),
-            FoodItems(
+            ),FoodItems(
                 id = 13,
                 title = getString(R.string.badem),
                 calori = 575,
@@ -248,6 +253,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
                 iron = "3.7 mg"
             ),
 
+
         )
         foodAdapter = FoodTablayoutAdapter(foodList,this)
         binding.rvMealList.adapter = foodAdapter
@@ -259,15 +265,29 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
         foodAdapter = FoodTablayoutAdapter(foodList,this@LegumesFragment)
         rvMealList.adapter = foodAdapter
     }
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        this.context = context as AppCompatActivity
+    }
 
     override fun recyclerviewListClicked(v: View, position: Int) {
-        if (foodList.isNotEmpty()) {
-            val action = LegumesFragmentDirections.actionLegumesFragmentToFoodDetailFragment(
-                foodList = foodList[position]
-            )
-            view?.findNavController()?.navigate(action)
-        }
+        val listProduct = foodList[position]
 
+        val fm = context.supportFragmentManager
+
+
+        val bundle = Bundle()
+        val gson = Gson()
+        val json = gson.toJson(listProduct)
+        bundle.putString("jsonList", json)
+
+
+        val receiver = FoodDetailFragment()
+        receiver.arguments = bundle
+
+        val transaction : FragmentTransaction = fm.beginTransaction()
+        transaction.replace(R.id.containerfood,receiver).addToBackStack(null)
+        transaction.commit()
     }
 
 

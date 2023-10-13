@@ -10,7 +10,7 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/id_exercise_fragment"
+        android:id="@+id/id_food_fragment"
         android:icon="@drawable/foody6"
         android:title="@string/nutrition"
         android:padding="15dp"

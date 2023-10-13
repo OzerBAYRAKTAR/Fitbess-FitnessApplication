@@ -1,17 +1,22 @@
 package com.bayraktar.healthybackandneck.ui.Food.TablayoutAdapters
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.Models.FoodModel.FoodItems
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentFreshBinding
 import com.bayraktar.healthybackandneck.databinding.FragmentFruitBinding
+import com.bayraktar.healthybackandneck.ui.FoodDetail.FoodDetailFragment
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
+import com.google.gson.Gson
 
 
 class FruitFragment : Fragment(),RecyclerViewClickListener {
@@ -20,6 +25,7 @@ class FruitFragment : Fragment(),RecyclerViewClickListener {
     val binding get() = _binding!!
     private lateinit var foodAdapter: FoodTablayoutAdapter
     private var foodList= emptyList<FoodItems>()
+    lateinit var context: AppCompatActivity
 
 
     override fun onCreateView(
@@ -229,14 +235,29 @@ class FruitFragment : Fragment(),RecyclerViewClickListener {
         foodAdapter = FoodTablayoutAdapter(foodList,this@FruitFragment)
         rvMealList.adapter = foodAdapter
     }
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        this.context = context as AppCompatActivity
+    }
 
     override fun recyclerviewListClicked(v: View, position: Int) {
-        if (foodList.isNotEmpty()) {
-            val action = FruitFragmentDirections.actionFruitFragmentToFoodDetailFragment(
-                foodList = foodList[position]
-            )
-            view?.findNavController()?.navigate(action)
-        }
+        val listProduct = foodList[position]
+
+        val fm = context.supportFragmentManager
+
+
+        val bundle = Bundle()
+        val gson = Gson()
+        val json = gson.toJson(listProduct)
+        bundle.putString("jsonList", json)
+
+
+        val receiver = FoodDetailFragment()
+        receiver.arguments = bundle
+
+        val transaction : FragmentTransaction = fm.beginTransaction()
+        transaction.replace(R.id.containerfood,receiver).addToBackStack(null)
+        transaction.commit()
 
     }
 

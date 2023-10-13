@@ -150,8 +150,7 @@ class HomePageFragment : Fragment() {
 
                 1 -> {
                     // Navigate to Fragment 2
-                    val action =
-                        HomePageFragmentDirections.actionIdHomepageFragmentToExerciseDetailSecondFragment()
+                    val action = HomePageFragmentDirections.actionIdHomepageFragmentToExerciseDetailSecondFragment()
                     findNavController().navigate(action)
                 }
 
