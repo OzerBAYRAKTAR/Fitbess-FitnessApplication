@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.bayraktar.healthybackandneck.Models.Exercise.WarmUpModel
+import com.bayraktar.healthybackandneck.data.Models.Exercise.WarmUpModel
 import com.bayraktar.healthybackandneck.databinding.SliderLayoutBinding
 
 class WarmUpAdapter(private val warmList: List<WarmUpModel>, val viewPager2: ViewPager2):

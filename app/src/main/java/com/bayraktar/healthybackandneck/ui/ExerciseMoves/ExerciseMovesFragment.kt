@@ -14,7 +14,9 @@ import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesBinding
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesReadyBinding
 import com.bayraktar.healthybackandneck.ui.ExerciseMovesReady.ExerciseMovesReadyFragmentDirections
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ExerciseMovesFragment : Fragment() {
     private var _binding: FragmentExerciseMovesBinding?= null
     val binding get() = _binding!!

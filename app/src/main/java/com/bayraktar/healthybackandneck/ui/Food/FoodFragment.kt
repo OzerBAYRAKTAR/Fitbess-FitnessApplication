@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.bayraktar.healthybackandneck.Models.Exercise.AbsModel
+import com.bayraktar.healthybackandneck.data.Models.Exercise.AbsModel
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentFoodBinding
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.AbsAdapter

@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bayraktar.healthybackandneck.Models.FoodModel.FoodItems
+import com.bayraktar.healthybackandneck.data.Models.FoodModel.FoodItems
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentFruitBinding
 import com.bayraktar.healthybackandneck.databinding.FragmentLegumesBinding
@@ -237,7 +237,8 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
                 potasium = "121 mg",
                 magnesium = "30 mg",
                 iron = "5.4 mg"
-            ),FoodItems(
+            ),
+            FoodItems(
                 id = 13,
                 title = getString(R.string.badem),
                 calori = 575,

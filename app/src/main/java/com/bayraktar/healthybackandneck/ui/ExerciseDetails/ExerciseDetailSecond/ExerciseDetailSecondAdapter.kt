@@ -4,12 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bayraktar.healthybackandneck.Models.ExerciseDetailModel.ExerciseDetailModel
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.databinding.ItemExercisedaysofweekBinding
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 
 class ExerciseDetailSecondAdapter(
-    private var lsMenu: List<ExerciseDetailModel>,
+    private var lsMenu: List<ExerciseDay>,
     private val rclClickListener: RecyclerViewClickListener
 ): RecyclerView.Adapter<ExerciseDetailSecondAdapter.ItemHolder>() {
 
@@ -34,7 +34,7 @@ class ExerciseDetailSecondAdapter(
         return ItemHolder(itemBinding,rclClickListener)
     }
     //update old list with new list
-    fun setData(list: List<ExerciseDetailModel>) {
+    fun setData(list: List<ExerciseDay>) {
         this.lsMenu = list
         notifyDataSetChanged()
     }
@@ -43,7 +43,6 @@ class ExerciseDetailSecondAdapter(
         val model =lsMenu[position]
 
         holder.binding.apply {
-            txtPercent.text = model.percent.toString()
             txtDay.text = model.day.toString()
             txtExerciseCount.text = model.exerciseCount.toString()
             txtExerciseTime.text = model.exerciseTime.toString()

@@ -1,6 +1,8 @@
-package com.bayraktar.healthybackandneck.Models
+package com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel
 
-data class HomeItems(
+
+data class HomeItem(
+    val homeId: Int= 0,
     val title : String,
     val desc: String,
     val imageMain : Int,

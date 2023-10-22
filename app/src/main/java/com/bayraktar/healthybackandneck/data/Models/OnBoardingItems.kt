@@ -1,4 +1,4 @@
-package com.bayraktar.healthybackandneck.Models
+package com.bayraktar.healthybackandneck.data.Models
 
 data class OnBoardingItems(
     val onBoardingImage: Int,

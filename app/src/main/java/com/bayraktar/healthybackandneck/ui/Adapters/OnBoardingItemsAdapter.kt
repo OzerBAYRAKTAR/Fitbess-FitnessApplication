@@ -1,9 +1,9 @@
-package com.bayraktar.healthybackandneck.Adapters
+package com.bayraktar.healthybackandneck.ui.Adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bayraktar.healthybackandneck.Models.OnBoardingItems
+import com.bayraktar.healthybackandneck.data.Models.OnBoardingItems
 import com.bayraktar.healthybackandneck.databinding.ItemOnboardingContainerBinding
 
 class OnBoardingItemsAdapter(private val onboardList: List<OnBoardingItems>):

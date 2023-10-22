@@ -10,8 +10,8 @@ import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.bayraktar.healthybackandneck.Adapters.OnBoardingItemsAdapter
-import com.bayraktar.healthybackandneck.Models.OnBoardingItems
+import com.bayraktar.healthybackandneck.ui.Adapters.OnBoardingItemsAdapter
+import com.bayraktar.healthybackandneck.data.Models.OnBoardingItems
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.ActivityMainBinding
 

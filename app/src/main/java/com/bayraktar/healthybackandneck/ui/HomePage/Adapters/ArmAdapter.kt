@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.bayraktar.healthybackandneck.Models.Exercise.ArmModel
-import com.bayraktar.healthybackandneck.Models.Exercise.NeckBackModel
+import com.bayraktar.healthybackandneck.data.Models.Exercise.ArmModel
+import com.bayraktar.healthybackandneck.data.Models.Exercise.NeckBackModel
 import com.bayraktar.healthybackandneck.databinding.SliderLayoutBinding
 
 class ArmAdapter(private val armList: List<ArmModel>, val viewPager2: ViewPager2):

@@ -11,7 +11,9 @@ import android.widget.Toast
 import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesReadyBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ExerciseMovesReadyFragment : Fragment() {
 
     private var _binding: FragmentExerciseMovesReadyBinding? = null

@@ -4,12 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.bayraktar.healthybackandneck.Models.HomeItems
-import com.bayraktar.healthybackandneck.Models.OnBoardingItems
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.HomeItem
 import com.bayraktar.healthybackandneck.databinding.ItemHomeListBinding
-import com.bayraktar.healthybackandneck.databinding.ItemOnboardingContainerBinding
 
-    class HomeViewpagerAdapter(private val onboardList: List<HomeItems>,val viewPager2: ViewPager2,val onItemclick: (Int) -> Unit):
+class HomeViewpagerAdapter(private val onboardList: List<HomeItem>, val viewPager2: ViewPager2, val onItemclick: (Int) -> Unit):
     RecyclerView.Adapter<HomeViewpagerAdapter.OnBoardingsItemAdapter>(){
 
 

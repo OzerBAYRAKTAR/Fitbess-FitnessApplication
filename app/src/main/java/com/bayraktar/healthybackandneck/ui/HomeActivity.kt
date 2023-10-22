@@ -21,7 +21,9 @@ import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.ActivityHomeBinding
 import com.bayraktar.healthybackandneck.utils.homeFragmentListener
 import com.google.android.material.navigation.NavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeActivity : AppCompatActivity(),homeFragmentListener {
 
     private lateinit var toolbar: Toolbar

@@ -1,4 +1,4 @@
-package com.bayraktar.healthybackandneck.Models.Exercise
+package com.bayraktar.healthybackandneck.data.Models.Exercise
 
 data class LegButtModel(
     val id: Int,

@@ -79,6 +79,7 @@
             android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="25dp"
             android:background="@drawable/searchviewback"
@@ -91,21 +92,24 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginVertical="20dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginBottom="20dp"
             android:fontFamily="@font/tahoma"
-            android:paddingBottom="10dp"
+            android:gravity="center_vertical"
             android:text="@string/search_food"
             android:textColor="@color/background"
             android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchView" />
+            app:layout_constraintTop_toBottomOf="@+id/searchView"
+            app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView1"
         android:layout_width="match_parent"
-        android:layout_height="71dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
@@ -114,7 +118,7 @@
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayout"
                 android:layout_width="wrap_content"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -136,7 +140,6 @@
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView1" />
 

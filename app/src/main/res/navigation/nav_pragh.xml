@@ -102,6 +102,10 @@
         <action
             android:id="@+id/action_detailDayFragment_to_exerciseDetailSecondFragment"
             app:destination="@id/exerciseDetailSecondFragment" />
+        <argument
+            android:name="exerciseList"
+            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay" />
+
     </fragment>
     <fragment
         android:id="@+id/exerciseMovesFragment2"
@@ -120,6 +124,9 @@
         <action
             android:id="@+id/action_exerciseMovesRestFragment_to_exerciseMovesEndFragment"
             app:destination="@id/exerciseMovesEndFragment" />
+        <action
+            android:id="@+id/action_exerciseMovesRestFragment_to_exerciseMovesFragment2"
+            app:destination="@id/exerciseMovesFragment2" />
     </fragment>
     <fragment
         android:id="@+id/exerciseMovesEndFragment"

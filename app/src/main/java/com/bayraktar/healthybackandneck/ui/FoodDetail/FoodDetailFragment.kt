@@ -14,7 +14,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bayraktar.healthybackandneck.Models.FoodModel.FoodItems
+import com.bayraktar.healthybackandneck.data.Models.FoodModel.FoodItems
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentFoodDetailBinding
 import com.bayraktar.healthybackandneck.ui.Food.FoodFragment
@@ -23,17 +23,17 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
 
-class FoodDetailFragment : Fragment(),RecyclerViewClickListener {
+class FoodDetailFragment : Fragment(), RecyclerViewClickListener {
 
     private var _binding: FragmentFoodDetailBinding? = null
     val binding get() = _binding!!
 
-    private var foodList = ArrayList<FoodItems> ()
-    private var foodlistExceptId = ArrayList<FoodItems> ()
+    private var foodList = ArrayList<FoodItems>()
+    private var foodlistExceptId = ArrayList<FoodItems>()
     private var selectedFoodModel: FoodItems? = null
     private var id = 0
     lateinit var context: AppCompatActivity
-    private lateinit var detailAdapter : FoodDetailAdapter
+    private lateinit var detailAdapter: FoodDetailAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,15 +49,18 @@ class FoodDetailFragment : Fragment(),RecyclerViewClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         backstack()
         setRecycler()
         getSetDate()
-
+        backBtnclicked()
 
     }
+
     private fun setRecycler() = with(binding) {
-        rvOtherFood.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
-        detailAdapter = FoodDetailAdapter(foodList,this@FoodDetailFragment)
+        rvOtherFood.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        detailAdapter = FoodDetailAdapter(foodList, this@FoodDetailFragment)
         rvOtherFood.adapter = detailAdapter
     }
 
@@ -76,7 +79,7 @@ class FoodDetailFragment : Fragment(),RecyclerViewClickListener {
                 json,
                 type
             ) as ArrayList<FoodItems>
-            selectedFoodModel = foodList.filter { it.id ==id }.firstOrNull()
+            selectedFoodModel = foodList.filter { it.id == id }.firstOrNull()
             foodlistExceptId = foodList.filter { it.id != id }.toList() as ArrayList<FoodItems>
 
 
@@ -96,11 +99,12 @@ class FoodDetailFragment : Fragment(),RecyclerViewClickListener {
             txtProtein.text = selectedFoodModel?.protein
             txtSodium.text = selectedFoodModel?.sodium
 
-            detailAdapter = FoodDetailAdapter(foodlistExceptId,this@FoodDetailFragment)
+            detailAdapter = FoodDetailAdapter(foodlistExceptId, this@FoodDetailFragment)
             rvOtherFood.adapter = detailAdapter
             detailAdapter.setData(foodlistExceptId)
         }
     }
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         this.context = context as AppCompatActivity
@@ -110,15 +114,43 @@ class FoodDetailFragment : Fragment(),RecyclerViewClickListener {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 val fragmentManager = requireActivity().supportFragmentManager
-                fragmentManager.popBackStack("transactionTag", FragmentManager.POP_BACK_STACK_INCLUSIVE)
+                fragmentManager.popBackStack(
+                    "transactionTag",
+                    FragmentManager.POP_BACK_STACK_INCLUSIVE
+                )
             }
         }
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,callback)
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
 
     }
 
+    private fun backBtnclicked() = with(binding) {
+        goFoodBack.setOnClickListener {
+            val fragmentManager = requireActivity().supportFragmentManager
+            fragmentManager.popBackStack("transactionTag", FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        }
+    }
+
     override fun recyclerviewListClicked(v: View, position: Int) {
-        TODO("Not yet implemented")
+        binding.apply {
+            val model = foodList[position + 1]
+
+            model.imageFood.let {
+                imageOtherFood.setImageResource(it)
+            }
+            txtTitle.text = model.title
+            txtCalsium.text = model.calsium
+            txtIron.text = model.iron
+            txtKarb.text = model.carb
+            txtVitaminc.text = model.vitaminC.toString()
+            txtYag.text = model.yag
+            txtMagnesium.text = model.magnesium
+            txtPotasium.text = model.potasium
+            txtProtein.text = model.protein
+            txtSodium.text = model.sodium
+
+        }
+
     }
 
 }

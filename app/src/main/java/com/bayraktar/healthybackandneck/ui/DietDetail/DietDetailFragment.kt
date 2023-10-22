@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.bayraktar.healthybackandneck.Adapters.OnBoardingItemsAdapter
-import com.bayraktar.healthybackandneck.Models.DietItems
-import com.bayraktar.healthybackandneck.Models.OnBoardingItems
+import com.bayraktar.healthybackandneck.ui.Adapters.OnBoardingItemsAdapter
+import com.bayraktar.healthybackandneck.data.Models.DietItems
+import com.bayraktar.healthybackandneck.data.Models.OnBoardingItems
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentDietDetailBinding
 import kotlin.math.abs

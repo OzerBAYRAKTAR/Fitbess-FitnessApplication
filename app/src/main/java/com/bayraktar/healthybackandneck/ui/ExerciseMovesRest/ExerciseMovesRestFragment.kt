@@ -9,7 +9,9 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesRestBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ExerciseMovesRestFragment : Fragment() {
 
     private var _binding: FragmentExerciseMovesRestBinding?= null

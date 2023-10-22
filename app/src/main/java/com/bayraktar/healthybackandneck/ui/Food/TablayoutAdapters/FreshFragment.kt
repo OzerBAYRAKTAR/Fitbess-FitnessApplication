@@ -12,7 +12,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bayraktar.healthybackandneck.Models.FoodModel.FoodItems
+import com.bayraktar.healthybackandneck.data.Models.FoodModel.FoodItems
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentFreshBinding
 import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstAdapter

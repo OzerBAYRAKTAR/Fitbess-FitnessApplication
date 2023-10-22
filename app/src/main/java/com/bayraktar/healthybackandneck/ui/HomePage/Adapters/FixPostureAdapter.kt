@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.bayraktar.healthybackandneck.Models.Exercise.FixPostureModel
+import com.bayraktar.healthybackandneck.data.Models.Exercise.FixPostureModel
 import com.bayraktar.healthybackandneck.databinding.SliderLayoutBinding
 
 

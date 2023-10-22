@@ -1,7 +1,6 @@
 package com.bayraktar.healthybackandneck.ui.HomePage
 
 import android.app.AlertDialog
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -18,15 +17,13 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.bayraktar.healthybackandneck.Adapters.OnBoardingItemsAdapter
-import com.bayraktar.healthybackandneck.Models.Exercise.AbsModel
-import com.bayraktar.healthybackandneck.Models.Exercise.ArmModel
-import com.bayraktar.healthybackandneck.Models.Exercise.FixPostureModel
-import com.bayraktar.healthybackandneck.Models.Exercise.LegButtModel
-import com.bayraktar.healthybackandneck.Models.Exercise.NeckBackModel
-import com.bayraktar.healthybackandneck.Models.Exercise.WarmUpModel
-import com.bayraktar.healthybackandneck.Models.HomeItems
-import com.bayraktar.healthybackandneck.Models.OnBoardingItems
+import com.bayraktar.healthybackandneck.data.Models.Exercise.AbsModel
+import com.bayraktar.healthybackandneck.data.Models.Exercise.ArmModel
+import com.bayraktar.healthybackandneck.data.Models.Exercise.FixPostureModel
+import com.bayraktar.healthybackandneck.data.Models.Exercise.LegButtModel
+import com.bayraktar.healthybackandneck.data.Models.Exercise.NeckBackModel
+import com.bayraktar.healthybackandneck.data.Models.Exercise.WarmUpModel
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.HomeItem
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentHomePageBinding
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.AbsAdapter
@@ -35,7 +32,6 @@ import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.FixPostureAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.LegButtAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.NeckBackAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.WarmUpAdapter
-import com.bayraktar.healthybackandneck.ui.HomeActivity
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -113,28 +109,28 @@ class HomePageFragment : Fragment() {
     private fun setOnBoardingItems() = with(binding) {
         homeAdapter = HomeViewpagerAdapter(
             listOf(
-                HomeItems(
+                HomeItem(
                     imageMain = R.drawable.new1_removed,
                     title = getString(R.string.hometitle1),
                     desc = getString(R.string.easy_desc),
                     progress = (2 / 100 * 28),
                     dayOfProgram = 2
                 ),
-                HomeItems(
+                HomeItem(
                     imageMain = R.drawable.new_3,
                     title = getString(R.string.hometitle2),
                     desc = getString(R.string.middle_desc),
                     progress = (6 * 100 / 28),
                     dayOfProgram = 6
                 ),
-                HomeItems(
+                HomeItem(
                     imageMain = R.drawable.new5_removed,
                     title = getString(R.string.hometitle3),
                     desc = getString(R.string.hard_desc),
                     progress = (12 * 100 / 28),
                     dayOfProgram = 12
                 ),
-                HomeItems(
+                HomeItem(
                     imageMain = R.drawable.removed4,
                     title = getString(R.string.create_plan),
                     desc = getString(R.string.create_plan_desc),

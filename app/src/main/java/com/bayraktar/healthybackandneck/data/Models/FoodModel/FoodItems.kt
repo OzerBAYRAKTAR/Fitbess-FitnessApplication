@@ -1,4 +1,4 @@
-package com.bayraktar.healthybackandneck.Models.FoodModel
+package com.bayraktar.healthybackandneck.data.Models.FoodModel
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

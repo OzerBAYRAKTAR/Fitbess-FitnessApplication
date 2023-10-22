@@ -1,0 +1,148 @@
+[
+  {
+    "exerciseId": 1,
+    "dayId": 1,
+    "exerciseName": "Exercise 1",
+    "exerciseDescription": "Exercise 1 description xxx",
+    "image": "cilek",
+    "isExerciseCompleted": false,
+    "isFavourite": false
+  },
+  {
+    "exerciseId": 2,
+    "dayId": 1,
+    "exerciseName": "Exercise 2",
+    "exerciseDescription": "Exercise 2 description xxx",
+    "image": "contact",
+    "isExerciseCompleted": false,
+    "isFavourite": false
+  },
+  {
+    "exerciseId": 3,
+    "dayId": 2,
+    "exerciseName": "Exercise 1",
+    "exerciseDescription": "Exercise 1 description xxx",
+    "image": "bamya",
+    "isExerciseCompleted": false,
+    "isFavourite": false
+  },
+  {
+    "exerciseId": 4,
+    "dayId": 2,
+    "exerciseName": "Exercise 4",
+    "exerciseDescription": "Exercise 4 description xxx",
+    "image": "badem",
+    "isExerciseCompleted": false,
+    "isFavourite": false
+  },
+  {
+    "exerciseId": 5,
+    "dayId": 3,
+    "exerciseName": "Exercise 5",
+    "exerciseDescription": "Exercise 5 description xxx",
+    "image": "bakla",
+    "isExerciseCompleted": false,
+    "isFavourite": false
+  },
+  {
+    "exerciseId": 6,
+    "dayId": 3,
+    "exerciseName": "Exercise 6",
+    "exerciseDescription": "Exercise 6 description xxx",
+    "image": "biber",
+    "isExerciseCompleted": false,
+    "isFavourite": false
+  },
+  {
+    "exerciseId": 7,
+    "dayId": 4,
+    "exerciseName": "Exercise 7",
+    "exerciseDescription": "Exercise 7 description xxx",
+    "image": "durus1",
+    "isExerciseCompleted": false,
+    "isFavourite": false
+  },
+  {
+    "exerciseId": 8,
+    "dayId": 4,
+    "exerciseName": "Exercise 8",
+    "exerciseDescription": "Exercise 8 description xxx",
+    "image": "clockk",
+    "isExerciseCompleted": false,
+    "isFavourite": false
+  },
+  {
+    "exerciseId": 9,
+    "dayId": 5,
+    "exerciseName": "Exercise 9",
+    "exerciseDescription": "Exercise 9 description xxx",
+    "image": "cinko",
+    "isExerciseCompleted": false,
+    "isFavourite": false
+  },
+  {
+    "exerciseId": 10,
+    "dayId": 5,
+    "exerciseName": "Exercise 10",
+    "exerciseDescription": "Exercise 10 description xxx",
+    "image": "biftek",
+    "isExerciseCompleted": false,
+    "isFavourite": false
+  }
+,
+  {
+    "exerciseId": 11,
+    "dayId": 5,
+    "exerciseName": "Exercise 11",
+    "exerciseDescription": "Exercise 11 description xxx",
+    "image": "borulce",
+    "isExerciseCompleted": false,
+    "isFavourite": false
+  }
+,
+  {
+    "exerciseId": 12,
+    "dayId": 6,
+    "exerciseName": "Exercise 12",
+    "exerciseDescription": "Exercise 12 description xxx",
+    "image": "cesitlilik",
+    "isExerciseCompleted": false,
+    "isFavourite": false
+  },
+  {
+    "exerciseId": 13,
+    "dayId": 7,
+    "exerciseName": "Exercise 13",
+    "exerciseDescription": "Exercise 13 description xxx",
+    "image": "ceviz",
+    "isExerciseCompleted": false,
+    "isFavourite": false
+  },
+  {
+    "exerciseId": 14,
+    "dayId": 7,
+    "exerciseName": "Exercise 14",
+    "exerciseDescription": "Exercise 14 description xxx",
+    "image": "diet8",
+    "isExerciseCompleted": false,
+    "isFavourite": false
+  },
+  {
+    "exerciseId": 15,
+    "dayId": 7,
+    "exerciseName": "Exercise 15",
+    "exerciseDescription": "Exercise 15 description xxx",
+    "image": "diet4",
+    "isExerciseCompleted": false,
+    "isFavourite": false
+  },
+  {
+    "exerciseId": 16,
+    "dayId": 8,
+    "exerciseName": "Exercise 16",
+    "exerciseDescription": "Exercise 16 description xxx",
+    "image": "cvitamin",
+    "isExerciseCompleted": false,
+    "isFavourite": false
+  }
+]

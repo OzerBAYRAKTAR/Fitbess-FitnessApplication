@@ -1,4 +1,4 @@
-package com.bayraktar.healthybackandneck.Adapters
+package com.bayraktar.healthybackandneck.ui.Adapters
 
 import android.graphics.Color
 import android.view.LayoutInflater

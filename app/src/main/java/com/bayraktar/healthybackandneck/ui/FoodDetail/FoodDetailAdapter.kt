@@ -3,7 +3,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bayraktar.healthybackandneck.Models.FoodModel.FoodItems
+import com.bayraktar.healthybackandneck.data.Models.FoodModel.FoodItems
 import com.bayraktar.healthybackandneck.databinding.ItemFoodBinding
 import com.bayraktar.healthybackandneck.databinding.ItemOtherfoodsBinding
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
