@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">HealthyBackandNeck</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
 
     //ViewPager2
     <string name="skip">Atla</string>

@@ -68,7 +68,6 @@ class HomePageFragment : Fragment() {
     private lateinit var legAdapter: LegButtAdapter
 
 
-    val sliderHandler = Handler()
 
 
     override fun onCreateView(
@@ -92,7 +91,7 @@ class HomePageFragment : Fragment() {
 
 
         warmUpViewPager()
-        fixPostureViewPager()
+       // fixPostureViewPager()
         backNeckViewPager()
         armViewPager()
         absViewPager()
@@ -102,7 +101,6 @@ class HomePageFragment : Fragment() {
         goDietDetail()
         goBreath()
         setUpTransfer()
-
 
     }
 
@@ -143,8 +141,7 @@ class HomePageFragment : Fragment() {
             when (position) {
                 0 -> {
                     // Navigate to Fragment 1
-                    val action =
-                        HomePageFragmentDirections.actionIdHomepageFragmentToExerciseDetailFirstFragment()
+                    val action = HomePageFragmentDirections.actionIdHomepageFragmentToExerciseDetailFirstFragment()
                     findNavController().navigate(action)
                 }
 
