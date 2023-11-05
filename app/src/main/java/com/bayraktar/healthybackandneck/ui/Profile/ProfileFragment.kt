@@ -30,9 +30,55 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.consLanguage.setOnClickListener {
-            btnLanguageclicked()
+        binding.apply {
+            consLanguage.setOnClickListener {
+                btnLanguageclicked()
+            }
+            constRestart.setOnClickListener {
+                btnRestartClicked()
+            }
+            constTheme.setOnClickListener {
+                btnThemeclicked()
+            }
         }
+
+    }
+
+    private fun btnThemeclicked() {
+        val languages = arrayOf("Light", "Dark Theme")
+        val languageCodes = arrayOf("en", "tr", "de")
+
+        val currentLanguage = Locale.getDefault().language
+        val currentLanguageIndex = languageCodes.indexOf(currentLanguage)
+
+        AlertDialog.Builder(requireContext())
+            .setTitle("Select Language")
+            .setIcon(R.drawable.themee)
+                //which -> like a selected position of list
+            .setSingleChoiceItems(languages, currentLanguageIndex) { dialog, which ->
+                // Change the language when the user selects a new language
+                val selectedLanguageCode = languageCodes[which]
+                LocaleHelper.setLocale(requireContext(), selectedLanguageCode)
+                recreate(requireActivity()) // Restart the activity to apply the language change
+                dialog.dismiss()
+            }
+            .setNegativeButton("Cancel") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+    }
+
+    private fun btnRestartClicked() {
+        AlertDialog.Builder(requireContext())
+            .setTitle("Uyarı")
+            .setMessage("Tüm ilerlemeniz silinecek, devam etmek istediğinize emin misiniz?")
+            .setIcon(R.drawable.restartt)
+            .setCancelable(false)
+            .setPositiveButton("Evet"){dialog,_ ->
+                dialog.dismiss()
+            }.setNegativeButton("Hayır"){dialog,_->
+                dialog.dismiss()
+            }.show()
     }
 
     private fun btnLanguageclicked() {
@@ -42,8 +88,10 @@ class ProfileFragment : Fragment() {
         val currentLanguage = Locale.getDefault().language
         val currentLanguageIndex = languageCodes.indexOf(currentLanguage)
 
+
         AlertDialog.Builder(requireContext())
             .setTitle("Select Language")
+            .setIcon(R.drawable.translation)
             .setSingleChoiceItems(languages, currentLanguageIndex) { dialog, which ->
                 // Change the language when the user selects a new language
                 val selectedLanguageCode = languageCodes[which]

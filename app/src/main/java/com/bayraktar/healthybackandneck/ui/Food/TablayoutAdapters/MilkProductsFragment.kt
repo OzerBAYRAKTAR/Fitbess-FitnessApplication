@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.data.Models.FoodModel.FoodItems
 import com.bayraktar.healthybackandneck.R
@@ -23,7 +24,7 @@ import com.bayraktar.healthybackandneck.utils.showToast
 import com.google.gson.Gson
 
 
-class MilkProductsFragment : Fragment(), RecyclerViewClickListener {
+class  MilkProductsFragment : Fragment(), RecyclerViewClickListener {
     private var _binding: FragmentMilkProductsBinding? = null
     val binding get() = _binding!!
     private lateinit var foodAdapter: FoodTablayoutAdapter
@@ -51,7 +52,7 @@ class MilkProductsFragment : Fragment(), RecyclerViewClickListener {
             FoodItems(
                 id = 1,
                 title = getString(R.string.sut),
-                calori = 42,
+                calori = "42 calorie",
                 imageFood = R.drawable.sut,
                 protein = "3.4 gr",
                 carb = "5 gr",
@@ -66,7 +67,7 @@ class MilkProductsFragment : Fragment(), RecyclerViewClickListener {
             FoodItems(
                 id = 2,
                 title = getString(R.string.yogurt),
-                calori = 58,
+                calori = "58 calorie",
                 imageFood = R.drawable.yogurt,
                 protein = "10 gr",
                 carb = "3.6 gr",
@@ -81,7 +82,7 @@ class MilkProductsFragment : Fragment(), RecyclerViewClickListener {
             FoodItems(
                 id = 3,
                 title = getString(R.string.taze_peynir),
-                calori = 311,
+                calori = "311 calorie" ,
                 imageFood = R.drawable.peynir,
                 protein = "20 gr",
                 carb = "2.5 gr",
@@ -96,7 +97,7 @@ class MilkProductsFragment : Fragment(), RecyclerViewClickListener {
             FoodItems(
                 id = 4,
                 title = getString(R.string.ayran),
-                calori = 37,
+                calori = "37 calorie",
                 imageFood = R.drawable.ayran,
                 protein = "2 gr",
                 carb = "3.1 gr",
@@ -111,7 +112,7 @@ class MilkProductsFragment : Fragment(), RecyclerViewClickListener {
             FoodItems(
                 id = 5,
                 title = getString(R.string.kefir),
-                calori = 38,
+                calori = "38 calorie",
                 imageFood = R.drawable.kefir,
                 protein = "3.5 gr",
                 carb = "4.1 gr",
@@ -126,7 +127,7 @@ class MilkProductsFragment : Fragment(), RecyclerViewClickListener {
             FoodItems(
                 id = 6,
                 title = getString(R.string.tereyagi),
-                calori = 717,
+                calori = "717 calorie",
                 imageFood = R.drawable.tereyagi,
                 protein = "0.9 gr",
                 carb = "0 gr",
@@ -141,7 +142,7 @@ class MilkProductsFragment : Fragment(), RecyclerViewClickListener {
             FoodItems(
                 id = 7,
                 title = getString(R.string.lor_peynir),
-                calori = 700,
+                calori = "700 calorie",
                 imageFood = R.drawable.lor,
                 protein = "11 gr",
                 carb = "3.4 gr",
@@ -156,7 +157,7 @@ class MilkProductsFragment : Fragment(), RecyclerViewClickListener {
             FoodItems(
                 id = 8,
                 title = getString(R.string.yumurta),
-                calori = 115,
+                calori = "115 calorie",
                 imageFood = R.drawable.yumurta,
                 protein = "13 gr",
                 carb = "1.1 gr",
@@ -176,7 +177,8 @@ class MilkProductsFragment : Fragment(), RecyclerViewClickListener {
     }
 
     private fun setRecyclerview() = with(binding) {
-        rvMealList.layoutManager = LinearLayoutManager(requireContext())
+        val layoutmanager = GridLayoutManager(requireContext(),2)
+        rvMealList.layoutManager = layoutmanager
         foodAdapter = FoodTablayoutAdapter(foodList, this@MilkProductsFragment)
         rvMealList.adapter = foodAdapter
     }

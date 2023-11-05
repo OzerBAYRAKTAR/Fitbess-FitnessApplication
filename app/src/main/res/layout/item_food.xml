@@ -2,15 +2,15 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card1"
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:layout_marginVertical="10dp"
-        android:layout_marginHorizontal="5dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="15dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,48 +19,47 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="170dp"
+            android:layout_height="170dp">
+
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imagenew"
-                android:layout_width="90dp"
-                android:layout_margin="5dp"
-                android:layout_height="match_parent"
-                android:background="#EAF3ED"
+                android:layout_width="110dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="#D3FDDC"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
                 app:shapeAppearanceOverlay="@style/roundedImageStyle"
                 app:srcCompat="@drawable/muz" />
-
 
             <TextView
                 android:id="@+id/txtTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="36dp"
-                android:layout_marginBottom="20dp"
                 android:fontFamily="@font/tahoma"
                 android:text="Yoğurt"
-                android:textColor="@color/blue_gray_light"
-                android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imagenew"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.421" />
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="@+id/imagenew"
+                app:layout_constraintStart_toStartOf="@+id/imagenew"
+                app:layout_constraintTop_toBottomOf="@+id/imagenew" />
 
             <TextView
                 android:id="@+id/txtCalori"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/tahoma"
                 android:text="500"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/buttontext"
-                android:textSize="20sp"
+                android:textColor="@color/gray"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/txtTitle"
                 app:layout_constraintStart_toStartOf="@+id/txtTitle"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
@@ -68,12 +67,15 @@
                 android:id="@+id/talbelalori2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:fontFamily="@font/tahoma"
                 android:text="@string/kcal"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/buttontext"
-                android:textSize="20sp"
+                android:visibility="gone"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/gray"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/txtCalori"
+                app:layout_constraintEnd_toEndOf="@+id/imagenew"
                 app:layout_constraintStart_toEndOf="@+id/txtCalori" />
 
             <ImageView
@@ -81,6 +83,7 @@
                 android:layout_height="35dp"
                 android:layout_marginEnd="24dp"
                 android:src="@drawable/right_arrow"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

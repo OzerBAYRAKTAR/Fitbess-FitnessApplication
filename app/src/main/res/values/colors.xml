@@ -26,6 +26,7 @@
     <color name="yellow">#FFEB3B</color>
     <color name="green">#00FF0A</color>
     <color name="dark_pink">#EF3574</color>
+    <color name="fooddetailcolor">#DCF6DC</color>
 
     //indicator color
     <color name="inactive">#C4C4C4</color>

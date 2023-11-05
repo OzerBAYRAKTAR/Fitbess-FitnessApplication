@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.data.Models.FoodModel.FoodItems
 import com.bayraktar.healthybackandneck.R
@@ -46,7 +47,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
             FoodItems(
                 id = 1,
                 title = getString(R.string.bakla),
-                calori = 88,
+                calori = "88 calorie",
                 imageFood = R.drawable.bakla,
                 protein = "8 gr",
                 carb = "18 gr",
@@ -61,7 +62,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
             FoodItems(
                 id = 2,
                 title = getString(R.string.bamya),
-                calori = 20,
+                calori = "20 calorie",
                 imageFood = R.drawable.bamya,
                 protein = "2 gr",
                 carb = "2 gr",
@@ -76,7 +77,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
             FoodItems(
                 id = 3,
                 title = getString(R.string.barbunya),
-                calori = 335,
+                calori = "335 calorie",
                 imageFood = R.drawable.barbunya,
                 protein = "23 gr",
                 carb = "60 gr",
@@ -91,7 +92,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
             FoodItems(
                 id = 4,
                 title = getString(R.string.bezelye),
-                calori = 81,
+                calori = "81 calorie",
                 imageFood = R.drawable.bezelye,
                 protein = "5 gr",
                 carb = "14 gr",
@@ -106,7 +107,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
             FoodItems(
                 id = 5,
                 title = getString(R.string.borulce),
-                calori = 115,
+                calori = "115 calorie",
                 imageFood = R.drawable.borulce,
                 protein = "8 gr",
                 carb = "21 gr",
@@ -121,7 +122,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
             FoodItems(
                 id = 6,
                 title = getString(R.string.mercimek),
-                calori = 116,
+                calori = "116 calorie",
                 imageFood = R.drawable.mercimek,
                 protein = "9 gr",
                 carb = "20 gr",
@@ -136,7 +137,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
             FoodItems(
                 id = 7,
                 title = getString(R.string.kestane),
-                calori = 131,
+                calori = "131 calorie",
                 imageFood = R.drawable.kestane,
                 protein = "2 gr",
                 carb = "28 gr",
@@ -151,7 +152,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
             FoodItems(
                 id = 8,
                 title = getString(R.string.fasulye),
-                calori = 347,
+                calori = "347 calorie",
                 imageFood = R.drawable.fasulye,
                 protein = "21 gr",
                 carb = "63 gr",
@@ -166,7 +167,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
             FoodItems(
                 id = 9,
                 title = getString(R.string.nohut),
-                calori = 364,
+                calori = "364 calorie",
                 imageFood = R.drawable.nohut,
                 protein = "19 gr",
                 carb = "61 gr",
@@ -181,7 +182,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
             FoodItems(
                 id = 10,
                 title = getString(R.string.ceviz),
-                calori = 654,
+                calori = "654 calorie",
                 imageFood = R.drawable.ceviz,
                 protein = "15 gr",
                 carb = "14 gr",
@@ -196,7 +197,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
             FoodItems(
                 id = 14,
                 title = getString(R.string.fistik),
-                calori = 567,
+                calori = "567 calorie",
                 imageFood = R.drawable.fistik,
                 protein = "26 gr",
                 carb = "16 gr",
@@ -211,7 +212,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
             FoodItems(
                 id = 11,
                 title = getString(R.string.yesil_fasulye),
-                calori = 31,
+                calori = "31 calorie",
                 imageFood = R.drawable.yesil_fasulye,
                 protein = "1.8 gr",
                 carb = "7 gr",
@@ -226,7 +227,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
             FoodItems(
                 id = 12,
                 title = getString(R.string.tofu),
-                calori = 76,
+                calori = "76 calorie",
                 imageFood = R.drawable.tofu,
                 protein = "8 gr",
                 carb = "1.9 gr",
@@ -241,7 +242,7 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
             FoodItems(
                 id = 13,
                 title = getString(R.string.badem),
-                calori = 575,
+                calori = "575 calorie",
                 imageFood = R.drawable.badem,
                 protein = "21 gr",
                 carb = "22 gr",
@@ -262,7 +263,8 @@ class LegumesFragment : Fragment(),RecyclerViewClickListener {
 
     }
     private fun setRecyclerview() = with(binding) {
-        rvMealList.layoutManager = LinearLayoutManager(requireContext())
+        val layoutmanager = GridLayoutManager(requireContext(),2)
+        rvMealList.layoutManager = layoutmanager
         foodAdapter = FoodTablayoutAdapter(foodList,this@LegumesFragment)
         rvMealList.adapter = foodAdapter
     }

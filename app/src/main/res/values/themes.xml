@@ -37,10 +37,10 @@
     
     <style name="roundedImageStyle" >
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSizeTopRight">46%</item>
-        <item name="cornerSizeBottomRight">46%</item>
-        <item name="cornerSizeTopLeft">46%</item>
-        <item name="cornerSizeBottomLeft">46%</item>
+        <item name="cornerSizeTopRight">51%</item>
+        <item name="cornerSizeBottomRight">51%</item>
+        <item name="cornerSizeTopLeft">51%</item>
+        <item name="cornerSizeBottomLeft">51%</item>
     </style>
 
 

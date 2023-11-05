@@ -40,7 +40,7 @@
         android:id="@+id/cardView11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#DCF6DC"
+        android:backgroundTint="@color/fooddetailcolor"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="15dp"
         android:paddingBottom="20dp"
