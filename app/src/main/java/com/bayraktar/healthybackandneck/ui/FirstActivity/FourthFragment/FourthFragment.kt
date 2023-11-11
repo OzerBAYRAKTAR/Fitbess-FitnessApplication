@@ -31,7 +31,7 @@ class FourthFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.appCompatButton.setOnClickListener{
-            val action = FourthFragmentDirections.actionFourthFragmentToFivethFragment()
+            val action = FourthFragmentDirections.actionFourthFragmentToFourthDottedFragment()
             view.findNavController().navigate(action)
         }
         binding.appCompatButton2.setOnClickListener{

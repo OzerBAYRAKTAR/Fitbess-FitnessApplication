@@ -43,6 +43,10 @@
         <item name="cornerSizeBottomLeft">51%</item>
     </style>
 
+    <style name="CustomAlertDialog" parent="@style/ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/dialog_background</item>
+    </style>
+
 
     <dimen name="viewpager_margin">50dp</dimen>
 </resources>

@@ -33,7 +33,7 @@ class FivethFragment : Fragment() {
             view.findNavController().navigate(action)
         }
         binding.appCompatButton2.setOnClickListener{
-            val action = FivethFragmentDirections.actionFivethFragmentToFourthFragment()
+            val action = FivethFragmentDirections.actionFivethFragmentToFourthDottedFragment()
             view.findNavController().navigate(action)
         }
     }

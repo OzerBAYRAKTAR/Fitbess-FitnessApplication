@@ -31,9 +31,9 @@ class FirstFragment : Fragment() {
         viewBackgrounds()
 
         binding.goNext.setOnClickListener{
-            //val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment()
-            //view.findNavController().navigate(action)
-            startActivity(Intent(requireActivity(),HomeActivity::class.java))
+            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment()
+            view.findNavController().navigate(action)
+            //startActivity(Intent(requireActivity(),HomeActivity::class.java))
         }
     }
     private fun viewBackgrounds() = with(binding) {

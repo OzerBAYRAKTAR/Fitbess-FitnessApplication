@@ -9,7 +9,9 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -21,9 +23,9 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cnnm3"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="#FDFCFC"
                 android:paddingBottom="4dp"
-                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -78,13 +80,13 @@
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
                 android:fontFamily="@font/tahoma"
                 android:text="@string/txt_record"
                 android:textColor="@color/black"
                 android:textSize="22sp"
-                app:layout_constraintStart_toStartOf="@+id/card2"
-                app:layout_constraintTop_toBottomOf="@+id/card2" />
+                app:layout_constraintStart_toStartOf="@+id/cnnm3"
+                app:layout_constraintTop_toBottomOf="@+id/cnnm3" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card1"
@@ -94,8 +96,9 @@
                 android:backgroundTint="#F8F2EF"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="7dp"
+                app:layout_constraintEnd_toStartOf="@+id/card11"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="@+id/textView13"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView13">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -167,7 +170,9 @@
                 android:backgroundTint="#F1FAFB"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="7dp"
-                app:layout_constraintEnd_toEndOf="@+id/card2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/card1"
                 app:layout_constraintTop_toBottomOf="@id/textView13">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -389,8 +394,9 @@
                 android:text="@string/txt_bodyparameters"
                 android:textColor="@color/black"
                 android:textSize="22sp"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cnnm3"/>
+                app:layout_constraintTop_toBottomOf="@+id/cnnm3" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card2"
@@ -398,6 +404,7 @@
                 android:layout_height="0dp"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="5dp"
+                android:visibility="gone"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -417,7 +424,6 @@
                         android:src="@drawable/gagaga"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-
 
 
                     <TextView
@@ -469,6 +475,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/labelAge"
                         app:layout_constraintStart_toEndOf="@+id/labelCm"
                         app:layout_constraintTop_toTopOf="@+id/labelCm" />
 
@@ -498,72 +505,30 @@
                         app:layout_constraintTop_toBottomOf="@+id/txtweight" />
 
                     <TextView
-                        android:id="@+id/txtwater"
+                        android:id="@+id/txtAge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="45dp"
                         android:fontFamily="@font/tahoma"
-                        android:text="43%"
+                        android:text="25"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/height"
-                        app:layout_constraintTop_toBottomOf="@+id/height" />
-
+                        app:layout_constraintBottom_toTopOf="@+id/labelAge"
+                        app:layout_constraintStart_toStartOf="@+id/height" />
 
                     <TextView
-                        android:id="@+id/water"
+                        android:id="@+id/labelAge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
+                        android:layout_marginBottom="20dp"
                         android:fontFamily="@font/tahoma"
-                        android:text="@string/water_label"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        app:layout_constraintStart_toStartOf="@+id/txtwater"
-                        app:layout_constraintTop_toBottomOf="@+id/txtwater" />
-
-                    <TextView
-                        android:id="@+id/txtwsleep"
-                        android:layout_width="0dp"
-                        android:layout_height="26dp"
-                        android:layout_marginTop="45dp"
-                        android:fontFamily="@font/tahoma"
-                        android:text="7h 30m"
+                        android:text="@string/label_age"
                         android:textColor="@color/black"
                         android:textSize="18sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/weight"
-                        app:layout_constraintTop_toBottomOf="@+id/weight" />
-
-
-                    <TextView
-                        android:id="@+id/sleep"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/tahoma"
-                        android:text="@string/sleep"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        app:layout_constraintStart_toStartOf="@+id/txtwsleep"
-                        app:layout_constraintTop_toBottomOf="@+id/txtwsleep" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/editEndeks"
-                        android:layout_width="match_parent"
-                        android:layout_height="37dp"
-                        android:layout_marginHorizontal="40dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/emptybutton_backgreen"
-                        android:fontFamily="@font/tahoma"
-                        android:text="@string/newTest"
-                        android:textColor="@color/black"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/iamge" />
+                        app:layout_constraintStart_toStartOf="@+id/txtAge"
+                        app:layout_constraintVertical_bias="0.906" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -574,8 +539,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:fontFamily="@font/robotoslabmedium"
                 android:layout_marginTop="15dp"
+                android:fontFamily="@font/robotoslabmedium"
                 android:text="@string/body_indeks"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -583,24 +548,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/card13" />
 
 
-            <TextView
-                android:id="@+id/txt17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotoslabmedium"
-                android:text="BMI(kg/m²)"
-                android:layout_marginBottom="2dp"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="@+id/textView9"
-                app:layout_constraintStart_toEndOf="@+id/textView9" />
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/card3"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -610,7 +563,6 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
 
 
                     <LinearLayout
@@ -627,6 +579,7 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:orientation="vertical">
 
                             <ImageView
@@ -638,7 +591,8 @@
 
                             <View
                                 android:layout_width="70dp"
-                                android:layout_height="15dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="center"
                                 android:background="@drawable/view1_back" />
 
                             <TextView
@@ -656,6 +610,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="9dp"
+                            android:layout_weight="1"
                             android:orientation="vertical">
 
                             <ImageView
@@ -666,8 +621,9 @@
                                 android:src="@drawable/view_down" />
 
                             <View
-                                android:layout_width="75dp"
-                                android:layout_height="15dp"
+                                android:layout_width="70dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="center"
                                 android:background="@drawable/view2_back" />
 
                             <TextView
@@ -684,6 +640,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="9dp"
+                            android:layout_weight="1"
                             android:orientation="vertical">
 
                             <ImageView
@@ -694,8 +651,9 @@
                                 android:src="@drawable/view_down" />
 
                             <View
-                                android:layout_width="90dp"
-                                android:layout_height="15dp"
+                                android:layout_width="70dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="center"
                                 android:background="@drawable/view3_back" />
 
                             <TextView
@@ -712,6 +670,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="9dp"
+                            android:layout_weight="1"
                             android:orientation="vertical">
 
                             <ImageView
@@ -722,8 +681,9 @@
                                 android:src="@drawable/view_down" />
 
                             <View
-                                android:layout_width="95dp"
-                                android:layout_height="15dp"
+                                android:layout_width="70dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="center"
                                 android:background="@drawable/view4_back" />
 
                             <TextView
@@ -763,7 +723,7 @@
                             android:fontFamily="@font/tahoma"
                             android:text=":"
                             android:textColor="@color/black"
-                            android:textSize="17sp" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/bmiIndeks"
@@ -773,15 +733,15 @@
                             android:fontFamily="@font/tahoma"
                             android:text="\u003F"
                             android:textColor="@color/black"
-                            android:textSize="17sp" />
+                            android:textSize="16sp" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/labelCategory"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="30dp"
-                        android:paddingBottom="15dp"
                         android:layout_marginTop="15dp"
                         android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -803,7 +763,7 @@
                             android:fontFamily="@font/tahoma"
                             android:text=":"
                             android:textColor="@color/black"
-                            android:textSize="17sp" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/bmiKategori"
@@ -813,19 +773,234 @@
                             android:fontFamily="@font/tahoma"
                             android:text="\u003F"
                             android:textColor="@color/black"
-                            android:textSize="17sp" />
+                            android:textSize="16sp" />
 
                     </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/editEndeks"
+                        android:layout_width="match_parent"
+                        android:layout_height="37dp"
+                        android:layout_marginHorizontal="80dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/emptybutton_backgreen"
+                        android:fontFamily="@font/tahoma"
+                        android:text="@string/newTest"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelCategory" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
 
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/robotoslabmedium"
+                android:text="@string/label_dayofcalorie"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/card3" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/removedgunlukcalorie"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/linearCalorie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/tahoma"
+                            android:text="@string/label_dayofcalorie"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:fontFamily="@font/tahoma"
+                            android:text=":"
+                            android:textColor="@color/black"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/txtCaloriOfDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:fontFamily="@font/tahoma"
+                            android:text="\u003F"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/editDayofCalorie"
+                        android:layout_width="match_parent"
+                        android:layout_height="37dp"
+                        android:layout_marginHorizontal="80dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/emptybutton_backgreen"
+                        android:fontFamily="@font/tahoma"
+                        android:text="@string/newTest"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearCalorie" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/robotoslabmedium"
+                android:text="@string/label_fatrate"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card5" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card6"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="100dp"
+                        android:scaleType="fitEnd"
+                        android:src="@drawable/daydaycalorie"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/linearfatrate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/tahoma"
+                            android:text="@string/label_yourfaterate"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:fontFamily="@font/tahoma"
+                            android:text=":"
+                            android:textColor="@color/black"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/txtfatrate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:fontFamily="@font/tahoma"
+                            android:text="\u003F"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/editfatrate"
+                        android:layout_width="match_parent"
+                        android:layout_height="37dp"
+                        android:layout_marginHorizontal="80dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/emptybutton_backgreen"
+                        android:fontFamily="@font/tahoma"
+                        android:text="@string/newTest"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearfatrate" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card6" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

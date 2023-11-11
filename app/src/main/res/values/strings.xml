@@ -177,7 +177,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="booty">Kalça</string>
     <string name="belly">Bel</string>
     <string name="chest">chest</string>
-    <string name="body_indeks">Beden Kütle Endeksi</string>
+    <string name="body_indeks">Vücut Kütle İndeksi(BMI)</string>
     <string name="height">Boy Ölçüsü(cm)</string>
     <string name="height_label">Boy</string>
     <string name="weight">Ağırlık(kg)</string>
@@ -338,6 +338,33 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="alertmessage">Çıkış yapmak istediğinize emin misiniz?</string>
     <string name="yes">Yes</string>
     <string name="no">Hayır</string>
+    <string name="label_age">Yaş</string>
+    <string name="label_dayofcalorie">Günlük Kalori İhtiyacı</string>
+    <string name="label_fatrate">Vücut Yağ Oranı</string>
+    <string name="label_yourfaterate">Yağ Oranın</string>
+    <string name="label_low">Düşük düzeyde hareketli</string>
+    <string name="label_middle">Orta düzeyde hareketli</string>
+    <string name="label_high">Yüksek düzeyde hareketli</string>
+    <string name="label_toohigh">Çok yüksek düzeyde hareketli</string>
+    <string name="label_save">Kaydet</string>
+    <string name="label_calculate">Hesapla</string>
+    <string name="label_neckcm">Boyun Çevresi(cm)</string>
+    <string name="label_gender">Cinsiyet</string>
+    <string name="label_man">Erkek</string>
+    <string name="label_female">Kadın</string>
+    <string name="label_dailycalorie">Günlük Kalori İhtiyacı</string>
+    <string name="label_activitylevel">Aktivite Seviyesi</string>
+    <string name="label_bellycm">Bel Çevresi(cm)</string>
+    <string name="label_buttcm">Kalça Çevresi(cm)</string>
+    <string name="label_inputattention">Lütfen geçerli bir değer giriniz</string>
+    <string name="label_okay">Tamam</string>
+    <string name="label_bmi">Vücut Kitle Endeksi</string>
+    <string name="label_zayif">Zayıf</string>
+    <string name="label_fat">Şişman</string>
+    <string name="label_weighted">KiLolu</string>
+    <string name="label_normal">Normal</string>
+    <string name="label_tryagain">Tekrar Deneyiniz</string>
+    <string name="label_yourfatrate">Vücut Yağ Oranın</string>
 
 
 </resources>

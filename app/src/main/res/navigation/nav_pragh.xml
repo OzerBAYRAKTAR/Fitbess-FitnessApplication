@@ -35,7 +35,17 @@
         android:id="@+id/id_statistics_fragment"
         android:name="com.bayraktar.healthybackandneck.ui.Statistics.StatisticsFragment"
         android:label="@string/statistics"
-        tools:layout="@layout/fragment_statistics" />
+        tools:layout="@layout/fragment_statistics" >
+        <action
+            android:id="@+id/action_id_statistics_fragment_to_BMIFragment"
+            app:destination="@id/BMIFragment" />
+        <action
+            android:id="@+id/action_id_statistics_fragment_to_bodyFatRateFragment"
+            app:destination="@id/bodyFatRateFragment" />
+        <action
+            android:id="@+id/action_id_statistics_fragment_to_dailyCalorieFragment"
+            app:destination="@id/dailyCalorieFragment" />
+    </fragment>
     <fragment
         android:id="@+id/dietDetailFragment"
         android:name="com.bayraktar.healthybackandneck.ui.DietDetail.DietDetailFragment"
@@ -172,6 +182,33 @@
         android:name="com.bayraktar.healthybackandneck.ui.FoodDetail.FoodDetailFragment"
         android:label="fragment_food_detail"
         tools:layout="@layout/fragment_food_detail" />
+    <fragment
+        android:id="@+id/BMIFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.Statistics.DialogFragments.BMIFragment"
+        android:label="fragment_b_m_i"
+        tools:layout="@layout/fragment_b_m_i" >
+        <action
+            android:id="@+id/action_BMIFragment_to_id_statistics_fragment"
+            app:destination="@id/id_statistics_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bodyFatRateFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.Statistics.DialogFragments.BodyFatRateFragment"
+        android:label="fragment_body_fat_rate"
+        tools:layout="@layout/fragment_body_fat_rate" >
+        <action
+            android:id="@+id/action_bodyFatRateFragment_to_id_statistics_fragment"
+            app:destination="@id/id_statistics_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dailyCalorieFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.Statistics.DialogFragments.DailyCalorieFragment"
+        android:label="fragment_daily_calorie"
+        tools:layout="@layout/fragment_daily_calorie" >
+        <action
+            android:id="@+id/action_dailyCalorieFragment_to_id_statistics_fragment"
+            app:destination="@id/id_statistics_fragment" />
+    </fragment>
 
 
 </navigation>

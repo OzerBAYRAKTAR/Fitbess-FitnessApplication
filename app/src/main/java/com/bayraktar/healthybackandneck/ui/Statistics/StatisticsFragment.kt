@@ -27,7 +27,26 @@ class StatisticsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        buttonClicks()
 
+
+    }
+
+    private fun buttonClicks() {
+        with(binding) {
+            editEndeks.setOnClickListener {
+                val action = StatisticsFragmentDirections.actionIdStatisticsFragmentToBMIFragment()
+                view?.findNavController()?.navigate(action)
+            }
+            editDayofCalorie.setOnClickListener {
+                val action = StatisticsFragmentDirections.actionIdStatisticsFragmentToDailyCalorieFragment()
+                view?.findNavController()?.navigate(action)
+            }
+            editfatrate.setOnClickListener {
+                val action = StatisticsFragmentDirections.actionIdStatisticsFragmentToBodyFatRateFragment()
+                view?.findNavController()?.navigate(action)
+            }
+        }
     }
 
 

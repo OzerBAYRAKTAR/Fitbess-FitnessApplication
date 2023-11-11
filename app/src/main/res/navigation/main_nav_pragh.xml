@@ -44,11 +44,11 @@
         android:label="fragment_fourth"
         tools:layout="@layout/fragment_fourth" >
         <action
-            android:id="@+id/action_fourthFragment_to_fivethFragment"
-            app:destination="@id/fivethFragment" />
-        <action
             android:id="@+id/action_fourthFragment_to_thirdFragment"
             app:destination="@id/thirdFragment" />
+        <action
+            android:id="@+id/action_fourthFragment_to_fourthDottedFragment"
+            app:destination="@id/fourthDottedFragment" />
     </fragment>
     <fragment
         android:id="@+id/fivethFragment"
@@ -59,12 +59,24 @@
             android:id="@+id/action_fivethFragment_to_sixthFragment"
             app:destination="@id/sixthFragment" />
         <action
-            android:id="@+id/action_fivethFragment_to_fourthFragment"
-            app:destination="@id/fourthFragment" />
+            android:id="@+id/action_fivethFragment_to_fourthDottedFragment"
+            app:destination="@id/fourthDottedFragment" />
     </fragment>
     <fragment
         android:id="@+id/sixthFragment"
         android:name="com.bayraktar.healthybackandneck.ui.FirstActivity.SixthFragment.SixthFragment"
         android:label="fragment_sixth"
         tools:layout="@layout/fragment_sixth" />
+    <fragment
+        android:id="@+id/fourthDottedFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.FirstActivity.FourthdottedFragment.FourthDottedFragment"
+        android:label="fragment_fourth_dotted"
+        tools:layout="@layout/fragment_fourth_dotted" >
+        <action
+            android:id="@+id/action_fourthDottedFragment_to_fivethFragment"
+            app:destination="@id/fivethFragment" />
+        <action
+            android:id="@+id/action_fourthDottedFragment_to_fourthFragment"
+            app:destination="@id/fourthFragment" />
+    </fragment>
 </navigation>
