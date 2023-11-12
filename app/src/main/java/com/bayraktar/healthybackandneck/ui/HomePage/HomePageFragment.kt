@@ -82,6 +82,8 @@ class HomePageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
         setOnBoardingItems()
         setCurrentIndicator(0)
         setUpIndicators()

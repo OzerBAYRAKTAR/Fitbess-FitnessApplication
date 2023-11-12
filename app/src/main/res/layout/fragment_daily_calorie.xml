@@ -52,10 +52,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textView124">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtHeight"
+            android:id="@+id/inputHeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="15dp"
+            android:maxLength="3"
             android:inputType="number"
             android:drawableStart="@drawable/label_selector"
             android:maxLines="1"
@@ -89,11 +90,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView126">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtWeight"
+            android:id="@+id/inputWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="15dp"
             android:inputType="number"
+            android:maxLength="3"
             android:drawableStart="@drawable/label_selector"
             android:maxLines="1"
             android:textSize="15sp" />
@@ -126,13 +128,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView127">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtAge"
+            android:id="@+id/inputAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="15dp"
             android:inputType="number"
             android:drawableStart="@drawable/label_selector"
             android:maxLines="1"
+            android:maxLength="3"
             android:textSize="15sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -175,7 +178,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spnrActivity" />
 
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/check1"
+        android:id="@+id/checkMale"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginTop="10dp"
@@ -194,13 +197,13 @@
         android:text="@string/label_man"
         android:textColor="@color/black"
         android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="@+id/check1"
-        app:layout_constraintStart_toEndOf="@+id/check1"
-        app:layout_constraintTop_toTopOf="@+id/check1" />
+        app:layout_constraintBottom_toBottomOf="@+id/checkMale"
+        app:layout_constraintStart_toEndOf="@+id/checkMale"
+        app:layout_constraintTop_toTopOf="@+id/checkMale" />
 
 
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/check2"
+        android:id="@+id/checkFemale"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginTop="8dp"
@@ -220,11 +223,11 @@
         android:text="@string/label_female"
         android:textColor="@color/black"
         android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="@+id/check2"
+        app:layout_constraintBottom_toBottomOf="@+id/checkFemale"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/check2"
-        app:layout_constraintTop_toTopOf="@+id/check2"
+        app:layout_constraintStart_toEndOf="@+id/checkFemale"
+        app:layout_constraintTop_toTopOf="@+id/checkFemale"
         app:layout_constraintVertical_bias="0.222" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -241,7 +244,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/check2" />
+        app:layout_constraintTop_toBottomOf="@+id/checkFemale" />
 
     <TextView
         android:id="@+id/textView125"

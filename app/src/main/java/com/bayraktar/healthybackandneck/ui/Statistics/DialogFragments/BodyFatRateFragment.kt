@@ -79,6 +79,7 @@ class BodyFatRateFragment : Fragment() {
         val neck = neckDesc.text.toString().toInt()
         val belly = bellyDesc.text.toString().toInt()
         val butt = buttDesc.text.toString().toInt()
+        val gender = if (checkMale.isChecked)  getString(R.string.label_male) else getString(R.string.label_female)
 
 
 
@@ -86,6 +87,7 @@ class BodyFatRateFragment : Fragment() {
         dataStoreManager.saveNeck(neck)
         dataStoreManager.saveBelly(belly)
         dataStoreManager.saveBooty(butt)
+        dataStoreManager.saveGender(gender)
 
         val isMale = checkMale.isChecked
 
@@ -100,6 +102,7 @@ class BodyFatRateFragment : Fragment() {
         if (rate < 3) {
             showToast(requireContext(),errorMessage,Gravity.CENTER,0,0)
         }else {
+            dataStoreManager.saveFatrate(formattedRate)
             val title = getString(R.string.label_bmi)
             val message = "\n$labelBodyFatRate: $formattedRate "
             AlertDialog.Builder(requireContext(), R.style.CustomAlertDialog)
@@ -146,8 +149,9 @@ class BodyFatRateFragment : Fragment() {
                 dataStoreManager.getNeck(),
                 dataStoreManager.getBelly(),
                 dataStoreManager.getBooty(),
+                dataStoreManager.getGender(),
 
-            ) { height, neck, belly, booty ->
+            ) { height, neck, belly, booty, gender ->
                 if (height != 0) {
                     inputHeight.setText(height.toString())
                 }
@@ -159,6 +163,13 @@ class BodyFatRateFragment : Fragment() {
                 }
                 if (booty != 0) {
                     buttDesc.setText(booty.toString())
+                }
+                if (gender != "") {
+                    if (gender == "Erkek") {
+                        checkMale.isChecked = true
+                    }else {
+                        checkFemale.isChecked = true
+                    }
                 }
             }.collectLatest {
                 // You can add additional logic here if needed

@@ -63,6 +63,9 @@ class BMIFragment : DialogFragment() {
         val decimalFormat = DecimalFormat("#.##")
         val formattedBmi = decimalFormat.format(bmi)
 
+
+        //formattedBmi ve bmiResult datastore oluştur, kaydet , getle
+
         val bmiResult = try {   //bmiResult -> kategori, formattedBmi -> endeks
             val bmiValue = formattedBmi.replace(',', '.').toDouble()
 
@@ -77,6 +80,8 @@ class BMIFragment : DialogFragment() {
             getString(R.string.label_tryagain)
         }
 
+        dataStoreManager.saveCategory(bmiResult)
+        dataStoreManager.saveIndeks(formattedBmi)
         val title = getString(R.string.label_bmi)
         val message = "\nBMI: $formattedBmi kg/m2 \n \nCategory: $bmiResult"
         AlertDialog.Builder(requireContext(), R.style.CustomAlertDialog)

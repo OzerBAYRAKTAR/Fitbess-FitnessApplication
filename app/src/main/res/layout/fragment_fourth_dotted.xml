@@ -51,8 +51,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cns1"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:background="@drawable/firstselected_background">
+            android:layout_height="52dp">
 
             <TextView
                 style="@style/TextAppearance.AppCompat.Body2"
@@ -75,7 +74,7 @@
                 android:layout_marginEnd="30dp"
                 android:background="@drawable/checkedbox_back"
                 android:button="@null"
-                android:checked="true"
+                android:checked="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

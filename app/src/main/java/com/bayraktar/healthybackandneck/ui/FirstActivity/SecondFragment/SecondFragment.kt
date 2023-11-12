@@ -1,33 +1,39 @@
 package com.bayraktar.healthybackandneck.ui.FirstActivity.SecondFragment
 
-import android.os.Build
 import android.os.Bundle
-import android.text.Html
-import android.util.TypedValue
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.NumberPicker
-import androidx.annotation.RequiresApi
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.findNavController
-import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.data.JetpackDataStore.DataStoreManage
 import com.bayraktar.healthybackandneck.databinding.FragmentSecondBinding
-import com.bayraktar.healthybackandneck.ui.FirstActivity.FirstFragment.FirstFragmentDirections
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 
 class SecondFragment : Fragment() {
 
-    private var _binding: FragmentSecondBinding?= null
+    private var _binding: FragmentSecondBinding? = null
     val binding get() = _binding!!
+    private lateinit var dataStoreManager: DataStoreManage
+    private var selectedAge = 0
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSecondBinding.inflate(inflater,container,false)
+        _binding = FragmentSecondBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
         return binding.root
     }
@@ -35,15 +41,41 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.appCompatButton.setOnClickListener{
-            val action = SecondFragmentDirections.actionSecondFragmentToThirdFragment()
-            view.findNavController().navigate(action)
+        dataStoreManager = DataStoreManage.getInstance(requireContext())
+
+        // Observe the age changes
+        observeCalculates()
+        btnClicks()
+
+        binding.numberPicker.setOnValueChangedListener { xx, yy, newVal ->
+            selectedAge = newVal
         }
-        binding.appCompatButton2.setOnClickListener{
+
+    }
+
+    private fun btnClicks() {
+
+        binding.appCompatButton.setOnClickListener {
+            println(selectedAge)
+            CoroutineScope(Dispatchers.IO).launch {
+                dataStoreManager.saveAge(selectedAge)
+            }
+            val action = SecondFragmentDirections.actionSecondFragmentToThirdFragment()
+            view?.findNavController()?.navigate(action)
+        }
+
+        binding.appCompatButton2.setOnClickListener {
             val action = SecondFragmentDirections.actionSecondFragmentToFirstFragment()
-            view.findNavController().navigate(action)
+            view?.findNavController()?.navigate(action)
         }
     }
 
+    private fun observeCalculates(){
+        dataStoreManager.getAge().asLiveData().observe(viewLifecycleOwner) { age ->
+            if (age != 0 ) {
+                binding.numberPicker.value = age
+            }
+        }
+    }
 
 }
