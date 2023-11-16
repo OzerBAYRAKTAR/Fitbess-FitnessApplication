@@ -111,7 +111,7 @@ class BMIFragment : DialogFragment() {
                     showToast(requireContext(), message, Gravity.CENTER, 0, 0)
                 }
             } else {
-                val message = getString(R.string.label_inputattention)
+                val message = getString(R.string.label_fillall)
                 showToast(requireContext(), message, Gravity.CENTER, 0, 0)
             }
         }

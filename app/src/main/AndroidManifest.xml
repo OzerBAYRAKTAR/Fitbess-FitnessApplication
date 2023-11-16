@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Add the necessary permissions -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <application
         android:name=".ui.MyApplication"
         android:allowBackup="true"
@@ -13,6 +18,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthyBackandNeck"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="android.app.notification.water_channel_id"
+            android:value="WaterReminderChannel" />
+        <meta-data
+            android:name="android.app.notification.water_channel_name"
+            android:value="Water Reminder" />
+
+        <meta-data
+            android:name="android.app.notification.fitness_channel_id"
+            android:value="FitnessReminderChannel" />
+        <meta-data
+            android:name="android.app.notification.fitness_channel_name"
+            android:value="Fitness Reminder" />
+
         <activity
             android:name=".ui.HomeActivity"
             android:exported="false" />

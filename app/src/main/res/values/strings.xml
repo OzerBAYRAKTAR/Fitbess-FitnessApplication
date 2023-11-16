@@ -357,6 +357,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="label_bellycm">Bel Çevresi(cm)</string>
     <string name="label_buttcm">Kalça Çevresi(cm)</string>
     <string name="label_inputattention">Lütfen geçerli bir değer giriniz</string>
+    <string name="label_fillall">Lütfen tüm değerleri giriniz</string>
     <string name="label_okay">Tamam</string>
     <string name="label_bmi">Vücut Kitle Endeksi</string>
     <string name="label_dailyCalorieRequirement">Günlük Kalori İhtiyacı</string>
@@ -367,6 +368,21 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="label_tryagain">Tekrar Deneyiniz</string>
     <string name="label_yourfatrate">Vücut Yağ Oranın</string>
     <string name="label_yourdailycaloriereq">Günlük Alman Gereken Kalori Miktarı</string>
+    <string name="label_drinkwater">Haydi kalk ve suyunu iç!</string>
+    <string name="label_timetodrinkwater">Time to drink water!</string>
+    <string name="label_waterreminder">Su Hatırlatıcısı</string>
+    <string name="label_fitnessreminder">Fitness Hatırlatıcısı</string>
+    <string name="label_dofitness">Haydi antrenman yapma vakti!</string>
+    <string name="label_selectlanguage">Dil Seçenekleri</string>
+    <string name="label_cancel">İptal</string>
+    <string name="label_restartmessage">Tüm ilerlemeniz silinecek, devam etmek istediğinize emin misiniz?</string>
+    <string name="label_attention">Uyarı</string>
+    <string name="label_shareus">Uygulamanı Arkadaşlarınla Paylaş!</string>
+    <string name="label_shareerror">Paylaşabileceğin bir uygulama bulunamadı</string>
+    <string name="label_sharevia">Şununla paylaş</string>
+    <string name="label_reviewerror">Oy verme işlemi başarısız oldu</string>
+    <string name="label_ratingsuccess">Oylama işlemi tamamlandı</string>
 
 
 </resources>
+

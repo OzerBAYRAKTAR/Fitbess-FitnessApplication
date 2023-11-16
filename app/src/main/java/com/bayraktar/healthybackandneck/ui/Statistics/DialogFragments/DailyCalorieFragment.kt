@@ -172,7 +172,7 @@ class DailyCalorieFragment : Fragment() {
 
         val decimalFormat = DecimalFormat("#.###")
         val formattedRate = decimalFormat.format(dailyCalorieReq)
-        val errorMessage = "Yanlış değer girdiniz, Lütfen tekrar deneyiniz!"
+        val errorMessage = getString(R.string.label_tryagain)
 
         val rate = formattedRate.replace(",", ".").toDouble()
         if (rate < 3) {
@@ -211,7 +211,7 @@ class DailyCalorieFragment : Fragment() {
                     showToast(requireContext(), message, Gravity.CENTER, 0, 0)
                 }
             } else {
-                val message = getString(R.string.label_inputattention)
+                val message = getString(R.string.label_fillall)
                 showToast(requireContext(), message, Gravity.CENTER, 0, 0)
             }
         }

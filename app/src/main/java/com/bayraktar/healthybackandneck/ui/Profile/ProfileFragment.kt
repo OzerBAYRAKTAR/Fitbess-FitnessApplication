@@ -1,21 +1,44 @@
 package com.bayraktar.healthybackandneck.ui.Profile
 
 import android.app.AlertDialog
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat.recreate
+import androidx.core.app.NotificationCompat
+import androidx.core.content.ContextCompat.getSystemService
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentProfileBinding
 import com.bayraktar.healthybackandneck.utils.LocaleHelper
+import com.bayraktar.healthybackandneck.utils.NotificationHelper
+import com.bayraktar.healthybackandneck.utils.showToast
+import com.google.android.play.core.review.ReviewInfo
+import com.google.android.play.core.review.ReviewManager
+import com.google.android.play.core.review.ReviewManagerFactory
+import com.google.android.play.core.tasks.Task
+import kotlinx.coroutines.selects.select
 import java.util.Locale
+import java.util.Timer
+import java.util.TimerTask
 
 
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     val binding get() = _binding!!
+    private var timer: Timer? = null
+    private var isReminderOn = false
+    private lateinit var notificationHelper: NotificationHelper
+    private var  reviewInfo: ReviewInfo?= null
+    private lateinit var reviewManager: ReviewManager
 
 
     override fun onCreateView(
@@ -30,7 +53,55 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.apply {
+        activateReviewInfo()
+        btnRateUsClicked()
+        notificationHelper = NotificationHelper(requireContext())
+        setBindingThings()
+        btnShareClicked()
+
+
+    }
+    private fun activateReviewInfo() {
+        reviewManager = ReviewManagerFactory.create(requireContext())
+        val managerInfoTask: Task<ReviewInfo> = reviewManager.requestReviewFlow()
+        managerInfoTask.addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                reviewInfo = task.result
+            }else {
+                val reviewError = getString(R.string.label_reviewerror)
+                showToast(requireContext(),reviewError,Gravity.CENTER,0,0)
+            }
+        }
+    }
+    private fun startReviewFlow() {
+        if (reviewInfo != null) {
+            val flow : Task<Void> = reviewManager.launchReviewFlow(requireActivity(), reviewInfo!!)
+            flow.addOnCompleteListener { task ->
+                val successMessage = getString(R.string.label_ratingsuccess)
+                showToast(requireContext(),successMessage,Gravity.CENTER,0,0)
+            }
+        }
+    }
+
+    private fun setBindingThings() = with(binding) {
+
+        waterReminderSwitch.setOnCheckedChangeListener { _, isChecked ->
+            isReminderOn = isChecked
+            if (isChecked) {
+                startReminder()
+            } else {
+                stopReminder()
+            }
+        }
+        notificationSwitch.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                startFitnessReminder()
+            } else {
+                stopFitnessReminder()
+            }
+        }
+
+        apply {
             consLanguage.setOnClickListener {
                 btnLanguageclicked()
             }
@@ -44,6 +115,34 @@ class ProfileFragment : Fragment() {
 
     }
 
+    private fun startFitnessReminder() {
+        timer = Timer()
+        timer?.scheduleAtFixedRate(object : TimerTask() {
+            override fun run() {
+                notificationHelper.showFitnessNotification()
+            }
+        }, 0, 12 * 60 * 60 * 1000) // Fitness reminder interval: 12 hours
+    }
+
+    private fun stopFitnessReminder() {
+        timer?.cancel()
+        timer?.purge()
+    }
+
+    private fun startReminder() {
+        timer = Timer()
+        timer?.scheduleAtFixedRate(object : TimerTask() {
+            override fun run() {
+                notificationHelper.showNotification()
+            }
+        }, 0, 12 * 60 * 60 * 1000)
+    }
+
+    private fun stopReminder() {
+        timer?.cancel()
+        timer?.purge()
+    }
+
     private fun btnThemeclicked() {
         val languages = arrayOf("Light", "Dark Theme")
         val languageCodes = arrayOf("en", "tr", "de")
@@ -52,9 +151,9 @@ class ProfileFragment : Fragment() {
         val currentLanguageIndex = languageCodes.indexOf(currentLanguage)
 
         AlertDialog.Builder(requireContext())
-            .setTitle("Select Language")
+            .setTitle(getString(R.string.label_selectlanguage))
             .setIcon(R.drawable.themee)
-                //which -> like a selected position of list
+            //which -> like a selected position of list
             .setSingleChoiceItems(languages, currentLanguageIndex) { dialog, which ->
                 // Change the language when the user selects a new language
                 val selectedLanguageCode = languageCodes[which]
@@ -62,7 +161,7 @@ class ProfileFragment : Fragment() {
                 recreate(requireActivity()) // Restart the activity to apply the language change
                 dialog.dismiss()
             }
-            .setNegativeButton("Cancel") { dialog, _ ->
+            .setNegativeButton(getString(R.string.label_cancel)) { dialog, _ ->
                 dialog.dismiss()
             }
             .show()
@@ -70,13 +169,13 @@ class ProfileFragment : Fragment() {
 
     private fun btnRestartClicked() {
         AlertDialog.Builder(requireContext())
-            .setTitle("Uyarı")
-            .setMessage("Tüm ilerlemeniz silinecek, devam etmek istediğinize emin misiniz?")
+            .setTitle(getString(R.string.label_attention))
+            .setMessage(getString(R.string.label_restartmessage))
             .setIcon(R.drawable.restartt)
             .setCancelable(false)
-            .setPositiveButton("Evet"){dialog,_ ->
+            .setPositiveButton("Evet") { dialog, _ ->
                 dialog.dismiss()
-            }.setNegativeButton("Hayır"){dialog,_->
+            }.setNegativeButton("Hayır") { dialog, _ ->
                 dialog.dismiss()
             }.show()
     }
@@ -105,5 +204,27 @@ class ProfileFragment : Fragment() {
             .show()
     }
 
+    private fun btnShareClicked() = with(binding) {
+        consShare.setOnClickListener {
+            val link = "App.link"
+            val selectedText = getString(R.string.label_shareus)
+            val shareIntent = Intent()
+            shareIntent.action = Intent.ACTION_SEND
+            shareIntent.putExtra(Intent.EXTRA_TEXT, selectedText)
+            shareIntent.type = "text/plain"
 
+            if (activity?.packageManager?.let { it2 ->
+                    shareIntent.resolveActivity(it2)
+                } != null) {
+                startActivity(Intent.createChooser(shareIntent, getString(R.string.label_sharevia)))
+            } else {
+                val shareError = getString(R.string.label_shareerror)
+                showToast(requireContext(), shareError, Gravity.CENTER, 0, 0)
+            }
+
+        }
+    }
+    private fun btnRateUsClicked() = with(binding) {
+        startReviewFlow()
+    }
 }
