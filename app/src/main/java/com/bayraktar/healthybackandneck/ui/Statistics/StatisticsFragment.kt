@@ -46,7 +46,6 @@ class StatisticsFragment : Fragment() {
                 println(level)
             }
         }
-
     }
 
     private fun observeCalculates() = with(binding) {

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -48,12 +49,23 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
 
         setRecyclerview()
         addToDetailList()
+        observeLevelOne()
         addToRoom()
-        addToRoomExercises()
+
+        viewModel.fetchExerciseDayExercisesWithLevelOne()
 
 
     }
 
+    private fun observeLevelOne() {
+         viewModel.exerciseDayExercisesLevelOne.observe(viewLifecycleOwner, Observer { exercises ->
+             if (exercises.isEmpty()) {
+                 addToRoomExercises()
+             }else {
+                 println("liste boş")
+             }
+         })
+    }
     @SuppressLint("DiscouragedApi")
     private fun addToRoomExercises() {
         try {
@@ -68,17 +80,18 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
 
             for (i in 0 until jsonArray.length()) {
                 val item = jsonArray.getJSONObject(i)
-                val exercise = ExerciseDayExercise(
-                    dayId = item.getInt("dayId"),
-                    exerciseName = item.getString("exerciseName"),
-                    exerciseDescription = item.getString("exerciseDescription"),
-                    image = resources.getIdentifier(item.getString("image"), "drawable", requireContext().packageName),
-                    isExerciseCompleted = item.getBoolean("isExerciseCompleted"),
-                    isFavourite = item.getBoolean("isFavourite"),
-                    exerciseId = item.getInt("exerciseId")
-                )
-                exerciseDayExercise.add(exercise)
-
+                if (item.optInt("Level") == 1) {
+                    val exercise = ExerciseDayExercise(
+                        dayId = item.optInt("dayId"),
+                        exerciseName = item.optString("exerciseName"),
+                        exerciseDescription = item.optString("exerciseDescription"),
+                        image = resources.getIdentifier(item.optString("image"), "drawable", requireContext().packageName),
+                        isExerciseCompleted = item.optBoolean("isExerciseCompleted"),
+                        exerciseId = item.optInt("exerciseId"),
+                        level = item.optInt("Level")
+                    )
+                    exerciseDayExercise.add(exercise)
+                }
             }
             viewModel.insertExerciseDayExercise(exerciseDayExercise)
         } catch (e: Exception) {

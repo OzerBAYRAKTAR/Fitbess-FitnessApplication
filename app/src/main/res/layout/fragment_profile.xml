@@ -88,7 +88,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:background="@color/login_color"
+                android:background="@color/teal_200"
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView13">
@@ -108,7 +108,11 @@
 
                 <Switch
                     android:id="@+id/waterReminderSwitch"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
+                    android:checked="true"
+                    android:trackTint="@color/dark_pink"
+                    android:thumb="@drawable/thumb"
+                    app:track="@drawable/track"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginEnd="15dp"
@@ -145,6 +149,7 @@
                 android:layout_height="32dp"
                 android:layout_marginStart="196dp"
                 android:src="@drawable/waterr"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/textView19"
                 app:layout_constraintStart_toEndOf="@+id/textView14"
                 app:layout_constraintTop_toTopOf="@+id/textView14"
@@ -176,7 +181,11 @@
 
                 <Switch
                     android:id="@+id/notificationSwitch"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
+                    android:checked="true"
+                    android:thumb="@drawable/thumb"
+                    app:track="@drawable/track"
+                    android:trackTint="@color/dark_pink"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginEnd="15dp"
@@ -212,6 +221,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
+                android:visibility="gone"
                 android:src="@drawable/alarmm"
                 app:layout_constraintBottom_toBottomOf="@+id/textView20"
                 app:layout_constraintEnd_toEndOf="parent"

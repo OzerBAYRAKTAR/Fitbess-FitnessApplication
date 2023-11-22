@@ -34,5 +34,7 @@
     <color name="max_blue">#50C2C9</color>
     <color name="min_blue">#96e8f3</color>
     <color name="material_dynamic_neutral70">#FFAAABAE</color>
+    <color name="unchecked_color">#FFFFFF</color>
+    <color name="checked_color">#008EFF</color>
 
 </resources>

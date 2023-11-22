@@ -1,5 +1,7 @@
 package com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
@@ -16,6 +18,10 @@ class ExerciseDetailFirstVievModel @Inject constructor(
     private val repo: RoomRepository
 ):ViewModel() {
 
+    private val _exerciseDayExercisesLevelOne: LiveData<List<ExerciseDayExercise>> = MutableLiveData()
+    val exerciseDayExercisesLevelOne get() = _exerciseDayExercisesLevelOne
+
+
     fun insertExerciseDay(exerciseDay: ExerciseDay) = viewModelScope.launch(Dispatchers.IO) {
         repo.insertExerciseDay(exerciseDay)
     }
@@ -23,4 +29,17 @@ class ExerciseDetailFirstVievModel @Inject constructor(
     fun insertExerciseDayExercise(exerciseDayExercise: List<ExerciseDayExercise>)= viewModelScope.launch(Dispatchers.IO) {
         repo.insertExerciseDayExercise(exerciseDayExercise)
     }
+
+    fun getExercisesWithLevelOne(): Int {
+        return repo.getExercisesWithLevelOne()
+    }
+
+    fun fetchExerciseDayExercisesWithLevelOne() {
+        viewModelScope.launch(Dispatchers.IO) {
+            val exercises = repo.getExerciseDayExercisesWithLevelOne()
+            (exerciseDayExercisesLevelOne as MutableLiveData).postValue(exercises)
+        }
+    }
+
+
 }

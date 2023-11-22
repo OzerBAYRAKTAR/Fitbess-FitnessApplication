@@ -27,7 +27,7 @@ class FourthFragment : Fragment() {
     private var _binding: FragmentFourthBinding? = null
     val binding get() = _binding!!
     private lateinit var dataStoreManager: DataStoreManage
-    private var selectedWeight = 0
+    private var selectedWeight = 65
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -26,7 +26,7 @@ class ThirdFragment : Fragment() {
     private var _binding: FragmentThirdBinding?= null
     val binding get() = _binding!!
     private lateinit var dataStoreManager:DataStoreManage
-    private var selectedHeight = 0
+    private var selectedHeight = 170
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

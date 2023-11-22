@@ -26,7 +26,7 @@ class SecondFragment : Fragment() {
     private var _binding: FragmentSecondBinding? = null
     val binding get() = _binding!!
     private lateinit var dataStoreManager: DataStoreManage
-    private var selectedAge = 0
+    private var selectedAge = 25
 
 
     override fun onCreateView(
@@ -56,7 +56,6 @@ class SecondFragment : Fragment() {
     private fun btnClicks() {
 
         binding.appCompatButton.setOnClickListener {
-            println(selectedAge)
             CoroutineScope(Dispatchers.IO).launch {
                 dataStoreManager.saveAge(selectedAge)
             }
