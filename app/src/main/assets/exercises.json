@@ -4,7 +4,7 @@
     "ExerciseId": 96,
     "DayId": 1,
     "ExerciseName": "Fire Hydrants",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e96_b7_fire_hydrants",
     "Image": "e96_b7_fire_hydrants",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -14,7 +14,7 @@
     "ExerciseId": 90,
     "DayId": 1,
     "ExerciseName": "Bird Dog",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e90_b1_bird_dog",
     "Image": "e90_b1_bird_dog",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -24,7 +24,7 @@
     "ExerciseId": 61,
     "DayId": 1,
     "ExerciseName": "Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e61_s4_floor_pull_up",
     "Image": "e61_s4_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -34,7 +34,7 @@
     "ExerciseId": 67,
     "DayId": 1,
     "ExerciseName": "Lying Leg Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e67_s10_lying_leg_raise",
     "Image": "e67_s10_lying_leg_raise ",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -44,7 +44,7 @@
     "ExerciseId": 26,
     "DayId": 1,
     "ExerciseName": "Side Reaches",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e26_k9_side_reaches",
     "Image": "e26_k9_side_reaches",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -54,7 +54,7 @@
     "ExerciseId": 35,
     "DayId": 1,
     "ExerciseName": "T Position",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e35_k18_t_position",
     "Image": "e35_k18_t_position",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -64,7 +64,7 @@
     "ExerciseId": 50,
     "DayId": 1,
     "ExerciseName": "Modified Push Ups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e50_a9_modified_push_ups",
     "Image": "e50_a9_modified_push_ups",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -74,7 +74,7 @@
     "ExerciseId": 1,
     "DayId": 1,
     "ExerciseName": "Sitting Side Bends",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e1_b1_sitting_side_bends",
     "Image": "e1_b1_sitting_side_bends",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -84,7 +84,7 @@
     "ExerciseId": 92,
     "DayId": 2,
     "ExerciseName": "Glute Bridge",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e92_b3_glute_bridge",
     "Image": "e92_b3_glute_bridge",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -94,7 +94,7 @@
     "ExerciseId": 93,
     "DayId": 2,
     "ExerciseName": "Quadruped Hip Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e93_b4_quadruped_hip_extension",
     "Image": "e93_b4_quadruped_hip_extension",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -104,7 +104,7 @@
     "ExerciseId": 70,
     "DayId": 2,
     "ExerciseName": "Standing Leg Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e70_s13_standing_leg_extension",
     "Image": "e70_s13_standing_leg_extension",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -114,7 +114,7 @@
     "ExerciseId": 63,
     "DayId": 2,
     "ExerciseName": "Seated Singe Side Reach To Foot",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e63_s6_seated_singe_side_reach_to_foot",
     "Image": "e63_s6_seated_singe_side_reach_to_foot",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -124,7 +124,7 @@
     "ExerciseId": 37,
     "DayId": 2,
     "ExerciseName": "Lying Leg Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e37_k20_lying_leg_up",
     "Image": "e37_k20_lying_leg_up",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -134,7 +134,7 @@
     "ExerciseId": 20,
     "DayId": 2,
     "ExerciseName": "Bicycle Crunch Slowed",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e20_k3_bicycle_crunch_slowed",
     "Image": "e20_k3_bicycle_crunch_slowed",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -144,7 +144,7 @@
     "ExerciseId": 48,
     "DayId": 2,
     "ExerciseName": "Tricep Dips",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e48_a7_tricep_dips",
     "Image": "e48_a7_tricep_dips",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -154,7 +154,7 @@
     "ExerciseId": 11,
     "DayId": 2,
     "ExerciseName": "Get Up Straight",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e11_b11_get_up_straight",
     "Image": "e11_b11_get_up_straight",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -164,7 +164,7 @@
     "ExerciseId": 99,
     "DayId": 3,
     "ExerciseName": "Reverse Lunge",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e99_b10_reverse_lunge",
     "Image": "e99_b10_reverse_lunge",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -174,7 +174,7 @@
     "ExerciseId": 102,
     "DayId": 3,
     "ExerciseName": "Crab Walk",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e102_b13_crab_walk",
     "Image": "e102_b13_crab_walk",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -184,7 +184,7 @@
     "ExerciseId": 69,
     "DayId": 3,
     "ExerciseName": "Strech To Foots",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e69_s12_strech_to_foots",
     "Image": "e69_s12_strech_to_foots",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -194,7 +194,7 @@
     "ExerciseId": 63,
     "DayId": 3,
     "ExerciseName": "Seated Singe Side Reach To Foot",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e63_s6_seated_singe_side_reach_to_foot",
     "Image": "e63_s6_seated_singe_side_reach_to_foot",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -204,7 +204,7 @@
     "ExerciseId": 40,
     "DayId": 3,
     "ExerciseName": "Modified Plank",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e40_k23_modified_plank",
     "Image": "e40_k23_modified_plank",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -214,7 +214,7 @@
     "ExerciseId": 33,
     "DayId": 3,
     "ExerciseName": "Standing Throw Knee",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e33_k16_standing_throw_knee",
     "Image": "e33_k16_standing_throw_knee",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -224,7 +224,7 @@
     "ExerciseId": 52,
     "DayId": 3,
     "ExerciseName": "Lying Shoulder Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e52_a11_lying_shoulder_extension",
     "Image": "e52_a11_lying_shoulder_extension",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -234,7 +234,7 @@
     "ExerciseId": 78,
     "DayId": 3,
     "ExerciseName": "Standing Shoulder Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e78_y1_standing_shoulder_extension",
     "Image": "e78_y1_standing_shoulder_extension",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -244,7 +244,7 @@
     "ExerciseId": 95,
     "DayId": 4,
     "ExerciseName": "Reverse Lunge Forward Hand",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e95_b6_reverse_lunge_forward_hand",
     "Image": "e95_b6_reverse_lunge_forward_hand",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -254,7 +254,7 @@
     "ExerciseId": 107,
     "DayId": 4,
     "ExerciseName": "Squats",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e107_b18_squats",
     "Image": "e107_b18_squats",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -264,7 +264,7 @@
     "ExerciseId": 72,
     "DayId": 4,
     "ExerciseName": "Curtsy Lunge With Knee Raise Lift",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e72_s15_curtsy_lunge_with_knee_raise_lift",
     "Image": "e72_s15_curtsy_lunge_with_knee_raise_lift",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -274,7 +274,7 @@
     "ExerciseId": 59,
     "DayId": 4,
     "ExerciseName": "Shoulder Mobility",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e59_s2_shoulder_mobility",
     "Image": "e59_s2_shoulder_mobility",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -284,7 +284,7 @@
     "ExerciseId": 27,
     "DayId": 4,
     "ExerciseName": "Toe Reach",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e27_k10_toe_reach",
     "Image": "e27_k10_toe_reach",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -294,7 +294,7 @@
     "ExerciseId": 34,
     "DayId": 4,
     "ExerciseName": "Standing Single Leg Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e34_k17_standing_single_leg_up",
     "Image": "e34_k17_standing_single_leg_up",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -304,7 +304,7 @@
     "ExerciseId": 50,
     "DayId": 4,
     "ExerciseName": "Modified Push Ups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e50_a9_modified_push_ups",
     "Image": "e50_a9_modified_push_ups",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -314,7 +314,7 @@
     "ExerciseId": 86,
     "DayId": 4,
     "ExerciseName": "Plank Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e86_y9_plank_extension",
     "Image": "e86_y9_plank_extension",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -324,7 +324,7 @@
     "ExerciseId": 110,
     "DayId": 5,
     "ExerciseName": "Step Out Squat With Pulse",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e110_b21_step_out_squat_with_pulse",
     "Image": "e110_b21_step_out_squat_with_pulse",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -334,7 +334,7 @@
     "ExerciseId": 93,
     "DayId": 5,
     "ExerciseName": "Quadruped Hip Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e93_b4_quadruped_hip_extension",
     "Image": "e93_b4_quadruped_hip_extension",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -344,7 +344,7 @@
     "ExerciseId": 67,
     "DayId": 5,
     "ExerciseName": "Lying Leg Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e67_s10_lying_leg_raise",
     "Image": "e67_s10_lying_leg_raise ",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -354,7 +354,7 @@
     "ExerciseId": 74,
     "DayId": 5,
     "ExerciseName": "Down To Up Clapping",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e74_s17_down_to_up_clapping",
     "Image": "e74_s17_down_to_up_clapping",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -364,7 +364,7 @@
     "ExerciseId": 23,
     "DayId": 5,
     "ExerciseName": "Lying Reaches",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e23_k6_lying_reaches",
     "Image": "e23_k6_lying_reaches",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -374,7 +374,7 @@
     "ExerciseId": 21,
     "DayId": 5,
     "ExerciseName": "Russian Twist",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e21_k4_russian_twist",
     "Image": "e21_k4_russian_twist",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -384,7 +384,7 @@
     "ExerciseId": 47,
     "DayId": 5,
     "ExerciseName": "Punch Left Right",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e47_a6_punch_left_right",
     "Image": "e47_a6_punch_left_right",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -394,7 +394,7 @@
     "ExerciseId": 85,
     "DayId": 5,
     "ExerciseName": "Down To Up Hand Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e85_y8_down_to_up_hand_raise",
     "Image": "e85_y8_down_to_up_hand_raise",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -404,7 +404,7 @@
     "ExerciseId": 90,
     "DayId": 6,
     "ExerciseName": "Bird Dog",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e90_b1_bird_dog",
     "Image": "e90_b1_bird_dog",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -414,7 +414,7 @@
     "ExerciseId": 94,
     "DayId": 6,
     "ExerciseName": "Plie Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e94_b5_plie_squat",
     "Image": "e94_b5_plie_squat",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -424,7 +424,7 @@
     "ExerciseId": 66,
     "DayId": 6,
     "ExerciseName": "Lying Leg To Sides",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e66_s9_lying_leg_to_sides",
     "Image": "e66_s9_lying_leg_to_sides",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -434,7 +434,7 @@
     "ExerciseId": 68,
     "DayId": 6,
     "ExerciseName": "Seated Knee Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e68_s11_seated_knee_raise",
     "Image": "e68_s11_seated_knee_raise",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -444,7 +444,7 @@
     "ExerciseId": 25,
     "DayId": 6,
     "ExerciseName": "Seated Punchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e25_k8_seated_punchs",
     "Image": "e25_k8_seated_punchs",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -454,7 +454,7 @@
     "ExerciseId": 19,
     "DayId": 6,
     "ExerciseName": "Scissor Kicks",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e19_k2_scissor_kicks",
     "Image": "e19_k2_scissor_kicks",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -464,7 +464,7 @@
     "ExerciseId": 54,
     "DayId": 6,
     "ExerciseName": "Front Overhead Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e54_a13_front_overhead_raise",
     "Image": "e54_a13_front_overhead_raise",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -474,7 +474,7 @@
     "ExerciseId": 80,
     "DayId": 6,
     "ExerciseName": "Curtsy Squat Fast",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e80_y3_curtsy_squat_fast",
     "Image": "e80_y3_curtsy_squat_fast",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -484,7 +484,7 @@
     "ExerciseId": 92,
     "DayId": 7,
     "ExerciseName": "Glute Bridge",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e92_b3_glute_bridge",
     "Image": "e92_b3_glute_bridge",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -494,7 +494,7 @@
     "ExerciseId": 100,
     "DayId": 7,
     "ExerciseName": "Standing Bend Over",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e100_b11_standing_bend_over",
     "Image": "e100_b11_standing_bend_over",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -504,7 +504,7 @@
     "ExerciseId": 77,
     "DayId": 7,
     "ExerciseName": "Jumping Sides",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e77_s20_jumping_sides",
     "Image": "e77_s20_jumping_sides",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -514,7 +514,7 @@
     "ExerciseId": 64,
     "DayId": 7,
     "ExerciseName": "Lying Knee To Chest",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e64_s7_lying_knee_to_chest",
     "Image": "e64_s7_lying_knee_to_chest",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -524,7 +524,7 @@
     "ExerciseId": 33,
     "DayId": 7,
     "ExerciseName": "Standing Throw Knee",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e33_k16_standing_throw_knee",
     "Image": "e33_k16_standing_throw_knee",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -534,7 +534,7 @@
     "ExerciseId": 31,
     "DayId": 7,
     "ExerciseName": "To V Sit",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e31_k14_to_v_sit",
     "Image": "e31_k14_to_v_sit",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -544,7 +544,7 @@
     "ExerciseId": 47,
     "DayId": 7,
     "ExerciseName": "Punch Left Right",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e47_a6_punch_left_right",
     "Image": "e47_a6_punch_left_right",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -554,7 +554,7 @@
     "ExerciseId": 16,
     "DayId": 7,
     "ExerciseName": "Superman",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e16_b16_superman",
     "Image": "e16_b16_superman",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -564,7 +564,7 @@
     "ExerciseId": 106,
     "DayId": 8,
     "ExerciseName": "High Donkey Kick",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e106_b17_high_donkey_kick",
     "Image": "e106_b17_high_donkey_kick",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -574,7 +574,7 @@
     "ExerciseId": 98,
     "DayId": 8,
     "ExerciseName": "Split Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e98_b9_split_squat",
     "Image": "e98_b9_split_squat",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -584,7 +584,7 @@
     "ExerciseId": 69,
     "DayId": 8,
     "ExerciseName": "Strech To Foots",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e69_s12_strech_to_foots",
     "Image": "e69_s12_strech_to_foots",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -594,7 +594,7 @@
     "ExerciseId": 71,
     "DayId": 8,
     "ExerciseName": "Up Down Sumo",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e71_s14_up_down_sumo",
     "Image": "e71_s14_up_down_sumo",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -604,7 +604,7 @@
     "ExerciseId": 18,
     "DayId": 8,
     "ExerciseName": "Sit Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e18_k1_sit_up",
     "Image": "e18_k1_sit_up",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -614,7 +614,7 @@
     "ExerciseId": 20,
     "DayId": 8,
     "ExerciseName": "Bicycle Crunch Slowed",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e20_k3_bicycle_crunch_slowed",
     "Image": "e20_k3_bicycle_crunch_slowed",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -624,7 +624,7 @@
     "ExerciseId": 51,
     "DayId": 8,
     "ExerciseName": "Slowed Pushups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e51_a10_slowed_pushups",
     "Image": "e51_a10_slowed_pushups",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -634,7 +634,7 @@
     "ExerciseId": 87,
     "DayId": 8,
     "ExerciseName": "Plank Walk",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e87_y10_plank_walk",
     "Image": "e87_y10_plank_walk",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -644,7 +644,7 @@
     "ExerciseId": 98,
     "DayId": 9,
     "ExerciseName": "Split Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e98_b9_split_squat",
     "Image": "e98_b9_split_squat",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -654,7 +654,7 @@
     "ExerciseId": 96,
     "DayId": 9,
     "ExerciseName": "Fire Hydrants",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e96_b7_fire_hydrants",
     "Image": "e96_b7_fire_hydrants",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -664,7 +664,7 @@
     "ExerciseId": 65,
     "DayId": 9,
     "ExerciseName": "Lying Knee To Stomatch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e65_s8_lying_knee_to_stomatch",
     "Image": "e65_s8_lying_knee_to_stomatch",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -674,7 +674,7 @@
     "ExerciseId": 73,
     "DayId": 9,
     "ExerciseName": "Half Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e73_s16_half_floor_pull_up",
     "Image": "e73_s16_half_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -684,7 +684,7 @@
     "ExerciseId": 38,
     "DayId": 9,
     "ExerciseName": "Reverse Crunch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e38_k21_reverse_crunch",
     "Image": "e38_k21_reverse_crunch",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -694,7 +694,7 @@
     "ExerciseId": 41,
     "DayId": 9,
     "ExerciseName": "Mountain Climb",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e41_k24_mountain_climb",
     "Image": "e41_k24_mountain_climb",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -704,7 +704,7 @@
     "ExerciseId": 43,
     "DayId": 9,
     "ExerciseName": "Triceps Push Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e43_a2_triceps_push_up",
     "Image": "e43_a2_triceps_push_up",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -714,7 +714,7 @@
     "ExerciseId": 17,
     "DayId": 9,
     "ExerciseName": "Lying Neck Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e17_b17_lying_neck_extension",
     "Image": "e17_b17_lying_neck_extension",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -724,7 +724,7 @@
     "ExerciseId": 108,
     "DayId": 10,
     "ExerciseName": "Pull Single Leg",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e108_b19_pull_single_leg",
     "Image": "e108_b19_pull_single_leg",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -734,7 +734,7 @@
     "ExerciseId": 97,
     "DayId": 10,
     "ExerciseName": "Clamshells",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e97_b8_clamshells",
     "Image": "e97_b8_clamshells",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -744,7 +744,7 @@
     "ExerciseId": 70,
     "DayId": 10,
     "ExerciseName": "Standing Leg Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e70_s13_standing_leg_extension",
     "Image": "e70_s13_standing_leg_extension",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -754,7 +754,7 @@
     "ExerciseId": 72,
     "DayId": 10,
     "ExerciseName": "Curtsy Lunge With Knee Raise Lift",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e72_s15_curtsy_lunge_with_knee_raise_lift",
     "Image": "e72_s15_curtsy_lunge_with_knee_raise_lift",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -764,7 +764,7 @@
     "ExerciseId": 25,
     "DayId": 10,
     "ExerciseName": "Seated Punchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e25_k8_seated_punchs",
     "Image": "e25_k8_seated_punchs",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -774,7 +774,7 @@
     "ExerciseId": 35,
     "DayId": 10,
     "ExerciseName": "T Position",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e35_k18_t_position",
     "Image": "e35_k18_t_position",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -784,7 +784,7 @@
     "ExerciseId": 54,
     "DayId": 10,
     "ExerciseName": "Front Overhead Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e54_a13_front_overhead_raise",
     "Image": "e54_a13_front_overhead_raise",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -794,7 +794,7 @@
     "ExerciseId": 12,
     "DayId": 10,
     "ExerciseName": "Sitting Dive",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e12_b12_sitting_dive",
     "Image": "e12_b12_sitting_dive",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -804,7 +804,7 @@
     "ExerciseId": 97,
     "DayId": 11,
     "ExerciseName": "Clamshells",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e97_b8_clamshells",
     "Image": "e97_b8_clamshells",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -814,7 +814,7 @@
     "ExerciseId": 96,
     "DayId": 11,
     "ExerciseName": "Fire Hydrants",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e96_b7_fire_hydrants",
     "Image": "e96_b7_fire_hydrants",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -824,7 +824,7 @@
     "ExerciseId": 62,
     "DayId": 11,
     "ExerciseName": "Seated Side Reach To Foot",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e62_s5_seated_side_reach_to_foot",
     "Image": "e62_s5_seated_side_reach_to_foot",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -834,7 +834,7 @@
     "ExerciseId": 67,
     "DayId": 11,
     "ExerciseName": "Lying Leg Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e67_s10_lying_leg_raise",
     "Image": "e67_s10_lying_leg_raise ",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -844,7 +844,7 @@
     "ExerciseId": 35,
     "DayId": 11,
     "ExerciseName": "T Position",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e35_k18_t_position",
     "Image": "e35_k18_t_position",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -854,7 +854,7 @@
     "ExerciseId": 34,
     "DayId": 11,
     "ExerciseName": "Standing Single Leg Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e34_k17_standing_single_leg_up",
     "Image": "e34_k17_standing_single_leg_up",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -864,7 +864,7 @@
     "ExerciseId": 45,
     "DayId": 11,
     "ExerciseName": "Pushup Overhead",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e45_a4_pushup_overhead",
     "Image": "e45_a4_pushup_overhead",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -874,7 +874,7 @@
     "ExerciseId": 88,
     "DayId": 11,
     "ExerciseName": "Side Plank Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e88_y11_side_plank_extension",
     "Image": "e88_y11_side_plank_extension",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -884,7 +884,7 @@
     "ExerciseId": 101,
     "DayId": 12,
     "ExerciseName": "Chair Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e101_b12_chair_squat",
     "Image": "e101_b12_chair_squat",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -894,7 +894,7 @@
     "ExerciseId": 91,
     "DayId": 12,
     "ExerciseName": "Jump Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e91_b2_jump_squat",
     "Image": "e91_b2_jump_squat",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -904,7 +904,7 @@
     "ExerciseId": 65,
     "DayId": 12,
     "ExerciseName": "Lying Knee To Stomatch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e65_s8_lying_knee_to_stomatch",
     "Image": "e65_s8_lying_knee_to_stomatch",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -914,7 +914,7 @@
     "ExerciseId": 63,
     "DayId": 12,
     "ExerciseName": "Seated Singe Side Reach To Foot",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e63_s6_seated_singe_side_reach_to_foot",
     "Image": "e63_s6_seated_singe_side_reach_to_foot",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -924,7 +924,7 @@
     "ExerciseId": 30,
     "DayId": 12,
     "ExerciseName": "Single Side Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e30_k13_single_side_up",
     "Image": "e30_k13_single_side_up",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -934,7 +934,7 @@
     "ExerciseId": 20,
     "DayId": 12,
     "ExerciseName": "Bicycle Crunch Slowed",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e20_k3_bicycle_crunch_slowed",
     "Image": "e20_k3_bicycle_crunch_slowed",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -944,7 +944,7 @@
     "ExerciseId": 48,
     "DayId": 12,
     "ExerciseName": "Tricep Dips",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e48_a7_tricep_dips",
     "Image": "e48_a7_tricep_dips",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -954,7 +954,7 @@
     "ExerciseId": 80,
     "DayId": 12,
     "ExerciseName": "Curtsy Squat Fast",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e80_y3_curtsy_squat_fast",
     "Image": "e80_y3_curtsy_squat_fast",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -964,7 +964,7 @@
     "ExerciseId": 104,
     "DayId": 13,
     "ExerciseName": "Frog Jumps",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e104_b15_frog_jumps",
     "Image": "e104_b15_frog_jumps",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -974,7 +974,7 @@
     "ExerciseId": 106,
     "DayId": 13,
     "ExerciseName": "High Donkey Kick",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e106_b17_high_donkey_kick",
     "Image": "e106_b17_high_donkey_kick",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -984,7 +984,7 @@
     "ExerciseId": 65,
     "DayId": 13,
     "ExerciseName": "Lying Knee To Stomatch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e65_s8_lying_knee_to_stomatch",
     "Image": "e65_s8_lying_knee_to_stomatch",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -994,7 +994,7 @@
     "ExerciseId": 71,
     "DayId": 13,
     "ExerciseName": "Up Down Sumo",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e71_s14_up_down_sumo",
     "Image": "e71_s14_up_down_sumo",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1004,7 +1004,7 @@
     "ExerciseId": 29,
     "DayId": 13,
     "ExerciseName": "Full Crunch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e29_k12_full_crunch",
     "Image": "e29_k12_full_crunch",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1014,7 +1014,7 @@
     "ExerciseId": 36,
     "DayId": 13,
     "ExerciseName": "Standing To Push Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e36_k19_standing_to_push_up",
     "Image": "e36_k19_standing_to_push_up",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1024,7 +1024,7 @@
     "ExerciseId": 46,
     "DayId": 13,
     "ExerciseName": "Lying Triceps Extensions",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e46_a5_lying_triceps_extensions",
     "Image": "e46_a5_lying_triceps_extensions",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1034,7 +1034,7 @@
     "ExerciseId": 84,
     "DayId": 13,
     "ExerciseName": "Side Plank Leg Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e84_y7_side_plank_leg_raise",
     "Image": "e84_y7_side_plank_leg_raise",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1044,7 +1044,7 @@
     "ExerciseId": 94,
     "DayId": 14,
     "ExerciseName": "Plie Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e94_b5_plie_squat",
     "Image": "e94_b5_plie_squat",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1054,7 +1054,7 @@
     "ExerciseId": 93,
     "DayId": 14,
     "ExerciseName": "Quadruped Hip Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e93_b4_quadruped_hip_extension",
     "Image": "e93_b4_quadruped_hip_extension",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1064,7 +1064,7 @@
     "ExerciseId": 77,
     "DayId": 14,
     "ExerciseName": "Jumping Sides",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e77_s20_jumping_sides",
     "Image": "e77_s20_jumping_sides",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1074,7 +1074,7 @@
     "ExerciseId": 67,
     "DayId": 14,
     "ExerciseName": "Lying Leg Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e67_s10_lying_leg_raise",
     "Image": "e67_s10_lying_leg_raise ",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1084,7 +1084,7 @@
     "ExerciseId": 27,
     "DayId": 14,
     "ExerciseName": "Toe Reach",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e27_k10_toe_reach",
     "Image": "e27_k10_toe_reach",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1094,7 +1094,7 @@
     "ExerciseId": 23,
     "DayId": 14,
     "ExerciseName": "Lying Reaches",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e23_k6_lying_reaches",
     "Image": "e23_k6_lying_reaches",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1104,7 +1104,7 @@
     "ExerciseId": 46,
     "DayId": 14,
     "ExerciseName": "Lying Triceps Extensions",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e46_a5_lying_triceps_extensions",
     "Image": "e46_a5_lying_triceps_extensions",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1114,7 +1114,7 @@
     "ExerciseId": 15,
     "DayId": 14,
     "ExerciseName": "Chair Back Strech",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e15_b15_chair_back_strech",
     "Image": "e15_b15_chair_back_strech",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1124,7 +1124,7 @@
     "ExerciseId": 110,
     "DayId": 15,
     "ExerciseName": "Step Out Squat With Pulse",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e110_b21_step_out_squat_with_pulse",
     "Image": "e110_b21_step_out_squat_with_pulse",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1134,7 +1134,7 @@
     "ExerciseId": 109,
     "DayId": 15,
     "ExerciseName": "Single Leg Deadlift",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e109_b20_single_leg_deadlift",
     "Image": "e109_b20_single_leg_deadlift",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1144,7 +1144,7 @@
     "ExerciseId": 66,
     "DayId": 15,
     "ExerciseName": "Lying Leg To Sides",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e66_s9_lying_leg_to_sides",
     "Image": "e66_s9_lying_leg_to_sides",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1154,7 +1154,7 @@
     "ExerciseId": 61,
     "DayId": 15,
     "ExerciseName": "Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e61_s4_floor_pull_up",
     "Image": "e61_s4_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1164,7 +1164,7 @@
     "ExerciseId": 23,
     "DayId": 15,
     "ExerciseName": "Lying Reaches",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e23_k6_lying_reaches",
     "Image": "e23_k6_lying_reaches",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1174,7 +1174,7 @@
     "ExerciseId": 41,
     "DayId": 15,
     "ExerciseName": "Mountain Climb",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e41_k24_mountain_climb",
     "Image": "e41_k24_mountain_climb",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1184,7 +1184,7 @@
     "ExerciseId": 47,
     "DayId": 15,
     "ExerciseName": "Punch Left Right",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e47_a6_punch_left_right",
     "Image": "e47_a6_punch_left_right",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1194,7 +1194,7 @@
     "ExerciseId": 16,
     "DayId": 15,
     "ExerciseName": "Superman",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e16_b16_superman",
     "Image": "e16_b16_superman",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1204,7 +1204,7 @@
     "ExerciseId": 93,
     "DayId": 16,
     "ExerciseName": "Quadruped Hip Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e93_b4_quadruped_hip_extension",
     "Image": "e93_b4_quadruped_hip_extension",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1214,7 +1214,7 @@
     "ExerciseId": 101,
     "DayId": 16,
     "ExerciseName": "Chair Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e101_b12_chair_squat",
     "Image": "e101_b12_chair_squat",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1224,7 +1224,7 @@
     "ExerciseId": 75,
     "DayId": 16,
     "ExerciseName": "Shoulder Leg Streching",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e75_s18_shoulder_leg_streching",
     "Image": "e75_s18_shoulder_leg_streching",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1234,7 +1234,7 @@
     "ExerciseId": 68,
     "DayId": 16,
     "ExerciseName": "Seated Knee Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e68_s11_seated_knee_raise",
     "Image": "e68_s11_seated_knee_raise",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1244,7 +1244,7 @@
     "ExerciseId": 20,
     "DayId": 16,
     "ExerciseName": "Bicycle Crunch Slowed",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e20_k3_bicycle_crunch_slowed",
     "Image": "e20_k3_bicycle_crunch_slowed",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1254,7 +1254,7 @@
     "ExerciseId": 21,
     "DayId": 16,
     "ExerciseName": "Russian Twist",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e21_k4_russian_twist",
     "Image": "e21_k4_russian_twist",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1264,7 +1264,7 @@
     "ExerciseId": 42,
     "DayId": 16,
     "ExerciseName": "Seated Dips",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e42_a1_seated_dips",
     "Image": "e42_a1_seated_dips",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1274,7 +1274,7 @@
     "ExerciseId": 78,
     "DayId": 16,
     "ExerciseName": "Standing Shoulder Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e78_y1_standing_shoulder_extension",
     "Image": "e78_y1_standing_shoulder_extension",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1284,7 +1284,7 @@
     "ExerciseId": 96,
     "DayId": 17,
     "ExerciseName": "Fire Hydrants",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e96_b7_fire_hydrants",
     "Image": "e96_b7_fire_hydrants",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1294,7 +1294,7 @@
     "ExerciseId": 107,
     "DayId": 17,
     "ExerciseName": "Squats",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e107_b18_squats",
     "Image": "e107_b18_squats",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1304,7 +1304,7 @@
     "ExerciseId": 65,
     "DayId": 17,
     "ExerciseName": "Lying Knee To Stomatch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e65_s8_lying_knee_to_stomatch",
     "Image": "e65_s8_lying_knee_to_stomatch",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1314,7 +1314,7 @@
     "ExerciseId": 68,
     "DayId": 17,
     "ExerciseName": "Seated Knee Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e68_s11_seated_knee_raise",
     "Image": "e68_s11_seated_knee_raise",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1324,7 +1324,7 @@
     "ExerciseId": 18,
     "DayId": 17,
     "ExerciseName": "Sit Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e18_k1_sit_up",
     "Image": "e18_k1_sit_up",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1334,7 +1334,7 @@
     "ExerciseId": 21,
     "DayId": 17,
     "ExerciseName": "Russian Twist",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e21_k4_russian_twist",
     "Image": "e21_k4_russian_twist",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1344,7 +1344,7 @@
     "ExerciseId": 48,
     "DayId": 17,
     "ExerciseName": "Tricep Dips",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e48_a7_tricep_dips",
     "Image": "e48_a7_tricep_dips",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1354,7 +1354,7 @@
     "ExerciseId": 4,
     "DayId": 17,
     "ExerciseName": "Forward Dive",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e4_b4_forward_dive",
     "Image": "e4_b4_forward_dive",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1364,7 +1364,7 @@
     "ExerciseId": 110,
     "DayId": 18,
     "ExerciseName": "Step Out Squat With Pulse",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e110_b21_step_out_squat_with_pulse",
     "Image": "e110_b21_step_out_squat_with_pulse",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1374,7 +1374,7 @@
     "ExerciseId": 95,
     "DayId": 18,
     "ExerciseName": "Reverse Lunge Forward Hand",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e95_b6_reverse_lunge_forward_hand",
     "Image": "e95_b6_reverse_lunge_forward_hand",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1384,7 +1384,7 @@
     "ExerciseId": 66,
     "DayId": 18,
     "ExerciseName": "Lying Leg To Sides",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e66_s9_lying_leg_to_sides",
     "Image": "e66_s9_lying_leg_to_sides",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1394,7 +1394,7 @@
     "ExerciseId": 62,
     "DayId": 18,
     "ExerciseName": "Seated Side Reach To Foot",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e62_s5_seated_side_reach_to_foot",
     "Image": "e62_s5_seated_side_reach_to_foot",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1404,7 +1404,7 @@
     "ExerciseId": 21,
     "DayId": 18,
     "ExerciseName": "Russian Twist",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e21_k4_russian_twist",
     "Image": "e21_k4_russian_twist",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1414,7 +1414,7 @@
     "ExerciseId": 37,
     "DayId": 18,
     "ExerciseName": "Lying Leg Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e37_k20_lying_leg_up",
     "Image": "e37_k20_lying_leg_up",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1424,7 +1424,7 @@
     "ExerciseId": 43,
     "DayId": 18,
     "ExerciseName": "Triceps Push Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e43_a2_triceps_push_up",
     "Image": "e43_a2_triceps_push_up",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1434,7 +1434,7 @@
     "ExerciseId": 80,
     "DayId": 18,
     "ExerciseName": "Curtsy Squat Fast",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e80_y3_curtsy_squat_fast",
     "Image": "e80_y3_curtsy_squat_fast",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1444,7 +1444,7 @@
     "ExerciseId": 96,
     "DayId": 19,
     "ExerciseName": "Fire Hydrants",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e96_b7_fire_hydrants",
     "Image": "e96_b7_fire_hydrants",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1454,7 +1454,7 @@
     "ExerciseId": 108,
     "DayId": 19,
     "ExerciseName": "Pull Single Leg",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e108_b19_pull_single_leg",
     "Image": "e108_b19_pull_single_leg",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1464,7 +1464,7 @@
     "ExerciseId": 66,
     "DayId": 19,
     "ExerciseName": "Lying Leg To Sides",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e66_s9_lying_leg_to_sides",
     "Image": "e66_s9_lying_leg_to_sides",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1474,7 +1474,7 @@
     "ExerciseId": 74,
     "DayId": 19,
     "ExerciseName": "Down To Up Clapping",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e74_s17_down_to_up_clapping",
     "Image": "e74_s17_down_to_up_clapping",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1484,7 +1484,7 @@
     "ExerciseId": 21,
     "DayId": 19,
     "ExerciseName": "Russian Twist",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e21_k4_russian_twist",
     "Image": "e21_k4_russian_twist",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1494,7 +1494,7 @@
     "ExerciseId": 19,
     "DayId": 19,
     "ExerciseName": "Scissor Kicks",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e19_k2_scissor_kicks",
     "Image": "e19_k2_scissor_kicks",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1504,7 +1504,7 @@
     "ExerciseId": 49,
     "DayId": 19,
     "ExerciseName": "Knee Push Ups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e49_a8_knee_push_ups",
     "Image": "e49_a8_knee_push_ups",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1514,7 +1514,7 @@
     "ExerciseId": 4,
     "DayId": 19,
     "ExerciseName": "Forward Dive",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e4_b4_forward_dive",
     "Image": "e4_b4_forward_dive",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1524,7 +1524,7 @@
     "ExerciseId": 105,
     "DayId": 20,
     "ExerciseName": "Grace Marching Bridge Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e105_b16_grace_marching_bridge_extension",
     "Image": "e105_b16_grace_marching_bridge_extension",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1534,7 +1534,7 @@
     "ExerciseId": 93,
     "DayId": 20,
     "ExerciseName": "Quadruped Hip Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e93_b4_quadruped_hip_extension",
     "Image": "e93_b4_quadruped_hip_extension",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1544,7 +1544,7 @@
     "ExerciseId": 60,
     "DayId": 20,
     "ExerciseName": "Camel Back Strech",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e60_s3_camel_back_strech",
     "Image": "e60_s3_camel_back_strech",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1554,7 +1554,7 @@
     "ExerciseId": 73,
     "DayId": 20,
     "ExerciseName": "Half Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e73_s16_half_floor_pull_up",
     "Image": "e73_s16_half_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1564,7 +1564,7 @@
     "ExerciseId": 21,
     "DayId": 20,
     "ExerciseName": "Russian Twist",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e21_k4_russian_twist",
     "Image": "e21_k4_russian_twist",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1574,7 +1574,7 @@
     "ExerciseId": 27,
     "DayId": 20,
     "ExerciseName": "Toe Reach",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e27_k10_toe_reach",
     "Image": "e27_k10_toe_reach",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1584,7 +1584,7 @@
     "ExerciseId": 55,
     "DayId": 20,
     "ExerciseName": "Front Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e55_a14_front_raise",
     "Image": "e55_a14_front_raise",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1594,7 +1594,7 @@
     "ExerciseId": 2,
     "DayId": 20,
     "ExerciseName": "Neck Rotation",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e2_b2_neck_rotation",
     "Image": "e2_b2_neck_rotation",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1604,7 +1604,7 @@
     "ExerciseId": 99,
     "DayId": 21,
     "ExerciseName": "Reverse Lunge",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e99_b10_reverse_lunge",
     "Image": "e99_b10_reverse_lunge",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1614,7 +1614,7 @@
     "ExerciseId": 94,
     "DayId": 21,
     "ExerciseName": "Plie Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e94_b5_plie_squat",
     "Image": "e94_b5_plie_squat",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1624,7 +1624,7 @@
     "ExerciseId": 58,
     "DayId": 21,
     "ExerciseName": "Bend From Back",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e58_s1_bend_from_back",
     "Image": "e58_s1_bend_from_back",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1634,7 +1634,7 @@
     "ExerciseId": 73,
     "DayId": 21,
     "ExerciseName": "Half Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e73_s16_half_floor_pull_up",
     "Image": "e73_s16_half_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1644,7 +1644,7 @@
     "ExerciseId": 33,
     "DayId": 21,
     "ExerciseName": "Standing Throw Knee",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e33_k16_standing_throw_knee",
     "Image": "e33_k16_standing_throw_knee",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1654,7 +1654,7 @@
     "ExerciseId": 37,
     "DayId": 21,
     "ExerciseName": "Lying Leg Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e37_k20_lying_leg_up",
     "Image": "e37_k20_lying_leg_up",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1664,7 +1664,7 @@
     "ExerciseId": 45,
     "DayId": 21,
     "ExerciseName": "Pushup Overhead",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e45_a4_pushup_overhead",
     "Image": "e45_a4_pushup_overhead",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1674,7 +1674,7 @@
     "ExerciseId": 83,
     "DayId": 21,
     "ExerciseName": "Mountain Pushups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e83_y6_mountain_pushups",
     "Image": "e83_y6_mountain_pushups",
     "IsExerciseCompleted": false,
     "Level": 1
@@ -1684,7 +1684,7 @@
     "ExerciseId": 107,
     "DayId": 1,
     "ExerciseName": "Squats",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e107_b18_squats",
     "Image": "e107_b18_squats",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1694,7 +1694,7 @@
     "ExerciseId": 93,
     "DayId": 1,
     "ExerciseName": "Quadruped Hip Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e93_b4_quadruped_hip_extension",
     "Image": "e93_b4_quadruped_hip_extension",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1704,7 +1704,7 @@
     "ExerciseId": 61,
     "DayId": 1,
     "ExerciseName": "Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e61_s4_floor_pull_up",
     "Image": "e61_s4_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1714,7 +1714,7 @@
     "ExerciseId": 64,
     "DayId": 1,
     "ExerciseName": "Lying Knee To Chest",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e64_s7_lying_knee_to_chest",
     "Image": "e64_s7_lying_knee_to_chest",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1724,7 +1724,7 @@
     "ExerciseId": 32,
     "DayId": 1,
     "ExerciseName": "Single Leg Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e32_k15_single_leg_raise",
     "Image": "e32_k15_single_leg_raise",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1734,7 +1734,7 @@
     "ExerciseId": 38,
     "DayId": 1,
     "ExerciseName": "Reverse Crunch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e38_k21_reverse_crunch",
     "Image": "e38_k21_reverse_crunch",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1744,7 +1744,7 @@
     "ExerciseId": 51,
     "DayId": 1,
     "ExerciseName": "Slowed Pushups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e51_a10_slowed_pushups",
     "Image": "e51_a10_slowed_pushups",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1754,7 +1754,7 @@
     "ExerciseId": 84,
     "DayId": 1,
     "ExerciseName": "Side Plank Leg Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e84_y7_side_plank_leg_raise",
     "Image": "e84_y7_side_plank_leg_raise",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1764,7 +1764,7 @@
     "ExerciseId": 100,
     "DayId": 2,
     "ExerciseName": "Standing Bend Over",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e100_b11_standing_bend_over",
     "Image": "e100_b11_standing_bend_over",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1774,7 +1774,7 @@
     "ExerciseId": 91,
     "DayId": 2,
     "ExerciseName": "Jump Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e91_b2_jump_squat",
     "Image": "e91_b2_jump_squat",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1784,7 +1784,7 @@
     "ExerciseId": 75,
     "DayId": 2,
     "ExerciseName": "Shoulder Leg Streching",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e75_s18_shoulder_leg_streching",
     "Image": "e75_s18_shoulder_leg_streching",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1794,7 +1794,7 @@
     "ExerciseId": 61,
     "DayId": 2,
     "ExerciseName": "Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e61_s4_floor_pull_up",
     "Image": "e61_s4_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1804,7 +1804,7 @@
     "ExerciseId": 34,
     "DayId": 2,
     "ExerciseName": "Standing Single Leg Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e34_k17_standing_single_leg_up",
     "Image": "e34_k17_standing_single_leg_up",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1814,7 +1814,7 @@
     "ExerciseId": 28,
     "DayId": 2,
     "ExerciseName": "Reverse Crunch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e28_k11_reverse_crunch",
     "Image": "e28_k11_reverse_crunch",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1824,7 +1824,7 @@
     "ExerciseId": 50,
     "DayId": 2,
     "ExerciseName": "Modified Push Ups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e50_a9_modified_push_ups",
     "Image": "e50_a9_modified_push_ups",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1834,7 +1834,7 @@
     "ExerciseId": 80,
     "DayId": 2,
     "ExerciseName": "Curtsy Squat Fast",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e80_y3_curtsy_squat_fast",
     "Image": "e80_y3_curtsy_squat_fast",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1844,7 +1844,7 @@
     "ExerciseId": 108,
     "DayId": 3,
     "ExerciseName": "Pull Single Leg",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e108_b19_pull_single_leg",
     "Image": "e108_b19_pull_single_leg",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1854,7 +1854,7 @@
     "ExerciseId": 110,
     "DayId": 3,
     "ExerciseName": "Step Out Squat With Pulse",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e110_b21_step_out_squat_with_pulse",
     "Image": "e110_b21_step_out_squat_with_pulse",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1864,7 +1864,7 @@
     "ExerciseId": 75,
     "DayId": 3,
     "ExerciseName": "Shoulder Leg Streching",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e75_s18_shoulder_leg_streching",
     "Image": "e75_s18_shoulder_leg_streching",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1874,7 +1874,7 @@
     "ExerciseId": 73,
     "DayId": 3,
     "ExerciseName": "Half Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e73_s16_half_floor_pull_up",
     "Image": "e73_s16_half_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1884,7 +1884,7 @@
     "ExerciseId": 40,
     "DayId": 3,
     "ExerciseName": "Modified Plank",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e40_k23_modified_plank",
     "Image": "e40_k23_modified_plank",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1894,7 +1894,7 @@
     "ExerciseId": 33,
     "DayId": 3,
     "ExerciseName": "Standing Throw Knee",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e33_k16_standing_throw_knee",
     "Image": "e33_k16_standing_throw_knee",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1904,7 +1904,7 @@
     "ExerciseId": 46,
     "DayId": 3,
     "ExerciseName": "Lying Triceps Extensions",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e46_a5_lying_triceps_extensions",
     "Image": "e46_a5_lying_triceps_extensions",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1914,7 +1914,7 @@
     "ExerciseId": 82,
     "DayId": 3,
     "ExerciseName": "Single Leg Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e82_y5_single_leg_extension",
     "Image": "e82_y5_single_leg_extension",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1924,7 +1924,7 @@
     "ExerciseId": 102,
     "DayId": 4,
     "ExerciseName": "Crab Walk",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e102_b13_crab_walk",
     "Image": "e102_b13_crab_walk",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1934,7 +1934,7 @@
     "ExerciseId": 108,
     "DayId": 4,
     "ExerciseName": "Pull Single Leg",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e108_b19_pull_single_leg",
     "Image": "e108_b19_pull_single_leg",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1944,7 +1944,7 @@
     "ExerciseId": 67,
     "DayId": 4,
     "ExerciseName": "Lying Leg Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e67_s10_lying_leg_raise",
     "Image": "e67_s10_lying_leg_raise ",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1954,7 +1954,7 @@
     "ExerciseId": 69,
     "DayId": 4,
     "ExerciseName": "Strech To Foots",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e69_s12_strech_to_foots",
     "Image": "e69_s12_strech_to_foots",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1964,7 +1964,7 @@
     "ExerciseId": 24,
     "DayId": 4,
     "ExerciseName": "Fast Crunchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e24_k7_fast_crunchs",
     "Image": "e24_k7_fast_crunchs",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1974,7 +1974,7 @@
     "ExerciseId": 18,
     "DayId": 4,
     "ExerciseName": "Sit Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e18_k1_sit_up",
     "Image": "e18_k1_sit_up",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1984,7 +1984,7 @@
     "ExerciseId": 50,
     "DayId": 4,
     "ExerciseName": "Modified Push Ups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e50_a9_modified_push_ups",
     "Image": "e50_a9_modified_push_ups",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -1994,7 +1994,7 @@
     "ExerciseId": 78,
     "DayId": 4,
     "ExerciseName": "Standing Shoulder Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e78_y1_standing_shoulder_extension",
     "Image": "e78_y1_standing_shoulder_extension",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2004,7 +2004,7 @@
     "ExerciseId": 108,
     "DayId": 5,
     "ExerciseName": "Pull Single Leg",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e108_b19_pull_single_leg",
     "Image": "e108_b19_pull_single_leg",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2014,7 +2014,7 @@
     "ExerciseId": 104,
     "DayId": 5,
     "ExerciseName": "Frog Jumps",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e104_b15_frog_jumps",
     "Image": "e104_b15_frog_jumps",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2024,7 +2024,7 @@
     "ExerciseId": 59,
     "DayId": 5,
     "ExerciseName": "Shoulder Mobility",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e59_s2_shoulder_mobility",
     "Image": "e59_s2_shoulder_mobility",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2034,7 +2034,7 @@
     "ExerciseId": 66,
     "DayId": 5,
     "ExerciseName": "Lying Leg To Sides",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e66_s9_lying_leg_to_sides",
     "Image": "e66_s9_lying_leg_to_sides",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2044,7 +2044,7 @@
     "ExerciseId": 18,
     "DayId": 5,
     "ExerciseName": "Sit Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e18_k1_sit_up",
     "Image": "e18_k1_sit_up",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2054,7 +2054,7 @@
     "ExerciseId": 19,
     "DayId": 5,
     "ExerciseName": "Scissor Kicks",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e19_k2_scissor_kicks",
     "Image": "e19_k2_scissor_kicks",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2064,7 +2064,7 @@
     "ExerciseId": 57,
     "DayId": 5,
     "ExerciseName": "Single Arm Overhead Press",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e57_a16_single_arm_overhead_press",
     "Image": "e57_a16_single_arm_overhead_press",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2074,7 +2074,7 @@
     "ExerciseId": 84,
     "DayId": 5,
     "ExerciseName": "Side Plank Leg Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e84_y7_side_plank_leg_raise",
     "Image": "e84_y7_side_plank_leg_raise",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2084,7 +2084,7 @@
     "ExerciseId": 107,
     "DayId": 6,
     "ExerciseName": "Squats",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e107_b18_squats",
     "Image": "e107_b18_squats",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2094,7 +2094,7 @@
     "ExerciseId": 108,
     "DayId": 6,
     "ExerciseName": "Pull Single Leg",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e108_b19_pull_single_leg",
     "Image": "e108_b19_pull_single_leg",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2104,7 +2104,7 @@
     "ExerciseId": 74,
     "DayId": 6,
     "ExerciseName": "Down To Up Clapping",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e74_s17_down_to_up_clapping",
     "Image": "e74_s17_down_to_up_clapping",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2114,7 +2114,7 @@
     "ExerciseId": 64,
     "DayId": 6,
     "ExerciseName": "Lying Knee To Chest",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e64_s7_lying_knee_to_chest",
     "Image": "e64_s7_lying_knee_to_chest",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2124,7 +2124,7 @@
     "ExerciseId": 40,
     "DayId": 6,
     "ExerciseName": "Modified Plank",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e40_k23_modified_plank",
     "Image": "e40_k23_modified_plank",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2134,7 +2134,7 @@
     "ExerciseId": 24,
     "DayId": 6,
     "ExerciseName": "Fast Crunchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e24_k7_fast_crunchs",
     "Image": "e24_k7_fast_crunchs",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2144,7 +2144,7 @@
     "ExerciseId": 55,
     "DayId": 6,
     "ExerciseName": "Front Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e55_a14_front_raise",
     "Image": "e55_a14_front_raise",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2154,7 +2154,7 @@
     "ExerciseId": 79,
     "DayId": 6,
     "ExerciseName": "Standing Leg Streching",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e79_y2_standing_leg_streching",
     "Image": "e79_y2_standing_leg_streching",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2164,7 +2164,7 @@
     "ExerciseId": 105,
     "DayId": 7,
     "ExerciseName": "Grace Marching Bridge Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e105_b16_grace_marching_bridge_extension",
     "Image": "e105_b16_grace_marching_bridge_extension",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2174,7 +2174,7 @@
     "ExerciseId": 100,
     "DayId": 7,
     "ExerciseName": "Standing Bend Over",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e100_b11_standing_bend_over",
     "Image": "e100_b11_standing_bend_over",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2184,7 +2184,7 @@
     "ExerciseId": 60,
     "DayId": 7,
     "ExerciseName": "Camel Back Strech",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e60_s3_camel_back_strech",
     "Image": "e60_s3_camel_back_strech",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2194,7 +2194,7 @@
     "ExerciseId": 77,
     "DayId": 7,
     "ExerciseName": "Jumping Sides",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e77_s20_jumping_sides",
     "Image": "e77_s20_jumping_sides",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2204,7 +2204,7 @@
     "ExerciseId": 25,
     "DayId": 7,
     "ExerciseName": "Seated Punchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e25_k8_seated_punchs",
     "Image": "e25_k8_seated_punchs",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2214,7 +2214,7 @@
     "ExerciseId": 35,
     "DayId": 7,
     "ExerciseName": "T Position",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e35_k18_t_position",
     "Image": "e35_k18_t_position",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2224,7 +2224,7 @@
     "ExerciseId": 50,
     "DayId": 7,
     "ExerciseName": "Modified Push Ups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e50_a9_modified_push_ups",
     "Image": "e50_a9_modified_push_ups",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2234,7 +2234,7 @@
     "ExerciseId": 13,
     "DayId": 7,
     "ExerciseName": "Lying Dive",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e13_b13_lying_dive",
     "Image": "e13_b13_lying_dive",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2244,7 +2244,7 @@
     "ExerciseId": 107,
     "DayId": 8,
     "ExerciseName": "Squats",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e107_b18_squats",
     "Image": "e107_b18_squats",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2254,7 +2254,7 @@
     "ExerciseId": 102,
     "DayId": 8,
     "ExerciseName": "Crab Walk",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e102_b13_crab_walk",
     "Image": "e102_b13_crab_walk",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2264,7 +2264,7 @@
     "ExerciseId": 77,
     "DayId": 8,
     "ExerciseName": "Jumping Sides",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e77_s20_jumping_sides",
     "Image": "e77_s20_jumping_sides",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2274,7 +2274,7 @@
     "ExerciseId": 76,
     "DayId": 8,
     "ExerciseName": "Standing Reach To Foot",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e76_s19_standing_reach_to_foot",
     "Image": "e76_s19_standing_reach_to_foot",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2284,7 +2284,7 @@
     "ExerciseId": 30,
     "DayId": 8,
     "ExerciseName": "Single Side Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e30_k13_single_side_up",
     "Image": "e30_k13_single_side_up",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2294,7 +2294,7 @@
     "ExerciseId": 19,
     "DayId": 8,
     "ExerciseName": "Scissor Kicks",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e19_k2_scissor_kicks",
     "Image": "e19_k2_scissor_kicks",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2304,7 +2304,7 @@
     "ExerciseId": 49,
     "DayId": 8,
     "ExerciseName": "Knee Push Ups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e49_a8_knee_push_ups",
     "Image": "e49_a8_knee_push_ups",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2314,7 +2314,7 @@
     "ExerciseId": 11,
     "DayId": 8,
     "ExerciseName": "Get Up Straight",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e11_b11_get_up_straight",
     "Image": "e11_b11_get_up_straight",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2324,7 +2324,7 @@
     "ExerciseId": 104,
     "DayId": 9,
     "ExerciseName": "Frog Jumps",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e104_b15_frog_jumps",
     "Image": "e104_b15_frog_jumps",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2334,7 +2334,7 @@
     "ExerciseId": 109,
     "DayId": 9,
     "ExerciseName": "Single Leg Deadlift",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e109_b20_single_leg_deadlift",
     "Image": "e109_b20_single_leg_deadlift",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2344,7 +2344,7 @@
     "ExerciseId": 68,
     "DayId": 9,
     "ExerciseName": "Seated Knee Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e68_s11_seated_knee_raise",
     "Image": "e68_s11_seated_knee_raise",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2354,7 +2354,7 @@
     "ExerciseId": 76,
     "DayId": 9,
     "ExerciseName": "Standing Reach To Foot",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e76_s19_standing_reach_to_foot",
     "Image": "e76_s19_standing_reach_to_foot",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2364,7 +2364,7 @@
     "ExerciseId": 29,
     "DayId": 9,
     "ExerciseName": "Full Crunch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e29_k12_full_crunch",
     "Image": "e29_k12_full_crunch",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2374,7 +2374,7 @@
     "ExerciseId": 23,
     "DayId": 9,
     "ExerciseName": "Lying Reaches",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e23_k6_lying_reaches",
     "Image": "e23_k6_lying_reaches",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2384,7 +2384,7 @@
     "ExerciseId": 50,
     "DayId": 9,
     "ExerciseName": "Modified Push Ups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e50_a9_modified_push_ups",
     "Image": "e50_a9_modified_push_ups",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2394,7 +2394,7 @@
     "ExerciseId": 88,
     "DayId": 9,
     "ExerciseName": "Side Plank Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e88_y11_side_plank_extension",
     "Image": "e88_y11_side_plank_extension",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2404,7 +2404,7 @@
     "ExerciseId": 96,
     "DayId": 10,
     "ExerciseName": "Fire Hydrants",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e96_b7_fire_hydrants",
     "Image": "e96_b7_fire_hydrants",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2414,7 +2414,7 @@
     "ExerciseId": 94,
     "DayId": 10,
     "ExerciseName": "Plie Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e94_b5_plie_squat",
     "Image": "e94_b5_plie_squat",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2424,7 +2424,7 @@
     "ExerciseId": 59,
     "DayId": 10,
     "ExerciseName": "Shoulder Mobility",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e59_s2_shoulder_mobility",
     "Image": "e59_s2_shoulder_mobility",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2434,7 +2434,7 @@
     "ExerciseId": 68,
     "DayId": 10,
     "ExerciseName": "Seated Knee Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e68_s11_seated_knee_raise",
     "Image": "e68_s11_seated_knee_raise",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2444,7 +2444,7 @@
     "ExerciseId": 40,
     "DayId": 10,
     "ExerciseName": "Modified Plank",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e40_k23_modified_plank",
     "Image": "e40_k23_modified_plank",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2454,7 +2454,7 @@
     "ExerciseId": 29,
     "DayId": 10,
     "ExerciseName": "Full Crunch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e29_k12_full_crunch",
     "Image": "e29_k12_full_crunch",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2464,7 +2464,7 @@
     "ExerciseId": 44,
     "DayId": 10,
     "ExerciseName": "Bend Over Arm Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e44_a3_bend_over_arm_extension",
     "Image": "e44_a3_bend_over_arm_extension",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2474,7 +2474,7 @@
     "ExerciseId": 9,
     "DayId": 10,
     "ExerciseName": "Upper Body Rotation",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e9_b9_upper_body_rotation",
     "Image": "e9_b9_upper_body_rotation",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2484,7 +2484,7 @@
     "ExerciseId": 96,
     "DayId": 11,
     "ExerciseName": "Fire Hydrants",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e96_b7_fire_hydrants",
     "Image": "e96_b7_fire_hydrants",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2494,7 +2494,7 @@
     "ExerciseId": 100,
     "DayId": 11,
     "ExerciseName": "Standing Bend Over",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e100_b11_standing_bend_over",
     "Image": "e100_b11_standing_bend_over",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2504,7 +2504,7 @@
     "ExerciseId": 72,
     "DayId": 11,
     "ExerciseName": "Curtsy Lunge With Knee Raise Lift",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e72_s15_curtsy_lunge_with_knee_raise_lift",
     "Image": "e72_s15_curtsy_lunge_with_knee_raise_lift",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2514,7 +2514,7 @@
     "ExerciseId": 73,
     "DayId": 11,
     "ExerciseName": "Half Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e73_s16_half_floor_pull_up",
     "Image": "e73_s16_half_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2524,7 +2524,7 @@
     "ExerciseId": 38,
     "DayId": 11,
     "ExerciseName": "Reverse Crunch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e38_k21_reverse_crunch",
     "Image": "e38_k21_reverse_crunch",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2534,7 +2534,7 @@
     "ExerciseId": 29,
     "DayId": 11,
     "ExerciseName": "Full Crunch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e29_k12_full_crunch",
     "Image": "e29_k12_full_crunch",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2544,7 +2544,7 @@
     "ExerciseId": 50,
     "DayId": 11,
     "ExerciseName": "Modified Push Ups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e50_a9_modified_push_ups",
     "Image": "e50_a9_modified_push_ups",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2554,7 +2554,7 @@
     "ExerciseId": 5,
     "DayId": 11,
     "ExerciseName": "Back And Forward Band",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e5_b5_back_and_forward_band",
     "Image": "e5_b5_back_and_forward_band",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2564,7 +2564,7 @@
     "ExerciseId": 106,
     "DayId": 12,
     "ExerciseName": "High Donkey Kick",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e106_b17_high_donkey_kick",
     "Image": "e106_b17_high_donkey_kick",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2574,7 +2574,7 @@
     "ExerciseId": 110,
     "DayId": 12,
     "ExerciseName": "Step Out Squat With Pulse",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e110_b21_step_out_squat_with_pulse",
     "Image": "e110_b21_step_out_squat_with_pulse",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2584,7 +2584,7 @@
     "ExerciseId": 61,
     "DayId": 12,
     "ExerciseName": "Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e61_s4_floor_pull_up",
     "Image": "e61_s4_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2594,7 +2594,7 @@
     "ExerciseId": 60,
     "DayId": 12,
     "ExerciseName": "Camel Back Strech",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e60_s3_camel_back_strech",
     "Image": "e60_s3_camel_back_strech",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2604,7 +2604,7 @@
     "ExerciseId": 27,
     "DayId": 12,
     "ExerciseName": "Toe Reach",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e27_k10_toe_reach",
     "Image": "e27_k10_toe_reach",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2614,7 +2614,7 @@
     "ExerciseId": 41,
     "DayId": 12,
     "ExerciseName": "Mountain Climb",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e41_k24_mountain_climb",
     "Image": "e41_k24_mountain_climb",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2624,7 +2624,7 @@
     "ExerciseId": 54,
     "DayId": 12,
     "ExerciseName": "Front Overhead Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e54_a13_front_overhead_raise",
     "Image": "e54_a13_front_overhead_raise",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2634,7 +2634,7 @@
     "ExerciseId": 17,
     "DayId": 12,
     "ExerciseName": "Lying Neck Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e17_b17_lying_neck_extension",
     "Image": "e17_b17_lying_neck_extension",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2644,7 +2644,7 @@
     "ExerciseId": 109,
     "DayId": 13,
     "ExerciseName": "Single Leg Deadlift",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e109_b20_single_leg_deadlift",
     "Image": "e109_b20_single_leg_deadlift",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2654,7 +2654,7 @@
     "ExerciseId": 110,
     "DayId": 13,
     "ExerciseName": "Step Out Squat With Pulse",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e110_b21_step_out_squat_with_pulse",
     "Image": "e110_b21_step_out_squat_with_pulse",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2664,7 +2664,7 @@
     "ExerciseId": 62,
     "DayId": 13,
     "ExerciseName": "Seated Side Reach To Foot",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e62_s5_seated_side_reach_to_foot",
     "Image": "e62_s5_seated_side_reach_to_foot",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2674,7 +2674,7 @@
     "ExerciseId": 74,
     "DayId": 13,
     "ExerciseName": "Down To Up Clapping",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e74_s17_down_to_up_clapping",
     "Image": "e74_s17_down_to_up_clapping",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2684,7 +2684,7 @@
     "ExerciseId": 36,
     "DayId": 13,
     "ExerciseName": "Standing To Push Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e36_k19_standing_to_push_up",
     "Image": "e36_k19_standing_to_push_up",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2694,7 +2694,7 @@
     "ExerciseId": 19,
     "DayId": 13,
     "ExerciseName": "Scissor Kicks",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e19_k2_scissor_kicks",
     "Image": "e19_k2_scissor_kicks",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2704,7 +2704,7 @@
     "ExerciseId": 43,
     "DayId": 13,
     "ExerciseName": "Triceps Push Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e43_a2_triceps_push_up",
     "Image": "e43_a2_triceps_push_up",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2714,7 +2714,7 @@
     "ExerciseId": 7,
     "DayId": 13,
     "ExerciseName": "Shoulder Rotation",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e7_b7_shoulder_rotation",
     "Image": "e7_b7_shoulder_rotation",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2724,7 +2724,7 @@
     "ExerciseId": 105,
     "DayId": 14,
     "ExerciseName": "Grace Marching Bridge Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e105_b16_grace_marching_bridge_extension",
     "Image": "e105_b16_grace_marching_bridge_extension",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2734,7 +2734,7 @@
     "ExerciseId": 96,
     "DayId": 14,
     "ExerciseName": "Fire Hydrants",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e96_b7_fire_hydrants",
     "Image": "e96_b7_fire_hydrants",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2744,7 +2744,7 @@
     "ExerciseId": 58,
     "DayId": 14,
     "ExerciseName": "Bend From Back",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e58_s1_bend_from_back",
     "Image": "e58_s1_bend_from_back",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2754,7 +2754,7 @@
     "ExerciseId": 61,
     "DayId": 14,
     "ExerciseName": "Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e61_s4_floor_pull_up",
     "Image": "e61_s4_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2764,7 +2764,7 @@
     "ExerciseId": 39,
     "DayId": 14,
     "ExerciseName": "Standing Shake",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e39_k22_standing_shake",
     "Image": "e39_k22_standing_shake",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2774,7 +2774,7 @@
     "ExerciseId": 20,
     "DayId": 14,
     "ExerciseName": "Bicycle Crunch Slowed",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e20_k3_bicycle_crunch_slowed",
     "Image": "e20_k3_bicycle_crunch_slowed",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2784,7 +2784,7 @@
     "ExerciseId": 57,
     "DayId": 14,
     "ExerciseName": "Single Arm Overhead Press",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e57_a16_single_arm_overhead_press",
     "Image": "e57_a16_single_arm_overhead_press",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2794,7 +2794,7 @@
     "ExerciseId": 81,
     "DayId": 14,
     "ExerciseName": "Seated Side Extensions",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e81_y4_seated_side_extensions",
     "Image": "e81_y4_seated_side_extensions",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2804,7 +2804,7 @@
     "ExerciseId": 102,
     "DayId": 15,
     "ExerciseName": "Crab Walk",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e102_b13_crab_walk",
     "Image": "e102_b13_crab_walk",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2814,7 +2814,7 @@
     "ExerciseId": 92,
     "DayId": 15,
     "ExerciseName": "Glute Bridge",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e92_b3_glute_bridge",
     "Image": "e92_b3_glute_bridge",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2824,7 +2824,7 @@
     "ExerciseId": 60,
     "DayId": 15,
     "ExerciseName": "Camel Back Strech",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e60_s3_camel_back_strech",
     "Image": "e60_s3_camel_back_strech",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2834,7 +2834,7 @@
     "ExerciseId": 65,
     "DayId": 15,
     "ExerciseName": "Lying Knee To Stomatch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e65_s8_lying_knee_to_stomatch",
     "Image": "e65_s8_lying_knee_to_stomatch",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2844,7 +2844,7 @@
     "ExerciseId": 23,
     "DayId": 15,
     "ExerciseName": "Lying Reaches",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e23_k6_lying_reaches",
     "Image": "e23_k6_lying_reaches",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2854,7 +2854,7 @@
     "ExerciseId": 41,
     "DayId": 15,
     "ExerciseName": "Mountain Climb",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e41_k24_mountain_climb",
     "Image": "e41_k24_mountain_climb",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2864,7 +2864,7 @@
     "ExerciseId": 43,
     "DayId": 15,
     "ExerciseName": "Triceps Push Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e43_a2_triceps_push_up",
     "Image": "e43_a2_triceps_push_up",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2874,7 +2874,7 @@
     "ExerciseId": 1,
     "DayId": 15,
     "ExerciseName": "Sitting Side Bends",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e1_b1_sitting_side_bends",
     "Image": "e1_b1_sitting_side_bends",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2884,7 +2884,7 @@
     "ExerciseId": 97,
     "DayId": 16,
     "ExerciseName": "Clamshells",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e97_b8_clamshells",
     "Image": "e97_b8_clamshells",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2894,7 +2894,7 @@
     "ExerciseId": 99,
     "DayId": 16,
     "ExerciseName": "Reverse Lunge",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e99_b10_reverse_lunge",
     "Image": "e99_b10_reverse_lunge",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2904,7 +2904,7 @@
     "ExerciseId": 58,
     "DayId": 16,
     "ExerciseName": "Bend From Back",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e58_s1_bend_from_back",
     "Image": "e58_s1_bend_from_back",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2914,7 +2914,7 @@
     "ExerciseId": 74,
     "DayId": 16,
     "ExerciseName": "Down To Up Clapping",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e74_s17_down_to_up_clapping",
     "Image": "e74_s17_down_to_up_clapping",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2924,7 +2924,7 @@
     "ExerciseId": 28,
     "DayId": 16,
     "ExerciseName": "Reverse Crunch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e28_k11_reverse_crunch",
     "Image": "e28_k11_reverse_crunch",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2934,7 +2934,7 @@
     "ExerciseId": 35,
     "DayId": 16,
     "ExerciseName": "T Position",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e35_k18_t_position",
     "Image": "e35_k18_t_position",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2944,7 +2944,7 @@
     "ExerciseId": 46,
     "DayId": 16,
     "ExerciseName": "Lying Triceps Extensions",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e46_a5_lying_triceps_extensions",
     "Image": "e46_a5_lying_triceps_extensions",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2954,7 +2954,7 @@
     "ExerciseId": 80,
     "DayId": 16,
     "ExerciseName": "Curtsy Squat Fast",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e80_y3_curtsy_squat_fast",
     "Image": "e80_y3_curtsy_squat_fast",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2964,7 +2964,7 @@
     "ExerciseId": 94,
     "DayId": 17,
     "ExerciseName": "Plie Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e94_b5_plie_squat",
     "Image": "e94_b5_plie_squat",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2974,7 +2974,7 @@
     "ExerciseId": 108,
     "DayId": 17,
     "ExerciseName": "Pull Single Leg",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e108_b19_pull_single_leg",
     "Image": "e108_b19_pull_single_leg",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2984,7 +2984,7 @@
     "ExerciseId": 68,
     "DayId": 17,
     "ExerciseName": "Seated Knee Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e68_s11_seated_knee_raise",
     "Image": "e68_s11_seated_knee_raise",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -2994,7 +2994,7 @@
     "ExerciseId": 71,
     "DayId": 17,
     "ExerciseName": "Up Down Sumo",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e71_s14_up_down_sumo",
     "Image": "e71_s14_up_down_sumo",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3004,7 +3004,7 @@
     "ExerciseId": 24,
     "DayId": 17,
     "ExerciseName": "Fast Crunchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e24_k7_fast_crunchs",
     "Image": "e24_k7_fast_crunchs",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3014,7 +3014,7 @@
     "ExerciseId": 39,
     "DayId": 17,
     "ExerciseName": "Standing Shake",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e39_k22_standing_shake",
     "Image": "e39_k22_standing_shake",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3024,7 +3024,7 @@
     "ExerciseId": 52,
     "DayId": 17,
     "ExerciseName": "Lying Shoulder Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e52_a11_lying_shoulder_extension",
     "Image": "e52_a11_lying_shoulder_extension",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3034,7 +3034,7 @@
     "ExerciseId": 85,
     "DayId": 17,
     "ExerciseName": "Down To Up Hand Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e85_y8_down_to_up_hand_raise",
     "Image": "e85_y8_down_to_up_hand_raise",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3044,7 +3044,7 @@
     "ExerciseId": 105,
     "DayId": 18,
     "ExerciseName": "Grace Marching Bridge Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e105_b16_grace_marching_bridge_extension",
     "Image": "e105_b16_grace_marching_bridge_extension",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3054,7 +3054,7 @@
     "ExerciseId": 103,
     "DayId": 18,
     "ExerciseName": "Donkey Kick",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e103_b14_donkey_kick",
     "Image": "e103_b14_donkey_kick",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3064,7 +3064,7 @@
     "ExerciseId": 58,
     "DayId": 18,
     "ExerciseName": "Bend From Back",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e58_s1_bend_from_back",
     "Image": "e58_s1_bend_from_back",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3074,7 +3074,7 @@
     "ExerciseId": 74,
     "DayId": 18,
     "ExerciseName": "Down To Up Clapping",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e74_s17_down_to_up_clapping",
     "Image": "e74_s17_down_to_up_clapping",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3084,7 +3084,7 @@
     "ExerciseId": 25,
     "DayId": 18,
     "ExerciseName": "Seated Punchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e25_k8_seated_punchs",
     "Image": "e25_k8_seated_punchs",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3094,7 +3094,7 @@
     "ExerciseId": 27,
     "DayId": 18,
     "ExerciseName": "Toe Reach",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e27_k10_toe_reach",
     "Image": "e27_k10_toe_reach",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3104,7 +3104,7 @@
     "ExerciseId": 57,
     "DayId": 18,
     "ExerciseName": "Single Arm Overhead Press",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e57_a16_single_arm_overhead_press",
     "Image": "e57_a16_single_arm_overhead_press",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3114,7 +3114,7 @@
     "ExerciseId": 86,
     "DayId": 18,
     "ExerciseName": "Plank Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e86_y9_plank_extension",
     "Image": "e86_y9_plank_extension",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3124,7 +3124,7 @@
     "ExerciseId": 97,
     "DayId": 19,
     "ExerciseName": "Clamshells",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e97_b8_clamshells",
     "Image": "e97_b8_clamshells",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3134,7 +3134,7 @@
     "ExerciseId": 106,
     "DayId": 19,
     "ExerciseName": "High Donkey Kick",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e106_b17_high_donkey_kick",
     "Image": "e106_b17_high_donkey_kick",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3144,7 +3144,7 @@
     "ExerciseId": 64,
     "DayId": 19,
     "ExerciseName": "Lying Knee To Chest",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e64_s7_lying_knee_to_chest",
     "Image": "e64_s7_lying_knee_to_chest",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3154,7 +3154,7 @@
     "ExerciseId": 70,
     "DayId": 19,
     "ExerciseName": "Standing Leg Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e70_s13_standing_leg_extension",
     "Image": "e70_s13_standing_leg_extension",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3164,7 +3164,7 @@
     "ExerciseId": 18,
     "DayId": 19,
     "ExerciseName": "Sit Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e18_k1_sit_up",
     "Image": "e18_k1_sit_up",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3174,7 +3174,7 @@
     "ExerciseId": 23,
     "DayId": 19,
     "ExerciseName": "Lying Reaches",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e23_k6_lying_reaches",
     "Image": "e23_k6_lying_reaches",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3184,7 +3184,7 @@
     "ExerciseId": 46,
     "DayId": 19,
     "ExerciseName": "Lying Triceps Extensions",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e46_a5_lying_triceps_extensions",
     "Image": "e46_a5_lying_triceps_extensions",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3194,7 +3194,7 @@
     "ExerciseId": 83,
     "DayId": 19,
     "ExerciseName": "Mountain Pushups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e83_y6_mountain_pushups",
     "Image": "e83_y6_mountain_pushups",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3204,7 +3204,7 @@
     "ExerciseId": 101,
     "DayId": 20,
     "ExerciseName": "Chair Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e101_b12_chair_squat",
     "Image": "e101_b12_chair_squat",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3214,7 +3214,7 @@
     "ExerciseId": 102,
     "DayId": 20,
     "ExerciseName": "Crab Walk",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e102_b13_crab_walk",
     "Image": "e102_b13_crab_walk",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3224,7 +3224,7 @@
     "ExerciseId": 60,
     "DayId": 20,
     "ExerciseName": "Camel Back Strech",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e60_s3_camel_back_strech",
     "Image": "e60_s3_camel_back_strech",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3234,7 +3234,7 @@
     "ExerciseId": 75,
     "DayId": 20,
     "ExerciseName": "Shoulder Leg Streching",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e75_s18_shoulder_leg_streching",
     "Image": "e75_s18_shoulder_leg_streching",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3244,7 +3244,7 @@
     "ExerciseId": 31,
     "DayId": 20,
     "ExerciseName": "To V Sit",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e31_k14_to_v_sit",
     "Image": "e31_k14_to_v_sit",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3254,7 +3254,7 @@
     "ExerciseId": 19,
     "DayId": 20,
     "ExerciseName": "Scissor Kicks",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e19_k2_scissor_kicks",
     "Image": "e19_k2_scissor_kicks",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3264,7 +3264,7 @@
     "ExerciseId": 49,
     "DayId": 20,
     "ExerciseName": "Knee Push Ups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e49_a8_knee_push_ups",
     "Image": "e49_a8_knee_push_ups",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3274,7 +3274,7 @@
     "ExerciseId": 78,
     "DayId": 20,
     "ExerciseName": "Standing Shoulder Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e78_y1_standing_shoulder_extension",
     "Image": "e78_y1_standing_shoulder_extension",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3284,7 +3284,7 @@
     "ExerciseId": 106,
     "DayId": 21,
     "ExerciseName": "High Donkey Kick",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e106_b17_high_donkey_kick",
     "Image": "e106_b17_high_donkey_kick",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3294,7 +3294,7 @@
     "ExerciseId": 102,
     "DayId": 21,
     "ExerciseName": "Crab Walk",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e102_b13_crab_walk",
     "Image": "e102_b13_crab_walk",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3304,7 +3304,7 @@
     "ExerciseId": 73,
     "DayId": 21,
     "ExerciseName": "Half Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e73_s16_half_floor_pull_up",
     "Image": "e73_s16_half_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3314,7 +3314,7 @@
     "ExerciseId": 59,
     "DayId": 21,
     "ExerciseName": "Shoulder Mobility",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e59_s2_shoulder_mobility",
     "Image": "e59_s2_shoulder_mobility",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3324,7 +3324,7 @@
     "ExerciseId": 25,
     "DayId": 21,
     "ExerciseName": "Seated Punchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e25_k8_seated_punchs",
     "Image": "e25_k8_seated_punchs",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3334,7 +3334,7 @@
     "ExerciseId": 27,
     "DayId": 21,
     "ExerciseName": "Toe Reach",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e27_k10_toe_reach",
     "Image": "e27_k10_toe_reach",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3344,7 +3344,7 @@
     "ExerciseId": 42,
     "DayId": 21,
     "ExerciseName": "Seated Dips",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e42_a1_seated_dips",
     "Image": "e42_a1_seated_dips",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3354,7 +3354,7 @@
     "ExerciseId": 86,
     "DayId": 21,
     "ExerciseName": "Plank Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e86_y9_plank_extension",
     "Image": "e86_y9_plank_extension",
     "IsExerciseCompleted": false,
     "Level": 2
@@ -3364,7 +3364,7 @@
     "ExerciseId": 101,
     "DayId": 1,
     "ExerciseName": "Chair Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e101_b12_chair_squat",
     "Image": "e101_b12_chair_squat",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3374,7 +3374,7 @@
     "ExerciseId": 99,
     "DayId": 1,
     "ExerciseName": "Reverse Lunge",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e99_b10_reverse_lunge",
     "Image": "e99_b10_reverse_lunge",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3384,7 +3384,7 @@
     "ExerciseId": 60,
     "DayId": 1,
     "ExerciseName": "Camel Back Strech",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e60_s3_camel_back_strech",
     "Image": "e60_s3_camel_back_strech",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3394,7 +3394,7 @@
     "ExerciseId": 61,
     "DayId": 1,
     "ExerciseName": "Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e61_s4_floor_pull_up",
     "Image": "e61_s4_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3404,7 +3404,7 @@
     "ExerciseId": 35,
     "DayId": 1,
     "ExerciseName": "T Position",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e35_k18_t_position",
     "Image": "e35_k18_t_position",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3414,7 +3414,7 @@
     "ExerciseId": 31,
     "DayId": 1,
     "ExerciseName": "To V Sit",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e31_k14_to_v_sit",
     "Image": "e31_k14_to_v_sit",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3424,7 +3424,7 @@
     "ExerciseId": 50,
     "DayId": 1,
     "ExerciseName": "Modified Push Ups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e50_a9_modified_push_ups",
     "Image": "e50_a9_modified_push_ups",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3434,7 +3434,7 @@
     "ExerciseId": 11,
     "DayId": 1,
     "ExerciseName": "Get Up Straight",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e11_b11_get_up_straight",
     "Image": "e11_b11_get_up_straight",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3444,7 +3444,7 @@
     "ExerciseId": 93,
     "DayId": 2,
     "ExerciseName": "Quadruped Hip Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e93_b4_quadruped_hip_extension",
     "Image": "e93_b4_quadruped_hip_extension",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3454,7 +3454,7 @@
     "ExerciseId": 96,
     "DayId": 2,
     "ExerciseName": "Fire Hydrants",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e96_b7_fire_hydrants",
     "Image": "e96_b7_fire_hydrants",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3464,7 +3464,7 @@
     "ExerciseId": 69,
     "DayId": 2,
     "ExerciseName": "Strech To Foots",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e69_s12_strech_to_foots",
     "Image": "e69_s12_strech_to_foots",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3474,7 +3474,7 @@
     "ExerciseId": 74,
     "DayId": 2,
     "ExerciseName": "Down To Up Clapping",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e74_s17_down_to_up_clapping",
     "Image": "e74_s17_down_to_up_clapping",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3484,7 +3484,7 @@
     "ExerciseId": 31,
     "DayId": 2,
     "ExerciseName": "To V Sit",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e31_k14_to_v_sit",
     "Image": "e31_k14_to_v_sit",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3494,7 +3494,7 @@
     "ExerciseId": 18,
     "DayId": 2,
     "ExerciseName": "Sit Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e18_k1_sit_up",
     "Image": "e18_k1_sit_up",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3504,7 +3504,7 @@
     "ExerciseId": 45,
     "DayId": 2,
     "ExerciseName": "Pushup Overhead",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e45_a4_pushup_overhead",
     "Image": "e45_a4_pushup_overhead",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3514,7 +3514,7 @@
     "ExerciseId": 89,
     "DayId": 2,
     "ExerciseName": "Plank Row",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e89_y12_plank_row",
     "Image": "e89_y12_plank_row",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3524,7 +3524,7 @@
     "ExerciseId": 106,
     "DayId": 3,
     "ExerciseName": "High Donkey Kick",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e106_b17_high_donkey_kick",
     "Image": "e106_b17_high_donkey_kick",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3534,7 +3534,7 @@
     "ExerciseId": 108,
     "DayId": 3,
     "ExerciseName": "Pull Single Leg",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e108_b19_pull_single_leg",
     "Image": "e108_b19_pull_single_leg",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3544,7 +3544,7 @@
     "ExerciseId": 61,
     "DayId": 3,
     "ExerciseName": "Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e61_s4_floor_pull_up",
     "Image": "e61_s4_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3554,7 +3554,7 @@
     "ExerciseId": 58,
     "DayId": 3,
     "ExerciseName": "Bend From Back",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e58_s1_bend_from_back",
     "Image": "e58_s1_bend_from_back",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3564,7 +3564,7 @@
     "ExerciseId": 21,
     "DayId": 3,
     "ExerciseName": "Russian Twist",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e21_k4_russian_twist",
     "Image": "e21_k4_russian_twist",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3574,7 +3574,7 @@
     "ExerciseId": 37,
     "DayId": 3,
     "ExerciseName": "Lying Leg Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e37_k20_lying_leg_up",
     "Image": "e37_k20_lying_leg_up",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3584,7 +3584,7 @@
     "ExerciseId": 47,
     "DayId": 3,
     "ExerciseName": "Punch Left Right",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e47_a6_punch_left_right",
     "Image": "e47_a6_punch_left_right",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3594,7 +3594,7 @@
     "ExerciseId": 86,
     "DayId": 3,
     "ExerciseName": "Plank Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e86_y9_plank_extension",
     "Image": "e86_y9_plank_extension",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3604,7 +3604,7 @@
     "ExerciseId": 91,
     "DayId": 4,
     "ExerciseName": "Jump Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e91_b2_jump_squat",
     "Image": "e91_b2_jump_squat",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3614,7 +3614,7 @@
     "ExerciseId": 97,
     "DayId": 4,
     "ExerciseName": "Clamshells",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e97_b8_clamshells",
     "Image": "e97_b8_clamshells",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3624,7 +3624,7 @@
     "ExerciseId": 70,
     "DayId": 4,
     "ExerciseName": "Standing Leg Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e70_s13_standing_leg_extension",
     "Image": "e70_s13_standing_leg_extension",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3634,7 +3634,7 @@
     "ExerciseId": 61,
     "DayId": 4,
     "ExerciseName": "Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e61_s4_floor_pull_up",
     "Image": "e61_s4_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3644,7 +3644,7 @@
     "ExerciseId": 25,
     "DayId": 4,
     "ExerciseName": "Seated Punchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e25_k8_seated_punchs",
     "Image": "e25_k8_seated_punchs",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3654,7 +3654,7 @@
     "ExerciseId": 32,
     "DayId": 4,
     "ExerciseName": "Single Leg Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e32_k15_single_leg_raise",
     "Image": "e32_k15_single_leg_raise",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3664,7 +3664,7 @@
     "ExerciseId": 53,
     "DayId": 4,
     "ExerciseName": "Push Up Strech",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e53_a12_push_up_strech",
     "Image": "e53_a12_push_up_strech",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3674,7 +3674,7 @@
     "ExerciseId": 15,
     "DayId": 4,
     "ExerciseName": "Chair Back Strech",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e15_b15_chair_back_strech",
     "Image": "e15_b15_chair_back_strech",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3684,7 +3684,7 @@
     "ExerciseId": 90,
     "DayId": 5,
     "ExerciseName": "Bird Dog",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e90_b1_bird_dog",
     "Image": "e90_b1_bird_dog",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3694,7 +3694,7 @@
     "ExerciseId": 101,
     "DayId": 5,
     "ExerciseName": "Chair Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e101_b12_chair_squat",
     "Image": "e101_b12_chair_squat",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3704,7 +3704,7 @@
     "ExerciseId": 73,
     "DayId": 5,
     "ExerciseName": "Half Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e73_s16_half_floor_pull_up",
     "Image": "e73_s16_half_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3714,7 +3714,7 @@
     "ExerciseId": 68,
     "DayId": 5,
     "ExerciseName": "Seated Knee Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e68_s11_seated_knee_raise",
     "Image": "e68_s11_seated_knee_raise",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3724,7 +3724,7 @@
     "ExerciseId": 24,
     "DayId": 5,
     "ExerciseName": "Fast Crunchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e24_k7_fast_crunchs",
     "Image": "e24_k7_fast_crunchs",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3734,7 +3734,7 @@
     "ExerciseId": 25,
     "DayId": 5,
     "ExerciseName": "Seated Punchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e25_k8_seated_punchs",
     "Image": "e25_k8_seated_punchs",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3744,7 +3744,7 @@
     "ExerciseId": 57,
     "DayId": 5,
     "ExerciseName": "Single Arm Overhead Press",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e57_a16_single_arm_overhead_press",
     "Image": "e57_a16_single_arm_overhead_press",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3754,7 +3754,7 @@
     "ExerciseId": 9,
     "DayId": 5,
     "ExerciseName": "Upper Body Rotation",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e9_b9_upper_body_rotation",
     "Image": "e9_b9_upper_body_rotation",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3764,7 +3764,7 @@
     "ExerciseId": 92,
     "DayId": 6,
     "ExerciseName": "Glute Bridge",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e92_b3_glute_bridge",
     "Image": "e92_b3_glute_bridge",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3774,7 +3774,7 @@
     "ExerciseId": 100,
     "DayId": 6,
     "ExerciseName": "Standing Bend Over",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e100_b11_standing_bend_over",
     "Image": "e100_b11_standing_bend_over",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3784,7 +3784,7 @@
     "ExerciseId": 68,
     "DayId": 6,
     "ExerciseName": "Seated Knee Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e68_s11_seated_knee_raise",
     "Image": "e68_s11_seated_knee_raise",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3794,7 +3794,7 @@
     "ExerciseId": 69,
     "DayId": 6,
     "ExerciseName": "Strech To Foots",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e69_s12_strech_to_foots",
     "Image": "e69_s12_strech_to_foots",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3804,7 +3804,7 @@
     "ExerciseId": 41,
     "DayId": 6,
     "ExerciseName": "Mountain Climb",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e41_k24_mountain_climb",
     "Image": "e41_k24_mountain_climb",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3814,7 +3814,7 @@
     "ExerciseId": 24,
     "DayId": 6,
     "ExerciseName": "Fast Crunchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e24_k7_fast_crunchs",
     "Image": "e24_k7_fast_crunchs",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3824,7 +3824,7 @@
     "ExerciseId": 48,
     "DayId": 6,
     "ExerciseName": "Tricep Dips",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e48_a7_tricep_dips",
     "Image": "e48_a7_tricep_dips",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3834,7 +3834,7 @@
     "ExerciseId": 12,
     "DayId": 6,
     "ExerciseName": "Sitting Dive",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e12_b12_sitting_dive",
     "Image": "e12_b12_sitting_dive",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3844,7 +3844,7 @@
     "ExerciseId": 92,
     "DayId": 7,
     "ExerciseName": "Glute Bridge",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e92_b3_glute_bridge",
     "Image": "e92_b3_glute_bridge",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3854,7 +3854,7 @@
     "ExerciseId": 101,
     "DayId": 7,
     "ExerciseName": "Chair Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e101_b12_chair_squat",
     "Image": "e101_b12_chair_squat",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3864,7 +3864,7 @@
     "ExerciseId": 71,
     "DayId": 7,
     "ExerciseName": "Up Down Sumo",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e71_s14_up_down_sumo",
     "Image": "e71_s14_up_down_sumo",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3874,7 +3874,7 @@
     "ExerciseId": 68,
     "DayId": 7,
     "ExerciseName": "Seated Knee Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e68_s11_seated_knee_raise",
     "Image": "e68_s11_seated_knee_raise",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3884,7 +3884,7 @@
     "ExerciseId": 25,
     "DayId": 7,
     "ExerciseName": "Seated Punchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e25_k8_seated_punchs",
     "Image": "e25_k8_seated_punchs",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3894,7 +3894,7 @@
     "ExerciseId": 28,
     "DayId": 7,
     "ExerciseName": "Reverse Crunch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e28_k11_reverse_crunch",
     "Image": "e28_k11_reverse_crunch",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3904,7 +3904,7 @@
     "ExerciseId": 43,
     "DayId": 7,
     "ExerciseName": "Triceps Push Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e43_a2_triceps_push_up",
     "Image": "e43_a2_triceps_push_up",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3914,7 +3914,7 @@
     "ExerciseId": 84,
     "DayId": 7,
     "ExerciseName": "Side Plank Leg Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e84_y7_side_plank_leg_raise",
     "Image": "e84_y7_side_plank_leg_raise",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3924,7 +3924,7 @@
     "ExerciseId": 110,
     "DayId": 8,
     "ExerciseName": "Step Out Squat With Pulse",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e110_b21_step_out_squat_with_pulse",
     "Image": "e110_b21_step_out_squat_with_pulse",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3934,7 +3934,7 @@
     "ExerciseId": 93,
     "DayId": 8,
     "ExerciseName": "Quadruped Hip Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e93_b4_quadruped_hip_extension",
     "Image": "e93_b4_quadruped_hip_extension",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3944,7 +3944,7 @@
     "ExerciseId": 66,
     "DayId": 8,
     "ExerciseName": "Lying Leg To Sides",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e66_s9_lying_leg_to_sides",
     "Image": "e66_s9_lying_leg_to_sides",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3954,7 +3954,7 @@
     "ExerciseId": 65,
     "DayId": 8,
     "ExerciseName": "Lying Knee To Stomatch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e65_s8_lying_knee_to_stomatch",
     "Image": "e65_s8_lying_knee_to_stomatch",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3964,7 +3964,7 @@
     "ExerciseId": 32,
     "DayId": 8,
     "ExerciseName": "Single Leg Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e32_k15_single_leg_raise",
     "Image": "e32_k15_single_leg_raise",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3974,7 +3974,7 @@
     "ExerciseId": 39,
     "DayId": 8,
     "ExerciseName": "Standing Shake",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e39_k22_standing_shake",
     "Image": "e39_k22_standing_shake",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3984,7 +3984,7 @@
     "ExerciseId": 56,
     "DayId": 8,
     "ExerciseName": "Air Curls",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e56_a15_air_curls",
     "Image": "e56_a15_air_curls",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -3994,7 +3994,7 @@
     "ExerciseId": 9,
     "DayId": 8,
     "ExerciseName": "Upper Body Rotation",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e9_b9_upper_body_rotation",
     "Image": "e9_b9_upper_body_rotation",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4004,7 +4004,7 @@
     "ExerciseId": 93,
     "DayId": 9,
     "ExerciseName": "Quadruped Hip Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e93_b4_quadruped_hip_extension",
     "Image": "e93_b4_quadruped_hip_extension",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4014,7 +4014,7 @@
     "ExerciseId": 99,
     "DayId": 9,
     "ExerciseName": "Reverse Lunge",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e99_b10_reverse_lunge",
     "Image": "e99_b10_reverse_lunge",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4024,7 +4024,7 @@
     "ExerciseId": 68,
     "DayId": 9,
     "ExerciseName": "Seated Knee Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e68_s11_seated_knee_raise",
     "Image": "e68_s11_seated_knee_raise",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4034,7 +4034,7 @@
     "ExerciseId": 62,
     "DayId": 9,
     "ExerciseName": "Seated Side Reach To Foot",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e62_s5_seated_side_reach_to_foot",
     "Image": "e62_s5_seated_side_reach_to_foot",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4044,7 +4044,7 @@
     "ExerciseId": 25,
     "DayId": 9,
     "ExerciseName": "Seated Punchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e25_k8_seated_punchs",
     "Image": "e25_k8_seated_punchs",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4054,7 +4054,7 @@
     "ExerciseId": 36,
     "DayId": 9,
     "ExerciseName": "Standing To Push Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e36_k19_standing_to_push_up",
     "Image": "e36_k19_standing_to_push_up",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4064,7 +4064,7 @@
     "ExerciseId": 42,
     "DayId": 9,
     "ExerciseName": "Seated Dips",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e42_a1_seated_dips",
     "Image": "e42_a1_seated_dips",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4074,7 +4074,7 @@
     "ExerciseId": 12,
     "DayId": 9,
     "ExerciseName": "Sitting Dive",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e12_b12_sitting_dive",
     "Image": "e12_b12_sitting_dive",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4084,7 +4084,7 @@
     "ExerciseId": 97,
     "DayId": 10,
     "ExerciseName": "Clamshells",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e97_b8_clamshells",
     "Image": "e97_b8_clamshells",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4094,7 +4094,7 @@
     "ExerciseId": 105,
     "DayId": 10,
     "ExerciseName": "Grace Marching Bridge Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e105_b16_grace_marching_bridge_extension",
     "Image": "e105_b16_grace_marching_bridge_extension",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4104,7 +4104,7 @@
     "ExerciseId": 64,
     "DayId": 10,
     "ExerciseName": "Lying Knee To Chest",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e64_s7_lying_knee_to_chest",
     "Image": "e64_s7_lying_knee_to_chest",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4114,7 +4114,7 @@
     "ExerciseId": 58,
     "DayId": 10,
     "ExerciseName": "Bend From Back",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e58_s1_bend_from_back ",
     "Image": "e58_s1_bend_from_back",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4124,7 +4124,7 @@
     "ExerciseId": 32,
     "DayId": 10,
     "ExerciseName": "Single Leg Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e32_k15_single_leg_raise",
     "Image": "e32_k15_single_leg_raise",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4134,7 +4134,7 @@
     "ExerciseId": 38,
     "DayId": 10,
     "ExerciseName": "Reverse Crunch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e38_k21_reverse_crunch",
     "Image": "e38_k21_reverse_crunch",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4144,7 +4144,7 @@
     "ExerciseId": 55,
     "DayId": 10,
     "ExerciseName": "Front Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e55_a14_front_raise",
     "Image": "e55_a14_front_raise",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4154,7 +4154,7 @@
     "ExerciseId": 16,
     "DayId": 10,
     "ExerciseName": "Superman",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e16_b16_superman",
     "Image": "e16_b16_superman",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4164,7 +4164,7 @@
     "ExerciseId": 98,
     "DayId": 11,
     "ExerciseName": "Split Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e98_b9_split_squat",
     "Image": "e98_b9_split_squat",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4174,7 +4174,7 @@
     "ExerciseId": 110,
     "DayId": 11,
     "ExerciseName": "Step Out Squat With Pulse",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e110_b21_step_out_squat_with_pulse",
     "Image": "e110_b21_step_out_squat_with_pulse",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4184,7 +4184,7 @@
     "ExerciseId": 70,
     "DayId": 11,
     "ExerciseName": "Standing Leg Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e70_s13_standing_leg_extension",
     "Image": "e70_s13_standing_leg_extension",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4194,7 +4194,7 @@
     "ExerciseId": 65,
     "DayId": 11,
     "ExerciseName": "Lying Knee To Stomatch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e65_s8_lying_knee_to_stomatch",
     "Image": "e65_s8_lying_knee_to_stomatch",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4204,7 +4204,7 @@
     "ExerciseId": 34,
     "DayId": 11,
     "ExerciseName": "Standing Single Leg Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e34_k17_standing_single_leg_up",
     "Image": "e34_k17_standing_single_leg_up",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4214,7 +4214,7 @@
     "ExerciseId": 21,
     "DayId": 11,
     "ExerciseName": "Russian Twist",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e21_k4_russian_twist",
     "Image": "e21_k4_russian_twist",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4224,7 +4224,7 @@
     "ExerciseId": 44,
     "DayId": 11,
     "ExerciseName": "Bend Over Arm Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e44_a3_bend_over_arm_extension",
     "Image": "e44_a3_bend_over_arm_extension",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4234,7 +4234,7 @@
     "ExerciseId": 84,
     "DayId": 11,
     "ExerciseName": "Side Plank Leg Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e84_y7_side_plank_leg_raise",
     "Image": "e84_y7_side_plank_leg_raise",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4244,7 +4244,7 @@
     "ExerciseId": 110,
     "DayId": 12,
     "ExerciseName": "Step Out Squat With Pulse",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e110_b21_step_out_squat_with_pulse",
     "Image": "e110_b21_step_out_squat_with_pulse",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4254,7 +4254,7 @@
     "ExerciseId": 95,
     "DayId": 12,
     "ExerciseName": "Reverse Lunge Forward Hand",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e95_b6_reverse_lunge_forward_hand",
     "Image": "e95_b6_reverse_lunge_forward_hand",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4264,7 +4264,7 @@
     "ExerciseId": 70,
     "DayId": 12,
     "ExerciseName": "Standing Leg Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e70_s13_standing_leg_extension",
     "Image": "e70_s13_standing_leg_extension",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4274,7 +4274,7 @@
     "ExerciseId": 68,
     "DayId": 12,
     "ExerciseName": "Seated Knee Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e68_s11_seated_knee_raise",
     "Image": "e68_s11_seated_knee_raise",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4284,7 +4284,7 @@
     "ExerciseId": 26,
     "DayId": 12,
     "ExerciseName": "Side Reaches",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e26_k9_side_reaches",
     "Image": "e26_k9_side_reaches",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4294,7 +4294,7 @@
     "ExerciseId": 33,
     "DayId": 12,
     "ExerciseName": "Standing Throw Knee",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e33_k16_standing_throw_knee",
     "Image": "e33_k16_standing_throw_knee",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4304,7 +4304,7 @@
     "ExerciseId": 45,
     "DayId": 12,
     "ExerciseName": "Pushup Overhead",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e45_a4_pushup_overhead",
     "Image": "e45_a4_pushup_overhead",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4314,7 +4314,7 @@
     "ExerciseId": 1,
     "DayId": 12,
     "ExerciseName": "Sitting Side Bends",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e1_b1_sitting_side_bends",
     "Image": "e1_b1_sitting_side_bends",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4324,7 +4324,7 @@
     "ExerciseId": 110,
     "DayId": 13,
     "ExerciseName": "Step Out Squat With Pulse",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e110_b21_step_out_squat_with_pulse",
     "Image": "e110_b21_step_out_squat_with_pulse",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4334,7 +4334,7 @@
     "ExerciseId": 94,
     "DayId": 13,
     "ExerciseName": "Plie Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e94_b5_plie_squat",
     "Image": "e94_b5_plie_squat",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4344,7 +4344,7 @@
     "ExerciseId": 73,
     "DayId": 13,
     "ExerciseName": "Half Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e73_s16_half_floor_pull_up",
     "Image": "e73_s16_half_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4354,7 +4354,7 @@
     "ExerciseId": 71,
     "DayId": 13,
     "ExerciseName": "Up Down Sumo",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e71_s14_up_down_sumo",
     "Image": "e71_s14_up_down_sumo",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4364,7 +4364,7 @@
     "ExerciseId": 25,
     "DayId": 13,
     "ExerciseName": "Seated Punchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e25_k8_seated_punchs",
     "Image": "e25_k8_seated_punchs",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4374,7 +4374,7 @@
     "ExerciseId": 37,
     "DayId": 13,
     "ExerciseName": "Lying Leg Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e37_k20_lying_leg_up",
     "Image": "e37_k20_lying_leg_up",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4384,7 +4384,7 @@
     "ExerciseId": 52,
     "DayId": 13,
     "ExerciseName": "Lying Shoulder Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e52_a11_lying_shoulder_extension",
     "Image": "e52_a11_lying_shoulder_extension",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4394,7 +4394,7 @@
     "ExerciseId": 79,
     "DayId": 13,
     "ExerciseName": "Standing Leg Streching",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e79_y2_standing_leg_streching",
     "Image": "e79_y2_standing_leg_streching",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4404,7 +4404,7 @@
     "ExerciseId": 110,
     "DayId": 14,
     "ExerciseName": "Step Out Squat With Pulse",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e110_b21_step_out_squat_with_pulse",
     "Image": "e110_b21_step_out_squat_with_pulse",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4414,7 +4414,7 @@
     "ExerciseId": 97,
     "DayId": 14,
     "ExerciseName": "Clamshells",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e97_b8_clamshells",
     "Image": "e97_b8_clamshells",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4424,7 +4424,7 @@
     "ExerciseId": 69,
     "DayId": 14,
     "ExerciseName": "Strech To Foots",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e69_s12_strech_to_foots",
     "Image": "e69_s12_strech_to_foots",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4434,7 +4434,7 @@
     "ExerciseId": 74,
     "DayId": 14,
     "ExerciseName": "Down To Up Clapping",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e74_s17_down_to_up_clapping",
     "Image": "e74_s17_down_to_up_clapping",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4444,7 +4444,7 @@
     "ExerciseId": 21,
     "DayId": 14,
     "ExerciseName": "Russian Twist",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e21_k4_russian_twist",
     "Image": "e21_k4_russian_twist",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4454,7 +4454,7 @@
     "ExerciseId": 25,
     "DayId": 14,
     "ExerciseName": "Seated Punchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e25_k8_seated_punchs",
     "Image": "e25_k8_seated_punchs",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4464,7 +4464,7 @@
     "ExerciseId": 53,
     "DayId": 14,
     "ExerciseName": "Push Up Strech",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e53_a12_push_up_strech",
     "Image": "e53_a12_push_up_strech",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4474,7 +4474,7 @@
     "ExerciseId": 79,
     "DayId": 14,
     "ExerciseName": "Standing Leg Streching",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e79_y2_standing_leg_streching",
     "Image": "e79_y2_standing_leg_streching",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4484,7 +4484,7 @@
     "ExerciseId": 107,
     "DayId": 15,
     "ExerciseName": "Squats",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e107_b18_squats",
     "Image": "e107_b18_squats",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4494,7 +4494,7 @@
     "ExerciseId": 94,
     "DayId": 15,
     "ExerciseName": "Plie Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e94_b5_plie_squat",
     "Image": "e94_b5_plie_squat",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4504,7 +4504,7 @@
     "ExerciseId": 71,
     "DayId": 15,
     "ExerciseName": "Up Down Sumo",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e71_s14_up_down_sumo",
     "Image": "e71_s14_up_down_sumo",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4514,7 +4514,7 @@
     "ExerciseId": 75,
     "DayId": 15,
     "ExerciseName": "Shoulder Leg Streching",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e75_s18_shoulder_leg_streching",
     "Image": "e75_s18_shoulder_leg_streching",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4524,7 +4524,7 @@
     "ExerciseId": 38,
     "DayId": 15,
     "ExerciseName": "Reverse Crunch",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e38_k21_reverse_crunch",
     "Image": "e38_k21_reverse_crunch",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4534,7 +4534,7 @@
     "ExerciseId": 37,
     "DayId": 15,
     "ExerciseName": "Lying Leg Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e37_k20_lying_leg_up",
     "Image": "e37_k20_lying_leg_up",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4544,7 +4544,7 @@
     "ExerciseId": 56,
     "DayId": 15,
     "ExerciseName": "Air Curls",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e56_a15_air_curls",
     "Image": "e56_a15_air_curls",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4554,7 +4554,7 @@
     "ExerciseId": 79,
     "DayId": 15,
     "ExerciseName": "Standing Leg Streching",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e79_y2_standing_leg_streching",
     "Image": "e79_y2_standing_leg_streching",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4564,7 +4564,7 @@
     "ExerciseId": 102,
     "DayId": 16,
     "ExerciseName": "Crab Walk",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e102_b13_crab_walk",
     "Image": "e102_b13_crab_walk",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4574,7 +4574,7 @@
     "ExerciseId": 95,
     "DayId": 16,
     "ExerciseName": "Reverse Lunge Forward Hand",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e95_b6_reverse_lunge_forward_hand",
     "Image": "e95_b6_reverse_lunge_forward_hand",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4584,7 +4584,7 @@
     "ExerciseId": 61,
     "DayId": 16,
     "ExerciseName": "Floor Pull Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e61_s4_floor_pull_up",
     "Image": "e61_s4_floor_pull_up",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4594,7 +4594,7 @@
     "ExerciseId": 58,
     "DayId": 16,
     "ExerciseName": "Bend From Back",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e58_s1_bend_from_back",
     "Image": "e58_s1_bend_from_back",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4604,7 +4604,7 @@
     "ExerciseId": 40,
     "DayId": 16,
     "ExerciseName": "Modified Plank",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e40_k23_modified_plank",
     "Image": "e40_k23_modified_plank",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4614,7 +4614,7 @@
     "ExerciseId": 19,
     "DayId": 16,
     "ExerciseName": "Scissor Kicks",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e19_k2_scissor_kicks",
     "Image": "e19_k2_scissor_kicks",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4624,7 +4624,7 @@
     "ExerciseId": 50,
     "DayId": 16,
     "ExerciseName": "Modified Push Ups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e50_a9_modified_push_ups",
     "Image": "e50_a9_modified_push_ups",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4634,7 +4634,7 @@
     "ExerciseId": 82,
     "DayId": 16,
     "ExerciseName": "Single Leg Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e82_y5_single_leg_extension",
     "Image": "e82_y5_single_leg_extension",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4644,7 +4644,7 @@
     "ExerciseId": 96,
     "DayId": 17,
     "ExerciseName": "Fire Hydrants",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e96_b7_fire_hydrants",
     "Image": "e96_b7_fire_hydrants",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4654,7 +4654,7 @@
     "ExerciseId": 106,
     "DayId": 17,
     "ExerciseName": "High Donkey Kick",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e106_b17_high_donkey_kick",
     "Image": "e106_b17_high_donkey_kick",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4664,7 +4664,7 @@
     "ExerciseId": 70,
     "DayId": 17,
     "ExerciseName": "Standing Leg Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e70_s13_standing_leg_extension",
     "Image": "e70_s13_standing_leg_extension",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4674,7 +4674,7 @@
     "ExerciseId": 69,
     "DayId": 17,
     "ExerciseName": "Strech To Foots",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e69_s12_strech_to_foots",
     "Image": "e69_s12_strech_to_foots",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4684,7 +4684,7 @@
     "ExerciseId": 41,
     "DayId": 17,
     "ExerciseName": "Mountain Climb",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e41_k24_mountain_climb",
     "Image": "e41_k24_mountain_climb",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4694,7 +4694,7 @@
     "ExerciseId": 39,
     "DayId": 17,
     "ExerciseName": "Standing Shake",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e39_k22_standing_shake",
     "Image": "e39_k22_standing_shake",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4704,7 +4704,7 @@
     "ExerciseId": 46,
     "DayId": 17,
     "ExerciseName": "Lying Triceps Extensions",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e46_a5_lying_triceps_extensions",
     "Image": "e46_a5_lying_triceps_extensions",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4714,7 +4714,7 @@
     "ExerciseId": 81,
     "DayId": 17,
     "ExerciseName": "Seated Side Extensions",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e81_y4_seated_side_extensions",
     "Image": "e81_y4_seated_side_extensions",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4724,7 +4724,7 @@
     "ExerciseId": 95,
     "DayId": 18,
     "ExerciseName": "Reverse Lunge Forward Hand",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e95_b6_reverse_lunge_forward_hand",
     "Image": "e95_b6_reverse_lunge_forward_hand",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4734,7 +4734,7 @@
     "ExerciseId": 96,
     "DayId": 18,
     "ExerciseName": "Fire Hydrants",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e96_b7_fire_hydrants",
     "Image": "e96_b7_fire_hydrants",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4744,7 +4744,7 @@
     "ExerciseId": 77,
     "DayId": 18,
     "ExerciseName": "Jumping Sides",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e77_s20_jumping_sides",
     "Image": "e77_s20_jumping_sides",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4754,7 +4754,7 @@
     "ExerciseId": 74,
     "DayId": 18,
     "ExerciseName": "Down To Up Clapping",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e74_s17_down_to_up_clapping",
     "Image": "e74_s17_down_to_up_clapping",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4764,7 +4764,7 @@
     "ExerciseId": 36,
     "DayId": 18,
     "ExerciseName": "Standing To Push Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e36_k19_standing_to_push_up",
     "Image": "e36_k19_standing_to_push_up",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4774,7 +4774,7 @@
     "ExerciseId": 32,
     "DayId": 18,
     "ExerciseName": "Single Leg Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e32_k15_single_leg_raise",
     "Image": "e32_k15_single_leg_raise",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4784,7 +4784,7 @@
     "ExerciseId": 54,
     "DayId": 18,
     "ExerciseName": "Front Overhead Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e54_a13_front_overhead_raise",
     "Image": "e54_a13_front_overhead_raise",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4794,7 +4794,7 @@
     "ExerciseId": 10,
     "DayId": 18,
     "ExerciseName": "Shoulder Shrug",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e10_b10_shoulder_shrug",
     "Image": "e10_b10_shoulder_shrug",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4804,7 +4804,7 @@
     "ExerciseId": 101,
     "DayId": 19,
     "ExerciseName": "Chair Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e101_b12_chair_squat",
     "Image": "e101_b12_chair_squat",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4814,7 +4814,7 @@
     "ExerciseId": 99,
     "DayId": 19,
     "ExerciseName": "Reverse Lunge",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e99_b10_reverse_lunge",
     "Image": "e99_b10_reverse_lunge",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4824,7 +4824,7 @@
     "ExerciseId": 63,
     "DayId": 19,
     "ExerciseName": "Seated Singe Side Reach To Foot",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e63_s6_seated_singe_side_reach_to_foot",
     "Image": "e63_s6_seated_singe_side_reach_to_foot",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4834,7 +4834,7 @@
     "ExerciseId": 70,
     "DayId": 19,
     "ExerciseName": "Standing Leg Extension",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e70_s13_standing_leg_extension",
     "Image": "e70_s13_standing_leg_extension",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4844,7 +4844,7 @@
     "ExerciseId": 36,
     "DayId": 19,
     "ExerciseName": "Standing To Push Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e36_k19_standing_to_push_up",
     "Image": "e36_k19_standing_to_push_up",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4854,7 +4854,7 @@
     "ExerciseId": 22,
     "DayId": 19,
     "ExerciseName": "Hold Leg Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e22_k5_hold_leg_raise",
     "Image": "e22_k5_hold_leg_raise",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4864,7 +4864,7 @@
     "ExerciseId": 47,
     "DayId": 19,
     "ExerciseName": "Punch Left Right",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e47_a6_punch_left_right",
     "Image": "e47_a6_punch_left_right",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4874,7 +4874,7 @@
     "ExerciseId": 2,
     "DayId": 19,
     "ExerciseName": "Neck Rotation",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e2_b2_neck_rotation",
     "Image": "e2_b2_neck_rotation",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4884,7 +4884,7 @@
     "ExerciseId": 104,
     "DayId": 20,
     "ExerciseName": "Frog Jumps",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e104_b15_frog_jumps",
     "Image": "e104_b15_frog_jumps",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4894,7 +4894,7 @@
     "ExerciseId": 97,
     "DayId": 20,
     "ExerciseName": "Clamshells",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e97_b8_clamshells",
     "Image": "e97_b8_clamshells",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4904,7 +4904,7 @@
     "ExerciseId": 63,
     "DayId": 20,
     "ExerciseName": "Seated Singe Side Reach To Foot",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e63_s6_seated_singe_side_reach_to_foot",
     "Image": "e63_s6_seated_singe_side_reach_to_foot",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4914,7 +4914,7 @@
     "ExerciseId": 68,
     "DayId": 20,
     "ExerciseName": "Seated Knee Raise",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e68_s11_seated_knee_raise",
     "Image": "e68_s11_seated_knee_raise",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4924,7 +4924,7 @@
     "ExerciseId": 23,
     "DayId": 20,
     "ExerciseName": "Lying Reaches",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e23_k6_lying_reaches",
     "Image": "e23_k6_lying_reaches",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4934,7 +4934,7 @@
     "ExerciseId": 36,
     "DayId": 20,
     "ExerciseName": "Standing To Push Up",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e36_k19_standing_to_push_up",
     "Image": "e36_k19_standing_to_push_up",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4944,7 +4944,7 @@
     "ExerciseId": 49,
     "DayId": 20,
     "ExerciseName": "Knee Push Ups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e49_a8_knee_push_ups",
     "Image": "e49_a8_knee_push_ups",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4954,7 +4954,7 @@
     "ExerciseId": 10,
     "DayId": 20,
     "ExerciseName": "Shoulder Shrug",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e10_b10_shoulder_shrug",
     "Image": "e10_b10_shoulder_shrug",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4964,7 +4964,7 @@
     "ExerciseId": 101,
     "DayId": 21,
     "ExerciseName": "Chair Squat",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e101_b12_chair_squat",
     "Image": "e101_b12_chair_squat",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4974,7 +4974,7 @@
     "ExerciseId": 103,
     "DayId": 21,
     "ExerciseName": "Donkey Kick",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e103_b14_donkey_kick",
     "Image": "e103_b14_donkey_kick",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4984,7 +4984,7 @@
     "ExerciseId": 69,
     "DayId": 21,
     "ExerciseName": "Strech To Foots",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e69_s12_strech_to_foots",
     "Image": "e69_s12_strech_to_foots",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -4994,7 +4994,7 @@
     "ExerciseId": 77,
     "DayId": 21,
     "ExerciseName": "Jumping Sides",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e77_s20_jumping_sides",
     "Image": "e77_s20_jumping_sides",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -5004,7 +5004,7 @@
     "ExerciseId": 39,
     "DayId": 21,
     "ExerciseName": "Standing Shake",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e39_k22_standing_shake",
     "Image": "e39_k22_standing_shake",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -5014,7 +5014,7 @@
     "ExerciseId": 25,
     "DayId": 21,
     "ExerciseName": "Seated Punchs",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e25_k8_seated_punchs",
     "Image": "e25_k8_seated_punchs",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -5024,7 +5024,7 @@
     "ExerciseId": 51,
     "DayId": 21,
     "ExerciseName": "Slowed Pushups",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e51_a10_slowed_pushups",
     "Image": "e51_a10_slowed_pushups",
     "IsExerciseCompleted": false,
     "Level": 3
@@ -5034,7 +5034,7 @@
     "ExerciseId": 89,
     "DayId": 21,
     "ExerciseName": "Plank Row",
-    "ExerciseDescription": "",
+    "ExerciseDescription": "e89_y12_plank_row",
     "Image": "e89_y12_plank_row",
     "IsExerciseCompleted": false,
     "Level": 3

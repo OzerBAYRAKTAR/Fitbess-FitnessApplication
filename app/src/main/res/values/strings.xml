@@ -2,7 +2,6 @@
     <string name="app_name">HealthyBackandNeck</string>
 
 
-    //ViewPager2
     <string name="skip">Atla</string>
     <string name="start">Hadi Başla</string>
 
@@ -212,27 +211,27 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="label_exercise">Egzersizler</string>
     <string name="label_minute">dk</string>
     <string name="label_kcal">kcal</string>
-    <string name="label_tellus">Tell us about yourself</string>
-    <string name="label_tellus_desc">To give you a better experience ,we need to know you</string>
-    <string name="label_continue">Continue</string>
+    <string name="label_tellus">Bize kendinden bahset</string>
+    <string name="label_tellus_desc">Size daha iyi bir hizmet sunabilmemiz için, sizi yakından tanımalıyız</string>
+    <string name="label_continue">Devam et</string>
     <string name="label_male">Erkek</string>
     <string name="label_famale">Kadın</string>
-    <string name="label_yas">How old are you?</string>
-    <string name="label_height">What is your height?</string>
-    <string name="label_height_desc">Height in cm. You can always change it later.</string>
-    <string name="label_weight">What is your weight?</string>
-    <string name="label_weight_desc">Weight in Kg. You can always change it later.</string>
-    <string name="label_yas_desc">This will help you to provide a personalized plan</string>
-    <string name="label_back">Back</string>
-    <string name="label_aim">What are your goals?</string>
-    <string name="label_aim_desc">You can choose more than one. You can always change it later.</string>
+    <string name="label_yas">Yaşın kaç?</string>
+    <string name="label_height">Boy uzunluğun ne kadar?</string>
+    <string name="label_height_desc">Cm olarak boy. Bunu sonradan değiştirebilirsin</string>
+    <string name="label_weight">Kilon ne kadar?</string>
+    <string name="label_weight_desc">Kg olarak ağırlığın. Bunu sonradan değiştirebilirsin</string>
+    <string name="label_yas_desc">Bu size kişisel antrenman planınızı oluşturmada yardımcı olacak</string>
+    <string name="label_back">Geri</string>
+    <string name="label_aim">Hedeflerin neler?</string>
+    <string name="label_aim_desc">Birden fazla seçebilirsiniz. Bunu sonradan değiştirebilirsin</string>
     <string name="number_picker_formatter">%02d</string>
-    <string name="label_getfit">Get fitter</string>
-    <string name="label_gainweight">Gain weight</string>
-    <string name="label_loseweight">Lose weight</string>
-    <string name="label_buildmuscle">Building muscles</string>
-    <string name="label_improveindruce">Improving indurance</string>
-    <string name="label_others">Others</string>
+    <string name="label_getfit">Fit ol</string>
+    <string name="label_gainweight">Kilo kazan</string>
+    <string name="label_loseweight">Kilo ver</string>
+    <string name="label_buildmuscle">Kas kazan</string>
+    <string name="label_improveindruce">Dayanıklılığını arttır</string>
+    <string name="label_others">Diğer</string>
     <string name="exercise_move">Hareket</string>
     <string name="time_min">Dakika</string>
     <string name="general_progress">Genel İlerleme</string>
@@ -383,6 +382,128 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="label_reviewerror">Oy verme işlemi başarısız oldu</string>
     <string name="label_ratingsuccess">Oylama işlemi tamamlandı</string>
 
+
+    <!-- Bacak-Popo -->
+    <string name="e90_b1_bird_dog">Emekleme pozisyonu alıp, sağ kolu ve sol ayağı ileri doğru esnetmek, hareket sonrası diğer kol ve ayak ile devam etmek</string>
+    <string name="e91_b2_jump_squat">Eller yüz hizasına getirilip, çökme pozisyonu alarak, yukarı sıçramak</string>
+    <string name="e92_b3_glute_bridge">Dizler yukarı bakacak şekilde yere uzanıp, eller ile uygun ağırlık tutarak beli yukarı doğru kaldırmak</string>
+    <string name="e93_b4_quadruped_hip_extension">Emekleme pozisyonunda, diz ile ağırlığı tutarak bacağı geriye doğru kaldırma</string>
+    <string name="e94_b5_plie_squat">Ayaklar açık bir şekilde ellerde ağırlıkla ayakta durarak, olabildiğince yere doğru çöküp kalkmak</string>
+    <string name="e95_b6_reverse_lunge_forward_hand">Kolları ileri doğru uzatıp ayakta durmak, sağ ve sol bacakla sırasıyla yere diz çökmek</string>
+    <string name="e96_b7_fire_hydrants">Emekleme pozisyonunda sağ ve sol bacağı sırası ile yana doğru açmak</string>
+    <string name="e97_b8_clamshells">Yan bir şekilde yere doğru uzanıp, bacakları yana doğru açmak</string>
+    <string name="e98_b9_split_squat">Kollar yana doğru açılarak, ayakta durup, öne doğru diz üzerine esnemek</string>
+    <string name="e99_b10_reverse_lunge">Ayakta durup, geriye doğru diz çökerek esnemek</string>
+    <string name="e100_b11_standing_bend_over">Eller ensenin biraz üzerinde olacak şekilde ayakta durup, öne doğru eğilmek</string>
+    <string name="e101_b12_chair_squat">Eller sabit bir şekilde durarak, sandalyeye oturmak ve kalkmak</string>
+    <string name="e102_b13_crab_walk">Eller sabit bir şekilde durarak, ayaklara lastik geçirerek, yana doğru bir sağa bir sola yürümek</string>
+    <string name="e103_b14_donkey_kick">Emekleme pozisyonunda, diz ile ağırlığı tutarak, ayağı arkaya doğru kaldırmak</string>
+    <string name="e104_b15_frog_jumps">Eller sabit bir şekilde yere hızlıca çöküp yukarı sıçramak</string>
+    <string name="e105_b16_grace_marching_bridge_extension">Eller ayak topuklarına doğru uzanacak ve dizler yukarı bakacak şekilde sırt üstü uzanıp, ayakları sırası ile yukarı kaldırmak</string>
+    <string name="e106_b17_high_donkey_kick">Eller omuz hizasında dik olacak şekilde, ayak parmaklarından destek alarak yüz üstü uzanmak, sağ ve sol dizi kırıp geriye doğru kaldırmak</string>
+    <string name="e107_b18_squats">Elde ağırlıkla yere doğru çökmek ve kalkmak</string>
+    <string name="e108_b19_pull_single_leg">Emekleme pozisyonunda, sağ elde ağırlık tutup, sağ eli ve ayağı yana doğru açıp, dirseği ve dizi birbirine değdirip uzaklaştırmak, aynı hareketi diğer el ve ayakla da yapmak</string>
+    <string name="e109_b20_single_leg_deadlift">Ayak durup, elleri ayak ucuna doğru eğilerek değdirmek, aynı zamanda tek ayağı geriye doğru uzatmak</string>
+    <string name="e110_b21_step_out_squat_with_pulse">Elde ağırlık tutarak çökme pozisyonunda durup, sağ ayağı geri ve ileri hareket ettirmek, aynı hareketi diğer ayak ile de yapmak</string>
+
+    <!-- Boyun -->
+    <string name="e1_b1_sitting_side_bends">Sandalye üzerinde dik bir şekilde oturup, başı sabit tutarak sağa ve sola doğru esnemek</string>
+    <string name="e2_b2_neck_rotation">Yerde sabit bir pozisyonda oturup, oval bir şekilde boyun egzersizi yapmak</string>
+    <string name="e3_b3_forward_and_back_bend">Yerde sabit bir pozisyonda oturup, iki eli kullanarak boynu karşıya bakacak şekilde tutup, öne doğru esnemek</string>
+    <string name="e4_b4_forward_dive">Ayakta sabit bir pozisyonda sağ eli alna götürerek, boynu ileri geri düz bir şekilde hareket ettirmek</string>
+    <string name="e5_b5_back_and_forward_band">Ayakta sabit bir pozisyonda, boynu geriye doğru yatırmak</string>
+    <string name="e6_b6_neck_rotation">Sabit bir pozisyonda, boynu sağa ve sola doğru hareket ettirmek</string>
+    <string name="e7_b7_shoulder_rotation">Sabit bir pozisyonda, boynu hareket ettirmeden, sağ ve sol omzu sırasıyla oval bir şekilde yukarıdan aşağıya doğru hareket ettirmek</string>
+    <string name="e8_b8_side_bends">Sabit bir pozisyonda, boynu sağa ve sola doğru yatırmak</string>
+    <string name="e9_b9_upper_body_rotation">Sabit bir pozisyonda kolu dik bir şekilde duvara yaslayarak, belden yukarı çeyrek dönüş yapmak</string>
+    <string name="e10_b10_shoulder_shrug">Sabit bir pozisyonda, omuzları aynı anda enseye doğru çekmek</string>
+    <string name="e11_b11_get_up_straight">Sandalyede elleri kenetleyerek, herhangi bir destek almadan ayağa kalkıp oturmak</string>
+    <string name="e12_b12_sitting_dive">15—20 cm yükseklikte bir nesneye oturarak, boyun sabit bir şekilde göğsü içeri çekip şişirme</string>
+    <string name="e13_b13_lying_dive">Yere uzanıp bacakları yarım kırarak, başla beraber boynu yukarı doğru kaldırıp indirmek</string>
+    <string name="e14_b14_sitting_shoulder_rotation">Sandalyede sabit ve dik bir şekilde oturup, ellerin omza değecek şekilde üçgen biçiminde kolların hizaya gelmesi ve dirseklerin yukarı aşağı hareket ettirilmesi</string>
+    <string name="e15_b15_chair_back_strech">Sandalyede sabit bir şekilde oturup, eller ensenin üstüne gelecek şekilde pozisyon alarak, bacakları karın seviyesinde sağa ve sola doğru sırasıyla açmak</string>
+    <string name="e16_b16_superman">Yüzüstü dümdüz yere uzanıp, elleri ve ayakları dik bir şekilde geriye kaldırmak</string>
+    <string name="e17_b17_lying_neck_extension">Yere uzanıp bacakları yarım kırarak, kolların birbirine kenetlenmesi pozisyonu alarak, boynu hafif havada tutup sağa ve sola doğru çevirmek</string>
+
+    <!-- Karın -->
+    <string name="e18_k1_sit_up">Yere yarım bir şekilde oturup, ellerimizle arkaya destek alarak, sırtı ve bacakları ileri geri hareket ettirmek</string>
+    <string name="e19_k2_scissor_kicks">Yere sabit bir şekilde uzanıp, ellerimiz yerde dümdüz sabit kalacak şekilde pozisyon alıp, bacakları dik bir şekilde sırasıyla havaya kaldırıp indirmek</string>
+    <string name="e20_k3_bicycle_crunch_slowed">Yere ayak dirsekleri bükülmüş şekilde uzanıp, eller ensenin biraz üzerinde pozisyon alarak, belden yukarı vücudu sağa sola çevirmek, aynı zamanda bacakları da karın bölgesine doğru çekmek</string>
+    <string name="e21_k4_russian_twist">Yere bacakları yarım bir şekilde bükerek uzanıp, eller ensenin biraz üzerinde pozisyon alarak, elleri sırasıyla çapraz bir şekilde kalçaya doğru uzatıp geri çekmek</string>
+    <string name="e22_k5_hold_leg_raise">Ayaklar havaya dik uzatılacak şekilde yere uzanıp, belden yukarıya doğru hafif kaldırıp indirmek</string>
+    <string name="e23_k6_lying_reaches">Sırt yere değmeyecek şekilde kollardan destek alarak uzanıp, bacakları sırasıyla havaya kaldırmak ve çapraz olacak şekilde el ile dokunup bırakmak</string>
+    <string name="e24_k7_fast_crunchs">Yere dizleri yarım büküp uzanmak, elleri dize değecek şekilde yarım mekik pozisyonunda sırtı kaldırmak</string>
+    <string name="e25_k8_seated_punchs">Dizleri yarım büküp yere oturmak, ellerle baldırdan destek alacak şekilde pozisyon alıp, geriye doğru esnemek ve sağ sol kroşe atarak tekrardan baldırları tutmak</string>
+    <string name="e26_k9_side_reaches">Dizleri yarım büküp yere oturmak, kolları dizlerle parallel olacak şekilde ileriye doğru uzatarak, belden yukarı kolları sağa ve sola açarak esnemek</string>
+    <string name="e27_k10_toe_reach">Sırtüstü yere uzanıp, elleri ve ayakları çapraz bir şekilde dik duracak pozisyonda, birbirine doğru yaklaştırıp uzaklaştırmak</string>
+    <string name="e28_k11_reverse_crunch">Sırtüstü yere uzanıp, elleri yukarı doğru, bacakları dizler bükülmüş vaziyette yukarı doğru tutarak, aynı anda sağ eli geriye uzatıp sol ayağı ileriye uzatmak, aynı hareketi diğer kol ve bacakla devam ettirmek</string>
+    <string name="e29_k12_full_crunch">Eller ensenin biraz üzerinde, bacaklar yarım bir şekilde açılmış pozisyonda yere uzanıp, belden yukarıyı dize doğru çekip yere yatmayacak şekilde geriye esnemek</string>
+    <string name="e30_k13_single_side_up">Sağ bacak yarım bir şekilde, sol bacak dümdüz olacak şekilde yere uzanıp, sağ el ensenin biraz üzerinde sol el ise sırtın altında kalacak şekilde pozisyon alıp, yarım mekik çekmek</string>
+    <string name="e31_k14_to_v_sit">Sırtüstü yere dümdüz uzanıp, eller ileriye doğru, diz ise karna doğru çekilerek geriye tekrar uzanılması</string>
+    <string name="e32_k15_single_leg_raise">Dirsekten destek alarak, sırt yere değmeyecek şekilde uzanıp, bacakları sırasıyla karna doğru çekip bırakmak</string>
+    <string name="e33_k16_standing_throw_knee">Elleri oval bir biçimde birleştirip ayakta durarak, bacakları sırasıyla karna doğru çekmek ve belden yukarısını ise ters yönde esnetmek</string>
+    <string name="e34_k17_standing_single_leg_up">Elleri ensenin biraz üzerinde üçgen biçimde tutarak, bacakların sırasıyla dirseklere doğru çekilmesi</string>
+    <string name="e35_k18_t_position">Ayakta dimdik durarak, elleri öne doğru ve sağ ayağı geriye doğru esnetmek, sonrasında diğer ayağa geçmek</string>
+    <string name="e36_k19_standing_to_push_up">Dizleri kırıp çömelme pozisyonunda durarak, hızlıca eller ve ayaklar üzerinde dört ayak pozisyonu alıp tekrar çömelme pozisyonuna dönmek</string>
+    <string name="e37_k20_lying_leg_up">Dirseklerden destek alarak kalça yere değmeyecek ve ayaklar yarım duracak şekilde pozisyon alıp, dizleri bozmayak şekilde bacakları yukarı doğru kaldırma indirme</string>
+    <string name="e38_k21_reverse_crunch">Sırtüstü yere uzanıp, elleri yukarı doğru, bacakları dizler bükülmüş vaziyette yukarı doğru tutarak, aynı anda sağ eli geriye uzatıp sol ayağı ileriye uzatmak, aynı hareketi diğer kol ve bacakla devam ettirmek</string>
+    <string name="e39_k22_standing_shake">Dizler ve dirsekler hafif bükülmüş bir şekilde ayakta durarak, beli sağa ve sola doğru hareket ettirmek</string>
+    <string name="e40_k23_modified_plank">Ayak parmakları ve eller üzerinde yerden olabildiğince yüzüstü uzak durarak, elleri sırası ile bir diğer omza götürmek</string>
+    <string name="e41_k24_mountain_climb">Ayak parmakları ve eller üzerinde yerden olabildiğince yüzüstü uzak durarak, dizleri sırası ile öne doğru çekmek</string>
+
+    <!-- kol -->
+    <string name="e42_a1_seated_dips">Sırtımız sandalyeye dönük, ellerimizle sandalyeden destek alarak oturur pozisyonda yere doğru yaklaşma ve uzaklaşma</string>
+    <string name="e43_a2_triceps_push_up">Sırtımızı yere yaslamadan ayaklar uzanacak şekilde oturara, kollardan destek alıp belimizi yukarı kaldırmak ve indirmek</string>
+    <string name="e44_a3_bend_over_arm_extension">Eller ve ayak parmakları ucunda v pozisyonunda yüzüstü durup, dirsekleri yere değmeye şekilde kırarak ileriye doğru uzanmak ve eski pozisyona dönmek</string>
+    <string name="e45_a4_pushup_overhead">Eller ve ayak parmakları ucunda v pozisyonunda yüzüstü durup, kafa yere değecek şekilde dik bir pozisyonda yere yaklaşıp uzaklaşmak</string>
+    <string name="e46_a5_lying_triceps_extensions">Ayakları kalçaya yaklaştırarak yere uzanıp, kendinize uygun ağırlıklarla kolları dirsekleri hafif kıracak şekilde geriye yatırmak ve yukarıya kaldırmak</string>
+    <string name="e47_a6_punch_left_right">Bacaklar hafif açık bir şekilde, ayakta gardınızı almış bir pozisyonda, belden yukarı sola ve sağa dönüp yumruk şeklinde kollarınızı esnetmek</string>
+    <string name="e48_a7_tricep_dips">Eller ve ayaklar üzerinde sırtınız yere dönük bir v pozisyonu alarak, kollardan destek alıp yukarı ve aşağı hareket etmek</string>
+    <string name="e49_a8_knee_push_ups">Ayak ve dizler yerden kalkmayacak şekilde, kollar omuz hizasında yerden destek alarak yüzüstü uzanıp, şınav çekmek</string>
+    <string name="e50_a9_modified_push_ups">Dirsekler yere uzanacak şekilde, ayak parmaklarından destek alıp, vücut yere değmeyecek şekilde yüzüstü uzanmak, sırasıyla sağ ve sol dirseği yerden kesip şınav pozisyonu alma ve tekrardan dirsekleri yere değdirme</string>
+    <string name="e51_a10_slowed_pushups">Şınav pozisyonu alıp, dirsekler içe doğru bükülecek ve göğüs yere yaklaşacak şekilde şınav çekmek</string>
+    <string name="e52_a11_lying_shoulder_extension">Şınav pozisyonu alıp, sırasıyla sağ ve sol kolu geriye doğru daire çizecek şekilde esnetmek</string>
+    <string name="e53_a12_push_up_strech">Şınav pozisyonu alıp, dirsekler içe doğru bükülecek ve şınav çekilecek, sonrasında sağ ve sol kol dirsekler bükük bir şekilde geriye doğru esnetilecek</string>
+    <string name="e54_a13_front_overhead_raise">Uygun ağırlıklarla ayakta durarak, dizler hafif bükülecek şekilde yere doğru çökmek, çökerken dirseklerin dize yaklaşması ve ayağa tekrar kalkarken ağırlıkların yukarı doğru kaldırılması</string>
+    <string name="e55_a14_front_raise">Ayakta ağırlıkların omza doğru kaldırılması ve sonrasında yere çökülerek kolların aşağıya doğru esnetilmesi</string>
+    <string name="e56_a15_air_curls">Ayaklar ve kollar açık bir şekilde ayakta durarak, ağırlıkları omza doğru kaldırmak ve sonrasında yere çöker bir pozisyonda ağırlıkları yere indirmek</string>
+    <string name="e57_a16_single_arm_overhead_press">Ayaklar ve kollar açık bir şekilde ayakta durarak, yere çöker bir pozisyonda ağırlıkları yere indirmek ve ayağa kalktıktan sonra ağırlıkları havaya kaldırmak</string>
+
+    <!-- Sırt -->
+    <string name="e58_s1_bend_from_back">Dizler üzerinde ayakta durarak, elleri bele destek verip, geriye doğru esnemek</string>
+    <string name="e59_s2_shoulder_mobility">Eller ve dizler üzerinde yüzüstü pozisyon alarak, geriye doğru esnemek</string>
+    <string name="e60_s3_camel_back_strech">Eller ve dizler üzerinde yüzüstü pozisyon alarak, beli yukarı ve aşağı doğru esnetmek</string>
+    <string name="e61_s4_floor_pull_up">Ellerden yerden destek alıp, yüzüstü uzanıp, belden yukarı bölgeyi geriye doğru esnetmek</string>
+    <string name="e62_s5_seated_side_reach_to_foot">Oturur pozisyonda sol bacağı içe doğru büküp, sağ bacağı ileri doğru uzatarak, eller sağ ayak parmaklarını tutarak öne doğru vücudu esnetmek, bu hareket sonrasında ayak pozisyonunu değiştirerek devam etmek</string>
+    <string name="e63_s6_seated_singe_side_reach_to_foot">Oturur pozisyonda sol bacağı içe doğru büküp, sağ bacağı yana doğru açarak, sağ el ile sağ bacağı tutuğ sol el havada olacak şekilde bir pozisyonda, sağa doğru vücudu esnetmek, tekrar sonrası ayak pozisyonu değiştirilerek devam edilir</string>
+    <string name="e64_s7_lying_knee_to_chest">Bacaklar yere değmeyecek şekilde eller ile dizleri tutup sırtüstü uzanmak, dizleri karın bölgesine doğru eller yardımıyla çekip geri salmak</string>
+    <string name="e65_s8_lying_knee_to_stomatch">Bacaklar yere uzanmayacak şekilde bacak-bacak üzerine atıp, yere uzanıp, eller yardımız ile bacakları karın bölgesine yaklaştırma ve salma</string>
+    <string name="e66_s9_lying_leg_to_sides">Dizler yukarı dik bir şekilde yere uzanıp, kolları yana doğru açarak, dizleri sırası ile sağa ve sola doğru indirmek, boynu ise tersi pozisyona çevirmek</string>
+    <string name="e67_s10_lying_leg_raise">Bacakları yukarı doğru uzatıp yere uzanmak, kolları yana doğru uzatmak, ardından sağ ve sol bacağı sırası ile diğer bacağın dizine doğru indirmek</string>
+    <string name="e68_s11_seated_knee_raise">Bacakları ileri doğru uzatarak yere oturmak, kollar dizin üzerinde olacak şekilde, sağ ve sol bacağı sırası ile diğer dizin üzerine koymak</string>
+    <string name="e69_s12_strech_to_foots">Ayakları ileri doğru uzatıp oturmak, eller ayak parmaklarına değecek şekilde ileri doğru esnemek</string>
+    <string name="e70_s13_standing_leg_extension">Ayakları ve kolları açıp ayakta durmak, kolları sırası ile omza doğru götürmek, aynı zamanda ayakları geriye doğru dize değecek şekilde hareket ettirmek</string>
+    <string name="e71_s14_up_down_sumo">Ayakta bacakları çapraz tutarak, hızlı bir şekilde yere çöküp tekrardan ayağa kalkmak</string>
+    <string name="e72_s15_curtsy_lunge_with_knee_raise_lift">Tek diz yere değecek şekilde öne doğru çökmek, tek bir kol ile ağırlığı sağa kaldırmak, aynı zamanda ayağa doğru kalkıp yerdeki dizi sola doğru esnetmek, yeterli tekrar sonrası aynı hareketi diğer kol ve ayak ile devam ettirmek</string>
+    <string name="e73_s16_half_floor_pull_up">Ayaklar açık bir şekilde yüz üstü yere uzanmak, kolları ağırlık tutarak baş hizasında uzatmak, ayakları dizleri kırmadan yukarı doğru kaldırmak</string>
+    <string name="e74_s17_down_to_up_clapping">Ayaklar ve kollar bitişik bir şekilde ayakta durmak, kolları yukarıda birleştirmek, ayak ve kolları yana açıp kapatmak</string>
+    <string name="e75_s18_shoulder_leg_streching">Ayaklar bitişik, kollar açık bir şekilde ayakta durmak, hızlı bir şekilde ayakları açıp kolları birleştirerek hareket etmek</string>
+    <string name="e76_s19_standing_reach_to_foot">Ayakta durup, sağ ve sol eli sağ ve sol ayak bileğine sırası ile değdirmek</string>
+    <string name="e77_s20_jumping_sides">Yere çöküp tek el ile yerden destek alarak, geriye doğru sıçramak ve aynı pozisyonu orada almak, hareket benzer şekilde devam ettirmek</string>
+
+    <!-- yoga -->
+    <string name="e78_y1_standing_shoulder_extension">Tek koldan destek alıp bacaklar yan yatacak şekilde yere oturmak, diğer kolu geriye doğru esnetmek</string>
+    <string name="e79_y2_standing_leg_streching">Eller belde, tek ayak üstünde durarak, diğer ayağı ileri geri esnetmek</string>
+    <string name="e80_y3_curtsy_squat_fast">Koşar pozisyonda durup, sağa sola doğru sıçrayarak ayak değiştirmek</string>
+    <string name="e81_y4_seated_side_extensions">Eller ve ayaklardan destek alıp, sırtüstü v pozisyonunda durarak, gövdeyi düz tutacak şekilde elleri geriye doğru esnetmek</string>
+    <string name="e82_y5_single_leg_extension">Eller ve ayaklardan destek alıp, yüzüstü v pozisyonunda durarak, bir bacağı diğer bacağın arkasına değdirerek hareket ettirmek</string>
+    <string name="e83_y6_mountain_pushups">Eller omuz hizasında, ayak uçlarıyla yüz üstü dik bir pozisyonda durarak, sağ ve sol bacağı sırasıyla omuz hizasına getirmek, sonrasında ayağa doğru kalkıp sıçramak</string>
+    <string name="e84_y7_side_plank_leg_raise">Dirsekten destek alarak yana doğru uzanmak, diğer kolu yukarıya uzatmak, bu pozisyonda bacakları birbirinden ayırarak hareket ettirmek</string>
+    <string name="e85_y8_down_to_up_hand_raise">Uygun bir ağırlığı ele alarak, çökme pozisyonunda ağırlığı sağa ve sola sırasıyla kaldırmak</string>
+    <string name="e86_y9_plank_extension">Plank pozisyonunda vücudu ileri ve geri hareket ettirmek</string>
+    <string name="e87_y10_plank_walk">Plank pozisyonunda vücudu ileri ve geri yürür bir şekilde hareket ettirmek</string>
+    <string name="e88_y11_side_plank_extension">Dirsekten destek alacak şekilde yan biçimde yere uzanmak, diğer eli ensenin biraz üzerinde tutarak, beli yere doğru değdirmek</string>
+    <string name="e89_y12_plank_row">Şınav çekip kolları sırasıyla havaya doğru esnetmek</string>
 
 </resources>
 
