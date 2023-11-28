@@ -42,7 +42,13 @@
         <item name="cornerSizeTopLeft">51%</item>
         <item name="cornerSizeBottomLeft">51%</item>
     </style>
-
+    <style name="roundedImageStyletwenty" >
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">21%</item>
+        <item name="cornerSizeBottomRight">21%</item>
+        <item name="cornerSizeTopLeft">21%</item>
+        <item name="cornerSizeBottomLeft">21%</item>
+    </style>
     <style name="CustomAlertDialog" parent="@style/ThemeOverlay.MaterialComponents.Dialog.Alert">
         <item name="android:windowBackground">@drawable/dialog_background</item>
     </style>

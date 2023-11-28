@@ -13,7 +13,7 @@ data class ExerciseDay(
     @PrimaryKey(autoGenerate = false) val dayId: Int = 0,
     val day: Int,
     val exerciseCount: Int,
-    val exerciseTime: Double,
+    val exerciseTime: Int,
     val exerciseKcal: Int,
     val homeId: Int,
 ): Parcelable  {

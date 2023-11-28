@@ -22,6 +22,15 @@ class ExerciseDetailFirstVievModel @Inject constructor(
     val exerciseDayExercisesLevelOne get() = _exerciseDayExercisesLevelOne
 
 
+    private val _getExerciseListWithDay: MutableLiveData<List<ExerciseDayExercise>> = MutableLiveData()
+    val getExerciseListWithDay: LiveData<List<ExerciseDayExercise>> get() = _getExerciseListWithDay
+
+
+
+    private val _exerciseDays: LiveData<ExerciseDay> = MutableLiveData()
+    val exerciseDays get() = _exerciseDays
+
+
     fun insertExerciseDay(exerciseDay: ExerciseDay) = viewModelScope.launch(Dispatchers.IO) {
         repo.insertExerciseDay(exerciseDay)
     }
@@ -34,10 +43,23 @@ class ExerciseDetailFirstVievModel @Inject constructor(
         return repo.getExercisesWithLevelOne()
     }
 
+    fun getExerciseListWithDayID(dayId: Int) {
+        viewModelScope.launch(Dispatchers.IO){
+            val exercises  = repo.getExerciseListWithDayID(dayID = dayId)
+            _getExerciseListWithDay.postValue(exercises)
+        }
+    }
+
     fun fetchExerciseDayExercisesWithLevelOne() {
         viewModelScope.launch(Dispatchers.IO) {
             val exercises = repo.getExerciseDayExercisesWithLevelOne()
             (exerciseDayExercisesLevelOne as MutableLiveData).postValue(exercises)
+        }
+    }
+    fun fetchExerciseDays() {
+        viewModelScope.launch(Dispatchers.IO) {
+            val exerciseDay = repo.getExerciseDay()
+            (exerciseDays as MutableLiveData).postValue(exerciseDay)
         }
     }
 

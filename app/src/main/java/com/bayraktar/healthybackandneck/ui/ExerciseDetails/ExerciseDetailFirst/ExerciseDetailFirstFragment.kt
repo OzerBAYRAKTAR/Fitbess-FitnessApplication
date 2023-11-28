@@ -31,7 +31,9 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
 
     private var detailList = emptyList<ExerciseDay>()
     private val exerciseDayExercise = mutableListOf<ExerciseDayExercise>()
+    private val exerciseListSend = ArrayList<ExerciseDayExercise>()
     private lateinit var firstAdapter: ExerciseDetailFirstAdapter
+    private var selectedModel: ExerciseDay?= null
 
 
     override fun onCreateView(
@@ -47,10 +49,12 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
         super.onViewCreated(view, savedInstanceState)
 
 
+
         setRecyclerview()
+
         addToDetailList()
         observeLevelOne()
-        addToRoom()
+        observeExerciseDay()
 
         viewModel.fetchExerciseDayExercisesWithLevelOne()
 
@@ -58,14 +62,25 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
     }
 
     private fun observeLevelOne() {
-         viewModel.exerciseDayExercisesLevelOne.observe(viewLifecycleOwner, Observer { exercises ->
-             if (exercises.isEmpty()) {
-                 addToRoomExercises()
-             }else {
-                 println("liste boş")
-             }
-         })
+        viewModel.exerciseDayExercisesLevelOne.observe(viewLifecycleOwner, Observer { exercises ->
+            if (exercises.isEmpty()) {
+                addToRoomExercises()
+            } else {
+                println("liste var")
+            }
+        })
     }
+
+    private fun observeExerciseDay() {
+        viewModel.exerciseDays.observe(viewLifecycleOwner, Observer { day ->
+            if (day == null) {
+                addToRoom()
+            } else {
+                println("day var")
+            }
+        })
+    }
+
     @SuppressLint("DiscouragedApi")
     private fun addToRoomExercises() {
         try {
@@ -80,14 +95,28 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
 
             for (i in 0 until jsonArray.length()) {
                 val item = jsonArray.getJSONObject(i)
+
+                val exerciseDescriptionId = resources.getIdentifier(
+                    item.optString("ExerciseDescription"), "string", requireContext().packageName
+                )
+                val exerciseDescription = if (exerciseDescriptionId != 0) {
+                    getString(exerciseDescriptionId)
+                } else {
+                    getString(R.string.not_found)
+                }
                 if (item.optInt("Level") == 1) {
                     val exercise = ExerciseDayExercise(
-                        dayId = item.optInt("dayId"),
-                        exerciseName = item.optString("exerciseName"),
-                        exerciseDescription = item.optString("exerciseDescription"),
-                        image = resources.getIdentifier(item.optString("image"), "drawable", requireContext().packageName),
-                        isExerciseCompleted = item.optBoolean("isExerciseCompleted"),
-                        exerciseId = item.optInt("exerciseId"),
+                        dayId = item.optInt("DayId"),
+                        step = item.optInt("Step"),
+                        exerciseName = item.optString("ExerciseName"),
+                        exerciseDescription = exerciseDescription,
+                        image = resources.getIdentifier(
+                            item.optString("Image"),
+                            "drawable",
+                            requireContext().packageName
+                        ),
+                        isExerciseCompleted = item.optBoolean("IsExerciseCompleted"),
+                        exerciseId = item.optInt("ExerciseId"),
                         level = item.optInt("Level")
                     )
                     exerciseDayExercise.add(exercise)
@@ -106,55 +135,55 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
                 dayId = 1,
                 day = 1,
                 exerciseCount = 7,
-                exerciseTime = 7.00,
+                exerciseTime = 7,
                 exerciseKcal = 340,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 2,
                 day = 2,
-                exerciseCount = 6,
-                exerciseTime = 7.00,
-                exerciseKcal = 440,
+                exerciseCount = 8,
+                exerciseTime = 7,
+                exerciseKcal = 320,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 3,
                 day = 3,
                 exerciseCount = 8,
-                exerciseTime = 6.45,
-                exerciseKcal = 375,
+                exerciseTime = 7,
+                exerciseKcal = 315,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 4,
                 day = 4,
                 exerciseCount = 8,
-                exerciseTime = 7.50,
-                exerciseKcal = 300,
+                exerciseTime = 7,
+                exerciseKcal = 330,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 5,
                 day = 5,
-                exerciseCount = 6,
-                exerciseTime = 6.30,
-                exerciseKcal = 350,
+                exerciseCount = 7,
+                exerciseTime = 7,
+                exerciseKcal = 290,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 6,
                 day = 6,
-                exerciseCount = 9,
-                exerciseTime = 5.40,
-                exerciseKcal = 290,
+                exerciseCount = 8,
+                exerciseTime = 8,
+                exerciseKcal = 305,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 7,
                 day = 7,
-                exerciseCount = 6,
-                exerciseTime = 6.50,
+                exerciseCount = 8,
+                exerciseTime = 7,
                 exerciseKcal = 330,
                 homeId = 1
             ),
@@ -162,39 +191,39 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
                 dayId = 8,
                 day = 8,
                 exerciseCount = 7,
-                exerciseTime = 6.20,
-                exerciseKcal = 410,
+                exerciseTime = 7,
+                exerciseKcal = 280,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 9,
                 day = 9,
                 exerciseCount = 8,
-                exerciseTime = 7.10,
-                exerciseKcal = 190,
+                exerciseTime = 8,
+                exerciseKcal = 290,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 10,
                 day = 10,
-                exerciseCount = 9,
-                exerciseTime = 6.50,
-                exerciseKcal = 340,
+                exerciseCount = 7,
+                exerciseTime = 7,
+                exerciseKcal = 240,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 11,
                 day = 11,
                 exerciseCount = 7,
-                exerciseTime = 5.30,
-                exerciseKcal = 240,
+                exerciseTime = 8,
+                exerciseKcal = 340,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 12,
                 day = 12,
                 exerciseCount = 8,
-                exerciseTime = 8.30,
+                exerciseTime = 8,
                 exerciseKcal = 270,
                 homeId = 1
             ),
@@ -202,7 +231,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
                 dayId = 13,
                 day = 13,
                 exerciseCount = 8,
-                exerciseTime = 7.20,
+                exerciseTime = 8,
                 exerciseKcal = 290,
                 homeId = 1
             ),
@@ -210,69 +239,70 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
                 dayId = 14,
                 day = 14,
                 exerciseCount = 7,
-                exerciseTime = 6.30,
-                exerciseKcal = 430,
+                exerciseTime = 7,
+                exerciseKcal = 330,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 15,
                 day = 15,
                 exerciseCount = 7,
-                exerciseTime = 6.30,
-                exerciseKcal = 430,
+                exerciseTime = 8,
+                exerciseKcal = 285,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 16,
                 day = 16,
                 exerciseCount = 7,
-                exerciseTime = 6.30,
-                exerciseKcal = 430,
+                exerciseTime = 7,
+                exerciseKcal = 325,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 17,
                 day = 17,
                 exerciseCount = 7,
-                exerciseTime = 6.30,
-                exerciseKcal = 430,
+                exerciseTime = 8,
+                exerciseKcal = 310,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 18,
                 day = 18,
                 exerciseCount = 7,
-                exerciseTime = 6.30,
-                exerciseKcal = 430,
+                exerciseTime = 8,
+                exerciseKcal = 330,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 19,
                 day = 19,
                 exerciseCount = 7,
-                exerciseTime = 6.30,
-                exerciseKcal = 430,
+                exerciseTime = 8,
+                exerciseKcal = 290,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 20,
                 day = 20,
                 exerciseCount = 7,
-                exerciseTime = 6.30,
-                exerciseKcal = 430,
+                exerciseTime = 7,
+                exerciseKcal = 285,
                 homeId = 1
             ),
             ExerciseDay(
                 dayId = 21,
                 day = 21,
                 exerciseCount = 7,
-                exerciseTime = 6.30,
-                exerciseKcal = 430,
+                exerciseTime = 8,
+                exerciseKcal = 335,
                 homeId = 1
             ),
         )
         firstAdapter.setData(detailList)
     }
+
     private fun addToRoom() {
         lifecycleScope.launch {
             for (exerciseDay in detailList) {
@@ -288,13 +318,23 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
     }
 
     override fun recyclerviewListClicked(v: View, position: Int) {
-        val selectedModel = detailList[position]
-
-        //val action = ExerciseDetailFirstFragmentDirections.ActionExerciseDetailFirstFragmentToDetailDayFragment(
-        //    exerciseList =selectedModel
-        //)
-        //view?.findNavController()?.navigate(action)
+        selectedModel = detailList[position]
+        val selectedDay = position + 1
+        viewModel.getExerciseListWithDayID(selectedDay)
+        observeListWithDayId()
     }
-
+    private fun observeListWithDayId() {
+        viewModel.getExerciseListWithDay.observe(viewLifecycleOwner, Observer { exercise ->
+            if (exercise != null) {
+                exerciseListSend.clear()
+                exerciseListSend.addAll(exercise)
+            }
+            val exerciseLevel = getString(R.string.easy_level_fil)
+            val exerciseArray = exerciseListSend.toTypedArray()
+            val action= ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToDetailDayFragment(
+                    exerciseArray, selectedModel!!,exerciseLevel)
+            view?.findNavController()?.navigate(action)
+        })
+    }
 
 }

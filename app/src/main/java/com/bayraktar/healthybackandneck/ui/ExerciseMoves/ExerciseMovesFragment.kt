@@ -50,6 +50,7 @@ class ExerciseMovesFragment : Fragment() {
             startTimerSetup()
         }
 
+
     }
 
     private fun timePause() {
@@ -72,6 +73,7 @@ class ExerciseMovesFragment : Fragment() {
             }
         }
     }
+
 
     private fun startTimer(pauseOffSetL: Long) {
         val progressBar =binding.pbTimer
@@ -103,5 +105,6 @@ class ExerciseMovesFragment : Fragment() {
             timeProgress = 0
         }
     }
+
 
 }

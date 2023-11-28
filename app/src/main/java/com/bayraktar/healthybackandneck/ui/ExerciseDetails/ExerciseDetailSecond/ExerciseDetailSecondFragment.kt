@@ -39,7 +39,7 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
             ExerciseDay(
                 day = 1,
                 exerciseCount = 7,
-                exerciseTime = 7.00,
+                exerciseTime = 7,
                 exerciseKcal = 340,
                 dayId = 1,
                 homeId = 2
@@ -47,74 +47,74 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
             ExerciseDay(
                 day = 2,
                 exerciseCount = 6,
-                exerciseTime = 7.00,
-                exerciseKcal = 440,
+                exerciseTime = 7,
+                exerciseKcal = 280,
                 dayId = 2,
                 homeId = 2
             ),
             ExerciseDay(
                 day = 3,
                 exerciseCount = 8,
-                exerciseTime = 6.45,
-                exerciseKcal = 375,
+                exerciseTime = 6,
+                exerciseKcal = 320,
                 dayId = 3,
                 homeId = 2
             ),
             ExerciseDay(
                 day = 4,
                 exerciseCount = 8,
-                exerciseTime = 7.50,
+                exerciseTime = 7,
                 exerciseKcal = 300,
                 dayId = 4,
                 homeId = 2
             ), ExerciseDay(
                 day = 5,
                 exerciseCount = 6,
-                exerciseTime = 6.30,
+                exerciseTime = 8,
                 exerciseKcal = 350,
                 dayId = 5,
                 homeId = 2
             ), ExerciseDay(
                 day = 6,
                 exerciseCount = 9,
-                exerciseTime = 5.40,
+                exerciseTime = 7,
                 exerciseKcal = 290,
                 dayId = 6,
                 homeId = 2
             ), ExerciseDay(
                 day = 7,
                 exerciseCount = 6,
-                exerciseTime = 6.50,
+                exerciseTime = 7,
                 exerciseKcal = 330,
                 dayId = 7,
                 homeId = 2
             ), ExerciseDay(
                 day = 8,
                 exerciseCount = 7,
-                exerciseTime = 6.20,
-                exerciseKcal = 410,
+                exerciseTime = 7,
+                exerciseKcal = 275,
                 dayId = 8,
                 homeId = 2
             ), ExerciseDay(
                 day = 9,
                 exerciseCount = 8,
-                exerciseTime = 7.10,
-                exerciseKcal = 190,
+                exerciseTime = 7,
+                exerciseKcal = 225,
                 dayId = 9,
                 homeId = 2
             ),
             ExerciseDay(
                 day = 10,
                 exerciseCount = 9,
-                exerciseTime = 6.50,
-                exerciseKcal = 340,
+                exerciseTime = 7,
+                exerciseKcal = 290,
                 dayId = 10,
                 homeId = 2
             ),
             ExerciseDay(
                 day = 11,
                 exerciseCount = 7,
-                exerciseTime = 5.30,
+                exerciseTime = 8,
                 exerciseKcal = 240,
                 dayId = 11,
                 homeId = 2
@@ -122,7 +122,7 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
             ExerciseDay(
                 day = 12,
                 exerciseCount = 8,
-                exerciseTime = 8.30,
+                exerciseTime = 8,
                 exerciseKcal = 270,
                 dayId = 12,
                 homeId = 2
@@ -130,7 +130,7 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
             ExerciseDay(
                 day = 13,
                 exerciseCount = 8,
-                exerciseTime = 7.20,
+                exerciseTime = 7,
                 exerciseKcal = 290,
                 dayId = 13,
                 homeId = 2
@@ -138,52 +138,52 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
             ExerciseDay(
                 day = 14,
                 exerciseCount = 7,
-                exerciseTime = 6.30,
-                exerciseKcal = 430,
+                exerciseTime = 8,
+                exerciseKcal = 280,
                 dayId = 14,
                 homeId = 2
             ),
             ExerciseDay(
                 day = 15,
                 exerciseCount = 9,
-                exerciseTime = 5.40,
+                exerciseTime = 7,
                 exerciseKcal = 290,
                 dayId = 15,
                 homeId = 2
             ), ExerciseDay(
                 day = 16,
                 exerciseCount = 6,
-                exerciseTime = 6.50,
+                exerciseTime = 7,
                 exerciseKcal = 330,
                 dayId = 16,
                 homeId = 2
             ), ExerciseDay(
                 day = 17,
                 exerciseCount = 7,
-                exerciseTime = 6.20,
-                exerciseKcal = 410,
+                exerciseTime = 8,
+                exerciseKcal = 260,
                 dayId = 17,
                 homeId = 2
             ), ExerciseDay(
                 day = 18,
                 exerciseCount = 8,
-                exerciseTime = 7.10,
-                exerciseKcal = 190,
+                exerciseTime = 7,
+                exerciseKcal = 320,
                 dayId = 18,
                 homeId = 2
             ),
             ExerciseDay(
                 day = 19,
                 exerciseCount = 9,
-                exerciseTime = 6.50,
-                exerciseKcal = 340,
+                exerciseTime = 8,
+                exerciseKcal = 310,
                 dayId = 19,
                 homeId = 2
             ),
             ExerciseDay(
                 day = 20,
                 exerciseCount = 7,
-                exerciseTime = 5.30,
+                exerciseTime = 7,
                 exerciseKcal = 240,
                 dayId = 20,
                 homeId = 2
@@ -191,7 +191,7 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
             ExerciseDay(
                 day = 21,
                 exerciseCount = 8,
-                exerciseTime = 8.30,
+                exerciseTime = 8,
                 exerciseKcal = 270,
                 dayId = 21,
                 homeId = 2

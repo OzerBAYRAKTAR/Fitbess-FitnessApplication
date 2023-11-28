@@ -124,6 +124,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="closed_breath">Kapalı Nefes Tekniği</string>
     <string name="closed_breath_desc">Burada nefes alırken, burun deliklerini kapat ve ağızla nefes verirken tekrar burun deliklerini aç. Sonra tersi olarak burun deliklerini kapat, ağızla nefes alırken de burun deliklerini aç.</string>
     <string name="focus_breath">Nefes Odaklama</string>
+    <string name="not_found">Açıklama bulunamadı</string>
     <string name="focus_breath_desc">Zihnini sadece nefesine odakla. Nefes alırken ve verirken yaşadığın hislere ve nefesin ritmine dikkat et. Düşünceler dağılırsa sadece tekrar nefesine dön.</string>
 
     <!-- Exercise Fragment-->
@@ -504,6 +505,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="e87_y10_plank_walk">Plank pozisyonunda vücudu ileri ve geri yürür bir şekilde hareket ettirmek</string>
     <string name="e88_y11_side_plank_extension">Dirsekten destek alacak şekilde yan biçimde yere uzanmak, diğer eli ensenin biraz üzerinde tutarak, beli yere doğru değdirmek</string>
     <string name="e89_y12_plank_row">Şınav çekip kolları sırasıyla havaya doğru esnetmek</string>
+    <string name="txt_start">Başlat</string>
 
 </resources>
 

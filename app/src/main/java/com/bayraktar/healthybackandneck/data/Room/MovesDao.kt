@@ -26,8 +26,15 @@ interface MovesDao {
     @Query("SELECT COUNT(*) FROM exercise_day_exercise WHERE level = 1")
     fun getExerciseCountForLevelOne(): Int
 
+    @Query("SELECT * FROM ExerciseDay")
+    fun getExerciseDays(): ExerciseDay
+
     @Query("SELECT * FROM exercise_day_exercise WHERE level = 1")
     fun getExerciseDayExercisesWithLevelOne(): List<ExerciseDayExercise>
+
+    @Transaction
+    @Query("Select * from exercise_day_exercise where dayId = :dayId")
+    fun getExerciseListWithDayID(dayId: Int): List<ExerciseDayExercise>
 
     @Transaction
     @Query("Select * from ExerciseDay where dayId = :dayId")

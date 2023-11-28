@@ -10,7 +10,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesReadyBinding
+import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayAdapter
+import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayFragmentArgs
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,6 +28,11 @@ class ExerciseMovesReadyFragment : Fragment() {
     private var timeProgress = 0
     private var pauseOffSet: Long = 0
     private var isStart = true
+
+
+    private var exerciseDayModel: ExerciseDay? = null
+    private var exerciseList = ArrayList<ExerciseDayExercise>()
+    private var exerciseArray: Array<ExerciseDayExercise>? = null
 
 
     override fun onCreateView(
@@ -43,24 +52,25 @@ class ExerciseMovesReadyFragment : Fragment() {
 
         startTimerSetup()
 
-        binding.playpause.setOnClickListener {
-            startTimerSetup()
+        getSetData()
+
+        binding.goNextbtn.setOnClickListener {
+            val action = ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2()
+            view.findNavController().navigate(action)
         }
 
     }
 
-   // private fun resetTime() = with(binding) {
-   //     if (timecountDown != null) {
-   //         timeProgress = 0
-   //         timeSelected = 0
-   //         pauseOffSet = 0
-   //         timecountDown = null
-   //         playpause.setBackgroundResource(R.drawable.startexercise)
-   //         isStart = true
-   //         pbTimer.progress = 0
-   //         txtTimeleft.text = "0"
-   //     }
-   // }
+    private fun getSetData() = with(binding) {
+        val args = ExerciseMovesReadyFragmentArgs.fromBundle(requireArguments())
+        exerciseDayModel = args.exerciseDayModel
+
+        exerciseArray = args.exerciseNewList
+        exerciseList = ArrayList(exerciseArray!!.asList())
+
+    }
+
+
     private fun timePause() {
 
         if (timecountDown != null) {
@@ -103,10 +113,6 @@ class ExerciseMovesReadyFragment : Fragment() {
 
         }.start()
     }
-    private fun setTimeFunc() {
-
-    }
-
     override fun onDestroy() {
         super.onDestroy()
         if (timecountDown != null) {

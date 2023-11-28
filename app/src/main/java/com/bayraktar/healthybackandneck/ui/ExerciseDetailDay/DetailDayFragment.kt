@@ -6,17 +6,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentDetailDayBinding
+import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstAdapter
+import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstFragmentDirections
+import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DetailDayFragment : Fragment() {
+class DetailDayFragment : Fragment(), RecyclerViewClickListener {
 
     private var _binding: FragmentDetailDayBinding? = null
     val binding get() = _binding!!
 
-    private var exerciseList : ExerciseDay?= null
+    private var exerciseDayModel: ExerciseDay? = null
+    private var exerciseList = ArrayList<ExerciseDayExercise>()
+    private lateinit var detailDayAdapter: DetailDayAdapter
+    private var exerciseArray: Array<ExerciseDayExercise>? = null
 
 
     override fun onCreateView(
@@ -31,22 +39,50 @@ class DetailDayFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         getSetData()
+        setRecyclerview()
 
 
         binding.startExercise.setOnClickListener {
-            val action = DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment()
-            view.findNavController().navigate(action)
+            if (exerciseDayModel != null) {
+                val action =
+                    DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment(
+                        exerciseList.toTypedArray(),exerciseDayModel!!)
+                view.findNavController().navigate(action)
+            }
         }
     }
 
+    private fun setRecyclerview() = with(binding) {
+        rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
+        detailDayAdapter = DetailDayAdapter(exerciseList, this@DetailDayFragment)
+        rvdaydetail.adapter = detailDayAdapter
+    }
+
     private fun getSetData() = with(binding) {
-        //exerciseList = DetailDayFragmentArgs.fromBundle(requireArguments()).exerciseList
+        val args = DetailDayFragmentArgs.fromBundle(requireArguments())
+        exerciseDayModel = args.exerciseDayModel
 
-        txttime.text = exerciseList?.exerciseTime.toString()
-        txtexercise.text = exerciseList?.exerciseCount.toString()
-        txtkcal.text = exerciseList?.exerciseKcal.toString()
-        txtdaysecond.text = exerciseList?.day.toString()
+        exerciseArray = args.exerciseNewList
+        exerciseList = ArrayList(exerciseArray!!.asList())
+        val detailDay = args.exerciseLevel
 
+        val time = exerciseDayModel?.exerciseTime.toString()
+        val formattedTime = "0$time:00"
+
+        detaildayFirst.text = detailDay
+        txttime.text = formattedTime
+        txtexercise.text = exerciseDayModel?.exerciseCount.toString()
+        txtkcal.text = exerciseDayModel?.exerciseKcal.toString()
+        txtdaysecond.text = exerciseDayModel?.day.toString()
+
+        detailDayAdapter = DetailDayAdapter(exerciseList, this@DetailDayFragment)
+        rvdaydetail.adapter = detailDayAdapter
+
+    }
+
+    override fun recyclerviewListClicked(v: View, position: Int) {
+        val selectedModel = exerciseList[position]
+        TODO("tıklayınca checkbox aktif veya pasif olacak, toast ile favoriye eklendi yazdırılacak")
     }
 
 

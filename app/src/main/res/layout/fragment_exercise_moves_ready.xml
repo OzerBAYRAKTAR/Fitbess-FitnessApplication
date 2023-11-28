@@ -19,7 +19,7 @@
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatButton4" />
+        app:layout_constraintTop_toBottomOf="@+id/goNextbtn" />
 
     <ImageView
         android:id="@+id/goMenu"
@@ -99,7 +99,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/appCompatButton4"
+        android:id="@+id/goNextbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="45dp"
@@ -122,6 +122,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatButton4" />
+        app:layout_constraintTop_toBottomOf="@+id/goNextbtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

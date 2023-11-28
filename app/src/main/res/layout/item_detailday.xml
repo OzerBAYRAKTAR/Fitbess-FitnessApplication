@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -27,13 +28,16 @@
                 app:layout_constraintTop_toTopOf="parent">
 
 
-                <androidx.appcompat.widget.AppCompatImageView
+                <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/roundedImageView"
-                    android:layout_width="100dp"
+                    android:layout_width="110dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/last2"
+                    app:srcCompat="@drawable/last2"
+                    android:background="@color/white"
+                    android:padding="2dp"
                     android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/roundedImageStyletwenty"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -75,10 +79,11 @@
                         <TextView
                             android:id="@+id/txtExerciseCount"
                             android:layout_width="wrap_content"
+                            android:visibility="gone"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="5dp"
                             android:fontFamily="@font/robotslabrgular"
-                            android:text="00:40"
+                            android:text="00:30"
                             android:textColor="@color/buttontext"
                             android:textSize="17sp" />
 
@@ -87,16 +92,17 @@
 
                 </LinearLayout>
 
-                <androidx.appcompat.widget.AppCompatCheckBox
+                <CheckBox
                     android:id="@+id/favoritebtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:button="@drawable/favorite_selector"
-                    app:useMaterialThemeColors="false"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/favorite_selector"
+                    android:button="@null"
+                    android:layout_marginEnd="30dp"
                     app:layout_constraintBottom_toBottomOf="@+id/linearLayout6"
                     app:layout_constraintEnd_toEndOf="@+id/linearLayout6"
-                    app:layout_constraintTop_toTopOf="@+id/linearLayout6" />
+                    app:layout_constraintTop_toTopOf="@+id/linearLayout6"
+                    app:useMaterialThemeColors="false" />
 
                 <View
                     android:layout_width="0dp"
