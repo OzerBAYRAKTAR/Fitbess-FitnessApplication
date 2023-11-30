@@ -28,9 +28,12 @@
         android:text="@string/get_rest"
         android:textColor="#3C8A3E"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/albelRank"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.527" />
 
     <TextView
         android:id="@+id/exerciceName"
@@ -73,26 +76,44 @@
         app:layout_constraintStart_toEndOf="@+id/txtRank" />
 
 
+    <ProgressBar
+        android:id="@+id/pbTimer"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:background="@drawable/gray_progressbar_background"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/blue_progressbar_background"
+        android:rotation="270"
+        app:layout_constraintBottom_toTopOf="@+id/labelrest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/txtTimeLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/robotoslabmedium"
-        android:text="00:20"
+        android:text="30"
         android:textColor="@color/black"
-        android:layout_marginTop="14dp"
         android:textSize="31sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelrest" />
+        app:layout_constraintBottom_toBottomOf="@+id/pbTimer"
+        app:layout_constraintEnd_toEndOf="@+id/pbTimer"
+        app:layout_constraintStart_toStartOf="@+id/pbTimer"
+        app:layout_constraintTop_toTopOf="@+id/pbTimer" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="@color/login_color"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintTop_toBottomOf="@+id/txtTimeLeft" />
+        android:layout_marginTop="156dp"
+        android:background="@color/login_color"
+        app:layout_constraintTop_toBottomOf="@+id/txtTimeLeft"
+        tools:layout_editor_absoluteX="16dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/skipRest"

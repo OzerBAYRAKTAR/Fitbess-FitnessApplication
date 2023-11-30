@@ -55,7 +55,10 @@ class ExerciseMovesReadyFragment : Fragment() {
         getSetData()
 
         binding.goNextbtn.setOnClickListener {
-            val action = ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2()
+            val action =
+                ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2(
+                    0,exerciseList.toTypedArray(),exerciseDayModel!!,
+                )
             view.findNavController().navigate(action)
         }
 
@@ -107,7 +110,8 @@ class ExerciseMovesReadyFragment : Fragment() {
             }
 
             override fun onFinish() {
-                val action = ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2()
+                val action
+                = ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2(0,exerciseList.toTypedArray(),exerciseDayModel!!)
                 view?.findNavController()?.navigate(action)
             }
 

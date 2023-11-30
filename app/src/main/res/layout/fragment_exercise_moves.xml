@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:fontFamily="@font/robotoslabmedium"
-            android:text="/12 Adım"
+            android:text="/8 Step"
             android:textColor="@color/gray"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/favoritebtn"
