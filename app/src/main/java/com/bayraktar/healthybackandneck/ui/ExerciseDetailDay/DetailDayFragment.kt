@@ -1,12 +1,15 @@
 package com.bayraktar.healthybackandneck.ui.ExerciseDetailDay
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentDetailDayBinding
@@ -40,7 +43,7 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
 
         getSetData()
         setRecyclerview()
-
+        backstack()
 
         binding.startExercise.setOnClickListener {
             if (exerciseDayModel != null) {
@@ -82,8 +85,19 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
 
     override fun recyclerviewListClicked(v: View, position: Int) {
         val selectedModel = exerciseList[position]
-        TODO("tıklayınca checkbox aktif veya pasif olacak, toast ile favoriye eklendi yazdırılacak")
+        println("xx")
+        //TODO("tıklayınca checkbox aktif veya pasif olacak, toast ile favoriye eklendi yazdırılacak")
     }
 
+    private fun backstack() {
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                val action = DetailDayFragmentDirections.actionDetailDayFragmentToIdHomepageFragment()
+                view?.findNavController()?.navigate(action)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+
+    }
 
 }

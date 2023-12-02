@@ -32,9 +32,15 @@ interface MovesDao {
     @Query("SELECT * FROM exercise_day_exercise WHERE level = 1")
     fun getExerciseDayExercisesWithLevelOne(): List<ExerciseDayExercise>
 
+    @Query("SELECT * FROM exercise_day_exercise WHERE level = 2")
+    fun getExerciseDayExercisesWithLevelTwo(): List<ExerciseDayExercise>
+
+    @Query("SELECT * FROM exercise_day_exercise WHERE level = 3")
+    fun getExerciseDayExercisesWithLevelThird(): List<ExerciseDayExercise>
+
     @Transaction
-    @Query("Select * from exercise_day_exercise where dayId = :dayId")
-    fun getExerciseListWithDayID(dayId: Int): List<ExerciseDayExercise>
+    @Query("Select * from exercise_day_exercise where dayId = :dayId and level = :level")
+    fun getExerciseListWithDayID(dayId: Int,level:Int): List<ExerciseDayExercise>
 
     @Transaction
     @Query("Select * from ExerciseDay where dayId = :dayId")

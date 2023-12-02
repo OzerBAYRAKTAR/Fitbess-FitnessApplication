@@ -134,7 +134,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 1,
                 day = 1,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 340,
                 homeId = 1
@@ -166,7 +166,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 5,
                 day = 5,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 290,
                 homeId = 1
@@ -190,7 +190,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 8,
                 day = 8,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 280,
                 homeId = 1
@@ -206,7 +206,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 10,
                 day = 10,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 240,
                 homeId = 1
@@ -214,7 +214,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 11,
                 day = 11,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 340,
                 homeId = 1
@@ -238,7 +238,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 14,
                 day = 14,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 330,
                 homeId = 1
@@ -246,7 +246,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 15,
                 day = 15,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 285,
                 homeId = 1
@@ -254,7 +254,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 16,
                 day = 16,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 325,
                 homeId = 1
@@ -262,7 +262,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 17,
                 day = 17,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 310,
                 homeId = 1
@@ -270,7 +270,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 18,
                 day = 18,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 330,
                 homeId = 1
@@ -278,7 +278,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 19,
                 day = 19,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 290,
                 homeId = 1
@@ -286,7 +286,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 20,
                 day = 20,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 285,
                 homeId = 1
@@ -294,7 +294,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 21,
                 day = 21,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 335,
                 homeId = 1
@@ -320,9 +320,10 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
     override fun recyclerviewListClicked(v: View, position: Int) {
         selectedModel = detailList[position]
         val selectedDay = position + 1
-        viewModel.getExerciseListWithDayID(selectedDay)
+        viewModel.getExerciseListWithDayID(selectedDay,1)
         observeListWithDayId()
     }
+
     private fun observeListWithDayId() {
         viewModel.getExerciseListWithDay.observe(viewLifecycleOwner, Observer { exercise ->
             if (exercise != null) {

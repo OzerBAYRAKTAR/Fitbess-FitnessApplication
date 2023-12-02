@@ -9,6 +9,7 @@
     <string name="close">Kapat</string>
 
     <string name="title1">Yerinden Kalk!</string>
+    <string name="desc">Açıklama</string>
     <string name="title2">Vücudunu Çalıştır!</string>
     <string name="title3">Harekte Geç!</string>
     <string name="desc1">Konfor alanını terket ve kendini keşfet</string>
@@ -336,7 +337,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
 
     <string name="attention">Uyarı</string>
     <string name="alertmessage">Çıkış yapmak istediğinize emin misiniz?</string>
-    <string name="yes">Yes</string>
+    <string name="yes">Evet</string>
     <string name="no">Hayır</string>
     <string name="label_age">Yaş</string>
     <string name="label_dayofcalorie">Günlük Kalori İhtiyacı</string>
@@ -506,6 +507,8 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="e88_y11_side_plank_extension">Dirsekten destek alacak şekilde yan biçimde yere uzanmak, diğer eli ensenin biraz üzerinde tutarak, beli yere doğru değdirmek</string>
     <string name="e89_y12_plank_row">Şınav çekip kolları sırasıyla havaya doğru esnetmek</string>
     <string name="txt_start">Başlat</string>
+    <string name="label_quitexercise">Antrenmandan çıkmak istediğinize emin misiniz?</string>
+    <string name="label_exerciselost">(İlerlemeniz kaybolacaktır.)</string>
 
 </resources>
 

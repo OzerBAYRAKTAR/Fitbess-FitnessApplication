@@ -127,6 +127,9 @@
         <argument
             android:name="exerciseLevel"
             app:argType="string" />
+        <action
+            android:id="@+id/action_detailDayFragment_to_id_homepage_fragment"
+            app:destination="@id/id_homepage_fragment" />
     </fragment>
     <fragment
         android:id="@+id/exerciseMovesFragment2"
@@ -147,6 +150,12 @@
         <action
             android:id="@+id/action_exerciseMovesFragment2_to_exerciseMovesEndFragment"
             app:destination="@id/exerciseMovesEndFragment" />
+        <action
+            android:id="@+id/action_exerciseMovesFragment2_self"
+            app:destination="@id/exerciseMovesFragment2" />
+        <action
+            android:id="@+id/action_exerciseMovesFragment2_to_id_homepage_fragment"
+            app:destination="@id/id_homepage_fragment" />
 
     </fragment>
     <fragment
@@ -155,17 +164,16 @@
         android:label="fragment_exercise_moves_rest"
         tools:layout="@layout/fragment_exercise_moves_rest" >
         <action
-            android:id="@+id/action_exerciseMovesRestFragment_to_exerciseMovesEndFragment"
-            app:destination="@id/exerciseMovesEndFragment" />
-        <action
             android:id="@+id/action_exerciseMovesRestFragment_to_exerciseMovesFragment2"
             app:destination="@id/exerciseMovesFragment2" />
+        <argument android:name="exerciseIndex"
+            app:argType="integer" />
         <argument
             android:name="exerciseNewList"
             app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise[]" />
-
-        <argument android:name="exerciseIndex"
-            app:argType="integer" />
+        <argument
+            android:name="exerciseDayModel"
+            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay" />
 
     </fragment>
     <fragment
@@ -173,9 +181,7 @@
         android:name="com.bayraktar.healthybackandneck.ui.ExerciseMovesEnd.ExerciseMovesEndFragment"
         android:label="fragment_exercise_moves_end"
         tools:layout="@layout/fragment_exercise_moves_end" >
-        <action
-            android:id="@+id/action_exerciseMovesEndFragment_to_detailDayFragment"
-            app:destination="@id/detailDayFragment" />
+
 
         <argument
             android:name="exerciseNewList"
@@ -183,6 +189,9 @@
         <argument
             android:name="exerciseDayModel"
             app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay" />
+        <action
+            android:id="@+id/action_exerciseMovesEndFragment_to_id_homepage_fragment"
+            app:destination="@id/id_homepage_fragment" />
 
     </fragment>
     <fragment

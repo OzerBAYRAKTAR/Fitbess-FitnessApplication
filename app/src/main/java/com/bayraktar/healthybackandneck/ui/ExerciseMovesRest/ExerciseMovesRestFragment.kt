@@ -19,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ExerciseMovesRestFragment : Fragment() {
 
-    private var _binding: FragmentExerciseMovesRestBinding?= null
+    private var _binding: FragmentExerciseMovesRestBinding? = null
     val binding get() = _binding!!
 
 
@@ -40,7 +40,7 @@ class ExerciseMovesRestFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentExerciseMovesRestBinding.inflate(inflater,container,false)
+        _binding = FragmentExerciseMovesRestBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -55,19 +55,28 @@ class ExerciseMovesRestFragment : Fragment() {
 
 
         binding.skipRest.setOnClickListener {
-            val action=
+            val action =
                 ExerciseMovesRestFragmentDirections.actionExerciseMovesRestFragmentToExerciseMovesFragment2(
-                    currentExerciseIndex, exerciseList.toTypedArray(),exerciseDayModel
+                    currentExerciseIndex + 1, exerciseList.toTypedArray(), exerciseDayModel!!
                 )
             view.findNavController().navigate(action)
         }
     }
-    private fun getData() {
+
+    @SuppressLint("SetTextI18n")
+    private fun getData() = with(binding) {
         arguments?.let {
             currentExerciseIndex = ExerciseMovesRestFragmentArgs.fromBundle(it).exerciseIndex
             exerciseArray = ExerciseMovesRestFragmentArgs.fromBundle(it).exerciseNewList
 
             exerciseList = ArrayList(exerciseArray!!.toList())
+            exerciseDayModel = ExerciseMovesRestFragmentArgs.fromBundle(it).exerciseDayModel
+
+            val currentModel = exerciseList[currentExerciseIndex + 1]
+            gifImageView2.setImageResource(currentModel.image)
+            exerciceName.text = currentModel.exerciseName
+            txtRank.text = (currentExerciseIndex + 2).toString()
+            albelRank.text = "/${exerciseList.size.toString()}"
         }
     }
 
@@ -77,13 +86,14 @@ class ExerciseMovesRestFragment : Fragment() {
             timecountDown?.cancel()
         }
     }
+
     @SuppressLint("UseCompatLoadingForDrawables")
-    private fun startTimerSetup()= with(binding) {
+    private fun startTimerSetup() = with(binding) {
         if (timeSelected > timeProgress) {
             if (isStart) {
                 startTimer(pauseOffSet)
-                isStart=false
-            }else{
+                isStart = false
+            } else {
                 isStart = true
                 timePause()
             }
@@ -92,23 +102,24 @@ class ExerciseMovesRestFragment : Fragment() {
 
 
     private fun startTimer(pauseOffSetL: Long) {
-        val progressBar =binding.pbTimer
+        val progressBar = binding.pbTimer
         progressBar.progress = timeProgress
         timecountDown = object : CountDownTimer(
-            (timeSelected*1000).toLong()-pauseOffSetL*1000,1000
+            (timeSelected * 1000).toLong() - pauseOffSetL * 1000, 1000
         ) {
             override fun onTick(p0: Long) {
                 timeProgress++
-                pauseOffSet = timeSelected.toLong()-p0/1000
+                pauseOffSet = timeSelected.toLong() - p0 / 1000
                 progressBar.progress = timeSelected - timeProgress
                 val timeLeft = binding.txtTimeLeft
                 timeLeft.text = (timeSelected - timeProgress).toString()
             }
 
             override fun onFinish() {
-                val action=
+
+                val action =
                     ExerciseMovesRestFragmentDirections.actionExerciseMovesRestFragmentToExerciseMovesFragment2(
-                        currentExerciseIndex, exerciseList.toTypedArray(),exerciseDayModel
+                        currentExerciseIndex + 1, exerciseList.toTypedArray(), exerciseDayModel!!
                     )
                 view?.findNavController()?.navigate(action)
             }

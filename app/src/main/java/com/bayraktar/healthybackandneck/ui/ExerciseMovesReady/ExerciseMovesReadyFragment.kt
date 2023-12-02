@@ -111,7 +111,7 @@ class ExerciseMovesReadyFragment : Fragment() {
 
             override fun onFinish() {
                 val action
-                = ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2(0,exerciseList.toTypedArray(),exerciseDayModel!!)
+                = ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2(1,exerciseList.toTypedArray(),exerciseDayModel!!)
                 view?.findNavController()?.navigate(action)
             }
 

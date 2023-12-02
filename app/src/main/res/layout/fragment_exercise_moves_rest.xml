@@ -28,52 +28,90 @@
         android:text="@string/get_rest"
         android:textColor="#3C8A3E"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/albelRank"
+        app:layout_constraintBottom_toTopOf="@+id/nextMove"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.527" />
 
-    <TextView
-        android:id="@+id/exerciceName"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cns4"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="24dp"
-        android:fontFamily="@font/robotoslabsemibold"
-        android:text="Butterfly pose"
-        android:textColor="@color/black"
-        android:textSize="21sp"
         app:layout_constraintBottom_toTopOf="@+id/gifImageView2"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/exerciceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/robotoslabsemibold"
+            android:text="Butterfly pose"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtRank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/robotoslabmedium"
+            android:text="1"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/albelRank"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/albelRank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/robotoslabmedium"
+            android:text="/8 Step"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/favoritebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:button="@drawable/favorite_selector"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/exerciceName"
+            app:layout_constraintTop_toTopOf="parent"
+            app:useMaterialThemeColors="false" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <TextView
-        android:id="@+id/txtRank"
+        android:id="@+id/nextMove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"
         android:fontFamily="@font/robotoslabmedium"
         android:text="Sonraki Hareket"
+        android:layout_marginStart="16dp"
         android:textColor="@color/gray"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/exerciceName"
-        app:layout_constraintStart_toStartOf="@+id/exerciceName" />
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/cns4"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
-    <TextView
-        android:id="@+id/albelRank"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:layout_marginStart="5dp"
-        android:fontFamily="@font/robotoslabmedium"
-        android:text="(2/12)"
-        android:textColor="@color/gray"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/exerciceName"
-        app:layout_constraintStart_toEndOf="@+id/txtRank" />
+
+
 
 
     <ProgressBar
@@ -107,6 +145,7 @@
         app:layout_constraintTop_toTopOf="@+id/pbTimer" />
 
     <View
+        android:id="@+id/view3"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_marginHorizontal="20dp"

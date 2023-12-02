@@ -1,16 +1,28 @@
 package com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailThird
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDetailThirdBinding
 import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstAdapter
+import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstFragmentDirections
+import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstVievModel
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+import org.json.JSONArray
+import java.nio.charset.Charset
 
 
 @AndroidEntryPoint
@@ -19,8 +31,13 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
     private var _binding: FragmentExerciseDetailThirdBinding?= null
     val binding get() = _binding!!
 
+    private val viewModel: ExerciseDetailThirdViewModel by viewModels()
+
     private var detailList = emptyList<ExerciseDay>()
-    private lateinit var firstAdapter: ExerciseDetailFirstAdapter
+    private val exerciseDayExercise = mutableListOf<ExerciseDayExercise>()
+    private val exerciseListSend = ArrayList<ExerciseDayExercise>()
+    private lateinit var thirdAdapter: ExerciseDetailAdapterThird
+    private var selectedModel: ExerciseDay?= null
 
 
     override fun onCreateView(
@@ -36,10 +53,19 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
 
         setRecyclerview()
 
+        addToDetailList()
+        observeLevelThird()
+        observeExerciseDay()
+
+        viewModel.fetchExerciseDayExercisesWithLevelThird()
+
+
+    }
+    private fun addToDetailList() {
         detailList = listOf(
             ExerciseDay(
                 day = 1,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 340,
                 dayId = 1,
@@ -48,7 +74,7 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
             ),
             ExerciseDay(
                 day = 2,
-                exerciseCount = 6,
+                exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 240,
                 dayId = 2,
@@ -71,28 +97,28 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
                 homeId = 3
             ), ExerciseDay(
                 day = 5,
-                exerciseCount = 6,
+                exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 350,
                 dayId = 5,
                 homeId = 3
             ), ExerciseDay(
                 day = 6,
-                exerciseCount = 9,
+                exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 290,
                 dayId = 6,
                 homeId = 3
             ), ExerciseDay(
                 day = 7,
-                exerciseCount = 6,
+                exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 330,
                 dayId = 7,
                 homeId = 3
             ), ExerciseDay(
                 day = 8,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 310,
                 dayId = 8,
@@ -107,7 +133,7 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
             ),
             ExerciseDay(
                 day = 10,
-                exerciseCount = 9,
+                exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 340,
                 dayId = 10,
@@ -115,7 +141,7 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
             ),
             ExerciseDay(
                 day = 11,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 240,
                 dayId = 11,
@@ -139,7 +165,7 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
             ),
             ExerciseDay(
                 day = 14,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 330,
                 dayId = 14,
@@ -147,14 +173,14 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
             ),
             ExerciseDay(
                 day = 15,
-                exerciseCount = 6,
+                exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 330,
                 dayId = 15,
                 homeId = 3
             ), ExerciseDay(
                 day = 16,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 410,
                 dayId = 16,
@@ -169,7 +195,7 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
             ),
             ExerciseDay(
                 day = 18,
-                exerciseCount = 9,
+                exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 340,
                 dayId = 18,
@@ -177,7 +203,7 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
             ),
             ExerciseDay(
                 day = 19,
-                exerciseCount = 7,
+                exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 240,
                 dayId = 19,
@@ -200,16 +226,109 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
                 homeId = 3
             ),
         )
-        firstAdapter.setData(detailList)
+        thirdAdapter.setData(detailList)
+    }
+
+    private fun observeLevelThird() {
+        viewModel.exerciseDayExercisesLevelThird.observe(viewLifecycleOwner, Observer { exercises ->
+            if (exercises.isEmpty()) {
+                addToRoomExercises()
+            } else {
+                println("liste var")
+            }
+        })
+    }
+
+    private fun observeExerciseDay() {
+        viewModel.exerciseDays.observe(viewLifecycleOwner, Observer { day ->
+            if (day == null) {
+                addToRoom()
+            } else {
+                println("day var")
+            }
+        })
+    }
+
+    @SuppressLint("DiscouragedApi")
+    private fun addToRoomExercises() {
+        try {
+            val inputStream = context?.assets?.open("exercises.json")
+            val size = inputStream?.available() ?: 0
+            val buffer = ByteArray(size)
+            inputStream?.read(buffer)
+            inputStream?.close()
+            val jsonString = String(buffer, Charset.defaultCharset())
+
+            val jsonArray = JSONArray(jsonString)
+
+            for (i in 0 until jsonArray.length()) {
+                val item = jsonArray.getJSONObject(i)
+
+                val exerciseDescriptionId = resources.getIdentifier(
+                    item.optString("ExerciseDescription"), "string", requireContext().packageName
+                )
+                val exerciseDescription = if (exerciseDescriptionId != 0) {
+                    getString(exerciseDescriptionId)
+                } else {
+                    getString(R.string.not_found)
+                }
+                if (item.optInt("Level") == 3) {
+                    val exercise = ExerciseDayExercise(
+                        dayId = item.optInt("DayId"),
+                        step = item.optInt("Step"),
+                        exerciseName = item.optString("ExerciseName"),
+                        exerciseDescription = exerciseDescription,
+                        image = resources.getIdentifier(
+                            item.optString("Image"),
+                            "drawable",
+                            requireContext().packageName
+                        ),
+                        isExerciseCompleted = item.optBoolean("IsExerciseCompleted"),
+                        exerciseId = item.optInt("ExerciseId"),
+                        level = item.optInt("Level")
+                    )
+                    exerciseDayExercise.add(exercise)
+                }
+            }
+            viewModel.insertExerciseDayExercise(exerciseDayExercise)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+    }
+
+    private fun addToRoom() {
+        lifecycleScope.launch {
+            for (exerciseDay in detailList) {
+                viewModel.insertExerciseDay(exerciseDay)
+            }
+        }
     }
     private fun setRecyclerview() = with(binding) {
         listDaysOfWeek.layoutManager = LinearLayoutManager(requireContext())
-        firstAdapter = ExerciseDetailFirstAdapter(detailList,this@ExerciseDetailThirdFragment)
-        listDaysOfWeek.adapter = firstAdapter
+        thirdAdapter = ExerciseDetailAdapterThird(detailList,this@ExerciseDetailThirdFragment)
+        listDaysOfWeek.adapter = thirdAdapter
     }
 
     override fun recyclerviewListClicked(v: View, position: Int) {
-        TODO("Not yet implemented")
+        selectedModel = detailList[position]
+        val selectedDay = position + 1
+        viewModel.getExerciseListWithDayID(selectedDay,3)
+        observeListWithDayId()
+    }
+
+    private fun observeListWithDayId() {
+        viewModel.getExerciseListWithDay.observe(viewLifecycleOwner, Observer { exercise ->
+            if (exercise != null) {
+                exerciseListSend.clear()
+                exerciseListSend.addAll(exercise)
+            }
+            val exerciseLevel = getString(R.string.hard_level)
+            val exerciseArray = exerciseListSend.toTypedArray()
+            val action= ExerciseDetailThirdFragmentDirections.actionExerciseDetailThirdFragmentToDetailDayFragment(
+                exerciseArray, selectedModel!!,exerciseLevel)
+            view?.findNavController()?.navigate(action)
+        })
     }
 
 

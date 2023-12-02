@@ -8,7 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesEndBinding
+import com.bayraktar.healthybackandneck.ui.ExerciseMoves.ExerciseMovesFragmentArgs
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -16,6 +19,11 @@ class ExerciseMovesEndFragment : Fragment() {
 
     private var _binding: FragmentExerciseMovesEndBinding? = null
     val binding get() = _binding!!
+
+    private var exerciseDayModel: ExerciseDay? = null
+    private var exerciseList = ArrayList<ExerciseDayExercise>()
+    private var exerciseArray: Array<ExerciseDayExercise>? = null
+    private var exerciseIndex = 0
 
 
     override fun onCreateView(
@@ -29,10 +37,29 @@ class ExerciseMovesEndFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //val action =
-        //    ExerciseMovesEndFragmentDirections.actionExerciseMovesEndFragmentToDetailDayFragment()
-        //view.findNavController().navigate(action)
+        getSetData()
+        btnEndClicked()
+
     }
 
+    private fun btnEndClicked() {
+        binding.btnEnd.setOnClickListener {
+            val action = ExerciseMovesEndFragmentDirections.actionExerciseMovesEndFragmentToIdHomepageFragment()
+            view?.findNavController()?.navigate(action)
+        }
+    }
+
+    private fun getSetData() = with(binding) {
+        val args = ExerciseMovesEndFragmentArgs.fromBundle(requireArguments())
+
+        exerciseArray = args.exerciseNewList
+        exerciseList = ArrayList(exerciseArray!!.asList())
+        exerciseDayModel = args.exerciseDayModel
+
+        txttime.text = exerciseDayModel?.exerciseTime.toString()
+        txtexercise.text = exerciseDayModel?.exerciseCount.toString()
+        txtkcal.text = exerciseDayModel?.exerciseKcal.toString()
+
+    }
 
 }
