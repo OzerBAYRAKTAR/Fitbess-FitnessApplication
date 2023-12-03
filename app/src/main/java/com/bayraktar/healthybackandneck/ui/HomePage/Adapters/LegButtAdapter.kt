@@ -8,7 +8,7 @@ import com.bayraktar.healthybackandneck.data.Models.Exercise.LegButtModel
 import com.bayraktar.healthybackandneck.data.Models.Exercise.NeckBackModel
 import com.bayraktar.healthybackandneck.databinding.SliderLayoutBinding
 
-class LegButtAdapter(private val legList: List<LegButtModel>, val viewPager2: ViewPager2):
+class LegButtAdapter(private val legList: List<LegButtModel>, val viewPager2: ViewPager2,private val onItemClick: (Int) -> Unit):
     RecyclerView.Adapter<LegButtAdapter.OnBoardingsItemAdapter>(){
 
 
@@ -27,6 +27,13 @@ class LegButtAdapter(private val legList: List<LegButtModel>, val viewPager2: Vi
         holder.binding.apply {
             sliderImage.setImageResource(model.imageLeg)
             titleWarmUp.text = model.title
+        }
+
+        holder.itemView.setOnClickListener{
+            val position = holder.adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                onItemClick(position)
+            }
         }
     }
 

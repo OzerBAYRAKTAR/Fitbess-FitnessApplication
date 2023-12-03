@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentDetailDayBinding
 import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstAdapter
 import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstFragmentDirections
@@ -26,8 +27,10 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
 
     private var exerciseDayModel: ExerciseDay? = null
     private var exerciseList = ArrayList<ExerciseDayExercise>()
+    private var subExerciseList = ArrayList<SubExerciseDayExercise>()
     private lateinit var detailDayAdapter: DetailDayAdapter
     private var exerciseArray: Array<ExerciseDayExercise>? = null
+    private var subExerciseArray: Array<SubExerciseDayExercise>? = null
 
 
     override fun onCreateView(
@@ -66,7 +69,13 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
         exerciseDayModel = args.exerciseDayModel
 
         exerciseArray = args.exerciseNewList
-        exerciseList = ArrayList(exerciseArray!!.asList())
+        subExerciseArray = args.subExerciseNewList
+        if (exerciseArray != null) {
+            exerciseList = ArrayList(exerciseArray!!.asList())
+        }
+        if (subExerciseArray != null) {
+            subExerciseList = ArrayList(subExerciseArray!!.asList())
+        }
         val detailDay = args.exerciseLevel
 
         val time = exerciseDayModel?.exerciseTime.toString()

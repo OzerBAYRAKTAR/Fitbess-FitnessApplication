@@ -10,6 +10,7 @@ import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.Exercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.HomeItem
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.Relations.ExerciseDayWithExerciseDayExercise
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import retrofit2.http.GET
 
 
@@ -23,11 +24,20 @@ interface MovesDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertExerciseDayExercise(dayExercise: List<ExerciseDayExercise>)
 
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertSubExerciseDayExercise(subExercise: List<SubExerciseDayExercise>)
+
+
     @Query("SELECT COUNT(*) FROM exercise_day_exercise WHERE level = 1")
     fun getExerciseCountForLevelOne(): Int
 
     @Query("SELECT * FROM ExerciseDay")
     fun getExerciseDays(): ExerciseDay
+
+    @Query("SELECT * FROM sub_exercise_day_exercise")
+    fun getSubExerciseDayExercises(): List<SubExerciseDayExercise>
+
 
     @Query("SELECT * FROM exercise_day_exercise WHERE level = 1")
     fun getExerciseDayExercisesWithLevelOne(): List<ExerciseDayExercise>
@@ -41,6 +51,11 @@ interface MovesDao {
     @Transaction
     @Query("Select * from exercise_day_exercise where dayId = :dayId and level = :level")
     fun getExerciseListWithDayID(dayId: Int,level:Int): List<ExerciseDayExercise>
+
+
+    @Transaction
+    @Query("Select * from sub_exercise_day_exercise where titleName = :titleName and level = :level")
+    fun getExerciseListWithTitleAndLEvel(titleName: String,level:Int): List<SubExerciseDayExercise>
 
     @Transaction
     @Query("Select * from ExerciseDay where dayId = :dayId")

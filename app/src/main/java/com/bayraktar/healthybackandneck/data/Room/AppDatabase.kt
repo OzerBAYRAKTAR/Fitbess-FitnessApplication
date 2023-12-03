@@ -8,11 +8,12 @@ import androidx.room.TypeConverters
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.HomeItem
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import javax.inject.Inject
 import javax.inject.Provider
 
 
-@Database(entities = [ExerciseDay::class,ExerciseDayExercise::class], version = 2, exportSchema = false)
+@Database(entities = [ExerciseDay::class,ExerciseDayExercise::class,SubExerciseDayExercise::class], version = 3, exportSchema = false)
 @TypeConverters(MovesTypeConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 

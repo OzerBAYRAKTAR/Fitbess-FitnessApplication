@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.Relations.ExerciseDayWithExerciseDayExercise
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Room.MovesDao
 import javax.inject.Inject
 
@@ -19,6 +20,14 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         movesDao.insertExerciseDayExercise(exerciseDayExercises)
     }
 
+    fun insertSubExerciseDayExercise(subExercise: List<SubExerciseDayExercise>) {
+        movesDao.insertSubExerciseDayExercise(subExercise)
+    }
+
+    fun getSubExerciseDayExercises(): List<SubExerciseDayExercise> {
+        return movesDao.getSubExerciseDayExercises()
+    }
+
     fun getExerciseDayExercisesWithLevelOne(): List<ExerciseDayExercise> {
         return movesDao.getExerciseDayExercisesWithLevelOne()
     }
@@ -31,8 +40,15 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         return movesDao.getExerciseDayExercisesWithLevelThird()
     }
 
-    fun getExerciseListWithDayID(dayID: Int,level:Int): List<ExerciseDayExercise> {
-        return movesDao.getExerciseListWithDayID(dayID,level)
+    fun getExerciseListWithDayID(dayID: Int, level: Int): List<ExerciseDayExercise> {
+        return movesDao.getExerciseListWithDayID(dayID, level)
+    }
+
+    fun getExerciseListWithTitleAndLevel(
+        titleName: String,
+        level: Int
+    ): List<SubExerciseDayExercise> {
+        return movesDao.getExerciseListWithTitleAndLEvel(titleName, level)
     }
 
 

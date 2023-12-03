@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_id_homepage_fragment_to_exerciseDetailSecondFragment"
             app:destination="@id/exerciseDetailSecondFragment" />
+        <action
+            android:id="@+id/action_id_homepage_fragment_to_detailDayFragment"
+            app:destination="@id/detailDayFragment" />
     </fragment>
     <fragment
         android:id="@+id/id_profile_fragment"
@@ -120,10 +123,16 @@
             app:destination="@id/exerciseDetailSecondFragment" />
         <argument
             android:name="exerciseNewList"
-            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise[]" />
+            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise[]"
+            app:nullable="true" />
+        <argument
+            android:name="subExerciseNewList"
+            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise[]"
+            app:nullable="true" />
         <argument
             android:name="exerciseDayModel"
-            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay" />
+            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay"
+            app:nullable="true" />
         <argument
             android:name="exerciseLevel"
             app:argType="string" />

@@ -8,7 +8,7 @@ import com.bayraktar.healthybackandneck.data.Models.Exercise.FixPostureModel
 import com.bayraktar.healthybackandneck.data.Models.Exercise.NeckBackModel
 import com.bayraktar.healthybackandneck.databinding.SliderLayoutBinding
 
-class NeckBackAdapter(private val neckList: List<NeckBackModel>, val viewPager2: ViewPager2):
+class NeckBackAdapter(private val neckList: List<NeckBackModel>, val viewPager2: ViewPager2,private val onItemClick: (Int) -> Unit):
     RecyclerView.Adapter<NeckBackAdapter.OnBoardingsItemAdapter>(){
 
 
@@ -27,6 +27,13 @@ class NeckBackAdapter(private val neckList: List<NeckBackModel>, val viewPager2:
         holder.binding.apply {
             sliderImage.setImageResource(model.imageNeckBack)
             titleWarmUp.text = model.title
+        }
+
+        holder.itemView.setOnClickListener{
+            val position = holder.adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                onItemClick(position)
+            }
         }
     }
 

@@ -8,7 +8,7 @@ import com.bayraktar.healthybackandneck.data.Models.Exercise.AbsModel
 import com.bayraktar.healthybackandneck.data.Models.Exercise.ArmModel
 import com.bayraktar.healthybackandneck.databinding.SliderLayoutBinding
 
-class AbsAdapter(private val absList: List<AbsModel>, val viewPager2: ViewPager2):
+class AbsAdapter(private val absList: List<AbsModel>, val viewPager2: ViewPager2,private val onItemClick: (Int) -> Unit):
     RecyclerView.Adapter<AbsAdapter.OnBoardingsItemAdapter>(){
 
 
@@ -27,6 +27,12 @@ class AbsAdapter(private val absList: List<AbsModel>, val viewPager2: ViewPager2
         holder.binding.apply {
             sliderImage.setImageResource(model.imageAbs)
             titleWarmUp.text = model.title
+        }
+        holder.itemView.setOnClickListener{
+            val position = holder.adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                onItemClick(position)
+            }
         }
     }
 

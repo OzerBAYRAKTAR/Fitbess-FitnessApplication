@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDaysOfWeekBinding
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 import dagger.hilt.android.AndroidEntryPoint
@@ -324,6 +325,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
         observeListWithDayId()
     }
 
+    //day ve level id ile verileri getirip bir sonraki sayfaya aktarıyor
     private fun observeListWithDayId() {
         viewModel.getExerciseListWithDay.observe(viewLifecycleOwner, Observer { exercise ->
             if (exercise != null) {
@@ -332,8 +334,9 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             }
             val exerciseLevel = getString(R.string.easy_level_fil)
             val exerciseArray = exerciseListSend.toTypedArray()
+            val subExercise: Array<SubExerciseDayExercise>? = null
             val action= ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToDetailDayFragment(
-                    exerciseArray, selectedModel!!,exerciseLevel)
+                    exerciseArray,subExercise, selectedModel!!,exerciseLevel)
             view?.findNavController()?.navigate(action)
         })
     }

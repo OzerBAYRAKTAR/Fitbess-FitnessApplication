@@ -1,5 +1,6 @@
 package com.bayraktar.healthybackandneck.ui.HomePage
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.os.Bundle
 import android.os.Handler
@@ -11,9 +12,12 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
@@ -25,27 +29,37 @@ import com.bayraktar.healthybackandneck.data.Models.Exercise.NeckBackModel
 import com.bayraktar.healthybackandneck.data.Models.Exercise.WarmUpModel
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.HomeItem
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentHomePageBinding
+import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstFragmentDirections
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.AbsAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.ArmAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.FixPostureAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.LegButtAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.NeckBackAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.WarmUpAdapter
+import dagger.hilt.android.AndroidEntryPoint
+import org.json.JSONArray
+import java.nio.charset.Charset
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 import kotlin.math.abs
 
-
+@AndroidEntryPoint
 class HomePageFragment : Fragment() {
 
     private var _binding: FragmentHomePageBinding? = null
     val binding get() = _binding!!
+    private val viewModel: HomeViewModel by viewModels()
+
     private lateinit var homeAdapter: HomeViewpagerAdapter
 
     private var warmupList = ArrayList<WarmUpModel>()
-    private lateinit var warmAdapter: WarmUpAdapter
+    private var warmAdapter: WarmUpAdapter? = null
+
 
     //FixPosture
     private var postureList = ArrayList<FixPostureModel>()
@@ -67,7 +81,9 @@ class HomePageFragment : Fragment() {
     private var legList = ArrayList<LegButtModel>()
     private lateinit var legAdapter: LegButtAdapter
 
-
+    private val exerciseListSend = ArrayList<SubExerciseDayExercise>()
+    private val subExerciseDayExercise = mutableListOf<SubExerciseDayExercise>()
+    var exerciseLevel = ""
 
 
     override fun onCreateView(
@@ -89,11 +105,12 @@ class HomePageFragment : Fragment() {
         setUpIndicators()
         calendarOfWeek()
 
+        observeSubExercises()
         backstack()
-
+        viewModel.fetchExerciseDayExercises()
 
         warmUpViewPager()
-       // fixPostureViewPager()
+        // fixPostureViewPager()
         backNeckViewPager()
         armViewPager()
         absViewPager()
@@ -139,17 +156,18 @@ class HomePageFragment : Fragment() {
                 ),
             ), pageerHome
         ) { position ->
-            // Handle item click based on the position
             when (position) {
                 0 -> {
                     // Navigate to Fragment 1
-                    val action = HomePageFragmentDirections.actionIdHomepageFragmentToExerciseDetailFirstFragment()
+                    val action =
+                        HomePageFragmentDirections.actionIdHomepageFragmentToExerciseDetailFirstFragment()
                     findNavController().navigate(action)
                 }
 
                 1 -> {
                     // Navigate to Fragment 2
-                    val action = HomePageFragmentDirections.actionIdHomepageFragmentToExerciseDetailSecondFragment()
+                    val action =
+                        HomePageFragmentDirections.actionIdHomepageFragmentToExerciseDetailSecondFragment()
                     findNavController().navigate(action)
                 }
 
@@ -210,7 +228,8 @@ class HomePageFragment : Fragment() {
                     )
                 )
                 it.layoutParams = layoutParams
-                it.layoutParams.width = resources.getDimensionPixelSize(R.dimen.indicator_active_width) // Set the width here
+                it.layoutParams.width =
+                    resources.getDimensionPixelSize(R.dimen.indicator_active_width) // Set the width here
                 indicatorsContainer.addView(it)
             }
         }
@@ -237,39 +256,127 @@ class HomePageFragment : Fragment() {
     }
 
 
-
     private fun warmUpViewPager() {
         binding.apply {
-            warmAdapter = WarmUpAdapter(warmupList, warmUpPager)
+            warmAdapter = WarmUpAdapter(
+                listOf(
+                    WarmUpModel(
+                        id = 1,
+                        title = getString(R.string.warmup_desc1),
+                        imageWarmUp = R.drawable.warmup1
 
-            warmupList.add(
-                WarmUpModel(
-                    id = 1,
-                    title = getString(R.string.warmup_desc1),
-                    imageWarmUp = R.drawable.warmup1
-                )
+                    ),
+                    WarmUpModel(
+                        id = 2,
+                        title = getString(R.string.warmup_desc2),
+                        imageWarmUp = R.drawable.isinma2
+                    ),
+
+                    WarmUpModel(
+                        id = 3,
+                        title = getString(R.string.warmup_desc3),
+                        imageWarmUp = R.drawable.isinma1
+                    ),
+                ), warmUpPager
             )
-            warmupList.add(
-                WarmUpModel(
-                    id = 2,
-                    title = getString(R.string.warmup_desc2),
-                    imageWarmUp = R.drawable.isinma2
-                )
-            )
-            warmupList.add(
-                WarmUpModel(
-                    id = 3,
-                    title = getString(R.string.warmup_desc3),
-                    imageWarmUp = R.drawable.isinma1
-                )
-            )
+            { position ->
+                when (position) {
+                    0 -> {
+                        val titleName = "stretch"
+                        exerciseLevel = getString(R.string.warmup_desc2)
+                        viewModel.getExerciseListWithLevelAndTitle(titleName, 1)
+                        observeListWithLevelAndTitle()
+                    }
+
+                    1 -> {
+                        println("2")
+
+                    }
+
+                    2 -> {
+                        println("3")
+                    }
+
+                    else -> {
+                        // Handle other positions or provide a default behavior
+                    }
+                }
+            }
 
             warmUpPager.adapter = warmAdapter
-
             warmUpPager.clipChildren = false
             warmUpPager.clipToPadding = false
             warmUpPager.offscreenPageLimit = 2
+
+
             warmUpPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+            val compost = CompositePageTransformer()
+            compost.addTransformer(MarginPageTransformer(20))
+            compost.addTransformer { page, position ->
+                val r = 1 - abs(position)
+                page.scaleY = 0.95f + r * 0.15f
+            }
+            warmUpPager.setPageTransformer(compost)
+
+        }
+    }
+
+    private fun backNeckViewPager() = with(binding) {
+        binding.apply {
+            neckAdapter = NeckBackAdapter(
+                listOf(
+                    NeckBackModel(
+                        id = 1,
+                        title = getString(R.string.back_desc1),
+                        imageNeckBack = R.drawable.back2
+                    ),
+                    NeckBackModel(
+                        id = 2,
+                        title = getString(R.string.back_desc2),
+                        imageNeckBack = R.drawable.back1
+                    ),
+                    NeckBackModel(
+                        id = 3,
+                        title = getString(R.string.neck_desc1),
+                        imageNeckBack = R.drawable.neck1
+                    ),
+                    NeckBackModel(
+                        id = 4,
+                        title = getString(R.string.neck_desc2),
+                        imageNeckBack = R.drawable.neck2
+                    ),
+                ), neckBackViewPager
+            )
+            { position ->
+                when (position) {
+                    0 -> {
+                        println("1")
+                    }
+
+                    1 -> {
+                        println("2")
+
+                    }
+
+                    2 -> {
+                        println("3")
+                    }
+
+                    3 -> {
+                        println("4")
+                    }
+
+                    else -> {
+                        // Handle other positions or provide a default behavior
+                    }
+                }
+            }
+            neckBackViewPager.adapter = neckAdapter
+
+            neckBackViewPager.clipChildren = false
+            neckBackViewPager.clipToPadding = false
+            neckBackViewPager.offscreenPageLimit = 2
+            neckBackViewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
             val compost = CompositePageTransformer()
             compost.addTransformer(MarginPageTransformer(20))
             compost.addTransformer(object : ViewPager2.PageTransformer {
@@ -280,126 +387,52 @@ class HomePageFragment : Fragment() {
                 }
 
             })
-            warmUpPager.setPageTransformer(compost)
+            neckBackViewPager.setPageTransformer(compost)
         }
     }
-    private fun fixPostureViewPager() = with(binding) {
-        postureAdapter = FixPostureAdapter(postureList, fixPosturePager)
 
-        postureList.add(
-            FixPostureModel(
-                id = 1,
-                title = getString(R.string.posture_desc1),
-                imagePosture = R.drawable.durus1
-            )
-        )
-        postureList.add(
-            FixPostureModel(
-                id = 2,
-                title = getString(R.string.posture_desc2),
-                imagePosture = R.drawable.durusduzeltme4
-            )
-        )
-        postureList.add(
-            FixPostureModel(
-                id = 3,
-                title = getString(R.string.posture_desc3),
-                imagePosture = R.drawable.durusduzeltme3
-            )
-        )
-
-        fixPosturePager.adapter = postureAdapter
-
-        fixPosturePager.clipChildren = false
-        fixPosturePager.clipToPadding = false
-        fixPosturePager.offscreenPageLimit = 2
-        fixPosturePager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-        val compost = CompositePageTransformer()
-        compost.addTransformer(MarginPageTransformer(20))
-        compost.addTransformer(object : ViewPager2.PageTransformer {
-            override fun transformPage(page: View, position: Float) {
-                val r = 1 - abs(position)
-                page.scaleY = 0.95f + r * 0.15f
-
-            }
-
-        })
-        fixPosturePager.setPageTransformer(compost)
-    }
-    private fun backNeckViewPager() = with(binding) {
-        neckAdapter = NeckBackAdapter(neckList, neckBackViewPager)
-
-        neckList.add(
-            NeckBackModel(
-                id = 1,
-                title = getString(R.string.back_desc1),
-                imageNeckBack = R.drawable.back2
-            )
-        )
-        neckList.add(
-            NeckBackModel(
-                id = 2,
-                title = getString(R.string.back_desc2),
-                imageNeckBack = R.drawable.back1
-            )
-        )
-        neckList.add(
-            NeckBackModel(
-                id = 3,
-                title = getString(R.string.neck_desc1),
-                imageNeckBack = R.drawable.neck1
-            )
-        )
-        neckList.add(
-            NeckBackModel(
-                id = 4,
-                title = getString(R.string.neck_desc2),
-                imageNeckBack = R.drawable.neck2
-            )
-        )
-        neckBackViewPager.adapter = neckAdapter
-
-        neckBackViewPager.clipChildren = false
-        neckBackViewPager.clipToPadding = false
-        neckBackViewPager.offscreenPageLimit = 2
-        neckBackViewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-        val compost = CompositePageTransformer()
-        compost.addTransformer(MarginPageTransformer(20))
-        compost.addTransformer(object : ViewPager2.PageTransformer {
-            override fun transformPage(page: View, position: Float) {
-                val r = 1 - abs(position)
-                page.scaleY = 0.95f + r * 0.15f
-
-            }
-
-        })
-        neckBackViewPager.setPageTransformer(compost)
-    }
     private fun armViewPager() = with(binding) {
-        armAdapter = ArmAdapter(armList, armViewPager)
+        armAdapter = ArmAdapter(
+            listOf(
+                ArmModel(
+                    id = 1,
+                    title = getString(R.string.arm_desc1),
+                    imageArm = R.drawable.kol11
+                ),
 
-        armList.add(
-            ArmModel(
-                id = 1,
-                title = getString(R.string.arm_desc1),
-                imageArm = R.drawable.kol11
-            )
-        )
-        armList.add(
-            ArmModel(
-                id = 2,
-                title = getString(R.string.arm_desc2),
-                imageArm = R.drawable.kol2
-            )
-        )
-        armList.add(
-            ArmModel(
-                id = 3,
-                title = getString(R.string.arm_desc3),
-                imageArm = R.drawable.kol4
-            )
-        )
+                ArmModel(
+                    id = 2,
+                    title = getString(R.string.arm_desc2),
+                    imageArm = R.drawable.kol2
+                ),
 
+                ArmModel(
+                    id = 3,
+                    title = getString(R.string.arm_desc3),
+                    imageArm = R.drawable.kol4
+                ),
+            ), armViewPager
+        )
+        { position ->
+            when (position) {
+                0 -> {
+                    println("1")
+                }
+
+                1 -> {
+                    println("2")
+
+                }
+
+                2 -> {
+                    println("3")
+                }
+
+                else -> {
+                    // Handle other positions or provide a default behavior
+                }
+            }
+        }
         armViewPager.adapter = armAdapter
 
         armViewPager.clipChildren = false
@@ -418,30 +451,47 @@ class HomePageFragment : Fragment() {
         })
         armViewPager.setPageTransformer(compost)
     }
-    private fun absViewPager() = with(binding) {
-        absAdapter = AbsAdapter(absList, absViewPager)
 
-        absList.add(
-            AbsModel(
-                id = 1,
-                title = getString(R.string.abs_desc1),
-                imageAbs = R.drawable.abs1
-            )
+    private fun absViewPager() = with(binding) {
+        absAdapter = AbsAdapter(
+            listOf(
+                AbsModel(
+                    id = 1,
+                    title = getString(R.string.abs_desc1),
+                    imageAbs = R.drawable.abs1
+                ),
+
+                AbsModel(
+                    id = 2,
+                    title = getString(R.string.abs_desc2),
+                    imageAbs = R.drawable.abs2
+                ),
+                AbsModel(
+                    id = 3,
+                    title = getString(R.string.abs_desc3),
+                    imageAbs = R.drawable.abs3
+                ),
+            ), absViewPager
         )
-        absList.add(
-            AbsModel(
-                id = 2,
-                title = getString(R.string.abs_desc2),
-                imageAbs = R.drawable.abs2
-            )
-        )
-        absList.add(
-            AbsModel(
-                id = 3,
-                title = getString(R.string.abs_desc3),
-                imageAbs = R.drawable.abs3
-            )
-        )
+        { position ->
+            when (position) {
+                0 -> {
+                    println("1")
+                }
+
+                1 -> {
+                    println("2")
+                }
+
+                2 -> {
+                    println("3")
+                }
+
+                else -> {
+                    // Handle other positions or provide a default behavior
+                }
+            }
+        }
 
         absViewPager.adapter = absAdapter
 
@@ -451,47 +501,61 @@ class HomePageFragment : Fragment() {
         absViewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
         val compost = CompositePageTransformer()
         compost.addTransformer(MarginPageTransformer(20))
-        compost.addTransformer(object : ViewPager2.PageTransformer {
-            override fun transformPage(page: View, position: Float) {
-                val r = 1 - abs(position)
-                page.scaleY = 0.95f + r * 0.15f
-
-            }
-
-        })
+        compost.addTransformer { page, position ->
+            val r = 1 - abs(position)
+            page.scaleY = 0.95f + r * 0.15f
+        }
         absViewPager.setPageTransformer(compost)
     }
-    private fun legViewPager() = with(binding) {
-        legAdapter = LegButtAdapter(legList, legViewPager)
 
-        legList.add(
-            LegButtModel(
-                id = 1,
-                title = getString(R.string.leg_desc1),
-                imageLeg = R.drawable.bacak2
-            )
+    private fun legViewPager() = with(binding) {
+        legAdapter = LegButtAdapter(
+            listOf(
+                LegButtModel(
+                    id = 1,
+                    title = getString(R.string.leg_desc1),
+                    imageLeg = R.drawable.bacak2
+                ),
+                LegButtModel(
+                    id = 2,
+                    title = getString(R.string.leg_desc2),
+                    imageLeg = R.drawable.popo2
+                ),
+                LegButtModel(
+                    id = 3,
+                    title = getString(R.string.leg_desc3),
+                    imageLeg = R.drawable.popo1
+                ),
+                LegButtModel(
+                    id = 4,
+                    title = getString(R.string.leg_desc4),
+                    imageLeg = R.drawable.pop2
+                ),
+            ), legViewPager
         )
-        legList.add(
-            LegButtModel(
-                id = 2,
-                title = getString(R.string.leg_desc2),
-                imageLeg = R.drawable.popo2
-            )
-        )
-        legList.add(
-            LegButtModel(
-                id = 3,
-                title = getString(R.string.leg_desc3),
-                imageLeg = R.drawable.popo1
-            )
-        )
-        legList.add(
-            LegButtModel(
-                id = 4,
-                title = getString(R.string.leg_desc4),
-                imageLeg = R.drawable.pop2
-            )
-        )
+        { position ->
+            when (position) {
+                0 -> {
+                    println("1")
+                }
+
+                1 -> {
+                    println("2")
+                }
+
+                2 -> {
+                    println("3")
+                }
+
+                3 -> {
+                    println("4")
+                }
+
+                else -> {
+                    // Handle other positions or provide a default behavior
+                }
+            }
+        }
 
         legViewPager.adapter = legAdapter
 
@@ -512,6 +576,82 @@ class HomePageFragment : Fragment() {
         legViewPager.setPageTransformer(compost)
     }
 
+    private fun observeSubExercises() {
+        viewModel.exerciseDayExercises.observe(viewLifecycleOwner, Observer { exercises ->
+            if (exercises.isEmpty()) {
+                addToRoomExercises()
+            } else {
+                println("liste var")
+            }
+        })
+    }
+
+    private fun observeListWithLevelAndTitle() {
+        viewModel.getExerciseListWithLevelAndTitle.observe(
+            viewLifecycleOwner,
+            Observer { exercise ->
+                if (exercise != null) {
+                    exerciseListSend.clear()
+                    exerciseListSend.addAll(exercise)
+                }
+                val subExerciseArray = exerciseListSend.toTypedArray()
+                val exerciseArray: Array<ExerciseDayExercise>? = null
+                val model: ExerciseDay? = null
+                val action =
+                    HomePageFragmentDirections.actionIdHomepageFragmentToDetailDayFragment(
+                        exerciseArray, subExerciseArray, model, exerciseLevel
+                    )
+                view?.findNavController()?.navigate(action)
+            })
+    }
+
+    @SuppressLint("DiscouragedApi")
+    private fun addToRoomExercises() {
+        try {
+            val inputStream = context?.assets?.open("subExercises.json")
+            val size = inputStream?.available() ?: 0
+            val buffer = ByteArray(size)
+            inputStream?.read(buffer)
+            inputStream?.close()
+            val jsonString = String(buffer, Charset.defaultCharset())
+
+            val jsonArray = JSONArray(jsonString)
+
+            for (i in 0 until jsonArray.length()) {
+                val item = jsonArray.getJSONObject(i)
+
+                val exerciseDescriptionId = resources.getIdentifier(
+                    item.optString("exerciseDescription"),
+                    "string",
+                    requireContext().packageName
+                )
+                val exerciseDescription = if (exerciseDescriptionId != 0) {
+                    getString(exerciseDescriptionId)
+                } else {
+                    getString(R.string.not_found)
+                }
+                val exercise = SubExerciseDayExercise(
+                    exerciseId = item.optInt("exerciseId"),
+                    titleName = item.optString("titleName"),
+                    exerciseName = item.optString("exerciseName"),
+                    exerciseDescription = exerciseDescription,
+                    image = resources.getIdentifier(
+                        item.optString("image"),
+                        "drawable",
+                        requireContext().packageName
+                    ),
+                    level = item.optInt("level")
+                )
+                subExerciseDayExercise.add(exercise)
+
+            }
+            viewModel.insertExerciseDayExercise(subExerciseDayExercise)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+    }
+
 
     private fun goDietDetail() {
         binding.constraintDiet.setOnClickListener {
@@ -528,6 +668,7 @@ class HomePageFragment : Fragment() {
             view?.findNavController()?.navigate(action)
         }
     }
+
     private fun calendarOfWeek() = with(binding) {
         // Get the current day of the month
         val calendar = Calendar.getInstance()
@@ -591,6 +732,7 @@ class HomePageFragment : Fragment() {
             }
         }
     }
+
     private fun backstack() {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -598,14 +740,14 @@ class HomePageFragment : Fragment() {
                     .setTitle(getString(R.string.attention))
                     .setMessage(getString(R.string.alertmessage))
                     .setCancelable(false)
-                    .setPositiveButton(getString(R.string.yes)){_,_ ->
+                    .setPositiveButton(getString(R.string.yes)) { _, _ ->
                         requireActivity().finishAffinity()
-                    }.setNegativeButton(getString(R.string.no)){dialog,_ ->
+                    }.setNegativeButton(getString(R.string.no)) { dialog, _ ->
                         dialog.dismiss()
                     }.show()
             }
         }
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,callback)
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
 
     }
 }

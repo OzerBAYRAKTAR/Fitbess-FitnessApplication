@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDetailSecondBinding
 import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstAdapter
 import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstFragmentDirections
@@ -323,8 +324,9 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
             }
             val exerciseLevel = getString(R.string.middle_level)
             val exerciseArray = exerciseListSend.toTypedArray()
+            val subExerciseArray :Array<SubExerciseDayExercise>? = null
             val action= ExerciseDetailSecondFragmentDirections.actionExerciseDetailSecondFragmentToDetailDayFragment(
-                exerciseArray, selectedModel!!,exerciseLevel)
+                exerciseArray,subExerciseArray, selectedModel!!,exerciseLevel)
             view?.findNavController()?.navigate(action)
         })
     }

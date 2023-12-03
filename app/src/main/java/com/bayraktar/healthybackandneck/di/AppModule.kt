@@ -23,6 +23,7 @@ object AppModule {
     @Singleton
     fun providesDatabase(@ApplicationContext context: Context):AppDatabase =
         Room.databaseBuilder(context,AppDatabase::class.java,"fitness_db")
+            .fallbackToDestructiveMigration()
             .build()
 
 
