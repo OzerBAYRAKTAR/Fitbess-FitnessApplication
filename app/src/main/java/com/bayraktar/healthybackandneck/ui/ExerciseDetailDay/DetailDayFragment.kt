@@ -28,7 +28,8 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
     private var exerciseDayModel: ExerciseDay? = null
     private var exerciseList = ArrayList<ExerciseDayExercise>()
     private var subExerciseList = ArrayList<SubExerciseDayExercise>()
-    private lateinit var detailDayAdapter: DetailDayAdapter
+    private var detailDayAdapter: DetailDayAdapter ? = null
+    private var subDetailDayAdapter: DetailDaySubAdapter ? = null
     private var exerciseArray: Array<ExerciseDayExercise>? = null
     private var subExerciseArray: Array<SubExerciseDayExercise>? = null
 
@@ -45,7 +46,7 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         getSetData()
-        setRecyclerview()
+        //setRecyclerview()
         backstack()
 
         binding.startExercise.setOnClickListener {
@@ -71,24 +72,39 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
         exerciseArray = args.exerciseNewList
         subExerciseArray = args.subExerciseNewList
         if (exerciseArray != null) {
+
             exerciseList = ArrayList(exerciseArray!!.asList())
+            val detailDay = args.exerciseLevel
+            val time = exerciseDayModel?.exerciseTime.toString()
+            val formattedTime = "0$time:00"
+
+            detaildayFirst.text = detailDay
+            txttime.text = formattedTime
+            txtexercise.text = exerciseDayModel?.exerciseCount.toString()
+            txtkcal.text = exerciseDayModel?.exerciseKcal.toString()
+            txtdaysecond.text = exerciseDayModel?.day.toString()
+
+            rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
+            detailDayAdapter = DetailDayAdapter(exerciseList, this@DetailDayFragment)
+            rvdaydetail.adapter = detailDayAdapter
         }
         if (subExerciseArray != null) {
             subExerciseList = ArrayList(subExerciseArray!!.asList())
+
+            val detailDay = args.exerciseLevel
+
+            detaildayFirst.text = detailDay
+            txttime.text = "07:30"
+            txtexercise.text = "7"
+            txtkcal.text = "300(-+20)"
+            txtdaysecond.visibility = View.GONE
+            detaildaySecond.visibility = View.GONE
+
+            rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
+            subDetailDayAdapter = DetailDaySubAdapter(subExerciseList)
+            rvdaydetail.adapter = subDetailDayAdapter
         }
-        val detailDay = args.exerciseLevel
 
-        val time = exerciseDayModel?.exerciseTime.toString()
-        val formattedTime = "0$time:00"
-
-        detaildayFirst.text = detailDay
-        txttime.text = formattedTime
-        txtexercise.text = exerciseDayModel?.exerciseCount.toString()
-        txtkcal.text = exerciseDayModel?.exerciseKcal.toString()
-        txtdaysecond.text = exerciseDayModel?.day.toString()
-
-        detailDayAdapter = DetailDayAdapter(exerciseList, this@DetailDayFragment)
-        rvdaydetail.adapter = detailDayAdapter
 
     }
 
