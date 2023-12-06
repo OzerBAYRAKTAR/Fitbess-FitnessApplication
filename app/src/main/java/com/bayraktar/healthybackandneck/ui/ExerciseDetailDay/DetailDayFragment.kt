@@ -51,9 +51,16 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
 
         binding.startExercise.setOnClickListener {
             if (exerciseDayModel != null) {
+                val exerciseArray: Array<SubExerciseDayExercise>? = null
                 val action =
                     DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment(
-                        exerciseList.toTypedArray(),exerciseDayModel!!)
+                        exerciseList.toTypedArray(),exerciseArray,exerciseDayModel)
+                view.findNavController().navigate(action)
+            }else {
+                val exerciseArray: Array<ExerciseDayExercise>? = null
+                val action = DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment(
+                    exerciseList.toTypedArray(),subExerciseList.toTypedArray(),exerciseDayModel
+                )
                 view.findNavController().navigate(action)
             }
         }

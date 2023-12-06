@@ -9,12 +9,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesReadyBinding
 import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayAdapter
 import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayFragmentArgs
+import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayFragmentDirections
+import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDaySubAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,10 +34,11 @@ class ExerciseMovesReadyFragment : Fragment() {
     private var isStart = true
 
 
+    private var subExerciseList = ArrayList<SubExerciseDayExercise>()
     private var exerciseDayModel: ExerciseDay? = null
     private var exerciseList = ArrayList<ExerciseDayExercise>()
     private var exerciseArray: Array<ExerciseDayExercise>? = null
-
+    private var subExerciseArray: Array<SubExerciseDayExercise>? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,11 +60,23 @@ class ExerciseMovesReadyFragment : Fragment() {
         getSetData()
 
         binding.goNextbtn.setOnClickListener {
-            val action =
-                ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2(
-                    0,exerciseList.toTypedArray(),exerciseDayModel!!,
-                )
-            view.findNavController().navigate(action)
+            if (exerciseDayModel != null) {
+                val exerciseArray: Array<SubExerciseDayExercise>? = null
+                val action =
+                    ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2(
+                        0, exerciseList.toTypedArray(), exerciseArray, exerciseDayModel
+                    )
+                view.findNavController().navigate(action)
+            } else {
+                val action =
+                    ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2(
+                        0,
+                        exerciseList.toTypedArray(),
+                        subExerciseList.toTypedArray(),
+                        exerciseDayModel
+                    )
+                view.findNavController().navigate(action)
+            }
         }
 
     }
@@ -69,7 +86,13 @@ class ExerciseMovesReadyFragment : Fragment() {
         exerciseDayModel = args.exerciseDayModel
 
         exerciseArray = args.exerciseNewList
-        exerciseList = ArrayList(exerciseArray!!.asList())
+        subExerciseArray = args.subExerciseNewList
+
+        if (exerciseDayModel != null) {
+            exerciseList = ArrayList(exerciseArray!!.asList())
+        } else {
+            subExerciseList = ArrayList(subExerciseArray!!.asList())
+        }
 
     }
 
@@ -80,14 +103,15 @@ class ExerciseMovesReadyFragment : Fragment() {
             timecountDown?.cancel()
         }
     }
+
     @SuppressLint("UseCompatLoadingForDrawables")
-    private fun startTimerSetup()= with(binding) {
+    private fun startTimerSetup() = with(binding) {
         if (timeSelected > timeProgress) {
             if (isStart) {
                 playpause.setBackgroundResource((R.drawable.startexercise))
                 startTimer(pauseOffSet)
-                isStart=false
-            }else{
+                isStart = false
+            } else {
                 isStart = true
                 playpause.setBackgroundResource((R.drawable.stopexercise))
                 timePause()
@@ -96,27 +120,42 @@ class ExerciseMovesReadyFragment : Fragment() {
     }
 
     private fun startTimer(pauseOffSetL: Long) {
-        val progressBar =binding.pbTimer
+        val progressBar = binding.pbTimer
         progressBar.progress = timeProgress
         timecountDown = object : CountDownTimer(
-            (timeSelected*1000).toLong()-pauseOffSetL*1000,1000
+            (timeSelected * 1000).toLong() - pauseOffSetL * 1000, 1000
         ) {
             override fun onTick(p0: Long) {
                 timeProgress++
-                pauseOffSet = timeSelected.toLong()-p0/1000
+                pauseOffSet = timeSelected.toLong() - p0 / 1000
                 progressBar.progress = timeSelected - timeProgress
                 val timeLeft = binding.txtTimeleft
                 timeLeft.text = (timeSelected - timeProgress).toString()
             }
 
             override fun onFinish() {
-                val action
-                = ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2(1,exerciseList.toTypedArray(),exerciseDayModel!!)
-                view?.findNavController()?.navigate(action)
+                if (exerciseDayModel != null) {
+                    val exerciseArray: Array<SubExerciseDayExercise>? = null
+                    val action =
+                        ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2(
+                            1, exerciseList.toTypedArray(), exerciseArray, exerciseDayModel
+                        )
+                    view?.findNavController()?.navigate(action)
+                } else {
+                    val action =
+                        ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2(
+                            1,
+                            exerciseList.toTypedArray(),
+                            subExerciseList.toTypedArray(),
+                            exerciseDayModel
+                        )
+                    view?.findNavController()?.navigate(action)
+                }
             }
 
         }.start()
     }
+
     override fun onDestroy() {
         super.onDestroy()
         if (timecountDown != null) {

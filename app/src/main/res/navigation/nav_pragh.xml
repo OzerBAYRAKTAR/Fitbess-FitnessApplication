@@ -86,6 +86,7 @@
             android:id="@+id/action_exerciseDetailThirdFragment_to_detailDayFragment"
             app:destination="@id/detailDayFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/exerciseMovesFragment"
         android:name="com.bayraktar.healthybackandneck.ui.ExerciseMovesReady.ExerciseMovesReadyFragment"
@@ -99,10 +100,16 @@
             app:destination="@id/exerciseMovesFragment2" />
         <argument
             android:name="exerciseNewList"
-            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise[]" />
+            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise[]"
+            app:nullable="true"/>
+        <argument
+            android:name="subExerciseNewList"
+            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise[]"
+            app:nullable="true" />
         <argument
             android:name="exerciseDayModel"
-            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay" />
+            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay"
+            app:nullable="true"/>
     </fragment>
     <fragment
         android:id="@+id/detailDayFragment"
@@ -152,10 +159,16 @@
             app:argType="integer" />
         <argument
             android:name="exerciseNewList"
-            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise[]" />
+            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise[]"
+            app:nullable="true"/>
+        <argument
+            android:name="subExerciseNewList"
+            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise[]"
+            app:nullable="true" />
         <argument
             android:name="exerciseDayModel"
-            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay" />
+            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay"
+            app:nullable="true"/>
         <action
             android:id="@+id/action_exerciseMovesFragment2_to_exerciseMovesEndFragment"
             app:destination="@id/exerciseMovesEndFragment" />
@@ -179,10 +192,16 @@
             app:argType="integer" />
         <argument
             android:name="exerciseNewList"
-            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise[]" />
+            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise[]"
+            app:nullable="true" />
+        <argument
+            android:name="subExerciseNewList"
+            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise[]"
+            app:nullable="true" />
         <argument
             android:name="exerciseDayModel"
-            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay" />
+            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay"
+            app:nullable="true" />
 
     </fragment>
     <fragment
@@ -191,7 +210,10 @@
         android:label="fragment_exercise_moves_end"
         tools:layout="@layout/fragment_exercise_moves_end" >
 
-
+        <argument
+            android:name="subExerciseNewList"
+            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise[]"
+            app:nullable="true" />
         <argument
             android:name="exerciseNewList"
             app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise[]" />

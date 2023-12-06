@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesEndBinding
 import com.bayraktar.healthybackandneck.ui.ExerciseMoves.ExerciseMovesFragmentArgs
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,7 +24,8 @@ class ExerciseMovesEndFragment : Fragment() {
     private var exerciseDayModel: ExerciseDay? = null
     private var exerciseList = ArrayList<ExerciseDayExercise>()
     private var exerciseArray: Array<ExerciseDayExercise>? = null
-    private var exerciseIndex = 0
+    private var subExerciseList = ArrayList<SubExerciseDayExercise>()
+    private var subExerciseArray: Array<SubExerciseDayExercise>? = null
 
 
     override fun onCreateView(
@@ -53,12 +55,23 @@ class ExerciseMovesEndFragment : Fragment() {
         val args = ExerciseMovesEndFragmentArgs.fromBundle(requireArguments())
 
         exerciseArray = args.exerciseNewList
-        exerciseList = ArrayList(exerciseArray!!.asList())
+        subExerciseArray = args.subExerciseNewList
         exerciseDayModel = args.exerciseDayModel
 
-        txttime.text = exerciseDayModel?.exerciseTime.toString()
-        txtexercise.text = exerciseDayModel?.exerciseCount.toString()
-        txtkcal.text = exerciseDayModel?.exerciseKcal.toString()
+        if (exerciseArray != null) {
+            exerciseList = ArrayList(exerciseArray!!.asList())
+            txttime.text = exerciseDayModel?.exerciseTime.toString()
+            txtexercise.text = exerciseDayModel?.exerciseCount.toString()
+            txtkcal.text = exerciseDayModel?.exerciseKcal.toString()
+
+        } else {
+            subExerciseList = ArrayList(subExerciseArray!!.asList())
+
+            txttime.text = "07:30"
+            txtexercise.text = "7"
+            txtkcal.text = "300(-+20)"
+        }
+
 
     }
 

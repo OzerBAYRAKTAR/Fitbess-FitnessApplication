@@ -16,6 +16,7 @@ import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesBinding
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesReadyBinding
 import com.bayraktar.healthybackandneck.ui.ExerciseMovesReady.ExerciseMovesReadyFragmentArgs
@@ -34,9 +35,13 @@ class ExerciseMovesFragment : Fragment() {
     private var pauseOffSet: Long = 0
     private var isStart = true
 
-    private var exerciseDayModel: ExerciseDay? = null
+    private var exerciseDayModel= ExerciseDay(1,1,1,1,1,1)
     private var exerciseList = ArrayList<ExerciseDayExercise>()
     private var exerciseArray: Array<ExerciseDayExercise>? = null
+    private var subExerciseList = ArrayList<SubExerciseDayExercise>()
+    private var subExerciseArray: Array<SubExerciseDayExercise>? = null
+
+    //private var receivedExerciseDayModel : ExerciseDay? = null
 
     private var currentExerciseIndex = 1
 
@@ -81,6 +86,7 @@ class ExerciseMovesFragment : Fragment() {
             }
         }
     }
+
     private fun btnCloseClicked() {
         val inflater = layoutInflater
         val dialogView = inflater.inflate(R.layout.dialog_cancel, null)
@@ -132,16 +138,33 @@ class ExerciseMovesFragment : Fragment() {
     private fun getSetData() = with(binding) {
         val args = ExerciseMovesFragmentArgs.fromBundle(requireArguments())
 
+        //receivedExerciseDayModel = args.exerciseDayModel
+        if (args.exerciseDayModel != null) {
+            exerciseDayModel = args.exerciseDayModel!!
+        }
         exerciseArray = args.exerciseNewList
-        exerciseList = ArrayList(exerciseArray!!.asList())
-        exerciseDayModel = args.exerciseDayModel
+
+        subExerciseArray = args.subExerciseNewList
         currentExerciseIndex = args.exerciseIndex
 
-        val currentModel = exerciseList[currentExerciseIndex]
-        moveGif.setImageResource(currentModel.image)
-        exerciceName.text = currentModel.exerciseName
-        txtRank.text = (currentExerciseIndex + 1).toString()
-        albelRank.text = "/${exerciseList.size.toString()}"
+        if (exerciseArray?.isNotEmpty() == true) {
+            exerciseList = ArrayList(exerciseArray!!.asList())
+
+            val currentModel = exerciseList[currentExerciseIndex]
+            moveGif.setImageResource(currentModel.image)
+            exerciceName.text = currentModel.exerciseName
+            txtRank.text = (currentExerciseIndex + 1).toString()
+            albelRank.text = "/${exerciseList.size.toString()}"
+        } else {
+            subExerciseList = ArrayList(subExerciseArray!!.asList())
+
+            val currentModel = subExerciseList[currentExerciseIndex]
+            moveGif.setImageResource(currentModel.image)
+            exerciceName.text = currentModel.exerciseName
+            txtRank.text = (currentExerciseIndex + 1).toString()
+            albelRank.text = "/${subExerciseList.size.toString()}"
+        }
+
 
     }
 
@@ -173,6 +196,9 @@ class ExerciseMovesFragment : Fragment() {
 
 
     private fun startTimer(pauseOffSetL: Long) {
+        val args = ExerciseMovesFragmentArgs.fromBundle(requireArguments())
+
+        val receivedExerciseDayModel: ExerciseDay? = args.exerciseDayModel
         val progressBar = binding.pbTimer
         progressBar.progress = timeProgress
         timecountDown = object : CountDownTimer(
@@ -185,19 +211,25 @@ class ExerciseMovesFragment : Fragment() {
                 val timeLeft = binding.txtTimeLeft
                 timeLeft.text = (timeSelected - timeProgress).toString()
             }
+
             override fun onFinish() {
                 if (currentExerciseIndex + 1 == exerciseList.size) {
                     // If the current exercise is the last one, navigate to the end fragment directly
                     val action =
                         ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesEndFragment(
-                            exerciseList.toTypedArray(), exerciseDayModel!!
+                            subExerciseList.toTypedArray(),
+                            exerciseList.toTypedArray(),
+                            exerciseDayModel
                         )
                     view?.findNavController()?.navigate(action)
                 } else {
                     //if current exercise is not the last one, keep go rest fragment
                     val action =
                         ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesRestFragment(
-                            currentExerciseIndex, exerciseList.toTypedArray(), exerciseDayModel!!
+                            currentExerciseIndex,
+                            exerciseList.toTypedArray(),
+                            subExerciseList.toTypedArray(),
+                            exerciseDayModel
                         )
                     view?.findNavController()?.navigate(action)
                 }
@@ -213,19 +245,25 @@ class ExerciseMovesFragment : Fragment() {
                 // If the current exercise is the last one, navigate to the end fragment directly
                 val action =
                     ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesEndFragment(
-                        exerciseList.toTypedArray(), exerciseDayModel!!
+                        subExerciseList.toTypedArray(),
+                        exerciseList.toTypedArray(),
+                        exerciseDayModel
                     )
                 view?.findNavController()?.navigate(action)
             } else {
                 //if current exercise is not the last one, keep go rest fragment
                 val action =
                     ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesRestFragment(
-                        currentExerciseIndex, exerciseList.toTypedArray(), exerciseDayModel!!
+                        currentExerciseIndex,
+                        exerciseArray,
+                        subExerciseList.toTypedArray(),
+                        exerciseDayModel
                     )
                 view?.findNavController()?.navigate(action)
             }
         }
     }
+
     private fun restartTimer() {
         if (timecountDown != null) {
             timecountDown?.cancel()
