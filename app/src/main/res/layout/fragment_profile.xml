@@ -109,7 +109,7 @@
                 <Switch
                     android:id="@+id/waterReminderSwitch"
                     android:layout_width="wrap_content"
-                    android:checked="true"
+                    android:checked="false"
                     android:trackTint="@color/dark_pink"
                     android:thumb="@drawable/thumb"
                     app:track="@drawable/track"
@@ -182,7 +182,7 @@
                 <Switch
                     android:id="@+id/notificationSwitch"
                     android:layout_width="wrap_content"
-                    android:checked="true"
+                    android:checked="false"
                     android:thumb="@drawable/thumb"
                     app:track="@drawable/track"
                     android:trackTint="@color/dark_pink"

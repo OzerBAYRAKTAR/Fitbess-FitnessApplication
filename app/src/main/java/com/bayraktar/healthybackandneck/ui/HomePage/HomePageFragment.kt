@@ -40,6 +40,7 @@ import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.FixPostureAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.LegButtAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.NeckBackAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.WarmUpAdapter
+import com.bayraktar.healthybackandneck.utils.OnFavouriteButtonClickListener
 import dagger.hilt.android.AndroidEntryPoint
 import org.json.JSONArray
 import java.nio.charset.Charset
@@ -153,9 +154,9 @@ class HomePageFragment : Fragment() {
                     desc = getString(R.string.create_plan_desc),
                     progress = (15 * 100 / 28),
                     dayOfProgram = 12
-                ),
-            ), pageerHome
-        ) { position ->
+                )
+            ), pageerHome,
+         { position ->
             when (position) {
                 0 -> {
                     // Navigate to Fragment 1
@@ -182,7 +183,14 @@ class HomePageFragment : Fragment() {
                     // Handle other positions or provide a default behavior
                 }
             }
-        }
+            }, object : OnFavouriteButtonClickListener {
+            override fun onButtonClicked(position: Int) {
+                val action =
+                    HomePageFragmentDirections.actionIdHomepageFragmentToFavouriteMainFragment()
+                view?.findNavController()?.navigate(action)
+            }
+        })
+
         pageerHome.clipToPadding = false
         pageerHome.clipChildren = false
         pageerHome.offscreenPageLimit = 2
@@ -283,18 +291,24 @@ class HomePageFragment : Fragment() {
                 when (position) {
                     0 -> {
                         val titleName = "stretch"
-                        exerciseLevel = getString(R.string.warmup_desc2)
+                        exerciseLevel = getString(R.string.warmup_desc1)
                         viewModel.getExerciseListWithLevelAndTitle(titleName, 1)
                         observeListWithLevelAndTitle()
                     }
 
                     1 -> {
-                        println("2")
+                        val titleName = "stretch"
+                        exerciseLevel = getString(R.string.warmup_desc2)
+                        viewModel.getExerciseListWithLevelAndTitle(titleName, 2)
+                        observeListWithLevelAndTitle()
 
                     }
 
                     2 -> {
-                        println("3")
+                        val titleName = "stretch"
+                        exerciseLevel = getString(R.string.warmup_desc3)
+                        viewModel.getExerciseListWithLevelAndTitle(titleName, 3)
+                        observeListWithLevelAndTitle()
                     }
 
                     else -> {
@@ -350,20 +364,32 @@ class HomePageFragment : Fragment() {
             { position ->
                 when (position) {
                     0 -> {
-                        println("1")
+                        val titleName = "bellyneck"
+                        exerciseLevel = getString(R.string.back_desc1)
+                        viewModel.getExerciseListWithLevelAndTitle(titleName, 1)
+                        observeListWithLevelAndTitle()
                     }
 
                     1 -> {
-                        println("2")
+                        val titleName = "bellyneck"
+                        exerciseLevel = getString(R.string.back_desc2)
+                        viewModel.getExerciseListWithLevelAndTitle(titleName, 2)
+                        observeListWithLevelAndTitle()
 
                     }
 
                     2 -> {
-                        println("3")
+                        val titleName = "bellyneck"
+                        exerciseLevel = getString(R.string.neck_desc1)
+                        viewModel.getExerciseListWithLevelAndTitle(titleName, 3)
+                        observeListWithLevelAndTitle()
                     }
 
                     3 -> {
-                        println("4")
+                        val titleName = "bellyneck"
+                        exerciseLevel = getString(R.string.neck_desc2)
+                        viewModel.getExerciseListWithLevelAndTitle(titleName, 4)
+                        observeListWithLevelAndTitle()
                     }
 
                     else -> {
@@ -416,16 +442,25 @@ class HomePageFragment : Fragment() {
         { position ->
             when (position) {
                 0 -> {
-                    println("1")
+                    val titleName = "arm"
+                    exerciseLevel = getString(R.string.arm_desc1)
+                    viewModel.getExerciseListWithLevelAndTitle(titleName, 1)
+                    observeListWithLevelAndTitle()
                 }
 
                 1 -> {
-                    println("2")
+                    val titleName = "arm"
+                    exerciseLevel = getString(R.string.arm_desc2)
+                    viewModel.getExerciseListWithLevelAndTitle(titleName, 2)
+                    observeListWithLevelAndTitle()
 
                 }
 
                 2 -> {
-                    println("3")
+                    val titleName = "arm"
+                    exerciseLevel = getString(R.string.arm_desc3)
+                    viewModel.getExerciseListWithLevelAndTitle(titleName, 3)
+                    observeListWithLevelAndTitle()
                 }
 
                 else -> {
@@ -476,15 +511,24 @@ class HomePageFragment : Fragment() {
         { position ->
             when (position) {
                 0 -> {
-                    println("1")
+                    val titleName = "abs"
+                    exerciseLevel = getString(R.string.abs_desc1)
+                    viewModel.getExerciseListWithLevelAndTitle(titleName, 1)
+                    observeListWithLevelAndTitle()
                 }
 
                 1 -> {
-                    println("2")
+                    val titleName = "abs"
+                    exerciseLevel = getString(R.string.abs_desc2)
+                    viewModel.getExerciseListWithLevelAndTitle(titleName, 2)
+                    observeListWithLevelAndTitle()
                 }
 
                 2 -> {
-                    println("3")
+                    val titleName = "abs"
+                    exerciseLevel = getString(R.string.abs_desc3)
+                    viewModel.getExerciseListWithLevelAndTitle(titleName, 3)
+                    observeListWithLevelAndTitle()
                 }
 
                 else -> {
@@ -536,19 +580,31 @@ class HomePageFragment : Fragment() {
         { position ->
             when (position) {
                 0 -> {
-                    println("1")
+                    val titleName = "legbutt"
+                    exerciseLevel = getString(R.string.leg_desc1)
+                    viewModel.getExerciseListWithLevelAndTitle(titleName, 1)
+                    observeListWithLevelAndTitle()
                 }
 
                 1 -> {
-                    println("2")
+                    val titleName = "legbutt"
+                    exerciseLevel = getString(R.string.leg_desc2)
+                    viewModel.getExerciseListWithLevelAndTitle(titleName, 2)
+                    observeListWithLevelAndTitle()
                 }
 
                 2 -> {
-                    println("3")
+                    val titleName = "legbutt"
+                    exerciseLevel = getString(R.string.leg_desc3)
+                    viewModel.getExerciseListWithLevelAndTitle(titleName, 3)
+                    observeListWithLevelAndTitle()
                 }
 
                 3 -> {
-                    println("4")
+                    val titleName = "legbutt"
+                    exerciseLevel = getString(R.string.leg_desc4)
+                    viewModel.getExerciseListWithLevelAndTitle(titleName, 4)
+                    observeListWithLevelAndTitle()
                 }
 
                 else -> {

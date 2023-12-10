@@ -61,23 +61,15 @@ class ExerciseMovesRestFragment : Fragment() {
 
 
         binding.skipRest.setOnClickListener {
-            if (exerciseDayModel != null) {
-                val exerciseArray: Array<SubExerciseDayExercise>? = null
-                val action =
-                    ExerciseMovesRestFragmentDirections.actionExerciseMovesRestFragmentToExerciseMovesFragment2(
-                        currentExerciseIndex + 1, exerciseList.toTypedArray(), exerciseArray, exerciseDayModel!!
-                    )
-                view.findNavController().navigate(action)
-            } else {
-                val action =
-                    ExerciseMovesRestFragmentDirections.actionExerciseMovesRestFragmentToExerciseMovesFragment2(
-                        currentExerciseIndex + 1,
-                        exerciseList.toTypedArray(),
-                        subExerciseList.toTypedArray(),
-                        exerciseDayModel!!
-                    )
-                view.findNavController().navigate(action)
-            }
+            val action =
+                ExerciseMovesRestFragmentDirections.actionExerciseMovesRestFragmentToExerciseMovesFragment2(
+                    currentExerciseIndex + 1,
+                    exerciseList.toTypedArray(),
+                    subExerciseList.toTypedArray(),
+                    exerciseDayModel!!
+                )
+            view.findNavController().navigate(action)
+
         }
     }
 
@@ -97,7 +89,7 @@ class ExerciseMovesRestFragment : Fragment() {
                 exerciceName.text = currentModel.exerciseName
                 txtRank.text = (currentExerciseIndex + 2).toString()
                 albelRank.text = "/${exerciseList.size.toString()}"
-            }else {
+            } else {
                 subExerciseList = ArrayList(subExerciseArray!!.asList())
 
                 val currentModel = subExerciseList[currentExerciseIndex + 1]
@@ -106,8 +98,6 @@ class ExerciseMovesRestFragment : Fragment() {
                 txtRank.text = (currentExerciseIndex + 2).toString()
                 albelRank.text = "/${subExerciseList.size.toString()}"
             }
-
-
 
         }
     }
@@ -153,7 +143,10 @@ class ExerciseMovesRestFragment : Fragment() {
                     val exerciseArray: Array<SubExerciseDayExercise>? = null
                     val action =
                         ExerciseMovesRestFragmentDirections.actionExerciseMovesRestFragmentToExerciseMovesFragment2(
-                            currentExerciseIndex + 1, exerciseList.toTypedArray(), exerciseArray, exerciseDayModel!!
+                            currentExerciseIndex + 1,
+                            exerciseList.toTypedArray(),
+                            exerciseArray,
+                            exerciseDayModel!!
                         )
                     view?.findNavController()?.navigate(action)
                 } else {

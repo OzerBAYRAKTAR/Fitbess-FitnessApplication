@@ -129,10 +129,12 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="focus_breath_desc">Zihnini sadece nefesine odakla. Nefes alırken ve verirken yaşadığın hislere ve nefesin ritmine dikkat et. Düşünceler dağılırsa sadece tekrar nefesine dön.</string>
 
     <!-- Exercise Fragment-->
+    <string name="back_back">Bel-Boyun</string>
     <string name="create_plan">Kendi Planını Oluştur</string>
     <string name="create_plan_desc">Egzersizlerini seç ve kendi planını oluştur!</string>
 
     <!--Warm Up-->
+    <string name="strech">Esneme</string>
     <string name="warmup_exercises">Isınma Hareketleri</string>
     <string name="warmup_desc1">Egzersiz Öncesi Germe</string>
     <string name="warmup_desc2">Yeni Başlayanlar İçin Isınma</string>
@@ -145,6 +147,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="posture_desc3">Duruş Düzeltme</string>
 
     <!-- Neck-Back -->
+    <string name="neck">Boyun</string>
     <string name="neckback_exercise">Bel-Boyun Hareketleri</string>
     <string name="back_desc1">Bel Egzersizleri</string>
     <string name="back_desc2">Bel Güçlendirme</string>
@@ -152,19 +155,22 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="neck_desc2">Boyun Güçlendirme</string>
 
     <!-- Arm-->
+    <string name="arm">Kol</string>
     <string name="arm_exercises">Kol Güçlendirme Hareketleri</string>
     <string name="arm_desc1">Basit Direnç Hareketleri</string>
     <string name="arm_desc2">Kol Kaslarını Güçlendir</string>
     <string name="arm_desc3">Kollarını Sıkılaştır</string>
 
     <!-- Abs-->
+    <string name="abs">Karın</string>
     <string name="abs_exercises">Karın Güçlendirme Hareketleri</string>
     <string name="abs_desc1">Basit Direnç Hareketleri</string>
-    <string name="abs_desc2">Kol Kaslarını Güçlendir</string>
-    <string name="abs_desc3">Kollarını Sıkılaştır</string>
+    <string name="abs_desc2">Karın Kaslarını Güçlendir</string>
+    <string name="abs_desc3">3D Karın Kası Hareketleri</string>
 
     <!-- Leg-Butt-->
 
+    <string name="leg">Bacak-Popo</string>
     <string name="leg_exercises">Bacak-Popo Güçlendirme Hareketleri</string>
     <string name="leg_desc1">Başlangiç Bacak Hareketleri</string>
     <string name="leg_desc2">Bacak Kaslarını Güçlendir</string>
@@ -509,6 +515,8 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="txt_start">Başlat</string>
     <string name="label_quitexercise">Antrenmandan çıkmak istediğinize emin misiniz?</string>
     <string name="label_exerciselost">(İlerlemeniz kaybolacaktır.)</string>
+    <string name="favourite_list">Favori Listesi</string>
+    <string name="all_exercies">Tüm Egzersiz Hareketleri</string>
 
 </resources>
 

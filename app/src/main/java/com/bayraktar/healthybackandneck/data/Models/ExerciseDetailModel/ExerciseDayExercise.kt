@@ -24,7 +24,8 @@ data class ExerciseDayExercise(
     @SerializedName("IsExerciseCompleted")
     var isExerciseCompleted: Boolean,
     @SerializedName("Level")
-    var level: Int
+    var level: Int,
+
 ): Parcelable
 
 

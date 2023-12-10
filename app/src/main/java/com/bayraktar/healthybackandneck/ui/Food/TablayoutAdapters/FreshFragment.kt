@@ -27,6 +27,7 @@ class FreshFragment : Fragment(), RecyclerViewClickListener {
 
     private var _binding: FragmentFreshBinding? = null
     val binding get() = _binding!!
+
     private lateinit var foodAdapter: FreshAdapter
     private var foodList = emptyList<FoodItems>()
 

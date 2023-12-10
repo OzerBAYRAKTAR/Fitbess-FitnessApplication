@@ -1,46 +1,65 @@
 package com.bayraktar.healthybackandneck.ui.HomePage
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.HomeItem
 import com.bayraktar.healthybackandneck.databinding.ItemHomeListBinding
+import com.bayraktar.healthybackandneck.utils.OnFavouriteButtonClickListener
 
-class HomeViewpagerAdapter(private val onboardList: List<HomeItem>, val viewPager2: ViewPager2, val onItemclick: (Int) -> Unit):
-    RecyclerView.Adapter<HomeViewpagerAdapter.OnBoardingsItemAdapter>(){
+class HomeViewpagerAdapter(
+    private val onboardList: List<HomeItem>,
+    val viewPager2: ViewPager2,
+    val onItemclick: (Int) -> Unit,
+    private val onFavouriteButtonClickListener: OnFavouriteButtonClickListener
+) :
+    RecyclerView.Adapter<HomeViewpagerAdapter.OnBoardingsItemAdapter>() {
 
 
-        inner class OnBoardingsItemAdapter(val binding: ItemHomeListBinding): RecyclerView.ViewHolder(binding.root){
+    inner class OnBoardingsItemAdapter(val binding: ItemHomeListBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
 
-        }
+    }
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OnBoardingsItemAdapter {
-            val itemBinding = ItemHomeListBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-            return OnBoardingsItemAdapter(itemBinding)
-        }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OnBoardingsItemAdapter {
+        val itemBinding =
+            ItemHomeListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return OnBoardingsItemAdapter(itemBinding)
+    }
 
-        override fun getItemCount(): Int {
-            return onboardList.size
-        }
+    override fun getItemCount(): Int {
+        return onboardList.size
+    }
 
-        override fun onBindViewHolder(holder: OnBoardingsItemAdapter, position: Int) {
-            val model = onboardList[position]
+    override fun onBindViewHolder(holder: OnBoardingsItemAdapter, position: Int) {
+        val model = onboardList[position]
 
-            holder.binding.apply {
-                imageMain.setImageResource(model.imageMain)
-                labelTitle.text = model.desc
-                progressHome.progress = model.progress
-                txtTitle.text = model.title
+        holder.binding.apply {
+            imageMain.setImageResource(model.imageMain)
+            labelTitle.text = model.desc
+            progressHome.progress = model.progress
+            txtTitle.text = model.title
 
-                holder.itemView.setOnClickListener{
-                    val position = holder.adapterPosition
-                    if (position != RecyclerView.NO_POSITION) {
-                        onItemclick(position)
-                    }
+            holder.itemView.setOnClickListener {
+                val position = holder.adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    onItemclick(position)
                 }
-
             }
+
+            if (position == 3) {
+                newFavouriteBtn.visibility = View.VISIBLE
+                newFavouriteBtn.setOnClickListener {
+                    onFavouriteButtonClickListener.onButtonClicked(position)
+                }
+            } else {
+                newFavouriteBtn.visibility = View.GONE
+            }
+
         }
     }
+
+}

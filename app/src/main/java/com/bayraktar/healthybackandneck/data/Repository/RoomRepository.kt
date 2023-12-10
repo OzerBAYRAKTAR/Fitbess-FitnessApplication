@@ -44,6 +44,10 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         return movesDao.getExerciseListWithDayID(dayID, level)
     }
 
+    fun getExerciseListByTitleName(titleName: String): List<SubExerciseDayExercise> {
+        return movesDao.getExerciseListByTitleName(titleName)
+    }
+
     fun getExerciseListWithTitleAndLevel(
         titleName: String,
         level: Int

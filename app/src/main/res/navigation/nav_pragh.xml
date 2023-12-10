@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_id_homepage_fragment_to_detailDayFragment"
             app:destination="@id/detailDayFragment" />
+        <action
+            android:id="@+id/action_id_homepage_fragment_to_favouriteMainFragment"
+            app:destination="@id/favouriteMainFragment" />
     </fragment>
     <fragment
         android:id="@+id/id_profile_fragment"
@@ -287,6 +290,11 @@
             android:id="@+id/action_dailyCalorieFragment_to_id_statistics_fragment"
             app:destination="@id/id_statistics_fragment" />
     </fragment>
+    <fragment
+        android:id="@+id/favouriteMainFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.Favourite.FavouriteMain.FavouriteMainFragment"
+        android:label="fragment_favourite_main"
+        tools:layout="@layout/fragment_favourite_main" />
 
 
 </navigation>

@@ -54,6 +54,12 @@ interface MovesDao {
 
 
     @Transaction
+    @Query("Select * from sub_exercise_day_exercise where titleName = :titleName")
+    fun getExerciseListByTitleName(titleName: String): List<SubExerciseDayExercise>
+
+
+
+    @Transaction
     @Query("Select * from sub_exercise_day_exercise where titleName = :titleName and level = :level")
     fun getExerciseListWithTitleAndLEvel(titleName: String,level:Int): List<SubExerciseDayExercise>
 

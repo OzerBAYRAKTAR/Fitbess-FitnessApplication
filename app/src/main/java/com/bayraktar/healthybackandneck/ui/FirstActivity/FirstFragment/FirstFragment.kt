@@ -45,8 +45,8 @@ class FirstFragment : Fragment() {
             lifecycleScope.launchWhenStarted {
                 saveGen()
             }
-            //val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment()
-            //view.findNavController().navigate(action)
+           //val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment()
+           //view.findNavController().navigate(action)
             startActivity(Intent(requireActivity(),HomeActivity::class.java))
         }
     }

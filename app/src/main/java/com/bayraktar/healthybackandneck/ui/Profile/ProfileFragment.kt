@@ -36,6 +36,7 @@ class ProfileFragment : Fragment() {
     val binding get() = _binding!!
     private var timer: Timer? = null
     private var isReminderOn = false
+    private var isWaterReminderOn = false
     private lateinit var notificationHelper: NotificationHelper
     private var  reviewInfo: ReviewInfo?= null
     private lateinit var reviewManager: ReviewManager
@@ -86,7 +87,7 @@ class ProfileFragment : Fragment() {
     private fun setBindingThings() = with(binding) {
 
         waterReminderSwitch.setOnCheckedChangeListener { _, isChecked ->
-            isReminderOn = isChecked
+            isWaterReminderOn = isChecked
             if (isChecked) {
                 startReminder()
             } else {
@@ -94,6 +95,7 @@ class ProfileFragment : Fragment() {
             }
         }
         notificationSwitch.setOnCheckedChangeListener { _, isChecked ->
+            isReminderOn = isChecked
             if (isChecked) {
                 startFitnessReminder()
             } else {

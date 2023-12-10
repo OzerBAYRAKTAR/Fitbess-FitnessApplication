@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
@@ -59,6 +60,7 @@ class ExerciseMovesFragment : Fragment() {
         binding.txtTimeLeft.text = "10"
         binding.pbTimer.max = timeSelected
 
+        backstack()
         getSetData()
         startTimerSetup()
 
@@ -117,12 +119,24 @@ class ExerciseMovesFragment : Fragment() {
         val inflater = layoutInflater
         val dialogView = inflater.inflate(R.layout.info_custom_layout, null)
 
-        val currentModel = exerciseList[currentExerciseIndex]
-        val exerciseTitle: TextView = dialogView.findViewById(R.id.exerciseTitle)
-        val exerciseDescription: TextView = dialogView.findViewById(R.id.exerciseDescription)
+        if (exerciseArray?.isNotEmpty() == true){
+            val currentModel = exerciseList[currentExerciseIndex]
 
-        exerciseTitle.text = getString(R.string.desc)
-        exerciseDescription.text = currentModel.exerciseDescription
+            val exerciseTitle: TextView = dialogView.findViewById(R.id.exerciseTitle)
+            val exerciseDescription: TextView = dialogView.findViewById(R.id.exerciseDescription)
+
+            exerciseTitle.text = getString(R.string.desc)
+            exerciseDescription.text = currentModel.exerciseDescription
+        } else {
+            val currentModel = subExerciseList[currentExerciseIndex]
+
+            val exerciseTitle: TextView = dialogView.findViewById(R.id.exerciseTitle)
+            val exerciseDescription: TextView = dialogView.findViewById(R.id.exerciseDescription)
+
+            exerciseTitle.text = getString(R.string.desc)
+            exerciseDescription.text = currentModel.exerciseDescription
+        }
+
 
         val builder = AlertDialog.Builder(requireContext())
         builder.setView(dialogView)
@@ -241,26 +255,50 @@ class ExerciseMovesFragment : Fragment() {
 
     private fun btnNextMoveClicked() = with(binding) {
         goNext.setOnClickListener {
-            if (currentExerciseIndex + 1 == exerciseList.size) {
-                // If the current exercise is the last one, navigate to the end fragment directly
-                val action =
-                    ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesEndFragment(
-                        subExerciseList.toTypedArray(),
-                        exerciseList.toTypedArray(),
-                        exerciseDayModel
-                    )
-                view?.findNavController()?.navigate(action)
-            } else {
-                //if current exercise is not the last one, keep go rest fragment
-                val action =
-                    ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesRestFragment(
-                        currentExerciseIndex,
-                        exerciseArray,
-                        subExerciseList.toTypedArray(),
-                        exerciseDayModel
-                    )
-                view?.findNavController()?.navigate(action)
+            if (exerciseList.size > 0) {
+                if (currentExerciseIndex + 1 == exerciseList.size) {
+                    // If the current exercise is the last one, navigate to the end fragment directly
+                    val action =
+                        ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesEndFragment(
+                            subExerciseList.toTypedArray(),
+                            exerciseList.toTypedArray(),
+                            exerciseDayModel
+                        )
+                    view?.findNavController()?.navigate(action)
+                } else {
+                    //if current exercise is not the last one, keep go rest fragment
+                    val action =
+                        ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesRestFragment(
+                            currentExerciseIndex,
+                            exerciseList.toTypedArray(),
+                            subExerciseList.toTypedArray(),
+                            exerciseDayModel
+                        )
+                    view?.findNavController()?.navigate(action)
+                }
+            }else {
+                if (currentExerciseIndex + 1 == subExerciseList.size) {
+                    // If the current exercise is the last one, navigate to the end fragment directly
+                    val action =
+                        ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesEndFragment(
+                            subExerciseList.toTypedArray(),
+                            exerciseList.toTypedArray(),
+                            exerciseDayModel
+                        )
+                    view?.findNavController()?.navigate(action)
+                } else {
+                    //if current exercise is not the last one, keep go rest fragment
+                    val action =
+                        ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesRestFragment(
+                            currentExerciseIndex,
+                            exerciseList.toTypedArray(),
+                            subExerciseList.toTypedArray(),
+                            exerciseDayModel
+                        )
+                    view?.findNavController()?.navigate(action)
+                }
             }
+
         }
     }
 
@@ -293,14 +331,25 @@ class ExerciseMovesFragment : Fragment() {
             if (currentExerciseIndex > 0) {
                 currentExerciseIndex -= 1
 
-                clearResource()
-                val currentModel = exerciseList[currentExerciseIndex]
-                moveGif.setImageResource(currentModel.image)
-                exerciceName.text = currentModel.exerciseName
-                txtRank.text = (currentExerciseIndex + 1).toString()
-                albelRank.text = "/${exerciseList.size.toString()}"
+                if (exerciseList.size > 0) {
+                    clearResource()
+                    val currentModel = exerciseList[currentExerciseIndex]
+                    moveGif.setImageResource(currentModel.image)
+                    exerciceName.text = currentModel.exerciseName
+                    txtRank.text = (currentExerciseIndex + 1).toString()
+                    albelRank.text = "/${exerciseList.size.toString()}"
 
-                restartTimer()
+                    restartTimer()
+                }else {
+                    clearResource()
+                    val currentModel = subExerciseList[currentExerciseIndex]
+                    moveGif.setImageResource(currentModel.image)
+                    exerciceName.text = currentModel.exerciseName
+                    txtRank.text = (currentExerciseIndex + 1).toString()
+                    albelRank.text = "/${subExerciseList.size.toString()}"
+
+                    restartTimer()
+                }
             }
         }
     }
@@ -317,6 +366,15 @@ class ExerciseMovesFragment : Fragment() {
             timecountDown?.cancel()
             timeProgress = 0
         }
+    }
+    private fun backstack() {
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                btnCloseClicked()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+
     }
 
 

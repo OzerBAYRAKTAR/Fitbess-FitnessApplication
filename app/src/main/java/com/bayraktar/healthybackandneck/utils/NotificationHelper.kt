@@ -59,13 +59,13 @@ class NotificationHelper(private val context: Context) {
             context,
             0,
             notificationIntent,
-            PendingIntent.FLAG_UPDATE_CURRENT
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
         val notificationBuilder = NotificationCompat.Builder(context, channelId)
             .setContentTitle(context.getString(R.string.label_fitnessreminder))
             .setContentText(context.getString(R.string.label_dofitness))
-            .setSmallIcon(R.drawable.ic_fitness_icon) // Replace with your fitness notification icon
+            .setSmallIcon(R.drawable.ic_fitness_icon)
             .setContentIntent(pendingIntent)
             .setAutoCancel(true)
 

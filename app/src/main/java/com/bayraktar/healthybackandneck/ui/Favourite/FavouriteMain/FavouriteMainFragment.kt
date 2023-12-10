@@ -1,5 +1,6 @@
-package com.bayraktar.healthybackandneck.ui.Food
+package com.bayraktar.healthybackandneck.ui.Favourite.FavouriteMain
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,24 +10,26 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
 import com.bayraktar.healthybackandneck.R
-import com.bayraktar.healthybackandneck.databinding.FragmentFoodBinding
+import com.bayraktar.healthybackandneck.databinding.FragmentFavouriteMainBinding
+import com.bayraktar.healthybackandneck.ui.Food.FoodAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
+class FavouriteMainFragment : Fragment() {
 
-class FoodFragment : Fragment() {
-
-    private var _binding: FragmentFoodBinding? = null
+    private var _binding: FragmentFavouriteMainBinding? = null
     val binding get() = _binding!!
-    private lateinit var viewPagerAdapter: FoodAdapter
+    private lateinit var viewPagerAdapter: FavouriteMainAdapter
+
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentFoodBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
+        _binding = FragmentFavouriteMainBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -34,9 +37,9 @@ class FoodFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         tabLayoutViewPager()
-
     }
 
+    @SuppressLint("MissingInflatedId")
     private fun tabLayoutViewPager() {
 
 
@@ -67,51 +70,37 @@ class FoodFragment : Fragment() {
 
         val tabAdapter =
             TabLayoutMediator.TabConfigurationStrategy { tab, position ->
-                val customTabView = LayoutInflater.from(requireContext()).inflate(R.layout.item_tablayoutfood,null)
-                val tabIcon: ImageView = customTabView.findViewById(R.id.tab_icon)
-                val tabText: TextView = customTabView.findViewById(R.id.tab_text)
+                val customTabView = LayoutInflater.from(requireContext()).inflate(R.layout.item_tablayoutfavourite,null)
+                val tabText: TextView = customTabView.findViewById(R.id.tab_text_favourite)
 
                 when (position) {
                     0 -> {
-                        tabIcon.setImageResource(R.drawable.meat)
-                        tabText.text = (getString(R.string.meat))
+                        tabText.text = (getString(R.string.abs))
                     }
 
                     1 -> {
-                        tabIcon.setImageResource(R.drawable.milk)
-                        tabText.text = (getString(R.string.milkprodct))
+                        tabText.text = (getString(R.string.arm))
                     }
 
                     2 -> {
-                        tabIcon.setImageResource(R.drawable.fresh)
-                        tabText.text = (getString(R.string.fresh))
+                        tabText.text = (getString(R.string.back_back))
                     }
 
                     3 -> {
-                        tabIcon.setImageResource(R.drawable.fruit)
-                        tabText.text = (getString(R.string.fruit))
+                        tabText.text = (getString(R.string.leg))
                     }
-
                     4 -> {
-                        tabIcon.setImageResource(R.drawable.legume)
-                        tabText.text = (getString(R.string.legume))
+                        tabText.text = (getString(R.string.strech))
                     }
-                    //5 -> {
-                    //    tabIcon.setImageResource(R.drawable.other)
-                    //    tabText.text = (getString(R.string.other))
-                    //}
-                    // Add more tabs as needed
                 }
                 tab.customView = customTabView
             }
-        viewPagerAdapter = FoodAdapter(childFragmentManager, lifecycle)
+        viewPagerAdapter = FavouriteMainAdapter(childFragmentManager, lifecycle)
 
         binding.viewP.adapter = viewPagerAdapter
 
         TabLayoutMediator(tabLayout, viewPager, tabAdapter).attach()
 
     }
-
-
 
 }

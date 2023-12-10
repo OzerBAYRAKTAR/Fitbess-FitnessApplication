@@ -1,11 +1,14 @@
 package com.bayraktar.healthybackandneck.ui.ExerciseMovesEnd
 
+import android.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
@@ -13,6 +16,7 @@ import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.Exercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesEndBinding
 import com.bayraktar.healthybackandneck.ui.ExerciseMoves.ExerciseMovesFragmentArgs
+import com.bayraktar.healthybackandneck.ui.ExerciseMoves.ExerciseMovesFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,8 +43,34 @@ class ExerciseMovesEndFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        backstack()
         getSetData()
         btnEndClicked()
+
+    }
+    private fun btnCloseClicked() {
+        val inflater = layoutInflater
+        val dialogView = inflater.inflate(R.layout.dialog_cancel, null)
+
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setView(dialogView)
+        builder.setCancelable(false)
+
+        val dialog = builder.create()
+        dialog.show()
+
+        val positiveBtn: Button = dialogView.findViewById(R.id.dialogYes)
+        val negativeBtn: Button = dialogView.findViewById(R.id.dialogNo)
+
+        negativeBtn.setOnClickListener {
+            dialog.dismiss()
+        }
+        positiveBtn.setOnClickListener {
+            val action =
+                ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToIdHomepageFragment()
+            view?.findNavController()?.navigate(action)
+            dialog.dismiss()
+        }
 
     }
 
@@ -58,7 +88,7 @@ class ExerciseMovesEndFragment : Fragment() {
         subExerciseArray = args.subExerciseNewList
         exerciseDayModel = args.exerciseDayModel
 
-        if (exerciseArray != null) {
+        if (exerciseDayModel!!.exerciseCount > 1) {
             exerciseList = ArrayList(exerciseArray!!.asList())
             txttime.text = exerciseDayModel?.exerciseTime.toString()
             txtexercise.text = exerciseDayModel?.exerciseCount.toString()
@@ -69,9 +99,18 @@ class ExerciseMovesEndFragment : Fragment() {
 
             txttime.text = "07:30"
             txtexercise.text = "7"
-            txtkcal.text = "300(-+20)"
+            txtkcal.text = "300"
         }
 
+
+    }
+    private fun backstack() {
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                btnCloseClicked()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
 
     }
 

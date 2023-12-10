@@ -32,20 +32,15 @@
                     android:src="@drawable/cancel" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Destek Formu İptali"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
+                    android:layout_marginHorizontal="40dp"
                     android:text="@string/label_quitexercise"
-                    android:textSize="16sp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
 
                 <TextView
                     android:layout_width="wrap_content"
