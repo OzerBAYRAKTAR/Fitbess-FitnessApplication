@@ -31,7 +31,11 @@ class FavouriteTablayoutadapter(
             mRecyclerViewClickListener.recyclerviewListClicked(p0!!,adapterPosition)
             val position = adapterPosition
             if (position != RecyclerView.NO_POSITION) {
-                lsMenu[position].isChecked = !lsMenu[position].isChecked
+                val clickedItem = lsMenu[position]
+                clickedItem.isFavourite = !clickedItem.isFavourite
+
+                binding.favoritebtn.isChecked = clickedItem.isFavourite
+
                 notifyItemChanged(position)
             }
         }
@@ -42,7 +46,7 @@ class FavouriteTablayoutadapter(
         val itemBinding = ItemFavouritelistBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ItemHolder(itemBinding,rclClickListener)
     }
-    //update old list with new list
+
     fun setData(list: List<SubExerciseDayExercise>) {
         this.lsMenu = list
         notifyDataSetChanged()
@@ -52,14 +56,18 @@ class FavouriteTablayoutadapter(
         val model =lsMenu[position]
 
         holder.binding.apply {
+
+            favoritebtn.isClickable = false
+            favoritebtn.isChecked = model.isFavourite
+
             val imageDrawable = ContextCompat.getDrawable(root.context, model.image)
             roundedImageView.setImageDrawable(imageDrawable)
             labelDay.text = model.exerciseName
-            favoritebtn.isChecked = model.isChecked
 
             infoBtn.setOnClickListener {
                 onFavouriteButtonClickListener.onButtonClicked(position)
             }
+
         }
     }
 

@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
+import androidx.room.Update
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.HomeItem
@@ -66,5 +67,18 @@ interface MovesDao {
     @Transaction
     @Query("Select * from ExerciseDay where dayId = :dayId")
     fun getExerciseDayWithExerciseDayExercise(dayId: Int): List<ExerciseDayWithExerciseDayExercise>
+
+    @Transaction
+    @Query("UPDATE sub_exercise_day_exercise SET isFavourite = 1 Where exerciseId = :exerciseId")
+    fun updateIsFavourite(exerciseId: Int)
+
+    @Transaction
+    @Query("UPDATE sub_exercise_day_exercise SET isFavourite = 0 Where exerciseId = :exerciseId")
+    fun updateIsFavouriteToFalse(exerciseId: Int)
+
+    @Transaction
+    @Query("Select * from  sub_exercise_day_exercise Where isFavourite = 1")
+    fun getIsFavouriteTrue():List<SubExerciseDayExercise>
+
 
 }

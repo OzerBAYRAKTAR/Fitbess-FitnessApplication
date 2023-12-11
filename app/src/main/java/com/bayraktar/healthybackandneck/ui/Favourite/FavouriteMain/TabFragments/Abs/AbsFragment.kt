@@ -27,22 +27,21 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class AbsFragment : Fragment(),RecyclerViewClickListener {
-    private var _binding: FragmentAbsBinding ? =null
+class AbsFragment : Fragment(), RecyclerViewClickListener {
+    private var _binding: FragmentAbsBinding? = null
     val binding get() = _binding!!
 
-    private val viewModel : AbsViewModel by viewModels()
+    private val viewModel: AbsViewModel by viewModels()
 
     private var absList = ArrayList<SubExerciseDayExercise>()
-    private lateinit var absAdapter : FavouriteTablayoutadapter
-
+    private lateinit var absAdapter: FavouriteTablayoutadapter
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentAbsBinding.inflate(inflater,container,false)
+        _binding = FragmentAbsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -63,22 +62,37 @@ class AbsFragment : Fragment(),RecyclerViewClickListener {
                     absList.addAll(exercise)
                 }
                 binding.rvFavouriteLayout.layoutManager = LinearLayoutManager(requireContext())
-                absAdapter = FavouriteTablayoutadapter(absList,this@AbsFragment,
+                absAdapter = FavouriteTablayoutadapter(absList, this@AbsFragment,
                     object : OnFavouriteButtonClickListener {
-                    override fun onButtonClicked(position: Int) {
-                        showToast(requireContext(),"$position tıklandı",Gravity.CENTER,0,0)
-                    }
-                })
+                        override fun onButtonClicked(position: Int) {
+                            showToast(requireContext(), "$position tıklandı", Gravity.CENTER, 0, 0)
+                        }
+                    })
                 binding.rvFavouriteLayout.adapter = absAdapter
                 absAdapter.setData(absList)
+
             })
     }
 
 
     override fun recyclerviewListClicked(v: View, position: Int) {
         val positionList = absList[position]
-        if (!positionList.isChecked) {
-            showToastFavourite(requireContext(),"$position. egzersiz, Favorilerine eklendi.",Gravity.BOTTOM,0,0)
+
+        if (!positionList.isFavourite) {
+            showToastFavourite(
+                requireContext(),
+                "${positionList.exerciseName}, Favorilerine eklendi.",
+                Gravity.BOTTOM,
+                0,
+                50
+            )
+            viewModel.updateExerciseById(absList[position].exerciseId)
+            positionList.isFavourite = !positionList.isFavourite
+            absAdapter.setData(absList)
+        } else {
+            viewModel.updateIsFavouriteToFalse(absList[position].exerciseId)
+            absAdapter.setData(absList)
+            positionList.isFavourite = !positionList.isFavourite
         }
 
     }

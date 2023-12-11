@@ -1,10 +1,12 @@
 package com.bayraktar.healthybackandneck.ui.ExerciseDetailDay
 
+import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.ItemDetaildayBinding
@@ -45,7 +47,11 @@ class DetailDayAdapter(
         val model =lsMenu[position]
 
         holder.binding.apply {
-            val imageDrawable = ContextCompat.getDrawable(root.context, model.image)
+            val imageDrawable = try {
+                ContextCompat.getDrawable(root.context, model.image)
+            } catch (e: Resources.NotFoundException) {
+                ContextCompat.getDrawable(root.context, R.drawable.placehlder)
+            }
             roundedImageView.setImageDrawable(imageDrawable)
             labelDay.text = model.exerciseName
         }

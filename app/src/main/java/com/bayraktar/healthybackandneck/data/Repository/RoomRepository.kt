@@ -60,4 +60,12 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         return movesDao.getExerciseDayWithExerciseDayExercise(dayId)
     }
 
+    fun updateIsFavourite(exerciseId: Int){
+        movesDao.updateIsFavourite(exerciseId)
+    }
+
+    fun updateIsFavouriteToFalse(exerciseId: Int){
+        movesDao.updateIsFavouriteToFalse(exerciseId)
+    }
+
 }

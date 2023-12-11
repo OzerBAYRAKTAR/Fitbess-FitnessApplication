@@ -20,5 +20,10 @@ data class SubExerciseDayExercise(
     val image: Int,
     @SerializedName("level")
     var level: Int,
-    var isChecked: Boolean = false
+
+    @SerializedName("isChecked")
+    var isChecked: Boolean = false,
+
+    @SerializedName("isFavourite")
+    var isFavourite: Boolean = false
 ): Parcelable
