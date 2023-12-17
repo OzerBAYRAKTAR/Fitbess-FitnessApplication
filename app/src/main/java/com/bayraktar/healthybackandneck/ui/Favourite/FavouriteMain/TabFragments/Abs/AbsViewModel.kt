@@ -21,12 +21,6 @@ class AbsViewModel @Inject constructor(
     private val _getExerciseListByTitle: MutableLiveData<List<SubExerciseDayExercise>> = MutableLiveData()
     val getExerciseListByTitle: LiveData<List<SubExerciseDayExercise>> get() = _getExerciseListByTitle
 
-
-   //fun updateIsChecked(exerciseId: Int, isChecked: Boolean) {
-   //    repo.updateIsChecked(exerciseId, isChecked)
-   //}
-
-
     fun getExerciseListByTitle() {
         viewModelScope.launch(Dispatchers.IO){
             val exercises  = repo.getExerciseListByTitleName(titleName = "abs")

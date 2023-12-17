@@ -221,7 +221,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="label_kcal">kcal</string>
     <string name="label_tellus">Bize kendinden bahset</string>
     <string name="label_tellus_desc">Size daha iyi bir hizmet sunabilmemiz için, sizi yakından tanımalıyız</string>
-    <string name="label_continue">Devam et</string>
+    <string name="label_continue">İleri</string>
     <string name="label_male">Erkek</string>
     <string name="label_famale">Kadın</string>
     <string name="label_yas">Yaşın kaç?</string>
@@ -517,6 +517,12 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="label_exerciselost">(İlerlemeniz kaybolacaktır.)</string>
     <string name="favourite_list">Favori Listesi</string>
     <string name="all_exercies">Tüm Egzersiz Hareketleri</string>
+    <string name="my_fav_list">Favori Hareketlerim</string>
+    <string name="label_error">Veriler getirilerken hata oluştu</string>
+    <string name="lbl_start">Başla</string>
+    <string name="lbl_my_favourite">Favorilerim</string>
+    <string name="lbl_fav_list_empty">Favori listen boş, favori listeni oluşturmak için antrenman programlarına göz at</string>
+    <string name="btn_chec">Gözat</string>
 
 </resources>
 

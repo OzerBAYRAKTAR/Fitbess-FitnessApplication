@@ -125,7 +125,7 @@ class HomePageFragment : Fragment() {
     }
 
     private fun setOnBoardingItems() = with(binding) {
-        homeAdapter = HomeViewpagerAdapter(
+        homeAdapter = HomeViewpagerAdapter(requireContext(),
             listOf(
                 HomeItem(
                     imageMain = R.drawable.new1_removed,
@@ -155,8 +155,8 @@ class HomePageFragment : Fragment() {
                     progress = (15 * 100 / 28),
                     dayOfProgram = 12
                 )
-            ), pageerHome,
-         { position ->
+            ), pageerHome
+        ) { position ->
             when (position) {
                 0 -> {
                     // Navigate to Fragment 1
@@ -179,18 +179,17 @@ class HomePageFragment : Fragment() {
                     findNavController().navigate(action)
                 }
 
+                3 -> {
+                    val action =
+                        HomePageFragmentDirections.actionIdHomepageFragmentToMoveListFragment()
+                    findNavController().navigate(action)
+                }
+
                 else -> {
                     // Handle other positions or provide a default behavior
                 }
             }
-            }, object : OnFavouriteButtonClickListener {
-            override fun onButtonClicked(position: Int) {
-                val action =
-                    HomePageFragmentDirections.actionIdHomepageFragmentToFavouriteMainFragment()
-                view?.findNavController()?.navigate(action)
-            }
-        })
-
+        }
         pageerHome.clipToPadding = false
         pageerHome.clipChildren = false
         pageerHome.offscreenPageLimit = 2

@@ -68,4 +68,8 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         movesDao.updateIsFavouriteToFalse(exerciseId)
     }
 
+    fun getIsFavouriteTrue():List<SubExerciseDayExercise>{
+        return movesDao.getIsFavouriteTrue()
+    }
+
 }

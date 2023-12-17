@@ -60,7 +60,7 @@
 
                         <TextView
                             android:id="@+id/labelDay"
-                            android:layout_width="140dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:fontFamily="@font/robotslabrgular"
@@ -98,6 +98,7 @@
                     android:layout_height="35dp"
                     android:background="@drawable/favorite_selector"
                     android:button="@null"
+                    android:visibility="gone"
                     android:layout_marginEnd="30dp"
                     app:layout_constraintBottom_toBottomOf="@+id/linearLayout6"
                     app:layout_constraintEnd_toEndOf="@+id/linearLayout6"

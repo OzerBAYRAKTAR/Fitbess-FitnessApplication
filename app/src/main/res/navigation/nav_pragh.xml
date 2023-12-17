@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_id_homepage_fragment_to_favouriteMainFragment"
             app:destination="@id/favouriteMainFragment" />
+        <action
+            android:id="@+id/action_id_homepage_fragment_to_moveListFragment"
+            app:destination="@id/moveListFragment" />
     </fragment>
     <fragment
         android:id="@+id/id_profile_fragment"
@@ -295,6 +298,15 @@
         android:name="com.bayraktar.healthybackandneck.ui.Favourite.FavouriteMain.FavouriteMainFragment"
         android:label="fragment_favourite_main"
         tools:layout="@layout/fragment_favourite_main" />
+    <fragment
+        android:id="@+id/moveListFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.Favourite.FavouriteMoveList.MoveListFragment"
+        android:label="fragment_move_list"
+        tools:layout="@layout/fragment_move_list" >
+        <action
+            android:id="@+id/action_moveListFragment_to_id_homepage_fragment"
+            app:destination="@id/id_homepage_fragment" />
+    </fragment>
 
 
 </navigation>

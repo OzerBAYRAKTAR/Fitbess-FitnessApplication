@@ -177,17 +177,18 @@
                 android:id="@+id/newFavouriteBtn"
                 android:layout_width="145dp"
                 android:layout_height="42dp"
-                android:layout_marginBottom="10dp"
-                android:padding="5dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/butto_background"
                 android:drawablePadding="13dp"
                 android:fontFamily="@font/tahoma"
-                android:textSize="14sp"
-                android:text="Yeni Favoriler Ekle"
+                android:padding="5dp"
+                android:text="@string/lbl_start"
                 android:textAlignment="center"
                 android:textColor="@color/black"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/imageMain"
+                app:layout_constraintHorizontal_bias="0.2"
                 app:layout_constraintStart_toStartOf="@+id/imageMain" />
 
 

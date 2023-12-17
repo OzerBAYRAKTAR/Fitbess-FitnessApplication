@@ -68,8 +68,8 @@
 
             <ImageView
                 android:id="@+id/infoBtn"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
                 android:src="@drawable/favourite_info"
                 app:layout_constraintBottom_toBottomOf="@+id/labelDay"
                 app:layout_constraintEnd_toEndOf="parent"

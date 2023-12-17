@@ -15,18 +15,28 @@ import javax.inject.Inject
 @HiltViewModel
 class ArmViewModel @Inject constructor(
     private val repo: RoomRepository
-): ViewModel(){
+):ViewModel(){
 
 
     private val _getExerciseListByTitle: MutableLiveData<List<SubExerciseDayExercise>> = MutableLiveData()
     val getExerciseListByTitle: LiveData<List<SubExerciseDayExercise>> get() = _getExerciseListByTitle
 
-
-
     fun getExerciseListByTitle() {
         viewModelScope.launch(Dispatchers.IO){
             val exercises  = repo.getExerciseListByTitleName(titleName = "arm")
             _getExerciseListByTitle.postValue(exercises)
+        }
+    }
+
+    fun updateExerciseById(exerciseId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repo.updateIsFavourite(exerciseId = exerciseId)
+        }
+    }
+
+    fun updateIsFavouriteToFalse(exerciseId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repo.updateIsFavouriteToFalse(exerciseId = exerciseId)
         }
     }
 }

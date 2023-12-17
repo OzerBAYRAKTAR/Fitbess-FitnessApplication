@@ -5,6 +5,7 @@ import android.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
@@ -22,12 +24,15 @@ import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesBinding
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesReadyBinding
 import com.bayraktar.healthybackandneck.ui.ExerciseMovesReady.ExerciseMovesReadyFragmentArgs
 import com.bayraktar.healthybackandneck.ui.ExerciseMovesReady.ExerciseMovesReadyFragmentDirections
+import com.bayraktar.healthybackandneck.utils.showToastFavourite
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ExerciseMovesFragment : Fragment() {
     private var _binding: FragmentExerciseMovesBinding? = null
     val binding get() = _binding!!
+
+    private val viewModel: ExerciseMovesViewModel by viewModels()
 
 
     private var timeSelected = 30
@@ -63,7 +68,7 @@ class ExerciseMovesFragment : Fragment() {
         backstack()
         getSetData()
         startTimerSetup()
-
+        addToFavouriteList()
         btnPreviousMoveClicked()
         btnNextMoveClicked()
         btnPauseClicked()
@@ -72,6 +77,47 @@ class ExerciseMovesFragment : Fragment() {
         }
         binding.quitExerciseToDetailDay.setOnClickListener {
             btnCloseClicked()
+        }
+
+
+    }
+    private fun addToFavouriteList() = with(binding) {
+
+        if (exerciseArray?.isNotEmpty() == true){
+            val currentModel = exerciseList[currentExerciseIndex]
+
+            if (!currentModel.isFavourite) {
+                showToastFavourite(
+                    requireContext(),
+                    "${currentModel.exerciseName}, Favorilerine eklendi.",
+                    Gravity.BOTTOM,
+                    0,
+                    50
+                )
+                viewModel.updateExerciseById(currentModel.exerciseId)
+                currentModel.isFavourite = !currentModel.isFavourite
+            } else {
+                viewModel.updateIsFavouriteToFalse(currentModel.exerciseId)
+                currentModel.isFavourite = !currentModel.isFavourite
+            }
+
+        } else {
+            val currentModel = subExerciseList[currentExerciseIndex]
+
+            if (!currentModel.isFavourite) {
+                showToastFavourite(
+                    requireContext(),
+                    "${currentModel.exerciseName}, Favorilerine eklendi.",
+                    Gravity.BOTTOM,
+                    0,
+                    50
+                )
+                viewModel.updateExerciseById(currentModel.exerciseId)
+                currentModel.isFavourite = !currentModel.isFavourite
+            } else {
+                viewModel.updateIsFavouriteToFalse(currentModel.exerciseId)
+                currentModel.isFavourite = !currentModel.isFavourite
+            }
         }
 
 

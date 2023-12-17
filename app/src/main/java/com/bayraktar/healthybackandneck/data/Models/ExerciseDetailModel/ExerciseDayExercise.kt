@@ -13,6 +13,8 @@ data class ExerciseDayExercise(
     val exerciseId: Int,
     @SerializedName("Step")
     val step: Int,
+    @SerializedName("titleName")
+    val titleName: String,
     @SerializedName("DayId")
     val dayId: Int,
     @SerializedName("ExerciseName")
@@ -25,6 +27,12 @@ data class ExerciseDayExercise(
     var isExerciseCompleted: Boolean,
     @SerializedName("Level")
     var level: Int,
+
+    @SerializedName("isChecked")
+    var isChecked: Boolean = false,
+
+    @SerializedName("isFavourite")
+    var isFavourite: Boolean = false
 
 ): Parcelable
 

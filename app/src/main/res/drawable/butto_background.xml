@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="#1CFF03">
+    android:color="#EAECF1">
     <item>
 
         <shape android:shape="rectangle">

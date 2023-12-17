@@ -1,11 +1,14 @@
 package com.bayraktar.healthybackandneck.ui.Favourite.FavouriteMain.TabFragments.Abs
 
+import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
@@ -24,6 +27,7 @@ import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 import com.bayraktar.healthybackandneck.utils.showToast
 import com.bayraktar.healthybackandneck.utils.showToastFavourite
 import dagger.hilt.android.AndroidEntryPoint
+import pl.droidsonroids.gif.GifImageView
 
 
 @AndroidEntryPoint
@@ -64,8 +68,29 @@ class AbsFragment : Fragment(), RecyclerViewClickListener {
                 binding.rvFavouriteLayout.layoutManager = LinearLayoutManager(requireContext())
                 absAdapter = FavouriteTablayoutadapter(absList, this@AbsFragment,
                     object : OnFavouriteButtonClickListener {
+                        @SuppressLint("MissingInflatedId")
                         override fun onButtonClicked(position: Int) {
-                            showToast(requireContext(), "$position tıklandı", Gravity.CENTER, 0, 0)
+                            val inflater = layoutInflater
+                            val dialogView = inflater.inflate(R.layout.info_favourite_layout, null)
+
+                            val currentModel = absList[position]
+
+                            val exerciseTitle: TextView = dialogView.findViewById(R.id.exerciseFavouriteTitle)
+                            val exerciseDescription: TextView = dialogView.findViewById(R.id.exerciseFavouriteDescription)
+                            val exerciseGif: GifImageView = dialogView.findViewById(R.id.infoFavouriteGif)
+
+                            exerciseTitle.text = currentModel.exerciseName
+                            exerciseGif.setImageResource(currentModel.image)
+                            exerciseDescription.text = currentModel.exerciseDescription
+
+
+                            val builder = AlertDialog.Builder(requireContext())
+                            builder.setView(dialogView)
+                                .setPositiveButton(R.string.close) { dialog, _ ->
+                                    dialog.dismiss()
+                                }
+                            val dialog = builder.create()
+                            dialog.show()
                         }
                     })
                 binding.rvFavouriteLayout.adapter = absAdapter

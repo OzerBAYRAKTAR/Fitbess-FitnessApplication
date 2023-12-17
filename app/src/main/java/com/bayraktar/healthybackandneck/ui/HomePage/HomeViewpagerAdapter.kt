@@ -1,19 +1,21 @@
 package com.bayraktar.healthybackandneck.ui.HomePage
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.HomeItem
 import com.bayraktar.healthybackandneck.databinding.ItemHomeListBinding
 import com.bayraktar.healthybackandneck.utils.OnFavouriteButtonClickListener
 
 class HomeViewpagerAdapter(
+    private val context: Context,
     private val onboardList: List<HomeItem>,
     val viewPager2: ViewPager2,
     val onItemclick: (Int) -> Unit,
-    private val onFavouriteButtonClickListener: OnFavouriteButtonClickListener
 ) :
     RecyclerView.Adapter<HomeViewpagerAdapter.OnBoardingsItemAdapter>() {
 
@@ -43,7 +45,7 @@ class HomeViewpagerAdapter(
             progressHome.progress = model.progress
             txtTitle.text = model.title
 
-            holder.itemView.setOnClickListener {
+            newFavouriteBtn.setOnClickListener {
                 val position = holder.adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
                     onItemclick(position)
@@ -51,12 +53,9 @@ class HomeViewpagerAdapter(
             }
 
             if (position == 3) {
-                newFavouriteBtn.visibility = View.VISIBLE
-                newFavouriteBtn.setOnClickListener {
-                    onFavouriteButtonClickListener.onButtonClicked(position)
-                }
+                newFavouriteBtn.text = context.getString(R.string.lbl_my_favourite)
             } else {
-                newFavouriteBtn.visibility = View.GONE
+                newFavouriteBtn.text = context.getString(R.string.lbl_start)
             }
 
         }
