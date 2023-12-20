@@ -12,7 +12,7 @@ import com.bayraktar.healthybackandneck.utils.OnFavouriteButtonClickListener
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 
 class FavouriteTablayoutadapter(
-    private var lsMenu: List<SubExerciseDayExercise>,
+    private var lsMenu: List<ExerciseDayExercise>,
     private val rclClickListener: RecyclerViewClickListener,
     private val onFavouriteButtonClickListener: OnFavouriteButtonClickListener
 ): RecyclerView.Adapter<FavouriteTablayoutadapter.ItemHolder>() {
@@ -47,7 +47,7 @@ class FavouriteTablayoutadapter(
         return ItemHolder(itemBinding,rclClickListener)
     }
 
-    fun setData(list: List<SubExerciseDayExercise>) {
+    fun setData(list: List<ExerciseDayExercise>) {
         this.lsMenu = list
         notifyDataSetChanged()
     }

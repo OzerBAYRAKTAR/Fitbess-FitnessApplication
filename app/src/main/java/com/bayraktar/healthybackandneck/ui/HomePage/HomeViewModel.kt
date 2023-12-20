@@ -19,12 +19,12 @@ class HomeViewModel @Inject constructor(
     private val repo: RoomRepository
 ): ViewModel() {
 
-    private val _exerciseDayExercises: LiveData<List<SubExerciseDayExercise>> = MutableLiveData()
+    private val _exerciseDayExercises: LiveData<List<ExerciseDayExercise>> = MutableLiveData()
     val exerciseDayExercises get() = _exerciseDayExercises
 
 
-    private val _getExerciseListWithLevelAndTitle: MutableLiveData<List<SubExerciseDayExercise>> = MutableLiveData()
-    val getExerciseListWithLevelAndTitle: LiveData<List<SubExerciseDayExercise>> get() = _getExerciseListWithLevelAndTitle
+    private val _getExerciseListWithLevelAndTitle: MutableLiveData<List<ExerciseDayExercise>> = MutableLiveData()
+    val getExerciseListWithLevelAndTitle: LiveData<List<ExerciseDayExercise>> get() = _getExerciseListWithLevelAndTitle
 
 
 
@@ -33,9 +33,9 @@ class HomeViewModel @Inject constructor(
 
 
 
-    fun insertExerciseDayExercise(exerciseDayExercise: List<SubExerciseDayExercise>)= viewModelScope.launch(
+    fun insertExerciseDayExercise(exercises: List<ExerciseDayExercise>)= viewModelScope.launch(
         Dispatchers.IO) {
-        repo.insertSubExerciseDayExercise(exerciseDayExercise)
+        repo.insertSubExerciseDayExercise(exercises)
     }
 
     fun getExerciseListWithLevelAndTitle(titleName: String,level: Int) {
@@ -47,7 +47,7 @@ class HomeViewModel @Inject constructor(
 
     fun fetchExerciseDayExercises() {
         viewModelScope.launch(Dispatchers.IO) {
-            val exercises = repo.getSubExerciseDayExercises()
+            val exercises = repo.getSubExerciseDayExercises(titleName = "noTitle")
             (exerciseDayExercises as MutableLiveData).postValue(exercises)
         }
     }

@@ -40,14 +40,14 @@ class ExerciseDetailSecondViewModel @Inject constructor(
 
     fun getExerciseListWithDayID(dayId: Int,level: Int) {
         viewModelScope.launch(Dispatchers.IO){
-            val exercises  = repo.getExerciseListWithDayID(dayID = dayId,level = level)
+            val exercises  = repo.getExerciseListWithDayID(dayID = dayId,level = level, titleName = "noTitle")
             _getExerciseListWithDay.postValue(exercises)
         }
     }
 
     fun fetchExerciseDayExercisesWithLevelTwo() {
         viewModelScope.launch(Dispatchers.IO) {
-            val exercises = repo.getExerciseDayExercisesWithLevelTwo()
+            val exercises = repo.getExerciseDayExercisesWithLevelTwo(titleName = "noTitle")
             (exerciseDayExercisesLevelTwo as MutableLiveData).postValue(exercises)
         }
     }

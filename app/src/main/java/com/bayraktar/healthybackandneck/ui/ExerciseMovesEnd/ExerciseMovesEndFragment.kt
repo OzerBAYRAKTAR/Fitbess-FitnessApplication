@@ -85,7 +85,6 @@ class ExerciseMovesEndFragment : Fragment() {
         val args = ExerciseMovesEndFragmentArgs.fromBundle(requireArguments())
 
         exerciseArray = args.exerciseNewList
-        subExerciseArray = args.subExerciseNewList
         exerciseDayModel = args.exerciseDayModel
 
         if (exerciseDayModel!!.exerciseCount > 1) {
@@ -94,12 +93,6 @@ class ExerciseMovesEndFragment : Fragment() {
             txtexercise.text = exerciseDayModel?.exerciseCount.toString()
             txtkcal.text = exerciseDayModel?.exerciseKcal.toString()
 
-        } else {
-            subExerciseList = ArrayList(subExerciseArray!!.asList())
-
-            txttime.text = "07:30"
-            txtexercise.text = "7"
-            txtkcal.text = "300"
         }
 
 

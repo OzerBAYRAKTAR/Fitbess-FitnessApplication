@@ -82,8 +82,9 @@ class HomePageFragment : Fragment() {
     private var legList = ArrayList<LegButtModel>()
     private lateinit var legAdapter: LegButtAdapter
 
-    private val exerciseListSend = ArrayList<SubExerciseDayExercise>()
-    private val subExerciseDayExercise = mutableListOf<SubExerciseDayExercise>()
+    private val exerciseListSend = ArrayList<ExerciseDayExercise>()
+    private val dayModel : ExerciseDay ? = null
+    private val subExerciseDayExercise = mutableListOf<ExerciseDayExercise>()
     var exerciseLevel = ""
 
 
@@ -125,7 +126,8 @@ class HomePageFragment : Fragment() {
     }
 
     private fun setOnBoardingItems() = with(binding) {
-        homeAdapter = HomeViewpagerAdapter(requireContext(),
+        homeAdapter = HomeViewpagerAdapter(
+            requireContext(),
             listOf(
                 HomeItem(
                     imageMain = R.drawable.new1_removed,
@@ -649,12 +651,9 @@ class HomePageFragment : Fragment() {
                     exerciseListSend.clear()
                     exerciseListSend.addAll(exercise)
                 }
-                val subExerciseArray = exerciseListSend.toTypedArray()
-                val exerciseArray: Array<ExerciseDayExercise>? = null
-                val model: ExerciseDay? = null
                 val action =
                     HomePageFragmentDirections.actionIdHomepageFragmentToDetailDayFragment(
-                        exerciseArray, subExerciseArray, model, exerciseLevel
+                        exerciseListSend.toTypedArray(), dayModel, exerciseLevel
                     )
                 view?.findNavController()?.navigate(action)
             })
@@ -685,7 +684,8 @@ class HomePageFragment : Fragment() {
                 } else {
                     getString(R.string.not_found)
                 }
-                val exercise = SubExerciseDayExercise(
+                val exercise = ExerciseDayExercise(
+                    id = item.optInt("id"),
                     exerciseId = item.optInt("exerciseId"),
                     titleName = item.optString("titleName"),
                     exerciseName = item.optString("exerciseName"),
@@ -695,7 +695,10 @@ class HomePageFragment : Fragment() {
                         "drawable",
                         requireContext().packageName
                     ),
-                    level = item.optInt("level")
+                    level = item.optInt("level"),
+                    step = 0,
+                    dayId = 0,
+                    isExerciseCompleted = false
                 )
                 subExerciseDayExercise.add(exercise)
 

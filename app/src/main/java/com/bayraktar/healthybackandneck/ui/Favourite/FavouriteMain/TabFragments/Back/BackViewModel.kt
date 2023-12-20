@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Repository.RoomRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,8 +19,8 @@ class BackViewModel @Inject constructor(
 ):ViewModel(){
 
 
-    private val _getExerciseListByTitle: MutableLiveData<List<SubExerciseDayExercise>> = MutableLiveData()
-    val getExerciseListByTitle: LiveData<List<SubExerciseDayExercise>> get() = _getExerciseListByTitle
+    private val _getExerciseListByTitle: MutableLiveData<List<ExerciseDayExercise>> = MutableLiveData()
+    val getExerciseListByTitle: LiveData<List<ExerciseDayExercise>> get() = _getExerciseListByTitle
 
     fun getExerciseListByTitle() {
         viewModelScope.launch(Dispatchers.IO){

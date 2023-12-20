@@ -65,7 +65,6 @@ class ExerciseMovesRestFragment : Fragment() {
                 ExerciseMovesRestFragmentDirections.actionExerciseMovesRestFragmentToExerciseMovesFragment2(
                     currentExerciseIndex + 1,
                     exerciseList.toTypedArray(),
-                    subExerciseList.toTypedArray(),
                     exerciseDayModel!!
                 )
             view.findNavController().navigate(action)
@@ -79,9 +78,7 @@ class ExerciseMovesRestFragment : Fragment() {
             currentExerciseIndex = ExerciseMovesRestFragmentArgs.fromBundle(it).exerciseIndex
             exerciseDayModel = ExerciseMovesRestFragmentArgs.fromBundle(it).exerciseDayModel
             exerciseArray = ExerciseMovesRestFragmentArgs.fromBundle(it).exerciseNewList
-            subExerciseArray = ExerciseMovesRestFragmentArgs.fromBundle(it).subExerciseNewList
 
-            if (exerciseArray?.isNotEmpty() == true) {
                 exerciseList = ArrayList(exerciseArray!!.asList())
 
                 val currentModel = exerciseList[currentExerciseIndex + 1]
@@ -89,15 +86,7 @@ class ExerciseMovesRestFragment : Fragment() {
                 exerciceName.text = currentModel.exerciseName
                 txtRank.text = (currentExerciseIndex + 2).toString()
                 albelRank.text = "/${exerciseList.size.toString()}"
-            } else {
-                subExerciseList = ArrayList(subExerciseArray!!.asList())
 
-                val currentModel = subExerciseList[currentExerciseIndex + 1]
-                gifImageView2.setImageResource(currentModel.image)
-                exerciceName.text = currentModel.exerciseName
-                txtRank.text = (currentExerciseIndex + 2).toString()
-                albelRank.text = "/${subExerciseList.size.toString()}"
-            }
 
         }
     }
@@ -139,26 +128,15 @@ class ExerciseMovesRestFragment : Fragment() {
 
             override fun onFinish() {
 
-                if (exerciseDayModel != null) {
                     val exerciseArray: Array<SubExerciseDayExercise>? = null
                     val action =
                         ExerciseMovesRestFragmentDirections.actionExerciseMovesRestFragmentToExerciseMovesFragment2(
                             currentExerciseIndex + 1,
                             exerciseList.toTypedArray(),
-                            exerciseArray,
                             exerciseDayModel!!
                         )
                     view?.findNavController()?.navigate(action)
-                } else {
-                    val action =
-                        ExerciseMovesRestFragmentDirections.actionExerciseMovesRestFragmentToExerciseMovesFragment2(
-                            currentExerciseIndex + 1,
-                            exerciseList.toTypedArray(),
-                            subExerciseList.toTypedArray(),
-                            exerciseDayModel!!
-                        )
-                    view?.findNavController()?.navigate(action)
-                }
+
             }
 
         }.start()

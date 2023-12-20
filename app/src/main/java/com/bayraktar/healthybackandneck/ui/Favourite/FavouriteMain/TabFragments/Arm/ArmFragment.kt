@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentAbsBinding
 import com.bayraktar.healthybackandneck.databinding.FragmentArmBinding
@@ -32,7 +33,7 @@ class ArmFragment : Fragment(), RecyclerViewClickListener {
 
     private val viewModel : ArmViewModel by viewModels()
 
-    private var armList = ArrayList<SubExerciseDayExercise>()
+    private var armList = ArrayList<ExerciseDayExercise>()
     private lateinit var armAdapter : FavouriteTablayoutadapter
 
 

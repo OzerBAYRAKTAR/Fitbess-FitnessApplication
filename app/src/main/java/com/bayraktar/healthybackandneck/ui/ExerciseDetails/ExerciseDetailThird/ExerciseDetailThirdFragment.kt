@@ -275,6 +275,7 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
                 }
                 if (item.optInt("Level") == 3) {
                     val exercise = ExerciseDayExercise(
+                        id = item.optInt("id"),
                         dayId = item.optInt("DayId"),
                         step = item.optInt("Step"),
                         exerciseName = item.optString("ExerciseName"),
@@ -286,7 +287,8 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
                         ),
                         isExerciseCompleted = item.optBoolean("IsExerciseCompleted"),
                         exerciseId = item.optInt("ExerciseId"),
-                        level = item.optInt("Level")
+                        level = item.optInt("Level"),
+                        titleName = "noTitle"
                     )
                     exerciseDayExercise.add(exercise)
                 }
@@ -326,9 +328,8 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerViewClickListener {
             }
             val exerciseLevel = getString(R.string.hard_level)
             val exerciseArray = exerciseListSend.toTypedArray()
-            val subExerciseArray :Array<SubExerciseDayExercise>? = null
             val action= ExerciseDetailThirdFragmentDirections.actionExerciseDetailThirdFragmentToDetailDayFragment(
-                exerciseArray,subExerciseArray, selectedModel!!,exerciseLevel)
+                exerciseArray, selectedModel!!,exerciseLevel)
             view?.findNavController()?.navigate(action)
         })
     }

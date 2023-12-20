@@ -5,12 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.ItemSubdetaildayBinding
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 
 class MoveListAdapter(
-    private var lsMenu: List<SubExerciseDayExercise>,
+    private var lsMenu: List<ExerciseDayExercise>,
     private val rclClickListener: RecyclerViewClickListener,
 ) : RecyclerView.Adapter<MoveListAdapter.ItemHolder>() {
 
@@ -41,7 +42,7 @@ class MoveListAdapter(
     }
 
     //update old list with new list
-    fun setData(list: List<SubExerciseDayExercise>) {
+    fun setData(list: List<ExerciseDayExercise>) {
         this.lsMenu = list
         notifyDataSetChanged()
     }

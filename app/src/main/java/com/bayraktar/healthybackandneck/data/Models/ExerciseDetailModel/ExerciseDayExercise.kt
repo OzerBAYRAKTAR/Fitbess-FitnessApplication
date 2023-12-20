@@ -7,8 +7,10 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-@Entity(tableName = "exercise_day_exercise",primaryKeys = ["exerciseId", "dayId"])
+@Entity(tableName = "exercise_day_exercise",primaryKeys = ["id"])
 data class ExerciseDayExercise(
+    @SerializedName("id")
+    val id: Int ,
     @SerializedName("ExerciseId")
     val exerciseId: Int,
     @SerializedName("Step")

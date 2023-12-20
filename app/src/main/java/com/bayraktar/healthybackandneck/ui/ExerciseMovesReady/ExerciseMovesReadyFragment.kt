@@ -60,23 +60,12 @@ class ExerciseMovesReadyFragment : Fragment() {
         getSetData()
 
         binding.goNextbtn.setOnClickListener {
-            if (exerciseDayModel != null) {
-                val exerciseArray: Array<SubExerciseDayExercise>? = null
                 val action =
                     ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2(
-                        0, exerciseList.toTypedArray(), exerciseArray, exerciseDayModel
+                        0, exerciseList.toTypedArray(), exerciseDayModel
                     )
                 view.findNavController().navigate(action)
-            } else {
-                val action =
-                    ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2(
-                        0,
-                        exerciseList.toTypedArray(),
-                        subExerciseList.toTypedArray(),
-                        exerciseDayModel
-                    )
-                view.findNavController().navigate(action)
-            }
+
         }
 
     }
@@ -86,13 +75,9 @@ class ExerciseMovesReadyFragment : Fragment() {
         exerciseDayModel = args.exerciseDayModel
 
         exerciseArray = args.exerciseNewList
-        subExerciseArray = args.subExerciseNewList
 
-        if (exerciseDayModel != null) {
             exerciseList = ArrayList(exerciseArray!!.asList())
-        } else {
-            subExerciseList = ArrayList(subExerciseArray!!.asList())
-        }
+
 
     }
 
@@ -134,23 +119,13 @@ class ExerciseMovesReadyFragment : Fragment() {
             }
 
             override fun onFinish() {
-                if (exerciseDayModel != null) {
                     val exerciseArray: Array<SubExerciseDayExercise>? = null
                     val action =
                         ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2(
-                            1, exerciseList.toTypedArray(), exerciseArray, exerciseDayModel
+                            1, exerciseList.toTypedArray(), exerciseDayModel
                         )
                     view?.findNavController()?.navigate(action)
-                } else {
-                    val action =
-                        ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2(
-                            1,
-                            exerciseList.toTypedArray(),
-                            subExerciseList.toTypedArray(),
-                            exerciseDayModel
-                        )
-                    view?.findNavController()?.navigate(action)
-                }
+
             }
 
         }.start()

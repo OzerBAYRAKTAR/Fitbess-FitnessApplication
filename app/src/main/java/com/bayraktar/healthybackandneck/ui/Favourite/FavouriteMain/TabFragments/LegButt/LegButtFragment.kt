@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentAbsBinding
 import com.bayraktar.healthybackandneck.databinding.FragmentLegButtBinding
@@ -32,7 +33,7 @@ class LegButtFragment : Fragment(), RecyclerViewClickListener {
 
     private val viewModel : LegButtViewModel by viewModels()
 
-    private var legButtList = ArrayList<SubExerciseDayExercise>()
+    private var legButtList = ArrayList<ExerciseDayExercise>()
     private lateinit var legButtAdapter : FavouriteTablayoutadapter
 
 

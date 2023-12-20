@@ -42,14 +42,14 @@ class ExerciseDetailThirdViewModel  @Inject constructor(
 
     fun getExerciseListWithDayID(dayId: Int,level : Int) {
         viewModelScope.launch(Dispatchers.IO){
-            val exercises  = repo.getExerciseListWithDayID(dayID = dayId,level = level)
+            val exercises  = repo.getExerciseListWithDayID(dayID = dayId,level = level, titleName = "noTitle")
             _getExerciseListWithDay.postValue(exercises)
         }
     }
 
     fun fetchExerciseDayExercisesWithLevelThird() {
         viewModelScope.launch(Dispatchers.IO) {
-            val exercises = repo.getExerciseDayExercisesWithLevelThird()
+            val exercises = repo.getExerciseDayExercisesWithLevelThird(titleName = "noTitle")
             (exerciseDayExercisesLevelThird as MutableLiveData).postValue(exercises)
         }
     }

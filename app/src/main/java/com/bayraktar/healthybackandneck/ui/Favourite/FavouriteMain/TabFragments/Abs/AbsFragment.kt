@@ -37,7 +37,7 @@ class AbsFragment : Fragment(), RecyclerViewClickListener {
 
     private val viewModel: AbsViewModel by viewModels()
 
-    private var absList = ArrayList<SubExerciseDayExercise>()
+    private var absList = ArrayList<ExerciseDayExercise>()
     private lateinit var absAdapter: FavouriteTablayoutadapter
 
 

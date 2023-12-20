@@ -13,7 +13,7 @@ import javax.inject.Inject
 import javax.inject.Provider
 
 
-@Database(entities = [ExerciseDay::class,ExerciseDayExercise::class,SubExerciseDayExercise::class], version = 6, exportSchema = false)
+@Database(entities = [ExerciseDay::class,ExerciseDayExercise::class,SubExerciseDayExercise::class], version = 7, exportSchema = false)
 @TypeConverters(MovesTypeConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 

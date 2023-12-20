@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.Relations.ExerciseDayWithExerciseDayExercise
-import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Room.MovesDao
 import javax.inject.Inject
 
@@ -20,38 +19,38 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         movesDao.insertExerciseDayExercise(exerciseDayExercises)
     }
 
-    fun insertSubExerciseDayExercise(subExercise: List<SubExerciseDayExercise>) {
-        movesDao.insertSubExerciseDayExercise(subExercise)
+    fun insertSubExerciseDayExercise(exercise: List<ExerciseDayExercise>) {
+        movesDao.insertSubExerciseDayExercise(exercise)
     }
 
-    fun getSubExerciseDayExercises(): List<SubExerciseDayExercise> {
-        return movesDao.getSubExerciseDayExercises()
+    fun getSubExerciseDayExercises(titleName: String): List<ExerciseDayExercise> {
+        return movesDao.getSubExerciseDayExercises(titleName)
     }
 
-    fun getExerciseDayExercisesWithLevelOne(): List<ExerciseDayExercise> {
-        return movesDao.getExerciseDayExercisesWithLevelOne()
+    fun getExerciseDayExercisesWithLevelOne(titleName: String): List<ExerciseDayExercise> {
+        return movesDao.getExerciseDayExercisesWithLevelOne(titleName)
     }
 
-    fun getExerciseDayExercisesWithLevelTwo(): List<ExerciseDayExercise> {
-        return movesDao.getExerciseDayExercisesWithLevelTwo()
+    fun getExerciseDayExercisesWithLevelTwo(titleName: String): List<ExerciseDayExercise> {
+        return movesDao.getExerciseDayExercisesWithLevelTwo(titleName)
     }
 
-    fun getExerciseDayExercisesWithLevelThird(): List<ExerciseDayExercise> {
-        return movesDao.getExerciseDayExercisesWithLevelThird()
+    fun getExerciseDayExercisesWithLevelThird(titleName: String): List<ExerciseDayExercise> {
+        return movesDao.getExerciseDayExercisesWithLevelThird(titleName)
     }
 
-    fun getExerciseListWithDayID(dayID: Int, level: Int): List<ExerciseDayExercise> {
-        return movesDao.getExerciseListWithDayID(dayID, level)
+    fun getExerciseListWithDayID(dayID: Int, level: Int,titleName: String): List<ExerciseDayExercise> {
+        return movesDao.getExerciseListWithDayID(dayID, level,titleName)
     }
 
-    fun getExerciseListByTitleName(titleName: String): List<SubExerciseDayExercise> {
+    fun getExerciseListByTitleName(titleName: String): List<ExerciseDayExercise> {
         return movesDao.getExerciseListByTitleName(titleName)
     }
 
     fun getExerciseListWithTitleAndLevel(
         titleName: String,
         level: Int
-    ): List<SubExerciseDayExercise> {
+    ): List<ExerciseDayExercise> {
         return movesDao.getExerciseListWithTitleAndLEvel(titleName, level)
     }
 
@@ -68,7 +67,7 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         movesDao.updateIsFavouriteToFalse(exerciseId)
     }
 
-    fun getIsFavouriteTrue():List<SubExerciseDayExercise>{
+    fun getIsFavouriteTrue():List<ExerciseDayExercise>{
         return movesDao.getIsFavouriteTrue()
     }
 

@@ -204,10 +204,8 @@ class ExerciseMovesFragment : Fragment() {
         }
         exerciseArray = args.exerciseNewList
 
-        subExerciseArray = args.subExerciseNewList
         currentExerciseIndex = args.exerciseIndex
 
-        if (exerciseArray?.isNotEmpty() == true) {
             exerciseList = ArrayList(exerciseArray!!.asList())
 
             val currentModel = exerciseList[currentExerciseIndex]
@@ -215,15 +213,7 @@ class ExerciseMovesFragment : Fragment() {
             exerciceName.text = currentModel.exerciseName
             txtRank.text = (currentExerciseIndex + 1).toString()
             albelRank.text = "/${exerciseList.size.toString()}"
-        } else {
-            subExerciseList = ArrayList(subExerciseArray!!.asList())
 
-            val currentModel = subExerciseList[currentExerciseIndex]
-            moveGif.setImageResource(currentModel.image)
-            exerciceName.text = currentModel.exerciseName
-            txtRank.text = (currentExerciseIndex + 1).toString()
-            albelRank.text = "/${subExerciseList.size.toString()}"
-        }
 
 
     }
@@ -277,7 +267,6 @@ class ExerciseMovesFragment : Fragment() {
                     // If the current exercise is the last one, navigate to the end fragment directly
                     val action =
                         ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesEndFragment(
-                            subExerciseList.toTypedArray(),
                             exerciseList.toTypedArray(),
                             exerciseDayModel
                         )
@@ -288,7 +277,6 @@ class ExerciseMovesFragment : Fragment() {
                         ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesRestFragment(
                             currentExerciseIndex,
                             exerciseList.toTypedArray(),
-                            subExerciseList.toTypedArray(),
                             exerciseDayModel
                         )
                     view?.findNavController()?.navigate(action)
@@ -301,12 +289,10 @@ class ExerciseMovesFragment : Fragment() {
 
     private fun btnNextMoveClicked() = with(binding) {
         goNext.setOnClickListener {
-            if (exerciseList.size > 0) {
                 if (currentExerciseIndex + 1 == exerciseList.size) {
                     // If the current exercise is the last one, navigate to the end fragment directly
                     val action =
                         ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesEndFragment(
-                            subExerciseList.toTypedArray(),
                             exerciseList.toTypedArray(),
                             exerciseDayModel
                         )
@@ -317,33 +303,11 @@ class ExerciseMovesFragment : Fragment() {
                         ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesRestFragment(
                             currentExerciseIndex,
                             exerciseList.toTypedArray(),
-                            subExerciseList.toTypedArray(),
                             exerciseDayModel
                         )
                     view?.findNavController()?.navigate(action)
                 }
-            }else {
-                if (currentExerciseIndex + 1 == subExerciseList.size) {
-                    // If the current exercise is the last one, navigate to the end fragment directly
-                    val action =
-                        ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesEndFragment(
-                            subExerciseList.toTypedArray(),
-                            exerciseList.toTypedArray(),
-                            exerciseDayModel
-                        )
-                    view?.findNavController()?.navigate(action)
-                } else {
-                    //if current exercise is not the last one, keep go rest fragment
-                    val action =
-                        ExerciseMovesFragmentDirections.actionExerciseMovesFragment2ToExerciseMovesRestFragment(
-                            currentExerciseIndex,
-                            exerciseList.toTypedArray(),
-                            subExerciseList.toTypedArray(),
-                            exerciseDayModel
-                        )
-                    view?.findNavController()?.navigate(action)
-                }
-            }
+
 
         }
     }

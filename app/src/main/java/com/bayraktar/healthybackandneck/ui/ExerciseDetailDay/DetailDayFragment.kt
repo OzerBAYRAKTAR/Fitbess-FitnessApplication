@@ -28,8 +28,8 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
     private var exerciseDayModel: ExerciseDay? = null
     private var exerciseList = ArrayList<ExerciseDayExercise>()
     private var subExerciseList = ArrayList<SubExerciseDayExercise>()
-    private var detailDayAdapter: DetailDayAdapter ? = null
-    private var subDetailDayAdapter: DetailDaySubAdapter ? = null
+    private var detailDayAdapter: DetailDayAdapter? = null
+    private var subDetailDayAdapter: DetailDaySubAdapter? = null
     private var exerciseArray: Array<ExerciseDayExercise>? = null
     private var subExerciseArray: Array<SubExerciseDayExercise>? = null
 
@@ -50,19 +50,12 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
         backstack()
 
         binding.startExercise.setOnClickListener {
-            if (exerciseDayModel != null) {
-                val exerciseArray: Array<SubExerciseDayExercise>? = null
-                val action =
-                    DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment(
-                        exerciseList.toTypedArray(),exerciseArray,exerciseDayModel)
-                view.findNavController().navigate(action)
-            }else {
-                val exerciseArray: Array<ExerciseDayExercise>? = null
-                val action = DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment(
-                    exerciseList.toTypedArray(),subExerciseList.toTypedArray(),exerciseDayModel
-                )
-                view.findNavController().navigate(action)
-            }
+
+            val action = DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment(
+                exerciseList.toTypedArray(), exerciseDayModel
+            )
+            view.findNavController().navigate(action)
+
         }
     }
 
@@ -77,40 +70,34 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
         exerciseDayModel = args.exerciseDayModel
 
         exerciseArray = args.exerciseNewList
-        subExerciseArray = args.subExerciseNewList
-        if (exerciseArray != null) {
 
-            exerciseList = ArrayList(exerciseArray!!.asList())
-            val detailDay = args.exerciseLevel
+
+        exerciseList = ArrayList(exerciseArray!!.asList())
+
+        val detailDay = args.exerciseLevel
+        detaildayFirst.text = detailDay
+
+        if (exerciseDayModel != null) {
             val time = exerciseDayModel?.exerciseTime.toString()
             val formattedTime = "0$time:00"
 
-            detaildayFirst.text = detailDay
             txttime.text = formattedTime
             txtexercise.text = exerciseDayModel?.exerciseCount.toString()
             txtkcal.text = exerciseDayModel?.exerciseKcal.toString()
             txtdaysecond.text = exerciseDayModel?.day.toString()
+        }else {
+            detaildaySecond.visibility = View.GONE
+            txtdaysecond.visibility = View.GONE
 
-            rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
-            detailDayAdapter = DetailDayAdapter(exerciseList, this@DetailDayFragment)
-            rvdaydetail.adapter = detailDayAdapter
-        }
-        if (subExerciseArray != null) {
-            subExerciseList = ArrayList(subExerciseArray!!.asList())
-
-            val detailDay = args.exerciseLevel
-
-            detaildayFirst.text = detailDay
             txttime.text = "07:30"
             txtexercise.text = "7"
-            txtkcal.text = "300(-+20)"
-            txtdaysecond.visibility = View.GONE
-            detaildaySecond.visibility = View.GONE
-
-            rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
-            subDetailDayAdapter = DetailDaySubAdapter(subExerciseList)
-            rvdaydetail.adapter = subDetailDayAdapter
+            txtkcal.text = "300"
         }
+
+
+        rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
+        detailDayAdapter = DetailDayAdapter(exerciseList, this@DetailDayFragment)
+        rvdaydetail.adapter = detailDayAdapter
 
 
     }
@@ -124,7 +111,8 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
     private fun backstack() {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                val action = DetailDayFragmentDirections.actionDetailDayFragmentToIdHomepageFragment()
+                val action =
+                    DetailDayFragmentDirections.actionDetailDayFragmentToIdHomepageFragment()
                 view?.findNavController()?.navigate(action)
             }
         }

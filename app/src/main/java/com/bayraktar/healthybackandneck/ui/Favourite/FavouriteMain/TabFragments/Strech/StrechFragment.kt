@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentAbsBinding
 import com.bayraktar.healthybackandneck.ui.Favourite.FavouriteMain.TabFragments.Abs.AbsViewModel
@@ -31,7 +32,7 @@ class StrechFragment : Fragment(), RecyclerViewClickListener {
 
     private val viewModel : AbsViewModel by viewModels()
 
-    private var strechList = ArrayList<SubExerciseDayExercise>()
+    private var strechList = ArrayList<ExerciseDayExercise>()
     private lateinit var strechAdapter : FavouriteTablayoutadapter
 
 
