@@ -14,6 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentMoveListBinding
 import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayAdapter
@@ -33,7 +34,7 @@ class MoveListFragment : Fragment(),RecyclerViewClickListener {
 
     private val viewModel: MoveListViewModel by viewModels()
 
-    private var favList = ArrayList<SubExerciseDayExercise>()
+    private var favList = ArrayList<ExerciseDayExercise>()
     private var moveListAdapter: MoveListAdapter? = null
 
     override fun onCreateView(
@@ -57,7 +58,7 @@ class MoveListFragment : Fragment(),RecyclerViewClickListener {
                 if (list.any()) {
                     txtEmptyFav.visibility = View.GONE
                     btnCheck.visibility = View.GONE
-                    favList = list as ArrayList<SubExerciseDayExercise>
+                    favList = list as ArrayList<ExerciseDayExercise>
                 }else {
                     txtEmptyFav.visibility = View.VISIBLE
                     btnCheck.visibility = View.VISIBLE

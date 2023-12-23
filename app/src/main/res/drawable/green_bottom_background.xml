@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background shape (optional) -->
+    <item>
+        <shape android:shape="rectangle">
+            <!-- Set the desired background color or leave it empty if not needed -->
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+    <!-- Bottom border -->
+    <item>
+        <shape>
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:width="3dp"
+                android:color="@color/login_color" />
+        </shape>
+    </item>
+</layer-list>

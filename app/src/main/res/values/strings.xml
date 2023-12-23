@@ -216,7 +216,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="middle_level">Orta \nSeviye</string>
     <string name="hard_level">İleri \nSeviye</string>
     <string name="label_day">Gün</string>
-    <string name="label_exercise">Egzersizler</string>
+    <string name="label_exercise">Egzersiz</string>
     <string name="label_minute">dk</string>
     <string name="label_kcal">kcal</string>
     <string name="label_tellus">Bize kendinden bahset</string>
@@ -224,7 +224,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="label_continue">İleri</string>
     <string name="label_male">Erkek</string>
     <string name="label_famale">Kadın</string>
-    <string name="label_yas">Yaşın kaç?</string>
+    <string name="label_yas">Doğum Tarihin?</string>
     <string name="label_height">Boy uzunluğun ne kadar?</string>
     <string name="label_height_desc">Cm olarak boy. Bunu sonradan değiştirebilirsin</string>
     <string name="label_weight">Kilon ne kadar?</string>
@@ -523,6 +523,15 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="lbl_my_favourite">Favorilerim</string>
     <string name="lbl_fav_list_empty">Favori listen boş, favori listeni oluşturmak için antrenman programlarına göz at</string>
     <string name="btn_chec">Gözat</string>
+    <string name="next_move">Sıradaki Hareket</string>
+    <string name="lbl_before">Önceki</string>
+    <string name="lbl_sonraki">Sonraki</string>
+    <string name="lbl_step">Adım</string>
+    <string name="lbl_day">Gün</string>
+    <string name="lbl_month">Ay</string>
+    <string name="lbl_year">Yıl</string>
+    <string name="lbl_levelofmove">Günlük Hareket Seviyen</string>
+    <string name="lbl_levelmove_desc">Hareket seviyeni belirleyerek sana en uygun antrenmanları ayarlamamızı sağlarsın</string>
 
 </resources>
 

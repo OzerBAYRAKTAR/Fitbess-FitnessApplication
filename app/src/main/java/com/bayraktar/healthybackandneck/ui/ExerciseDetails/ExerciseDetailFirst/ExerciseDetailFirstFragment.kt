@@ -59,6 +59,11 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
 
         viewModel.fetchExerciseDayExercisesWithLevelOne()
 
+        binding.imageBack.setOnClickListener {
+            val action = ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToIdHomepageFragment()
+            view.findNavController().navigate(action)
+        }
+
 
     }
 

@@ -111,9 +111,7 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
     private fun backstack() {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                val action =
-                    DetailDayFragmentDirections.actionDetailDayFragmentToIdHomepageFragment()
-                view?.findNavController()?.navigate(action)
+                println("backpress clicked")
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)

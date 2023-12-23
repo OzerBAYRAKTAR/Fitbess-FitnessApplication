@@ -60,12 +60,26 @@
                     android:fontFamily="@font/robotslabrgular"
                     android:gravity="top"
                     android:text="1"
+                    android:layout_marginStart="5dp"
                     android:textColor="@color/white"
-                    android:textSize="19sp"
+                    android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="@+id/roundedImageView"
-                    app:layout_constraintEnd_toEndOf="@+id/roundedImageView"
                     app:layout_constraintStart_toStartOf="@+id/roundedImageView"
                     app:layout_constraintTop_toTopOf="@+id/roundedImageView" />
+
+                <TextView
+                    android:id="@+id/txtDayLbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotslabrgular"
+                    android:gravity="top"
+                    android:text=".Gün"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtDay"
+                    app:layout_constraintEnd_toEndOf="@+id/roundedImageView"
+                    app:layout_constraintStart_toEndOf="@+id/txtDay"
+                    app:layout_constraintTop_toTopOf="@+id/txtDay" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout6"

@@ -1,13 +1,16 @@
 package com.bayraktar.healthybackandneck.ui.ExerciseMovesReady
 
 import android.annotation.SuppressLint
+import android.content.ContentValues
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
@@ -67,6 +70,9 @@ class ExerciseMovesReadyFragment : Fragment() {
                 view.findNavController().navigate(action)
 
         }
+        binding.goMenu.setOnClickListener {
+            backstack()
+        }
 
     }
 
@@ -81,6 +87,15 @@ class ExerciseMovesReadyFragment : Fragment() {
 
     }
 
+    private fun backstack() {
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                Log.d(ContentValues.TAG, "Back pressed")
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+
+    }
 
     private fun timePause() {
 

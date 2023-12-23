@@ -73,6 +73,9 @@
         <action
             android:id="@+id/action_exerciseDetailFirstFragment_to_detailDayFragment"
             app:destination="@id/detailDayFragment" />
+        <action
+            android:id="@+id/action_exerciseDetailFirstFragment_to_id_homepage_fragment"
+            app:destination="@id/id_homepage_fragment" />
     </fragment>
     <fragment
         android:id="@+id/exerciseDetailSecondFragment"
@@ -82,6 +85,9 @@
         <action
             android:id="@+id/action_exerciseDetailSecondFragment_to_detailDayFragment"
             app:destination="@id/detailDayFragment" />
+        <action
+            android:id="@+id/action_exerciseDetailSecondFragment_to_id_homepage_fragment"
+            app:destination="@id/id_homepage_fragment" />
     </fragment>
     <fragment
         android:id="@+id/exerciseDetailThirdFragment"
@@ -91,6 +97,9 @@
         <action
             android:id="@+id/action_exerciseDetailThirdFragment_to_detailDayFragment"
             app:destination="@id/detailDayFragment" />
+        <action
+            android:id="@+id/action_exerciseDetailThirdFragment_to_id_homepage_fragment"
+            app:destination="@id/id_homepage_fragment" />
     </fragment>
 
     <fragment
@@ -112,6 +121,9 @@
             android:name="exerciseDayModel"
             app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay"
             app:nullable="true"/>
+        <action
+            android:id="@+id/action_exerciseMovesFragment_to_detailDayFragment2"
+            app:destination="@id/detailDayFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailDayFragment"

@@ -60,6 +60,11 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
         observeLevelTwo()
         observeExerciseDay()
 
+        binding.imageBack.setOnClickListener {
+            val action = ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToIdHomepageFragment()
+            view.findNavController().navigate(action)
+        }
+
         viewModel.fetchExerciseDayExercisesWithLevelTwo()
 
     }

@@ -47,7 +47,7 @@ class SecondFragment : Fragment() {
         observeCalculates()
         btnClicks()
 
-        binding.numberPicker.setOnValueChangedListener { xx, yy, newVal ->
+        binding.numberPickerDay.setOnValueChangedListener { xx, yy, newVal ->
             selectedAge = newVal
         }
 
@@ -72,7 +72,7 @@ class SecondFragment : Fragment() {
     private fun observeCalculates(){
         dataStoreManager.getAge().asLiveData().observe(viewLifecycleOwner) { age ->
             if (age != 0 ) {
-                binding.numberPicker.value = age
+                binding.numberPickerDay.value = age
             }
         }
     }

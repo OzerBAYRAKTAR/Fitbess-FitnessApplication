@@ -65,25 +65,34 @@ class ExerciseMovesFragment : Fragment() {
         binding.txtTimeLeft.text = "10"
         binding.pbTimer.max = timeSelected
 
+
+        setclicks()
         backstack()
         getSetData()
         startTimerSetup()
-        addToFavouriteList()
         btnPreviousMoveClicked()
         btnNextMoveClicked()
         btnPauseClicked()
-        binding.exerciseInfo.setOnClickListener {
-            showCustomExerciseInfoDialog()
-        }
-        binding.quitExerciseToDetailDay.setOnClickListener {
-            btnCloseClicked()
-        }
+
 
 
     }
+    private fun setclicks() = with(binding) {
+        exerciseInfo.setOnClickListener {
+            showCustomExerciseInfoDialog()
+        }
+        quitExerciseToDetailDay.setOnClickListener {
+            btnCloseClicked()
+        }
+        favoritebtn.setOnClickListener {
+            addToFavouriteList()
+
+        }
+    }
+
+
     private fun addToFavouriteList() = with(binding) {
 
-        if (exerciseArray?.isNotEmpty() == true){
             val currentModel = exerciseList[currentExerciseIndex]
 
             if (!currentModel.isFavourite) {
@@ -100,26 +109,6 @@ class ExerciseMovesFragment : Fragment() {
                 viewModel.updateIsFavouriteToFalse(currentModel.exerciseId)
                 currentModel.isFavourite = !currentModel.isFavourite
             }
-
-        } else {
-            val currentModel = subExerciseList[currentExerciseIndex]
-
-            if (!currentModel.isFavourite) {
-                showToastFavourite(
-                    requireContext(),
-                    "${currentModel.exerciseName}, Favorilerine eklendi.",
-                    Gravity.BOTTOM,
-                    0,
-                    50
-                )
-                viewModel.updateExerciseById(currentModel.exerciseId)
-                currentModel.isFavourite = !currentModel.isFavourite
-            } else {
-                viewModel.updateIsFavouriteToFalse(currentModel.exerciseId)
-                currentModel.isFavourite = !currentModel.isFavourite
-            }
-        }
-
 
     }
 

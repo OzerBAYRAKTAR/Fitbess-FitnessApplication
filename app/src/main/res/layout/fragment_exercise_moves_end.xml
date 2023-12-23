@@ -65,7 +65,7 @@
                 android:layout_width="42dp"
                 android:layout_height="42dp"
                 android:layout_marginTop="7dp"
-                android:src="@drawable/timedetail"
+                android:src="@drawable/timeend"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -119,7 +119,7 @@
                 android:layout_width="42dp"
                 android:layout_height="42dp"
                 android:layout_marginTop="7dp"
-                android:src="@drawable/fitnessdetail"
+                android:src="@drawable/fitnesdetail"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -174,7 +174,7 @@
                 android:layout_width="42dp"
                 android:layout_height="42dp"
                 android:layout_marginTop="7dp"
-                android:src="@drawable/kcaldetail"
+                android:src="@drawable/kcalend"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

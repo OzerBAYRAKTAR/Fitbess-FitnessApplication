@@ -16,7 +16,7 @@
         android:text="@string/getready"
         android:textColor="@color/active"
         android:textSize="31sp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/goNextbtn" />
@@ -33,7 +33,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card1"
         android:layout_width="match_parent"
-        android:layout_height="390dp"
+        android:layout_height="350dp"
         android:layout_marginHorizontal="20dp"
         app:cardCornerRadius="20dp"
         android:layout_marginTop="27dp"
@@ -43,7 +43,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:background="@drawable/emptybutton_back"
+            android:background="@drawable/empty_button_rest"
             android:layout_height="match_parent">
 
             <FrameLayout
@@ -75,18 +75,10 @@
                         android:id="@+id/txtTimeleft"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/max_blue"
-                        android:textSize="26sp"
+                        android:textColor="@color/login_color"
+                        android:textSize="76sp"
                         android:text="0"
                         android:textStyle="bold"
-                        android:fontFamily="@font/robotoslabmedium"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/max_blue"
-                        android:textSize="24sp"
-                        android:text="@string/sec_time_left"
                         android:fontFamily="@font/robotoslabmedium"
                         android:gravity="center"/>
                 </LinearLayout>
