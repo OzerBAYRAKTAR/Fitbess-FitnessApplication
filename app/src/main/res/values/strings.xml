@@ -533,6 +533,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="lbl_levelofmove">Günlük Hareket Seviyen</string>
     <string name="lbl_levelmove_desc">Hareket seviyeni belirleyerek sana en uygun antrenmanları ayarlamamızı sağlarsın</string>
     <string name="lbl_delete_favourite">Hareketi favori listenizden kaldırmak istediğinize emin misiniz?</string>
+    <string name="lbl_item_day">.Gün</string>
 
 </resources>
 

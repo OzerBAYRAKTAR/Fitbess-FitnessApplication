@@ -8,13 +8,16 @@ import kotlinx.android.parcel.Parcelize
 
 
 @Parcelize
-@Entity
+@Entity(tableName = "exercise_days")
 data class ExerciseDay(
-    @PrimaryKey(autoGenerate = false) val dayId: Int = 0,
+    @PrimaryKey(autoGenerate = false)
+    val dayId: Int = 0,
     val day: Int,
+    val level: Int,
     val exerciseCount: Int,
     val exerciseTime: Int,
     val exerciseKcal: Int,
+    val isCompleted: Boolean = false,
     val homeId: Int,
 ): Parcelable  {
     // Convert ExerciseDay object to JSON string

@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/robotslabrgular"
                     android:gravity="top"
-                    android:text=".Gün"
+                    android:text="@string/lbl_item_day"
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="@+id/txtDay"

@@ -25,6 +25,7 @@
     <string name="settings">Settings</string>
     <string name="reach_us">Contact Us</string>
     <string name="search">Search Food</string>
+    <string name="lbl_item_day">.Day</string>
 
     <!-- home fragment viewpager -->
     <string name="hometitle1">Easy Level</string>

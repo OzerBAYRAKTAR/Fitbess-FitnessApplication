@@ -22,6 +22,7 @@ class ExerciseMovesViewModel @Inject constructor(
         MutableLiveData()
     val getExerciseListByTitle: LiveData<List<ExerciseDayExercise>> get() = _getExerciseListByTitle
 
+
     fun getExerciseListByTitle() {
         viewModelScope.launch(Dispatchers.IO) {
             val exercises = repo.getExerciseListByTitleName(titleName = "abs")

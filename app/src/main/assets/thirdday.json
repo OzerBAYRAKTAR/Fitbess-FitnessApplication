@@ -1,0 +1,212 @@
+[
+  {
+    "day": 1,
+    "level": 3,
+    "exerciseCount": 8,
+    "exerciseTime": 7,
+    "isCompleted": false,
+    "exerciseKcal": 340,
+    "dayId": 1,
+    "homeId": 3
+  },
+  {
+    "day": 2,
+    "level": 3,
+    "exerciseCount": 8,
+    "isCompleted": false,
+    "exerciseTime": 7,
+    "exerciseKcal": 240,
+    "dayId": 2,
+    "homeId": 3
+  },
+  {
+    "day": 3,
+    "level": 3,
+    "exerciseCount": 8,
+    "exerciseTime": 8,
+    "isCompleted": false,
+    "exerciseKcal": 375,
+    "dayId": 3,
+    "homeId": 3
+  },
+  {
+    "day": 4,
+    "level": 3,
+    "exerciseCount": 8,
+    "exerciseTime": 7,
+    "isCompleted": false,
+    "exerciseKcal": 300,
+    "dayId": 4,
+    "homeId": 3
+  },
+  {
+    "day": 5,
+    "level": 3,
+    "exerciseCount": 8,
+    "isCompleted": false,
+    "exerciseTime": 8,
+    "exerciseKcal": 350,
+    "dayId": 5,
+    "homeId": 3
+  },
+  {
+    "day": 6,
+    "level": 3,
+    "exerciseCount": 8,
+    "exerciseTime": 7,
+    "exerciseKcal": 290,
+    "isCompleted": false,
+    "dayId": 6,
+    "homeId": 3
+  },
+  {
+    "day": 7,
+    "level": 3,
+    "exerciseCount": 8,
+    "exerciseTime": 8,
+    "isCompleted": false,
+    "exerciseKcal": 330,
+    "dayId": 7,
+    "homeId": 3
+  },
+  {
+    "day": 8,
+    "level": 3,
+    "exerciseCount": 8,
+    "exerciseTime": 7,
+    "exerciseKcal": 310,
+    "dayId": 8,
+    "homeId": 3,
+    "isCompleted": false
+  },
+  {
+    "day": 9,
+    "level": 3,
+    "exerciseCount": 8,
+    "exerciseTime": 7,
+    "isCompleted": false,
+    "exerciseKcal": 290,
+    "dayId": 9,
+    "homeId": 3
+  },
+  {
+    "day": 10,
+    "level": 3,
+    "exerciseCount": 8,
+    "exerciseTime": 8,
+    "isCompleted": false,
+    "exerciseKcal": 340,
+    "dayId": 10,
+    "homeId": 3
+  },
+  {
+    "day": 11,
+    "isCompleted": false,
+    "level": 3,
+    "exerciseCount": 8,
+    "exerciseTime": 8,
+    "exerciseKcal": 240,
+    "dayId": 11,
+    "homeId": 3
+  },
+  {
+    "day": 12,
+    "level": 3,
+    "isCompleted": false,
+    "exerciseCount": 8,
+    "exerciseTime": 8,
+    "exerciseKcal": 270,
+    "dayId": 12,
+    "homeId": 3
+  },
+  {
+    "day": 13,
+    "exerciseCount": 8,
+    "exerciseTime": 7,
+    "isCompleted": false,
+    "exerciseKcal": 290,
+    "dayId": 13,
+    "level": 3,
+    "homeId": 3
+  },
+  {
+    "day": 14,
+    "exerciseCount": 8,
+    "exerciseTime": 7,
+    "exerciseKcal": 330,
+    "dayId": 14,
+    "isCompleted": false,
+    "level": 3,
+    "homeId": 3
+  },
+  {
+    "day": 15,
+    "exerciseCount": 8,
+    "exerciseTime": 7,
+    "exerciseKcal": 330,
+    "dayId": 15,
+    "isCompleted": false,
+    "level": 3,
+    "homeId": 3
+  },
+  {
+    "day": 16,
+    "exerciseCount": 8,
+    "exerciseTime": 7,
+    "exerciseKcal": 410,
+    "isCompleted": false,
+    "dayId": 16,
+    "level": 3,
+    "homeId": 3
+  },
+  {
+    "day": 17,
+    "exerciseCount": 8,
+    "exerciseTime": 8,
+    "isCompleted": false,
+    "exerciseKcal": 290,
+    "dayId": 17,
+    "level": 3,
+    "homeId": 3
+  },
+  {
+    "day": 18,
+    "exerciseCount": 8,
+    "exerciseTime": 7,
+    "exerciseKcal": 340,
+    "dayId": 18,
+    "isCompleted": false,
+    "level": 3,
+    "homeId": 3
+  },
+  {
+    "day": 19,
+    "exerciseCount": 8,
+    "exerciseTime": 8,
+    "exerciseKcal": 240,
+    "isCompleted": false,
+    "dayId": 19,
+    "level": 3,
+    "homeId": 3
+  },
+  {
+    "day": 20,
+    "exerciseCount": 8,
+    "exerciseTime": 8,
+    "exerciseKcal": 270,
+    "isCompleted": false,
+    "dayId": 20,
+    "level": 3,
+    "homeId": 3
+  },
+  {
+    "day": 21,
+    "exerciseCount": 8,
+    "exerciseTime": 7,
+    "isCompleted": false,
+    "exerciseKcal": 290,
+    "dayId": 21,
+    "level": 3,
+    "homeId": 3
+  }
+]

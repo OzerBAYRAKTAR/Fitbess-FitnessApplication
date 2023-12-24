@@ -28,8 +28,7 @@ class ExerciseMovesEndFragment : Fragment() {
     private var exerciseDayModel: ExerciseDay? = null
     private var exerciseList = ArrayList<ExerciseDayExercise>()
     private var exerciseArray: Array<ExerciseDayExercise>? = null
-    private var subExerciseList = ArrayList<SubExerciseDayExercise>()
-    private var subExerciseArray: Array<SubExerciseDayExercise>? = null
+
 
 
     override fun onCreateView(

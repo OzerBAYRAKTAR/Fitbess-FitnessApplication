@@ -154,7 +154,7 @@
     <string name="arm_desc1">Einfache Widerstandsübungen</string>
     <string name="arm_desc2">Kräftigung der Armmuskulatur</string>
     <string name="arm_desc3">Straffung der Arme</string>
-
+    <string name="lbl_item_day">.Tag</string>
     <!-- Abs-->
     <string name="abs">Bauch</string>
     <string name="abs_exercises">Übungen für die Bauchstärkung</string>

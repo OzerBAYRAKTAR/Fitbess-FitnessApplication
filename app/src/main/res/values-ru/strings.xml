@@ -526,6 +526,8 @@
     <string name="lbl_levelmove_desc">Определите свой уровень физической активности, чтобы мы могли подобрать наиболее подходящие тренировки для вас</string>
     <string name="lbl_delete_favourite">Вы уверены, что хотите удалить это упражнение из списка избранных?</string>
 
+    <string name="lbl_item_day">.день</string>
+
 
 
 </resources>

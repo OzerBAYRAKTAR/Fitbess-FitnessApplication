@@ -67,7 +67,6 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             view.findNavController().navigate(action)
         }
 
-
     }
 
     private fun observeLevelOne() {
@@ -156,6 +155,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
         detailList = listOf(
             ExerciseDay(
                 dayId = 1,
+                level = 1,
                 day = 1,
                 exerciseCount = 8,
                 exerciseTime = 7,
@@ -164,6 +164,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ),
             ExerciseDay(
                 dayId = 2,
+                level = 1,
                 day = 2,
                 exerciseCount = 8,
                 exerciseTime = 7,
@@ -172,6 +173,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ),
             ExerciseDay(
                 dayId = 3,
+                level = 1,
                 day = 3,
                 exerciseCount = 8,
                 exerciseTime = 7,
@@ -181,6 +183,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 4,
                 day = 4,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 330,
@@ -189,6 +192,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 5,
                 day = 5,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 290,
@@ -196,6 +200,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ),
             ExerciseDay(
                 dayId = 6,
+                level = 1,
                 day = 6,
                 exerciseCount = 8,
                 exerciseTime = 8,
@@ -205,6 +210,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 7,
                 day = 7,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 330,
@@ -213,6 +219,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 8,
                 day = 8,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 280,
@@ -221,6 +228,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 9,
                 day = 9,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 290,
@@ -229,6 +237,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 10,
                 day = 10,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 240,
@@ -237,6 +246,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 11,
                 day = 11,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 340,
@@ -245,6 +255,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 12,
                 day = 12,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 270,
@@ -253,6 +264,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 13,
                 day = 13,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 290,
@@ -261,6 +273,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 14,
                 day = 14,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 330,
@@ -269,6 +282,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 15,
                 day = 15,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 285,
@@ -277,6 +291,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 16,
                 day = 16,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 325,
@@ -285,6 +300,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 17,
                 day = 17,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 310,
@@ -293,6 +309,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 18,
                 day = 18,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 330,
@@ -301,6 +318,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 19,
                 day = 19,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 290,
@@ -309,6 +327,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 20,
                 day = 20,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 7,
                 exerciseKcal = 285,
@@ -317,6 +336,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             ExerciseDay(
                 dayId = 21,
                 day = 21,
+                level = 1,
                 exerciseCount = 8,
                 exerciseTime = 8,
                 exerciseKcal = 335,

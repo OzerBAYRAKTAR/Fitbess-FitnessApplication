@@ -41,7 +41,7 @@ class ExerciseMovesFragment : Fragment() {
     private var pauseOffSet: Long = 0
     private var isStart = true
 
-    private var exerciseDayModel= ExerciseDay(1,1,1,1,1,1)
+    private var exerciseDayModel= ExerciseDay(1,1,1,1,1,1,false,1)
     private var exerciseList = ArrayList<ExerciseDayExercise>()
     private var exerciseArray: Array<ExerciseDayExercise>? = null
     private var subExerciseList = ArrayList<SubExerciseDayExercise>()

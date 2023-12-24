@@ -19,6 +19,24 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         movesDao.insertExerciseDayExercise(exerciseDayExercises)
     }
 
+    fun insertExerciseDays(exerciseDay: List<ExerciseDay>) {
+        movesDao.insertExerciseDays(exerciseDay)
+    }
+
+    fun getExerciseDaysLevel1(): List<ExerciseDay> {
+        return movesDao.getExerciseDaysLevel1()
+    }
+
+    fun getExerciseDaysLevel2(): List<ExerciseDay> {
+        return movesDao.getExerciseDaysLevel2()
+    }
+
+    fun getExerciseDaysLevel3(): List<ExerciseDay> {
+        return movesDao.getExerciseDaysLevel3()
+    }
+
+
+
     fun insertSubExerciseDayExercise(exercise: List<ExerciseDayExercise>) {
         movesDao.insertSubExerciseDayExercise(exercise)
     }
@@ -54,10 +72,6 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         return movesDao.getExerciseListWithTitleAndLEvel(titleName, level)
     }
 
-
-    fun getExerciseByDay(dayId: Int): List<ExerciseDayWithExerciseDayExercise> {
-        return movesDao.getExerciseDayWithExerciseDayExercise(dayId)
-    }
 
     fun updateIsFavourite(exerciseId: Int){
         movesDao.updateIsFavourite(exerciseId)

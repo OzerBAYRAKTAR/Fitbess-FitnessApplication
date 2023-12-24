@@ -23,12 +23,27 @@ interface MovesDao {
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertExerciseDays(exerciseDay: List<ExerciseDay>)
+
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertSubExerciseDayExercise(exercise: List<ExerciseDayExercise>)
+
+
+    @Query("SELECT * FROM exercise_days WHERE level = 1")
+    fun getExerciseDaysLevel1(): List<ExerciseDay>
+
+
+    @Query("SELECT * FROM exercise_days WHERE level = 2")
+    fun getExerciseDaysLevel2(): List<ExerciseDay>
+
+
+    @Query("SELECT * FROM exercise_days WHERE level = 3")
+    fun getExerciseDaysLevel3(): List<ExerciseDay>
 
 
     @Query("SELECT * FROM exercise_day_exercise where titleName != :titleName")
     fun getSubExerciseDayExercises(titleName: String): List<ExerciseDayExercise>
-
 
     @Query("SELECT * FROM exercise_day_exercise WHERE level = 1 and titleName = :titleName")
     fun getExerciseDayExercisesWithLevelOne(titleName: String): List<ExerciseDayExercise>
@@ -56,9 +71,6 @@ interface MovesDao {
     @Query("Select * from exercise_day_exercise where titleName = :titleName and level = :level")
     fun getExerciseListWithTitleAndLEvel(titleName: String,level:Int): List<ExerciseDayExercise>
 
-    @Transaction
-    @Query("Select * from ExerciseDay where dayId = :dayId")
-    fun getExerciseDayWithExerciseDayExercise(dayId: Int): List<ExerciseDayWithExerciseDayExercise>
 
     @Transaction
     @Query("UPDATE exercise_day_exercise SET isFavourite = 1 Where exerciseId = :exerciseId")
@@ -71,6 +83,11 @@ interface MovesDao {
     @Transaction
     @Query("Select * from  exercise_day_exercise Where isFavourite = 1")
     fun getIsFavouriteTrue():List<ExerciseDayExercise>
+
+
+    @Transaction
+    @Query("Select * from  exercise_day_exercise Where isFavourite = 1")
+    fun updateIsCompleted():List<ExerciseDayExercise>
 
 
 }
