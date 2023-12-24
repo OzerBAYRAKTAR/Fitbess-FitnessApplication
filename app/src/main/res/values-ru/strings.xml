@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Здоровая спина и шея</string>
+
+    <string name="skip">Пропустить</string>
+    <string name="start">Начать</string>
+
+    <string name="open">Открыть</string>
+    <string name="close">Закрыть</string>
+
+    <string name="title1">Поднимись!</string>
+    <string name="desc">Описание</string>
+    <string name="title2">Работайте свое тело!</string>
+    <string name="title3">Двигайтесь!</string>
+    <string name="desc1">Покиньте зону комфорта и откройте для себя себя</string>
+    <string name="desc2">Практикуйте регулярно спорт и здоровое питание для здоровой жизни</string>
+    <string name="desc3">Противостоять бездействию - ДВИГАЙТЕСЬ</string>
+    <string name="healthy_body">Здоровое тело</string>
+    <string name="exercice">Упражнение</string>
+    <string name="exercices">Упражнения</string>
+    <string name="kcal">Калории</string>
+    <string name="time">Время</string>
+    <string name="heart">Пульс</string>
+    <string name="statistics">Статистика</string>
+    <string name="profile">Профиль</string>
+    <string name="settings">Настройки</string>
+    <string name="reach_us">Свяжитесь с нами</string>
+    <string name="search">Поиск продуктов</string>
+
+    <!-- home fragment viewpager -->
+    <string name="hometitle1">Легкий уровень</string>
+    <string name="hometitle2">Средний уровень</string>
+    <string name="hometitle3">Продвинутый уровень</string>
+    <string name="hometitle4">Создайте свою программу</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Привет, пустой фрагмент</string>
+    <string name="easy_program">Простая программа</string>
+
+    <string name="get_start">Начать</string>
+    <string name="easy_desc">Если вы никогда не делали упражнения раньше</string>
+    <string name="middle_desc">Если вы иногда занимаетесь спортом</string>
+    <string name="hard_desc">Если спорт - это ваш образ жизни</string>
+
+    <string name="information">Информация</string>
+    <string name="training_tracking">График тренировок</string>
+    <string name="txthour">Часы</string>
+    <string name="txtcalori">Потрачено \nКалорий</string>
+    <string name="back">Назад</string>
+    <string name="forward">Далее\n</string>
+    <string name="txt_monday">Пн</string>
+    <string name="txt_tuesday">Вт</string>
+    <string name="txt_wednesday">Ср</string>
+    <string name="txt_thursday">Чт</string>
+    <string name="txt_friday">Пт</string>
+    <string name="txt_saturday">Сб</string>
+    <string name="txt_sunday">Вс</string>
+    <string name="trains">Планы упражнений</string>
+    <string name="nutrution_advice">Советы по питанию</string>
+    <string name="nutrition">Питание</string>
+    <string name="nutrition_desc">Несколько советов для здорового питания</string>
+    <string name="breath">Дыхательные упражнения</string>
+    <string name="breath_desc">Эффективные техники дыхания для здорового образа жизни</string>
+    <string name="search_food">Исследуйте продукты</string>
+
+    <string name="diet_title1">Не пропускайте приемы пищи</string>
+    <string name="diet_title2">Пейте много воды</string>
+    <string name="diet_title3">Ограничьте потребление готовой еды</string>
+    <string name="diet_title4">Стремитесь к разнообразию в питании</string>
+    <string name="diet_title5">Ограничьте употребление кофеина</string>
+    <string name="diet_title6">Стремитесь к потреблению пищи, богатой кальцием</string>
+    <string name="diet_title7">Стремитесь к потреблению пищи, богатой витамином C</string>
+    <string name="diet_title8">Стремитесь к потреблению пищи, богатой железом</string>
+    <string name="diet_title9">Употребляйте больше клетчатки</string>
+    <string name="diet_title10">Не пренебрегайте упражнениями</string>
+    <string name="diet_title11">Поддерживайте свой идеальный вес</string>
+    <string name="diet_title12">Снизьте потребление животных и трансжиров</string>
+    <string name="diet_title13">Держитесь подальше от привычки употребления алкоголя и курения</string>
+    <string name="diet_title14">Стремитесь употреблять фрукты</string>
+    <string name="diet_title15">Уделяйте внимание потреблению молочных продуктов</string>
+    <string name="diet_title16">Пищевые волокна должны присутствовать в вашем ежедневном рационе</string>
+    <string name="diet_title17">Добавьте продукты, содержащие цинк, в свой рацион</string>
+
+    <string name="diet_desc1">Пропуск приемов пищи ведет к набору веса и различным заболеваниям. Вот негативные последствия пропуска приемов пищи:Желание есть больше: Вместо того чтобы употреблять пищу по небольшим порциям в течение дня, пропуск приема пищи влечет за собой увеличение аппетита и быстрый набор веса в следующем приеме пищи. Исследования показывают, что пропуск приемов пищи ведет к ожирению в последующем.</string>
+    <string name="diet_desc2">После кислорода самый важный элемент для человеческой жизни - это вода. Человек может выдержать голод несколько недель, но без воды выживет всего лишь несколько дней. Вода необходима для регуляции температуры тела, поддержания обмена веществ и вывода токсинов из организма. Поэтому употребляйте от 2 до 2.5 литров воды в день.</string>
+    <string name="diet_desc3">Готовая еда, пирожные и тяжелые сладости, относимые к вредной еде, содержат большое количество жира и энергии, что способствует набору веса и увеличивает риск заболеваний. Поэтому обязательно ограничьте употребление такой пищи.</string>
+    <string name="diet_desc4">Стремитесь к разнообразному питанию. Пытайтесь включать в свой рацион все продуктовые группы (молоко, мясо, фрукты-овощи, зерновые) ежедневно. Если вы не можете употребить все эти продукты в одном приеме, старайтесь включать их в разные приемы пищи в течение дня.</string>
+    <string name="diet_desc5">Длительное и интенсивное употребление кофеина приводит к физическим и психологическим нарушениям. Кофеин способствует увеличению кислотности, образованию язв и уменьшению уровня кальция в организме. Кроме того, это может вызвать беспокойство, тревожность, депрессию, раздражительность и нарушения сна.</string>
+    <string name="diet_desc6">Кальций играет важную роль не только в развитии костей и зубов, но и в обеспечении крови свертывания, формировании суставов, сокращении мышц, регуляции сердечного ритма и восстановлении нервной системы.</string>
+    <string name="diet_desc7">Эксперты утверждают, что витамин C является одним из самых безопасных и полезных для организма. Среди пользы витамина C можно отметить укрепление иммунной системы, защиту от сердечно-сосудистых заболеваний, проблем до беременности, глазных заболеваний и даже морщин на коже. Исследования показывают, что витамин C полезен для людей с ослабленной иммунной системой из-за стресса. Он быстро исчезает из организма у потребителей алкоголя, курильщиков и ожиревших людей, поэтому это важный критерий для общего здоровья.</string>
+    <string name="diet_desc8">Организму нужен железо для таких метаболических процессов, как образование крови и доставка кислорода к клеткам. Железо также помогает транспортировать кислород, хранить его в мышцах, помогает в производстве гормонов и ферментов, поддерживает защиту от инфекций и укрепляет иммунную систему.</string>
+    <string name="diet_desc9">Клетчатка регулирует форму, объем и количество дефекации, впитывая воду. Она предотвращает запоры. Также, сохраняя здоровье кишечника, она помогает предотвратить такие заболевания, как рак толстой кишки, дивертикулез, геморрой и синдром раздраженного кишечника.</string>
+    <string name="diet_desc10">Регулярные упражнения укрепляют вашу сердечно-сосудистую систему, повышают хороший холестерин и снижают давление. Активный образ жизни снижает риск заболевания сердца на 50%. (Healthline, 2021) Система пищеварения: Занятия спортом помогают снизить проблемы с запорами и поддерживают регулярную работу кишечника.</string>
+    <string name="diet_desc11">Для уменьшения риска заболеваний и поддержания высокой энергии очень важно находиться в пределах здорового веса. Для этого следите за индексом массы тела (ИМТ), процентом жира в организме и обхватом талии и бедер.</string>
+    <string name="diet_desc12">Существует множество причин не употреблять продукты, содержащие трансжиры. Одна из них - это увеличение уровня плохого холестерина (ЛПНП) и снижение уровня хорошего холестерина (ЛПВП). ЛПНП увеличивает вероятность образования скоплений и узлов на стенках артерий. ЛПВП же забирает лишний ЛПНП и возвращает его в печень. Употребление продуктов с трансжирами на длительной основе может привести к серьезным проблемам, таким как сердечные заболевания и инсульты, а также увеличить риск развития ожирения и диабета 2-го типа.</string>
+    <string name="diet_desc13">Алкоголь и курение вызывают множество заболеваний, поэтому их нужно избегать. Эти болезни могут привести к смертельным последствиям. Алкоголь и курение не являются простой привычкой, а их отказ от них довольно сложен. Поэтому лучше избегать алкоголя и курения.</string>
+    <string name="diet_desc14">Фрукты, один из самых ценных подарков природы, не только красочные и вкусные, но и очень полезные для нашего здоровья. Благодаря полезным веществам, содержащимся в них, они помогают избавиться от различных болезней и придать организму здоровый и энергичный облик.</string>
+
+    <string name="diet_desc15">Йогурт содержит все компоненты, которые являются полезными для человеческого питания благодаря метаболическим продуктам, образовавшимся из компонентов молока под воздействием лактических бактерий. Особенно люди с непереносимостью лактозы могут употреблять продукты, похожие на йогурт, более комфортно вместо молока. Непереносимость лактозы возникает из-за недостатка фермента, который разлагает лактозу в организме человека. В йогурте лактоза превращается в молочную кислоту, поэтому недостаток фермента не создает проблемы. Полезные бактерии, образующиеся в результате брожения при производстве йогурта, увеличивают активность кишечника, ускоряют его работу и способствуют удалению токсических веществ из толстого кишечника. Кроме того, они снижают уровень холестерина и поддерживают уровень сахара в крови.</string>
+    <string name="diet_desc16">Пищевые волокна - это растительный углевод, который полностью не расщепляется в организме и обладает такими преимуществами, как обеспечение нормальной работы кишечника, поощрение снижения веса, снижение уровня сахара в крови и улучшение здоровья сердца. Взрослому человеку требуется от 22 до 34 граммов пищевых волокон в зависимости от его возраста и пола.</string>
+    <string name="diet_desc17">Рост и развитие, иммунная система, синтез ДНК, синтез белка, формирование тканей, репродуктивная функция и нейро-поведенческое развитие - все это зависит от цинка. Множество ферментов, участвующих в биохимических процессах, требуют цинка для обеспечения максимальной каталитической активности.</string>
+
+    <string name="next">Следующий</string>
+    <string name="geri">Назад</string>
+    <string name="howto_breath">Наиболее правильный способ дыхания - использование диафрагмы во время вдоха. Когда вы привыкнете к дыханию с использованием диафрагмы, вы можете избавиться от проблем с поверхностным дыханием и почувствовать себя более расслабленно. При дыхании с использованием диафрагмы вы почувствуете, что область живота расширяется. Это позволяет использовать весь объем легких.</string>
+    <string name="breath_technices">Техники дыхания</string>
+    <string name="breath_style">Каков наиболее правильный способ дыхания?</string>
+    <string name="diyafram_desc">Сядьте или лягте в удобное положение. На вдохе надувайте живот, а на выдохе раздувайте его. Таким образом, медленно и глубоко вдыхайте и выдыхайте.</string>
+    <string name="diyafram_title">Дыхание с использованием диафрагмы</string>
+    <string name="four_breath">Четыре Дыхательных Подхода (Дыхание 4-7-8)</string>
+    <string name="fourbreath_desc">Здесь вы применяете определенные числа для последовательного выполнения этапов вдоха, задержки дыхания и выдоха. При вдохе считайте до 4, задерживайте дыхание до 7 и выдыхайте, считая до 8.</string>
+    <string name="counting_breath">Подсчет дыхания</string>
+    <string name="countingbreath_desc">Вы можете считать во время вдоха и выдоха. Например, вдыхая, считайте 1-2, а выдыхая, считайте 1-2-3-4. Это полезный метод для замедления дыхания и расслабления.</string>
+    <string name="medidation_breath">Медитация с Подсчетом Дыхания</string>
+    <string name="mediationbreath_desc">При вдохе считайте "один", а при выдохе считайте "два". Продолжайте считать до 10 и начните сначала. Сосредоточьте внимание на дыхании, чтобы успокоить свой разум.</string>
+    <string name="seyir_breath">Дыхание с Шумом (Ситали Дыхание)</string>
+    <string name="alternatv_nose_breath">Альтернативное Ноздревое Дыхание</string>
+    <string name="seyir_desc">Сделайте язык трубочкой и поместите его между губами. Вдыхайте воздух через этот туннель. Прохладный воздух создает расслабляющий эффект.</string>
+    <string name="alternativ_breath_desc">Закройте правую ноздрю и вдыхайте через левую, затем закройте левую ноздрю и выдохните через правую. Потом повторите в обратном порядке.</string>
+    <string name="closed_breath">Техника Закрытого Дыхания</string>
+    <string name="closed_breath_desc">Вдыхайте, закрыв ноздри, а на выдохе открывайте их. Затем переключитесь: вдыхайте через закрытые ноздри и выдыхайте через открытые.</string>
+    <string name="focus_breath">Фокусировка на Дыхании</string>
+    <string name="not_found">Описание не найдено</string>
+    <string name="focus_breath_desc">Сосредоточьтесь только на своем дыхании. Обратите внимание на ощущения при вдохе и выдохе, а также на ритм дыхания. Если ум улетает, вернитесь к дыханию.</string>
+
+    <!-- Exercise Fragment-->
+    <string name="back_back">Спина-Шея</string>
+    <string name="create_plan">Создать свой план</string>
+    <string name="create_plan_desc">Выберите упражнения и создайте свой план!</string>
+
+    <!--Warm Up-->
+    <string name="strech">Растяжка</string>
+    <string name="warmup_exercises">Упражнения для разминки</string>
+    <string name="warmup_desc1">Растяжка перед упражнениями</string>
+    <string name="warmup_desc2">Разминка для новичков</string>
+    <string name="warmup_desc3">Упражнения по растяжке всего тела</string>
+
+    <!-- Fix Posture-->
+    <string name="posture_exercises">Упражнения для коррекции осанки</string>
+    <string name="posture_desc1">Простые упражнения на растяжку</string>
+    <string name="posture_desc2">Укрепление кора</string>
+    <string name="posture_desc3">Коррекция осанки</string>
+
+    <!-- Neck-Back -->
+    <string name="neck">Шея</string>
+    <string name="neckback_exercise">Упражнения для спины и шеи</string>
+    <string name="back_desc1">Упражнения для спины</string>
+    <string name="back_desc2">Укрепление спины</string>
+    <string name="neck_desc1">Упражнения для шеи</string>
+    <string name="neck_desc2">Укрепление шеи</string>
+
+    <!-- Arm-->
+    <string name="arm">Рука</string>
+    <string name="arm_exercises">Упражнения для укрепления рук</string>
+    <string name="arm_desc1">Простые упражнения с сопротивлением</string>
+    <string name="arm_desc2">Укрепление мышц рук</string>
+    <string name="arm_desc3">Упругость рук</string>
+
+    <!-- Abs-->
+    <string name="abs">Пресс</string>
+    <string name="abs_exercises">Упражнения для укрепления пресса</string>
+    <string name="abs_desc1">Простые упражнения с сопротивлением</string>
+    <string name="abs_desc2">Укрепление мышц пресса</string>
+    <string name="abs_desc3">Упражнения для трехмерного пресса</string>
+
+    <!-- Leg-Butt -->
+    <string name="leg">Ноги-Ягодицы</string>
+    <string name="leg_exercises">Упражнения для Ног и Ягодиц</string>
+    <string name="leg_desc1">Упражнения для Ног</string>
+    <string name="leg_desc2">Укрепление Ног</string>
+    <string name="leg_desc3">Упражнения для Ягодиц</string>
+    <string name="leg_desc4">Упругость Ягодиц</string>
+    <string name="txt_time">Потраченное\n    Время</string>
+    <string name="txt_calori">Калории</string>
+    <string name="txt_alltime">Всё Время</string>
+    <string name="txt_bodyparameters">Параметры Тела</string>
+    <string name="txt_record">Все Достижения За Все Время</string>
+    <string name="booty">Ягодицы</string>
+    <string name="belly">Поясница</string>
+    <string name="chest">Грудь</string>
+    <string name="body_indeks">Индекс Массы Тела (ИМТ)</string>
+    <string name="height">Длина Тела (см)</string>
+    <string name="height_label">Длина</string>
+    <string name="weight">Вес (кг)</string>
+    <string name="weight_label">Вес</string>
+    <string name="water_label">Уровень Воды</string>
+    <string name="sleep">Сон</string>
+    <string name="newTest">Новый Измерения</string>
+    <string name="categorie">Категория</string>
+    <string name="indeks">Индекс</string>
+    <string name="reminders">Напоминания</string>
+    <string name="app_settings">Настройки Приложения</string>
+    <string name="water_reminder">Напоминание о Воде</string>
+    <string name="enough_drink_water">Достаточное Потребление Воды</string>
+    <string name="enough_drink_water_desc">Пить воду помогает избежать обезвоживания и максимально использовать упражнения, которые вы выполняете</string>
+    <string name="notifications">Уведомления</string>
+    <string name="open_notifications">Открыть Уведомления</string>
+    <string name="open_notifications_desc">Чтобы поддерживать здоровье и форму в тонусе, включите уведомления. Они необходимы для напоминания о ваших планах упражнений и поддержания вас в мотивированном состоянии.</string>
+    <string name="languages">Языковые Настройки</string>
+    <string name="restart">Перезапустить Прогресс</string>
+    <string name="theme">Изменить Тему</string>
+    <string name="helpus">Помогите нам</string>
+    <string name="rateus">Оцените нас</string>
+    <string name="shareus">Поделитесь с друзьями</string>
+    <string name="privacy">Политика Конфиденциальности</string>
+    <string name="easy_level">Начальный\nУровень</string>
+    <string name="easy_level_fil">Начальный Уровень</string>
+    <string name="easy">Начальный Уровень</string>
+    <string name="middle_level">Средний\nУровень</string>
+    <string name="hard_level">Продвинутый\nУровень</string>
+    <string name="label_day">День</string>
+    <string name="label_exercise">Упражнение</string>
+    <string name="label_minute">мин</string>
+    <string name="label_kcal">ккал</string>
+    <string name="label_tellus">Расскажите о себе</string>
+    <string name="label_tellus_desc">Для предоставления вам более качественного сервиса, нам нужно узнать о вас больше</string>
+    <string name="label_continue">Далее</string>
+    <string name="label_male">Мужчина</string>
+    <string name="label_famale">Женщина</string>
+    <string name="label_yas">Дата рождения?</string>
+    <string name="label_height">Какова ваша длина?</string>
+    <string name="label_height_desc">В сантиметрах. Вы можете изменить это позже</string>
+    <string name="label_weight">Каков ваш вес?</string>
+    <string name="label_weight_desc">В килограммах. Вы можете изменить это позже</string>
+    <string name="label_yas_desc">Это поможет создать ваш персональный план тренировок</string>
+    <string name="label_back">Назад</string>
+    <string name="label_aim">Ваши цели?</string>
+    <string name="label_aim_desc">Вы можете выбрать несколько целей. Вы можете изменить это позже</string>
+    <string name="number_picker_formatter">%02d</string>
+    <string name="label_getfit">Стать в форме</string>
+    <string name="label_gainweight">Набрать вес</string>
+    <string name="label_loseweight">Сбросить вес</string>
+    <string name="label_buildmuscle">Нарастиить мышцы</string>
+    <string name="label_improveindruce">Улучшить выносливость</string>
+    <string name="label_others">Другие</string>
+    <string name="exercise_move">Движение</string>
+    <string name="time_min">Минута</string>
+    <string name="general_progress">Общий Прогресс</string>
+    <string name="splash_1">Введённая информация анализируется…</string>
+    <string name="splash_2">Подходящие упражнения ищутся…</string>
+    <string name="splash_3">Готовится ваш персональный план…</string>
+    <string name="getready">Готовьтесь к упражнениям!</string>
+    <string name="sec_time_left">Осталось секунд</string>
+    <string name="get_rest">Отдыхайте сейчас!</string>
+    <string name="congrulations">ПОЗДРАВЛЯЕМ!</string>
+    <string name="workout_complete">Вы успешно завершили тренировку.</string>
+    <string name="skip_Rest">Пропустить Отдых</string>
+    <string name="home">Главная</string>
+
+
+    <!-- Foody-->
+    <string name="meat">Мясо</string>
+    <string name="milkprodct">Молочные продукты</string>
+    <string name="fresh">Овощи</string>
+    <string name="fruit">Фрукты</string>
+    <string name="other">Прочее</string>
+    <string name="legume">Бобовые</string>
+
+    <!-- Fresh-->
+    <string name="patates">Картофель</string>
+    <string name="patlican">Баклажан</string>
+    <string name="marul">Салат</string>
+    <string name="havuc">Морковь</string>
+    <string name="roka">Руккола</string>
+    <string name="tere">Укроп</string>
+    <string name="sogan">Лук</string>
+    <string name="biber">Перец</string>
+    <string name="domates">Помидор</string>
+
+    <!-- Meat-->
+    <string name="antrikot">Антрекот</string>
+    <string name="biftek">Бифштекс</string>
+    <string name="bonfile">Филе</string>
+    <string name="kiyma">Фарш</string>
+    <string name="hindi">Индейка</string>
+    <string name="kuzu">Баранина</string>
+    <string name="tavuk">Курица</string>
+    <string name="ordek">Утка</string>
+    <string name="ahtapot">Осьминог</string>
+    <string name="karides">Креветка</string>
+    <string name="alabalık">Форель</string>
+    <string name="levrek">Лаврак</string>
+    <string name="kalamar">Кальмар</string>
+    <string name="hamsi">Шпрот</string>
+    <string name="somon">Лосось</string>
+
+    <!-- Milk-->
+    <string name="sut">Молоко</string>
+    <string name="yogurt">Йогурт</string>
+    <string name="taze_peynir">Свежий сыр</string>
+    <string name="kasar_peynir">Кашкавал</string>
+    <string name="lor_peynir">Лор сыр</string>
+    <string name="ayran">Айран</string>
+    <string name="kefir">Кефир</string>
+    <string name="tereyagi">Топленое масло</string>
+    <string name="yumurta">Яйцо</string>
+
+    <!-- Fruit-->
+    <string name="muz">Банан</string>
+    <string name="elma">Яблоко</string>
+    <string name="armut">Груша</string>
+    <string name="cilek">Клубника</string>
+    <string name="karpuz">Арбуз</string>
+    <string name="kavun">Дыня</string>
+    <string name="seftali">Персик</string>
+    <string name="kayisi">Абрикос</string>
+    <string name="erik">Слива</string>
+    <string name="incir">Инжир</string>
+    <string name="uzum">Виноград</string>
+    <string name="kiraz">Вишня</string>
+
+    <!-- Legume-->
+    <string name="bakla">Бобы</string>
+    <string name="bamya">Окра</string>
+    <string name="barbunya">Красная фасоль</string>
+    <string name="bezelye">Горох</string>
+    <string name="borulce">Чечевица</string>
+    <string name="mercimek">Мерцемек</string>
+    <string name="kestane">Каштан</string>
+    <string name="fasulye">Фасоль</string>
+    <string name="nohut">Нут</string>
+    <string name="ceviz">Грецкий орех</string>
+    <string name="fistik">Фисташки</string>
+    <string name="yesil_fasulye">Зеленая фасоль</string>
+    <string name="tofu">Тофу</string>
+    <string name="badem">Миндаль</string>
+    <string name="txtiron">Железо</string>
+    <string name="txtmagnesium">Магний</string>
+    <string name="txtpotasium">Калий</string>
+    <string name="txtsodium">Натрий</string>
+    <string name="txtcalsium">Кальций</string>
+    <string name="txtoil">Масло</string>
+    <string name="txtcarb">Углеводы</string>
+    <string name="txtprotein">Протеин</string>
+    <string name="txtvitaminc">Витамин C</string>
+
+    <string name="attention">Внимание</string>
+    <string name="alertmessage">Вы уверены, что хотите выйти?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="label_age">Возраст</string>
+    <string name="label_dayofcalorie">Ежедневная калорийность</string>
+    <string name="label_fatrate">Процент жира в теле</string>
+    <string name="label_yourfaterate">Ваш процент жира</string>
+    <string name="label_low">Низкий уровень активности</string>
+    <string name="label_middle">Средний уровень активности</string>
+    <string name="label_high">Высокий уровень активности</string>
+    <string name="label_toohigh">Слишком высокий уровень активности</string>
+    <string name="label_save">Сохранить</string>
+    <string name="label_calculate">Рассчитать</string>
+    <string name="label_neckcm">Обхват шеи (см)</string>
+    <string name="label_gender">Пол</string>
+    <string name="label_man">Мужчина</string>
+    <string name="label_female">Женщина</string>
+    <string name="label_dailycalorie">Ежедневная калорийность</string>
+    <string name="label_activitylevel">Уровень активности</string>
+    <string name="label_bellycm">Обхват талии (см)</string>
+    <string name="label_buttcm">Обхват бедер (см)</string>
+    <string name="label_inputattention">Пожалуйста, введите действительное значение</string>
+    <string name="label_fillall">Пожалуйста, заполните все поля</string>
+    <string name="label_okay">Хорошо</string>
+    <string name="label_bmi">Индекс массы тела</string>
+    <string name="label_dailyCalorieRequirement">Ежедневная калорийность</string>
+    <string name="label_zayif">Худой</string>
+    <string name="label_fat">Тучный</string>
+    <string name="label_weighted">Весомый</string>
+    <string name="label_normal">Нормальный</string>
+    <string name="label_tryagain">Попробуйте снова</string>
+    <string name="label_yourfatrate">Процент жира в вашем теле</string>
+    <string name="label_yourdailycaloriereq">Ежедневная калорийность, необходимая для вас</string>
+    <string name="label_drinkwater">Вставайте и пейте воду!</string>
+    <string name="label_timetodrinkwater">Пора пить воду!</string>
+    <string name="label_waterreminder">Напоминание о воде</string>
+    <string name="label_fitnessreminder">Напоминание о фитнесе</string>
+    <string name="label_dofitness">Пора заниматься фитнесом!</string>
+    <string name="label_selectlanguage">Выбор языка</string>
+    <string name="label_cancel">Отмена</string>
+    <string name="label_restartmessage">Весь ваш прогресс будет удален. Вы уверены, что хотите продолжить?</string>
+    <string name="label_attention">Внимание</string>
+    <string name="label_shareus">Поделитесь приложением со своими друзьями!</string>
+    <string name="label_shareerror">Не найдено приложение для предоставления</string>
+    <string name="label_sharevia">Поделиться через</string>
+    <string name="label_reviewerror">Не удалось проголосовать</string>
+    <string name="label_ratingsuccess">Голосование завершено успешно</string>
+
+    <!-- Bacak-Popo -->
+    <string name="e90_b1_bird_dog">Принимаем положение ползка, вытягиваем правую руку и левую ногу вперед, после выполнения движения продолжаем с другой рукой и ногой</string>
+    <string name="e91_b2_jump_squat">Поднимаем руки до уровня лица, приседаем, затем делаем прыжок вверх</string>
+    <string name="e92_b3_glute_bridge">Ложимся на пол, сгибаем колени, поднимаем таз вверх, держим руки с умеренным весом</string>
+    <string name="e93_b4_quadruped_hip_extension">В ползковом положении поднимаем ногу назад, удерживая вес на колене</string>
+    <string name="e94_b5_plie_squat">Разводим ноги, стоим на них с весом в руках, максимально приседаем и поднимаемся</string>
+    <string name="e95_b6_reverse_lunge_forward_hand">Стоим, руки вытянуты вперед, поочередно опускаемся на колено правой и левой ногой</string>
+    <string name="e96_b7_fire_hydrants">В ползковом положении поднимаем правую и затем левую ногу в стороны</string>
+    <string name="e97_b8_clamshells">Лежа на боку, разводим ноги в стороны</string>
+    <string name="e98_b9_split_squat">Руки в стороны, стоим, сгибаем колено вперед</string>
+    <string name="e99_b10_reverse_lunge">Стоим, отводим ногу назад, сгибаем колено</string>
+    <string name="e100_b11_standing_bend_over">Стоим, руки над шеей, наклоняемся вперед</string>
+    <string name="e101_b12_chair_squat">Сидим на стуле, руки не двигаясь, садимся и встаем</string>
+    <string name="e102_b13_crab_walk">Сидим на стуле, надеваем резинку на ноги, делаем шаги вправо и влево без движения рук</string>
+    <string name="e103_b14_donkey_kick">В ползковом положении поднимаем ногу назад, удерживая вес на колене</string>
+    <string name="e104_b15_frog_jumps">Сидим на корточках, быстро прыгаем вверх</string>
+    <string name="e105_b16_grace_marching_bridge_extension">Лежим на спине, руки к пяткам, поднимаем ноги поочередно вверх</string>
+    <string name="e106_b17_high_donkey_kick">Лежим на животе, руки на уровне плеч, поднимаем правое и затем левое колено назад</string>
+    <string name="e107_b18_squats">Сгибаемся и поднимаемся с весом в руках</string>
+    <string name="e108_b19_pull_single_leg">В ползковом положении, держим вес в правой руке, разводим правую руку и ногу в стороны, затем выполняем то же самое с другой стороной</string>
+    <string name="e109_b20_single_leg_deadlift">Стоим на одной ноге, наклоняемся вперед, касаясь рукой носка, вытягиваем другую ногу назад</string>
+    <string name="e110_b21_step_out_squat_with_pulse">С весом в руках делаем приседания, выпрямляем и сгибаем правую и затем левую ногу</string>
+
+    <!-- Boyun -->
+    <string name="e1_b1_sitting_side_bends">Сидим на стуле, сохраняя прямую осанку, наклоняемся вправо и влево без движения головы</string>
+    <string name="e2_b2_neck_rotation">Сидим на полу, фиксируем голову и выполняем вращательные движения шеей</string>
+    <string name="e3_b3_forward_and_back_bend">Сидим на полу, фиксируем голову руками, наклоняемся вперед и назад</string>
+    <string name="e4_b4_forward_dive">Стоим, правая рука касается лба, выполняем движения головой вперед и назад</string>
+    <string name="e5_b5_back_and_forward_band">Стоим, наклоняем голову назад</string>
+    <string name="e6_b6_neck_rotation">Сидим, поворачиваем голову вправо и влево</string>
+    <string name="e7_b7_shoulder_rotation">Сидим, без движения головы, вращаем плечи по очереди вверх и вниз</string>
+    <string name="e8_b8_side_bends">Сидим, наклоняем голову вправо и влево</string>
+    <string name="e9_b9_upper_body_rotation">Стоим, опираемся рукой на стену, поворачиваем верхнюю часть тела</string>
+    <string name="e10_b10_shoulder_shrug">Стоим, одновременно поднимаем плечи к ушам</string>
+    <string name="e11_b11_get_up_straight">Сидим на стуле, руки за спиной, встаем и садимся без опоры</string>
+    <string name="e12_b12_sitting_dive">Сидим на предмете высотой 15-20 см, втягиваем и выпускаем грудь, сохраняя шею в неизменном положении</string>
+    <string name="e13_b13_lying_dive">Лежим на полу, немного согнув ноги, поднимаем и опускаем голову вместе с шеей</string>
+    <string name="e14_b14_sitting_shoulder_rotation">Сидим на стуле, руки в треугольной форме на уровне плеч, поднимаем и опускаем локти</string>
+    <string name="e15_b15_chair_back_strech">Сидим на стуле, руки на шее, ноги в стороны на уровне живота</string>
+    <string name="e16_b16_superman">Лежим на животе, поднимаем руки и ноги вверх</string>
+    <string name="e17_b17_lying_neck_extension">Лежим на полу, слегка согнув ноги, руки за спиной, вращаем голову вправо и влево</string>
+
+    <!-- Karın -->
+    <string name="e18_k1_sit_up">Сесть на пол наполовину, опираясь руками назад, двигать спину и ноги вперед-назад</string>
+    <string name="e19_k2_scissor_kicks">Лежа на полу, руки остаются неподвижными, поднимать и опускать ноги в воздух поочередно</string>
+    <string name="e20_k3_bicycle_crunch_slowed">Лежа на полу с изогнутыми ногами, руки за головой, поворачивать верхнюю часть тела вправо и влево, при этом приводить ноги к животу</string>
+    <string name="e21_k4_russian_twist">Лежа на полу с изогнутыми ногами, руки за головой, чередовать поднятие и опускание рук к противоположным бедрам</string>
+    <string name="e22_k5_hold_leg_raise">Лежа на спине с поднятыми в воздух ногами, слегка поднимать и опускать тело вверх от пояса</string>
+    <string name="e23_k6_lying_reaches">Лежа на руках, поднимать поочередно ноги вверх и касаться рукой противоположной ноги</string>
+    <string name="e24_k7_fast_crunchs">Лежа на полу с полусогнутыми коленями, поднимать верх тела в положении полу-сидя</string>
+    <string name="e25_k8_seated_punchs">Сидя на полу с поддержкой руками на икрых, назад и вперед натягивать тело, выполняя левый и правый крюк</string>
+    <string name="e26_k9_side_reaches">Сидя на полу с согнутыми коленями, протягивать руки вперед параллельно коленям, разводя руки в стороны</string>
+    <string name="e27_k10_toe_reach">Лежа на спине, касаться рукой противоположной ноги</string>
+    <string name="e28_k11_reverse_crunch">Лежа на спине с поднятыми в воздух ногами, поднимать одну руку назад и одну ногу вперед, сменяя стороны</string>
+    <string name="e29_k12_full_crunch">Лежа на спине с полусогнутыми ногами, поднимать верх тела к коленям</string>
+    <string name="e30_k13_single_side_up">Лежа на спине с поднятыми в воздух ногами, поднимать верх тела, подтягивая одну ногу к другой</string>
+    <string name="e31_k14_to_v_sit">Лежа на спине с протянутыми руками и приближая их к коленям, затем отводя их назад</string>
+    <string name="e32_k15_single_leg_raise">Лежа на спине, поднимать ноги к животу</string>
+    <string name="e33_k16_standing_throw_knee">Стоя на прямых ногах, поднимать ноги к животу и туловище в противоположную сторону</string>
+    <string name="e34_k17_standing_single_leg_up">Стоя на прямых ногах, поднимать ноги к локтям</string>
+    <string name="e35_k18_t_position">Стоя на прямых ногах, выполнять поворот туловища влево и вправо</string>
+    <string name="e36_k19_standing_to_push_up">Из положения приседа с поддержкой руками на полу, выполнять прыжок в положение отжимания и обратно</string>
+    <string name="e37_k20_lying_leg_up">Лежа на боку на локтях, поднимать и опускать ноги</string>
+    <string name="e38_k21_reverse_crunch">Лежа на спине с поднятыми в воздух ногами, поднимать одну руку назад и одну ногу вперед, сменяя стороны</string>
+    <string name="e39_k22_standing_shake">Стойка с легко согнутыми коленями и локтями, делать вибрацию туловища влево и вправо</string>
+    <string name="e40_k23_modified_plank">Из положения планки на поддержке на носках и руках, касаться рукой противоположного плеча</string>
+    <string name="e41_k24_mountain_climb">Из положения планки на поддержке на носках и руках, подтягивать поочередно ноги к животу</string>
+
+    <!-- kol -->
+    <string name="e42_a1_seated_dips">Сидя спиной к стулу, опираясь руками, поднимать и опускать тело к полу</string>
+    <string name="e43_a2_triceps_push_up">Сидя на полу, поднимать и опускать тело без опоры спины, поддерживая тело руками</string>
+    <string name="e44_a3_bend_over_arm_extension">Стоя на руках и носках, сгибать руки вперед и снова возвращать в исходное положение</string>
+    <string name="e45_a4_pushup_overhead">Стоя на руках и носках, поднимать и опускать тело вниз и вверх</string>
+    <string name="e46_a5_lying_triceps_extensions">Лежа на полу с подтянутыми к бедрами ногами, поднимать и опускать руки с гантелями</string>
+    <string name="e47_a6_punch_left_right">Стоя в стойке, менять направление туловища и выполнять удары кулаками</string>
+    <string name="e48_a7_tricep_dips">Стоя на руках и ногах, поднимать и опускать тело</string>
+    <string name="e49_a8_knee_push_ups">Стоя на руках и коленях, опускать и поднимать тело, делая отжимания</string>
+    <string name="e50_a9_modified_push_ups">Лежа на полу на руках и носках, опускать и поднимать тело, сменяя опору с одного локтя на другой</string>
+    <string name="e51_a10_slowed_pushups">Лежа на полу на руках и носках, опускать и поднимать тело, сильно сгибая локти</string>
+    <string name="e52_a11_lying_shoulder_extension">Лежа на полу на руках и носках, руки сгибать и разгибать назад поочередно</string>
+    <string name="e53_a12_push_up_strech">Лежа на полу на руках и носках, опускать и поднимать тело, смещая опору с одного локтя на другой</string>
+    <string name="e54_a13_front_overhead_raise">Стоя на прямых ногах, поднимать и опускать руки с гантелями вверх и вниз</string>
+    <string name="e55_a14_front_raise">Поднимать руки с гантелями к плечам и опускать их</string>
+    <string name="e56_a15_air_curls">Поднимать и опускать руки с гантелями, делая приседания</string>
+    <string name="e57_a16_single_arm_overhead_press">Поднимать и опускать руки с гантелями, меняя их положение относительно туловища</string>
+
+    <!-- Спина -->
+    <string name="e58_s1_bend_from_back">Стоя на коленях, поддерживая руки на поясе, сгибаться назад</string>
+    <string name="e59_s2_shoulder_mobility">В положении на руках и коленях, растягивать назад</string>
+    <string name="e60_s3_camel_back_strech">В положении на руках и коленях, растягивать поясницу вверх и вниз</string>
+    <string name="e61_s4_floor_pull_up">С поддержкой рук на полу, лежа на животе, растягивать верхнюю часть спины назад</string>
+    <string name="e62_s5_seated_side_reach_to_foot">Сидя, согнув левую ногу внутрь, вытягивать правую ногу вперед, руки дотрагиваются до правых пальцев стопы, растягивая тело вперед, после чего менять положение ног</string>
+    <string name="e63_s6_seated_singe_side_reach_to_foot">Сидя, согнув левую ногу внутрь, разведя правую ногу в сторону, правая рука удерживает правую ногу, левая рука в воздухе, растягивая тело вправо, после чего менять положение ног</string>
+    <string name="e64_s7_lying_knee_to_chest">Лежа на спине, руки держат колени, приближать и отдалять колени от живота</string>
+    <string name="e65_s8_lying_knee_to_stomatch">Лежа на спине, перекрывая ноги, руки помогают приблизить и отдалить ноги от живота</string>
+    <string name="e66_s9_lying_leg_to_sides">Лежа на спине, поднять ноги вертикально, развести руки в стороны, опускать ноги поочередно вправо и влево, повернув голову в противоположную сторону</string>
+    <string name="e67_s10_lying_leg_raise">Лежа на спине, поднять ноги вертикально, развести руки в стороны, опускать поочередно правую и левую ногу к колену другой ноги</string>
+    <string name="e68_s11_seated_knee_raise">Сидя, вытянуть ноги вперед, руки на коленях, поочередно прикладывать правую и левую ногу к другому колену</string>
+    <string name="e69_s12_strech_to_foots">Сидя, вытянуть ноги вперед, руки доходят до пальцев ног, растягивая тело вперед</string>
+    <string name="e70_s13_standing_leg_extension">Стоя на ногах и расставив руки, поднимать ноги к голове, а затем выполнять движение назад, к коленям</string>
+    <string name="e71_s14_up_down_sumo">Стойка с перекрещенными ногами, быстро садиться и вставать</string>
+    <string name="e72_s15_curtsy_lunge_with_knee_raise_lift">Одно колено на полу, сгибаясь вперед, одной рукой поднимать вес в сторону, в то время как вторая рука подтягивает другое колено в сторону, затем менять стороны</string>
+    <string name="e73_s16_half_floor_pull_up">Лежа на животе с разведенными ногами, поднимать руки до уровня головы, поднимать ноги без сгибания коленей</string>
+    <string name="e74_s17_down_to_up_clapping">Стойка с руками и ногами, поднимать и опускать руки и ноги</string>
+    <string name="e75_s18_shoulder_leg_streching">Стойка с расставленными ногами и руками, быстро разводить ноги и соединять руки</string>
+    <string name="e76_s19_standing_reach_to_foot">Стойка, касаться правой и левой рукой правой и левой стопы соответственно</string>
+    <string name="e77_s20_jumping_sides">Сидя с одной рукой на полу, прыгать назад и затем вернуться в исходное положение, повторяя это движение</string>
+
+    <!-- Йога -->
+    <string name="e78_y1_standing_shoulder_extension">С одной рукой на полу и ноги на боку, сидеть на полу, вытягивать другую руку назад</string>
+    <string name="e79_y2_standing_leg_streching">Руки на поясе, стоя на одной ноге, выполнять растяжку вперед и назад другой ноги</string>
+    <string name="e80_y3_curtsy_squat_fast">Стоя в позиции бега, прыгать в стороны, меняя ноги</string>
+    <string name="e81_y4_seated_side_extensions">С поддержкой рук и ног, лежать на спине в позиции "v", вытягивать руки назад, сохраняя тело прямым</string>
+    <string name="e82_y5_single_leg_extension">С поддержкой рук и ног, лежать на спине в позиции "v", одной ногой двигать ее через другую</string>
+    <string name="e83_y6_mountain_pushups">Руки на уровне плеч, стоя на пальцах, выполнять поднимание одной за другую ноги к уровню плеч и затем прыгать</string>
+    <string name="e84_y7_side_plank_leg_raise">С опорой на локти и вытянувшись в сторону, поднимать одну ногу, разделяя их друг от друга</string>
+    <string name="e85_y8_down_to_up_hand_raise">Брать подходящий вес и выполнять подъем веса сидя</string>
+    <string name="e86_y9_plank_extension">В планке передвигать тело вперед и назад</string>
+    <string name="e87_y10_plank_walk">В планке передвигать тело вперед и назад, как во время ходьбы</string>
+    <string name="e88_y11_side_plank_extension">С опорой на локте в боковом положении, поднимать тело вверх, другая рука за спиной</string>
+    <string name="e89_y12_plank_row">Выполнять подтягивания в планке и растягивать руки вверх</string>
+    <string name="txt_start">Старт</string>
+    <string name="label_quitexercise">Вы уверены, что хотите прервать тренировку?</string>
+    <string name="label_exerciselost">(Ваш прогресс будет утрачен.)</string>
+    <string name="favourite_list">Избранные упражнения</string>
+    <string name="all_exercies">Все упражнения</string>
+    <string name="my_fav_list">Мои избранные</string>
+    <string name="label_error">При получении данных произошла ошибка</string>
+    <string name="lbl_start">Старт</string>
+    <string name="lbl_my_favourite">Мои избранные</string>
+    <string name="lbl_fav_list_empty">Ваш список избранных пуст. Просмотрите программы тренировок, чтобы создать свой список избранных</string>
+    <string name="btn_chec">Проверка</string>
+    <string name="next_move">Следующее упражнение</string>
+    <string name="lbl_before">Предыдущее</string>
+    <string name="lbl_sonraki">Следующее</string>
+    <string name="lbl_step">/Шаг</string>
+    <string name="lbl_day">День</string>
+    <string name="lbl_month">Месяц</string>
+    <string name="lbl_year">Год</string>
+    <string name="lbl_levelofmove">Ваш уровень физической активности</string>
+    <string name="lbl_levelmove_desc">Определите свой уровень физической активности, чтобы мы могли подобрать наиболее подходящие тренировки для вас</string>
+    <string name="lbl_delete_favourite">Вы уверены, что хотите удалить это упражнение из списка избранных?</string>
+
+
+
+</resources>

@@ -1,11 +1,13 @@
 package com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
@@ -34,7 +36,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
     private val exerciseDayExercise = mutableListOf<ExerciseDayExercise>()
     private val exerciseListSend = ArrayList<ExerciseDayExercise>()
     private lateinit var firstAdapter: ExerciseDetailFirstAdapter
-    private var selectedModel: ExerciseDay?= null
+    private var selectedModel: ExerciseDay? = null
 
 
     override fun onCreateView(
@@ -56,11 +58,12 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
         addToDetailList()
         observeLevelOne()
         observeExerciseDay()
-
+        backstack()
         viewModel.fetchExerciseDayExercisesWithLevelOne()
 
         binding.imageBack.setOnClickListener {
-            val action = ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToIdHomepageFragment()
+            val action =
+                ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToIdHomepageFragment()
             view.findNavController().navigate(action)
         }
 
@@ -85,6 +88,18 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
                 println("day var")
             }
         })
+    }
+
+    private fun backstack() {
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                val action =
+                    ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToIdHomepageFragment()
+                view?.findNavController()?.navigate(action)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+
     }
 
     @SuppressLint("DiscouragedApi")
@@ -328,7 +343,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
     override fun recyclerviewListClicked(v: View, position: Int) {
         selectedModel = detailList[position]
         val selectedDay = position + 1
-        viewModel.getExerciseListWithDayID(selectedDay,1)
+        viewModel.getExerciseListWithDayID(selectedDay, 1)
         observeListWithDayId()
     }
 
@@ -341,8 +356,10 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
             }
             val exerciseLevel = getString(R.string.easy_level_fil)
             val exerciseArray = exerciseListSend.toTypedArray()
-            val action= ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToDetailDayFragment(
-                    exerciseArray, selectedModel!!,exerciseLevel)
+            val action =
+                ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToDetailDayFragment(
+                    exerciseArray, selectedModel!!, exerciseLevel
+                )
             view?.findNavController()?.navigate(action)
         })
     }

@@ -14,6 +14,8 @@ import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.JetpackDataStore.DataStoreManage
 import com.bayraktar.healthybackandneck.databinding.FragmentFirstBinding
 import com.bayraktar.healthybackandneck.ui.HomeActivity
+import com.bayraktar.healthybackandneck.utils.LanguagePreference
+import com.bayraktar.healthybackandneck.utils.LocaleHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -38,6 +40,11 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val savedLanguageCode = LanguagePreference.getLanguageCode(requireContext())
+        savedLanguageCode?.let {
+            LocaleHelper.setLocale(requireContext(), it)
+        }
+
         viewBackgrounds()
         dataStoreManager = DataStoreManage.getInstance(requireContext())
 
@@ -45,9 +52,9 @@ class FirstFragment : Fragment() {
             lifecycleScope.launchWhenStarted {
                 saveGen()
             }
-           val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment()
-           view.findNavController().navigate(action)
-            //startActivity(Intent(requireActivity(),HomeActivity::class.java))
+           //val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment()
+           //view.findNavController().navigate(action)
+         startActivity(Intent(requireActivity(),HomeActivity::class.java))
         }
     }
     private suspend fun saveGen() {

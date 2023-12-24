@@ -1,5 +1,6 @@
 package com.bayraktar.healthybackandneck.ui.Favourite.FavouriteMoveList
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -20,14 +22,17 @@ import com.bayraktar.healthybackandneck.databinding.FragmentMoveListBinding
 import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayAdapter
 import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDaySubAdapter
 import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstAdapter
+import com.bayraktar.healthybackandneck.ui.ExerciseMoves.ExerciseMovesFragmentDirections
+import com.bayraktar.healthybackandneck.utils.OnDeleteClicked
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 import com.bayraktar.healthybackandneck.utils.showToast
+import com.bayraktar.healthybackandneck.utils.showToastFavourite
 import dagger.hilt.android.AndroidEntryPoint
 import pl.droidsonroids.gif.GifImageView
 
 
 @AndroidEntryPoint
-class MoveListFragment : Fragment(),RecyclerViewClickListener {
+class MoveListFragment : Fragment(),RecyclerViewClickListener,OnDeleteClicked {
 
     private var _binding: FragmentMoveListBinding? = null
     val binding get() = _binding!!
@@ -58,7 +63,7 @@ class MoveListFragment : Fragment(),RecyclerViewClickListener {
                 if (list.any()) {
                     txtEmptyFav.visibility = View.GONE
                     btnCheck.visibility = View.GONE
-                    favList = list as ArrayList<ExerciseDayExercise>
+                    favList = list.distinctBy { it.exerciseName } as ArrayList<ExerciseDayExercise>
                 }else {
                     txtEmptyFav.visibility = View.VISIBLE
                     btnCheck.visibility = View.VISIBLE
@@ -77,7 +82,7 @@ class MoveListFragment : Fragment(),RecyclerViewClickListener {
             txtexercise.text = favList.size.toString()
             txtkcal.text = "${favList.size}00"
             rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
-            moveListAdapter = MoveListAdapter(favList,this@MoveListFragment)
+            moveListAdapter = MoveListAdapter(favList,this@MoveListFragment,this@MoveListFragment)
             rvdaydetail.adapter = moveListAdapter
         })
     }
@@ -105,6 +110,40 @@ class MoveListFragment : Fragment(),RecyclerViewClickListener {
         val dialog = builder.create()
         dialog.show()
     }
+    @SuppressLint("MissingInflatedId")
+    private fun btnCloseClicked(position: Int) {
+        val currentModel = favList[position]
+        val inflater = layoutInflater
+        val dialogView = inflater.inflate(R.layout.dialog_delete_favourite, null)
 
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setView(dialogView)
+        builder.setCancelable(false)
+
+        val dialog = builder.create()
+        dialog.show()
+
+        val positiveBtn: Button = dialogView.findViewById(R.id.dialogYesFV)
+        val negativeBtn: Button = dialogView.findViewById(R.id.dialogNoFV)
+
+        negativeBtn.setOnClickListener {
+            dialog.dismiss()
+        }
+        positiveBtn.setOnClickListener {
+            viewModel.updateIsFavouriteToFalse(currentModel.exerciseId)
+            currentModel.isFavourite = !currentModel.isFavourite
+
+            val updatedList = moveListAdapter?.lsMenu?.toMutableList() ?: mutableListOf()
+            updatedList.removeAt(position)
+
+            moveListAdapter?.setData(updatedList)
+            dialog.dismiss()
+        }
+
+    }
+
+    override fun onDeleteClicked(position: Int) {
+        btnCloseClicked(position)
+    }
 
 }

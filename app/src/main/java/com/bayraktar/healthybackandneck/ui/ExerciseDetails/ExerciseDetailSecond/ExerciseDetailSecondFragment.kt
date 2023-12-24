@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
@@ -59,13 +60,24 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
         addToDetailList()
         observeLevelTwo()
         observeExerciseDay()
-
+        backstack()
         binding.imageBack.setOnClickListener {
             val action = ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToIdHomepageFragment()
             view.findNavController().navigate(action)
         }
 
         viewModel.fetchExerciseDayExercisesWithLevelTwo()
+
+    }
+    private fun backstack() {
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                val action =
+                    ExerciseDetailSecondFragmentDirections.actionExerciseDetailSecondFragmentToIdHomepageFragment()
+                view?.findNavController()?.navigate(action)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
 
     }
     private fun observeLevelTwo() {

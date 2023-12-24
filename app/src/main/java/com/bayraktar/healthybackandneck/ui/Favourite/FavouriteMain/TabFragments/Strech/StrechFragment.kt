@@ -106,11 +106,11 @@ class StrechFragment : Fragment(), RecyclerViewClickListener {
                 0,
                 50
             )
-            viewModel.updateExerciseById(strechList[position].exerciseId)
+            viewModel.updateExerciseById(strechList[position].id)
             positionList.isFavourite = !positionList.isFavourite
             strechAdapter.setData(strechList)
         } else {
-            viewModel.updateIsFavouriteToFalse(strechList[position].exerciseId)
+            viewModel.updateIsFavouriteToFalse(strechList[position].id)
             strechAdapter.setData(strechList)
             positionList.isFavourite = !positionList.isFavourite
         }

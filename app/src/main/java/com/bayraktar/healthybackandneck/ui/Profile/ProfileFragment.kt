@@ -6,8 +6,10 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,6 +20,8 @@ import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat.getSystemService
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentProfileBinding
+import com.bayraktar.healthybackandneck.ui.HomeActivity
+import com.bayraktar.healthybackandneck.utils.LanguagePreference
 import com.bayraktar.healthybackandneck.utils.LocaleHelper
 import com.bayraktar.healthybackandneck.utils.NotificationHelper
 import com.bayraktar.healthybackandneck.utils.showToast
@@ -54,6 +58,11 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val savedLanguageCode = LanguagePreference.getLanguageCode(requireContext())
+        savedLanguageCode?.let {
+            LocaleHelper.setLocale(requireContext(), it)
+        }
+
         activateReviewInfo()
         btnRateUsClicked()
         notificationHelper = NotificationHelper(requireContext())
@@ -61,6 +70,10 @@ class ProfileFragment : Fragment() {
         btnShareClicked()
 
 
+    }
+    private fun changeLanguageAndSave(languageCode: String) {
+        LocaleHelper.setLocale(requireContext(), languageCode)
+        LanguagePreference.setLanguageCode(requireContext(), languageCode)
     }
     private fun activateReviewInfo() {
         reviewManager = ReviewManagerFactory.create(requireContext())
@@ -105,7 +118,7 @@ class ProfileFragment : Fragment() {
 
         apply {
             consLanguage.setOnClickListener {
-                btnLanguageclicked()
+                btnLanguageClicked()
             }
             constRestart.setOnClickListener {
                 btnRestartClicked()
@@ -182,28 +195,47 @@ class ProfileFragment : Fragment() {
             }.show()
     }
 
-    private fun btnLanguageclicked() {
-        val languages = arrayOf("English", "Turkish", "German")
-        val languageCodes = arrayOf("en", "tr", "de")
+    private fun btnLanguageClicked() {
+        val languages = arrayOf("Turkish", "English", "German", "Russian")
+        val languageCodes = arrayOf("tr", "en", "de", "ru")
 
         val currentLanguage = Locale.getDefault().language
         val currentLanguageIndex = languageCodes.indexOf(currentLanguage)
+        val defaultLanguageIndex = 0
 
+        val selectedIndex = if (currentLanguageIndex != -1) currentLanguageIndex else defaultLanguageIndex
 
-        AlertDialog.Builder(requireContext())
+        val alertDialog = AlertDialog.Builder(requireContext())
             .setTitle("Select Language")
             .setIcon(R.drawable.translation)
-            .setSingleChoiceItems(languages, currentLanguageIndex) { dialog, which ->
+            .setSingleChoiceItems(languages, selectedIndex) { dialog, which ->
                 // Change the language when the user selects a new language
                 val selectedLanguageCode = languageCodes[which]
-                LocaleHelper.setLocale(requireContext(), selectedLanguageCode)
-                recreate(requireActivity()) // Restart the activity to apply the language change
+                changeLanguageAndSave(selectedLanguageCode)
+                setNewLocale(requireContext(), selectedLanguageCode)
                 dialog.dismiss()
             }
             .setNegativeButton("Cancel") { dialog, _ ->
                 dialog.dismiss()
             }
-            .show()
+            .create()
+
+        alertDialog.show()
+    }
+
+    private fun setNewLocale(context: Context, language: String) {
+        val newLocale = Locale(language)
+        Locale.setDefault(newLocale)
+
+        val resources = context.resources
+        val configuration = Configuration(resources.configuration)
+        configuration.setLocale(newLocale)
+        context.createConfigurationContext(configuration)
+        resources.updateConfiguration(configuration, resources.displayMetrics)
+
+        val intent = Intent(context, HomeActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        context.startActivity(intent)
     }
 
     private fun btnShareClicked() = with(binding) {

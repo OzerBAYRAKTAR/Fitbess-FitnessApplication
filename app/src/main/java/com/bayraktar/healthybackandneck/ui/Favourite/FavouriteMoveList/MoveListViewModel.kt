@@ -32,4 +32,10 @@ class MoveListViewModel @Inject constructor(
         }
     }
 
+    fun updateIsFavouriteToFalse(exerciseId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repo.updateIsFavouriteToFalse(exerciseId = exerciseId)
+        }
+    }
+
 }

@@ -42,6 +42,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/deleteBtn"
+                android:layout_width="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="30dp"
+                android:src="@drawable/trash"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
             <LinearLayout
                 android:id="@+id/linearLayout6"
                 android:layout_width="0dp"
@@ -92,18 +103,6 @@
 
             </LinearLayout>
 
-            <CheckBox
-                android:id="@+id/favoritebtn"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:visibility="gone"
-                android:background="@drawable/favorite_selector"
-                android:button="@null"
-                android:layout_marginEnd="30dp"
-                app:layout_constraintBottom_toBottomOf="@+id/linearLayout6"
-                app:layout_constraintEnd_toEndOf="@+id/linearLayout6"
-                app:layout_constraintTop_toTopOf="@+id/linearLayout6"
-                app:useMaterialThemeColors="false" />
 
             <View
                 android:layout_width="0dp"

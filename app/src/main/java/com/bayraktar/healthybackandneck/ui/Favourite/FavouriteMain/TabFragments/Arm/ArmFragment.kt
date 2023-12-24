@@ -107,11 +107,11 @@ class ArmFragment : Fragment(), RecyclerViewClickListener {
                 0,
                 50
             )
-            viewModel.updateExerciseById(armList[position].exerciseId)
+            viewModel.updateExerciseById(armList[position].id)
             positionList.isFavourite = !positionList.isFavourite
             armAdapter.setData(armList)
         } else {
-            viewModel.updateIsFavouriteToFalse(armList[position].exerciseId)
+            viewModel.updateIsFavouriteToFalse(armList[position].id)
             armAdapter.setData(armList)
             positionList.isFavourite = !positionList.isFavourite
         }

@@ -6,14 +6,16 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
-import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.ItemSubdetaildayBinding
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
+import com.bayraktar.healthybackandneck.utils.OnDeleteClicked
 
 class MoveListAdapter(
-    private var lsMenu: List<ExerciseDayExercise>,
+    var lsMenu: MutableList<ExerciseDayExercise>,
     private val rclClickListener: RecyclerViewClickListener,
+    private val onDeleteClicked: OnDeleteClicked,
 ) : RecyclerView.Adapter<MoveListAdapter.ItemHolder>() {
+
 
 
     inner class ItemHolder(
@@ -43,7 +45,8 @@ class MoveListAdapter(
 
     //update old list with new list
     fun setData(list: List<ExerciseDayExercise>) {
-        this.lsMenu = list
+        this.lsMenu.clear()
+        this.lsMenu.addAll(list)
         notifyDataSetChanged()
     }
 
@@ -54,7 +57,12 @@ class MoveListAdapter(
             val imageDrawable = ContextCompat.getDrawable(root.context, model.image)
             roundedImageView.setImageDrawable(imageDrawable)
             labelDay.text = model.exerciseName
+
+            deleteBtn.setOnClickListener {
+                onDeleteClicked.onDeleteClicked(position)
+            }
         }
+
     }
 
     override fun getItemCount(): Int = lsMenu.size

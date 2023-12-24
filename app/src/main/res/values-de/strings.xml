@@ -1,0 +1,526 @@
+<resources>
+    <string name="app_name">Gesunder Rücken und Nacken</string>
+
+    <string name="skip">Überspringen</string>
+    <string name="start">Start</string>
+
+    <string name="open">Öffnen</string>
+    <string name="close">Schließen</string>
+
+    <string name="title1">Aufstehen!</string>
+    <string name="desc">Beschreibung</string>
+    <string name="title2">Trainiere deinen Körper!</string>
+    <string name="title3">In Bewegung kommen!</string>
+    <string name="desc1">Verlasse deine Komfortzone und erkunde dich selbst</string>
+    <string name="desc2">Trainiere regelmäßig für ein gesundes Leben und ernähre dich gesund</string>
+    <string name="desc3">Gegen Inaktivität in Aktion treten</string>
+    <string name="healthy_body">Gesunder Körper</string>
+    <string name="exercice">Übung</string>
+    <string name="exercices">Übungen</string>
+    <string name="kcal">Kalorien</string>
+    <string name="time">Zeit</string>
+    <string name="heart">Herzfrequenz</string>
+    <string name="statistics">Statistiken</string>
+    <string name="profile">Profil</string>
+    <string name="settings">Einstellungen</string>
+    <string name="reach_us">Kontaktieren Sie uns</string>
+    <string name="search">Nach Lebensmitteln suchen</string>
+
+    <!-- home fragment viewpager -->
+    <string name="hometitle1">Leichter Schwierigkeitsgrad</string>
+    <string name="hometitle2">Mittlerer Schwierigkeitsgrad</string>
+    <string name="hometitle3">Fortgeschrittener Schwierigkeitsgrad</string>
+    <string name="hometitle4">Eigenes Programm erstellen</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hallo leeres Fragment</string>
+    <string name="easy_program">Einfaches Programm</string>
+
+    <string name="get_start">Loslegen</string>
+    <string name="easy_desc">Wenn Sie noch nie zuvor trainiert haben</string>
+    <string name="middle_desc">Gelegentlich trainieren Sie</string>
+    <string name="hard_desc">Wenn Training für Sie ein Lebensstil ist</string>
+
+    <string name="information">Information</string>
+    <string name="training_tracking">Trainingsplanung</string>
+    <string name="txthour">Stunde</string>
+    <string name="txtcalori">Verbrannte \nKalorien</string>
+    <string name="back">Zurück</string>
+    <string name="forward">Vorwärts\n</string>
+    <string name="txt_monday">Mo</string>
+    <string name="txt_tuesday">Di</string>
+    <string name="txt_wednesday">Mi</string>
+    <string name="txt_thursday">Do</string>
+    <string name="txt_friday">Fr</string>
+    <string name="txt_saturday">Sa</string>
+    <string name="txt_sunday">So</string>
+    <string name="trains">Ihre Trainingspläne</string>
+    <string name="nutrution_advice">Ernährungsempfehlungen</string>
+    <string name="nutrition">Ernährung</string>
+    <string name="nutrition_desc">Einige Tipps für eine gesunde Ernährung</string>
+    <string name="breath">Atemübungen</string>
+    <string name="breath_desc">Effektive Atemtechniken für ein gesundes Leben</string>
+    <string name="search_food">Lebensmittel entdecken</string>
+
+
+    <string name="diet_title1">Nicht auslassen Mahlzeiten</string>
+    <string name="diet_title2">Trink viel Wasser</string>
+    <string name="diet_title3">Begrenzung von Fertiggerichten</string>
+    <string name="diet_title4">Vielfalt in der Ernährung fördern</string>
+    <string name="diet_title5">Begrenzung des Koffeinkonsums</string>
+    <string name="diet_title6">Beachten Sie eine kalziumreiche Ernährung</string>
+    <string name="diet_title7">Achten Sie auf eine Vitamin-C-reiche Ernährung</string>
+    <string name="diet_title8">Achten Sie auf eine eisenreiche Ernährung</string>
+    <string name="diet_title9">Verbrauchen Sie mehr Ballaststoffe</string>
+    <string name="diet_title10">Vernachlässigen Sie nicht das Training</string>
+    <string name="diet_title11">Halten Sie Ihr Idealgewicht</string>
+    <string name="diet_title12">Reduzieren Sie tierische und Transfette</string>
+    <string name="diet_title13">Meiden Sie Alkohol und Zigarettenkonsum</string>
+    <string name="diet_title14">Verzehren Sie Obst</string>
+    <string name="diet_title15">Achten Sie auf den Verzehr von Milch und Joghurt</string>
+    <string name="diet_title16">Ballaststoffreiche Lebensmittel sollten in Ihrer täglichen Ernährung enthalten sein</string>
+    <string name="diet_title17">Fügen Sie Ihrer Liste zinkhaltige Lebensmittel hinzu</string>
+
+    <string name="diet_desc1">Das Auslassen von Mahlzeiten lädt sowohl zur Gewichtszunahme als auch zu verschiedenen Beschwerden ein. Hier sind die Nachteile des Auslassens von Mahlzeiten: Größerer Wunsch nach Essen: Wenn Sie Ihre täglichen Mahlzeiten überbrücken könnten, indem Sie wenig essen, führt das Auslassen einer Mahlzeit dazu, dass Sie beim nächsten Mal hungriger sind und schnell an Gewicht zunehmen, indem Sie mehr essen. Untersuchungen haben gezeigt, dass das Auslassen von Mahlzeiten später zu Fettleibigkeit führen kann.</string>
+    <string name="diet_desc2">Wasser ist nach Sauerstoff der wichtigste Bestandteil des menschlichen Lebens. Ein Mensch kann Wochenlang ohne Nahrung auskommen, aber ohne Wasser nur ein paar Tage überleben. Wasser ist wesentlich für die Regulation der Körpertemperatur, den Erhalt des Stoffwechsels und die Ausscheidung giftiger Abfallprodukte aus dem Körper. Daher sollten Sie täglich 2–2,5 Liter Wasser konsumieren.</string>
+    <string name="diet_desc3">Fertiggerichte und schwere Süßigkeiten, Kuchen, die als Junk Food eingestuft werden, enthalten eine große Menge an Fett und Energie, was sowohl zu Gewichtszunahme als auch zu Anfälligkeit für Krankheiten führt. Daher sollten Sie den Konsum dieser Lebensmittel unbedingt einschränken.</string>
+    <string name="diet_desc4">Versuchen Sie, so vielfältig wie möglich zu essen. Bemühen Sie sich, täglich alle Nahrungsmittelgruppen (Milchprodukte, Fleisch, Obst-Gemüse, Getreide) in Ihren Ernährungsplan aufzunehmen. Auch wenn Sie nicht alle diese Lebensmittel in einer Mahlzeit konsumieren können, versuchen Sie, sie über den Tag verteilt in verschiedenen Mahlzeiten zu sich zu nehmen.</string>
+    <string name="diet_desc5">Der langfristige und übermäßige Verzehr von Koffein führt zu körperlichen und geistigen Störungen. Es kann zu einem Anstieg der Säure im Magen, zur Bildung von Geschwüren und zum Verlust von Kalzium im Körper führen. Darüber hinaus kann es zu Unruhe, Angstzuständen, seelischem Niedergeschlagenheitsgefühl, Reizbarkeit und Schlafstörungen führen.</string>
+    <string name="diet_desc6">Kalzium hat neben der Knochen- und Zahnbildung auch viele andere wichtige Aufgaben wie die Sicherstellung der Blutgerinnung, die Strukturierung der Gelenke, die Sicherstellung der Muskelkontraktion, die Regulation der Herzfrequenz und die Unterstützung der Reparatur des Nervensystems.</string>
+    <string name="diet_desc7">Experten sagen, dass Vitamin C eines der sichersten und vorteilhaftesten Nahrungsmittel für den Körper ist. Die Vorteile von Vitamin C umfassen die Stärkung des Immunsystems, den Schutz vor Herz-Kreislauf-Erkrankungen, pränatalen Gesundheitsproblemen, Augenkrankheiten und sogar Faltenbildung. Studien haben gezeigt, dass Vitamin C für Personen mit geschwächtem Immunsystem aufgrund von Stress vorteilhaft ist. Es gilt als eine der schnellsten verbrauchten Nährstoffe im Körper von Personen, die Alkohol konsumieren, rauchen oder fettleibig sind, daher wird es als ein wichtiges Kriterium für die allgemeine Gesundheit angesehen.</string>
+    <string name="diet_desc8">Der Körper benötigt Eisen für eine Reihe metabolischer Prozesse wie die Blutbildung, die Versorgung von Zellen mit Sauerstoff, die Unterstützung bei der Hormonproduktion und Enzymbildung, die Stärkung der Abwehr gegen Infektionen und die Stärkung des Immunsystems.</string>
+    <string name="diet_desc9">Ballaststoffe regulieren die Form, das Volumen und die Häufigkeit des Stuhlgangs, indem sie Wasser aufnehmen. Sie verhindern Verstopfung. Da sie die Darmgesundheit unterstützen, tragen sie zur Prävention von Erkrankungen wie Darmkrebs, Divertikulose, Hämorrhoiden und Reizdarmsyndrom bei.</string>
+    <string name="diet_desc10">Regelmäßige Bewegung stärkt das Herz-Kreislauf-System, erhöht das gute Cholesterin und senkt den Blutdruck. Aktiv zu sein, reduziert das Risiko von Herzkrankheiten um 50 %. (Healthline, 2021) Verdauungssystem: Bewegung reduziert die Probleme mit Verstopfung und unterstützt die Regelmäßigkeit der Darmbewegungen am besten.</string>
+    <string name="diet_desc11">Es ist äußerst wichtig, in einem gesunden Gewichtsbereich zu bleiben, um das Risiko von Krankheiten zu reduzieren und immer fit und energiegeladen zu sein. Achten Sie daher darauf, dass Ihr Body-Mass-Index (BMI), Ihr Körperfettanteil und die Messungen Ihrer Taille und Hüfte in einem gesunden Bereich liegen.</string>
+    <string name="diet_desc12">Es gibt viele Gründe, warum Sie Produkte mit Transfetten nicht konsumieren sollten. Einer davon ist, dass Transfette das schlechte Cholesterin, das als LDL-Cholesterin bekannt ist, erhöhen und das gute Cholesterin (HDL) senken. LDL-Cholesterin sammelt sich an den Wänden der Arterien und führt zu Versteifung und Verengung der Blutgefäße. HDL-Cholesterin nimmt überschüssiges LDL-Cholesterin auf und transportiert es zur Leber zurück. Der Verzehr von Transfetten kann langfristig ernsthafte Probleme wie Herzkrankheiten und Schlaganfälle verursachen. Darüber hinaus erhöht es das Risiko der Entwicklung von Fettleibigkeit und Typ-2-Diabetes.</string>
+    <string name="diet_desc13">Alkohol und Zigaretten sollten aufgrund ihrer Ursache vieler Krankheiten nicht konsumiert werden. Diese Krankheiten können tödliche Folgen haben. Alkohol und Zigaretten sind keine einfache Angewohnheit. Das Aufgeben ist für diejenigen, die es verwenden, sehr schwierig. Daher ist es ratsam, Alkohol und Zigaretten zu meiden.</string>
+    <string name="diet_desc14">Obst, eines der wertvollsten Geschenke der Natur, ist nicht nur bunt und lecker, sondern auch äußerst vorteilhaft für unsere Gesundheit. Mit den von Obst gelieferten Nährstoffen können wir verschiedene Krankheiten bekämpfen und eine gesündere und energiegeladenere Struktur erreichen.</string>
+    <string name="diet_desc15">Joghurt enthält alle Bestandteile, die durch milchsäurebildende Bakterien in für die menschliche Ernährung nützliche Stoffwechselprodukte umgewandelt werden. Insbesondere Menschen mit Laktoseintoleranz können Joghurtähnliche Produkte leichter konsumieren als Milch. Laktoseintoleranz tritt auf, wenn im menschlichen Körper das Enzym fehlt, das Laktose abbaut. Da in Joghurt Laktose in Milchsäure umgewandelt wird, verursacht es kein Enzymmangelproblem. Die während der Herstellung von Joghurt durch Fermentation entstehenden nützlichen Bakterien erhöhen die Darmaktivität, beschleunigen die Darmbewegungen und unterstützen die Ausscheidung giftiger Substanzen im Dickdarm. Darüber hinaus senkt es den Cholesterinspiegel und hält den Blutzuckerspiegel stabil.</string>
+    <string name="diet_desc16">Ballaststoffe sind eine pflanzliche Kohlenhydratsorte, die vom Körper nicht vollständig abgebaut werden kann und die eine ordnungsgemäße Funktion des Darms fördern, die Gewichtsabnahme fördern, den Blutzucker senken und die Herzgesundheit verbessern. Erwachsene benötigen je nach Alter und Geschlecht täglich zwischen 22 und 34 Gramm Ballaststoffe.</string>
+    <string name="diet_desc17">Wachstum und Entwicklung, Immunsystem, DNA-Synthese, Proteinsynthese, Gewebebildung, Fortpflanzungsfunktion und neuroverhaltensmäßige Entwicklungen werden alle von Zink beeinflusst. Eine Vielzahl von Enzymen, die an biochemischen Aktivitäten beteiligt sind, benötigt Zink für maximale katalytische Aktivität.</string>
+
+    <string name="next">Weiter</string>
+    <string name="geri">Zurück</string>
+    <string name="howto_breath">Die beste Art zu atmen ist, den Zwerchfell während des Atmens zu nutzen. Wenn Sie sich daran gewöhnen, mit dem Zwerchfell zu atmen, können Sie sich entspannter fühlen und das Problem des flachen Atmens überwinden. Sie werden feststellen, dass sich Ihr Bauchraum beim Zwerchfellatmen ausdehnt. Auf diese Weise nutzen Sie die gesamte Kapazität Ihrer Lungen.</string>
+    <string name="breath_technices">Atemtechniken</string>
+    <string name="breath_style">Was ist die beste Atemmethode?</string>
+    <string name="diyafram_desc">Setze dich oder lege dich in eine bequeme Position. Blase beim Einatmen deinen Bauch auf und erlaube ihm, beim Ausatmen abzufallen. Auf diese Weise atmest du langsam und tief ein und aus.</string>
+    <string name="diyafram_title">Zwerchfellatmung</string>
+    <string name="four_breath">Vier Atemzüge (4-7-8 Atem)</string>
+    <string name="fourbreath_desc">Hier folgst du eine bestimmte Abfolge von Atem, Anhalten und Ausatmen mit bestimmten Zahlen. Zähle bis 4 beim Einatmen, halte den Atem 7 Sekunden lang an und zähle dann beim Ausatmen bis 8.</string>
+    <string name="counting_breath">Atemzählmethode</string>
+    <string name="countingbreath_desc">Du kannst beim Ein- und Ausatmen zählen. Zum Beispiel: Atme ein, zähle bis 1–2 und atme aus, zähle bis 1–2–3–4. Dies ist eine nützliche Methode, um das Atmen zu verlangsamen und zu entspannen.</string>
+    <string name="medidation_breath">Meditation mit Atemzählen</string>
+    <string name="mediationbreath_desc">Zähle "eins" beim Einatmen und "zwei" beim Ausatmen. Zähle bis 10 und fange dann von neuem an. Indem du dich auf den Atem konzentrierst, kannst du deinen Geist beruhigen.</string>
+    <string name="seyir_breath">Seebreath (Sitali Atem)</string>
+    <string name="alternatv_nose_breath">Alternative Nasenatmung</string>
+    <string name="seyir_desc">Mache deine Zunge zu einer Rolle und platziere sie zwischen deine Lippen. Atme durch diesen Tunnel ein. Die kühlende Wirkung des Atems wirkt beruhigend.</string>
+    <string name="alternativ_breath_desc">Verschließe das rechte Nasenloch und atme durch das linke ein. Dann verschließe das linke Nasenloch und atme durch das rechte aus. Fahre fort, indem du diese Reihenfolge umkehrst.</string>
+    <string name="closed_breath">Geschlossene Atemtechnik</string>
+    <string name="closed_breath_desc">Beim Einatmen verschließe die Nasenlöcher und atme beim Ausatmen durch den Mund aus. Dann öffne wieder die Nasenlöcher. Verschließe dann beim Einatmen die Nasenlöcher und öffne sie beim Ausatmen durch den Mund.</string>
+    <string name="focus_breath">Atemfokussierung</string>
+    <string name="not_found">Beschreibung nicht gefunden</string>
+    <string name="focus_breath_desc">Konzentriere dich nur auf deinen Atem. Achte auf die Empfindungen beim Ein- und Ausatmen sowie auf das Atemmuster. Wenn deine Gedanken abschweifen, kehre einfach zum Atmen zurück.</string>
+
+    <!-- Exercise Fragment -->
+    <string name="back_back">Rücken- und Nackenübungen</string>
+    <string name="create_plan">Eigenen Plan erstellen</string>
+    <string name="create_plan_desc">Wähle deine Übungen aus und erstelle deinen eigenen Plan!</string>
+
+    <!--Warm Up-->
+    <string name="strech">Stretching</string>
+    <string name="warmup_exercises">Aufwärmübungen</string>
+    <string name="warmup_desc1">Stretching vor dem Training</string>
+    <string name="warmup_desc2">Aufwärmübungen für Anfänger</string>
+    <string name="warmup_desc3">Ganzkörper-Dehnübungen</string>
+
+    <!-- Fix Posture-->
+    <string name="posture_exercises">Haltungsübungen</string>
+    <string name="posture_desc1">Einfache Dehn- und Lockerungsübungen</string>
+    <string name="posture_desc2">Stärkung der Körpermitte</string>
+    <string name="posture_desc3">Haltungsverbesserung</string>
+
+    <!-- Neck-Back -->
+    <string name="neck">Nacken</string>
+    <string name="neckback_exercise">Übungen für Rücken und Nacken</string>
+    <string name="back_desc1">Rückenübungen</string>
+    <string name="back_desc2">Kräftigung des Rückens</string>
+    <string name="neck_desc1">Nackenübungen</string>
+    <string name="neck_desc2">Kräftigung des Nackens</string>
+
+    <!-- Arm-->
+    <string name="arm">Arm</string>
+    <string name="arm_exercises">Übungen für die Armstärkung</string>
+    <string name="arm_desc1">Einfache Widerstandsübungen</string>
+    <string name="arm_desc2">Kräftigung der Armmuskulatur</string>
+    <string name="arm_desc3">Straffung der Arme</string>
+
+    <!-- Abs-->
+    <string name="abs">Bauch</string>
+    <string name="abs_exercises">Übungen für die Bauchstärkung</string>
+    <string name="abs_desc1">Einfache Widerstandsübungen</string>
+    <string name="abs_desc2">Kräftigung der Bauchmuskulatur</string>
+    <string name="abs_desc3">3D-Bauchmuskelübungen</string>
+
+    <string name="leg">Bein-Gesäß</string>
+    <string name="leg_exercises">Bein-Gesäß Kräftigungsübungen</string>
+    <string name="leg_desc1">Anfänger-Beinübungen</string>
+    <string name="leg_desc2">Stärkung der Beinmuskulatur</string>
+    <string name="leg_desc3">Anfänger-Gesäßübungen</string>
+    <string name="leg_desc4">Straffung des Gesäßes</string>
+    <string name="txt_time">Verstrichene\nZeit</string>
+    <string name="txt_calori">Kalorien</string>
+    <string name="txt_alltime">Gesamtzeit</string>
+    <string name="txt_bodyparameters">Körpermaße</string>
+    <string name="txt_record">Alle Aufzeichnungen</string>
+    <string name="booty">Gesäß</string>
+    <string name="belly">Bauch</string>
+    <string name="chest">Brust</string>
+    <string name="body_indeks">Body Mass Index (BMI)</string>
+    <string name="height">Höhe (cm)</string>
+    <string name="height_label">Höhe</string>
+    <string name="weight">Gewicht (kg)</string>
+    <string name="weight_label">Gewicht</string>
+    <string name="water_label">Wassergehalt</string>
+    <string name="sleep">Schlaf</string>
+    <string name="newTest">Neue Messung</string>
+    <string name="categorie">Kategorie</string>
+    <string name="indeks">Index</string>
+    <string name="reminders">Erinnerungen</string>
+    <string name="app_settings">App-Einstellungen</string>
+    <string name="water_reminder">Wassererinnerung</string>
+    <string name="enough_drink_water">Ausreichende Wasseraufnahme</string>
+    <string name="enough_drink_water_desc">Das Trinken von Wasser wird Sie vor Austrocknung schützen und Ihnen helfen, Ihre Übungen optimal zu nutzen.</string>
+    <string name="notifications">Benachrichtigungen</string>
+    <string name="open_notifications">Benachrichtigungen öffnen</string>
+    <string name="open_notifications_desc">Aktivieren Sie Benachrichtigungen, um Ihre Gesundheit und Fitness auf höchstem Niveau zu halten. Sie sind notwendig, um Ihre Trainingspläne zu erinnern und Ihnen Motivation zu geben.</string>
+    <string name="languages">Sprachoptionen</string>
+    <string name="restart">Fortschritt neu starten</string>
+    <string name="theme">Thema ändern</string>
+    <string name="helpus">Unterstützen Sie uns</string>
+    <string name="rateus">Bewerten Sie uns</string>
+    <string name="shareus">Mit Freunden teilen</string>
+    <string name="privacy">Datenschutzbestimmungen</string>
+    <string name="easy_level">Einfaches\nNiveau</string>
+    <string name="easy_level_fil">Einfaches Niveau</string>
+    <string name="easy">Einfaches Niveau</string>
+    <string name="middle_level">Mittleres\nNiveau</string>
+    <string name="hard_level">Fortgeschrittenes\nNiveau</string>
+    <string name="label_day">Tag</string>
+    <string name="label_exercise">Übung</string>
+    <string name="label_minute">Min</string>
+    <string name="label_kcal">kcal</string>
+    <string name="label_tellus">Erzählen Sie uns von sich</string>
+    <string name="label_tellus_desc">Um Ihnen einen besseren Service bieten zu können, müssen wir Sie besser kennenlernen.</string>
+    <string name="label_continue">Fortsetzen</string>
+    <string name="label_male">Männlich</string>
+    <string name="label_famale">Weiblich</string>
+    <string name="label_yas">Geburtsdatum?</string>
+    <string name="label_height">Wie groß sind Sie?</string>
+    <string name="label_height_desc">Größe in cm. Sie können dies später ändern.</string>
+    <string name="label_weight">Wie viel wiegen Sie?</string>
+    <string name="label_weight_desc">Gewicht in kg. Sie können dies später ändern.</string>
+    <string name="label_yas_desc">Dies wird Ihnen helfen, Ihren persönlichen Trainingsplan zu erstellen.</string>
+    <string name="label_back">Zurück</string>
+    <string name="label_aim">Was sind Ihre Ziele?</string>
+    <string name="label_aim_desc">Sie können mehrere auswählen. Sie können dies später ändern.</string>
+    <string name="number_picker_formatter">%02d</string>
+    <string name="label_getfit">Fit werden</string>
+    <string name="label_gainweight">Gewicht zunehmen</string>
+    <string name="label_loseweight">Gewicht verlieren</string>
+    <string name="label_buildmuscle">Muskel aufbauen</string>
+    <string name="label_improveindruce">Ausdauer verbessern</string>
+    <string name="label_others">Andere</string>
+    <string name="exercise_move">Bewegung</string>
+    <string name="time_min">Minute</string>
+    <string name="general_progress">Allgemeiner Fortschritt</string>
+    <string name="splash_1">Die eingegebenen Informationen werden überprüft…</string>
+    <string name="splash_2">Nach passenden Übungen wird gesucht…</string>
+    <string name="splash_3">Ein maßgeschneiderter Plan wird für Sie vorbereitet…</string>
+    <string name="getready">Machen Sie sich bereit für das Training!…</string>
+    <string name="sec_time_left">Sekunden verbleiben</string>
+    <string name="get_rest">Jetzt ausruhen!</string>
+    <string name="congrulations">GLÜCKWÜNSCHE!</string>
+    <string name="workout_complete">Sie haben das Training erfolgreich abgeschlossen.</string>
+    <string name="skip_Rest">Pause überspringen</string>
+    <string name="home">Startseite</string>
+
+    <!-- Foody -->
+    <string name="meat">Fleisch</string>
+    <string name="milkprodct">Milchprodukte</string>
+    <string name="fresh">Gemüse</string>
+    <string name="fruit">Obst</string>
+    <string name="other">Sonstiges</string>
+    <string name="legume">Hülsenfrüchte</string>
+
+    <!-- Fresh -->
+    <string name="patates">Kartoffel</string>
+    <string name="patlican">Aubergine</string>
+    <string name="marul">Kopfsalat</string>
+    <string name="havuc">Karotte</string>
+    <string name="roka">Rucola</string>
+    <string name="tere">Kresse</string>
+    <string name="sogan">Zwiebel</string>
+    <string name="biber">Paprika</string>
+    <string name="domates">Tomate</string>
+
+    <!-- Meat -->
+    <string name="antrikot">Rindersteak</string>
+    <string name="biftek">Rinderfilet</string>
+    <string name="bonfile">Rinderlende</string>
+    <string name="kiyma">Hackfleisch</string>
+    <string name="hindi">Truthahnfleisch</string>
+    <string name="kuzu">Lammfleisch</string>
+    <string name="tavuk">Hähnchenfleisch</string>
+    <string name="ordek">Entenfleisch</string>
+    <string name="ahtapot">Tintenfisch</string>
+    <string name="karides">Garnele</string>
+    <string name="alabalık">Forelle</string>
+    <string name="levrek">Barsch</string>
+    <string name="kalamar">Tintenfisch (Kalamar)</string>
+    <string name="hamsi">Sardine</string>
+    <string name="somon">Lachs</string>
+
+    <!-- Milk -->
+    <string name="sut">Milch</string>
+    <string name="yogurt">Joghurt</string>
+    <string name="taze_peynir">Frischkäse</string>
+    <string name="kasar_peynir">Kasar-Käse</string>
+    <string name="lor_peynir">Quark</string>
+    <string name="ayran">Ayran</string>
+    <string name="kefir">Kefir</string>
+    <string name="tereyagi">Butter</string>
+    <string name="yumurta">Ei</string>
+
+    <!-- Fruit -->
+    <string name="muz">Banane</string>
+    <string name="elma">Apfel</string>
+    <string name="armut">Birne</string>
+    <string name="cilek">Erdbeere</string>
+    <string name="karpuz">Wassermelone</string>
+    <string name="kavun">Honigmelone</string>
+    <string name="seftali">Pfirsich</string>
+    <string name="kayisi">Aprikose</string>
+    <string name="erik">Pflaume</string>
+    <string name="incir">Feige</string>
+    <string name="uzum">Traube</string>
+    <string name="kiraz">Kirsche</string>
+
+    <!-- Legume -->
+    <string name="bakla">Bohnen</string>
+    <string name="bamya">Okra</string>
+    <string name="barbunya">Feuerbohnen</string>
+    <string name="bezelye">Erbsen</string>
+    <string name="borulce">Wachtelbohnen</string>
+    <string name="mercimek">Linsen</string>
+    <string name="kestane">Kastanien</string>
+    <string name="fasulye">Bohnen (weiß)</string>
+    <string name="nohut">Kichererbsen</string>
+    <string name="ceviz">Walnuss</string>
+    <string name="fistik">Pistazie</string>
+    <string name="yesil_fasulye">Bohnen (grün)</string>
+    <string name="tofu">Tofu</string>
+    <string name="badem">Mandel</string>
+    <string name="txtiron">Eisen</string>
+    <string name="txtmagnesium">Magnesium</string>
+    <string name="txtpotasium">Kalium</string>
+    <string name="txtsodium">Natrium</string>
+    <string name="txtcalsium">Kalzium</string>
+    <string name="txtoil">Öl</string>
+    <string name="txtcarb">Kohlenhydrate</string>
+    <string name="txtprotein">Protein</string>
+    <string name="txtvitaminc">Vitamin C</string>
+
+    <string name="attention">Achtung</string>
+    <string name="alertmessage">Sind Sie sicher, dass Sie sich abmelden möchten?</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <string name="label_age">Alter</string>
+    <string name="label_dayofcalorie">Täglicher Kalorienbedarf</string>
+    <string name="label_fatrate">Körperfettanteil</string>
+    <string name="label_yourfaterate">Ihr Fettanteil</string>
+    <string name="label_low">Geringe Aktivität</string>
+    <string name="label_middle">Mittlere Aktivität</string>
+    <string name="label_high">Hohe Aktivität</string>
+    <string name="label_toohigh">Sehr hohe Aktivität</string>
+    <string name="label_save">Speichern</string>
+    <string name="label_calculate">Berechnen</string>
+    <string name="label_neckcm">Halsumfang (cm)</string>
+    <string name="label_gender">Geschlecht</string>
+    <string name="label_man">Mann</string>
+    <string name="label_female">Frau</string>
+    <string name="label_dailycalorie">Täglicher Kalorienbedarf</string>
+    <string name="label_activitylevel">Aktivitätslevel</string>
+    <string name="label_bellycm">Bauchumfang (cm)</string>
+    <string name="label_buttcm">Hüftumfang (cm)</string>
+    <string name="label_inputattention">Bitte geben Sie einen gültigen Wert ein</string>
+    <string name="label_fillall">Bitte füllen Sie alle Werte aus</string>
+    <string name="label_okay">OK</string>
+    <string name="label_bmi">Body Mass Index (BMI)</string>
+    <string name="label_dailyCalorieRequirement">Täglicher Kalorienbedarf</string>
+    <string name="label_zayif">Dünn</string>
+    <string name="label_fat">Dick</string>
+    <string name="label_weighted">Gewichtig</string>
+    <string name="label_normal">Normal</string>
+    <string name="label_tryagain">Erneut versuchen</string>
+    <string name="label_yourfatrate">Ihr Körperfettanteil</string>
+    <string name="label_yourdailycaloriereq">Ihr täglicher Kalorienbedarf</string>
+    <string name="label_drinkwater">Aufstehen und Wasser trinken!</string>
+    <string name="label_timetodrinkwater">Zeit, Wasser zu trinken!</string>
+    <string name="label_waterreminder">Wassererinnerung</string>
+    <string name="label_fitnessreminder">Fitnesserinnerung</string>
+    <string name="label_dofitness">Zeit für das Training!</string>
+    <string name="label_selectlanguage">Sprachauswahl</string>
+    <string name="label_cancel">Abbrechen</string>
+    <string name="label_restartmessage">Alle Ihre Fortschritte werden gelöscht. Sind Sie sicher, dass Sie fortfahren möchten?</string>
+    <string name="label_attention">Achtung</string>
+    <string name="label_shareus">Teilen Sie die App mit Ihren Freunden!</string>
+    <string name="label_shareerror">Es konnte keine App zum Teilen gefunden werden</string>
+    <string name="label_sharevia">Mit folgendem teilen</string>
+    <string name="label_reviewerror">Bewertung konnte nicht abgegeben werden</string>
+    <string name="label_ratingsuccess">Bewertung erfolgreich abgegeben</string>
+
+    <!-- Bacak-Popo -->
+    <string name="e90_b1_bird_dog">Nehmen Sie die Kriechposition ein, strecken Sie den rechten Arm und das linke Bein nach vorne aus, wechseln Sie nach der Bewegung zum anderen Arm und Bein.</string>
+    <string name="e91_b2_jump_squat">Legen Sie die Hände auf Brusthöhe, nehmen Sie eine Hockposition ein und springen Sie nach oben.</string>
+    <string name="e92_b3_glute_bridge">Legen Sie sich mit knieaufblickend auf den Boden, heben Sie das Becken mit den Händen und einem angemessenen Gewicht nach oben.</string>
+    <string name="e93_b4_quadruped_hip_extension">Nehmen Sie die Kriechposition ein, halten Sie das Gewicht auf dem Knie und heben Sie das Bein nach hinten.</string>
+    <string name="e94_b5_plie_squat">Mit geöffneten Füßen und Gewichten in den Händen stehen, so weit wie möglich in die Kniebeuge gehen und wieder aufrichten.</string>
+    <string name="e95_b6_reverse_lunge_forward_hand">Stehen Sie mit ausgestreckten Armen, knien Sie mit dem rechten und linken Bein nacheinander auf den Boden.</string>
+    <string name="e96_b7_fire_hydrants">Nehmen Sie die Kriechposition ein und heben Sie abwechselnd das rechte und linke Bein seitlich an.</string>
+    <string name="e97_b8_clamshells">Legen Sie sich seitlich auf den Boden und bewegen Sie die Beine seitlich auseinander.</string>
+    <string name="e98_b9_split_squat">Die Arme seitlich ausgestreckt, stehen und sich nach vorne dehnen.</string>
+    <string name="e99_b10_reverse_lunge">Stehen Sie auf und dehnen Sie sich nach hinten in die Kniebeuge.</string>
+    <string name="e100_b11_standing_bend_over">Stehen Sie auf und beugen Sie sich nach vorne über, die Hände etwas über dem Nacken.</string>
+    <string name="e101_b12_chair_squat">Halten Sie die Hände ruhig, setzen Sie sich auf einen Stuhl und stehen Sie wieder auf.</string>
+    <string name="e102_b13_crab_walk">Halten Sie die Hände ruhig, setzen Sie die Elastikbänder an die Füße und gehen Sie seitlich nach rechts und links.</string>
+    <string name="e103_b14_donkey_kick">Nehmen Sie die Kriechposition ein, halten Sie das Gewicht auf dem Knie und heben Sie das Bein nach hinten.</string>
+    <string name="e104_b15_frog_jumps">Setzen Sie sich schnell auf den Boden und springen Sie nach oben.</string>
+    <string name="e105_b16_grace_marching_bridge_extension">Legen Sie sich auf den Rücken, die Hände berühren die Fersen, und heben Sie die Beine nacheinander nach oben.</string>
+    <string name="e106_b17_high_donkey_kick"> Halten Sie die Hände auf Schulterhöhe, stützen Sie sich auf die Zehenspitzen und heben Sie das rechte und linke Knie abwechselnd nach hint </string>
+    <string name="e107_b18_squats">Gehen Sie mit Gewichten in den Händen in die Hocke und stehen Sie wieder auf.</string>
+    <string name="e108_b19_pull_single_leg">Nehmen Sie die Kriechposition ein, halten Sie das Gewicht in der rechten Hand und strecken Sie den rechten Arm und das rechte Bein zur Seite, berühren Sie Ellbogen und Knie und entfernen Sie sie wieder, wiederholen Sie mit dem anderen Arm und Bein.</string>
+    <string name="e109_b20_single_leg_deadlift">Stehen Sie auf und beugen Sie sich nach vorne, um den Fuß zu berühren, strecken Sie gleichzeitig das andere Bein nach hinten.</string>
+    <string name="e110_b21_step_out_squat_with_pulse">Mit Gewicht in den Händen in die Hocke gehen und das rechte und linke Bein nach vorne und hinten bewegen, wiederholen Sie mit dem anderen Bein.</string>
+
+    <!-- Neck -->
+    <string name="e1_b1_sitting_side_bends">Sitzen Sie aufrecht auf einem Stuhl und neigen Sie Ihren Kopf nach rechts und links, während Sie Ihren Kopf stabil halten.</string>
+    <string name="e2_b2_neck_rotation">Sitzen Sie in einer stabilen Position auf dem Boden und führen Sie eine ovale Drehbewegung mit dem Nacken durch.</string>
+    <string name="e3_b3_forward_and_back_bend">Sitzen Sie in einer stabilen Position auf dem Boden, halten Sie Ihren Nacken mit beiden Händen, schauen Sie geradeaus und neigen Sie ihn dann nach vorne.</string>
+    <string name="e4_b4_forward_dive">Stehen Sie aufrecht und bewegen Sie Ihren Kopf vorwärts und rückwärts, indem Sie Ihre rechte Hand an Ihre Stirn führen.</string>
+    <string name="e5_b5_back_and_forward_band">Stehen Sie aufrecht und neigen Sie Ihren Nacken nach hinten.</string>
+    <string name="e6_b6_neck_rotation">Bewegen Sie Ihren Nacken in einer stabilen Position nach rechts und links.</string>
+    <string name="e7_b7_shoulder_rotation">Bewegen Sie Ihre Schultern in einer stabilen Position von oben nach unten, ohne Ihren Nacken zu bewegen, und bewegen Sie dann abwechselnd Ihre rechte und linke Schulter in ovalen Bewegungen von oben nach unten.</string>
+    <string name="e8_b8_side_bends">Neigen Sie Ihren Nacken in einer stabilen Position nach rechts und links.</string>
+    <string name="e9_b9_upper_body_rotation">Stehen Sie stabil, stützen Sie Ihren Arm an der Wand ab und machen Sie eine Vierteldrehung vom Bauchnabel nach oben.</string>
+    <string name="e10_b10_shoulder_shrug">Stehen Sie stabil und ziehen Sie beide Schultern gleichzeitig in Richtung Ihres Nackens.</string>
+    <string name="e11_b11_get_up_straight">Halten Sie Ihre Hände auf einem Stuhl, stehen Sie auf, und setzen Sie sich dann ohne Unterstützung wieder hin.</string>
+    <string name="e12_b12_sitting_dive">Setzen Sie sich auf ein Objekt in einer Höhe von 15-20 cm, halten Sie Ihren Nacken stabil und ziehen Sie Ihre Brust nach innen und dann nach außen.</string>
+    <string name="e13_b13_lying_dive">Legen Sie sich auf den Boden, beugen Sie Ihre Beine leicht, heben Sie Ihren Kopf und Ihren Nacken gleichzeitig nach oben und dann nach unten.</string>
+    <string name="e14_b14_sitting_shoulder_rotation">Sitzen Sie stabil und aufrecht auf einem Stuhl, bringen Sie Ihre Arme in einer Dreiecksform auf Schulterhöhe, und bewegen Sie dann Ihre Ellbogen nach oben und unten.</string>
+    <string name="e15_b15_chair_back_strech">Sitzen Sie stabil auf einem Stuhl, nehmen Sie eine Position ein, in der Ihre Hände Ihren Nacken berühren, und bewegen Sie dann Ihre Beine abwechselnd nach rechts und links auf Bauchniveau.</string>
+    <string name="e16_b16_superman">Legen Sie sich flach auf den Bauch, heben Sie Ihre Arme und Beine gleichzeitig nach oben.</string>
+    <string name="e17_b17_lying_neck_extension">Legen Sie sich hin, beugen Sie Ihre Beine leicht, verschränken Sie Ihre Arme miteinander, halten Sie Ihren Nacken leicht angehoben und bewegen Sie ihn dann nach rechts und links.</string>
+
+    <!-- Abdomen -->
+    <string name="e18_k1_sit_up">Setzen Sie sich halb auf den Boden, stützen Sie sich mit den Händen nach hinten ab und bewegen Sie den Oberkörper und die Beine vor und zurück.</string>
+    <string name="e19_k2_scissor_kicks">Legen Sie sich flach auf den Boden, halten Sie Ihre Hände flach auf dem Boden, heben und senken Sie abwechselnd Ihre Beine.</string>
+    <string name="e20_k3_bicycle_crunch_slowed">Legen Sie sich mit gebeugten Knien auf den Boden, halten Sie Ihre Hände etwas über Ihrem Nacken und drehen Sie Ihren Oberkörper von der Taille nach rechts und links. Ziehen Sie dabei auch die Beine in Richtung Ihres Bauches.</string>
+    <string name="e21_k4_russian_twist">Legen Sie sich mit leicht gebeugten Beinen auf den Boden, legen Sie Ihre Hände etwas über Ihrem Nacken zusammen und bewegen Sie diese abwechselnd schräg zur Hüfte und zurück.</string>
+    <string name="e22_k5_hold_leg_raise">Heben Sie Ihre Beine in einer Position, in der sie senkrecht zum Boden stehen, und senken Sie sie dann langsam wieder ab.</string>
+    <string name="e23_k6_lying_reaches">Stützen Sie sich auf Ihre Arme und heben Sie Ihre Beine abwechselnd nach oben, so dass Sie mit einer Hand die gegenüberliegende Zehe berühren können.</string>
+    <string name="e24_k7_fast_crunchs">Beugen Sie Ihre Knie und legen Sie sich hin, heben Sie Ihren Oberkörper in einer halben Sit-up-Position an und senken Sie ihn wieder ab.</string>
+    <string name="e25_k8_seated_punchs">Beugen Sie Ihre Knie und setzen Sie sich auf den Boden, stützen Sie sich mit Ihren Händen auf Ihren Oberschenkeln ab, dehnen Sie sich nach hinten und führen Sie dann Kreuzschläge mit Ihrer rechten und linken Hand aus, indem Sie Ihre Oberschenkel wieder umfassen.</string>
+    <string name="e26_k9_side_reaches">Beugen Sie Ihre Knie und setzen Sie sich auf den Boden, strecken Sie Ihre Arme parallel zu Ihren Knien nach vorne und öffnen Sie dann abwechselnd Ihre Arme seitlich, während Sie sich von der Taille nach oben dehnen.</string>
+    <string name="e27_k10_toe_reach">Legen Sie sich auf den Rücken, strecken Sie Ihre Arme und Beine im rechten Winkel zum Körper aus und bringen Sie sie dann näher und weiter voneinander weg.</string>
+    <string name="e28_k11_reverse_crunch">Legen Sie sich auf den Rücken, heben Sie Ihre Arme nach oben, beugen Sie Ihre Knie leicht und heben Sie abwechselnd Ihren rechten Arm nach hinten und Ihr linkes Bein nach vorne. Führen Sie dann die gleiche Bewegung mit dem anderen Arm und Bein aus.</string>
+    <string name="e29_k12_full_crunch">Legen Sie sich flach auf den Rücken, legen Sie Ihre Hände etwas über Ihren Nacken, öffnen Sie Ihre Beine leicht und ziehen Sie dann Ihren Oberkörper in Richtung Ihrer Knie, ohne den Boden zu berühren.</string>
+    <string name="e30_k13_single_side_up">Legen Sie sich mit einem gebeugten rechten Bein und einem gestreckten linken Bein auf den Rücken, halten Sie Ihre rechte Hand etwas über Ihrem Nacken und Ihre linke Hand unter Ihrem Rücken und führen Sie eine halbe Sit-up-Bewegung durch.</string>
+    <string name="e31_k14_to_v_sit">Legen Sie sich flach auf den Rücken, strecken Sie Ihre Arme nach vorne und ziehen Sie dann Ihre Knie in Richtung Ihres Bauches und strecken Sie sie anschließend zurück.</string>
+    <string name="e32_k15_single_leg_raise">Stützen Sie sich auf Ihre Ellbogen und legen Sie sich flach auf den Boden, heben Sie abwechselnd Ihre Beine in Richtung Ihres Bauches und senken Sie sie wieder ab, ohne den Boden zu berühren.</string>
+    <string name="e33_k16_standing_throw_knee">Halten Sie Ihre Hände in ovaler Form zusammen und stehen Sie, ziehen Sie abwechselnd Ihre Knie in Richtung Ihres Bauches und strecken Sie dann Ihren Oberkörper in die entgegengesetzte Richtung.</string>
+    <string name="e34_k17_standing_single_leg_up">Halten Sie Ihre Hände etwas über Ihren Schultern in einer Dreiecksform und stehen Sie, ziehen Sie abwechselnd Ihre Beine in Richtung Ihrer Ellbogen.</string>
+    <string name="e35_k18_t_position">Stehen Sie aufrecht, strecken Sie Ihre Hände nach vorne und strecken Sie dann abwechselnd Ihr rechtes Bein nach hinten, und wechseln Sie dann zum anderen Bein.</string>
+    <string name="e36_k19_standing_to_push_up">Beugen Sie Ihre Knie und gehen Sie in eine Hocke, bringen Sie dann schnell Ihre Hände und Füße in die Position für Liegestütze und kehren Sie dann wieder zur Hocke zurück.</string>
+    <string name="e37_k20_lying_leg_up">Stützen Sie sich auf Ihre Ellbogen, heben Sie Ihre Beine vom Boden und senken Sie sie dann langsam ab, ohne Ihre Knie zu beugen.</string>
+    <string name="e38_k21_reverse_crunch">Legen Sie sich auf den Rücken, heben Sie Ihre Arme nach oben, beugen Sie Ihre Knie leicht und heben Sie abwechselnd Ihren rechten Arm nach hinten und Ihr linkes Bein nach vorne. Führen Sie dann die gleiche Bewegung mit dem anderen Arm und Bein aus.</string>
+    <string name="e39_k22_standing_shake">Stehen Sie aufrecht mit leicht gebeugten Knien und Ellbogen und bewegen Sie Ihren Oberkörper abwechselnd nach rechts und links.</string>
+    <string name="e40_k23_modified_plank">Stellen Sie sich auf die Zehen und die Hände und halten Sie den Körper flach auf dem Boden, führen Sie dann abwechselnd eine Hand zur anderen Schulter.</string>
+    <string name="e41_k24_mountain_climb">Stellen Sie sich auf die Zehen und die Hände und halten Sie den Körper flach auf dem Boden, ziehen Sie dann abwechselnd ein Knie zur Brust.</string>
+
+    <!-- Arms -->
+    <string name="e42_a1_seated_dips">Sitzen Sie mit dem Rücken zur Stuhllehne und nähern und entfernen Sie sich mit Unterstützung Ihrer Hände vom Boden aus.</string>
+    <string name="e43_a2_triceps_push_up">Sitzen Sie mit ausgestreckten Beinen, stützen Sie sich mit den Armen ab und heben und senken Sie Ihr Becken.</string>
+    <string name="e44_a3_bend_over_arm_extension">Stehen Sie auf Händen und Zehen in V-Position mit dem Gesicht nach unten, beugen Sie die Ellenbogen auf den Boden und strecken Sie sich nach vorne und kehren Sie zur Ausgangsposition zurück.</string>
+    <string name="e45_a4_pushup_overhead">Stehen Sie auf Händen und Zehen in V-Position mit dem Gesicht nach unten, kommen Sie in eine aufrechte Position, in der der Kopf den Boden berührt, und nähern und entfernen Sie sich vom Boden.</string>
+    <string name="e46_a5_lying_triceps_extensions">Legen Sie sich mit angewinkelten Beinen auf den Boden, legen Sie Ihre Arme mit geeigneten Gewichten leicht gebeugt zurück und heben und senken Sie sie.</string>
+    <string name="e47_a6_punch_left_right">Mit leicht geöffneten Beinen und erhobenen Armen in einer Kampfhaltung stehen, den Oberkörper nach links und rechts drehen und die Arme wie in einem Schlag strecken.</string>
+    <string name="e48_a7_tricep_dips">Nehmen Sie eine V-Position mit Händen und Füßen ein und bewegen Sie sich auf und ab, wobei Sie sich auf Ihre Arme stützen.</string>
+    <string name="e49_a8_knee_push_ups">Liegen Sie mit Knien und Füßen auf dem Boden, stützen Sie sich mit den Armen auf und führen Sie Liegestütze aus.</string>
+    <string name="e50_a9_modified_push_ups">Legen Sie sich mit angewinkelten Ellbogen auf den Boden, stützen Sie sich mit den Zehen ab und bleiben Sie flach auf dem Boden liegen. Heben Sie abwechselnd den rechten und linken Ellbogen an und wechseln Sie in die Liegestützposition, bevor Sie die Ellbogen wieder auf den Boden legen.</string>
+    <string name="e51_a10_slowed_pushups">Nehmen Sie die Liegestützposition ein, beugen Sie die Ellbogen nach innen und führen Sie Liegestütze aus, wobei sich die Brust dem Boden nähert.</string>
+    <string name="e52_a11_lying_shoulder_extension">Nehmen Sie die Liegestützposition ein und dehnen Sie abwechselnd den rechten und linken Arm nach hinten in kreisenden Bewegungen.</string>
+    <string name="e53_a12_push_up_strech">Nehmen Sie die Liegestützposition ein, beugen Sie die Ellbogen nach innen und machen Sie Liegestütze, dann strecken Sie abwechselnd den rechten und linken Arm mit gebeugtem Ellbogen nach hinten.</string>
+    <string name="e54_a13_front_overhead_raise">Stehen Sie auf und beugen Sie leicht die Knie, beugen Sie sich nach unten, während die Ellbogen in Richtung Knie zeigen, und heben Sie dann Gewichte nach oben, während Sie wieder aufstehen.</string>
+    <string name="e55_a14_front_raise">Heben Sie Gewichte auf und bringen Sie sie in Richtung Schultern und strecken Sie dann die Arme nach unten, während Sie sich beugen.</string>
+    <string name="e56_a15_air_curls">Stehen Sie mit geöffneten Beinen und Armen auf und heben Sie Gewichte in Richtung Schultern. Beugen Sie sich dann nach unten und senken Sie die Gewichte ab, während Sie in eine Kniebeugenposition gehen.</string>
+    <string name="e57_a16_single_arm_overhead_press">Stehen Sie mit geöffneten Beinen und Armen auf, senken Sie sich nach unten und senken Sie dann die Gewichte ab, bevor Sie aufstehen und die Gewichte nach oben drücken.</string>
+
+    <!-- Rücken -->
+    <string name="e58_s1_bend_from_back">Auf den Knien stehen, Hände in den Rücken legen und sich nach hinten dehnen.</string>
+    <string name="e59_s2_shoulder_mobility">Mit Händen und Knien in Bauchlage gehen und sich nach hinten dehnen.</string>
+    <string name="e60_s3_camel_back_strech">Mit Händen und Knien in Bauchlage gehen und den Rücken nach oben und unten dehnen.</string>
+    <string name="e61_s4_floor_pull_up">Mit den Händen den Boden berühren, flach auf dem Bauch liegen und den oberen Rücken nach hinten dehnen.</string>
+    <string name="e62_s5_seated_side_reach_to_foot">In sitzender Position das linke Bein anwinkeln und das rechte Bein nach vorne strecken, die Hände an den rechten Fuß legen und den Körper nach vorne dehnen. Diese Bewegung mit dem anderen Bein wiederholen.</string>
+    <string name="e63_s6_seated_singe_side_reach_to_foot">In sitzender Position das linke Bein anwinkeln und das rechte Bein zur Seite ausstrecken, den rechten Fuß mit der rechten Hand halten und den Körper nach rechts dehnen, während die linke Hand nach oben zeigt. Diese Bewegung mit dem anderen Bein wiederholen.</string>
+    <string name="e64_s7_lying_knee_to_chest">Auf dem Rücken liegen, die Knie in die Hände nehmen und die Knie zur Brust ziehen und dann zurückgehen lassen.</string>
+    <string name="e65_s8_lying_knee_to_stomatch">Die Beine übereinander legen, auf den Rücken legen und mit den Händen die Beine zum Bauch hinziehen und wieder freigeben.</string>
+    <string name="e66_s9_lying_leg_to_sides">Mit angehobenen Knien auf dem Rücken liegen, die Arme zur Seite ausstrecken und die Knie abwechselnd nach rechts und links absenken, während der Kopf in die entgegengesetzte Richtung zeigt.</string>
+    <string name="e67_s10_lying_leg_raise">Die Beine nach oben strecken, auf dem Rücken liegen, die Arme zur Seite ausstrecken und dann abwechselnd das rechte und linke Bein zur anderen Kniehöhe absenken.</string>
+    <string name="e68_s11_seated_knee_raise">Die Beine nach vorne strecken, sich hinsetzen, die Arme auf die Knie legen und abwechselnd das rechte und linke Bein auf das andere Knie legen.</string>
+    <string name="e69_s12_strech_to_foots">Die Beine nach vorne strecken, sich hinsetzen und mit den Händen die Fußspitzen erreichen.</string>
+    <string name="e70_s13_standing_leg_extension">Mit geöffneten Beinen und Armen aufstehen, die Arme zur Schulter führen und gleichzeitig die Füße nach hinten bewegen, sodass sie die Knie berühren.</string>
+    <string name="e71_s14_up_down_sumo">Mit überkreuzten Beinen aufstehen, schnell auf den Boden gehen und wieder aufstehen.</string>
+    <string name="e72_s15_curtsy_lunge_with_knee_raise_lift">Mit einem Knie nach vorne gehen, das Gewicht mit einem Arm zur Seite anheben, gleichzeitig aufstehen und das andere Knie seitlich dehnen. Diesen Vorgang mit dem anderen Arm und Bein wiederholen.</string>
+    <string name="e73_s16_half_floor_pull_up">Mit geöffneten Beinen auf den Bauch legen, die Arme mit Gewichten auf Schulterhöhe strecken und die Füße ohne Beugung nach oben bewegen.</string>
+    <string name="e74_s17_down_to_up_clapping">Mit geschlossenen Beinen und Armen stehen, die Arme oben zusammenführen und dann die Beine und Arme seitlich öffnen und schließen.</string>
+    <string name="e75_s18_shoulder_leg_streching">Mit geschlossenen Beinen und Armen stehen, die Beine öffnen und die Arme zusammenführen und öffnen, während man sich bewegt.</string>
+    <string name="e76_s19_standing_reach_to_foot">Stehen und abwechselnd mit der rechten und linken Hand die jeweilige Fußgelenk berühren.</string>
+    <string name="e77_s20_jumping_sides">Mit einer Hand auf dem Boden springen, nach hinten springen und die gleiche Position einnehmen, den Vorgang wiederholen.</string>
+
+    <!-- Yoga -->
+    <string name="e78_y1_standing_shoulder_extension">Mit einer Hand aufstützen und seitlich mit ausgestreckten Beinen sitzen, den anderen Arm nach hinten strecken.</string>
+    <string name="e79_y2_standing_leg_streching">Mit den Händen an der Hüfte, auf einem Bein stehen und das andere Bein nach vorne und hinten strecken.</string>
+    <string name="e80_y3_curtsy_squat_fast">In einer Hocke-Stellung stehen und seitlich springen, um die Beine zu wechseln.</string>
+    <string name="e81_y4_seated_side_extensions">Mit Unterstützung von Händen und Füßen in Rückenlage sitzen, den Oberkörper gerade halten und die Hände nach hinten strecken.</string>
+    <string name="e82_y5_single_leg_extension">Mit Unterstützung von Händen und Füßen in Rückenlage sitzen, ein Bein hinter das andere Bein legen und sich so bewegen.</string>
+    <string name="e83_y6_mountain_pushups">Mit den Händen auf Schulterhöhe, auf den Zehenspitzen stehend, das rechte und linke Bein abwechselnd zur Schulter bewegen und dann aufstehen und springen.</string>
+    <string name="e84_y7_side_plank_leg_raise">Mit Ellenbogenstütze seitlich liegen, den anderen Arm nach oben strecken und die Beine bewegen, um die Muskeln zu trainieren.</string>
+    <string name="e85_y8_down_to_up_hand_raise">Ein geeignetes Gewicht greifen und mit einer Kniebeugenbewegung das Gewicht rechts und links heben.</string>
+    <string name="e86_y9_plank_extension">In der Plank-Position den Körper vor und zurück bewegen.</string>
+    <string name="e87_y10_plank_walk">In der Plank-Position den Körper vor und zurück bewegen, als ob man spazieren gehen würde.</string>
+    <string name="e88_y11_side_plank_extension">Mit einer Ellbogenstütze seitlich liegen, den anderen Arm über dem Kopf halten und die Hüfte zum Boden bewegen.</string>
+    <string name="e89_y12_plank_row">Liegestütze machen und dann die Arme abwechselnd nach oben strecken.</string>
+
+    <string name="txt_start">Start</string>
+    <string name="label_quitexercise">Möchten Sie das Training wirklich beenden?</string>
+    <string name="label_exerciselost">(Ihr Fortschritt geht verloren.)</string>
+    <string name="favourite_list">Favoritenliste</string>
+    <string name="all_exercies">Alle Übungsbewegungen</string>
+    <string name="my_fav_list">Meine Favoriten</string>
+    <string name="label_error">Fehler beim Abrufen der Daten</string>
+    <string name="lbl_start">Start</string>
+    <string name="lbl_my_favourite">Meine Favoriten</string>
+    <string name="lbl_fav_list_empty">Die Favoritenliste ist leer. Schauen Sie sich Trainingsprogramme an, um Favoriten hinzuzufügen.</string>
+    <string name="btn_chec">Überprüfen</string>
+    <string name="next_move">Nächste Bewegung</string>
+    <string name="lbl_before">Vorherige</string>
+    <string name="lbl_sonraki">Nächste</string>
+    <string name="lbl_step">/ Schritt</string>
+    <string name="lbl_day">Tag</string>
+    <string name="lbl_month">Monat</string>
+    <string name="lbl_year">Jahr</string>
+    <string name="lbl_levelofmove">Ihr tägliches Bewegungsniveau</string>
+    <string name="lbl_levelmove_desc">Indem Sie Ihr Bewegungsniveau festlegen, ermöglichen Sie uns, Ihnen die am besten geeigneten Übungen zuzuweisen.</string>
+    <string name="lbl_delete_favourite">Möchten Sie die Bewegung wirklich aus Ihren Favoriten entfernen?</string>
+</resources>

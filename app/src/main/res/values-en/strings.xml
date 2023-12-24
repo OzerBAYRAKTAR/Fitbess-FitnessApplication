@@ -1,0 +1,536 @@
+<resources>
+    <string name="app_name">HealthyBackandNeck</string>
+
+    <string name="skip">Skip</string>
+    <string name="start">Lets Start</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string name="title1">Get Up!</string>
+    <string name="desc">Description</string>
+    <string name="title2">Work Your Body!</string>
+    <string name="title3">Move It!</string>
+    <string name="desc1">Step out of your comfort zone and explore yourself</string>
+    <string name="desc2">Exercise regularly for a healthy lifestyle and eat healthily</string>
+    <string name="desc3">Get moving against inactivity</string>
+    <string name="healthy_body">Healthy Body</string>
+    <string name="exercice">Exercise</string>
+    <string name="exercices">Exercises</string>
+    <string name="kcal">Calories</string>
+    <string name="time">Time</string>
+    <string name="heart">Heart Rate</string>
+    <string name="statistics">Statistics</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="reach_us">Contact Us</string>
+    <string name="search">Search Food</string>
+
+    <!-- home fragment viewpager -->
+    <string name="hometitle1">Easy Level</string>
+    <string name="hometitle2">Intermediate Level</string>
+    <string name="hometitle3">Advanced Level</string>
+    <string name="hometitle4">Create Your Own Program</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="easy_program">Easy Program</string>
+
+    <string name="get_start">Start</string>
+    <string name="easy_desc">If you have never exercised before</string>
+    <string name="middle_desc">If you exercise occasionally</string>
+    <string name="hard_desc">If exercise is a lifestyle for you</string>
+
+    <string name="information">Information</string>
+    <string name="training_tracking">Training Schedule</string>
+    <string name="txthour">Hour</string>
+    <string name="txtcalori">Spent \nCalories</string>
+    <string name="back">Back</string>
+    <string name="forward">Forward\n</string>
+    <string name="txt_monday">Mon</string>
+    <string name="txt_tuesday">Tue</string>
+    <string name="txt_wednesday">Wed</string>
+    <string name="txt_thursday">Thu</string>
+    <string name="txt_friday">Fri</string>
+    <string name="txt_saturday">Sat</string>
+    <string name="txt_sunday">Sun</string>
+    <string name="trains">Exercise Plans</string>
+    <string name="nutrution_advice">Nutrition Advice</string>
+    <string name="nutrition">Nutrition</string>
+    <string name="nutrition_desc">Some advice for a healthy nutrition style</string>
+    <string name="breath">Breathing Exercises</string>
+    <string name="breath_desc">Effective Breathing Techniques for a Healthy Life</string>
+    <string name="search_food">Explore Foods</string>
+
+    <!-- Diet Detail -->
+    <string name="diet_title1">Dont Skip Meals</string>
+    <string name="diet_title2">Drink Plenty of Water</string>
+    <string name="diet_title3">Limit Ready-to-Eat Foods</string>
+    <string name="diet_title4">Aim for Diversity in Nutrition</string>
+    <string name="diet_title5">Limit Caffeine Intake</string>
+    <string name="diet_title6">Pay Attention to Calcium-Rich Nutrition</string>
+    <string name="diet_title7">Focus on Vitamin C-Rich Nutrition</string>
+    <string name="diet_title8">Pay Attention to Iron-Rich Nutrition</string>
+    <string name="diet_title9">Consume More Fiber</string>
+    <string name="diet_title10">Dont Neglect Exercise</string>
+    <string name="diet_title11">Maintain Your Ideal Weight</string>
+    <string name="diet_title12">Reduce Animal and Trans Fats</string>
+    <string name="diet_title13">Stay Away from Alcohol and Smoking Habits</string>
+    <string name="diet_title14">Pay Attention to Fruit Consumption</string>
+    <string name="diet_title15">Give Importance to Milk and Yogurt Consumption</string>
+    <string name="diet_title16">Include Fibrous Foods in Your Daily Diet</string>
+    <string name="diet_title17">Add Foods Containing Zinc to Your List</string>
+
+    <string name="diet_desc1">Skipping meals invites both weight gain and various ailments. Here are the harms of skipping meals: Increased desire to eat more: While your daily meals could be consumed in smaller portions, skipping a meal leads to increased hunger in the next meal, causing rapid weight gain. Studies show that skipping meals leads to obesity in the long run.</string>
+    <string name="diet_desc2">After oxygen, water is the most important element for human life. While a person can survive hunger for weeks, they can only survive without water for a few days. Water is essential for balancing body temperature, maintaining metabolism, and eliminating toxic waste from the body. Therefore, consume 2–2.5 liters of water daily.</string>
+    <string name="diet_desc3">Processed foods and heavy desserts categorized as junk food contain excessive amounts of fat and energy, leading to weight gain and increased susceptibility to diseases. Therefore, limit the consumption of these foods.</string>
+    <string name="diet_desc4">Strive for a varied diet as much as possible. Try to include all food groups (dairy, meat, fruits-vegetables, grains) in your daily meal plan. Even if you can not consume all of these foods in one meal, try to have them in different meals throughout the day.</string>
+    <string name="diet_desc5">Long-term and intense caffeine consumption causes physical and mental disorders. It leads to increased acidity, ulcer formation, and decreased calcium levels in the body. It can also cause restlessness, anxiety, mental depression, irritability, and sleep disorders.</string>
+    <string name="diet_desc6">Besides calciums role in bone and dental development, it has other crucial functions such as ensuring blood clotting, structuring joints, facilitating muscle contraction, regulating heartbeats, and assisting in nerve system repair.</string>
+    <string name="diet_desc7">Experts consider Vitamin C one of the safest and most beneficial nutrients for the body. Its benefits include strengthening the immune system, protecting against cardiovascular diseases, prenatal health issues, eye diseases, and even wrinkles. Studies show that Vitamin C is beneficial for individuals with weakened immune systems due to stress. Since it is one of the fastest-depleted nutrients in the bodies of alcohol consumers, smokers, and obese individuals, it is an important criterion in overall health measurement.</string>
+    <string name="diet_desc8">The body needs iron for a series of metabolic processes such as blood formation, oxygen supply to cells, assisting hormone production, enzyme formation, supporting defense against infections, and strengthening the immune system.</string>
+    <string name="diet_desc9">Fiber regulates the shape, volume, and frequency of bowel movements by absorbing water. It prevents constipation and supports colon health, thereby helping prevent diseases like colon cancer, diverticulosis, hemorrhoids, and irritable bowel syndrome.</string>
+    <string name="diet_desc10">Regular exercise strengthens the cardiovascular system, increases good cholesterol, and lowers blood pressure. Being active reduces the risk of heart disease by 50%. (Healthline, 2021) Digestive System: Exercising reduces constipation issues and supports bowel movement regulation.</string>
+    <string name="diet_desc11">Maintaining a healthy weight range is crucial to reduce the risk of diseases and to always stay fit and energetic. Pay attention to keeping your Body Mass Index (BMI), body fat percentage, waist circumference, and hip circumference within a healthy range.</string>
+    <string name="diet_desc12">There are many reasons not to consume products containing trans fats. One of them is that trans fats increase bad cholesterol (LDL cholesterol) and decrease good cholesterol (HDL), which leads to the accumulation and hardening of arteries. Consuming trans fat-containing foods can lead to serious problems such as heart disease and stroke in the long run. Additionally, it increases the risk of obesity and the development of type 2 diabetes.</string>
+    <string name="diet_desc13">Alcohol and cigarettes should not be consumed as they cause many diseases that can lead to fatal consequences. Alcohol and cigarettes are not simple habits, and quitting them can be quite difficult. Therefore, it is beneficial to stay away from alcohol and smoking.</string>
+    <string name="diet_desc14">Fruits, one of natures most valuable gifts, not only have colorful appearances and delicious tastes but are also highly beneficial for our health. With the contributions of the nutrients fruits provide to our bodies, we can avoid various illnesses and maintain a healthier and more energetic lifestyle.</string>
+    <string name="diet_desc15">Yogurt contains all components of milk that have been metabolized into useful metabolic products by lactic acid bacteria. Especially for people with lactose intolerance, yogurt and similar products can be consumed more comfortably than milk. Lactose intolerance occurs when there is a deficiency in the enzyme that breaks down lactose in the human body. As yogurt converts lactose into lactic acid, it does not pose a problem for those with enzyme deficiencies. The beneficial bacteria produced during yogurt fermentation increase intestinal mobility, help accelerate bowel movements, and remove toxic substances formed in the colon. It also lowers cholesterol levels and maintains blood sugar levels.</string>
+    <string name="diet_desc16">Fiber is a plant-based carbohydrate that the body cannot fully break down but provides numerous benefits such as promoting weight loss, lowering blood sugar, and improving heart health by ensuring the intestines function properly. Adults require 22 to 34 grams of fiber daily, depending on age and gender.</string>
+    <string name="diet_desc17">Growth and development, immune system function, DNA synthesis, protein synthesis, tissue formation, reproductive function, and neurobehavioral developments are all influenced by zinc. Numerous enzymes require zinc for maximum catalytic activity in biochemical activities.</string>
+
+    <string name="next">Next</string>
+    <string name="geri">Back</string>
+    <string name="howto_breath">The most correct way to breathe is to utilize your diaphragm during respiration. When you get used to diaphragmatic breathing, you may feel relieved from the inability to take deep breaths. While performing diaphragmatic breathing, you will feel the expansion of the space in your abdomen. This allows your lungs to use their full capacity.</string>
+    <string name="breath_technices">Breathing Techniques</string>
+    <string name="breath_style">What Is the Most Correct Way to Breathe?</string>
+    <string name="diyafram_desc">Sit or lie down comfortably. While inhaling, expand your abdominal area, and let it deflate while exhaling. This way, breathe slowly and deeply.</string>
+    <string name="diyafram_title">Diaphragmatic Breathing</string>
+    <string name="four_breath">Four Breathing (4-7-8 Breathing)</string>
+    <string name="fourbreath_desc">Here, you will sequentially apply breathing, holding, and exhaling with specific counts. While inhaling, count to 4, hold your breath for 7 counts, and exhale for 8 counts.</string>
+    <string name="counting_breath">Counting Breaths</string>
+    <string name="countingbreath_desc">You can count while inhaling and exhaling. For example, count 1-2 while inhaling and count 1-2-3-4 while exhaling. This is a useful method to slow down your breath and relax.</string>
+    <string name="medidation_breath">Meditation with Breath Counting</string>
+    <string name="mediationbreath_desc">While inhaling, say "one", and while exhaling, say "two". Count up to ten and start again from zero. Focusing your attention on your breath can calm your mind.</string>
+    <string name="seyir_breath">Sight Breathing (Sitali Breathing)</string>
+    <string name="alternatv_nose_breath">Alternative Nostril Breathing</string>
+    <string name="seyir_desc">Roll your tongue into a tube shape and place it between your lips. Inhale through this tunnel. The cooling of the breath creates a soothing effect.</string>
+    <string name="alternativ_breath_desc">Close your right nostril and inhale through your left nostril. Then close your left nostril and exhale through your right nostril. Continue in the reverse order.</string>
+    <string name="closed_breath">Closed Breath Technique</string>
+    <string name="closed_breath_desc">While inhaling, close your nasal passages, and while exhaling through your mouth, open them again. Then close your nasal passages again while exhaling through your mouth.</string>
+    <string name="focus_breath">Breath Focus</string>
+    <string name="not_found">Description not found</string>
+    <string name="focus_breath_desc">Focus your mind only on your breath. Pay attention to the sensations and rhythm of your breath while inhaling and exhaling. If thoughts scatter, simply return to your breath.</string>
+
+    <!-- Exercise Fragment -->
+    <string name="back_back">Back-Neck</string>
+    <string name="create_plan">Create Your Plan</string>
+    <string name="create_plan_desc">Choose exercises and create your own plan!</string>
+
+    <!-- Warm Up -->
+    <string name="strech">Stretch</string>
+    <string name="warmup_exercises">Warm-Up Exercises</string>
+    <string name="warmup_desc1">Pre-Exercise Stretching</string>
+    <string name="warmup_desc2">Warm-Up for Beginners</string>
+    <string name="warmup_desc3">Full Body Stretching Movements</string>
+
+    <!-- Fix Posture -->
+    <string name="posture_exercises">Posture Correction Movements</string>
+    <string name="posture_desc1">Simple Stretching Movements</string>
+    <string name="posture_desc2">Core Strengthening</string>
+    <string name="posture_desc3">Posture Correction</string>
+
+    <!-- Neck-Back -->
+    <string name="neck">Neck</string>
+    <string name="neckback_exercise">Back-Neck Movements</string>
+    <string name="back_desc1">Back Exercises</string>
+    <string name="back_desc2">Back Strengthening</string>
+    <string name="neck_desc1">Neck Exercises</string>
+    <string name="neck_desc2">Neck Strengthening</string>
+
+    <!-- Arm -->
+    <string name="arm">Arm</string>
+    <string name="arm_exercises">Arm Strengthening Exercises</string>
+    <string name="arm_desc1">Simple Resistance Movements</string>
+    <string name="arm_desc2">Strengthen Arm Muscles</string>
+    <string name="arm_desc3">Tone Your Arms</string>
+
+    <!-- Abs -->
+    <string name="abs">Abs</string>
+    <string name="abs_exercises">Abdominal Strengthening Exercises</string>
+    <string name="abs_desc1">Simple Resistance Movements</string>
+    <string name="abs_desc2">Strengthen Abdominal Muscles</string>
+    <string name="abs_desc3">3D Abdominal Muscle Movements</string>
+
+    <!-- Leg-Butt -->
+    <string name="leg">Leg-Buttocks</string>
+    <string name="leg_exercises">Leg-Buttocks Strengthening Exercises</string>
+    <string name="leg_desc1">Beginner Leg Movements</string>
+    <string name="leg_desc2">Strengthen Leg Muscles</string>
+    <string name="leg_desc3">Beginner Buttocks Movements</string>
+    <string name="leg_desc4">Tone Your Buttocks</string>
+    <string name="txt_time">Time Spent</string>
+    <string name="txt_calori">Calories</string>
+    <string name="txt_alltime">All Time</string>
+    <string name="txt_bodyparameters">Body</string>
+    <string name="txt_record">All-Time Achievements</string>
+    <string name="booty">Buttocks</string>
+    <string name="belly">Belly</string>
+    <string name="chest">Chest</string>
+    <string name="body_indeks">Body Mass Index (BMI)</string>
+    <string name="height">Height(cm)</string>
+    <string name="height_label">Height</string>
+    <string name="weight">Weight(kg)</string>
+    <string name="weight_label">Weight</string>
+    <string name="water_label">Water Ratio</string>
+    <string name="sleep">Sleep</string>
+    <string name="newTest">New Measurement</string>
+    <string name="categorie">Category</string>
+    <string name="indeks">Index</string>
+    <string name="reminders">Reminders</string>
+    <string name="app_settings">App Settings</string>
+    <string name="water_reminder">Water Reminder</string>
+    <string name="enough_drink_water">Adequate Water Intake</string>
+    <string name="enough_drink_water_desc">Drinking water will keep you from being dehydrated and will help you get the most out of your workouts.</string>
+    <string name="notifications">Notifications</string>
+    <string name="open_notifications">Open Notifications</string>
+    <string name="open_notifications_desc">Turn on notifications to keep your health and fitness at the highest level. It is necessary to remind you of your exercise plans and to provide motivation.</string>
+    <string name="languages">Language Options</string>
+    <string name="restart">Restart Progress</string>
+    <string name="theme">Change Theme</string>
+    <string name="helpus">Support Us</string>
+    <string name="rateus">Rate Us</string>
+    <string name="shareus">Share with Friends</string>
+    <string name="privacy">Privacy Policy</string>
+    <string name="easy_level">Beginner\nLevel</string>
+    <string name="easy_level_fil">Beginner Level</string>
+    <string name="easy">Beginner Level</string>
+    <string name="middle_level">Intermediate\nLevel</string>
+    <string name="hard_level">Advanced\nLevel</string>
+    <string name="label_day">Day</string>
+    <string name="label_exercise">Exercise</string>
+    <string name="label_minute">min</string>
+    <string name="label_kcal">kcal</string>
+    <string name="label_tellus">Tell Us About Yourself</string>
+    <string name="label_tellus_desc">To provide you with better service, we need to get to know you better.</string>
+    <string name="label_continue">Continue</string>
+    <string name="label_male">Male</string>
+    <string name="label_famale">Female</string>
+    <string name="label_yas">Date of Birth?</string>
+    <string name="label_height">How tall are you?</string>
+    <string name="label_height_desc">Height in cm. You can change this later.</string>
+    <string name="label_weight">How much do you weigh?</string>
+    <string name="label_weight_desc">Weight in kg. You can change this later.</string>
+    <string name="label_yas_desc">This will help create your personal workout plan.</string>
+    <string name="label_back">Back</string>
+    <string name="label_aim">What are your goals?</string>
+    <string name="label_aim_desc">You can select multiple. You can change this later.</string>
+    <string name="number_picker_formatter">%02d</string>
+    <string name="label_getfit">Get Fit</string>
+    <string name="label_gainweight">Gain Weight</string>
+    <string name="label_loseweight">Lose Weight</string>
+    <string name="label_buildmuscle">Build Muscle</string>
+    <string name="label_improveindruce">Increase Endurance</string>
+    <string name="label_others">Others</string>
+    <string name="exercise_move">Movement</string>
+    <string name="time_min">Minutes</string>
+    <string name="general_progress">General Progress</string>
+    <string name="splash_1">The information you entered is being reviewed...</string>
+    <string name="splash_2">Suitable exercises are being searched for...</string>
+    <string name="splash_3">A tailored plan is being prepared for you...</string>
+    <string name="getready">Get ready for the workout!...</string>
+    <string name="sec_time_left">Seconds Left</string>
+    <string name="get_rest">Rest Now!</string>
+    <string name="congrulations">CONGRATULATIONS!</string>
+    <string name="workout_complete">You have successfully completed the workout.</string>
+    <string name="skip_Rest">Skip Rest</string>
+    <string name="home">Home</string>
+
+    <!-- Foody -->
+    <string name="meat">Meat</string>
+    <string name="milkprodct">Milk</string>
+    <string name="fresh">Vegetable</string>
+    <string name="fruit">Fruit</string>
+    <string name="other">Other</string>
+    <string name="legume">Legume</string>
+
+    <!-- Fresh -->
+    <string name="patates">Potato</string>
+    <string name="patlican">Eggplant</string>
+    <string name="marul">Lettuce</string>
+    <string name="havuc">Carrot</string>
+    <string name="roka">Arugula</string>
+    <string name="tere">Watercress</string>
+    <string name="sogan">Onion</string>
+    <string name="biber">Pepper</string>
+    <string name="domates">Tomato</string>
+
+    <!-- Meat -->
+    <string name="antrikot">Ribeye</string>
+    <string name="biftek">Beefsteak</string>
+    <string name="bonfile">Fillet</string>
+    <string name="kiyma">Minced Meat</string>
+    <string name="hindi">Turkey Meat</string>
+    <string name="kuzu">Lamb Meat</string>
+    <string name="tavuk">Chicken Meat</string>
+    <string name="ordek">Duck Meat</string>
+    <string name="ahtapot">Octopus</string>
+    <string name="karides">Shrimp</string>
+    <string name="alabalık">Trout</string>
+    <string name="levrek">Sea Bass</string>
+    <string name="kalamar">Squid</string>
+    <string name="hamsi">Anchovy</string>
+    <string name="somon">Salmon</string>
+
+    <!-- Milk -->
+    <string name="sut">Milk</string>
+    <string name="yogurt">Yogurt</string>
+    <string name="taze_peynir">Fresh Cheese</string>
+    <string name="kasar_peynir">Cheddar Cheese</string>
+    <string name="lor_peynir">Cottage Cheese</string>
+    <string name="ayran">Buttermilk</string>
+    <string name="kefir">Kefir</string>
+    <string name="tereyagi">Butter</string>
+    <string name="yumurta">Egg</string>
+
+    <!-- Fruit -->
+    <string name="muz">Banana</string>
+    <string name="elma">Apple</string>
+    <string name="armut">Pear</string>
+    <string name="cilek">Strawberry</string>
+    <string name="karpuz">Watermelon</string>
+    <string name="kavun">Melon</string>
+    <string name="seftali">Peach</string>
+    <string name="kayisi">Apricot</string>
+    <string name="erik">Plum</string>
+    <string name="incir">Fig</string>
+    <string name="uzum">Grape</string>
+    <string name="kiraz">Cherry</string>
+
+    <!-- Legume -->
+    <string name="bakla">Broad Bean</string>
+    <string name="bamya">Okra</string>
+    <string name="barbunya">Kidney Bean</string>
+    <string name="bezelye">Peas</string>
+    <string name="borulce">Runner Bean</string>
+    <string name="mercimek">Lentil</string>
+    <string name="kestane">Chestnut</string>
+    <string name="fasulye">Bean</string>
+    <string name="nohut">Chickpea</string>
+    <string name="ceviz">Walnut</string>
+    <string name="fistik">Pistachio</string>
+    <string name="yesil_fasulye">Green Bean</string>
+    <string name="tofu">Tofu</string>
+    <string name="badem">Almond</string>
+    <string name="txtiron">Iron</string>
+    <string name="txtmagnesium">Magnesium</string>
+    <string name="txtpotasium">Potassium</string>
+    <string name="txtsodium">Sodium</string>
+    <string name="txtcalsium">Calcium</string>
+    <string name="txtoil">Fat</string>
+    <string name="txtcarb">Carbohydrate</string>
+    <string name="txtprotein">Protein</string>
+    <string name="txtvitaminc">Vitamin C</string>
+
+
+    <string name="attention">Attention</string>
+    <string name="alertmessage">Are you sure you want to exit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="label_age">Age</string>
+    <string name="label_dayofcalorie">Daily Calorie Need</string>
+    <string name="label_fatrate">Body Fat Percentage</string>
+    <string name="label_yourfaterate">Your Fat Rate</string>
+    <string name="label_low">Low level of activity</string>
+    <string name="label_middle">Moderate level of activity</string>
+    <string name="label_high">High level of activity</string>
+    <string name="label_toohigh">Very high level of activity</string>
+    <string name="label_save">Save</string>
+    <string name="label_calculate">Calculate</string>
+    <string name="label_neckcm">Neck Circumference (cm)</string>
+    <string name="label_gender">Gender</string>
+    <string name="label_man">Male</string>
+    <string name="label_female">Female</string>
+    <string name="label_dailycalorie">Daily Calorie Need</string>
+    <string name="label_activitylevel">Activity Level</string>
+    <string name="label_bellycm">Waist Circumference (cm)</string>
+    <string name="label_buttcm">Hip Circumference (cm)</string>
+    <string name="label_inputattention">Please enter a valid value</string>
+    <string name="label_fillall">Please fill in all values</string>
+    <string name="label_okay">Okay</string>
+    <string name="label_bmi">Body Mass Index</string>
+    <string name="label_dailyCalorieRequirement">Daily Calorie Need</string>
+    <string name="label_zayif">Underweight</string>
+    <string name="label_fat">Overweight</string>
+    <string name="label_weighted">Obese</string>
+    <string name="label_normal">Normal</string>
+    <string name="label_tryagain">Try Again</string>
+    <string name="label_yourfatrate">Your Body Fat Percentage</string>
+    <string name="label_yourdailycaloriereq">Daily Calorie Intake Requirement</string>
+    <string name="label_drinkwater">Get up and drink your water!</string>
+    <string name="label_timetodrinkwater">Time to drink water!</string>
+    <string name="label_waterreminder">Water Reminder</string>
+    <string name="label_fitnessreminder">Fitness Reminder</string>
+    <string name="label_dofitness">It is time to workout!</string>
+    <string name="label_selectlanguage">Language Options</string>
+    <string name="label_cancel">Cancel</string>
+    <string name="label_restartmessage">All your progress will be deleted, are you sure you want to continue?</string>
+    <string name="label_attention">Attention</string>
+    <string name="label_shareus">Share Your App with Friends!</string>
+    <string name="label_shareerror">No application available for sharing</string>
+    <string name="label_sharevia">Share via</string>
+    <string name="label_reviewerror">The review process failed</string>
+    <string name="label_ratingsuccess">Rating process completed</string>
+
+
+
+    <!-- Leg-Butt -->
+    <string name="e90_b1_bird_dog">Assume a crawling position, stretch the right arm and left leg forward, continue the movement with the other arm and leg</string>
+    <string name="e91_b2_jump_squat">Hands brought to face level, squatting position, jump up</string>
+    <string name="e92_b3_glute_bridge">Lying down with knees facing upward, raise the hips upward by holding suitable weight with the hands</string>
+    <string name="e93_b4_quadruped_hip_extension">In a crawling position, holding weight with the knee, lift the leg backward</string>
+    <string name="e94_b5_plie_squat">Standing with feet apart and holding weights, squat down as far as possible and stand back up</string>
+    <string name="e95_b6_reverse_lunge_forward_hand">Standing with arms extended forward, kneel down on the right and left legs respectively</string>
+    <string name="e96_b7_fire_hydrants">In a crawling position, open the right and left legs to the side alternately</string>
+    <string name="e97_b8_clamshells">Lying on the side, stretch legs to the side</string>
+    <string name="e98_b9_split_squat">Arms spread to the side, stand up and stretch the knee forward</string>
+    <string name="e99_b10_reverse_lunge">Stand up and stretch the knee backward</string>
+    <string name="e100_b11_standing_bend_over">Standing up with hands a little above the nape, bend forward</string>
+    <string name="e101_b12_chair_squat">Standing with hands fixed, sit and stand up from a chair</string>
+    <string name="e102_b13_crab_walk">Standing with hands fixed, use a resistance band around the feet, walk sideways</string>
+    <string name="e103_b14_donkey_kick">In a crawling position, lift the leg backward while holding weight with the knee</string>
+    <string name="e104_b15_frog_jumps">Squat quickly with hands fixed on the ground and jump up</string>
+    <string name="e105_b16_grace_marching_bridge_extension">Lying on the back with hands towards the heels and knees facing upwards, raise the legs one by one</string>
+    <string name="e106_b17_high_donkey_kick">Lying face down with hands at shoulder level, support from the toes, lift the knee backward</string>
+    <string name="e107_b18_squats">Squat down and stand up with weight in hand</string>
+    <string name="e108_b19_pull_single_leg">In a crawling position, hold weight in the right hand, open the right hand and leg to the side, touch the elbow and knee together, repeat the same with the other hand and leg</string>
+    <string name="e109_b20_single_leg_deadlift">Standing on one leg, bend forward to touch the toes while extending the other leg backward</string>
+    <string name="e110_b21_step_out_squat_with_pulse">Standing with weight in hand, squat down and move the right leg back and forth, repeat the same with the other leg</string>
+
+
+    <!-- Neck -->
+    <string name="e1_b1_sitting_side_bends">Sitting upright on a chair, keeping the head still, stretching to the right and left</string>
+    <string name="e2_b2_neck_rotation">Sitting in a fixed position on the ground, making an oval-shaped neck exercise</string>
+    <string name="e3_b3_forward_and_back_bend">Sitting in a fixed position on the ground, holding the neck with both hands, stretching forward</string>
+    <string name="e4_b4_forward_dive">Standing in a fixed position, bringing the right hand to the forehead and moving the neck forward and backward</string>
+    <string name="e5_b5_back_and_forward_band">Standing in a fixed position, tilting the neck backward</string>
+    <string name="e6_b6_neck_rotation">In a fixed position, moving the neck right and left</string>
+    <string name="e7_b7_shoulder_rotation">In a fixed position, moving the right and left shoulders in an oval shape from top to bottom without moving the neck</string>
+    <string name="e8_b8_side_bends">In a fixed position, tilting the neck to the right and left</string>
+    <string name="e9_b9_upper_body_rotation">Standing in a fixed position with the arm resting against the wall, making a quarter turn from the waist up</string>
+    <string name="e10_b10_shoulder_shrug">In a fixed position, simultaneously pulling the shoulders towards the back of the neck</string>
+    <string name="e11_b11_get_up_straight">Sitting on a chair with hands clasped, standing up and sitting down without any support</string>
+    <string name="e12_b12_sitting_dive">Sitting on an object 15-20 cm high, pulling the chest inward with the neck fixed</string>
+    <string name="e13_b13_lying_dive">Lying down with legs bent, lifting and lowering the neck along with the head</string>
+    <string name="e14_b14_sitting_shoulder_rotation">Sitting upright on a chair, arms forming a triangle touching the shoulders, and moving the elbows up and down</string>
+    <string name="e15_b15_chair_back_strech">Sitting upright on a chair, positioning hands above the neck, and alternately moving legs to the right and left at waist level</string>
+    <string name="e16_b16_superman">Lying straight on the stomach and lifting both hands and feet</string>
+    <string name="e17_b17_lying_neck_extension">Lying down with legs bent, clasping hands together, holding the neck slightly off the ground and rotating it right and left</string>
+
+    <!-- Abdominal -->
+    <string name="e18_k1_sit_up">Sitting halfway down, supporting the back with hands, moving the back and legs back and forth</string>
+    <string name="e19_k2_scissor_kicks">Lying down, hands flat on the floor, raising and lowering legs alternately</string>
+    <string name="e20_k3_bicycle_crunch_slowed">Lying down with knees bent, hands behind the head, twisting the upper body right and left while pulling legs towards the abdomen</string>
+    <string name="e21_k4_russian_twist">Lying down with legs bent, hands behind the head, crossing hands alternately towards the opposite hip</string>
+    <string name="e22_k5_hold_leg_raise">Legs raised towards the ceiling while lying down, slightly lifting and lowering the upper body</string>
+    <string name="e23_k6_lying_reaches">Reaching legs and arms diagonally while lying down for an abdominal workout</string>
+    <string name="e24_k7_fast_crunchs">Lying down with knees bent, lifting the upper body in a half crunch position</string>
+    <string name="e25_k8_seated_punchs">Sitting with knees bent, leaning back, and performing punches while supporting calves with hands</string>
+    <string name="e26_k9_side_reaches">Sitting with knees bent, reaching forward with arms parallel to the knees, and stretching arms right and left from the waist up</string>
+    <string name="e27_k10_toe_reach">Lying down, legs and arms straight, reaching towards each other</string>
+    <string name="e28_k11_reverse_crunch">Lying down with knees bent, hands raised, extending opposite arm and leg while lying down</string>
+    <string name="e29_k12_full_crunch">Lying down with arms behind the head and lifting the upper body while keeping the legs slightly apart</string>
+    <string name="e30_k13_single_side_up">Lying down with one leg raised and the other straight, reaching towards the raised leg</string>
+    <string name="e31_k14_to_v_sit">Lying down and reaching towards the knees and then extending the body</string>
+    <string name="e32_k15_single_leg_raise">Lying down on elbows, raising and lowering legs towards the abdomen</string>
+    <string name="e33_k16_standing_throw_knee">Standing with hands together and bringing legs towards the abdomen</string>
+    <string name="e34_k17_standing_single_leg_up">Standing with hands above, and bringing legs towards elbows</string>
+    <string name="e35_k18_t_position">Standing straight, stretching one leg backward and the upper body in the opposite direction</string>
+    <string name="e36_k19_standing_to_push_up">Transitioning from a squatting position to a push-up position and back</string>
+    <string name="e37_k20_lying_leg_up">Lying down on elbows with legs raised and lowering them without bending the knees</string>
+    <string name="e38_k21_reverse_crunch">Lying down with knees bent, hands raised, extending opposite arm and leg while lying down</string>
+    <string name="e39_k22_standing_shake">Standing with knees and elbows slightly bent and moving the waist right and left</string>
+    <string name="e40_k23_modified_plank">Plank position with hands and toes touching the ground, touching each shoulder alternately</string>
+    <string name="e41_k24_mountain_climb">Plank position with knees alternately brought towards the chest</string>
+
+
+    <!-- Arm -->
+    <string name="e42_a1_seated_dips">Facing the back of the chair, sitting and leaning towards and away from the floor by using the hands on the chair for support</string>
+    <string name="e43_a2_triceps_push_up">Sitting with legs extended without leaning the back against the ground, lifting and lowering the waist using arm support</string>
+    <string name="e44_a3_bend_over_arm_extension">Standing on hands and toes in a V position, face down, bending the elbows without touching the ground, reaching forward, and returning to the initial position</string>
+    <string name="e45_a4_pushup_overhead">Facing down in a V position on hands and toes, in a straight position touching the head to the ground and moving up and down</string>
+    <string name="e46_a5_lying_triceps_extensions">Lying down, bringing legs closer to the hips, using suitable weights to slightly bend and lift the arms backward</string>
+    <string name="e47_a6_punch_left_right">Standing with legs slightly apart, in a guard position, twisting the upper body left and right and extending arms in a punching motion</string>
+    <string name="e48_a7_tricep_dips">Taking a V position on hands and feet, facing backward, moving up and down using arm support</string>
+    <string name="e49_a8_knee_push_ups">Lying face down with knees and feet on the ground, arms supported at shoulder level, performing push-ups</string>
+    <string name="e50_a9_modified_push_ups">Lying down with elbows on the ground, supporting from toes, lying straight without touching the ground, lifting and lowering right and left elbows to switch to a push-up position and return</string>
+    <string name="e51_a10_slowed_pushups">Performing push-ups with elbows bending inward and chest approaching the ground</string>
+    <string name="e52_a11_lying_shoulder_extension">Performing shoulder extension exercises in a push-up position, extending right and left arms in a circular motion</string>
+    <string name="e53_a12_push_up_strech">Performing push-ups with elbows bending inward, then extending right and left arms with bent elbows backward</string>
+    <string name="e54_a13_front_overhead_raise">Squatting down with suitable weights, bending elbows towards knees while going down and raising weights upwards while standing up</string>
+    <string name="e55_a14_front_raise">Lifting weights towards the shoulder and then bending arms downwards while squatting</string>
+    <string name="e56_a15_air_curls">Standing with legs and arms apart, lifting weights towards the shoulder and then lowering them while squatting</string>
+    <string name="e57_a16_single_arm_overhead_press">Standing with legs and arms apart, lowering weights to the ground while squatting and then raising them overhead after standing up</string>
+
+    <!-- Back -->
+    <string name="e58_s1_bend_from_back">Standing on knees, supporting hands on the waist, and stretching backward</string>
+    <string name="e59_s2_shoulder_mobility">Facing down on hands and knees, stretching backward</string>
+    <string name="e60_s3_camel_back_strech">Facing down on hands and knees, stretching the lower back up and down</string>
+    <string name="e61_s4_floor_pull_up">Supporting from hands on the ground, lying face down, and stretching the upper back backward</string>
+    <string name="e62_s5_seated_side_reach_to_foot">Sitting with the left leg bent inward, right leg extended forward, stretching the body forward by holding the right foot with hands, then changing leg positions</string>
+    <string name="e63_s6_seated_singe_side_reach_to_foot">Sitting with the left leg bent inward, right leg extended sideways, stretching the body to the right while holding the right leg with the right hand, then changing leg positions</string>
+    <string name="e64_s7_lying_knee_to_chest">Lying down without legs touching the ground, grabbing the knees with hands and bringing them towards the abdomen</string>
+    <string name="e65_s8_lying_knee_to_stomatch">Lying down without legs touching the ground, crossing one leg over the other and bringing legs towards the abdomen</string>
+    <string name="e66_s9_lying_leg_to_sides">Lying down with knees up, arms stretched to the sides, and lowering legs alternately to the right and left while twisting the neck in the opposite direction</string>
+    <string name="e67_s10_lying_leg_raise">Lying down with legs raised, arms stretched to the sides, and lowering right and left legs alternately towards the other legs knee</string>
+    <string name="e68_s11_seated_knee_raise">Sitting with legs extended forward, arms above the knees, placing one leg on top of the other alternately</string>
+    <string name="e69_s12_strech_to_foots">Sitting with legs extended forward, stretching the body forward to touch the toes with hands</string>
+    <string name="e70_s13_standing_leg_extension">Standing with legs and arms apart, lifting arms towards the shoulders and moving legs backward towards the knees</string>
+    <string name="e71_s14_up_down_sumo">Standing with crossed legs, squatting down quickly and standing up again</string>
+    <string name="e72_s15_curtsy_lunge_with_knee_raise_lift">Squatting with one knee touching the ground, lifting weights with one arm while extending the other leg sideways, and lifting it towards the chest, repeating with the other leg and arm</string>
+    <string name="e73_s16_half_floor_pull_up">Lying face down with legs apart, arms reaching forward at head level, and lifting legs without bending the knees</string>
+    <string name="e74_s17_down_to_up_clapping">Standing with legs and arms together, clapping hands while raising arms and then lowering them while spreading legs and arms</string>
+    <string name="e75_s18_shoulder_leg_streching">Standing with legs together and arms apart, moving legs and arms together</string>
+    <string name="e76_s19_standing_reach_to_foot">Standing and touching the right and left ankles alternately with the right and left hand</string>
+    <string name="e77_s20_jumping_sides">Squatting with one hand touching the ground, jumping backward and returning to the squat position, repeating the movement with the other hand</string>
+
+
+    <!-- Yoga -->
+    <string name="e78_y1_standing_shoulder_extension">Sitting on the floor with legs lying sideways, supporting from one arm and stretching the other arm backward</string>
+    <string name="e79_y2_standing_leg_streching">Standing with hands on hips, balancing on one leg and stretching the other leg forward and backward</string>
+    <string name="e80_y3_curtsy_squat_fast">Standing in a running position and hopping side to side, changing feet</string>
+    <string name="e81_y4_seated_side_extensions">Supporting from hands and feet, lying on the back in a V position, keeping the body straight and stretching the hands backward</string>
+    <string name="e82_y5_single_leg_extension">Supporting from hands and feet, lying face down in a V position, moving one leg behind the other leg</string>
+    <string name="e83_y6_mountain_pushups">Standing in a straight position facing down on hands, bringing the right and left legs alternately towards shoulder level, then jumping up</string>
+    <string name="e84_y7_side_plank_leg_raise">Lying sideways while supporting from the elbow, extending the other arm upward, and moving the legs apart in this position</string>
+    <string name="e85_y8_down_to_up_hand_raise">Taking a suitable weight, lifting the weight to the right and left in a crouched position</string>
+    <string name="e86_y9_plank_extension">Moving the body forward and backward in a plank position</string>
+    <string name="e87_y10_plank_walk">Moving the body forward and backward in a plank position as if walking</string>
+    <string name="e88_y11_side_plank_extension">Lying sideways while supporting from the elbow, holding the other hand slightly above the neck, and touching the waist to the ground</string>
+    <string name="e89_y12_plank_row">Performing push-ups and then extending the arms upward one by one</string>
+
+    <string name="txt_start">Başlat</string>
+    <string name="label_quitexercise">Antrenmandan çıkmak istediğinize emin misiniz?</string>
+    <string name="label_exerciselost">(İlerlemeniz kaybolacaktır.)</string>
+    <string name="favourite_list">Favori Listesi</string>
+    <string name="all_exercies">Tüm Egzersiz Hareketleri</string>
+    <string name="my_fav_list">Favori Hareketlerim</string>
+    <string name="label_error">Veriler getirilerken hata oluştu</string>
+    <string name="lbl_start">Başla</string>
+    <string name="lbl_my_favourite">Favorilerim</string>
+    <string name="lbl_fav_list_empty">Favori listen boş, favori listeni oluşturmak için antrenman programlarına göz at</string>
+    <string name="btn_chec">Gözat</string>
+    <string name="next_move">Sıradaki Hareket</string>
+    <string name="lbl_before">Önceki</string>
+    <string name="lbl_sonraki">Sonraki</string>
+    <string name="lbl_step">/Adım</string>
+    <string name="lbl_day">Gün</string>
+    <string name="lbl_month">Ay</string>
+    <string name="lbl_year">Yıl</string>
+    <string name="lbl_levelofmove">Günlük Hareket Seviyen</string>
+    <string name="lbl_levelmove_desc">Hareket seviyeni belirleyerek sana en uygun antrenmanları ayarlamamızı sağlarsın</string>
+    <string name="lbl_delete_favourite">Hareketi favori listenizden kaldırmak istediğinize emin misiniz?</string>
+
+
+</resources>
+

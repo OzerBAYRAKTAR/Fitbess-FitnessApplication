@@ -16,15 +16,16 @@ import javax.inject.Inject
 @HiltViewModel
 class BackViewModel @Inject constructor(
     private val repo: RoomRepository
-):ViewModel(){
+):ViewModel() {
 
 
-    private val _getExerciseListByTitle: MutableLiveData<List<ExerciseDayExercise>> = MutableLiveData()
+    private val _getExerciseListByTitle: MutableLiveData<List<ExerciseDayExercise>> =
+        MutableLiveData()
     val getExerciseListByTitle: LiveData<List<ExerciseDayExercise>> get() = _getExerciseListByTitle
 
     fun getExerciseListByTitle() {
-        viewModelScope.launch(Dispatchers.IO){
-            val exercises  = repo.getExerciseListByTitleName(titleName = "bellyneck")
+        viewModelScope.launch(Dispatchers.IO) {
+            val exercises = repo.getExerciseListByTitleName(titleName = "bellyneck")
             _getExerciseListByTitle.postValue(exercises)
         }
     }
@@ -38,6 +39,7 @@ class BackViewModel @Inject constructor(
     fun updateIsFavouriteToFalse(exerciseId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             repo.updateIsFavouriteToFalse(exerciseId = exerciseId)
+
         }
     }
 }

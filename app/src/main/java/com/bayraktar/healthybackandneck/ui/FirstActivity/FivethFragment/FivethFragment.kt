@@ -83,15 +83,6 @@ class FivethFragment : Fragment() {
                 check5.isChecked = true
             }
         }
-        card6.setOnClickListener {
-            if (cns6.background != null) {
-                cns6.background = null
-                check6.isChecked = false
-            } else {
-                cns6.setBackgroundResource(R.drawable.firstselected_background)
-                check6.isChecked = true
-            }
-        }
 
     }
 
