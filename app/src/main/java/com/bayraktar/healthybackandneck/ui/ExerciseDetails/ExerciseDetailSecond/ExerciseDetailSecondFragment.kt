@@ -32,7 +32,7 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
     private var _binding: FragmentExerciseDetailSecondBinding?= null
     val binding get() = _binding!!
 
-    private var detailList = emptyList<ExerciseDay>()
+    private var detailList = ArrayList<ExerciseDay>()
     private lateinit var secondAdapter: ExerciseDetailSecondAdapter
 
 
@@ -56,11 +56,11 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
 
 
         setRecyclerview()
-
-        addToDetailList()
         observeLevelTwo()
-        observeExerciseDay()
+        observeDayListLevelOne()
+
         backstack()
+
         binding.imageBack.setOnClickListener {
             val action = ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToIdHomepageFragment()
             view.findNavController().navigate(action)
@@ -68,6 +68,7 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
 
         viewModel.fetchExerciseDayExercisesWithLevelTwo()
 
+        viewModel.fetchExerciseDayListWithLevelTwo()
     }
     private fun backstack() {
         val callback = object : OnBackPressedCallback(true) {
@@ -89,14 +90,50 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
             }
         })
     }
-    private fun observeExerciseDay() {
-        viewModel.exerciseDays.observe(viewLifecycleOwner, Observer { day ->
-            if (day == null) {
-                addToRoom()
+
+    private fun observeDayListLevelOne() {
+        viewModel.exerciseDayLevelTwo.observe(viewLifecycleOwner, Observer { exercises ->
+            if (exercises.isEmpty()) {
+                addToRoomExerciseDayList()
             } else {
-                println("day var")
+                secondAdapter.setData(exercises)
             }
         })
+    }
+
+
+    @SuppressLint("DiscouragedApi")
+    private fun addToRoomExerciseDayList() {
+        try {
+            val inputStream = context?.assets?.open("secondday.json")
+            val size = inputStream?.available() ?: 0
+            val buffer = ByteArray(size)
+            inputStream?.read(buffer)
+            inputStream?.close()
+            val jsonString = String(buffer, Charset.defaultCharset())
+
+            val jsonArray = JSONArray(jsonString)
+
+            for (i in 0 until jsonArray.length()) {
+                val item = jsonArray.getJSONObject(i)
+                val exercise = ExerciseDay(
+                    dayId = item.optInt("dayId"),
+                    level = item.optInt("level"),
+                    isCompleted = item.optBoolean("isCompleted"),
+                    exerciseCount = item.optInt("exerciseCount"),
+                    day = item.optInt("day"),
+                    exerciseTime = item.optInt("exerciseTime"),
+                    exerciseKcal = item.optInt("exerciseKcal"),
+                    homeId = item.optInt("homeId")
+                )
+                detailList.add(exercise)
+            }
+            viewModel.insertExerciseDaysList(detailList)
+            secondAdapter.setData(detailList)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
     }
 
     @SuppressLint("DiscouragedApi")
@@ -149,201 +186,6 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
 
     }
 
-    private fun addToDetailList(){
-        detailList = listOf(
-            ExerciseDay(
-                day = 1,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 7,
-                exerciseKcal = 340,
-                dayId = 1,
-                homeId = 2
-            ),
-            ExerciseDay(
-                day = 2,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 7,
-                exerciseKcal = 280,
-                dayId = 2,
-                homeId = 2
-            ),
-            ExerciseDay(
-                day = 3,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 6,
-                exerciseKcal = 320,
-                dayId = 3,
-                homeId = 2
-            ),
-            ExerciseDay(
-                day = 4,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 7,
-                exerciseKcal = 300,
-                dayId = 4,
-                homeId = 2
-            ), ExerciseDay(
-                day = 5,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 8,
-                exerciseKcal = 350,
-                dayId = 5,
-                homeId = 2
-            ), ExerciseDay(
-                day = 6,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 7,
-                exerciseKcal = 290,
-                dayId = 6,
-                homeId = 2
-            ), ExerciseDay(
-                day = 7,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 7,
-                exerciseKcal = 330,
-                dayId = 7,
-                homeId = 2
-            ), ExerciseDay(
-                day = 8,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 7,
-                exerciseKcal = 275,
-                dayId = 8,
-                homeId = 2
-            ), ExerciseDay(
-                day = 9,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 7,
-                exerciseKcal = 225,
-                dayId = 9,
-                homeId = 2
-            ),
-            ExerciseDay(
-                day = 10,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 7,
-                exerciseKcal = 290,
-                dayId = 10,
-                homeId = 2
-            ),
-            ExerciseDay(
-                day = 11,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 8,
-                exerciseKcal = 240,
-                dayId = 11,
-                homeId = 2
-            ),
-            ExerciseDay(
-                day = 12,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 8,
-                exerciseKcal = 270,
-                dayId = 12,
-                homeId = 2
-            ),
-            ExerciseDay(
-                day = 13,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 7,
-                exerciseKcal = 290,
-                dayId = 13,
-                homeId = 2
-            ),
-            ExerciseDay(
-                day = 14,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 8,
-                exerciseKcal = 280,
-                dayId = 14,
-                homeId = 2
-            ),
-            ExerciseDay(
-                day = 15,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 7,
-                exerciseKcal = 290,
-                dayId = 15,
-                homeId = 2
-            ), ExerciseDay(
-                day = 16,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 7,
-                exerciseKcal = 330,
-                dayId = 16,
-                homeId = 2
-            ), ExerciseDay(
-                day = 17,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 8,
-                exerciseKcal = 260,
-                dayId = 17,
-                homeId = 2
-            ), ExerciseDay(
-                day = 18,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 7,
-                exerciseKcal = 320,
-                dayId = 18,
-                homeId = 2
-            ),
-            ExerciseDay(
-                day = 19,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 8,
-                exerciseKcal = 310,
-                dayId = 19,
-                homeId = 2
-            ),
-            ExerciseDay(
-                day = 20,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 7,
-                exerciseKcal = 240,
-                dayId = 20,
-                homeId = 2
-            ),
-            ExerciseDay(
-                day = 21,
-                level = 2,
-                exerciseCount = 8,
-                exerciseTime = 8,
-                exerciseKcal = 270,
-                dayId = 21,
-                homeId = 2
-            ),
-
-            )
-        secondAdapter.setData(detailList)
-    }
-
-    private fun addToRoom() {
-        lifecycleScope.launch {
-            for (exerciseDay in detailList) {
-                viewModel.insertExerciseDay(exerciseDay)
-            }
-        }
-    }
     private fun setRecyclerview() = with(binding) {
         listDaysOfWeek.layoutManager = LinearLayoutManager(requireContext())
         secondAdapter = ExerciseDetailSecondAdapter(detailList,this@ExerciseDetailSecondFragment)

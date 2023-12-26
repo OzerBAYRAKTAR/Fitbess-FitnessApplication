@@ -26,10 +26,19 @@ class ExerciseDetailThirdViewModel  @Inject constructor(
     val getExerciseListWithDay: LiveData<List<ExerciseDayExercise>> get() = _getExerciseListWithDay
 
 
+    private val _exerciseDayLevelThird: LiveData<List<ExerciseDay>> = MutableLiveData()
+    val exerciseDayLevelThird get() = _exerciseDayLevelThird
+
+
 
     private val _exerciseDays: LiveData<ExerciseDay> = MutableLiveData()
     val exerciseDays get() = _exerciseDays
 
+
+
+    fun insertExerciseDaysList(exerciseDayList: List<ExerciseDay>) = viewModelScope.launch(Dispatchers.IO) {
+        repo.insertExerciseDaysList(exerciseDayList)
+    }
 
     fun insertExerciseDay(exerciseDay: ExerciseDay) = viewModelScope.launch(Dispatchers.IO) {
         repo.insertExerciseDay(exerciseDay)
@@ -51,6 +60,13 @@ class ExerciseDetailThirdViewModel  @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             val exercises = repo.getExerciseDayExercisesWithLevelThird(titleName = "noTitle")
             (exerciseDayExercisesLevelThird as MutableLiveData).postValue(exercises)
+        }
+    }
+
+    fun fetchExerciseDayListWithLevelThird() {
+        viewModelScope.launch(Dispatchers.IO) {
+            val exercises = repo.getExerciseDaysLevel3()
+            (_exerciseDayLevelThird as MutableLiveData).postValue(exercises)
         }
     }
 

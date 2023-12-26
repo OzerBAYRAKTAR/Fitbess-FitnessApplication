@@ -15,9 +15,4 @@ class DetailDayViewModel @Inject constructor(
 
 
 
-    fun getExerciseDayExercisesByIds(dayId: Int): List<ExerciseDayWithExerciseDayExercise> {
-        return repo.getExerciseByDay(dayId)
-    }
-
-
 }

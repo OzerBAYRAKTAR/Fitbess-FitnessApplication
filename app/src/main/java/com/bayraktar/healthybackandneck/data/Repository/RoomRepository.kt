@@ -19,8 +19,8 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         movesDao.insertExerciseDayExercise(exerciseDayExercises)
     }
 
-    fun insertExerciseDays(exerciseDay: List<ExerciseDay>) {
-        movesDao.insertExerciseDays(exerciseDay)
+    fun insertExerciseDaysList(exerciseDay: List<ExerciseDay>) {
+        movesDao.insertExerciseDaysList(exerciseDay)
     }
 
     fun getExerciseDaysLevel1(): List<ExerciseDay> {

@@ -23,7 +23,7 @@ interface MovesDao {
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertExerciseDays(exerciseDay: List<ExerciseDay>)
+    fun insertExerciseDaysList(exerciseDay: List<ExerciseDay>)
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
