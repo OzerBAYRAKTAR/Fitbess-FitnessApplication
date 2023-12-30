@@ -518,13 +518,14 @@
     <string name="next_move">Следующее упражнение</string>
     <string name="lbl_before">Предыдущее</string>
     <string name="lbl_sonraki">Следующее</string>
-    <string name="lbl_step">/Шаг</string>
+    <string name="lbl_step">/ Шаг</string>
     <string name="lbl_day">День</string>
     <string name="lbl_month">Месяц</string>
     <string name="lbl_year">Год</string>
     <string name="lbl_levelofmove">Ваш уровень физической активности</string>
     <string name="lbl_levelmove_desc">Определите свой уровень физической активности, чтобы мы могли подобрать наиболее подходящие тренировки для вас</string>
     <string name="lbl_delete_favourite">Вы уверены, что хотите удалить это упражнение из списка избранных?</string>
+    <string name="lbl_exerciseattention">Пожалуйста, сначала завершите предыдущие упражнения!</string>
 
     <string name="lbl_item_day">.день</string>
 

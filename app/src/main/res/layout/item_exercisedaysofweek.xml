@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardview1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -170,11 +171,12 @@
                 </LinearLayout>
 
                 <ImageView
+                    android:id="@+id/lock"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
-                    android:src="@drawable/right_arrow"
+                    android:src="@drawable/lock"
                     app:layout_constraintEnd_toEndOf="@+id/linearLayout6"
                     app:layout_constraintTop_toTopOf="@+id/linearLayout6" />
 

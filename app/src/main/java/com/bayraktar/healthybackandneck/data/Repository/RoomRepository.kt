@@ -85,4 +85,8 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         return movesDao.getIsFavouriteTrue()
     }
 
+    fun updateIsCompletedTrue(level: Int,day: Int){
+        movesDao.updateIsCompletedTrue(level,day)
+    }
+
 }

@@ -510,28 +510,28 @@
     <string name="e88_y11_side_plank_extension">Lying sideways while supporting from the elbow, holding the other hand slightly above the neck, and touching the waist to the ground</string>
     <string name="e89_y12_plank_row">Performing push-ups and then extending the arms upward one by one</string>
 
-    <string name="txt_start">Başlat</string>
-    <string name="label_quitexercise">Antrenmandan çıkmak istediğinize emin misiniz?</string>
-    <string name="label_exerciselost">(İlerlemeniz kaybolacaktır.)</string>
-    <string name="favourite_list">Favori Listesi</string>
-    <string name="all_exercies">Tüm Egzersiz Hareketleri</string>
-    <string name="my_fav_list">Favori Hareketlerim</string>
-    <string name="label_error">Veriler getirilerken hata oluştu</string>
-    <string name="lbl_start">Başla</string>
-    <string name="lbl_my_favourite">Favorilerim</string>
-    <string name="lbl_fav_list_empty">Favori listen boş, favori listeni oluşturmak için antrenman programlarına göz at</string>
-    <string name="btn_chec">Gözat</string>
-    <string name="next_move">Sıradaki Hareket</string>
-    <string name="lbl_before">Önceki</string>
-    <string name="lbl_sonraki">Sonraki</string>
-    <string name="lbl_step">/Adım</string>
-    <string name="lbl_day">Gün</string>
-    <string name="lbl_month">Ay</string>
-    <string name="lbl_year">Yıl</string>
-    <string name="lbl_levelofmove">Günlük Hareket Seviyen</string>
-    <string name="lbl_levelmove_desc">Hareket seviyeni belirleyerek sana en uygun antrenmanları ayarlamamızı sağlarsın</string>
-    <string name="lbl_delete_favourite">Hareketi favori listenizden kaldırmak istediğinize emin misiniz?</string>
-
+    <string name="txt_start">Start</string>
+    <string name="label_quitexercise">Are you sure you want to exit the exercise?</string>
+    <string name="label_exerciselost">(Your progress will be lost.)</string>
+    <string name="favourite_list">Favorite List</string>
+    <string name="all_exercies">All Exercise Movements</string>
+    <string name="my_fav_list">My Favorite Movements</string>
+    <string name="label_error">An error occurred while fetching data</string>
+    <string name="lbl_start">Start</string>
+    <string name="lbl_my_favourite">My Favorites</string>
+    <string name="lbl_fav_list_empty">Your favorite list is empty. Browse workout programs to create your favorite list.</string>
+    <string name="btn_chec">Browse</string>
+    <string name="next_move">Next Movement</string>
+    <string name="lbl_before">Previous</string>
+    <string name="lbl_sonraki">Next</string>
+    <string name="lbl_step">/ Step</string>
+    <string name="lbl_day">Day</string>
+    <string name="lbl_month">Month</string>
+    <string name="lbl_year">Year</string>
+    <string name="lbl_levelofmove">Daily Movement Level</string>
+    <string name="lbl_levelmove_desc">By determining your movement level, you enable us to adjust the most suitable workouts for you.</string>
+    <string name="lbl_delete_favourite">Are you sure you want to remove the movement from your favorites list?</string>
+    <string name="lbl_exerciseattention">Please complete previous exercises first!</string>
 
 </resources>
 

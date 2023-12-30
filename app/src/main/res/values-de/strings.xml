@@ -523,4 +523,5 @@
     <string name="lbl_levelofmove">Ihr tägliches Bewegungsniveau</string>
     <string name="lbl_levelmove_desc">Indem Sie Ihr Bewegungsniveau festlegen, ermöglichen Sie uns, Ihnen die am besten geeigneten Übungen zuzuweisen.</string>
     <string name="lbl_delete_favourite">Möchten Sie die Bewegung wirklich aus Ihren Favoriten entfernen?</string>
+    <string name="lbl_exerciseattention">Bitte absolvieren Sie vorherige Trainingseinheiten!</string>
 </resources>

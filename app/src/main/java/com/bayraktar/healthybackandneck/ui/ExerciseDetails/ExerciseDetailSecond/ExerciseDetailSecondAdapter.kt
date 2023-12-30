@@ -3,35 +3,30 @@ package com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailSecond
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.databinding.ItemExercisedaysofweekBinding
+import com.bayraktar.healthybackandneck.utils.RecyclerClicked
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 
 class ExerciseDetailSecondAdapter(
     private var lsMenu: List<ExerciseDay>,
-    private val rclClickListener: RecyclerViewClickListener
+    private val rclClickListener: RecyclerClicked
 ): RecyclerView.Adapter<ExerciseDetailSecondAdapter.ItemHolder>() {
 
 
-    inner class ItemHolder(val binding: ItemExercisedaysofweekBinding, recyclerViewClickListener: RecyclerViewClickListener): RecyclerView.ViewHolder(binding.root)
-        , View.OnClickListener {
+    inner class ItemHolder(val binding: ItemExercisedaysofweekBinding): RecyclerView.ViewHolder(binding.root)
+    {
 
-        private val mRecyclerViewClickListener: RecyclerViewClickListener = recyclerViewClickListener
 
-        init {
-            itemView.setOnClickListener(this)
-        }
-
-        override fun onClick(p0: View?) {
-            mRecyclerViewClickListener.recyclerviewListClicked(p0!!,adapterPosition)
-        }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
         val itemBinding = ItemExercisedaysofweekBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return ItemHolder(itemBinding,rclClickListener)
+        return ItemHolder(itemBinding)
     }
     //update old list with new list
     fun setData(list: List<ExerciseDay>) {
@@ -47,6 +42,21 @@ class ExerciseDetailSecondAdapter(
             txtExerciseCount.text = model.exerciseCount.toString()
             txtExerciseTime.text = model.exerciseTime.toString()
             txtExerciseKcal.text = model.exerciseKcal.toString()
+
+            if (model.isCompleted) {
+                lock.visibility = View.GONE
+                cardview1.setOnClickListener {
+                    rclClickListener.onItemclicked(position)
+                }
+            }else {
+                lock.visibility = View.VISIBLE
+                val context = holder.itemView.context
+                val message = context.getString(R.string.lbl_exerciseattention)
+                cardview1.setOnClickListener {
+                    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+                }
+
+            }
         }
     }
 

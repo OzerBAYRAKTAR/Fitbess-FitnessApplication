@@ -4,7 +4,7 @@
     "level": 3,
     "exerciseCount": 8,
     "exerciseTime": 7,
-    "isCompleted": false,
+    "isCompleted": true,
     "exerciseKcal": 340,
     "dayId": 1,
     "homeId": 3
@@ -13,7 +13,7 @@
     "day": 2,
     "level": 3,
     "exerciseCount": 8,
-    "isCompleted": false,
+    "isCompleted": true,
     "exerciseTime": 7,
     "exerciseKcal": 240,
     "dayId": 2,
@@ -24,7 +24,7 @@
     "level": 3,
     "exerciseCount": 8,
     "exerciseTime": 8,
-    "isCompleted": false,
+    "isCompleted": true,
     "exerciseKcal": 375,
     "dayId": 3,
     "homeId": 3
@@ -34,7 +34,7 @@
     "level": 3,
     "exerciseCount": 8,
     "exerciseTime": 7,
-    "isCompleted": false,
+    "isCompleted": true,
     "exerciseKcal": 300,
     "dayId": 4,
     "homeId": 3

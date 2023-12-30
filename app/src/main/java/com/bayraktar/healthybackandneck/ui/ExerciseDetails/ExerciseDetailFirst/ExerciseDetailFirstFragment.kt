@@ -18,6 +18,7 @@ import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.Exercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDaysOfWeekBinding
+import com.bayraktar.healthybackandneck.utils.RecyclerClicked
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -26,7 +27,7 @@ import java.nio.charset.Charset
 
 
 @AndroidEntryPoint
-class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
+class ExerciseDetailFirstFragment : Fragment(), RecyclerClicked {
 
     private var _binding: FragmentExerciseDaysOfWeekBinding? = null
     val binding get() = _binding!!
@@ -65,6 +66,8 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
         viewModel.fetchExerciseDayListWithLevelOne()
 
 
+
+
         binding.imageBack.setOnClickListener {
             val action =
                 ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToIdHomepageFragment()
@@ -89,6 +92,17 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
                 addToRoomExerciseDayList()
             } else {
                 firstAdapter.setData(exercises)
+                detailList.clear()
+                detailList.addAll(exercises)
+
+                var count = 0
+                for (item in exercises) {
+                    if (item.isCompleted) {
+                        count ++
+                    }
+                }
+                binding.customProgressBar.progress = count*100/21
+                binding.txtProgress.text = "%${(count*100/21).toInt()}"
             }
         })
     }
@@ -121,6 +135,16 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
                 }
             viewModel.insertExerciseDaysList(detailList)
             firstAdapter.setData(detailList)
+
+            var count = 0
+            for (item in detailList) {
+                if (item.isCompleted) {
+                    count ++
+                }
+            }
+            binding.customProgressBar.progress = count*100/21
+            binding.txtProgress.text = "%${(count*100/21).toInt()}"
+
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -193,12 +217,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
         listDaysOfWeek.adapter = firstAdapter
     }
 
-    override fun recyclerviewListClicked(v: View, position: Int) {
-        selectedModel = detailList[position]
-        val selectedDay = position + 1
-        viewModel.getExerciseListWithDayID(selectedDay, 1)
-        observeListWithDayId()
-    }
+
 
     //day ve level id ile verileri getirip bir sonraki sayfaya aktarıyor
     private fun observeListWithDayId() {
@@ -217,4 +236,10 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerViewClickListener {
         })
     }
 
+    override fun onItemclicked(position: Int) {
+        selectedModel = detailList[position]
+        val selectedDay = position + 1
+        viewModel.getExerciseListWithDayID(selectedDay, 1)
+        observeListWithDayId()
+    }
 }

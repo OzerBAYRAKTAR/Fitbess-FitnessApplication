@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
@@ -24,6 +25,7 @@ class ExerciseMovesEndFragment : Fragment() {
 
     private var _binding: FragmentExerciseMovesEndBinding? = null
     val binding get() = _binding!!
+    private val viewModel: ExerciseMovesEndViewModel by viewModels()
 
     private var exerciseDayModel: ExerciseDay? = null
     private var exerciseList = ArrayList<ExerciseDayExercise>()
@@ -91,6 +93,9 @@ class ExerciseMovesEndFragment : Fragment() {
             txttime.text = exerciseDayModel?.exerciseTime.toString()
             txtexercise.text = exerciseDayModel?.exerciseCount.toString()
             txtkcal.text = exerciseDayModel?.exerciseKcal.toString()
+
+
+            viewModel.updateIsCompletedToTrue(exerciseDayModel!!.level,exerciseDayModel!!.day + 1)
 
         }
 

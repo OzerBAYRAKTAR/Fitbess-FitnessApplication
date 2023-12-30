@@ -526,7 +526,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="next_move">Sıradaki Hareket</string>
     <string name="lbl_before">Önceki</string>
     <string name="lbl_sonraki">Sonraki</string>
-    <string name="lbl_step">/Adım</string>
+    <string name="lbl_step">/ Adım</string>
     <string name="lbl_day">Gün</string>
     <string name="lbl_month">Ay</string>
     <string name="lbl_year">Yıl</string>
@@ -534,6 +534,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="lbl_levelmove_desc">Hareket seviyeni belirleyerek sana en uygun antrenmanları ayarlamamızı sağlarsın</string>
     <string name="lbl_delete_favourite">Hareketi favori listenizden kaldırmak istediğinize emin misiniz?</string>
     <string name="lbl_item_day">.Gün</string>
+    <string name="lbl_exerciseattention">Lütfen önceki antrenmanları tamamlayınız!</string>
 
 </resources>
 

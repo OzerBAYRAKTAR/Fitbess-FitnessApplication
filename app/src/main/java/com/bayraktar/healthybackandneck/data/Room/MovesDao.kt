@@ -86,8 +86,8 @@ interface MovesDao {
 
 
     @Transaction
-    @Query("Select * from  exercise_day_exercise Where isFavourite = 1")
-    fun updateIsCompleted():List<ExerciseDayExercise>
+    @Query("UPDATE exercise_days SET isCompleted = 1 where level = :level and day = :day ")
+    fun updateIsCompletedTrue(level: Int,day: Int)
 
 
 }

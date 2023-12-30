@@ -20,6 +20,7 @@ import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDetailSecond
 import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstAdapter
 import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstFragmentDirections
 import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstVievModel
+import com.bayraktar.healthybackandneck.utils.RecyclerClicked
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -27,7 +28,7 @@ import org.json.JSONArray
 import java.nio.charset.Charset
 
 @AndroidEntryPoint
-class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
+class ExerciseDetailSecondFragment : Fragment(),RecyclerClicked {
 
     private var _binding: FragmentExerciseDetailSecondBinding?= null
     val binding get() = _binding!!
@@ -97,6 +98,17 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
                 addToRoomExerciseDayList()
             } else {
                 secondAdapter.setData(exercises)
+                detailList.clear()
+                detailList.addAll(exercises)
+
+                var count = 0
+                for (item in exercises) {
+                    if (item.isCompleted) {
+                        count ++
+                    }
+                }
+                binding.customProgressBar.progress = count*100/21
+                binding.txtProgress.text = "%${(count*100/21).toInt()}"
             }
         })
     }
@@ -130,6 +142,16 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
             }
             viewModel.insertExerciseDaysList(detailList)
             secondAdapter.setData(detailList)
+
+            var count = 0
+            for (item in detailList) {
+                if (item.isCompleted) {
+                    count ++
+                }
+            }
+            binding.customProgressBar.progress = count*100/21
+            binding.txtProgress.text = "%${(count*100/21).toInt()}"
+
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -192,12 +214,6 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
         listDaysOfWeek.adapter = secondAdapter
     }
 
-    override fun recyclerviewListClicked(v: View, position: Int) {
-        selectedModel = detailList[position]
-        val selectedDay = position + 1
-        viewModel.getExerciseListWithDayID(selectedDay,2)
-        observeListWithDayId()
-    }
     private fun observeListWithDayId() {
         viewModel.getExerciseListWithDay.observe(viewLifecycleOwner, Observer { exercise ->
             if (exercise != null) {
@@ -210,6 +226,13 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerViewClickListener {
                 exerciseArray, selectedModel!!,exerciseLevel)
             view?.findNavController()?.navigate(action)
         })
+    }
+
+    override fun onItemclicked(position: Int) {
+        selectedModel = detailList[position]
+        val selectedDay = position + 1
+        viewModel.getExerciseListWithDayID(selectedDay,2)
+        observeListWithDayId()
     }
 
 
