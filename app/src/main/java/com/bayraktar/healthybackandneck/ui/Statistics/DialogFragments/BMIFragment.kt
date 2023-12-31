@@ -88,9 +88,8 @@ class BMIFragment : DialogFragment() {
             .setTitle(title)
             .setMessage(message)
             .setCancelable(false)
-            .setPositiveButton(getString(R.string.label_okay)){_,_ ->
-                val action = BMIFragmentDirections.actionBMIFragmentToIdStatisticsFragment()
-                view?.findNavController()?.navigate(action)
+            .setPositiveButton(getString(R.string.label_okay)){d,_ ->
+               d.dismiss()
             }.show()
 
     }
@@ -114,6 +113,10 @@ class BMIFragment : DialogFragment() {
                 val message = getString(R.string.label_fillall)
                 showToast(requireContext(), message, Gravity.CENTER, 0, 0)
             }
+        }
+        goBack.setOnClickListener {
+            val action = BMIFragmentDirections.actionBMIFragmentToIdStatisticsFragment()
+            view?.findNavController()?.navigate(action)
         }
     }
 

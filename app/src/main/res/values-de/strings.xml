@@ -172,7 +172,7 @@
     <string name="txt_calori">Kalorien</string>
     <string name="txt_alltime">Gesamtzeit</string>
     <string name="txt_bodyparameters">Körpermaße</string>
-    <string name="txt_record">Alle Aufzeichnungen</string>
+    <string name="txt_record">Statistiken</string>
     <string name="booty">Gesäß</string>
     <string name="belly">Bauch</string>
     <string name="chest">Brust</string>
@@ -379,6 +379,9 @@
     <string name="label_sharevia">Mit folgendem teilen</string>
     <string name="label_reviewerror">Bewertung konnte nicht abgegeben werden</string>
     <string name="label_ratingsuccess">Bewertung erfolgreich abgegeben</string>
+
+    <string name="food_detail_txt">Nährwertangaben pro 100 Gramm</string>
+    <string name="other_foods">Andere Sorten</string>
 
     <!-- Bacak-Popo -->
     <string name="e90_b1_bird_dog">Nehmen Sie die Kriechposition ein, strecken Sie den rechten Arm und das linke Bein nach vorne aus, wechseln Sie nach der Bewegung zum anderen Arm und Bein.</string>

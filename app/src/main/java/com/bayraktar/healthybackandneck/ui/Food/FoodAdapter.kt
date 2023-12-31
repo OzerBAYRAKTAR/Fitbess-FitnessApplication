@@ -24,11 +24,11 @@ class FoodAdapter(
 
             1 -> return MilkProductsFragment()
 
-            2 -> return FreshFragment()
+            2 -> return LegumesFragment()
 
             3 -> return FruitFragment()
 
-            4 -> return LegumesFragment()
+            4 -> return FreshFragment()
 
             // 5 -> {
             //     return MeetFragment()

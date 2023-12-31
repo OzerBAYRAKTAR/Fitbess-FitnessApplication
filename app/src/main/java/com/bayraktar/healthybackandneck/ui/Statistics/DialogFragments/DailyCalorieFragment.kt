@@ -1,5 +1,6 @@
 package com.bayraktar.healthybackandneck.ui.Statistics.DialogFragments
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.Gravity
@@ -8,12 +9,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.JetpackDataStore.DataStoreManage
 import com.bayraktar.healthybackandneck.databinding.FragmentBMIBinding
 import com.bayraktar.healthybackandneck.databinding.FragmentDailyCalorieBinding
+import com.bayraktar.healthybackandneck.ui.ExerciseMoves.ExerciseMovesFragmentDirections
 import com.bayraktar.healthybackandneck.utils.showToast
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
@@ -145,6 +149,7 @@ class DailyCalorieFragment : Fragment() {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     private suspend fun saveHeigtAndWeight() = with(binding) {
         val height = inputHeight.text.toString().toInt()
         val weight = inputWeight.text.toString().toInt()
@@ -181,17 +186,31 @@ class DailyCalorieFragment : Fragment() {
             val title = getString(R.string.label_dailyCalorieRequirement)
             dataStoreManager.saveCalorie(formattedRate)
             val message = "\n$labelDailyCalorieRequirement: $formattedRate "
-            AlertDialog.Builder(requireContext(), R.style.CustomAlertDialog)
-                .setTitle(title)
-                .setMessage(message)
-                .setCancelable(false)
-                .setPositiveButton(getString(R.string.label_okay)) { _, _ ->
-                    val action =
-                        DailyCalorieFragmentDirections.actionDailyCalorieFragmentToIdStatisticsFragment()
-                    view?.findNavController()?.navigate(action)
-                }.show()
-        }
 
+            val inflater = layoutInflater
+            val dialogView = inflater.inflate(R.layout.custom_statistic_layout, null)
+
+            val positiveBtn: Button = dialogView.findViewById(R.id.dialogYesss)
+            val txtLabel: TextView = dialogView.findViewById(R.id.txtLabel)
+            val txtFirst: TextView = dialogView.findViewById(R.id.txtFirst)
+
+
+            val builder = AlertDialog.Builder(requireContext())
+
+            builder.setView(dialogView)
+            builder.setCancelable(false)
+
+            txtLabel.text = title
+            txtFirst.text = message
+
+            val dialog = builder.create()
+            dialog.show()
+
+            positiveBtn.setOnClickListener {
+                dialog.dismiss()
+            }
+
+        }
     }
 
     private fun btnClicked() = with(binding) {
@@ -214,6 +233,11 @@ class DailyCalorieFragment : Fragment() {
                 val message = getString(R.string.label_fillall)
                 showToast(requireContext(), message, Gravity.CENTER, 0, 0)
             }
+        }
+        goBack.setOnClickListener {
+            val action =
+                DailyCalorieFragmentDirections.actionDailyCalorieFragmentToIdStatisticsFragment()
+            view?.findNavController()?.navigate(action)
         }
     }
 

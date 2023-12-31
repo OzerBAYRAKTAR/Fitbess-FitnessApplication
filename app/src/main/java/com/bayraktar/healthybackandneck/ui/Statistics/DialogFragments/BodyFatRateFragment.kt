@@ -109,9 +109,8 @@ class BodyFatRateFragment : Fragment() {
                 .setTitle(title)
                 .setMessage(message)
                 .setCancelable(false)
-                .setPositiveButton(getString(R.string.label_okay)){_,_ ->
-                    val action = BodyFatRateFragmentDirections.actionBodyFatRateFragmentToIdStatisticsFragment()
-                    view?.findNavController()?.navigate(action)
+                .setPositiveButton(getString(R.string.label_okay)){d,_ ->
+                   d.dismiss()
                 }.show()
         }
 
@@ -119,7 +118,6 @@ class BodyFatRateFragment : Fragment() {
 
     private fun btnClicked() = with(binding) {
         btnSavee.setOnClickListener {
-
             val height = inputHeight.text.toString()
             val neck = neckDesc.text.toString()
             val belly = bellyDesc.text.toString()
@@ -138,6 +136,10 @@ class BodyFatRateFragment : Fragment() {
                 val message = getString(R.string.label_fillall)
                 showToast(requireContext(), message, Gravity.CENTER, 0, 0)
             }
+        }
+        goBack.setOnClickListener {
+            val action = BodyFatRateFragmentDirections.actionBodyFatRateFragmentToIdStatisticsFragment()
+            view?.findNavController()?.navigate(action)
         }
     }
 

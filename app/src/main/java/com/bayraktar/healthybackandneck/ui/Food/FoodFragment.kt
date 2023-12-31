@@ -83,8 +83,10 @@ class FoodFragment : Fragment() {
                     }
 
                     2 -> {
-                        tabIcon.setImageResource(R.drawable.fresh)
-                        tabText.text = (getString(R.string.fresh))
+                        tabIcon.setImageResource(R.drawable.legume)
+                        tabText.text = (getString(R.string.legume))
+
+
                     }
 
                     3 -> {
@@ -93,8 +95,8 @@ class FoodFragment : Fragment() {
                     }
 
                     4 -> {
-                        tabIcon.setImageResource(R.drawable.legume)
-                        tabText.text = (getString(R.string.legume))
+                        tabIcon.setImageResource(R.drawable.fresh)
+                        tabText.text = (getString(R.string.fresh))
                     }
                     //5 -> {
                     //    tabIcon.setImageResource(R.drawable.other)

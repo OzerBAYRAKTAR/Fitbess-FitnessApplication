@@ -174,7 +174,7 @@
     <string name="txt_calori">Calories</string>
     <string name="txt_alltime">All Time</string>
     <string name="txt_bodyparameters">Body</string>
-    <string name="txt_record">All-Time Achievements</string>
+    <string name="txt_record">Statistics</string>
     <string name="booty">Buttocks</string>
     <string name="belly">Belly</string>
     <string name="chest">Chest</string>
@@ -367,7 +367,7 @@
     <string name="label_normal">Normal</string>
     <string name="label_tryagain">Try Again</string>
     <string name="label_yourfatrate">Your Body Fat Percentage</string>
-    <string name="label_yourdailycaloriereq">Daily Calorie Intake Requirement</string>
+    <string name="label_yourdailycaloriereq">Daily Calorie Requirement</string>
     <string name="label_drinkwater">Get up and drink your water!</string>
     <string name="label_timetodrinkwater">Time to drink water!</string>
     <string name="label_waterreminder">Water Reminder</string>
@@ -382,6 +382,9 @@
     <string name="label_sharevia">Share via</string>
     <string name="label_reviewerror">The review process failed</string>
     <string name="label_ratingsuccess">Rating process completed</string>
+
+    <string name="food_detail_txt">Nutritional Values for 100 Grams</string>
+    <string name="other_foods">Other Varieties</string>
 
 
 

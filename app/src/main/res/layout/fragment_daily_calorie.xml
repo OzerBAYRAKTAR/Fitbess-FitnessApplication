@@ -18,7 +18,6 @@
         android:textSize="21sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,14 +25,13 @@
         android:id="@+id/textView124"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:fontFamily="serif"
-        android:layout_marginStart="10dp"
         android:text="@string/height"
         android:textColor="@color/black"
         android:textSize="17sp"
-        android:layout_marginTop="15dp"
         app:layout_constraintBottom_toTopOf="@id/usernameLayout2"
-        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="@+id/usernameLayout2"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -71,9 +69,8 @@
         android:fontFamily="serif"
         android:text="@string/weight"
         android:textColor="@color/black"
-        android:layout_marginStart="10dp"
         android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="@+id/usernameLayout3"
         app:layout_constraintTop_toBottomOf="@+id/usernameLayout2" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -109,9 +106,8 @@
         android:fontFamily="serif"
         android:text="@string/label_age"
         android:textColor="@color/black"
-        android:layout_marginStart="10dp"
         android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="@+id/usernameLayout4"
         app:layout_constraintTop_toBottomOf="@+id/usernameLayout3" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -148,9 +144,8 @@
         android:fontFamily="serif"
         android:text="@string/label_activitylevel"
         android:textColor="@color/black"
-        android:layout_marginStart="10dp"
         android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="@+id/spnrActivity"
         app:layout_constraintTop_toBottomOf="@+id/usernameLayout4" />
 
     <Spinner
@@ -172,9 +167,8 @@
         android:fontFamily="serif"
         android:text="@string/label_gender"
         android:textColor="@color/black"
-        android:layout_marginStart="10dp"
         android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="@+id/checkMale"
         app:layout_constraintTop_toBottomOf="@+id/spnrActivity" />
 
     <androidx.appcompat.widget.AppCompatCheckBox
@@ -256,6 +250,17 @@
         app:layout_constraintTop_toBottomOf="@+id/btnSavee"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/goBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/left_black"
+        app:layout_constraintBottom_toBottomOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

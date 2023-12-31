@@ -174,7 +174,7 @@
     <string name="txt_calori">Калории</string>
     <string name="txt_alltime">Всё Время</string>
     <string name="txt_bodyparameters">Параметры Тела</string>
-    <string name="txt_record">Все Достижения За Все Время</string>
+    <string name="txt_record">статистика</string>
     <string name="booty">Ягодицы</string>
     <string name="belly">Поясница</string>
     <string name="chest">Грудь</string>
@@ -247,6 +247,9 @@
     <string name="skip_Rest">Пропустить Отдых</string>
     <string name="home">Главная</string>
 
+
+    <string name="food_detail_txt">Пищевая ценность на 100 грамм</string>
+    <string name="other_foods">Другие варианты</string>
 
     <!-- Foody-->
     <string name="meat">Мясо</string>

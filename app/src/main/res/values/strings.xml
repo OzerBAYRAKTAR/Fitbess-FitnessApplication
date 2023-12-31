@@ -62,7 +62,7 @@
     <string name="nutrition_desc">Sağlıklı bir beslenme tarzı için bazı tavsiyeler</string>
     <string name="breath">Nefes Egzersizleri</string>
     <string name="breath_desc">Sağlıklı Yaşam İçin Etkili Nefes Alma Teknikleri</string>
-    <string name="search_food">Besinleri keşfet</string>
+    <string name="search_food">Besin Değerleri</string>
 
 
     <!-- Diet Detail-->
@@ -180,7 +180,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="txt_calori">Kalori</string>
     <string name="txt_alltime">Tüm Zaman</string>
     <string name="txt_bodyparameters">Vücudun</string>
-    <string name="txt_record">Tüm Zaman Kazanımlar</string>
+    <string name="txt_record">İstatistikler</string>
     <string name="booty">Kalça</string>
     <string name="belly">Bel</string>
     <string name="chest">chest</string>
@@ -264,7 +264,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
 
     <!-- Fresh-->
     <string name="patates">Patates</string>
-    <string name="patlican">Patlican</string>
+    <string name="patlican">Patlıcan</string>
     <string name="marul">Marul</string>
     <string name="havuc">Havuc</string>
     <string name="roka">Roka</string>
@@ -291,28 +291,28 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="somon">Somon</string>
 
     <!-- Milk-->
-    <string name="sut">Sut</string>
+    <string name="sut">Süt</string>
     <string name="yogurt">Yogurt</string>
     <string name="taze_peynir">Taze peynir</string>
     <string name="kasar_peynir">Kaşar peynir</string>
     <string name="lor_peynir">Lor peynir</string>
     <string name="ayran">Ayran</string>
     <string name="kefir">Kefir</string>
-    <string name="tereyagi">Tereyagi</string>
+    <string name="tereyagi">Tereyağı</string>
     <string name="yumurta">Yumurta</string>
 
     <!-- Fruit-->
     <string name="muz">Muz</string>
     <string name="elma">Elma</string>
     <string name="armut">Armut</string>
-    <string name="cilek">Cilek</string>
+    <string name="cilek">Çilek</string>
     <string name="karpuz">Karpuz</string>
     <string name="kavun">Kavun</string>
-    <string name="seftali">Seftali</string>
-    <string name="kayisi">Kayisi</string>
+    <string name="seftali">Şeftali</string>
+    <string name="kayisi">Kayısı</string>
     <string name="erik">Erik</string>
     <string name="incir">İncir</string>
-    <string name="uzum">Uzum</string>
+    <string name="uzum">Üzüm</string>
     <string name="kiraz">Kiraz</string>
 
     <!-- Legume-->
@@ -320,14 +320,14 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="bamya">Bamya</string>
     <string name="barbunya">Barbunya</string>
     <string name="bezelye">Bezelye</string>
-    <string name="borulce">Borulce</string>
+    <string name="borulce">Börulce</string>
     <string name="mercimek">Mercimek</string>
     <string name="kestane">Kestane</string>
     <string name="fasulye">Fasulye</string>
     <string name="nohut">Nohut</string>
     <string name="ceviz">Ceviz</string>
-    <string name="fistik">Fistik</string>
-    <string name="yesil_fasulye">Yesil fasulye</string>
+    <string name="fistik">Fıstık</string>
+    <string name="yesil_fasulye">Yeşil fasulye</string>
     <string name="tofu">Tofu</string>
     <string name="badem">Badem</string>
     <string name="txtiron">Demir</string>
@@ -370,11 +370,11 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="label_dailyCalorieRequirement">Günlük Kalori İhtiyacı</string>
     <string name="label_zayif">Zayıf</string>
     <string name="label_fat">Şişman</string>
-    <string name="label_weighted">KiLolu</string>
+    <string name="label_weighted">Kilolu</string>
     <string name="label_normal">Normal</string>
     <string name="label_tryagain">Tekrar Deneyiniz</string>
     <string name="label_yourfatrate">Vücut Yağ Oranın</string>
-    <string name="label_yourdailycaloriereq">Günlük Alman Gereken Kalori Miktarı</string>
+    <string name="label_yourdailycaloriereq">Kalori Miktarı</string>
     <string name="label_drinkwater">Haydi kalk ve suyunu iç!</string>
     <string name="label_timetodrinkwater">Time to drink water!</string>
     <string name="label_waterreminder">Su Hatırlatıcısı</string>
@@ -535,6 +535,8 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="lbl_delete_favourite">Hareketi favori listenizden kaldırmak istediğinize emin misiniz?</string>
     <string name="lbl_item_day">.Gün</string>
     <string name="lbl_exerciseattention">Lütfen önceki antrenmanları tamamlayınız!</string>
+    <string name="food_detail_txt">100 Gram için besin değerleri</string>
+    <string name="other_foods">Diğer Çeşitler</string>
 
 </resources>
 
