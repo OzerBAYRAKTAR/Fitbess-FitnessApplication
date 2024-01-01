@@ -521,7 +521,7 @@
     <string name="next_move">Следующее упражнение</string>
     <string name="lbl_before">Предыдущее</string>
     <string name="lbl_sonraki">Следующее</string>
-    <string name="lbl_step">/ Шаг</string>
+    <string name="lbl_step">Шаг</string>
     <string name="lbl_day">День</string>
     <string name="lbl_month">Месяц</string>
     <string name="lbl_year">Год</string>

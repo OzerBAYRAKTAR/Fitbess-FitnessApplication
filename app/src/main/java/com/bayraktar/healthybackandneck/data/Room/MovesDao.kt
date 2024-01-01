@@ -33,6 +33,14 @@ interface MovesDao {
     @Query("SELECT * FROM exercise_days WHERE level = 1")
     fun getExerciseDaysLevel1(): List<ExerciseDay>
 
+    @Query("SELECT count FROM count_table WHERE id = 1")
+    fun getCount(): Int
+
+    @Transaction
+    @Query("UPDATE count_table SET count = count + 1 WHERE id = 1")
+    fun updateCount() : Int
+
+
 
     @Query("SELECT * FROM exercise_days WHERE level = 2")
     fun getExerciseDaysLevel2(): List<ExerciseDay>

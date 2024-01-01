@@ -5,12 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.JetpackDataStore.DataStoreManage
 import com.bayraktar.healthybackandneck.databinding.FragmentStatisticsBinding
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
@@ -21,7 +26,13 @@ import kotlinx.coroutines.launch
 class StatisticsFragment : Fragment() {
     private var _binding: FragmentStatisticsBinding? = null
     val binding get() = _binding!!
+    private val viewModel : StatisticsViewModel by viewModels()
+
     private lateinit var dataStoreManager: DataStoreManage
+
+
+    private lateinit var mAdView: AdView
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,10 +46,22 @@ class StatisticsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //statistics banner ıd => ca-app-pub-4754194669476617/2871909027 // şuanlık xml de id var, canlıya çıkarken değişecek
+
+        MobileAds.initialize(requireContext()) {}
+
+        mAdView = binding.adView
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
+
+
+        observeCount()
         dataStoreManager = DataStoreManage.getInstance(requireContext())
         buttonClicks()
 
 
+        viewModel.getCountFromRoom()
         observeCalculates()
 
         dataStoreManager.getActivityLevel().asLiveData().observe(viewLifecycleOwner) { level ->
@@ -46,6 +69,19 @@ class StatisticsFragment : Fragment() {
                 println(level)
             }
         }
+    }
+    private fun observeCount() = with(binding) {
+        viewModel.getCount.observe(viewLifecycleOwner, Observer { count ->
+            if (count > 0) {
+                txtExerciseCount.text = "${count*7}"
+                txtTimespent.text = "${8*count}"
+                txtKcal.text = "${300*count}"
+            }else {
+                txtExerciseCount.text = "0"
+                txtTimespent.text = "0"
+                txtKcal.text = "0"
+            }
+        })
     }
 
     private fun observeCalculates() = with(binding) {

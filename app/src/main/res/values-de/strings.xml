@@ -519,7 +519,7 @@
     <string name="next_move">Nächste Bewegung</string>
     <string name="lbl_before">Vorherige</string>
     <string name="lbl_sonraki">Nächste</string>
-    <string name="lbl_step">/ Schritt</string>
+    <string name="lbl_step">Schritt</string>
     <string name="lbl_day">Tag</string>
     <string name="lbl_month">Monat</string>
     <string name="lbl_year">Jahr</string>

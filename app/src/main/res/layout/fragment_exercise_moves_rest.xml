@@ -7,33 +7,34 @@
     android:layout_height="match_parent"
     tools:context=".ui.ExerciseMovesRest.ExerciseMovesRestFragment">
 
+
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifImageView2"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginVertical="15dp"
+        android:layout_marginTop="8dp"
         android:scaleType="centerCrop"
         android:src="@drawable/denemegif"
         app:layout_constraintBottom_toTopOf="@+id/skipRest"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
-
 
     <TextView
         android:id="@+id/labelrest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/robotoslabextrabold"
         android:text="@string/get_rest"
         android:textColor="#3C8A3E"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/nextMove"
+        android:textSize="27sp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.527" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cns4"
@@ -100,26 +101,35 @@
         android:id="@+id/nextMove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
+        android:layout_marginStart="15dp"
         android:fontFamily="@font/robotoslabmedium"
         android:text="@string/next_move"
-        android:layout_marginStart="16dp"
         android:textColor="@color/gray"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/cns4"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/cns4" />
 
-
-
-
-
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="LARGE_BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toTopOf="@+id/pbTimer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/pbTimer"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/gray_progressbar_background"
         android:indeterminate="false"
         android:max="100"
@@ -128,8 +138,8 @@
         android:rotation="270"
         app:layout_constraintBottom_toTopOf="@+id/labelrest"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtTimeLeft"
@@ -138,7 +148,7 @@
         android:fontFamily="@font/robotoslabmedium"
         android:text="30"
         android:textColor="@color/black"
-        android:textSize="31sp"
+        android:textSize="45sp"
         app:layout_constraintBottom_toBottomOf="@+id/pbTimer"
         app:layout_constraintEnd_toEndOf="@+id/pbTimer"
         app:layout_constraintStart_toStartOf="@+id/pbTimer"
@@ -149,10 +159,10 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginBottom="15dp"
         android:background="@color/login_color"
-        app:layout_constraintTop_toBottomOf="@+id/txtTimeLeft"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/nextMove"
+        app:layout_constraintStart_toStartOf="@+id/nextMove" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/skipRest"
@@ -162,7 +172,7 @@
         android:text="@string/skip_Rest"
         android:textSize="20sp"
         android:textColor="@color/white"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/tahoma"
         android:background="@drawable/buttonfirst_background"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -20,4 +20,10 @@ class ExerciseMovesEndViewModel @Inject constructor(
         }
     }
 
+    fun updatecount() {
+        viewModelScope.launch(Dispatchers.IO) {
+            repo.updateCount()
+        }
+    }
+
 }

@@ -19,6 +19,9 @@ import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayAdapter
 import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDaySubAdapter
 import com.bayraktar.healthybackandneck.ui.ExerciseMoves.ExerciseMovesFragmentDirections
 import com.bayraktar.healthybackandneck.ui.ExerciseMovesReady.ExerciseMovesReadyFragmentDirections
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,8 +30,8 @@ class ExerciseMovesRestFragment : Fragment() {
     private var _binding: FragmentExerciseMovesRestBinding? = null
     val binding get() = _binding!!
 
-
-    private var timeSelected = 20
+    private lateinit var mAdView: AdView
+    private var timeSelected = 30
     private var timecountDown: CountDownTimer? = null
     private var timeProgress = 0
     private var pauseOffSet: Long = 0
@@ -52,8 +55,14 @@ class ExerciseMovesRestFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        MobileAds.initialize(requireContext()) {}
 
-        binding.txtTimeLeft.text = "20"
+        //banner id => ca-app-pub-4754194669476617/7348843104
+
+        mAdView = binding.adView
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+        binding.txtTimeLeft.text = "30"
         binding.pbTimer.max = timeSelected
 
         getData()
@@ -79,13 +88,13 @@ class ExerciseMovesRestFragment : Fragment() {
             exerciseDayModel = ExerciseMovesRestFragmentArgs.fromBundle(it).exerciseDayModel
             exerciseArray = ExerciseMovesRestFragmentArgs.fromBundle(it).exerciseNewList
 
-                exerciseList = ArrayList(exerciseArray!!.asList())
+            exerciseList = ArrayList(exerciseArray!!.asList())
 
-                val currentModel = exerciseList[currentExerciseIndex + 1]
-                gifImageView2.setImageResource(currentModel.image)
-                exerciceName.text = currentModel.exerciseName
-                txtRank.text = (currentExerciseIndex + 2).toString()
-                albelRank.text = exerciseList.size.toString() +  getString(R.string.lbl_step)
+            val currentModel = exerciseList[currentExerciseIndex + 1]
+            gifImageView2.setImageResource(currentModel.image)
+            exerciceName.text = currentModel.exerciseName
+            txtRank.text = (currentExerciseIndex + 2).toString()
+            albelRank.text = "/" + exerciseList.size.toString() + getString(R.string.lbl_step)
 
 
         }
@@ -128,14 +137,14 @@ class ExerciseMovesRestFragment : Fragment() {
 
             override fun onFinish() {
 
-                    val exerciseArray: Array<SubExerciseDayExercise>? = null
-                    val action =
-                        ExerciseMovesRestFragmentDirections.actionExerciseMovesRestFragmentToExerciseMovesFragment2(
-                            currentExerciseIndex + 1,
-                            exerciseList.toTypedArray(),
-                            exerciseDayModel!!
-                        )
-                    view?.findNavController()?.navigate(action)
+                val exerciseArray: Array<SubExerciseDayExercise>? = null
+                val action =
+                    ExerciseMovesRestFragmentDirections.actionExerciseMovesRestFragmentToExerciseMovesFragment2(
+                        currentExerciseIndex + 1,
+                        exerciseList.toTypedArray(),
+                        exerciseDayModel!!
+                    )
+                view?.findNavController()?.navigate(action)
 
             }
 

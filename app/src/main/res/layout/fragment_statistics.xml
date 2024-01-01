@@ -60,6 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="25dp"
                     android:src="@drawable/settttng"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/textView17"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/textView17" />
@@ -68,6 +69,7 @@
                     android:id="@+id/btnAdBlock"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:layout_marginEnd="30dp"
                     android:src="@drawable/adblock"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView9"
@@ -796,19 +798,30 @@
 
             </androidx.cardview.widget.CardView>
 
-
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                app:adSize="BANNER"
+                android:layout_marginTop="5dp"
+                app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card3"/>
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/tahoma"
                 android:text="@string/label_dayofcalorie"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card3" />
+                app:layout_constraintTop_toBottomOf="@+id/adView" />
 
 
             <androidx.cardview.widget.CardView

@@ -47,8 +47,8 @@ class SecondFragment : Fragment() {
         observeCalculates()
         btnClicks()
 
-        binding.numberPickerDay.setOnValueChangedListener { xx, yy, newVal ->
-            selectedAge = newVal
+        binding.numberPickerYear.setOnValueChangedListener { _, _, newVal ->
+            selectedAge = 2023 - newVal
         }
 
     }

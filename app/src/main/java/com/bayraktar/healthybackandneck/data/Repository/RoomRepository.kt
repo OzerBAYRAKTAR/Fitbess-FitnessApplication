@@ -27,6 +27,11 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         return movesDao.getExerciseDaysLevel1()
     }
 
+    fun getCount(): Int {
+        return movesDao.getCount()
+    }
+
+
     fun getExerciseDaysLevel2(): List<ExerciseDay> {
         return movesDao.getExerciseDaysLevel2()
     }
@@ -79,6 +84,10 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
 
     fun updateIsFavouriteToFalse(exerciseId: Int){
         movesDao.updateIsFavouriteToFalse(exerciseId)
+    }
+
+    fun updateCount(): Int{
+       return movesDao.updateCount()
     }
 
     fun getIsFavouriteTrue():List<ExerciseDayExercise>{

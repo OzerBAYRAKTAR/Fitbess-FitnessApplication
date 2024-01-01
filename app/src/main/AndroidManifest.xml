@@ -20,6 +20,10 @@
         tools:targetApi="31">
 
         <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4754194669476617~8912318160"/>
+
+        <meta-data
             android:name="android.app.notification.water_channel_id"
             android:value="WaterReminderChannel" />
         <meta-data

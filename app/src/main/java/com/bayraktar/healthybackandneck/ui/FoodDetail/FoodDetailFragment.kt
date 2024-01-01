@@ -133,7 +133,7 @@ class FoodDetailFragment : Fragment(), RecyclerViewClickListener {
 
     override fun recyclerviewListClicked(v: View, position: Int) {
         binding.apply {
-            val model = foodList[position + 1]
+            val model = foodlistExceptId[position]
 
             model.imageFood.let {
                 imageOtherFood.setImageResource(it)

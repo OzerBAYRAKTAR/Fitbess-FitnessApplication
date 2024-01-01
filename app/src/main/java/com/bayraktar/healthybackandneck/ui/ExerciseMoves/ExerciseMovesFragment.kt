@@ -25,6 +25,9 @@ import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesReadyBi
 import com.bayraktar.healthybackandneck.ui.ExerciseMovesReady.ExerciseMovesReadyFragmentArgs
 import com.bayraktar.healthybackandneck.ui.ExerciseMovesReady.ExerciseMovesReadyFragmentDirections
 import com.bayraktar.healthybackandneck.utils.showToastFavourite
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,7 +37,7 @@ class ExerciseMovesFragment : Fragment() {
 
     private val viewModel: ExerciseMovesViewModel by viewModels()
 
-
+    private lateinit var mAdView: AdView
     private var timeSelected = 30
     private var timecountDown: CountDownTimer? = null
     private var timeProgress = 0
@@ -61,7 +64,13 @@ class ExerciseMovesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        MobileAds.initialize(requireContext()) {}
 
+        //banner id => ca-app-pub-4754194669476617/2002777967
+
+        mAdView = binding.adView
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
         binding.txtTimeLeft.text = "10"
         binding.pbTimer.max = timeSelected
 
@@ -117,9 +126,9 @@ class ExerciseMovesFragment : Fragment() {
             startTimerSetup()
             // Update the image here if necessary
             if (isStart) {
-                playpause.setBackgroundResource(R.drawable.stopexercise)
-            } else {
                 playpause.setBackgroundResource(R.drawable.startexercise)
+            } else {
+                playpause.setBackgroundResource(R.drawable.stopexercise)
             }
         }
     }
@@ -221,12 +230,12 @@ class ExerciseMovesFragment : Fragment() {
 
         if (timeSelected > timeProgress) {
             if (isStart) {
-                playpause.setImageResource((R.drawable.startexercise))
+                playpause.setImageResource((R.drawable.stopexercise))
                 startTimer(pauseOffSet)
                 isStart = false
             } else {
                 isStart = true
-                playpause.setImageResource((R.drawable.stopexercise))
+                playpause.setImageResource((R.drawable.startexercise))
                 timePause()
             }
             isStart = isTimerRunning

@@ -2,7 +2,9 @@ package com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +22,10 @@ import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerc
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDaysOfWeekBinding
 import com.bayraktar.healthybackandneck.utils.RecyclerClicked
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import org.json.JSONArray
@@ -32,6 +38,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerClicked {
     private var _binding: FragmentExerciseDaysOfWeekBinding? = null
     val binding get() = _binding!!
     private val viewModel: ExerciseDetailFirstVievModel by viewModels()
+
 
     private var detailList = ArrayList<ExerciseDay>()
     private val exerciseDayExercise = mutableListOf<ExerciseDayExercise>()
@@ -52,6 +59,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerClicked {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
 
 

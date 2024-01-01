@@ -53,6 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="25dp"
                     android:src="@drawable/settttng"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/textView17"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/textView17" />
@@ -63,6 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="30dp"
                     android:src="@drawable/adblock"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView9"
                     app:layout_constraintEnd_toStartOf="@+id/imageView9"
                     app:layout_constraintTop_toTopOf="@+id/imageView9" />
@@ -300,6 +302,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constRestart"
                 android:layout_width="match_parent"
+                android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:paddingVertical="10dp"
                 android:layout_marginTop="4dp"
@@ -387,19 +390,32 @@
                     app:layout_constraintVertical_bias="1.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constRestart" />
+
             <TextView
                 android:id="@+id/textView16"
                 style="@style/TextAppearance.AppCompat.Body2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="serif"
                 android:text="@string/helpus"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constTheme" />
+                app:layout_constraintTop_toBottomOf="@+id/adView" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/consRateus"

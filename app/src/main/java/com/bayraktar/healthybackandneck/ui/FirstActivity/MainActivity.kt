@@ -14,6 +14,7 @@ import com.bayraktar.healthybackandneck.ui.Adapters.OnBoardingItemsAdapter
 import com.bayraktar.healthybackandneck.data.Models.OnBoardingItems
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.ActivityMainBinding
+import com.google.android.gms.ads.MobileAds
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,11 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-       // window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-
-        //setOnBoardingItems()
-        //setCurrentIndicator(0)
-        //setUpIndicators()
+        MobileAds.initialize(this) {}
 
 
     }

@@ -25,6 +25,9 @@ import com.bayraktar.healthybackandneck.utils.LanguagePreference
 import com.bayraktar.healthybackandneck.utils.LocaleHelper
 import com.bayraktar.healthybackandneck.utils.NotificationHelper
 import com.bayraktar.healthybackandneck.utils.showToast
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.ReviewManagerFactory
@@ -44,6 +47,7 @@ class ProfileFragment : Fragment() {
     private lateinit var notificationHelper: NotificationHelper
     private var  reviewInfo: ReviewInfo?= null
     private lateinit var reviewManager: ReviewManager
+    private lateinit var mAdView: AdView
 
 
     override fun onCreateView(
@@ -57,6 +61,16 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+        MobileAds.initialize(requireContext()) {}
+
+        // profile banner id => ca-app-pub-4754194669476617/7416253720
+        mAdView = binding.adView
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
+
 
         val savedLanguageCode = LanguagePreference.getLanguageCode(requireContext())
         savedLanguageCode?.let {

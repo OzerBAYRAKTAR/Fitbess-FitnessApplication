@@ -41,6 +41,9 @@ import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.LegButtAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.NeckBackAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.WarmUpAdapter
 import com.bayraktar.healthybackandneck.utils.OnFavouriteButtonClickListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import dagger.hilt.android.AndroidEntryPoint
 import org.json.JSONArray
 import java.nio.charset.Charset
@@ -55,6 +58,8 @@ class HomePageFragment : Fragment() {
     private var _binding: FragmentHomePageBinding? = null
     val binding get() = _binding!!
     private val viewModel: HomeViewModel by viewModels()
+
+    private lateinit var mAdView: AdView
 
     private lateinit var homeAdapter: HomeViewpagerAdapter
 
@@ -101,6 +106,17 @@ class HomePageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+        //banner  ID => ca-app-pub-4754194669476617/5943389951
+        //banner testt ID => ca-app-pub-3940256099942544/9257395921
+
+        //interstealler tes ID => ca-app-pub-3940256099942544/1033173712
+
+        MobileAds.initialize(requireContext()) {}
+
+        mAdView = binding.adView
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
 
         setOnBoardingItems()
         setCurrentIndicator(0)
@@ -124,6 +140,7 @@ class HomePageFragment : Fragment() {
         setUpTransfer()
 
     }
+
 
     private fun setOnBoardingItems() = with(binding) {
         homeAdapter = HomeViewpagerAdapter(

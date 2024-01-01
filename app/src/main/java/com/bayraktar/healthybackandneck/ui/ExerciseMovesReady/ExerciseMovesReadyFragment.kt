@@ -22,6 +22,9 @@ import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayAdapter
 import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayFragmentArgs
 import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayFragmentDirections
 import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDaySubAdapter
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,8 +32,8 @@ class ExerciseMovesReadyFragment : Fragment() {
 
     private var _binding: FragmentExerciseMovesReadyBinding? = null
     val binding get() = _binding!!
-
-    private var timeSelected = 20
+    private lateinit var mAdView: AdView
+    private var timeSelected = 30
     private var timecountDown: CountDownTimer? = null
     private var timeProgress = 0
     private var pauseOffSet: Long = 0
@@ -53,8 +56,15 @@ class ExerciseMovesReadyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        MobileAds.initialize(requireContext()) {}
 
-        binding.txtTimeleft.text = "20"
+        //bannder id => ca-app-pub-4754194669476617/5976831939
+
+        mAdView = binding.adView
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
+        binding.txtTimeleft.text = "30"
         binding.pbTimer.max = timeSelected
 
 
