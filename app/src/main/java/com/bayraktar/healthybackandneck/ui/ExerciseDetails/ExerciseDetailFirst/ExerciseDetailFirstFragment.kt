@@ -20,12 +20,16 @@ import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.Exercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDaysOfWeekBinding
+import com.bayraktar.healthybackandneck.utils.ExerciseItemClickListener
 import com.bayraktar.healthybackandneck.utils.RecyclerClicked
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.google.android.gms.ads.rewarded.RewardedAd
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import org.json.JSONArray
@@ -33,12 +37,13 @@ import java.nio.charset.Charset
 
 
 @AndroidEntryPoint
-class ExerciseDetailFirstFragment : Fragment(), RecyclerClicked {
+class ExerciseDetailFirstFragment : Fragment(),ExerciseItemClickListener {
 
     private var _binding: FragmentExerciseDaysOfWeekBinding? = null
     val binding get() = _binding!!
     private val viewModel: ExerciseDetailFirstVievModel by viewModels()
 
+    private var rewardedAd: RewardedAd? = null
 
     private var detailList = ArrayList<ExerciseDay>()
     private val exerciseDayExercise = mutableListOf<ExerciseDayExercise>()
@@ -60,7 +65,20 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerClicked {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        MobileAds.initialize(requireContext()) {}
 
+        var adRequest = AdRequest.Builder().build()
+        RewardedAd.load(requireContext(),"ca-app-pub-3940256099942544/5224354917", adRequest, object : RewardedAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                adError?.toString()?.let { Log.d(TAG, it) }
+                rewardedAd = null
+            }
+
+            override fun onAdLoaded(ad: RewardedAd) {
+                Log.d(TAG, "Ad was loaded.")
+                rewardedAd = ad
+            }
+        })
 
 
         setRecyclerview()
@@ -221,7 +239,7 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerClicked {
 
     private fun setRecyclerview() = with(binding) {
         listDaysOfWeek.layoutManager = LinearLayoutManager(requireContext())
-        firstAdapter = ExerciseDetailFirstAdapter(detailList, this@ExerciseDetailFirstFragment)
+        firstAdapter = ExerciseDetailFirstAdapter(detailList,this@ExerciseDetailFirstFragment)
         listDaysOfWeek.adapter = firstAdapter
     }
 
@@ -244,10 +262,15 @@ class ExerciseDetailFirstFragment : Fragment(), RecyclerClicked {
         })
     }
 
-    override fun onItemclicked(position: Int) {
-        selectedModel = detailList[position]
-        val selectedDay = position + 1
-        viewModel.getExerciseListWithDayID(selectedDay, 1)
-        observeListWithDayId()
+
+    override fun onExerciseItemClicked(position: Int, isLocked: Boolean) {
+        if (isLocked) {
+            TODO("Alertdialog koyulacak, ya önceki bölümleri izle, ya da reklam izle kilidi aç mesajı. sonra selectedmodel iscompleted = true olcak")
+        } else {
+            selectedModel = detailList[position]
+            val selectedDay = position + 1
+            viewModel.getExerciseListWithDayID(selectedDay, 1)
+            observeListWithDayId()
+        }
     }
 }

@@ -8,12 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.databinding.ItemExercisedaysofweekBinding
+import com.bayraktar.healthybackandneck.utils.ExerciseItemClickListener
 import com.bayraktar.healthybackandneck.utils.RecyclerClicked
 import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 
 class ExerciseDetailFirstAdapter(
     private var lsMenu: List<ExerciseDay>,
-    private val rclClickListener: RecyclerClicked
+    private val exerciseItemClickListener: ExerciseItemClickListener
 ): RecyclerView.Adapter<ExerciseDetailFirstAdapter.ItemHolder>() {
 
 
@@ -44,7 +45,8 @@ class ExerciseDetailFirstAdapter(
             if (model.isCompleted) {
                 lock.visibility = View.GONE
                 cardview1.setOnClickListener {
-                    rclClickListener.onItemclicked(position)
+                    exerciseItemClickListener.onExerciseItemClicked(position, false)
+
                 }
             }else {
                 lock.visibility = View.VISIBLE
@@ -52,6 +54,8 @@ class ExerciseDetailFirstAdapter(
                 val message = context.getString(R.string.lbl_exerciseattention)
                 cardview1.setOnClickListener {
                     Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+                    exerciseItemClickListener.onExerciseItemClicked(position, true)
+
                 }
 
             }
