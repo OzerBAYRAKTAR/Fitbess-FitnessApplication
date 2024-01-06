@@ -51,16 +51,12 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
                 && destination.id != R.id.id_statistics_fragment
                 && destination.id != R.id.id_food_fragment
                 && destination.id != R.id.foodDetailFragment) {
-                // If the destination is not the home fragment, hide the bottom app bar
                 binding.bottomBar.visibility = View.GONE
             } else {
-                // If navigating back to the home fragment, show the bottom app bar
                 binding.bottomBar.visibility = View.VISIBLE
             }
         }
 
-
-        //window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         setUpBotMenu()
 
 
