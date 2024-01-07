@@ -4,6 +4,7 @@ package com.bayraktar.healthybackandneck.data.JetpackDataStore
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.doublePreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.core.intPreferencesKey
@@ -44,7 +45,7 @@ class DataStoreManage(context: Context) {
         val TXT_NECK = intPreferencesKey("txt_neck")
         val TXT_BELLY = intPreferencesKey("txt_belly")
         val TXT_BOOTY = intPreferencesKey("txt_booty")
-        val TXT_INDEKS = stringPreferencesKey("txt_indeks")
+        val TXT_INDEKS = doublePreferencesKey("txt_indeks")
         val TXT_CATEGORY = stringPreferencesKey("txt_category")
         val TXT_CALORIE = stringPreferencesKey("txt_calorie")
         val TXT_FATRATE = stringPreferencesKey("txt_fatrate")
@@ -106,7 +107,7 @@ class DataStoreManage(context: Context) {
             pref[TXT_BOOTY] = data
         }
     }
-    suspend fun saveIndeks(data: String) {
+    suspend fun saveIndeks(data: Double) {
         dataStore.edit { pref ->
             pref[TXT_INDEKS] = data
         }
@@ -231,7 +232,7 @@ class DataStoreManage(context: Context) {
                 pref[TXT_BOOTY] ?: 0
             }
     }
-    fun getIndeks(): Flow<String> {
+    fun getIndeks(): Flow<Double> {
         return dataStore.data
             .catch { exception ->
                 if (exception is IOException) {
@@ -240,7 +241,7 @@ class DataStoreManage(context: Context) {
                     throw exception
                 }
             }.map { pref ->
-                pref[TXT_INDEKS] ?: ""
+                pref[TXT_INDEKS] ?: 0.0
             }
     }
     fun getCategory(): Flow<String> {

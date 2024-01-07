@@ -587,6 +587,7 @@
                             <ImageView
                                 android:id="@+id/viewDown1"
                                 android:layout_width="30dp"
+                                android:visibility="invisible"
                                 android:layout_height="30dp"
                                 android:layout_gravity="center"
                                 android:src="@drawable/view_down" />
@@ -619,6 +620,7 @@
                                 android:id="@+id/viewDown2"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
+                                android:visibility="invisible"
                                 android:layout_gravity="center"
                                 android:src="@drawable/view_down" />
 
@@ -649,6 +651,7 @@
                                 android:id="@+id/viewDown3"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
+                                android:visibility="invisible"
                                 android:layout_gravity="center"
                                 android:src="@drawable/view_down" />
 
@@ -679,6 +682,7 @@
                                 android:id="@+id/viewDown4"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
+                                android:visibility="invisible"
                                 android:layout_gravity="center"
                                 android:src="@drawable/view_down" />
 

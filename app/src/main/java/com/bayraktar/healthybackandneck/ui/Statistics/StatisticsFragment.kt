@@ -33,7 +33,9 @@ class StatisticsFragment : Fragment() {
     private lateinit var dataStoreManager: DataStoreManage
 
 
+
     private lateinit var mAdView: AdView
+
 
 
     override fun onCreateView(
@@ -55,7 +57,6 @@ class StatisticsFragment : Fragment() {
         mAdView = binding.adView
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
-
 
 
         observeCount()
@@ -85,7 +86,6 @@ class StatisticsFragment : Fragment() {
             }
         })
     }
-
     private fun observeCalculates() = with(binding) {
 
         lifecycleScope.launch(Dispatchers.Main) {
@@ -96,8 +96,35 @@ class StatisticsFragment : Fragment() {
                 dataStoreManager.getFatRate(),
 
                 ) { indeks, category, calorie, fatrate ->
-                if (indeks != "") {
-                    bmiIndeks.text = indeks
+                if (indeks != 0.0) {
+                    bmiIndeks.text = indeks.toString()
+                    when (indeks) {
+                        in Double.MIN_VALUE..18.5 -> {
+                            viewDown1.visibility = View.VISIBLE
+                            viewDown2.visibility = View.INVISIBLE
+                            viewDown3.visibility = View.INVISIBLE
+                            viewDown4.visibility = View.INVISIBLE
+                        }
+                        in 18.5..25.0 -> {
+                            viewDown2.visibility = View.VISIBLE
+                            viewDown1.visibility = View.INVISIBLE
+                            viewDown3.visibility = View.INVISIBLE
+                            viewDown4.visibility = View.INVISIBLE
+                        }
+                        in 25.0..29.9 -> {
+                            viewDown3.visibility = View.VISIBLE
+                            viewDown1.visibility = View.INVISIBLE
+                            viewDown2.visibility = View.INVISIBLE
+                            viewDown4.visibility = View.INVISIBLE
+                        }
+                        in 30.0..1000.0 -> {
+                            viewDown4.visibility = View.VISIBLE
+                            viewDown1.visibility = View.INVISIBLE
+                            viewDown2.visibility = View.INVISIBLE
+                            viewDown3.visibility = View.INVISIBLE
+                        }
+                        else -> "something wrong"
+                    }
                 }
                 if (category != "") {
                     bmiKategori.text = category

@@ -62,12 +62,13 @@ class BMIFragment : DialogFragment() {
         val bmi = weight/(percentHeight*percentHeight)
         val decimalFormat = DecimalFormat("#.##")
         val formattedBmi = decimalFormat.format(bmi)
+        var bmiValue: Double = 0.0
 
 
         //formattedBmi ve bmiResult datastore oluştur, kaydet , getle
 
         val bmiResult = try {   //bmiResult -> kategori, formattedBmi -> endeks
-            val bmiValue = formattedBmi.replace(',', '.').toDouble()
+            bmiValue = formattedBmi.replace(',', '.').toDouble()
 
             when (bmiValue) {
                 in Double.MIN_VALUE..18.5 -> getString(R.string.label_zayif)
@@ -81,7 +82,7 @@ class BMIFragment : DialogFragment() {
         }
 
         dataStoreManager.saveCategory(bmiResult)
-        dataStoreManager.saveIndeks(formattedBmi)
+        dataStoreManager.saveIndeks(bmiValue)
         val title = getString(R.string.label_bmi)
         val message = "\nBMI: $formattedBmi kg/m2 \n \nCategory: $bmiResult"
         AlertDialog.Builder(requireContext(), R.style.CustomAlertDialog)

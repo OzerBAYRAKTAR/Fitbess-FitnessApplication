@@ -34,6 +34,7 @@ class DailyCalorieFragment : Fragment() {
     val binding get() = _binding!!
     private lateinit var dataStoreManager: DataStoreManage
     private var activityLevelList = ArrayList<String>()
+    private var shouldObserveData: Boolean = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -157,13 +158,15 @@ class DailyCalorieFragment : Fragment() {
         val activityPosition = spnrActivity.selectedItemPosition
         val gender = if (checkMale.isChecked)  getString(R.string.label_male) else getString(R.string.label_female)
 
+        shouldObserveData = false
 
         dataStoreManager.saveHeight(height)
         dataStoreManager.saveWeight(weight)
         dataStoreManager.saveAge(age)
-        dataStoreManager.saveActivityLevel(activityPosition)
+        dataStoreManager.saveActivityLevel(activityPosition + 1)
         dataStoreManager.saveGender(gender)
 
+        shouldObserveData = true
         val isMale = checkMale.isChecked
 
         val dailyCalorieReq = calculateDailyCalorieRequirement(
@@ -252,25 +255,27 @@ class DailyCalorieFragment : Fragment() {
                 dataStoreManager.getGender(),
 
                 ) { height, weight, age, level,gender ->
-                if (height != 0) {
-                    inputHeight.setText(height.toString())
-                }
-                if (weight != 0) {
-                    inputWeight.setText(weight.toString())
-                }
-                if (age != 0) {
-                    inputAge.setText(age.toString())
-                }
-                spnrActivity.setSelection(level-1)
-                if (gender != "") {
-                    if (gender == "Erkek") {
-                        checkMale.isChecked = true
-                    }else {
-                        checkFemale.isChecked = true
+                if (shouldObserveData) {
+                    if (height != 0) {
+                        inputHeight.setText(height.toString())
+                    }
+                    if (weight != 0) {
+                        inputWeight.setText(weight.toString())
+                    }
+                    if (age != 0) {
+                        inputAge.setText(age.toString())
+                    }
+                    spnrActivity.setSelection(level-1)
+                    if (gender != "") {
+                        if (gender == "Erkek") {
+                            checkMale.isChecked = true
+                        }else {
+                            checkFemale.isChecked = true
+                        }
                     }
                 }
+
             }.collect() {
-                // You can add additional logic here if needed
             }
         }
 
