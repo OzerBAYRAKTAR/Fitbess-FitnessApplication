@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.bayraktar.healthybackandneck.data.Models.CountModel
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Repository.RoomRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,14 +19,16 @@ class StatisticsViewModel @Inject constructor(
 ): ViewModel() {
 
 
-    private val _getCount: MutableLiveData<Int> = MutableLiveData()
-    val getCount: LiveData<Int> get() = _getCount
+    private val _getCount: MutableLiveData<CountModel> = MutableLiveData()
+    val getCount: LiveData<CountModel> get() = _getCount
+
+
 
 
 
     fun getCountFromRoom() {
         viewModelScope.launch(Dispatchers.IO) {
-            val response = repo.getCount()
+            val response = repo.getCount(1)
             _getCount.postValue(response)
         }
     }

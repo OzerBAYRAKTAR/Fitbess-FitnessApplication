@@ -147,7 +147,10 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cns3"
-            android:background="@drawable/firstselected_background"
+
+
+
+
             android:layout_width="match_parent"
             android:layout_height="52dp">
 
@@ -171,7 +174,7 @@
                 android:layout_height="32dp"
                 android:layout_marginEnd="30dp"
                 android:button="@null"
-                android:checked="true"
+                android:checked="false"
                 android:clickable="false"
                 android:background="@drawable/checkedbox_back"
                 app:layout_constraintBottom_toBottomOf="parent"

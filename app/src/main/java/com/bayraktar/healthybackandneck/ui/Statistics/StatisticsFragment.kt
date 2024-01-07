@@ -16,16 +16,18 @@ import com.bayraktar.healthybackandneck.databinding.FragmentStatisticsBinding
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 
-
+@AndroidEntryPoint
 class StatisticsFragment : Fragment() {
     private var _binding: FragmentStatisticsBinding? = null
     val binding get() = _binding!!
+
     private val viewModel : StatisticsViewModel by viewModels()
 
     private lateinit var dataStoreManager: DataStoreManage
@@ -72,10 +74,10 @@ class StatisticsFragment : Fragment() {
     }
     private fun observeCount() = with(binding) {
         viewModel.getCount.observe(viewLifecycleOwner, Observer { count ->
-            if (count > 0) {
-                txtExerciseCount.text = "${count*7}"
-                txtTimespent.text = "${8*count}"
-                txtKcal.text = "${300*count}"
+            if (count.count > 0) {
+                txtExerciseCount.text = "${count.count*7}"
+                txtTimespent.text = "${8*count.count}"
+                txtKcal.text = "${300*count.count}"
             }else {
                 txtExerciseCount.text = "0"
                 txtTimespent.text = "0"

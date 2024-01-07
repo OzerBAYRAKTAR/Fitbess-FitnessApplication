@@ -50,14 +50,14 @@ class SixthFragment : Fragment() {
                         30 -> {
                             handler.post {
                                 binding.labelSplash.text = getString(R.string.splash_2)
-                                binding.imageSplash.setImageResource(R.drawable.splashnew1)
+                                binding.imageSplash.setImageResource(R.drawable.wp2)
                             }
                         }
 
                         65 -> {
                             handler.post {
                                 binding.labelSplash.text = getString(R.string.splash_3)
-                                binding.imageSplash.setImageResource(R.drawable.splashnew2)
+                                binding.imageSplash.setImageResource(R.drawable.wp3)
                             }
                         }
                     }

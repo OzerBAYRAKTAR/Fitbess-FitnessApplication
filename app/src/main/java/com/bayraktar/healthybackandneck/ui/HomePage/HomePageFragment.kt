@@ -29,6 +29,7 @@ import com.bayraktar.healthybackandneck.data.Models.Exercise.NeckBackModel
 import com.bayraktar.healthybackandneck.data.Models.Exercise.WarmUpModel
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.HomeItem
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.data.Models.CountModel
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
@@ -126,6 +127,8 @@ class HomePageFragment : Fragment() {
         observeSubExercises()
         backstack()
         viewModel.fetchExerciseDayExercises()
+        val id =CountModel(1,1)
+        viewModel.insertCounTable(id)
 
         warmUpViewPager()
         // fixPostureViewPager()
@@ -169,7 +172,7 @@ class HomePageFragment : Fragment() {
                 ),
                 HomeItem(
                     imageMain = R.drawable.removed4,
-                    title = getString(R.string.create_plan),
+                    title = getString(R.string.my_fav_list),
                     desc = getString(R.string.create_plan_desc),
                     progress = (15 * 100 / 28),
                     dayOfProgram = 12

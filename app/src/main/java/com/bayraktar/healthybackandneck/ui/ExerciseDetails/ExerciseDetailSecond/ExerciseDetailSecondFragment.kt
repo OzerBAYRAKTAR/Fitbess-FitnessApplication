@@ -63,7 +63,7 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerClicked {
         backstack()
 
         binding.imageBack.setOnClickListener {
-            val action = ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToIdHomepageFragment()
+            val action = ExerciseDetailSecondFragmentDirections.actionExerciseDetailSecondFragmentToIdHomepageFragment()
             view.findNavController().navigate(action)
         }
 

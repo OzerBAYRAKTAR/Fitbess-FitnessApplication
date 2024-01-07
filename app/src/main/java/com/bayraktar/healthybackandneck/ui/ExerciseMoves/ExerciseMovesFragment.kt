@@ -88,10 +88,12 @@ class ExerciseMovesFragment : Fragment() {
     }
     private fun setclicks() = with(binding) {
         exerciseInfo.setOnClickListener {
+            startTimerSetup()
             showCustomExerciseInfoDialog()
         }
         quitExerciseToDetailDay.setOnClickListener {
             btnCloseClicked()
+            startTimerSetup()
         }
         favoritebtn.setOnClickListener {
             addToFavouriteList()
@@ -149,6 +151,7 @@ class ExerciseMovesFragment : Fragment() {
 
         negativeBtn.setOnClickListener {
             dialog.dismiss()
+            startTimerSetup()
         }
         positiveBtn.setOnClickListener {
             val action =
@@ -184,8 +187,10 @@ class ExerciseMovesFragment : Fragment() {
 
         val builder = AlertDialog.Builder(requireContext())
         builder.setView(dialogView)
+            .setCancelable(false)
             .setPositiveButton(R.string.close) { dialog, _ ->
                 dialog.dismiss()
+                startTimerSetup()
             }
         val dialog = builder.create()
         dialog.show()

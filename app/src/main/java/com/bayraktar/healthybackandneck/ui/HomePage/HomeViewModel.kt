@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.bayraktar.healthybackandneck.data.Models.CountModel
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
@@ -32,6 +33,10 @@ class HomeViewModel @Inject constructor(
     val exerciseDays get() = _exerciseDays
 
 
+
+    fun insertCounTable(id: CountModel) = viewModelScope.launch(Dispatchers.IO) {
+        repo.insertCountTable(id)
+    }
 
     fun insertExerciseDayExercise(exercises: List<ExerciseDayExercise>)= viewModelScope.launch(
         Dispatchers.IO) {

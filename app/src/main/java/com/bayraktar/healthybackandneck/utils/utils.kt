@@ -34,6 +34,7 @@ fun showToast(
     toast.setGravity(gravity, xOffset, yOffset)
     toast.show()
 }
+
 @SuppressLint("InflateParams")
 fun showToastFavourite(
     context: Context,

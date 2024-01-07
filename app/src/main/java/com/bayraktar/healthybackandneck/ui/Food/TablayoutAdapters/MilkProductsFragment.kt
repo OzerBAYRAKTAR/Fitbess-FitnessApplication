@@ -128,7 +128,7 @@ class  MilkProductsFragment : Fragment(), RecyclerViewClickListener {
                 id = 6,
                 title = getString(R.string.tereyagi),
                 calori = "717 calorie",
-                imageFood = R.drawable.tereyagi,
+                imageFood = R.drawable.tereyag,
                 protein = "0.9 gr",
                 carb = "0 gr",
                 yag = "81 gr",

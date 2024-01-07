@@ -61,8 +61,7 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerClicked {
         observeDayListLevelThird()
         backstack()
         binding.imageBack.setOnClickListener {
-            val action =
-                ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToIdHomepageFragment()
+            val action = ExerciseDetailThirdFragmentDirections.actionExerciseDetailThirdFragmentToIdHomepageFragment()
             view.findNavController().navigate(action)
         }
 

@@ -22,7 +22,7 @@ import kotlinx.coroutines.launch
 
 class FirstFragment : Fragment() {
 
-    private var _binding: FragmentFirstBinding?= null
+    private var _binding: FragmentFirstBinding? = null
     val binding get() = _binding!!
     private lateinit var dataStoreManager: DataStoreManage
 
@@ -33,7 +33,7 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentFirstBinding.inflate(inflater,container,false)
+        _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -48,21 +48,23 @@ class FirstFragment : Fragment() {
         viewBackgrounds()
         dataStoreManager = DataStoreManage.getInstance(requireContext())
 
-        binding.goNext.setOnClickListener{
+        binding.goNext.setOnClickListener {
             lifecycleScope.launchWhenStarted {
                 saveGen()
             }
-           //val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment()
-           //view.findNavController().navigate(action)
-         startActivity(Intent(requireActivity(),HomeActivity::class.java))
+            //val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment()
+            //view.findNavController().navigate(action)
+            startActivity(Intent(requireActivity(),HomeActivity::class.java))
         }
     }
+
     private suspend fun saveGen() {
-        val gender = if(isFemaleSelected()) "Kadın" else "Erkek"
+        val gender = if (isFemaleSelected()) "Kadın" else "Erkek"
         CoroutineScope(Dispatchers.IO).launch {
             dataStoreManager.saveGender(gender)
         }
     }
+
     private fun isFemaleSelected(): Boolean {
         return selectedFemaleViewId != -1 && selectedFemaleViewId == binding.viewfemale.id
     }

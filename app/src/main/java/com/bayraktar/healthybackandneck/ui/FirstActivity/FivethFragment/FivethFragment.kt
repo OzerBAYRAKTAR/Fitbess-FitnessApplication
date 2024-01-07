@@ -11,14 +11,14 @@ import com.bayraktar.healthybackandneck.databinding.FragmentFivethBinding
 
 
 class FivethFragment : Fragment() {
-    private var _binding: FragmentFivethBinding?= null
+    private var _binding: FragmentFivethBinding? = null
     val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentFivethBinding.inflate(inflater,container,false)
+        _binding = FragmentFivethBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
         return binding.root
     }
@@ -28,61 +28,93 @@ class FivethFragment : Fragment() {
 
         changeBackground()
 
-        binding.appCompatButton.setOnClickListener{
+        binding.appCompatButton.setOnClickListener {
             val action = FivethFragmentDirections.actionFivethFragmentToSixthFragment()
             view.findNavController().navigate(action)
         }
-        binding.appCompatButton2.setOnClickListener{
+        binding.appCompatButton2.setOnClickListener {
             val action = FivethFragmentDirections.actionFivethFragmentToFourthDottedFragment()
             view.findNavController().navigate(action)
         }
     }
+
     private fun changeBackground() = with(binding) {
+
         card1.setOnClickListener {
-            if (cns1.background != null) {
-                cns1.background = null
-                check1.isChecked = false
-            }else {
-                cns1.setBackgroundResource(R.drawable.firstselected_background)
-                check1.isChecked = true
-            }
+            cns1.setBackgroundResource(R.drawable.firstselected_background)
+            check1.isChecked = true
+
+
+            cns2.background = null
+            cns3.background = null
+            cns4.background = null
+            cns5.background = null
+            check2.isChecked = false
+            check3.isChecked = false
+            check4.isChecked = false
+            check5.isChecked = false
+
         }
         card2.setOnClickListener {
-            if (cns2.background != null) {
-                cns2.background = null
-                check2.isChecked = false
-            } else {
-                cns2.setBackgroundResource(R.drawable.firstselected_background)
-                check2.isChecked = true
-            }
+
+            cns2.setBackgroundResource(R.drawable.firstselected_background)
+            check2.isChecked = true
+
+            cns1.background = null
+            cns3.background = null
+            cns4.background = null
+            cns5.background = null
+            check1.isChecked = false
+            check3.isChecked = false
+            check4.isChecked = false
+            check5.isChecked = false
+
         }
         card3.setOnClickListener {
-            if (cns3.background != null) {
-                cns3.background = null
-                check3.isChecked = false
-            } else {
-                cns3.setBackgroundResource(R.drawable.firstselected_background)
-                check3.isChecked = true
-            }
+
+            cns3.setBackgroundResource(R.drawable.firstselected_background)
+            check3.isChecked = true
+
+            cns2.background = null
+            cns1.background = null
+            cns4.background = null
+            cns5.background = null
+            check2.isChecked = false
+            check1.isChecked = false
+            check4.isChecked = false
+            check5.isChecked = false
         }
+
         card4.setOnClickListener {
-            if (cns4.background != null) {
-                cns4.background = null
-                check4.isChecked = false
-            } else {
-                cns4.setBackgroundResource(R.drawable.firstselected_background)
-                check4.isChecked = true
-            }
+
+            cns4.setBackgroundResource(R.drawable.firstselected_background)
+            check4.isChecked = true
+
+            cns2.background = null
+            cns3.background = null
+            cns1.background = null
+            cns5.background = null
+            check2.isChecked = false
+            check3.isChecked = false
+            check1.isChecked = false
+            check5.isChecked = false
         }
+
         card5.setOnClickListener {
-            if (cns5.background != null) {
-                cns5.background = null
-                check5.isChecked = false
-            } else {
-                cns5.setBackgroundResource(R.drawable.firstselected_background)
-                check5.isChecked = true
-            }
+
+            cns5.setBackgroundResource(R.drawable.firstselected_background)
+            check5.isChecked = true
+
+            cns2.background = null
+            cns3.background = null
+            cns4.background = null
+            cns1.background = null
+            check2.isChecked = false
+            check3.isChecked = false
+            check4.isChecked = false
+            check1.isChecked = false
         }
+
 
     }
 

@@ -80,9 +80,7 @@ class ExerciseMovesReadyFragment : Fragment() {
                 view.findNavController().navigate(action)
 
         }
-        binding.goMenu.setOnClickListener {
-            backstack()
-        }
+
 
     }
 

@@ -1,6 +1,7 @@
 package com.bayraktar.healthybackandneck.data.Repository
 
 import androidx.lifecycle.LiveData
+import com.bayraktar.healthybackandneck.data.Models.CountModel
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.Relations.ExerciseDayWithExerciseDayExercise
@@ -15,6 +16,10 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         movesDao.insertExerciseDay(exerciseDays)
     }
 
+    fun insertCountTable(id: CountModel) {
+        movesDao.insertCounTable(id)
+    }
+
     fun insertExerciseDayExercise(exerciseDayExercises: List<ExerciseDayExercise>) {
         movesDao.insertExerciseDayExercise(exerciseDayExercises)
     }
@@ -27,8 +32,8 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         return movesDao.getExerciseDaysLevel1()
     }
 
-    fun getCount(): Int {
-        return movesDao.getCount()
+    fun getCount(id: Int): CountModel {
+        return movesDao.getCount(id)
     }
 
 
@@ -86,7 +91,7 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         movesDao.updateIsFavouriteToFalse(exerciseId)
     }
 
-    fun updateCount(): Int{
+    fun updateCount(){
        return movesDao.updateCount()
     }
 

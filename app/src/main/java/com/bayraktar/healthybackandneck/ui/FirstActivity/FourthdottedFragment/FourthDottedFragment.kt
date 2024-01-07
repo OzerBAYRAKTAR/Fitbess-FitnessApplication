@@ -80,6 +80,7 @@ class FourthDottedFragment : Fragment() {
         card1.setOnClickListener {
             cns1.setBackgroundResource(R.drawable.firstselected_background)
             check1.isChecked = true
+
             cns2.background = null
             cns3.background = null
             cns4.background = null

@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
+import com.bayraktar.healthybackandneck.data.Models.CountModel
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.Relations.ExerciseDayWithExerciseDayExercise
@@ -16,6 +17,9 @@ interface MovesDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertExerciseDay(day: ExerciseDay)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertCounTable(id: CountModel)
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -33,12 +37,13 @@ interface MovesDao {
     @Query("SELECT * FROM exercise_days WHERE level = 1")
     fun getExerciseDaysLevel1(): List<ExerciseDay>
 
-    @Query("SELECT count FROM count_table WHERE id = 1")
-    fun getCount(): Int
+
+    @Query("SELECT * FROM count_table WHERE id = :id")
+    fun getCount(id: Int): CountModel
 
     @Transaction
     @Query("UPDATE count_table SET count = count + 1 WHERE id = 1")
-    fun updateCount() : Int
+    fun updateCount()
 
 
 
