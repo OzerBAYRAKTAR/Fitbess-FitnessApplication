@@ -91,7 +91,7 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         movesDao.updateIsFavouriteToFalse(exerciseId)
     }
 
-    fun updateCount(){
+    fun updateCount(): Int{
        return movesDao.updateCount()
     }
 

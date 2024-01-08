@@ -10,5 +10,5 @@ import kotlinx.android.parcel.Parcelize
 data class CountModel(
    @PrimaryKey(autoGenerate = false)
    var id: Int = 1,
-   var count : Int = 1
+   var count : Int = 0
 )

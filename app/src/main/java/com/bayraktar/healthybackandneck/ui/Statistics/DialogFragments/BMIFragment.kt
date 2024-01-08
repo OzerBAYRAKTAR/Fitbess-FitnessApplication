@@ -82,7 +82,7 @@ class BMIFragment : DialogFragment() {
         }
 
         dataStoreManager.saveCategory(bmiResult)
-        dataStoreManager.saveIndeks(bmiValue)
+        dataStoreManager.saveIndeks(bmiValue.toString())
         val title = getString(R.string.label_bmi)
         val message = "\nBMI: $formattedBmi kg/m2 \n \nCategory: $bmiResult"
         AlertDialog.Builder(requireContext(), R.style.CustomAlertDialog)

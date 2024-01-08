@@ -1,5 +1,6 @@
 package com.bayraktar.healthybackandneck.ui.ExerciseMovesEnd
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bayraktar.healthybackandneck.data.Repository.RoomRepository
@@ -22,8 +23,8 @@ class ExerciseMovesEndViewModel @Inject constructor(
 
     fun updatecount() {
         viewModelScope.launch(Dispatchers.IO) {
-            repo.updateCount()
-        }
+            val rowsAffected = repo.updateCount()
+            Log.d("UpdateCount", "Rows affected: $rowsAffected")        }
     }
 
 }

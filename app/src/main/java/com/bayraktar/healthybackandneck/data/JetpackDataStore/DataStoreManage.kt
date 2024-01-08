@@ -45,7 +45,7 @@ class DataStoreManage(context: Context) {
         val TXT_NECK = intPreferencesKey("txt_neck")
         val TXT_BELLY = intPreferencesKey("txt_belly")
         val TXT_BOOTY = intPreferencesKey("txt_booty")
-        val TXT_INDEKS = doublePreferencesKey("txt_indeks")
+        val TXT_INDEKS = stringPreferencesKey("txt_indeks")
         val TXT_CATEGORY = stringPreferencesKey("txt_category")
         val TXT_CALORIE = stringPreferencesKey("txt_calorie")
         val TXT_FATRATE = stringPreferencesKey("txt_fatrate")
@@ -107,7 +107,7 @@ class DataStoreManage(context: Context) {
             pref[TXT_BOOTY] = data
         }
     }
-    suspend fun saveIndeks(data: Double) {
+    suspend fun saveIndeks(data: String) {
         dataStore.edit { pref ->
             pref[TXT_INDEKS] = data
         }
@@ -232,7 +232,7 @@ class DataStoreManage(context: Context) {
                 pref[TXT_BOOTY] ?: 0
             }
     }
-    fun getIndeks(): Flow<Double> {
+    fun getIndeks(): Flow<String> {
         return dataStore.data
             .catch { exception ->
                 if (exception is IOException) {
@@ -241,7 +241,7 @@ class DataStoreManage(context: Context) {
                     throw exception
                 }
             }.map { pref ->
-                pref[TXT_INDEKS] ?: 0.0
+                pref[TXT_INDEKS] ?: ""
             }
     }
     fun getCategory(): Flow<String> {

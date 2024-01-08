@@ -43,7 +43,7 @@ interface MovesDao {
 
     @Transaction
     @Query("UPDATE count_table SET count = count + 1 WHERE id = 1")
-    fun updateCount()
+    fun updateCount(): Int
 
 
 

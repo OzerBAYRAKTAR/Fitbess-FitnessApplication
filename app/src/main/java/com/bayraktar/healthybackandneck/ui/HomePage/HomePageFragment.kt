@@ -127,9 +127,9 @@ class HomePageFragment : Fragment() {
         observeSubExercises()
         backstack()
         viewModel.fetchExerciseDayExercises()
-        val id =CountModel(1,1)
-        viewModel.insertCounTable(id)
 
+        viewModel.getCountFromRoom()
+        observeCount()
         warmUpViewPager()
         // fixPostureViewPager()
         backNeckViewPager()
@@ -144,6 +144,16 @@ class HomePageFragment : Fragment() {
 
     }
 
+    private fun observeCount() = with(binding) {
+        viewModel.getCount.observe(viewLifecycleOwner, Observer { count ->
+            if (count.count > 0) {
+                println("dolu")
+            }else {
+                val id =CountModel(1,0)
+                viewModel.insertCounTable(id)
+            }
+        })
+    }
 
     private fun setOnBoardingItems() = with(binding) {
         homeAdapter = HomeViewpagerAdapter(

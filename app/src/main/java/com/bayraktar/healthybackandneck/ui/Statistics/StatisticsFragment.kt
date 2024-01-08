@@ -1,6 +1,8 @@
 package com.bayraktar.healthybackandneck.ui.Statistics
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -96,9 +98,10 @@ class StatisticsFragment : Fragment() {
                 dataStoreManager.getFatRate(),
 
                 ) { indeks, category, calorie, fatrate ->
-                if (indeks != 0.0) {
+                val formattedindeks = indeks.replace(',', '.').toDouble()
+                if (indeks != "") {
                     bmiIndeks.text = indeks.toString()
-                    when (indeks) {
+                    when (formattedindeks) {
                         in Double.MIN_VALUE..18.5 -> {
                             viewDown1.visibility = View.VISIBLE
                             viewDown2.visibility = View.INVISIBLE
@@ -123,7 +126,9 @@ class StatisticsFragment : Fragment() {
                             viewDown2.visibility = View.INVISIBLE
                             viewDown3.visibility = View.INVISIBLE
                         }
-                        else -> "something wrong"
+                        else ->  {
+                            Log.d(TAG,"Error")
+                        }
                     }
                 }
                 if (category != "") {

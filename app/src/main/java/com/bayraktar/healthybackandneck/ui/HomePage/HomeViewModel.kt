@@ -34,6 +34,20 @@ class HomeViewModel @Inject constructor(
 
 
 
+    private val _getCount: MutableLiveData<CountModel> = MutableLiveData()
+    val getCount: LiveData<CountModel> get() = _getCount
+
+
+
+
+
+    fun getCountFromRoom() {
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = repo.getCount(1)
+            _getCount.postValue(response)
+        }
+    }
+
     fun insertCounTable(id: CountModel) = viewModelScope.launch(Dispatchers.IO) {
         repo.insertCountTable(id)
     }
