@@ -1,11 +1,13 @@
 package com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailThird
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -15,13 +17,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
-import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDetailThirdBinding
-import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstAdapter
-import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstFragmentDirections
-import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstVievModel
-import com.bayraktar.healthybackandneck.utils.RecyclerClicked
-import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
+import com.bayraktar.healthybackandneck.utils.Interfaces.ExerciseItemClickListener
+import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerClicked
+import com.bayraktar.healthybackandneck.utils.RewardedAds
+import com.google.android.gms.ads.MobileAds
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import org.json.JSONArray
@@ -29,7 +29,7 @@ import java.nio.charset.Charset
 
 
 @AndroidEntryPoint
-class ExerciseDetailThirdFragment : Fragment(), RecyclerClicked {
+class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
 
     private var _binding: FragmentExerciseDetailThirdBinding? = null
     val binding get() = _binding!!
@@ -41,7 +41,7 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerClicked {
     private val exerciseListSend = ArrayList<ExerciseDayExercise>()
     private lateinit var thirdAdapter: ExerciseDetailAdapterThird
     private var selectedModel: ExerciseDay? = null
-
+    private var myRewardedAds: RewardedAds? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,6 +57,12 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerClicked {
 
         setRecyclerview()
 
+        //ca-app-pub-3940256099942544/5224354917 test
+        MobileAds.initialize(requireContext()) {}
+
+
+        myRewardedAds = RewardedAds(requireActivity())
+        myRewardedAds?.loadRewardedAds(R.string.rewarded_ad1)
         observeLevelThird()
         observeDayListLevelThird()
         backstack()
@@ -240,11 +246,40 @@ class ExerciseDetailThirdFragment : Fragment(), RecyclerClicked {
         })
     }
 
-    override fun onItemclicked(position: Int) {
-        selectedModel = detailList[position]
-        val selectedDay = position + 1
-        viewModel.getExerciseListWithDayID(selectedDay, 3)
-        observeListWithDayId()
+    override fun onExerciseItemClicked(position: Int, isLocked: Boolean) {
+        if (isLocked) {
+            val inflater = layoutInflater
+            val dialogView = inflater.inflate(R.layout.dialog_reward_ad, null)
+
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setView(dialogView)
+            builder.setCancelable(false)
+
+            val dialog = builder.create()
+            dialog.show()
+
+            val positiveBtn: Button = dialogView.findViewById(R.id.dialogYes)
+            val negativeBtn: Button = dialogView.findViewById(R.id.dialogNo)
+
+            negativeBtn.setOnClickListener {
+                dialog.dismiss()
+            }
+            positiveBtn.setOnClickListener {
+                myRewardedAds?.showRewardAds(R.string.rewarded_ad1) {
+                    selectedModel = detailList[position]
+                    viewModel.updateIsCompletedToTrue(3, detailList[position].day)
+                    val selectedDay = position + 1
+                    viewModel.getExerciseListWithDayID(selectedDay, 1)
+                    observeListWithDayId()
+                }
+                dialog.dismiss()
+            }
+        } else {
+            selectedModel = detailList[position]
+            val selectedDay = position + 1
+            viewModel.getExerciseListWithDayID(selectedDay, 1)
+            observeListWithDayId()
+        }
     }
 
 

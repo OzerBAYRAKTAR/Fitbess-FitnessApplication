@@ -10,6 +10,8 @@ import com.bayraktar.healthybackandneck.data.Models.CountModel
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.Relations.ExerciseDayWithExerciseDayExercise
+import com.bayraktar.healthybackandneck.data.Models.MotivationNotificationState
+import com.bayraktar.healthybackandneck.data.Models.WaterReminderState
 
 
 @Dao
@@ -23,6 +25,15 @@ interface MovesDao {
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun saveWaterReminderState(state: WaterReminderState)
+
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun saveMotivationNotificationState(state: MotivationNotificationState)
+
+
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertExerciseDayExercise(dayExercise: List<ExerciseDayExercise>)
 
 
@@ -32,6 +43,14 @@ interface MovesDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertSubExerciseDayExercise(exercise: List<ExerciseDayExercise>)
+
+
+    @Query("SELECT * FROM water_reminder_state WHERE id = 1")
+    fun getWaterReminderState(): WaterReminderState
+
+
+    @Query("SELECT * FROM motivation_notification_state WHERE id = 1")
+    fun getMotivationNotificationState(): MotivationNotificationState
 
 
     @Query("SELECT * FROM exercise_days WHERE level = 1")

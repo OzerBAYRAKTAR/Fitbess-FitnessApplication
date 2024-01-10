@@ -2,8 +2,9 @@ package com.bayraktar.healthybackandneck.ui.Favourite.FavouriteMoveList
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
-import androidx.lifecycle.ViewModelProvider
+import android.content.ContentValues
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,27 +18,27 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
-import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentMoveListBinding
-import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayAdapter
-import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDaySubAdapter
-import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstAdapter
-import com.bayraktar.healthybackandneck.ui.ExerciseMoves.ExerciseMovesFragmentDirections
-import com.bayraktar.healthybackandneck.utils.OnDeleteClicked
-import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
+import com.bayraktar.healthybackandneck.utils.Interfaces.OnDeleteClicked
+import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerViewClickListener
 import com.bayraktar.healthybackandneck.utils.showToast
-import com.bayraktar.healthybackandneck.utils.showToastFavourite
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import dagger.hilt.android.AndroidEntryPoint
 import pl.droidsonroids.gif.GifImageView
 
 
 @AndroidEntryPoint
-class MoveListFragment : Fragment(),RecyclerViewClickListener,OnDeleteClicked {
+class MoveListFragment : Fragment(), RecyclerViewClickListener, OnDeleteClicked {
 
     private var _binding: FragmentMoveListBinding? = null
     val binding get() = _binding!!
 
     private val viewModel: MoveListViewModel by viewModels()
+    private var mInterstitialAd: InterstitialAd? = null
 
     private var favList = ArrayList<ExerciseDayExercise>()
     private var moveListAdapter: MoveListAdapter? = null
@@ -52,6 +53,21 @@ class MoveListFragment : Fragment(),RecyclerViewClickListener,OnDeleteClicked {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //interstealler canlı id => ca-app-pub-4754194669476617/1637237452
+
+        var adRequest = AdRequest.Builder().build()
+
+
+        InterstitialAd.load(requireContext(),"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                mInterstitialAd = null
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                mInterstitialAd = interstitialAd
+            }
+        })
 
         observeFavlist()
         viewModel.getFavExerciseList()
@@ -105,7 +121,28 @@ class MoveListFragment : Fragment(),RecyclerViewClickListener,OnDeleteClicked {
         val builder = AlertDialog.Builder(requireContext())
         builder.setView(dialogView)
             .setPositiveButton(R.string.close) { dialog, _ ->
-                dialog.dismiss()
+                if (mInterstitialAd != null) {
+                    mInterstitialAd?.show(requireActivity())
+                }
+                mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
+                    override fun onAdClicked() {
+                        // Called when a click is recorded for an ad.
+                        Log.d(ContentValues.TAG, "Ad was clicked.")
+                    }
+
+                    override fun onAdDismissedFullScreenContent() {
+                        mInterstitialAd = null
+                        dialog.dismiss()
+                    }
+                    override fun onAdImpression() {
+                        Log.d(ContentValues.TAG, "Ad recorded an impression.")
+                    }
+
+                    override fun onAdShowedFullScreenContent() {
+                        Log.d(ContentValues.TAG, "Ad showed fullscreen content.")
+                    }
+                }
+
             }
         val dialog = builder.create()
         dialog.show()

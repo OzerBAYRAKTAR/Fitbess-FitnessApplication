@@ -1,4 +1,4 @@
-package com.bayraktar.healthybackandneck.utils
+package com.bayraktar.healthybackandneck.utils.Interfaces
 
 import android.view.View
 

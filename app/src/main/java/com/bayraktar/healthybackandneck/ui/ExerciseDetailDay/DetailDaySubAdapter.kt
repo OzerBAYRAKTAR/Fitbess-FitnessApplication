@@ -1,15 +1,11 @@
 package com.bayraktar.healthybackandneck.ui.ExerciseDetailDay
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
-import com.bayraktar.healthybackandneck.databinding.ItemDetaildayBinding
 import com.bayraktar.healthybackandneck.databinding.ItemSubdetaildayBinding
-import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
 
 
 class DetailDaySubAdapter(

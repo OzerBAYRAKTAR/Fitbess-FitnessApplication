@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bayraktar.healthybackandneck.data.Models.FoodModel.FoodItems
 import com.bayraktar.healthybackandneck.databinding.ItemFoodBinding
-import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
+import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerViewClickListener
 
 class FoodTablayoutAdapter(
     private var lsMenu: List<FoodItems>,

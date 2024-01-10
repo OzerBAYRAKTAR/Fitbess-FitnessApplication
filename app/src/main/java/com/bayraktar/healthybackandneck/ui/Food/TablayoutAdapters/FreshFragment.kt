@@ -6,21 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.data.Models.FoodModel.FoodItems
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentFreshBinding
-import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstAdapter
-import com.bayraktar.healthybackandneck.ui.Food.FoodFragment
 import com.bayraktar.healthybackandneck.ui.FoodDetail.FoodDetailFragment
-import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
+import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerViewClickListener
 import com.google.gson.Gson
 
 class FreshFragment : Fragment(), RecyclerViewClickListener {

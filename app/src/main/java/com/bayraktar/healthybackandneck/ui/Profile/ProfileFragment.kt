@@ -1,29 +1,33 @@
 package com.bayraktar.healthybackandneck.ui.Profile
 
 import android.app.AlertDialog
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
-import android.os.Build
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat.recreate
-import androidx.core.app.NotificationCompat
-import androidx.core.content.ContextCompat.getSystemService
+import androidx.fragment.app.viewModels
+import androidx.work.PeriodicWorkRequest
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
+import androidx.work.Constraints
+import androidx.work.NetworkType
+import java.util.concurrent.TimeUnit
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.data.Models.MotivationNotificationState
+import com.bayraktar.healthybackandneck.data.Models.WaterReminderState
 import com.bayraktar.healthybackandneck.databinding.FragmentProfileBinding
 import com.bayraktar.healthybackandneck.ui.HomeActivity
 import com.bayraktar.healthybackandneck.utils.LanguagePreference
 import com.bayraktar.healthybackandneck.utils.LocaleHelper
 import com.bayraktar.healthybackandneck.utils.NotificationHelper
+import com.bayraktar.healthybackandneck.utils.NotificationWorker
+import com.bayraktar.healthybackandneck.utils.WaterReminderWorker
 import com.bayraktar.healthybackandneck.utils.showToast
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
@@ -32,18 +36,19 @@ import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.ReviewManagerFactory
 import com.google.android.play.core.tasks.Task
-import kotlinx.coroutines.selects.select
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
 import java.util.Timer
 import java.util.TimerTask
 
 
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     val binding get() = _binding!!
-    private var timer: Timer? = null
-    private var isReminderOn = false
-    private var isWaterReminderOn = false
+
+    private val viewModel: ProfileViewModel by viewModels()
+
     private lateinit var notificationHelper: NotificationHelper
     private var  reviewInfo: ReviewInfo?= null
     private lateinit var reviewManager: ReviewManager
@@ -77,6 +82,10 @@ class ProfileFragment : Fragment() {
             LocaleHelper.setLocale(requireContext(), it)
         }
 
+        viewModel.getMovitivate()
+        viewModel.getWaterReminder()
+
+        observe()
         activateReviewInfo()
         btnRateUsClicked()
         notificationHelper = NotificationHelper(requireContext())
@@ -85,6 +94,69 @@ class ProfileFragment : Fragment() {
 
 
     }
+    private fun handleWaterReminderSwitchChange(isChecked: Boolean) {
+        // Save water reminder switch state to database
+        val waterReminderState = WaterReminderState(isSwitchChecked = isChecked)
+        viewModel.insertWater(waterReminderState)
+
+        // Checking and canceling the periodic WorkManager request if the switch is turned off
+        if (!isChecked) {
+            WorkManager.getInstance(requireContext()).cancelAllWorkByTag("waterReminderWorkerTag")
+        } else {
+            // If the switch is on, schedule the periodic WorkManager request
+            val constraints = Constraints.Builder()
+                .setRequiredNetworkType(NetworkType.NOT_REQUIRED)
+                .build()
+
+            val periodicWorkRequest = PeriodicWorkRequestBuilder<WaterReminderWorker>(
+                17, TimeUnit.MINUTES
+            )
+                .setConstraints(constraints)
+                .addTag("waterReminderWorkerTag")
+                .build()
+
+            WorkManager.getInstance(requireContext()).enqueue(periodicWorkRequest)
+        }
+    }
+    private fun handleMotivationSwitchChange(isChecked: Boolean) {
+        // Save notification reminder switch state to database
+        val motivateState = MotivationNotificationState(isSwitchChecked = isChecked)
+        viewModel.insertMotiviateState(motivateState)
+
+        if (!isChecked) {
+            WorkManager.getInstance(requireContext()).cancelAllWorkByTag("motivateNotif")
+        } else {
+            // If the switch is on, schedule the periodic WorkManager request
+            val constraints = Constraints.Builder()
+                .setRequiredNetworkType(NetworkType.NOT_REQUIRED)
+                .build()
+
+            val periodicWorkRequest = PeriodicWorkRequestBuilder<NotificationWorker>(
+                15, TimeUnit.MINUTES
+            )
+                .setConstraints(constraints)
+                .addTag("motivateNotif")
+                .build()
+
+            WorkManager.getInstance(requireContext()).enqueue(periodicWorkRequest)
+        }
+    }
+
+    private fun observe() = with(binding) {
+        viewModel.waterReminder.observe(viewLifecycleOwner) { switchState ->
+            waterReminderSwitch.isChecked = switchState?.isSwitchChecked ?: false
+            handleWaterReminderSwitchChange(waterReminderSwitch.isChecked)
+        }
+
+        viewModel.motivateNotif.observe(viewLifecycleOwner) { swchMotiv ->
+            notificationSwitch.isChecked = swchMotiv?.isSwitchChecked ?: false
+            handleMotivationSwitchChange(notificationSwitch.isChecked)
+        }
+    }
+
+
+
+
     private fun changeLanguageAndSave(languageCode: String) {
         LocaleHelper.setLocale(requireContext(), languageCode)
         LanguagePreference.setLanguageCode(requireContext(), languageCode)
@@ -114,20 +186,10 @@ class ProfileFragment : Fragment() {
     private fun setBindingThings() = with(binding) {
 
         waterReminderSwitch.setOnCheckedChangeListener { _, isChecked ->
-            isWaterReminderOn = isChecked
-            if (isChecked) {
-                startReminder()
-            } else {
-                stopReminder()
-            }
+            handleWaterReminderSwitchChange(isChecked)
         }
         notificationSwitch.setOnCheckedChangeListener { _, isChecked ->
-            isReminderOn = isChecked
-            if (isChecked) {
-                startFitnessReminder()
-            } else {
-                stopFitnessReminder()
-            }
+            handleMotivationSwitchChange(isChecked)
         }
 
         apply {
@@ -142,34 +204,6 @@ class ProfileFragment : Fragment() {
             }
         }
 
-    }
-
-    private fun startFitnessReminder() {
-        timer = Timer()
-        timer?.scheduleAtFixedRate(object : TimerTask() {
-            override fun run() {
-                notificationHelper.showFitnessNotification()
-            }
-        }, 0, 12 * 60 * 60 * 1000) // Fitness reminder interval: 12 hours
-    }
-
-    private fun stopFitnessReminder() {
-        timer?.cancel()
-        timer?.purge()
-    }
-
-    private fun startReminder() {
-        timer = Timer()
-        timer?.scheduleAtFixedRate(object : TimerTask() {
-            override fun run() {
-                notificationHelper.showNotification()
-            }
-        }, 0, 12 * 60 * 60 * 1000)
-    }
-
-    private fun stopReminder() {
-        timer?.cancel()
-        timer?.purge()
     }
 
     private fun btnThemeclicked() {

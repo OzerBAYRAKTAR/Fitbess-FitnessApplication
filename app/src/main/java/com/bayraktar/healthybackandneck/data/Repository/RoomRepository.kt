@@ -5,6 +5,8 @@ import com.bayraktar.healthybackandneck.data.Models.CountModel
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.Relations.ExerciseDayWithExerciseDayExercise
+import com.bayraktar.healthybackandneck.data.Models.MotivationNotificationState
+import com.bayraktar.healthybackandneck.data.Models.WaterReminderState
 import com.bayraktar.healthybackandneck.data.Room.MovesDao
 import javax.inject.Inject
 
@@ -20,6 +22,14 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         movesDao.insertCounTable(id)
     }
 
+    fun saveWaterReminderState(state: WaterReminderState) {
+        return movesDao.saveWaterReminderState(state)
+    }
+
+    fun saveMotivationNotificationState(state: MotivationNotificationState) {
+        return movesDao.saveMotivationNotificationState(state)
+    }
+
     fun insertExerciseDayExercise(exerciseDayExercises: List<ExerciseDayExercise>) {
         movesDao.insertExerciseDayExercise(exerciseDayExercises)
     }
@@ -31,6 +41,16 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
     fun getExerciseDaysLevel1(): List<ExerciseDay> {
         return movesDao.getExerciseDaysLevel1()
     }
+
+
+    fun getMotivationNotificationState(): MotivationNotificationState {
+        return movesDao.getMotivationNotificationState()
+    }
+
+    fun getWaterReminderState(): WaterReminderState {
+        return movesDao.getWaterReminderState()
+    }
+
 
     fun getCount(id: Int): CountModel {
         return movesDao.getCount(id)

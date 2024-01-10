@@ -2,14 +2,12 @@ package com.bayraktar.healthybackandneck.ui.HomePage
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.HomeItem
 import com.bayraktar.healthybackandneck.databinding.ItemHomeListBinding
-import com.bayraktar.healthybackandneck.utils.OnFavouriteButtonClickListener
 
 class HomeViewpagerAdapter(
     private val context: Context,

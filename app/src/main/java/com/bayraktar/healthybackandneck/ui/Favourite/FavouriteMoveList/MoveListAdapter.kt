@@ -7,8 +7,8 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.ItemSubdetaildayBinding
-import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
-import com.bayraktar.healthybackandneck.utils.OnDeleteClicked
+import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerViewClickListener
+import com.bayraktar.healthybackandneck.utils.Interfaces.OnDeleteClicked
 
 class MoveListAdapter(
     var lsMenu: MutableList<ExerciseDayExercise>,

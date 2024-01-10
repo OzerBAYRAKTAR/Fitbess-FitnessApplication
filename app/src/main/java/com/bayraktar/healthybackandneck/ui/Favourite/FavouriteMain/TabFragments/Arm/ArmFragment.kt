@@ -13,14 +13,10 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
-import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
-import com.bayraktar.healthybackandneck.databinding.FragmentAbsBinding
 import com.bayraktar.healthybackandneck.databinding.FragmentArmBinding
-import com.bayraktar.healthybackandneck.ui.Favourite.FavouriteMain.TabFragments.Abs.AbsViewModel
 import com.bayraktar.healthybackandneck.ui.Favourite.FavouriteMain.TabFragments.FavouriteTablayoutadapter
-import com.bayraktar.healthybackandneck.utils.OnFavouriteButtonClickListener
-import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
-import com.bayraktar.healthybackandneck.utils.showToast
+import com.bayraktar.healthybackandneck.utils.Interfaces.OnFavouriteButtonClickListener
+import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerViewClickListener
 import com.bayraktar.healthybackandneck.utils.showToastFavourite
 import dagger.hilt.android.AndroidEntryPoint
 import pl.droidsonroids.gif.GifImageView

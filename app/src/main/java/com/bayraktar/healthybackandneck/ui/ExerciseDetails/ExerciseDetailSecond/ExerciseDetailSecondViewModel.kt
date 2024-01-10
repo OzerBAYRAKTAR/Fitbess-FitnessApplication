@@ -65,5 +65,9 @@ class ExerciseDetailSecondViewModel @Inject constructor(
         }
     }
 
-
+    fun updateIsCompletedToTrue(level: Int,day: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repo.updateIsCompletedTrue(level = level, day = day)
+        }
+    }
 }

@@ -1,36 +1,34 @@
 package com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailSecond
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
-import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDetailSecondBinding
-import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstAdapter
-import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstFragmentDirections
-import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstVievModel
-import com.bayraktar.healthybackandneck.utils.RecyclerClicked
-import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
+import com.bayraktar.healthybackandneck.utils.Interfaces.ExerciseItemClickListener
+import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerClicked
+import com.bayraktar.healthybackandneck.utils.RewardedAds
+import com.google.android.gms.ads.MobileAds
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 import org.json.JSONArray
 import java.nio.charset.Charset
 
 @AndroidEntryPoint
-class ExerciseDetailSecondFragment : Fragment(),RecyclerClicked {
+class ExerciseDetailSecondFragment : Fragment(), ExerciseItemClickListener {
 
-    private var _binding: FragmentExerciseDetailSecondBinding?= null
+    private var _binding: FragmentExerciseDetailSecondBinding? = null
     val binding get() = _binding!!
 
     private var detailList = ArrayList<ExerciseDay>()
@@ -41,13 +39,14 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerClicked {
 
     private val exerciseDayExercise = mutableListOf<ExerciseDayExercise>()
     private val exerciseListSend = ArrayList<ExerciseDayExercise>()
-    private var selectedModel: ExerciseDay?= null
+    private var selectedModel: ExerciseDay? = null
+    private var myRewardedAds: RewardedAds? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentExerciseDetailSecondBinding.inflate(inflater,container,false)
+        _binding = FragmentExerciseDetailSecondBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
         return binding.root
     }
@@ -55,7 +54,12 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerClicked {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //ca-app-pub-3940256099942544/5224354917 test
+        MobileAds.initialize(requireContext()) {}
 
+
+        myRewardedAds = RewardedAds(requireActivity())
+        myRewardedAds?.loadRewardedAds(R.string.rewarded_ad1)
         setRecyclerview()
         observeLevelTwo()
         observeDayListLevelOne()
@@ -63,7 +67,8 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerClicked {
         backstack()
 
         binding.imageBack.setOnClickListener {
-            val action = ExerciseDetailSecondFragmentDirections.actionExerciseDetailSecondFragmentToIdHomepageFragment()
+            val action =
+                ExerciseDetailSecondFragmentDirections.actionExerciseDetailSecondFragmentToIdHomepageFragment()
             view.findNavController().navigate(action)
         }
 
@@ -71,6 +76,7 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerClicked {
 
         viewModel.fetchExerciseDayListWithLevelTwo()
     }
+
     private fun backstack() {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -82,6 +88,7 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerClicked {
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
 
     }
+
     private fun observeLevelTwo() {
         viewModel.exerciseDayExercisesLevelTwo.observe(viewLifecycleOwner, Observer { exercises ->
             if (exercises.isEmpty()) {
@@ -104,11 +111,11 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerClicked {
                 var count = 0
                 for (item in exercises) {
                     if (item.isCompleted) {
-                        count ++
+                        count++
                     }
                 }
-                binding.customProgressBar.progress = count*100/21
-                binding.txtProgress.text = "%${(count*100/21).toInt()}"
+                binding.customProgressBar.progress = count * 100 / 21
+                binding.txtProgress.text = "%${(count * 100 / 21).toInt()}"
             }
         })
     }
@@ -146,11 +153,11 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerClicked {
             var count = 0
             for (item in detailList) {
                 if (item.isCompleted) {
-                    count ++
+                    count++
                 }
             }
-            binding.customProgressBar.progress = count*100/21
-            binding.txtProgress.text = "%${(count*100/21).toInt()}"
+            binding.customProgressBar.progress = count * 100 / 21
+            binding.txtProgress.text = "%${(count * 100 / 21).toInt()}"
 
         } catch (e: Exception) {
             e.printStackTrace()
@@ -210,7 +217,7 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerClicked {
 
     private fun setRecyclerview() = with(binding) {
         listDaysOfWeek.layoutManager = LinearLayoutManager(requireContext())
-        secondAdapter = ExerciseDetailSecondAdapter(detailList,this@ExerciseDetailSecondFragment)
+        secondAdapter = ExerciseDetailSecondAdapter(detailList, this@ExerciseDetailSecondFragment)
         listDaysOfWeek.adapter = secondAdapter
     }
 
@@ -222,17 +229,48 @@ class ExerciseDetailSecondFragment : Fragment(),RecyclerClicked {
             }
             val exerciseLevel = getString(R.string.middle_level)
             val exerciseArray = exerciseListSend.toTypedArray()
-            val action= ExerciseDetailSecondFragmentDirections.actionExerciseDetailSecondFragmentToDetailDayFragment(
-                exerciseArray, selectedModel!!,exerciseLevel)
+            val action =
+                ExerciseDetailSecondFragmentDirections.actionExerciseDetailSecondFragmentToDetailDayFragment(
+                    exerciseArray, selectedModel!!, exerciseLevel
+                )
             view?.findNavController()?.navigate(action)
         })
     }
 
-    override fun onItemclicked(position: Int) {
-        selectedModel = detailList[position]
-        val selectedDay = position + 1
-        viewModel.getExerciseListWithDayID(selectedDay,2)
-        observeListWithDayId()
+    override fun onExerciseItemClicked(position: Int, isLocked: Boolean) {
+        if (isLocked) {
+            val inflater = layoutInflater
+            val dialogView = inflater.inflate(R.layout.dialog_reward_ad, null)
+
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setView(dialogView)
+            builder.setCancelable(false)
+
+            val dialog = builder.create()
+            dialog.show()
+
+            val positiveBtn: Button = dialogView.findViewById(R.id.dialogYes)
+            val negativeBtn: Button = dialogView.findViewById(R.id.dialogNo)
+
+            negativeBtn.setOnClickListener {
+                dialog.dismiss()
+            }
+            positiveBtn.setOnClickListener {
+                myRewardedAds?.showRewardAds(R.string.rewarded_ad1) {
+                    selectedModel = detailList[position]
+                    viewModel.updateIsCompletedToTrue(2, detailList[position].day)
+                    val selectedDay = position + 1
+                    viewModel.getExerciseListWithDayID(selectedDay, 1)
+                    observeListWithDayId()
+                }
+                dialog.dismiss()
+            }
+        } else {
+            selectedModel = detailList[position]
+            val selectedDay = position + 1
+            viewModel.getExerciseListWithDayID(selectedDay, 1)
+            observeListWithDayId()
+        }
     }
 
 

@@ -10,11 +10,14 @@ import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.Exercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.HomeItem
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
+import com.bayraktar.healthybackandneck.data.Models.MotivationNotificationState
+import com.bayraktar.healthybackandneck.data.Models.WaterReminderState
 import javax.inject.Inject
 import javax.inject.Provider
 
 
-@Database(entities = [ExerciseDay::class,ExerciseDayExercise::class,SubExerciseDayExercise::class,CountModel::class],version = 10, exportSchema = false)
+@Database(entities = [MotivationNotificationState::class,WaterReminderState::class,ExerciseDay::class,
+    ExerciseDayExercise::class,SubExerciseDayExercise::class,CountModel::class],version = 11, exportSchema = false)
 @TypeConverters(MovesTypeConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 

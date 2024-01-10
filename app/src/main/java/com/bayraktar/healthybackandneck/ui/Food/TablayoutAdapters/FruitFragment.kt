@@ -8,19 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.data.Models.FoodModel.FoodItems
 import com.bayraktar.healthybackandneck.R
-import com.bayraktar.healthybackandneck.databinding.FragmentFreshBinding
 import com.bayraktar.healthybackandneck.databinding.FragmentFruitBinding
 import com.bayraktar.healthybackandneck.ui.FoodDetail.FoodDetailFragment
-import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
+import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerViewClickListener
 import com.google.gson.Gson
 
 
-class FruitFragment : Fragment(),RecyclerViewClickListener {
+class FruitFragment : Fragment(), RecyclerViewClickListener {
 
     private var _binding: FragmentFruitBinding?= null
     val binding get() = _binding!!

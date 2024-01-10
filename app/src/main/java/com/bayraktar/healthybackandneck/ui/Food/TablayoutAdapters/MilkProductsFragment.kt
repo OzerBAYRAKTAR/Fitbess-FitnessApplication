@@ -2,25 +2,18 @@ package com.bayraktar.healthybackandneck.ui.Food.TablayoutAdapters
 
 import android.content.Context
 import android.os.Bundle
-import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.data.Models.FoodModel.FoodItems
 import com.bayraktar.healthybackandneck.R
-import com.bayraktar.healthybackandneck.databinding.FragmentMeetBinding
 import com.bayraktar.healthybackandneck.databinding.FragmentMilkProductsBinding
 import com.bayraktar.healthybackandneck.ui.FoodDetail.FoodDetailFragment
-import com.bayraktar.healthybackandneck.utils.RecyclerViewClickListener
-import com.bayraktar.healthybackandneck.utils.showToast
+import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerViewClickListener
 import com.google.gson.Gson
 
 

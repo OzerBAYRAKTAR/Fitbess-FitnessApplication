@@ -3,7 +3,6 @@ package com.bayraktar.healthybackandneck.ui.HomePage
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.os.Bundle
-import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +16,6 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
@@ -32,16 +30,13 @@ import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.CountModel
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
-import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentHomePageBinding
-import com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstFragmentDirections
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.AbsAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.ArmAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.FixPostureAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.LegButtAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.NeckBackAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.WarmUpAdapter
-import com.bayraktar.healthybackandneck.utils.OnFavouriteButtonClickListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
@@ -146,12 +141,15 @@ class HomePageFragment : Fragment() {
 
     private fun observeCount() = with(binding) {
         viewModel.getCount.observe(viewLifecycleOwner, Observer { count ->
-            if (count.count > 0) {
-                println("dolu")
+            if (count != null) {
+                if (count.count > 0) {
+                    println("dolu")
+                }
             }else {
                 val id =CountModel(1,0)
                 viewModel.insertCounTable(id)
             }
+
         })
     }
 

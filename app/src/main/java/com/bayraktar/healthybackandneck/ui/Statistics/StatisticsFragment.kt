@@ -77,15 +77,20 @@ class StatisticsFragment : Fragment() {
     }
     private fun observeCount() = with(binding) {
         viewModel.getCount.observe(viewLifecycleOwner, Observer { count ->
-            if (count.count > 0) {
-                txtExerciseCount.text = "${count.count*7}"
-                txtTimespent.text = "${8*count.count}"
-                txtKcal.text = "${300*count.count}"
+            if (count != null) {
+                if (count.count > 0) {
+                    txtExerciseCount.text = "${count.count*7}"
+                    txtTimespent.text = "${8*count.count}"
+                    txtKcal.text = "${300*count.count}"
+                }else {
+                    txtExerciseCount.text = "0"
+                    txtTimespent.text = "0"
+                    txtKcal.text = "0"
+                }
             }else {
-                txtExerciseCount.text = "0"
-                txtTimespent.text = "0"
-                txtKcal.text = "0"
+                println("xx")
             }
+
         })
     }
     private fun observeCalculates() = with(binding) {
