@@ -527,4 +527,5 @@
     <string name="lbl_levelmove_desc">Indem Sie Ihr Bewegungsniveau festlegen, ermöglichen Sie uns, Ihnen die am besten geeigneten Übungen zuzuweisen.</string>
     <string name="lbl_delete_favourite">Möchten Sie die Bewegung wirklich aus Ihren Favoriten entfernen?</string>
     <string name="lbl_exerciseattention">Bitte absolvieren Sie vorherige Trainingseinheiten!</string>
+    <string name="rewarded_ad1">ca-app-pub-3940256099942544/5224354917</string>
 </resources>
