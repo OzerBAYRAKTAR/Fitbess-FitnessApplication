@@ -12,10 +12,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.lifecycle.lifecycleScope
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.data.JetpackDataStore.DataStoreManage
 import com.bayraktar.healthybackandneck.databinding.FragmentFivethBinding
 import com.bayraktar.healthybackandneck.databinding.FragmentSixthBinding
 import com.bayraktar.healthybackandneck.ui.HomeActivity
+import kotlinx.coroutines.launch
 import kotlin.math.log
 
 
@@ -23,6 +26,7 @@ class SixthFragment : Fragment() {
 
     private var _binding: FragmentSixthBinding? = null
     val binding get() = _binding!!
+    private lateinit var dataStoreManager: DataStoreManage
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,7 +41,7 @@ class SixthFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         backstack()
-
+        dataStoreManager = DataStoreManage.getInstance(requireContext())
         val handler = Handler(Looper.getMainLooper())
         var status = 0
 
@@ -77,6 +81,10 @@ class SixthFragment : Fragment() {
                 .setDuration(9000).start()
 
             Handler(Looper.getMainLooper()).postDelayed({
+
+                lifecycleScope.launch {
+                    dataStoreManager.saveLog(true)
+                }
                 startActivity(Intent(requireActivity(), HomeActivity::class.java))
                 requireActivity().finish()
             }, 9000)

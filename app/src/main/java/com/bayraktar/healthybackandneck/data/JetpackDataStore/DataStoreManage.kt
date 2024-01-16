@@ -4,6 +4,7 @@ package com.bayraktar.healthybackandneck.data.JetpackDataStore
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.doublePreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
@@ -49,6 +50,7 @@ class DataStoreManage(context: Context) {
         val TXT_CATEGORY = stringPreferencesKey("txt_category")
         val TXT_CALORIE = stringPreferencesKey("txt_calorie")
         val TXT_FATRATE = stringPreferencesKey("txt_fatrate")
+        val TXT_LOGIN = booleanPreferencesKey("isLogged")
 
     }
 
@@ -56,6 +58,13 @@ class DataStoreManage(context: Context) {
         withContext(Dispatchers.IO) {
             dataStore.edit { pref ->
                 pref[TXT_GENDER] = data
+            }
+        }
+    }
+    suspend fun saveLog(data: Boolean) {
+        withContext(Dispatchers.IO) {
+            dataStore.edit { pref ->
+                pref[TXT_LOGIN] = data
             }
         }
     }
@@ -139,6 +148,18 @@ class DataStoreManage(context: Context) {
                 }
             }.map { pref ->
                 pref[TXT_GENDER] ?: ""
+            }
+    }
+    fun getLog(): Flow<Boolean> {
+        return dataStore.data
+            .catch { exception ->
+                if (exception is IOException) {
+                    emit(emptyPreferences())
+                } else {
+                    throw exception
+                }
+            }.map { pref ->
+                pref[TXT_LOGIN] ?: false
             }
     }
 

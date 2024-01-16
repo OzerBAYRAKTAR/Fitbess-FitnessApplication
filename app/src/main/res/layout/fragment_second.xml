@@ -41,12 +41,12 @@
         android:id="@+id/textView39"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/tahoma"
         android:gravity="center"
         android:text="@string/lbl_day"
         android:textColor="@color/black"
         android:textSize="25sp"
-        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="@+id/number_picker_day"
         app:layout_constraintStart_toStartOf="@+id/textView26"
         app:layout_constraintTop_toBottomOf="@+id/textView26" />
@@ -64,6 +64,7 @@
         app:layout_constraintEnd_toEndOf="@+id/number_picker_month"
         app:layout_constraintStart_toStartOf="@+id/number_picker_month"
         app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
     <TextView
         android:id="@+id/textView459"
         android:layout_width="wrap_content"
@@ -183,7 +184,6 @@
         android:textSize="21sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/appCompatButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

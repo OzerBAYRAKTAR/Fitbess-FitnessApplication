@@ -531,7 +531,13 @@
     <string name="lbl_exerciseattention">Пожалуйста, сначала завершите предыдущие упражнения!</string>
 
     <string name="lbl_item_day">.день</string>
-    <string name="rewarded_ad1">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="rewarded_ad1">ca-app-pub-4754194669476617/7616538047</string>
+    <string name="rewarded_ad2">ca-app-pub-4754194669476617/9652039406</string>
+    <string name="rewarded_ad3">ca-app-pub-4754194669476617/8338957732</string>
+    <string name="title_activity_splash_screen">Заставка</string>
+    <string name="first_fragment_label">Первый фрагмент</string>
+    <string name="second_fragment_label">второй фрагмент</string>
+    <string name="previous">предыдущий</string>
 
 
 </resources>

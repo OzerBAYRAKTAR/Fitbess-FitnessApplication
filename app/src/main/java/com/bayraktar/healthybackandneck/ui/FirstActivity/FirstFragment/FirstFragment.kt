@@ -18,6 +18,8 @@ import com.bayraktar.healthybackandneck.utils.LanguagePreference
 import com.bayraktar.healthybackandneck.utils.LocaleHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 
 class FirstFragment : Fragment() {
@@ -28,6 +30,7 @@ class FirstFragment : Fragment() {
 
     private var selectedFemaleViewId: Int = -1
     private var selectedMaleViewId: Int = -1
+    var isLogged = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,26 +43,28 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        dataStoreManager = DataStoreManage.getInstance(requireContext())
+
         val savedLanguageCode = LanguagePreference.getLanguageCode(requireContext())
         savedLanguageCode?.let {
             LocaleHelper.setLocale(requireContext(), it)
         }
 
+
         viewBackgrounds()
-        dataStoreManager = DataStoreManage.getInstance(requireContext())
 
         binding.goNext.setOnClickListener {
-            lifecycleScope.launchWhenStarted {
+            lifecycleScope.launch {
                 saveGen()
             }
             val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment()
             view.findNavController().navigate(action)
-            //startActivity(Intent(requireActivity(),HomeActivity::class.java))
+
         }
     }
 
     private suspend fun saveGen() {
-        val gender = if (isFemaleSelected()) "Kadın" else "Erkek"
+        val gender = if (isFemaleSelected()) getString(R.string.label_female) else getString(R.string.label_male)
         CoroutineScope(Dispatchers.IO).launch {
             dataStoreManager.saveGender(gender)
         }

@@ -59,7 +59,7 @@ class MoveListFragment : Fragment(), RecyclerViewClickListener, OnDeleteClicked 
         var adRequest = AdRequest.Builder().build()
 
 
-        InterstitialAd.load(requireContext(),"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+        InterstitialAd.load(requireContext(),"ca-app-pub-4754194669476617/7348843104", adRequest, object : InterstitialAdLoadCallback() {
             override fun onAdFailedToLoad(adError: LoadAdError) {
                 mInterstitialAd = null
             }

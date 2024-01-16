@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -46,7 +47,7 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
     private val exerciseListSend = ArrayList<ExerciseDayExercise>()
     private lateinit var firstAdapter: ExerciseDetailFirstAdapter
     private var selectedModel: ExerciseDay? = null
-
+    private val handler = Handler()
     private var myRewardedAds: RewardedAds? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,7 +64,10 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
         //ca-app-pub-3940256099942544/5224354917 test
         MobileAds.initialize(requireContext()) {}
 
-
+        binding.prgressStart.visibility = View.VISIBLE
+        handler.postDelayed({
+            binding.prgressStart.visibility = View.GONE
+        }, 300)
         myRewardedAds = RewardedAds(requireActivity())
         myRewardedAds?.loadRewardedAds(R.string.rewarded_ad1)
         setRecyclerview()
@@ -102,9 +106,11 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
             if (exercises.isEmpty()) {
                 addToRoomExerciseDayList()
             } else {
+
                 firstAdapter.setData(exercises)
                 detailList.clear()
                 detailList.addAll(exercises)
+
 
                 var count = 0
                 for (item in exercises) {
@@ -112,8 +118,14 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
                         count++
                     }
                 }
-                binding.customProgressBar.progress = count * 100 / 21
-                binding.txtProgress.text = "%${(count * 100 / 21).toInt()}"
+                if (count == 3) {
+                    binding.customProgressBar.progress = 0
+                    binding.txtProgress.text = "%0"
+                }else {
+                    binding.customProgressBar.progress = count * 100 / 21
+                    binding.txtProgress.text = "%${(count * 100 / 21).toInt()}"
+                }
+
             }
         })
     }

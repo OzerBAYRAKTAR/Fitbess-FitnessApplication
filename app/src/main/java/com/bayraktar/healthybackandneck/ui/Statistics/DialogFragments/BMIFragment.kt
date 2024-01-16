@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
 import androidx.compose.material3.AlertDialog
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.lifecycleScope
@@ -80,18 +82,33 @@ class BMIFragment : DialogFragment() {
         } catch (e: NumberFormatException) {
             getString(R.string.label_tryagain)
         }
-
         dataStoreManager.saveCategory(bmiResult)
         dataStoreManager.saveIndeks(bmiValue.toString())
         val title = getString(R.string.label_bmi)
         val message = "\nBMI: $formattedBmi kg/m2 \n \nCategory: $bmiResult"
-        AlertDialog.Builder(requireContext(), R.style.CustomAlertDialog)
-            .setTitle(title)
-            .setMessage(message)
-            .setCancelable(false)
-            .setPositiveButton(getString(R.string.label_okay)){d,_ ->
-               d.dismiss()
-            }.show()
+
+        val inflater = layoutInflater
+        val dialogView = inflater.inflate(R.layout.custom_statistic_layout, null)
+
+        val positiveBtn: Button = dialogView.findViewById(R.id.dialogYesss)
+        val txtLabel: TextView = dialogView.findViewById(R.id.txtLabel)
+        val txtFirst: TextView = dialogView.findViewById(R.id.txtFirst)
+
+
+        val builder = AlertDialog.Builder(requireContext())
+
+        builder.setView(dialogView)
+        builder.setCancelable(false)
+
+        txtLabel.text = title
+        txtFirst.text = message
+
+        val dialog = builder.create()
+        dialog.show()
+
+        positiveBtn.setOnClickListener {
+            dialog.dismiss()
+        }
 
     }
 

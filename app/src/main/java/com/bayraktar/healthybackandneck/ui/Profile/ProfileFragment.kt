@@ -109,7 +109,7 @@ class ProfileFragment : Fragment() {
                 .build()
 
             val periodicWorkRequest = PeriodicWorkRequestBuilder<WaterReminderWorker>(
-                17, TimeUnit.MINUTES
+                15, TimeUnit.HOURS
             )
                 .setConstraints(constraints)
                 .addTag("waterReminderWorkerTag")
@@ -132,7 +132,7 @@ class ProfileFragment : Fragment() {
                 .build()
 
             val periodicWorkRequest = PeriodicWorkRequestBuilder<NotificationWorker>(
-                15, TimeUnit.MINUTES
+                12, TimeUnit.HOURS
             )
                 .setConstraints(constraints)
                 .addTag("motivateNotif")
@@ -173,6 +173,7 @@ class ProfileFragment : Fragment() {
             }
         }
     }
+
     private fun startReviewFlow() {
         if (reviewInfo != null) {
             val flow : Task<Void> = reviewManager.launchReviewFlow(requireActivity(), reviewInfo!!)

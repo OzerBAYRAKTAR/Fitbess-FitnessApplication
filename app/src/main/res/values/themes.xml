@@ -4,7 +4,7 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 
-        <item name="android:statusBarColor">#24A550</item>
+
         <item name="android:divider">@drawable/menu_item_padding</item>
         <item name="android:listDivider">@android:color/transparent</item>
         <item name="windowActionBar">false</item>
@@ -34,7 +34,7 @@
     <style name="NumberPickerStyle">
         <item name="android:textSize">20sp</item> <!-- Set your desired text size here -->
     </style>
-    
+
     <style name="roundedImageStyle" >
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeTopRight">51%</item>

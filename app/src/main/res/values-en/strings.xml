@@ -535,6 +535,12 @@
     <string name="lbl_levelmove_desc">By determining your movement level, you enable us to adjust the most suitable workouts for you.</string>
     <string name="lbl_delete_favourite">Are you sure you want to remove the movement from your favorites list?</string>
     <string name="lbl_exerciseattention">Please complete previous exercises first!</string>
-    <string name="rewarded_ad1">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="rewarded_ad1">ca-app-pub-4754194669476617/7616538047</string>
+    <string name="rewarded_ad2">ca-app-pub-4754194669476617/9652039406</string>
+    <string name="rewarded_ad3">ca-app-pub-4754194669476617/8338957732</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
 </resources>
 

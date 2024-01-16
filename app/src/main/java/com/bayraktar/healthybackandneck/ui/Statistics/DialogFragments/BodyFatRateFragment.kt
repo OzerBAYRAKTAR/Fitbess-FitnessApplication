@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
@@ -102,16 +104,33 @@ class BodyFatRateFragment : Fragment() {
         if (rate < 3) {
             showToast(requireContext(),errorMessage,Gravity.CENTER,0,0)
         }else {
-            dataStoreManager.saveFatrate(formattedRate)
+
             val title = getString(R.string.label_bmi)
+            dataStoreManager.saveFatrate(formattedRate)
             val message = "\n$labelBodyFatRate: $formattedRate "
-            AlertDialog.Builder(requireContext(), R.style.CustomAlertDialog)
-                .setTitle(title)
-                .setMessage(message)
-                .setCancelable(false)
-                .setPositiveButton(getString(R.string.label_okay)){d,_ ->
-                   d.dismiss()
-                }.show()
+
+            val inflater = layoutInflater
+            val dialogView = inflater.inflate(R.layout.custom_statistic_layout, null)
+
+            val positiveBtn: Button = dialogView.findViewById(R.id.dialogYesss)
+            val txtLabel: TextView = dialogView.findViewById(R.id.txtLabel)
+            val txtFirst: TextView = dialogView.findViewById(R.id.txtFirst)
+
+
+            val builder = AlertDialog.Builder(requireContext())
+
+            builder.setView(dialogView)
+            builder.setCancelable(false)
+
+            txtLabel.text = title
+            txtFirst.text = message
+
+            val dialog = builder.create()
+            dialog.show()
+
+            positiveBtn.setOnClickListener {
+                dialog.dismiss()
+            }
         }
 
     }
@@ -167,7 +186,7 @@ class BodyFatRateFragment : Fragment() {
                     buttDesc.setText(booty.toString())
                 }
                 if (gender != "") {
-                    if (gender == "Erkek") {
+                    if (gender == getString(R.string.label_male)) {
                         checkMale.isChecked = true
                     }else {
                         checkFemale.isChecked = true

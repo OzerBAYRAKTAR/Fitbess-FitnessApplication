@@ -3,6 +3,7 @@ package com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailThird
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.os.Bundle
+import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -42,7 +43,7 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
     private lateinit var thirdAdapter: ExerciseDetailAdapterThird
     private var selectedModel: ExerciseDay? = null
     private var myRewardedAds: RewardedAds? = null
-
+    private val handler = Handler()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -60,14 +61,19 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
         //ca-app-pub-3940256099942544/5224354917 test
         MobileAds.initialize(requireContext()) {}
 
+        binding.prgressStart.visibility = View.VISIBLE
+        handler.postDelayed({
+            binding.prgressStart.visibility = View.GONE
+        }, 300)
 
         myRewardedAds = RewardedAds(requireActivity())
-        myRewardedAds?.loadRewardedAds(R.string.rewarded_ad1)
+        myRewardedAds?.loadRewardedAds(R.string.rewarded_ad3)
         observeLevelThird()
         observeDayListLevelThird()
         backstack()
         binding.imageBack.setOnClickListener {
-            val action = ExerciseDetailThirdFragmentDirections.actionExerciseDetailThirdFragmentToIdHomepageFragment()
+            val action =
+                ExerciseDetailThirdFragmentDirections.actionExerciseDetailThirdFragmentToIdHomepageFragment()
             view.findNavController().navigate(action)
         }
 
@@ -113,11 +119,16 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
                 var count = 0
                 for (item in exercises) {
                     if (item.isCompleted) {
-                        count ++
+                        count++
                     }
                 }
-                binding.customProgressBar.progress = count*100/21
-                binding.txtProgress.text = "%${(count*100/21).toInt()}"
+                if (count == 3) {
+                    binding.customProgressBar.progress = 0
+                    binding.txtProgress.text = "%0"
+                }else {
+                    binding.customProgressBar.progress = count * 100 / 21
+                    binding.txtProgress.text = "%${(count * 100 / 21).toInt()}"
+                }
             }
         })
     }
@@ -154,11 +165,11 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
             var count = 0
             for (item in detailList) {
                 if (item.isCompleted) {
-                    count ++
+                    count++
                 }
             }
-            binding.customProgressBar.progress = count*100/21
-            binding.txtProgress.text = "%${(count*100/21).toInt()}"
+            binding.customProgressBar.progress = count * 100 / 21
+            binding.txtProgress.text = "%${(count * 100 / 21).toInt()}"
 
         } catch (e: Exception) {
             e.printStackTrace()

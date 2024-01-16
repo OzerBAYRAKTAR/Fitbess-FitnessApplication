@@ -134,6 +134,16 @@
                     app:layout_constraintTop_toTopOf="@+id/customProgressBar" />
 
 
+                <ProgressBar
+                    android:id="@+id/prgressStart"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:visibility="gone"
+                    android:indeterminateTint="@color/red"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -147,6 +157,7 @@
                 tools:listitem="@layout/item_exercisedaysofweek" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.core.widget.NestedScrollView>
 
 

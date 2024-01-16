@@ -267,9 +267,10 @@ class DailyCalorieFragment : Fragment() {
                     }
                     spnrActivity.setSelection(level-1)
                     if (gender != "") {
-                        if (gender == "Erkek") {
+                        if (gender == getString(R.string.label_male)) {
                             checkMale.isChecked = true
                         }else {
+                            checkMale.isChecked = false
                             checkFemale.isChecked = true
                         }
                     }

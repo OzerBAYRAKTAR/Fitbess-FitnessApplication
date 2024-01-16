@@ -103,8 +103,8 @@ class StatisticsFragment : Fragment() {
                 dataStoreManager.getFatRate(),
 
                 ) { indeks, category, calorie, fatrate ->
-                val formattedindeks = indeks.replace(',', '.').toDouble()
                 if (indeks != "") {
+                    val formattedindeks = indeks.replace(',', '.').toDouble()
                     bmiIndeks.text = indeks.toString()
                     when (formattedindeks) {
                         in Double.MIN_VALUE..18.5 -> {

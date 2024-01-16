@@ -33,7 +33,7 @@
     "dayId": 4,
     "level": 1,
     "day": 4,
-    "isCompleted": true,
+    "isCompleted": false,
     "exerciseCount": 8,
     "exerciseTime": 7,
     "exerciseKcal": 330,
