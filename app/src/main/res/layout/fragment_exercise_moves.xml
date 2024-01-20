@@ -197,7 +197,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:visibility="gone"
         app:adSize="BANNER"
         app:adUnitId="ca-app-pub-4754194669476617/2002777967"
         app:layout_constraintBottom_toBottomOf="parent"
