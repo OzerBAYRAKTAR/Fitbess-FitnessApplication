@@ -13,7 +13,6 @@
 ![ss9](https://github.com/OzerBAYRAKTAR/HealthyBackandNeck/assets/105236639/b5f3a726-f213-49c0-996a-2a632fee45a5)
 ![ss10](https://github.com/OzerBAYRAKTAR/HealthyBackandNeck/assets/105236639/5b0b696d-13d1-4d06-ba1a-46b06981e174)
 ![ss7](https://github.com/OzerBAYRAKTAR/HealthyBackandNeck/assets/105236639/bff57c4a-2802-4bfd-b8fb-289068a6c2a3)
-![ss6](https://github.com/OzerBAYRAKTAR/HealthyBackandNeck/assets/105236639/29273806-5d0c-4beb-af61-1c2680acf088)
 ![12](https://github.com/OzerBAYRAKTAR/HealthyBackandNeck/assets/105236639/2331e91c-cc33-41ae-b9e2-277db5bf84af)
 ![ss4](https://github.com/OzerBAYRAKTAR/HealthyBackandNeck/assets/105236639/78c875f9-fbc7-42c2-9772-14bc56ddf224)
 ![ss5](https://github.com/OzerBAYRAKTAR/HealthyBackandNeck/assets/105236639/022af886-a0dc-457f-b5a2-734990d63fbd)
