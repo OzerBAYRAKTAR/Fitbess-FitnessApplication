@@ -52,7 +52,6 @@ class DataStoreManage(context: Context) {
         val TXT_FATRATE = stringPreferencesKey("txt_fatrate")
         val TXT_LOGIN = booleanPreferencesKey("isLogged")
 
-
     }
 
     suspend fun saveGender(data: String) {
