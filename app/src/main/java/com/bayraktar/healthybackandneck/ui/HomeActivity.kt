@@ -30,10 +30,10 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
         setContentView(binding.root)
 
 
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
+      // window.setFlags(
+      //     WindowManager.LayoutParams.FLAG_FULLSCREEN,
+      //     WindowManager.LayoutParams.FLAG_FULLSCREEN
+      // )
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController

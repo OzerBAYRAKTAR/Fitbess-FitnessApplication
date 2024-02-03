@@ -28,10 +28,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
+      //  window.setFlags(
+      //      WindowManager.LayoutParams.FLAG_FULLSCREEN,
+      //      WindowManager.LayoutParams.FLAG_FULLSCREEN
+      //  )
 
         MobileAds.initialize(this) {}
 
