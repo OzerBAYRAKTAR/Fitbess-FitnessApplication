@@ -106,6 +106,10 @@ class ExerciseMovesEndFragment : Fragment() {
             if (mInterstitialAd != null) {
                 mInterstitialAd?.show(requireActivity())
             }
+          //   else {
+          //      val action = ExerciseMovesEndFragmentDirections.actionExerciseMovesEndFragmentToIdHomepageFragment()
+          //      view?.findNavController()?.navigate(action)
+          //  }
 
             mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
                 override fun onAdClicked() {

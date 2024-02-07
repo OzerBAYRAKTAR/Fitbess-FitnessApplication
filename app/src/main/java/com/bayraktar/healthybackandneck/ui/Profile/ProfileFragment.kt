@@ -77,23 +77,27 @@ class ProfileFragment : Fragment() {
 
 
 
-        val savedLanguageCode = LanguagePreference.getLanguageCode(requireContext())
-        savedLanguageCode?.let {
-            LocaleHelper.setLocale(requireContext(), it)
-        }
+     //   val savedLanguageCode = LanguagePreference.getLanguageCode(requireContext())
+     //   savedLanguageCode?.let {
+     //       LocaleHelper.setLocale(requireContext(), it)
+     //   }
 
         viewModel.getMovitivate()
         viewModel.getWaterReminder()
 
         observe()
         activateReviewInfo()
-        btnRateUsClicked()
+        binding.consRateus.setOnClickListener {
+            btnRateUsClicked()
+        }
+
         notificationHelper = NotificationHelper(requireContext())
         setBindingThings()
         btnShareClicked()
 
 
     }
+
     private fun handleWaterReminderSwitchChange(isChecked: Boolean) {
         // Save water reminder switch state to database
         val waterReminderState = WaterReminderState(isSwitchChecked = isChecked)
@@ -109,7 +113,7 @@ class ProfileFragment : Fragment() {
                 .build()
 
             val periodicWorkRequest = PeriodicWorkRequestBuilder<WaterReminderWorker>(
-                15, TimeUnit.HOURS
+                4, TimeUnit.HOURS
             )
                 .setConstraints(constraints)
                 .addTag("waterReminderWorkerTag")
@@ -160,7 +164,15 @@ class ProfileFragment : Fragment() {
     private fun changeLanguageAndSave(languageCode: String) {
         LocaleHelper.setLocale(requireContext(), languageCode)
         LanguagePreference.setLanguageCode(requireContext(), languageCode)
+
+        val configuration = resources.configuration
+        configuration.setLocale(Locale(languageCode))
+        val displayMetrics = resources.displayMetrics
+        resources.updateConfiguration(configuration, displayMetrics)
+
+        requireActivity().recreate()
     }
+
     private fun activateReviewInfo() {
         reviewManager = ReviewManagerFactory.create(requireContext())
         val managerInfoTask: Task<ReviewInfo> = reviewManager.requestReviewFlow()
@@ -252,6 +264,8 @@ class ProfileFragment : Fragment() {
         val currentLanguageIndex = languageCodes.indexOf(currentLanguage)
         val defaultLanguageIndex = 0
 
+
+
         val selectedIndex = if (currentLanguageIndex != -1) currentLanguageIndex else defaultLanguageIndex
 
         val alertDialog = AlertDialog.Builder(requireContext())
@@ -261,7 +275,8 @@ class ProfileFragment : Fragment() {
                 // Change the language when the user selects a new language
                 val selectedLanguageCode = languageCodes[which]
                 changeLanguageAndSave(selectedLanguageCode)
-                setNewLocale(requireContext(), selectedLanguageCode)
+                restartActivity()
+                requireActivity().recreate()
                 dialog.dismiss()
             }
             .setNegativeButton("Cancel") { dialog, _ ->
@@ -271,6 +286,15 @@ class ProfileFragment : Fragment() {
 
         alertDialog.show()
     }
+
+    override fun onResume() {
+        super.onResume()
+        val savedLanguageCode = LanguagePreference.getLanguageCode(requireContext())
+        savedLanguageCode?.let {
+            LocaleHelper.setLocale(requireContext(), it)
+        }
+    }
+
 
     private fun setNewLocale(context: Context, language: String) {
         val newLocale = Locale(language)
@@ -307,7 +331,13 @@ class ProfileFragment : Fragment() {
 
         }
     }
+
     private fun btnRateUsClicked() = with(binding) {
         startReviewFlow()
+    }
+    private fun restartActivity() {
+        val intent = requireActivity().intent
+        requireActivity().finish()
+        startActivity(intent)
     }
 }

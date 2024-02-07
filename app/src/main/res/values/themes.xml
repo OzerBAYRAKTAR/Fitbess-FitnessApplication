@@ -9,6 +9,7 @@
         <item name="android:listDivider">@android:color/transparent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">#AEA8A8</item>
     </style>
 
     <style name="Theme.HealthyBackandNeck" parent="Base.Theme.HealthyBackandNeck" />

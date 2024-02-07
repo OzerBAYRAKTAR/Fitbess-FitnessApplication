@@ -154,13 +154,13 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/goNext"
-        android:layout_width="110dp"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:background="@drawable/buttonfirst_background"
         android:fontFamily="@font/tahoma"
         android:text="@string/lbl_sonraki"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="17sp"
         android:layout_marginBottom="15dp"
         android:layout_marginEnd="25dp"
         app:layout_constraintBottom_toTopOf="@+id/adView"
@@ -168,7 +168,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/goBack"
-        android:layout_width="110dp"
+        android:layout_width="wrap_content"
         android:layout_marginBottom="15dp"
         android:layout_marginStart="25dp"
         android:layout_height="40dp"
@@ -176,7 +176,7 @@
         android:fontFamily="@font/tahoma"
         android:text="@string/lbl_before"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/adView"
         app:layout_constraintStart_toStartOf="parent" />
 

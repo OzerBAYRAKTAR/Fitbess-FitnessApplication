@@ -123,6 +123,8 @@ class MoveListFragment : Fragment(), RecyclerViewClickListener, OnDeleteClicked 
             .setPositiveButton(R.string.close) { dialog, _ ->
                 if (mInterstitialAd != null) {
                     mInterstitialAd?.show(requireActivity())
+                }else {
+                    dialog.dismiss()
                 }
                 mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
                     override fun onAdClicked() {

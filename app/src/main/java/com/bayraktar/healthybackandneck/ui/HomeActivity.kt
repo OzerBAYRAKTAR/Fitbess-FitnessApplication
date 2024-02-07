@@ -13,6 +13,12 @@ import androidx.navigation.ui.navigateUp
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.ActivityHomeBinding
 import com.bayraktar.healthybackandneck.utils.Interfaces.homeFragmentListener
+import com.bayraktar.healthybackandneck.utils.LanguagePreference
+import com.bayraktar.healthybackandneck.utils.LocaleHelper
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,6 +29,10 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
     private lateinit var navController: NavController
     private lateinit var navControllerBar: NavController
     private lateinit var binding: ActivityHomeBinding
+    companion object {
+       var mInterstitialAd: InterstitialAd? = null
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +44,18 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
       //     WindowManager.LayoutParams.FLAG_FULLSCREEN,
       //     WindowManager.LayoutParams.FLAG_FULLSCREEN
       // )
+
+        var adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                mInterstitialAd = null
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                mInterstitialAd = interstitialAd
+            }
+        })
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController

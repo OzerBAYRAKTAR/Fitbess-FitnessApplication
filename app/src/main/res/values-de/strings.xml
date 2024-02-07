@@ -374,7 +374,7 @@
     <string name="label_cancel">Abbrechen</string>
     <string name="label_restartmessage">Alle Ihre Fortschritte werden gelöscht. Sind Sie sicher, dass Sie fortfahren möchten?</string>
     <string name="label_attention">Achtung</string>
-    <string name="label_shareus">Teilen Sie die App mit Ihren Freunden!</string>
+    <string name="label_shareus">https://play.google.com/store/apps/details?id=com.bayraktar.healthybackandneck</string>
     <string name="label_shareerror">Es konnte keine App zum Teilen gefunden werden</string>
     <string name="label_sharevia">Mit folgendem teilen</string>
     <string name="label_reviewerror">Bewertung konnte nicht abgegeben werden</string>
@@ -530,6 +530,7 @@
     <string name="rewarded_ad1">ca-app-pub-4754194669476617/7616538047</string>
     <string name="rewarded_ad2">ca-app-pub-4754194669476617/9652039406</string>
     <string name="rewarded_ad3">ca-app-pub-4754194669476617/8338957732</string>
+    <string name="detail_day_ad">ca-app-pub-4754194669476617/8160142148</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

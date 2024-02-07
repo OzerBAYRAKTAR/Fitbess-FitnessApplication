@@ -280,14 +280,23 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
                 dialog.dismiss()
             }
             positiveBtn.setOnClickListener {
-                myRewardedAds?.showRewardAds(R.string.rewarded_ad1) {
+                if (myRewardedAds != null) {
+                    myRewardedAds?.showRewardAds(R.string.rewarded_ad1) {
+                        selectedModel = detailList[position]
+                        viewModel.updateIsCompletedToTrue(1, detailList[position].day)
+                        val selectedDay = position + 1
+                        viewModel.getExerciseListWithDayID(selectedDay, 1)
+                        observeListWithDayId()
+                    }
+                    dialog.dismiss()
+                }else{
                     selectedModel = detailList[position]
                     viewModel.updateIsCompletedToTrue(1, detailList[position].day)
                     val selectedDay = position + 1
                     viewModel.getExerciseListWithDayID(selectedDay, 1)
                     observeListWithDayId()
                 }
-                dialog.dismiss()
+
             }
         } else {
             selectedModel = detailList[position]

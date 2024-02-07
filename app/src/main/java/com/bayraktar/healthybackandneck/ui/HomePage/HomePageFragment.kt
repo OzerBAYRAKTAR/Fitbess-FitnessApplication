@@ -37,6 +37,8 @@ import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.FixPostureAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.LegButtAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.NeckBackAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.WarmUpAdapter
+import com.bayraktar.healthybackandneck.utils.LanguagePreference
+import com.bayraktar.healthybackandneck.utils.LocaleHelper
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
@@ -101,11 +103,16 @@ class HomePageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        val savedLanguageCode = LanguagePreference.getLanguageCode(requireContext())
+        savedLanguageCode?.let {
+            LocaleHelper.setLocale(requireContext(), it)
+        }
         //banner  ID => ca-app-pub-4754194669476617/5943389951
         //banner testt ID => ca-app-pub-3940256099942544/9257395921
 
         //interstealler tes ID => ca-app-pub-3940256099942544/1033173712
+
+
 
         MobileAds.initialize(requireContext()) {}
 
@@ -139,6 +146,13 @@ class HomePageFragment : Fragment() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        val savedLanguageCode = LanguagePreference.getLanguageCode(requireContext())
+        savedLanguageCode?.let {
+            LocaleHelper.setLocale(requireContext(), it)
+        }
+    }
     private fun observeCount() = with(binding) {
         viewModel.getCount.observe(viewLifecycleOwner, Observer { count ->
             if (count != null) {

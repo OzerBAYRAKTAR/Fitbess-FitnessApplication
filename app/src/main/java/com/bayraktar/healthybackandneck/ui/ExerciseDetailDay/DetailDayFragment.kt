@@ -10,11 +10,14 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentDetailDayBinding
+import com.bayraktar.healthybackandneck.ui.HomeActivity.Companion.mInterstitialAd
 import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerViewClickListener
+import com.bayraktar.healthybackandneck.utils.RewardedAds
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
@@ -28,7 +31,7 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
     private var _binding: FragmentDetailDayBinding? = null
     val binding get() = _binding!!
 
-    private var mInterstitialAd: InterstitialAd? = null
+    //private var mInterstitialAd: InterstitialAd? = null
 
     private var exerciseDayModel: ExerciseDay? = null
     private var exerciseList = ArrayList<ExerciseDayExercise>()
@@ -38,26 +41,15 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
     private var exerciseArray: Array<ExerciseDayExercise>? = null
     private var subExerciseArray: Array<SubExerciseDayExercise>? = null
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentDetailDayBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-        //intersteallar test id => ca-app-pub-3940256099942544/1033173712
-        //intersteallar canlı id => ca-app-pub-4754194669476617/8160142148
 
         var adRequest = AdRequest.Builder().build()
 
-
-        InterstitialAd.load(requireContext(),"ca-app-pub-4754194669476617/8160142148", adRequest, object : InterstitialAdLoadCallback() {
+        InterstitialAd.load(requireContext(),"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
             override fun onAdFailedToLoad(adError: LoadAdError) {
                 mInterstitialAd = null
             }
@@ -68,15 +60,43 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
         })
 
 
+
+        return binding.root
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+        //intersteallar test id => ca-app-pub-3940256099942544/1033173712
+        //intersteallar canlı id => ca-app-pub-4754194669476617/8160142148
+
+
+
+
+
+
+
         getSetData()
         //setRecyclerview()
         backstack()
 
         binding.startExercise.setOnClickListener {
 
-            if (mInterstitialAd != null) {
+
+            if (mInterstitialAd != null ) {
                 mInterstitialAd?.show(requireActivity())
+                Log.d(TAG, "Null değil.")
             }
+         //   else {
+         //       val action = DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment(
+         //           exerciseList.toTypedArray(), exerciseDayModel
+         //       )
+         //       view.findNavController().navigate(action)
+         //   }
+
+
 
             mInterstitialAd?.fullScreenContentCallback = object: FullScreenContentCallback() {
                 override fun onAdClicked() {

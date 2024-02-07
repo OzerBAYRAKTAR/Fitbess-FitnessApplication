@@ -63,7 +63,7 @@ dependencies {
 
     //admob
     implementation 'com.google.android.gms:play-services-ads:22.5.0'
-    
+
     //material3
     implementation("androidx.compose.material3:material3:$material3_version")
     implementation("androidx.compose.material3:material3-window-size-class:$material3_version")
