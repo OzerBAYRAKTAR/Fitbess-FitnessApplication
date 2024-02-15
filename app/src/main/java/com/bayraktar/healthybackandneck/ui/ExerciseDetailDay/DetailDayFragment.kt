@@ -2,6 +2,7 @@ package com.bayraktar.healthybackandneck.ui.ExerciseDetailDay
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,6 +22,7 @@ import com.bayraktar.healthybackandneck.utils.RewardedAds
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import dagger.hilt.android.AndroidEntryPoint
@@ -47,17 +49,7 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
     ): View? {
         _binding = FragmentDetailDayBinding.inflate(inflater, container, false)
 
-        var adRequest = AdRequest.Builder().build()
 
-        InterstitialAd.load(requireContext(),"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
-            override fun onAdFailedToLoad(adError: LoadAdError) {
-                mInterstitialAd = null
-            }
-
-            override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                mInterstitialAd = interstitialAd
-            }
-        })
 
 
 
@@ -74,57 +66,68 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
 
 
 
-
-
-
-
+        adMOb()
         getSetData()
         //setRecyclerview()
         backstack()
 
+
+    }
+    private fun adMOb() {
         binding.startExercise.setOnClickListener {
+            requireActivity().runOnUiThread {
+                val adRequest = AdRequest.Builder().build()
 
+                InterstitialAd.load(
+                    requireContext(),
+                    "ca-app-pub-4754194669476617/8160142148",
+                    adRequest,
+                    object : InterstitialAdLoadCallback() {
+                        override fun onAdFailedToLoad(adError: LoadAdError) {
+                            println("yy")
+                            mInterstitialAd = null
+                        }
 
-            if (mInterstitialAd != null ) {
-                mInterstitialAd?.show(requireActivity())
-                Log.d(TAG, "Null değil.")
+                        override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                            mInterstitialAd = interstitialAd
+                            mInterstitialAd?.show(requireActivity())
+                            println("aaa")
+
+                            mInterstitialAd?.fullScreenContentCallback = object: FullScreenContentCallback() {
+                                override fun onAdClicked() {
+                                    // Called when a click is recorded for an ad.
+                                    println("ccc")
+                                }
+
+                                override fun onAdDismissedFullScreenContent() {
+                                    println("vvv")
+                                    mInterstitialAd = null
+                                    // Called when ad is dismissed.
+                                    val action = DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment(
+                                        exerciseList.toTypedArray(), exerciseDayModel
+                                    )
+                                    view?.findNavController()?.navigate(action)
+                                }
+
+                                override fun onAdImpression() {
+                                    println("qqq")
+                                    // Called when an impression is recorded for an ad.
+                                    Log.d(TAG, "Ad recorded an impression.")
+                                }
+
+                                override fun onAdShowedFullScreenContent() {
+                                    println("fff")
+                                    // Called when ad is shown.
+                                    Log.d(TAG, "Ad showed fullscreen content.")
+                                }
+                            }
+
+                        }
+                    })
             }
-         //   else {
-         //       val action = DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment(
-         //           exerciseList.toTypedArray(), exerciseDayModel
-         //       )
-         //       view.findNavController().navigate(action)
-         //   }
-
-
-
-            mInterstitialAd?.fullScreenContentCallback = object: FullScreenContentCallback() {
-                override fun onAdClicked() {
-                    // Called when a click is recorded for an ad.
-                    Log.d(TAG, "Ad was clicked.")
-                }
-
-                override fun onAdDismissedFullScreenContent() {
-                    mInterstitialAd = null
-                    // Called when ad is dismissed.
-                    val action = DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment(
-                        exerciseList.toTypedArray(), exerciseDayModel
-                    )
-                    view.findNavController().navigate(action)
-
-                }
-                override fun onAdImpression() {
-                    // Called when an impression is recorded for an ad.
-                    Log.d(TAG, "Ad recorded an impression.")
-                }
-
-                override fun onAdShowedFullScreenContent() {
-                    // Called when ad is shown.
-                    Log.d(TAG, "Ad showed fullscreen content.")
-                }
-            }
-
         }
+
+
     }
 
     private fun setRecyclerview() = with(binding) {

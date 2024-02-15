@@ -33,7 +33,7 @@
     "day": 4,
     "level": 2,
     "exerciseCount": 8,
-    "isCompleted": true,
+    "isCompleted": false,
     "exerciseTime": 7,
     "exerciseKcal": 300,
     "dayId": 4,
@@ -43,7 +43,7 @@
     "day": 5,
     "level": 2,
     "exerciseCount": 8,
-    "isCompleted": true,
+    "isCompleted": false,
     "exerciseTime": 8,
     "exerciseKcal": 350,
     "dayId": 5,
@@ -53,7 +53,7 @@
     "day": 6,
     "level": 2,
     "exerciseCount": 8,
-    "isCompleted": true,
+    "isCompleted": false,
     "exerciseTime": 7,
     "exerciseKcal": 290,
     "dayId": 6,
@@ -66,14 +66,14 @@
     "exerciseTime": 7,
     "exerciseKcal": 330,
     "dayId": 7,
-    "isCompleted": true,
+    "isCompleted": false,
     "homeId": 2
   },
   {
     "day": 8,
     "level": 2,
     "exerciseCount": 8,
-    "isCompleted": true,
+    "isCompleted": false,
     "exerciseTime": 7,
     "exerciseKcal": 275,
     "dayId": 8,
@@ -84,7 +84,7 @@
     "level": 2,
     "exerciseCount": 8,
     "exerciseTime": 7,
-    "isCompleted": true,
+    "isCompleted": false,
     "exerciseKcal": 225,
     "dayId": 9,
     "homeId": 2
@@ -96,7 +96,7 @@
     "exerciseTime": 7,
     "exerciseKcal": 290,
     "dayId": 10,
-    "isCompleted": true,
+    "isCompleted": false,
     "homeId": 2
   },
   {
@@ -105,7 +105,7 @@
     "exerciseCount": 8,
     "exerciseTime": 8,
     "exerciseKcal": 240,
-    "isCompleted": true,
+    "isCompleted": false,
     "dayId": 11,
     "homeId": 2
   },
@@ -116,7 +116,7 @@
     "exerciseTime": 8,
     "exerciseKcal": 270,
     "dayId": 12,
-    "isCompleted": true,
+    "isCompleted": false,
     "homeId": 2
   },
   {
@@ -124,7 +124,7 @@
     "level": 2,
     "exerciseCount": 8,
     "exerciseTime": 7,
-    "isCompleted": true,
+    "isCompleted": false,
     "exerciseKcal": 290,
     "dayId": 13,
     "homeId": 2
@@ -132,7 +132,7 @@
   {
     "day": 14,
     "level": 2,
-    "isCompleted": true,
+    "isCompleted": false,
     "exerciseCount": 8,
     "exerciseTime": 8,
     "exerciseKcal": 280,
@@ -145,7 +145,7 @@
     "exerciseCount": 8,
     "exerciseTime": 7,
     "exerciseKcal": 290,
-    "isCompleted": true,
+    "isCompleted": false,
     "dayId": 15,
     "homeId": 2
   },
@@ -154,7 +154,7 @@
     "level": 2,
     "exerciseCount": 8,
     "exerciseTime": 7,
-    "isCompleted": true,
+    "isCompleted": false,
     "exerciseKcal": 330,
     "dayId": 16,
     "homeId": 2
@@ -165,7 +165,7 @@
     "exerciseCount": 8,
     "exerciseTime": 8,
     "exerciseKcal": 260,
-    "isCompleted": true,
+    "isCompleted": false,
     "dayId": 17,
     "homeId": 2
   },
@@ -176,7 +176,7 @@
     "exerciseTime": 7,
     "exerciseKcal": 320,
     "dayId": 18,
-    "isCompleted": true,
+    "isCompleted": false,
     "homeId": 2
   },
   {
@@ -185,7 +185,7 @@
     "exerciseCount": 8,
     "exerciseTime": 8,
     "exerciseKcal": 310,
-    "isCompleted": true,
+    "isCompleted": false,
     "dayId": 19,
     "homeId": 2
   },
@@ -194,7 +194,7 @@
     "level": 2,
     "exerciseCount": 8,
     "exerciseTime": 7,
-    "isCompleted": true,
+    "isCompleted": false,
     "exerciseKcal": 240,
     "dayId": 20,
     "homeId": 2
@@ -205,7 +205,7 @@
     "exerciseCount": 8,
     "exerciseTime": 8,
     "exerciseKcal": 270,
-    "isCompleted": true,
+    "isCompleted": false,
     "dayId": 21,
     "homeId": 2
   }

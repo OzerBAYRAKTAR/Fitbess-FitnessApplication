@@ -2,6 +2,7 @@ package com.bayraktar.healthybackandneck.ui.ExerciseMovesEnd
 
 import android.app.AlertDialog
 import android.content.ContentValues
+import android.content.ContentValues.TAG
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
@@ -21,9 +22,13 @@ import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesEndBind
 import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayFragmentDirections
 import com.bayraktar.healthybackandneck.ui.ExerciseMoves.ExerciseMovesFragmentArgs
 import com.bayraktar.healthybackandneck.ui.ExerciseMoves.ExerciseMovesFragmentDirections
+import com.bayraktar.healthybackandneck.ui.HomeActivity
+import com.bayraktar.healthybackandneck.ui.HomeActivity.Companion.mInterstitialAd
+import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,9 +42,12 @@ class ExerciseMovesEndFragment : Fragment() {
 
     private var mInterstitialAd: InterstitialAd? = null
 
+    private var isAdLoaded = false
+
     private var exerciseDayModel: ExerciseDay? = null
     private var exerciseList = ArrayList<ExerciseDayExercise>()
     private var exerciseArray: Array<ExerciseDayExercise>? = null
+    private var adClicked = false
 
 
 
@@ -55,11 +63,11 @@ class ExerciseMovesEndFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //interstealler canlı id => ca-app-pub-4754194669476617/6013325105
+        //interstealler test id => ca-app-pub-3940256099942544/1033173712
 
-        var adRequest = AdRequest.Builder().build()
+        val adRequest = AdRequest.Builder().build()
 
-
-        InterstitialAd.load(requireContext(),"ca-app-pub-4754194669476617/6013325105", adRequest, object : InterstitialAdLoadCallback() {
+        InterstitialAd.load(requireContext(), "ca-app-pub-4754194669476617/6013325105", adRequest, object : InterstitialAdLoadCallback() {
             override fun onAdFailedToLoad(adError: LoadAdError) {
                 mInterstitialAd = null
             }
@@ -70,11 +78,15 @@ class ExerciseMovesEndFragment : Fragment() {
         })
 
 
+
+
         backstack()
         getSetData()
-        btnEndClicked()
-
+        binding.btnEnd.setOnClickListener {
+            btnEndClicked()
+        }
     }
+
     private fun btnCloseClicked() {
         val inflater = layoutInflater
         val dialogView = inflater.inflate(R.layout.dialog_cancel, null)
@@ -102,38 +114,35 @@ class ExerciseMovesEndFragment : Fragment() {
     }
 
     private fun btnEndClicked() {
-        binding.btnEnd.setOnClickListener {
-            if (mInterstitialAd != null) {
-                mInterstitialAd?.show(requireActivity())
-            }
-          //   else {
-          //      val action = ExerciseMovesEndFragmentDirections.actionExerciseMovesEndFragmentToIdHomepageFragment()
-          //      view?.findNavController()?.navigate(action)
-          //  }
-
-            mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
-                override fun onAdClicked() {
-                    // Called when a click is recorded for an ad.
-                    Log.d(ContentValues.TAG, "Ad was clicked.")
-                }
-
-                override fun onAdDismissedFullScreenContent() {
-                    mInterstitialAd = null
-                    // Called when ad is dismissed.
-                    val action = ExerciseMovesEndFragmentDirections.actionExerciseMovesEndFragmentToIdHomepageFragment()
-                    view?.findNavController()?.navigate(action)
-                }
-                override fun onAdImpression() {
-                    // Called when an impression is recorded for an ad.
-                    Log.d(ContentValues.TAG, "Ad recorded an impression.")
-                }
-
-                override fun onAdShowedFullScreenContent() {
-                    // Called when ad is shown.
-                    Log.d(ContentValues.TAG, "Ad showed fullscreen content.")
-                }
+        if (mInterstitialAd != null ) {
+            mInterstitialAd?.show(requireActivity())
+            Log.d(TAG, "Null değil.")
+        }
+        mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
+            override fun onAdClicked() {
+                println("kapandı5")
+                // Called when a click is recorded for an ad.
+                Log.d(ContentValues.TAG, "Ad was clicked.")
             }
 
+            override fun onAdDismissedFullScreenContent() {
+                println("kapandı")
+                mInterstitialAd = null
+                // Called when ad is dismissed.
+                val action = ExerciseMovesEndFragmentDirections.actionExerciseMovesEndFragmentToIdHomepageFragment()
+                view?.findNavController()?.navigate(action)
+            }
+            override fun onAdImpression() {
+                println("kapandı1")
+                // Called when an impression is recorded for an ad.
+                Log.d(ContentValues.TAG, "Ad recorded an impression.")
+            }
+
+            override fun onAdShowedFullScreenContent() {
+                println("kapandı3")
+                // Called when ad is shown.
+                Log.d(ContentValues.TAG, "Ad showed fullscreen content.")
+            }
         }
 
     }
@@ -156,9 +165,9 @@ class ExerciseMovesEndFragment : Fragment() {
             viewModel.updateIsCompletedToTrue(exerciseDayModel!!.level,exerciseDayModel!!.day + 1)
 
         }
-
-
     }
+
+
     private fun backstack() {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {

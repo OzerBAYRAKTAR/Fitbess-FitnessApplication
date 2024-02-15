@@ -11,7 +11,7 @@ import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 
 class RewardedAds(private val activity: Activity) {
-    private var rewardedAd: RewardedAd?= null
+    private lateinit var rewardedAd: RewardedAd
 
     fun loadRewardedAds(adUnitIdl: Int) {
         val adRequest = AdRequest.Builder().build()
@@ -26,30 +26,25 @@ class RewardedAds(private val activity: Activity) {
                 }
 
                 override fun onAdFailedToLoad(p0: LoadAdError) {
-                    rewardedAd = null
+                    //rewardedAd = p0
                 }
             }
         )
     }
 
     fun showRewardAds(adUnitIdl: Int, afterCodeUnlockDay: (RewardItem) -> Unit) {
-        if (rewardedAd != null) {
-            rewardedAd!!.fullScreenContentCallback = object : FullScreenContentCallback() {
-                override fun onAdDismissedFullScreenContent() {
-                    rewardedAd = null
-                    loadRewardedAds(adUnitIdl)
-                }
-
-                override fun onAdFailedToShowFullScreenContent(p0: AdError) {
-                    rewardedAd = null
-                }
+        rewardedAd.fullScreenContentCallback = object : FullScreenContentCallback() {
+            override fun onAdDismissedFullScreenContent() {
+                //rewardedAd = null
+                loadRewardedAds(adUnitIdl)
             }
-            rewardedAd!!.show(activity){
-                afterCodeUnlockDay(it)
+
+            override fun onAdFailedToShowFullScreenContent(p0: AdError) {
+                //rewardedAd = null
             }
         }
-        else{
-            Toast.makeText(activity,"Ad is loaded",Toast.LENGTH_LONG).show()
+        rewardedAd.show(activity){
+            afterCodeUnlockDay(it)
         }
     }
 }

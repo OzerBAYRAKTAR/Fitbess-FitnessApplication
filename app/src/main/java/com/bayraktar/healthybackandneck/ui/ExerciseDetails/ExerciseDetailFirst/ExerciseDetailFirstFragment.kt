@@ -69,7 +69,8 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
             binding.prgressStart.visibility = View.GONE
         }, 300)
         myRewardedAds = RewardedAds(requireActivity())
-        myRewardedAds?.loadRewardedAds(R.string.rewarded_ad1)
+        //myRewardedAds?.loadRewardedAds(R.string.rewarded_ad1)  //canlı
+        myRewardedAds?.loadRewardedAds(R.string.rewarded_ad1test)
         setRecyclerview()
         observeLevelOne()
         observeDayListLevelOne()
@@ -281,7 +282,7 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
             }
             positiveBtn.setOnClickListener {
                 if (myRewardedAds != null) {
-                    myRewardedAds?.showRewardAds(R.string.rewarded_ad1) {
+                    myRewardedAds?.showRewardAds(R.string.rewarded_ad1test) {
                         selectedModel = detailList[position]
                         viewModel.updateIsCompletedToTrue(1, detailList[position].day)
                         val selectedDay = position + 1

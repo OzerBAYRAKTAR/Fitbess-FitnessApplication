@@ -17,6 +17,7 @@ import com.bayraktar.healthybackandneck.utils.LanguagePreference
 import com.bayraktar.healthybackandneck.utils.LocaleHelper
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import dagger.hilt.android.AndroidEntryPoint
@@ -29,6 +30,7 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
     private lateinit var navController: NavController
     private lateinit var navControllerBar: NavController
     private lateinit var binding: ActivityHomeBinding
+
     companion object {
        var mInterstitialAd: InterstitialAd? = null
     }
@@ -40,22 +42,23 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
         setContentView(binding.root)
 
 
-      // window.setFlags(
+
+        // window.setFlags(
       //     WindowManager.LayoutParams.FLAG_FULLSCREEN,
       //     WindowManager.LayoutParams.FLAG_FULLSCREEN
       // )
 
-        var adRequest = AdRequest.Builder().build()
+      // var adRequest = AdRequest.Builder().build()
 
-        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
-            override fun onAdFailedToLoad(adError: LoadAdError) {
-                mInterstitialAd = null
-            }
+      // InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+      //     override fun onAdFailedToLoad(adError: LoadAdError) {
+      //         mInterstitialAd = null
+      //     }
 
-            override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                mInterstitialAd = interstitialAd
-            }
-        })
+      //     override fun onAdLoaded(interstitialAd: InterstitialAd) {
+      //         mInterstitialAd = interstitialAd
+      //     }
+      // })
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
