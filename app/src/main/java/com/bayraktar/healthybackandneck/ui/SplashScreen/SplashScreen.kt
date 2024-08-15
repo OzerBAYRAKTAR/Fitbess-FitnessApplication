@@ -20,6 +20,7 @@ import com.bayraktar.healthybackandneck.ui.HomeActivity
 import com.bayraktar.healthybackandneck.utils.LanguagePreference
 import com.bayraktar.healthybackandneck.utils.LocaleHelper
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 
 @SuppressLint("CustomSplashScreen")
@@ -36,6 +37,12 @@ class SplashScreen : AppCompatActivity() {
         setContentView(binding.root)
 
         dataStoreManager = DataStoreManage.getInstance(applicationContext)
+
+
+        runBlocking {
+            dataStoreManager.initializeDataStore()
+        }
+
         downToUp = AnimationUtils.loadAnimation(applicationContext,R.anim.downtoup)
         upToDown = AnimationUtils.loadAnimation(applicationContext,R.anim.uptodown)
         binding.fit.animation = downToUp
@@ -45,7 +52,6 @@ class SplashScreen : AppCompatActivity() {
         changeStatusBarColor(resources.getColor(R.color.white, theme))
 
 
-        dataStoreManager = DataStoreManage.getInstance(this)
 
         val savedLanguageCode = LanguagePreference.getLanguageCode(this)
         savedLanguageCode?.let {

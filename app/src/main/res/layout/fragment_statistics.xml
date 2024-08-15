@@ -47,9 +47,7 @@
                     android:layout_marginEnd="25dp"
                     android:src="@drawable/settttng"
                     android:visibility="gone"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView17"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView17" />
+                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <ImageView
                     android:id="@+id/btnAdBlock"

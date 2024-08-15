@@ -222,7 +222,103 @@ class ExerciseDetailSecondFragment : Fragment(), ExerciseItemClickListener {
         }
 
     }
+    @SuppressLint("DiscouragedApi")
+    private fun addToRoomExercises2() {
+        try {
+            val inputStream = context?.assets?.open("exercises.json")
+            val size = inputStream?.available() ?: 0
+            val buffer = ByteArray(size)
+            inputStream?.read(buffer)
+            inputStream?.close()
+            val jsonString = String(buffer, Charset.defaultCharset())
 
+            val jsonArray = JSONArray(jsonString)
+
+            for (i in 0 until jsonArray.length()) {
+                val item = jsonArray.getJSONObject(i)
+
+                val exerciseDescriptionId = resources.getIdentifier(
+                    item.optString("ExerciseDescription"), "string", requireContext().packageName
+                )
+                val exerciseDescription = if (exerciseDescriptionId != 0) {
+                    getString(exerciseDescriptionId)
+                } else {
+                    getString(R.string.not_found)
+                }
+                if (item.optInt("Level") == 2) {
+                    val exercise = ExerciseDayExercise(
+                        id = item.optInt("id"),
+                        dayId = item.optInt("DayId"),
+                        step = item.optInt("Step"),
+                        exerciseName = item.optString("ExerciseName"),
+                        exerciseDescription = exerciseDescription,
+                        image = resources.getIdentifier(
+                            item.optString("Image"),
+                            "drawable",
+                            requireContext().packageName
+                        ),
+                        isExerciseCompleted = item.optBoolean("IsExerciseCompleted"),
+                        exerciseId = item.optInt("ExerciseId"),
+                        level = item.optInt("Level"),
+                        titleName = "noTitle"
+                    )
+                    exerciseDayExercise.add(exercise)
+                }
+            }
+            viewModel.insertExerciseDayExercise(exerciseDayExercise)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+    }
+    private fun addToRoomExercises3() {
+        try {
+            val inputStream = context?.assets?.open("exercises.json")
+            val size = inputStream?.available() ?: 0
+            val buffer = ByteArray(size)
+            inputStream?.read(buffer)
+            inputStream?.close()
+            val jsonString = String(buffer, Charset.defaultCharset())
+
+            val jsonArray = JSONArray(jsonString)
+
+            for (i in 0 until jsonArray.length()) {
+                val item = jsonArray.getJSONObject(i)
+
+                val exerciseDescriptionId = resources.getIdentifier(
+                    item.optString("ExerciseDescription"), "string", requireContext().packageName
+                )
+                val exerciseDescription = if (exerciseDescriptionId != 0) {
+                    getString(exerciseDescriptionId)
+                } else {
+                    getString(R.string.not_found)
+                }
+                if (item.optInt("Level") == 2) {
+                    val exercise = ExerciseDayExercise(
+                        id = item.optInt("id"),
+                        dayId = item.optInt("DayId"),
+                        step = item.optInt("Step"),
+                        exerciseName = item.optString("ExerciseName"),
+                        exerciseDescription = exerciseDescription,
+                        image = resources.getIdentifier(
+                            item.optString("Image"),
+                            "drawable",
+                            requireContext().packageName
+                        ),
+                        isExerciseCompleted = item.optBoolean("IsExerciseCompleted"),
+                        exerciseId = item.optInt("ExerciseId"),
+                        level = item.optInt("Level"),
+                        titleName = "noTitle"
+                    )
+                    exerciseDayExercise.add(exercise)
+                }
+            }
+            viewModel.insertExerciseDayExercise(exerciseDayExercise)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+    }
     private fun setRecyclerview() = with(binding) {
         listDaysOfWeek.layoutManager = LinearLayoutManager(requireContext())
         secondAdapter = ExerciseDetailSecondAdapter(detailList, this@ExerciseDetailSecondFragment)

@@ -69,8 +69,8 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
             binding.prgressStart.visibility = View.GONE
         }, 300)
         myRewardedAds = RewardedAds(requireActivity())
-        //myRewardedAds?.loadRewardedAds(R.string.rewarded_ad1)  //canlı
-        myRewardedAds?.loadRewardedAds(R.string.rewarded_ad1test)
+        myRewardedAds?.loadRewardedAds(R.string.rewarded_ad1)  //canlı
+        //myRewardedAds?.loadRewardedAds(R.string.rewarded_ad1test)
         setRecyclerview()
         observeLevelOne()
         observeDayListLevelOne()

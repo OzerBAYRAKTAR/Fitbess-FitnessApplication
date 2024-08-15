@@ -56,18 +56,7 @@ class MoveListFragment : Fragment(), RecyclerViewClickListener, OnDeleteClicked 
 
         //interstealler canlı id => ca-app-pub-4754194669476617/1637237452
 
-        var adRequest = AdRequest.Builder().build()
 
-
-        InterstitialAd.load(requireContext(),"ca-app-pub-4754194669476617/7348843104", adRequest, object : InterstitialAdLoadCallback() {
-            override fun onAdFailedToLoad(adError: LoadAdError) {
-                mInterstitialAd = null
-            }
-
-            override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                mInterstitialAd = interstitialAd
-            }
-        })
 
         observeFavlist()
         viewModel.getFavExerciseList()
@@ -121,29 +110,41 @@ class MoveListFragment : Fragment(), RecyclerViewClickListener, OnDeleteClicked 
         val builder = AlertDialog.Builder(requireContext())
         builder.setView(dialogView)
             .setPositiveButton(R.string.close) { dialog, _ ->
-                if (mInterstitialAd != null) {
-                    mInterstitialAd?.show(requireActivity())
-                }else {
-                    dialog.dismiss()
-                }
-                mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
-                    override fun onAdClicked() {
-                        // Called when a click is recorded for an ad.
-                        Log.d(ContentValues.TAG, "Ad was clicked.")
-                    }
 
-                    override fun onAdDismissedFullScreenContent() {
+                var adRequest = AdRequest.Builder().build()
+
+
+                InterstitialAd.load(requireContext(),"ca-app-pub-4754194669476617/7348843104", adRequest, object : InterstitialAdLoadCallback() {
+                    override fun onAdFailedToLoad(adError: LoadAdError) {
                         mInterstitialAd = null
-                        dialog.dismiss()
-                    }
-                    override fun onAdImpression() {
-                        Log.d(ContentValues.TAG, "Ad recorded an impression.")
                     }
 
-                    override fun onAdShowedFullScreenContent() {
-                        Log.d(ContentValues.TAG, "Ad showed fullscreen content.")
+                    override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                        mInterstitialAd = interstitialAd
+                        mInterstitialAd?.show(requireActivity())
+
+                        mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
+                            override fun onAdClicked() {
+                                // Called when a click is recorded for an ad.
+                                Log.d(ContentValues.TAG, "Ad was clicked.")
+                            }
+
+                            override fun onAdDismissedFullScreenContent() {
+                                mInterstitialAd = null
+                                dialog.dismiss()
+                            }
+                            override fun onAdImpression() {
+                                Log.d(ContentValues.TAG, "Ad recorded an impression.")
+                            }
+
+                            override fun onAdShowedFullScreenContent() {
+                                Log.d(ContentValues.TAG, "Ad showed fullscreen content.")
+                            }
+                        }
                     }
-                }
+                })
+
+
 
             }
         val dialog = builder.create()

@@ -1,9 +1,11 @@
 package com.bayraktar.healthybackandneck.ui.Profile
 
 import android.app.AlertDialog
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
+import android.net.Uri
 import android.os.Bundle
 import android.view.Gravity
 import androidx.fragment.app.Fragment
@@ -188,13 +190,32 @@ class ProfileFragment : Fragment() {
 
     private fun startReviewFlow() {
         if (reviewInfo != null) {
-            val flow : Task<Void> = reviewManager.launchReviewFlow(requireActivity(), reviewInfo!!)
+            val flow: Task<Void> = reviewManager.launchReviewFlow(requireActivity(), reviewInfo!!)
             flow.addOnCompleteListener { task ->
                 val successMessage = getString(R.string.label_ratingsuccess)
-                showToast(requireContext(),successMessage,Gravity.CENTER,0,0)
+
+                if (task.isSuccessful) {
+                    // If the review flow was successful, open the Google Play Store link
+                    openGooglePlayStore()
+                } else {
+                    showToast(requireContext(), successMessage, Gravity.CENTER, 0, 0)
+                }
             }
         }
     }
+    private fun openGooglePlayStore() {
+        val packageName = requireContext().packageName
+        val uri = Uri.parse("market://details?id=$packageName")
+        val goToMarket = Intent(Intent.ACTION_VIEW, uri)
+        try {
+            startActivity(goToMarket)
+        } catch (e: ActivityNotFoundException) {
+            // If Google Play Store app is not available, open the link in a web browser
+            val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$packageName"))
+            startActivity(webIntent)
+        }
+    }
+
 
     private fun setBindingThings() = with(binding) {
 

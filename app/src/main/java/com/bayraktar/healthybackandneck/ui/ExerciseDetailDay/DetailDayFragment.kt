@@ -75,6 +75,7 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
     }
     private fun adMOb() {
         binding.startExercise.setOnClickListener {
+            binding.prgrsDetail.visibility = View.VISIBLE
             requireActivity().runOnUiThread {
                 val adRequest = AdRequest.Builder().build()
 
@@ -102,6 +103,7 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
                                 override fun onAdDismissedFullScreenContent() {
                                     println("vvv")
                                     mInterstitialAd = null
+                                    binding.prgrsDetail.visibility = View.GONE
                                     // Called when ad is dismissed.
                                     val action = DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment(
                                         exerciseList.toTypedArray(), exerciseDayModel

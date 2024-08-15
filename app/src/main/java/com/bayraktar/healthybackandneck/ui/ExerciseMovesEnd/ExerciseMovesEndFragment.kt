@@ -65,26 +65,12 @@ class ExerciseMovesEndFragment : Fragment() {
         //interstealler canlı id => ca-app-pub-4754194669476617/6013325105
         //interstealler test id => ca-app-pub-3940256099942544/1033173712
 
-        val adRequest = AdRequest.Builder().build()
-
-        InterstitialAd.load(requireContext(), "ca-app-pub-4754194669476617/6013325105", adRequest, object : InterstitialAdLoadCallback() {
-            override fun onAdFailedToLoad(adError: LoadAdError) {
-                mInterstitialAd = null
-            }
-
-            override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                mInterstitialAd = interstitialAd
-            }
-        })
-
-
-
 
         backstack()
         getSetData()
-        binding.btnEnd.setOnClickListener {
-            btnEndClicked()
-        }
+        btnEndClicked()
+
+
     }
 
     private fun btnCloseClicked() {
@@ -114,37 +100,54 @@ class ExerciseMovesEndFragment : Fragment() {
     }
 
     private fun btnEndClicked() {
-        if (mInterstitialAd != null ) {
-            mInterstitialAd?.show(requireActivity())
-            Log.d(TAG, "Null değil.")
+        binding.btnEnd.setOnClickListener {
+            binding.prgsEnd.visibility  =View.VISIBLE
+            val adRequest = AdRequest.Builder().build()
+
+            InterstitialAd.load(requireContext(), "ca-app-pub-4754194669476617/6013325105", adRequest, object : InterstitialAdLoadCallback() {
+                override fun onAdFailedToLoad(adError: LoadAdError) {
+                    mInterstitialAd = null
+                }
+                override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                    mInterstitialAd = interstitialAd
+                    mInterstitialAd?.show(requireActivity())
+
+
+                    mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
+                        override fun onAdClicked() {
+                            println("kapandı5")
+                            // Called when a click is recorded for an ad.
+                            Log.d(ContentValues.TAG, "Ad was clicked.")
+                        }
+
+                        override fun onAdDismissedFullScreenContent() {
+                            println("kapandı")
+                            mInterstitialAd = null
+                            binding.prgsEnd.visibility  =View.GONE
+                            // Called when ad is dismissed.
+                            val action =
+                                ExerciseMovesEndFragmentDirections.actionExerciseMovesEndFragmentToIdHomepageFragment()
+                            view?.findNavController()?.navigate(action)
+                        }
+
+                        override fun onAdImpression() {
+                            println("kapandı1")
+                            // Called when an impression is recorded for an ad.
+                            Log.d(ContentValues.TAG, "Ad recorded an impression.")
+                        }
+
+                        override fun onAdShowedFullScreenContent() {
+                            println("kapandı3")
+                            // Called when ad is shown.
+                            Log.d(ContentValues.TAG, "Ad showed fullscreen content.")
+                        }
+                    }
+                }
+            })
+
+
+
         }
-        mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
-            override fun onAdClicked() {
-                println("kapandı5")
-                // Called when a click is recorded for an ad.
-                Log.d(ContentValues.TAG, "Ad was clicked.")
-            }
-
-            override fun onAdDismissedFullScreenContent() {
-                println("kapandı")
-                mInterstitialAd = null
-                // Called when ad is dismissed.
-                val action = ExerciseMovesEndFragmentDirections.actionExerciseMovesEndFragmentToIdHomepageFragment()
-                view?.findNavController()?.navigate(action)
-            }
-            override fun onAdImpression() {
-                println("kapandı1")
-                // Called when an impression is recorded for an ad.
-                Log.d(ContentValues.TAG, "Ad recorded an impression.")
-            }
-
-            override fun onAdShowedFullScreenContent() {
-                println("kapandı3")
-                // Called when ad is shown.
-                Log.d(ContentValues.TAG, "Ad showed fullscreen content.")
-            }
-        }
-
     }
 
     private fun getSetData() = with(binding) {

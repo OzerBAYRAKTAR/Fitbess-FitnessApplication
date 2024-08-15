@@ -15,13 +15,13 @@ import com.bayraktar.healthybackandneck.data.Models.WaterReminderState
 
 
 @Dao
-interface MovesDao {
+interface  MovesDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertExerciseDay(day: ExerciseDay)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertCounTable(id: CountModel)
+    fun insertCounTable(id: CountModel  )
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

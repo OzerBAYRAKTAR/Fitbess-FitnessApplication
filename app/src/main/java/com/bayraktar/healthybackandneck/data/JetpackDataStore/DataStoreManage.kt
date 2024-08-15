@@ -38,6 +38,7 @@ class DataStoreManage(context: Context) {
             }
         }
 
+
         val TXT_GENDER = stringPreferencesKey("txt_gender")
         val TXT_ACTIVITY_LEVEL = intPreferencesKey("txt_activity_level")
         val TXT_AGE = intPreferencesKey("txt_age")
@@ -52,6 +53,16 @@ class DataStoreManage(context: Context) {
         val TXT_FATRATE = stringPreferencesKey("txt_fatrate")
         val TXT_LOGIN = booleanPreferencesKey("isLogged")
 
+    }
+    suspend fun initializeDataStore() {
+        // Set the initial value of isLogged to false if it is not already set
+        withContext(Dispatchers.IO) {
+            dataStore.edit { preferences ->
+                if (!preferences.contains(TXT_LOGIN)) {
+                    preferences[TXT_LOGIN] = false
+                }
+            }
+        }
     }
 
     suspend fun saveGender(data: String) {
