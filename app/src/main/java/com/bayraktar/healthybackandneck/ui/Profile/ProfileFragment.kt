@@ -21,6 +21,7 @@ import androidx.work.Constraints
 import androidx.work.NetworkType
 import java.util.concurrent.TimeUnit
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.utils.loadForLifecycle
 import com.bayraktar.healthybackandneck.data.Models.MotivationNotificationState
 import com.bayraktar.healthybackandneck.data.Models.WaterReminderState
 import com.bayraktar.healthybackandneck.databinding.FragmentProfileBinding
@@ -33,7 +34,6 @@ import com.bayraktar.healthybackandneck.utils.WaterReminderWorker
 import com.bayraktar.healthybackandneck.utils.showToast
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
 import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.ReviewManagerFactory
@@ -70,12 +70,10 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        MobileAds.initialize(requireContext()) {}
 
         // profile banner id => ca-app-pub-4754194669476617/7416253720
         mAdView = binding.adView
-        val adRequest = AdRequest.Builder().build()
-        mAdView.loadAd(adRequest)
+        mAdView.loadForLifecycle(viewLifecycleOwner)
 
 
 

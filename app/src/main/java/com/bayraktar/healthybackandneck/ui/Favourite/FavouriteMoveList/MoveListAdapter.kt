@@ -30,9 +30,10 @@ class MoveListAdapter(
         }
 
         override fun onClick(p0: View?) {
-            mRecyclerViewClickListener.recyclerviewListClicked(p0!!, adapterPosition)
             val position = adapterPosition
-
+            if (p0 != null && position != RecyclerView.NO_POSITION) {
+                mRecyclerViewClickListener.recyclerviewListClicked(p0, position)
+            }
         }
 
     }
@@ -59,7 +60,10 @@ class MoveListAdapter(
             labelDay.text = model.exerciseName
 
             deleteBtn.setOnClickListener {
-                onDeleteClicked.onDeleteClicked(position)
+                val currentPosition = holder.adapterPosition
+                if (currentPosition != RecyclerView.NO_POSITION) {
+                    onDeleteClicked.onDeleteClicked(currentPosition)
+                }
             }
         }
 

@@ -24,7 +24,6 @@ import com.bayraktar.healthybackandneck.utils.Interfaces.ExerciseItemClickListen
 import com.bayraktar.healthybackandneck.utils.RewardedAds
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.OnUserEarnedRewardListener
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
@@ -62,13 +61,12 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         //ca-app-pub-3940256099942544/5224354917 test
-        MobileAds.initialize(requireContext()) {}
 
         binding.prgressStart.visibility = View.VISIBLE
         handler.postDelayed({
             binding.prgressStart.visibility = View.GONE
         }, 300)
-        myRewardedAds = RewardedAds(requireActivity())
+        myRewardedAds = RewardedAds(requireActivity(), viewLifecycleOwner)
         myRewardedAds?.loadRewardedAds(R.string.rewarded_ad1)  //canlı
         //myRewardedAds?.loadRewardedAds(R.string.rewarded_ad1test)
         setRecyclerview()
@@ -282,7 +280,7 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
             }
             positiveBtn.setOnClickListener {
                 if (myRewardedAds != null) {
-                    myRewardedAds?.showRewardAds(R.string.rewarded_ad1test) {
+                    myRewardedAds?.showRewardAds {
                         selectedModel = detailList[position]
                         viewModel.updateIsCompletedToTrue(1, detailList[position].day)
                         val selectedDay = position + 1
@@ -290,12 +288,6 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
                         observeListWithDayId()
                     }
                     dialog.dismiss()
-                }else{
-                    selectedModel = detailList[position]
-                    viewModel.updateIsCompletedToTrue(1, detailList[position].day)
-                    val selectedDay = position + 1
-                    viewModel.getExerciseListWithDayID(selectedDay, 1)
-                    observeListWithDayId()
                 }
 
             }
@@ -305,5 +297,11 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
             viewModel.getExerciseListWithDayID(selectedDay, 1)
             observeListWithDayId()
         }
+    }
+    override fun onDestroyView() {
+        handler.removeCallbacksAndMessages(null)
+        myRewardedAds = null
+        _binding = null
+        super.onDestroyView()
     }
 }

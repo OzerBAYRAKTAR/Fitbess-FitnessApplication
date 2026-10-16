@@ -1,0 +1,4 @@
+<resources>
+    <string name="nav_favorites">Избранное</string>
+    <string name="ad_not_ready">Реклама пока не готова. Повторите попытку немного позже.</string>
+</resources>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="nav_favorites">Favoriten</string>
+    <string name="ad_not_ready">Die Anzeige ist noch nicht bereit. Bitte versuche es in Kürze erneut.</string>
+</resources>

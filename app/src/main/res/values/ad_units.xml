@@ -1,0 +1,8 @@
+<resources>
+    <string name="ad_banner_home" translatable="false">ca-app-pub-4754194669476617/5943389951</string>
+    <string name="ad_banner_profile" translatable="false">ca-app-pub-1896269552628731/8170906506</string>
+    <string name="ad_banner_statistics" translatable="false">ca-app-pub-1896269552628731/5972118575</string>
+    <string name="ad_banner_exercise" translatable="false">ca-app-pub-1896269552628731/7285200241</string>
+    <string name="ad_banner_ready" translatable="false">ca-app-pub-4754194669476617/5976831939</string>
+    <string name="ad_banner_rest" translatable="false">ca-app-pub-1896269552628731/2998470877</string>
+</resources>

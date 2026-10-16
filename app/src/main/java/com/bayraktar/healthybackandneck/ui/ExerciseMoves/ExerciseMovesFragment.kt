@@ -17,6 +17,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.utils.loadForLifecycle
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
@@ -27,7 +28,6 @@ import com.bayraktar.healthybackandneck.ui.ExerciseMovesReady.ExerciseMovesReady
 import com.bayraktar.healthybackandneck.utils.showToastFavourite
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -64,13 +64,11 @@ class ExerciseMovesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        MobileAds.initialize(requireContext()) {}
 
         //banner id => ca-app-pub-4754194669476617/2002777967
 
         mAdView = binding.adView
-        val adRequest = AdRequest.Builder().build()
-        mAdView.loadAd(adRequest)
+        mAdView.loadForLifecycle(viewLifecycleOwner)
         binding.txtTimeLeft.text = "10"
         binding.pbTimer.max = timeSelected
 

@@ -15,7 +15,6 @@ import com.bayraktar.healthybackandneck.ui.Adapters.OnBoardingItemsAdapter
 import com.bayraktar.healthybackandneck.data.Models.OnBoardingItems
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.ActivityMainBinding
-import com.google.android.gms.ads.MobileAds
 
 
 class MainActivity : AppCompatActivity() {
@@ -33,7 +32,6 @@ class MainActivity : AppCompatActivity() {
       //      WindowManager.LayoutParams.FLAG_FULLSCREEN
       //  )
 
-        MobileAds.initialize(this) {}
 
 
     }
