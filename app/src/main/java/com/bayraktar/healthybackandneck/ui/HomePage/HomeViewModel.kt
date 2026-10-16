@@ -64,6 +64,10 @@ class HomeViewModel @Inject constructor(
         }
     }
 
+    suspend fun category(title: String, level: Int): List<ExerciseDayExercise> = kotlinx.coroutines.withContext(Dispatchers.IO) {
+        repo.getExerciseListWithTitleAndLevel(titleName = title, level = level)
+    }
+
     fun fetchExerciseDayExercises() {
         viewModelScope.launch(Dispatchers.IO) {
             val exercises = repo.getSubExerciseDayExercises(titleName = "noTitle")

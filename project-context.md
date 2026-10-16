@@ -50,7 +50,8 @@ The following values describe the working checkout at installation on 2026-10-16
 - Automatic commit/push: enabled by the project owner in this conversation, 2026-10-16.
 - Authorized remote: `origin`, `https://github.com/OzerBAYRAKTAR/Fitbess-FitnessApplication.git`.
 - Working branches: `codex/` plus a task-specific name. Default branch: `main`.
-- Meaningful milestone: cohesive completed outcome with required checks and review complete. Runtime changes require the relevant emulator verification before automatic checkpoint.
+- Automatic checkpoint cadence: only substantial, cohesive completed milestones after required checks and review; do not commit/push every edit, small adjustment or intermediate step. Runtime changes require relevant emulator verification.
+- Pull requests: do not create a PR automatically. Commit/push only the authorized working branch; a PR requires a separate explicit user request.
 - Commit convention: concise imperative English subject, unless the repository establishes another convention.
 - Stage only owned task changes by explicit paths/hunks. Preserve pre-existing staged and unstaged changes. Generated APK/AAB files and local IDE configuration are excluded from routine checkpoints.
 - Default/protected branch writes, merge, release and deployment: separate explicit authorization.

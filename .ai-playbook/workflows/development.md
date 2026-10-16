@@ -5,7 +5,7 @@
 3. Implement a cohesive change with meaningful tests. For a bug, show that the regression test fails before the fix when feasible.
 4. Run relevant static/build/test checks. For Android runtime changes, use android-verification and observe the changed behavior on an emulator.
 5. Use code-review on the final diff. Address actionable findings and rerun affected validation.
-6. Use git-checkpoint when a meaningful unit of work is complete and automatic Git is explicitly enabled in project context or authorized in the session.
+6. Use git-checkpoint only for a substantial, cohesive completed milestone when automatic Git is enabled. Group small edits and intermediate steps into that milestone; do not commit/push each change. Honor the project's checkpoint cadence and PR policy. Do not create a PR without explicit authorization.
 7. Report the outcome and verification evidence in Turkish. State outstanding environment, runtime or CI gaps.
 
 Do not impose full runtime testing on documentation-only changes. Do not mark an application behavior task verified when required runtime checks are blocked. Continue useful safe work, then explain the exact blocker instead of fabricating success.

@@ -17,6 +17,8 @@ class DetailDayAdapter(
 ): RecyclerView.Adapter<DetailDayAdapter.ItemHolder>() {
 
 
+    var earned: Set<Int>? = null
+
     inner class ItemHolder(val binding: ItemDetaildayBinding, recyclerViewClickListener: RecyclerViewClickListener): RecyclerView.ViewHolder(binding.root)
         , View.OnClickListener {
 
@@ -27,7 +29,8 @@ class DetailDayAdapter(
         }
 
         override fun onClick(p0: View?) {
-            mRecyclerViewClickListener.recyclerviewListClicked(p0!!,adapterPosition)
+            val position = adapterPosition
+            if (position != RecyclerView.NO_POSITION && p0 != null) mRecyclerViewClickListener.recyclerviewListClicked(p0, position)
         }
 
     }
@@ -53,6 +56,16 @@ class DetailDayAdapter(
             }
             roundedImageView.setImageDrawable(imageDrawable)
             labelDay.text = model.exerciseName
+            val accessible = earned?.let { com.bayraktar.healthybackandneck.utils.MoveAccess.allowed(model, it) } == true
+            lockBadge.visibility = if (earned != null && !accessible) View.VISIBLE else View.GONE
+            txtExerciseCount.visibility = View.VISIBLE
+            txtExerciseCount.setText(when {
+                earned == null -> R.string.access_loading
+                !accessible -> R.string.move_locked
+                com.bayraktar.healthybackandneck.utils.MoveAccess.requiresReward(model) -> R.string.move_unlocked
+                else -> R.string.move_free
+            })
+            root.contentDescription = "${model.exerciseName}, ${txtExerciseCount.text}"
         }
     }
 

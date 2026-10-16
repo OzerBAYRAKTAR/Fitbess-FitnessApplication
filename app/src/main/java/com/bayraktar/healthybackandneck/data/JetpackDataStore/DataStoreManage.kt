@@ -25,6 +25,16 @@ class DataStoreManage(context: Context) {
     private val dataStore = context.dataStore
 
 
+    private val unlockedMovesKey = androidx.datastore.preferences.core.stringSetPreferencesKey("earned_catalog_move_ids_v1")
+    fun unlockedMoveIds(): Flow<Set<Int>> = dataStore.data.map { preferences ->
+        preferences[unlockedMovesKey].orEmpty().mapNotNull(String::toIntOrNull).toSet()
+    }
+    suspend fun unlockMove(id: Int) {
+        dataStore.edit { preferences ->
+            preferences[unlockedMovesKey] = preferences[unlockedMovesKey].orEmpty() + id.toString()
+        }
+    }
+
     companion object {
 
         @Volatile

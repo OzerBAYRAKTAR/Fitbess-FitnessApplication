@@ -1,6 +1,12 @@
 package com.bayraktar.healthybackandneck.ui.ExerciseMovesReady
 
 import android.annotation.SuppressLint
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.first
+import com.bayraktar.healthybackandneck.utils.MoveAccess
+import com.bayraktar.healthybackandneck.utils.MoveAccessViewModel
 import androidx.fragment.app.activityViewModels
 import android.content.ContentValues
 import com.bayraktar.healthybackandneck.utils.WorkoutNavigation
@@ -33,6 +39,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class ExerciseMovesReadyFragment : Fragment() {
 
     private val session: com.bayraktar.healthybackandneck.ui.ExerciseMoves.WorkoutSessionViewModel by activityViewModels()
+    private val access: MoveAccessViewModel by viewModels()
     private lateinit var navigation: WorkoutNavigation
     private var resumeTimer = false
     private var _binding: FragmentExerciseMovesReadyBinding? = null
@@ -76,11 +83,22 @@ class ExerciseMovesReadyFragment : Fragment() {
         binding.pbTimer.max = timeSelected
 
 
-        startTimerSetup()
-
         getSetData()
+        if (exerciseList.any(MoveAccess::requiresReward)) {
+            binding.goNextbtn.isEnabled = false
+            viewLifecycleOwner.lifecycleScope.launch {
+                val earned = access.earned.first { it != null }.orEmpty()
+                exerciseList = ArrayList(exerciseList.filter { MoveAccess.allowed(it, earned) })
+                binding.goNextbtn.isEnabled = exerciseList.isNotEmpty()
+                if (exerciseList.isNotEmpty()) {
+                    if (viewLifecycleOwner.lifecycle.currentState.isAtLeast(androidx.lifecycle.Lifecycle.State.RESUMED)) startTimerSetup()
+                    else { resumeTimer = true; isStart = false }
+                } else binding.txtTimeleft.setText(R.string.unlock_to_start)
+            }
+        } else startTimerSetup()
 
         binding.goNextbtn.setOnClickListener {
+                if (exerciseList.isEmpty() || !binding.goNextbtn.isEnabled) return@setOnClickListener
                 val action =
                     ExerciseMovesReadyFragmentDirections.actionExerciseMovesFragmentToExerciseMovesFragment2(
                         0, exerciseList.toTypedArray(), exerciseDayModel

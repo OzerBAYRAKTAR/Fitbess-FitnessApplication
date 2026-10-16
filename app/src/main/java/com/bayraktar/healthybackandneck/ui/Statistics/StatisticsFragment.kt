@@ -38,9 +38,12 @@ class StatisticsFragment : Fragment() {
                 set(Calendar.DAY_OF_WEEK, firstDayOfWeek)
                 set(Calendar.HOUR_OF_DAY, 0); set(Calendar.MINUTE, 0); set(Calendar.SECOND, 0); set(Calendar.MILLISECOND, 0)
             }.timeInMillis
-            val week = sessions.filter { it.endedAt >= weekStart }
+            val now = System.currentTimeMillis()
+            val week = sessions.filter { it.endedAt in weekStart..now }
             binding.weekWorkouts.text = week.count { it.isComplete }.toString()
-            binding.weekMinutes.text = (week.sumOf { it.activeMillis } / 60000).toString()
+            val activeMillis = week.sumOf { it.activeMillis }
+            binding.weekMinutes.text = if (activeMillis in 1..59999) "<1" else (activeMillis / 60000).toString()
+            renderChart(WeeklyActivity.days(sessions, now))
             binding.weekMoves.text = week.sumOf { it.completedMoves }.toString()
             binding.emptyHistory.visibility = if (sessions.isEmpty()) View.VISIBLE else View.GONE
             binding.achievement.setText(if (sessions.any { it.isComplete }) R.string.first_workout_done else R.string.first_workout_goal)
@@ -86,6 +89,42 @@ class StatisticsFragment : Fragment() {
                 row.findViewById<TextView>(R.id.historyStatus).setText(if (session.isComplete) R.string.session_complete else R.string.session_partial)
                 binding.history.addView(row)
             }
+    }
+    private fun renderChart(days: List<ActivityDay>) {
+        binding.weekBars.removeAllViews()
+        val max = days.maxOfOrNull { it.activeMillis }?.coerceAtLeast(60000L) ?: 60000L
+        val density = resources.displayMetrics.density
+        days.forEach { day ->
+            val column = android.widget.LinearLayout(requireContext()).apply {
+                orientation = android.widget.LinearLayout.VERTICAL
+                gravity = android.view.Gravity.BOTTOM or android.view.Gravity.CENTER_HORIZONTAL
+                layoutParams = android.widget.LinearLayout.LayoutParams(0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1f)
+                importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_YES
+                contentDescription = getString(R.string.chart_day_summary,
+                    DateFormat.getDateInstance().format(Date(day.start)), day.activeMillis / 60000, day.activeMillis / 1000 % 60)
+            }
+            val value = TextView(requireContext()).apply {
+                text = when { day.activeMillis == 0L -> "0"; day.activeMillis < 60000 -> "<1"; else -> (day.activeMillis / 60000).toString() }
+                textSize = 12f
+                setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.fit_muted))
+                importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
+            }
+            val bar = View(requireContext()).apply {
+                val height = if (day.activeMillis == 0L) 2 else (100 * day.activeMillis.toDouble() / max).toInt().coerceAtLeast(4)
+                layoutParams = android.widget.LinearLayout.LayoutParams((18 * density).toInt(), (height * density).toInt()).apply { topMargin = (8 * density).toInt() }
+                setBackgroundResource(if (day.activeMillis == 0L) R.drawable.fit_soft_card else R.drawable.fit_bar)
+                importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
+            }
+            val label = TextView(requireContext()).apply {
+                text = java.text.SimpleDateFormat("EE", java.util.Locale.getDefault()).format(Date(day.start))
+                textSize = 12f
+                setPadding(0, (8 * density).toInt(), 0, 0)
+                setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.fit_muted))
+                importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
+            }
+            column.addView(value); column.addView(bar); column.addView(label)
+            binding.weekBars.addView(column)
+        }
     }
     override fun onDestroyView() { _binding = null; super.onDestroyView() }
 }

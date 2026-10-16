@@ -16,7 +16,13 @@ import com.google.android.gms.ads.rewarded.RewardItem
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 
-class RewardedAds(private val activity: Activity, private val owner: LifecycleOwner) : DefaultLifecycleObserver {
+class RewardedAds(
+    private val activity: Activity,
+    private val owner: LifecycleOwner,
+    private val loadAd: (String, RewardedAdLoadCallback) -> Unit = { id, callback ->
+        AdsSdk.whenReady(owner) { RewardedAd.load(activity.applicationContext, id, AdRequest.Builder().build(), callback) }
+    },
+) : DefaultLifecycleObserver {
     private var rewardedAd: RewardedAd? = null
     private var configuredUnit: Int? = null
     private var loadedAt = 0L
@@ -35,8 +41,7 @@ class RewardedAds(private val activity: Activity, private val owner: LifecycleOw
         rewardedAd = null
         loading = true
         val id = if (BuildConfig.DEBUG) TEST_AD_UNIT_ID else activity.getString(adUnitId)
-        AdsSdk.whenReady(owner) {
-            RewardedAd.load(activity.applicationContext, id, AdRequest.Builder().build(), object : RewardedAdLoadCallback() {
+        loadAd(id, object : RewardedAdLoadCallback() {
             override fun onAdLoaded(ad: RewardedAd) {
                 loading = false
                 if (disposed) return
@@ -48,11 +53,10 @@ class RewardedAds(private val activity: Activity, private val owner: LifecycleOw
                 loading = false
                 rewardedAd = null
             }
-            })
-        }
+        })
     }
 
-    fun showRewardAds(onReward: (RewardItem) -> Unit): Boolean {
+    fun showRewardAds(retainEarnedReward: Boolean = false, onReward: (RewardItem) -> Unit): Boolean {
         if (disposed || showing || activity.isFinishing || activity.isDestroyed ||
             !owner.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) return false
         val ad = rewardedAd
@@ -76,9 +80,13 @@ class RewardedAds(private val activity: Activity, private val owner: LifecycleOw
                 configuredUnit?.let(::loadRewardedAds)
             }
         }
+        var earned = false
         ad.show(activity) { reward ->
             // Dismissal or a load failure must never grant the reward.
-            if (!disposed) onReward(reward)
+            if (!earned && (!disposed || retainEarnedReward)) {
+                earned = true
+                onReward(reward)
+            }
         }
         return true
     }

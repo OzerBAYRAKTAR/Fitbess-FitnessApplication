@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fit_background"
     tools:context=".ui.HomePage.HomePageFragment">
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,18 +14,30 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-
-            <TextView android:id="@+id/imageView7" style="@style/FitTitle"
-                android:layout_width="0dp" android:layout_height="wrap_content"
-                android:layout_margin="24dp" android:text="@string/brand_short"
-                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" />
-
+            <TextView
+                android:id="@+id/imageView7"
+                style="@style/FitTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:text="@string/brand_short"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                style="@style/FitBody"
+                android:id="@+id/homeSubtitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/home_subtitle"
+                app:layout_constraintTop_toBottomOf="@id/imageView7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
             <ImageView
                 android:id="@+id/imageView6"
                 android:layout_marginStart="10dp"
@@ -35,9 +47,7 @@
                 android:src="@drawable/women"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView7"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView7" />
-
-
+                app:layout_constraintTop_toTopOf="@+id/imageView7"/>
             <ImageView
                 android:id="@+id/btnAdBlock"
                 android:layout_width="wrap_content"
@@ -47,21 +57,16 @@
                 android:layout_marginEnd="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
-
             <TextView
                 android:id="@+id/labelPrgram"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
                 android:text="@string/choose_program"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView7" />
-
+                app:layout_constraintTop_toBottomOf="@id/homeSubtitle"
+                style="@style/FitSection"/>
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/pageerHome"
                 android:layout_width="match_parent"
@@ -70,8 +75,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/labelPrgram" />
-
+                app:layout_constraintTop_toBottomOf="@id/labelPrgram"/>
             <LinearLayout
                 android:id="@+id/indicatorsContainer"
                 android:layout_width="wrap_content"
@@ -80,9 +84,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="@id/pageerHome"
                 app:layout_constraintStart_toStartOf="@id/pageerHome"
-                app:layout_constraintTop_toBottomOf="@id/pageerHome" />
-
-
+                app:layout_constraintTop_toBottomOf="@id/pageerHome"/>
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardTrain"
                 android:layout_width="match_parent"
@@ -99,8 +101,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/indicatorsContainer">
-
-
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -109,15 +109,12 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
-
-
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent">
-
                         <LinearLayout
                             android:id="@+id/linearLayout2"
                             android:layout_width="match_parent"
@@ -127,31 +124,27 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
-
                             <TextView
                                 android:id="@+id/monthYearTV"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="2"
-                                android:fontFamily="sans-serif"
                                 android:paddingStart="15dp"
                                 android:text="Feb 2021"
-                                android:textColor="@color/white"
-                                android:textSize="20sp"
-                                tools:ignore="RtlCompat,RtlSymmetry" />
-
+                                tools:ignore="RtlCompat,RtlSymmetry"
+                                style="@style/FitSection"
+                                android:layout_marginStart="24dp"
+                                android:layout_marginTop="24dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginStart="5dp"
+                                android:layout_marginStart="24dp"
                                 android:layout_marginEnd="8dp"
-                                android:fontFamily="sans-serif"
                                 android:text="Hafta Hedefi   1/4"
-                                android:textColor="@color/white"
-                                android:textSize="20sp" />
-
+                                style="@style/FitSection"
+                                android:layout_marginTop="24dp"/>
                             <androidx.appcompat.widget.AppCompatImageButton
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -160,9 +153,7 @@
                                 android:src="@drawable/leftcalender"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
-                                android:visibility="gone" />
-
-
+                                android:visibility="gone"/>
                             <androidx.appcompat.widget.AppCompatImageButton
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -170,11 +161,8 @@
                                 android:background="@null"
                                 android:src="@drawable/rightcalender"
                                 android:textStyle="bold"
-                                android:visibility="gone" />
-
+                                android:visibility="gone"/>
                         </LinearLayout>
-
-
                         <LinearLayout
                             android:id="@+id/linearLayout"
                             android:layout_width="match_parent"
@@ -186,13 +174,11 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:orientation="vertical">
-
                                 <TextView
                                     android:layout_width="35dp"
                                     android:layout_height="wrap_content"
@@ -200,8 +186,7 @@
                                     android:gravity="center"
                                     android:text="@string/txt_sunday"
                                     android:textColor="@color/gray"
-                                    android:textSize="16sp" />
-
+                                    android:textSize="16sp"/>
                                 <androidx.appcompat.widget.AppCompatButton
                                     android:id="@+id/buttonSunday"
                                     android:layout_width="39dp"
@@ -212,16 +197,13 @@
                                     android:background="@drawable/calender_circle"
                                     android:text="27"
                                     android:textColor="@color/white"
-                                    android:textSize="12sp" />
+                                    android:textSize="12sp"/>
                             </LinearLayout>
-
-
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:orientation="vertical">
-
                                 <TextView
                                     android:layout_width="35dp"
                                     android:layout_height="wrap_content"
@@ -229,8 +211,7 @@
                                     android:text="@string/txt_monday"
                                     android:textAlignment="center"
                                     android:textColor="@color/gray"
-                                    android:textSize="16sp" />
-
+                                    android:textSize="16sp"/>
                                 <androidx.appcompat.widget.AppCompatButton
                                     android:id="@+id/buttonMonday"
                                     android:layout_width="39dp"
@@ -240,16 +221,13 @@
                                     android:layout_marginTop="3dp"
                                     android:background="@drawable/calender_circle"
                                     android:text="27"
-                                    android:textColor="@color/white" />
-
+                                    android:textColor="@color/white"/>
                             </LinearLayout>
-
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:orientation="vertical">
-
                                 <TextView
                                     android:layout_width="35dp"
                                     android:layout_height="wrap_content"
@@ -258,9 +236,7 @@
                                     android:text="@string/txt_tuesday"
                                     android:textAlignment="center"
                                     android:textColor="@color/gray"
-                                    android:textSize="16sp" />
-
-
+                                    android:textSize="16sp"/>
                                 <androidx.appcompat.widget.AppCompatButton
                                     android:id="@+id/buttonTuesday"
                                     android:layout_width="39dp"
@@ -270,16 +246,13 @@
                                     android:layout_marginTop="3dp"
                                     android:background="@drawable/calender_circle"
                                     android:text="27"
-                                    android:textColor="@color/white" />
-
+                                    android:textColor="@color/white"/>
                             </LinearLayout>
-
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:orientation="vertical">
-
                                 <TextView
                                     android:layout_width="35dp"
                                     android:layout_height="wrap_content"
@@ -288,8 +261,7 @@
                                     android:text="@string/txt_wednesday"
                                     android:textAlignment="center"
                                     android:textColor="@color/gray"
-                                    android:textSize="16sp" />
-
+                                    android:textSize="16sp"/>
                                 <androidx.appcompat.widget.AppCompatButton
                                     android:id="@+id/buttonWednesday"
                                     android:layout_width="39dp"
@@ -299,16 +271,13 @@
                                     android:layout_marginTop="3dp"
                                     android:background="@drawable/calender_circle"
                                     android:text="27"
-                                    android:textColor="@color/white" />
-
+                                    android:textColor="@color/white"/>
                             </LinearLayout>
-
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:orientation="vertical">
-
                                 <TextView
                                     android:layout_width="35dp"
                                     android:layout_height="wrap_content"
@@ -317,9 +286,7 @@
                                     android:text="@string/txt_thursday"
                                     android:textAlignment="center"
                                     android:textColor="@color/gray"
-                                    android:textSize="16sp" />
-
-
+                                    android:textSize="16sp"/>
                                 <androidx.appcompat.widget.AppCompatButton
                                     android:id="@+id/buttonThursday"
                                     android:layout_width="39dp"
@@ -329,16 +296,13 @@
                                     android:layout_marginTop="3dp"
                                     android:background="@drawable/calender_circle"
                                     android:text="27"
-                                    android:textColor="@color/white" />
-
+                                    android:textColor="@color/white"/>
                             </LinearLayout>
-
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:orientation="vertical">
-
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -347,9 +311,7 @@
                                     android:text="@string/txt_friday"
                                     android:textAlignment="center"
                                     android:textColor="@color/gray"
-                                    android:textSize="16sp" />
-
-
+                                    android:textSize="16sp"/>
                                 <androidx.appcompat.widget.AppCompatButton
                                     android:id="@+id/buttonFriday"
                                     android:layout_width="39dp"
@@ -359,16 +321,13 @@
                                     android:layout_marginTop="3dp"
                                     android:background="@drawable/calender_circle"
                                     android:text="27"
-                                    android:textColor="@color/white" />
-
+                                    android:textColor="@color/white"/>
                             </LinearLayout>
-
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:orientation="vertical">
-
                                 <TextView
                                     android:layout_width="35dp"
                                     android:layout_height="wrap_content"
@@ -377,9 +336,7 @@
                                     android:text="@string/txt_saturday"
                                     android:textAlignment="center"
                                     android:textColor="@color/gray"
-                                    android:textSize="16sp" />
-
-
+                                    android:textSize="16sp"/>
                                 <androidx.appcompat.widget.AppCompatButton
                                     android:id="@+id/buttonSaturday"
                                     android:layout_width="39dp"
@@ -389,16 +346,12 @@
                                     android:layout_marginTop="3dp"
                                     android:background="@drawable/calender_circle"
                                     android:text="5"
-                                    android:textColor="@color/white" />
-
+                                    android:textColor="@color/white"/>
                             </LinearLayout>
-
                         </LinearLayout>
-
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
-
             <TextView
                 android:id="@+id/labelDiet"
                 android:layout_width="wrap_content"
@@ -411,8 +364,7 @@
                 android:textSize="18sp"
                 android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardTrain" />
-
+                app:layout_constraintTop_toBottomOf="@+id/cardTrain"/>
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardNutrition"
                 android:layout_width="match_parent"
@@ -429,12 +381,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cardTrain">
-
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="195dp">
-
-
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/constraintLayout2"
                         android:layout_width="match_parent"
@@ -442,7 +391,6 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
-
                         <androidx.appcompat.widget.AppCompatImageView
                             android:id="@+id/appCompatImageView"
                             android:layout_width="match_parent"
@@ -451,8 +399,7 @@
                             android:src="@drawable/diet4_removed"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
+                            app:layout_constraintTop_toTopOf="parent"/>
                         <TextView
                             android:layout_width="175dp"
                             android:layout_height="wrap_content"
@@ -464,11 +411,8 @@
                             app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView"
                             app:layout_constraintEnd_toEndOf="@+id/appCompatImageView"
                             app:layout_constraintTop_toTopOf="@+id/appCompatImageView"
-                            app:layout_constraintVertical_bias="0.271" />
-
-
+                            app:layout_constraintVertical_bias="0.271"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/constraintDiet"
                         android:layout_width="match_parent"
@@ -476,7 +420,6 @@
                         android:background="@color/inactive"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
-
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -488,8 +431,7 @@
                             android:textSize="19sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
+                            app:layout_constraintTop_toTopOf="parent"/>
                         <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="28dp"
                             android:layout_height="28dp"
@@ -498,13 +440,10 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.5" />
-
+                            app:layout_constraintVertical_bias="0.5"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardBreath"
                 android:layout_width="match_parent"
@@ -521,12 +460,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cardNutrition">
-
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="195dp">
-
-
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/constraintLayout4"
                         android:layout_width="match_parent"
@@ -534,7 +470,6 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
-
                         <androidx.appcompat.widget.AppCompatImageView
                             android:id="@+id/appCompatImageView1"
                             android:layout_width="215dp"
@@ -544,8 +479,7 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.0"
-                            app:layout_constraintTop_toTopOf="parent" />
-
+                            app:layout_constraintTop_toTopOf="parent"/>
                         <TextView
                             android:layout_width="175dp"
                             android:layout_height="wrap_content"
@@ -557,11 +491,8 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.494" />
-
-
+                            app:layout_constraintVertical_bias="0.494"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/constraintNutrition"
                         android:layout_width="match_parent"
@@ -569,7 +500,6 @@
                         android:background="@color/inactive"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
-
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -581,8 +511,7 @@
                             android:textSize="19sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
+                            app:layout_constraintTop_toTopOf="parent"/>
                         <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="28dp"
                             android:layout_height="28dp"
@@ -591,13 +520,10 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.5" />
-
+                            app:layout_constraintVertical_bias="0.5"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
@@ -606,22 +532,19 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cardBreath" />
-
+                app:layout_constraintTop_toBottomOf="@id/cardBreath"/>
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:fontFamily="sans-serif"
                 android:text="@string/create_plan"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/indicatorsContainer" />
-
+                app:layout_constraintTop_toBottomOf="@+id/indicatorsContainer"
+                style="@style/FitSection"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"/>
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView2"
                 android:layout_width="match_parent"
@@ -635,167 +558,140 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5">
-
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:scaleType="fitXY"
-                    android:src="@drawable/crrr123" />
+                    android:src="@drawable/crrr123"/>
             </androidx.cardview.widget.CardView>
-
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="sans-serif"
+                android:layout_marginTop="24dp"
                 android:text="@string/warmup_exercises"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView2" />
-
+                app:layout_constraintTop_toBottomOf="@+id/cardView2"
+                style="@style/FitSection"
+                android:layout_marginStart="24dp"/>
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/warmUpPager"
                 android:layout_width="match_parent"
-                android:layout_height="155dp"
+                android:layout_height="192dp"
                 android:layout_marginTop="10dp"
                 android:paddingEnd="120dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
+                app:layout_constraintTop_toBottomOf="@+id/textView6"/>
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="sans-serif"
+                android:layout_marginTop="24dp"
                 android:text="@string/posture_exercises"
-                android:textColor="@color/black"
-                android:textSize="20sp"
                 android:visibility="gone"
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/warmUpPager" />
-
+                app:layout_constraintTop_toBottomOf="@+id/warmUpPager"
+                style="@style/FitSection"
+                android:layout_marginStart="24dp"/>
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/fixPosturePager"
                 android:layout_width="match_parent"
-                android:layout_height="155dp"
+                android:layout_height="192dp"
                 android:layout_marginTop="10dp"
                 android:visibility="gone"
                 android:paddingEnd="120dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
+                app:layout_constraintTop_toBottomOf="@+id/textView8"/>
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="sans-serif"
+                android:layout_marginTop="24dp"
                 android:text="@string/neckback_exercise"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fixPosturePager" />
-
+                app:layout_constraintTop_toBottomOf="@+id/fixPosturePager"
+                style="@style/FitSection"
+                android:layout_marginStart="24dp"/>
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/neckBackViewPager"
                 android:layout_width="match_parent"
-                android:layout_height="155dp"
+                android:layout_height="192dp"
                 android:layout_marginTop="10dp"
                 android:paddingEnd="120dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
+                app:layout_constraintTop_toBottomOf="@+id/textView9"/>
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="sans-serif"
+                android:layout_marginTop="24dp"
                 android:text="@string/arm_exercises"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/neckBackViewPager" />
-
+                app:layout_constraintTop_toBottomOf="@+id/neckBackViewPager"
+                style="@style/FitSection"
+                android:layout_marginStart="24dp"/>
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/armViewPager"
                 android:layout_width="match_parent"
-                android:layout_height="155dp"
+                android:layout_height="192dp"
                 android:layout_marginTop="10dp"
                 android:paddingEnd="120dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
+                app:layout_constraintTop_toBottomOf="@+id/textView10"/>
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="sans-serif"
+                android:layout_marginTop="24dp"
                 android:text="@string/abs_exercises"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/armViewPager" />
-
+                app:layout_constraintTop_toBottomOf="@+id/armViewPager"
+                style="@style/FitSection"
+                android:layout_marginStart="24dp"/>
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/absViewPager"
                 android:layout_width="match_parent"
-                android:layout_height="155dp"
+                android:layout_height="192dp"
                 android:layout_marginTop="10dp"
                 android:paddingEnd="120dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-
+                app:layout_constraintTop_toBottomOf="@+id/textView11"/>
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="sans-serif"
+                android:layout_marginTop="24dp"
                 android:text="@string/leg_exercises"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/absViewPager" />
-
+                app:layout_constraintTop_toBottomOf="@+id/absViewPager"
+                style="@style/FitSection"
+                android:layout_marginStart="24dp"/>
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/legViewPager"
                 android:layout_width="match_parent"
-                android:layout_height="155dp"
+                android:layout_height="192dp"
                 android:layout_marginTop="10dp"
                 android:paddingEnd="120dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
+                app:layout_constraintTop_toBottomOf="@+id/textView12"/>
             <com.google.android.gms.ads.AdView
                 android:id="@+id/adView"
                 android:layout_width="match_parent"
@@ -807,12 +703,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/legViewPager">
-
-            </com.google.android.gms.ads.AdView>
-
+                app:layout_constraintTop_toBottomOf="@+id/legViewPager"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

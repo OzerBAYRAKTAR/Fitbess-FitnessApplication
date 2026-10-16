@@ -18,6 +18,8 @@ class MoveListAdapter(
 
 
 
+    var earned: Set<Int>? = null
+
     inner class ItemHolder(
         val binding: ItemSubdetaildayBinding,
         private val recyclerViewClickListener: RecyclerViewClickListener
@@ -58,6 +60,13 @@ class MoveListAdapter(
             val imageDrawable = ContextCompat.getDrawable(root.context, model.image)
             roundedImageView.setImageDrawable(imageDrawable)
             labelDay.text = model.exerciseName
+            lockBadge.visibility = if (earned != null && !com.bayraktar.healthybackandneck.utils.MoveAccess.allowed(model, earned.orEmpty())) View.VISIBLE else View.GONE
+            txtExerciseCount.visibility = View.VISIBLE
+            txtExerciseCount.setText(when {
+                earned == null -> com.bayraktar.healthybackandneck.R.string.access_loading
+                !com.bayraktar.healthybackandneck.utils.MoveAccess.allowed(model, earned.orEmpty()) -> com.bayraktar.healthybackandneck.R.string.move_locked
+                else -> com.bayraktar.healthybackandneck.R.string.move_unlocked
+            })
 
             deleteBtn.setOnClickListener {
                 val currentPosition = holder.adapterPosition

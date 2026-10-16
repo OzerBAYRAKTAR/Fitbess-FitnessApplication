@@ -6,7 +6,7 @@ Kaynak sürüm: **0.2.0**. GitHub `codex/po-manager-workflow` dalından çekilen
 
 - [AGENTS.md](../AGENTS.md): Codex'in proje giriş talimatları.
 - [Proje bağlamı](../project-context.md): gerçek komutlar, mimari, emülatör ve Git yetkilendirmesi.
-- `core/`, `platforms/`, `workflows/`: kaynaktan değiştirilmeden alınan ortak içerik.
+- `core/`, `platforms/`, `workflows/`: sabit kaynak commitinden alınan ortak içerik; aşağıda belirtilen yerel politika uyarlaması hariç.
 - [Skills](../.agents/skills/): Android doğrulama, review ve Git checkpoint süreçleri.
 - [Kaynaklar](SOURCES.md): resmî referanslar ve güncelleme yaklaşımı.
 
@@ -24,3 +24,7 @@ Bu entegrasyon Android uygulama kodunu değiştirmez. Belgelerin doğrulanması,
 
 
 PO–teknik yönetici kurulumu için [kullanım rehberini](../docs/po-manager-workflow.md) ve [araştırmayı](integrations/codex/po-manager-research.md) okuyun. Yeni workflow, iki skill ve araştırma/config şablonları aynı kaynak commitinden alındı. .codex içindeki aktif ayarlar ve root AGENTS.md/proje bağlamı proje tarafından yönetilir.
+
+## Yerel Git politikası uyarlaması
+
+17 Ekim 2026 kullanıcı tercihi: otomatik commit/push yalnız büyük, anlamlı ve doğrulanmış iş bütünlerinde yapılır; her düzenlemede yapılmaz. PR kendiliğinden açılmaz. `workflows/development.md` ve Git checkpoint skill'i bu tercihe göre yerel olarak uyarlanmıştır. Upstream sürüm/commit değişmedi: `84d5de5b81627c5b41589327e08f6a8c3e4cff76`; merkezi repo bu işlemle güncellenmemiştir. Sonraki upstream güncellemede bu yerel fark korunmalıdır.

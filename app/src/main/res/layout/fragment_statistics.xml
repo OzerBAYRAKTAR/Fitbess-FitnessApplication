@@ -1,36 +1,229 @@
-<?xml version="1.0" ?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:background="@color/fit_background">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
-        <TextView android:id="@+id/progressTitle" style="@style/FitTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/progress_title"/>
-        <TextView android:id="@+id/progressSubtitle" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/progress_subtitle"/>
-        <TextView android:id="@+id/weekTitle" style="@style/FitSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/this_week"/>
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="20dp">
-            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_margin="3dp" android:padding="12dp" android:orientation="vertical" android:background="@drawable/fit_soft_card">
-                <TextView android:id="@+id/weekWorkouts" style="@style/FitTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0"/>
-                <TextView style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="13sp" android:text="@string/metric_workouts"/>
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/fit_background">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+        <TextView
+            android:id="@+id/progressTitle"
+            style="@style/FitTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/progress_title"/>
+        <TextView
+            android:id="@+id/progressSubtitle"
+            style="@style/FitBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/progress_subtitle"/>
+        <TextView
+            android:id="@+id/weekTitle"
+            style="@style/FitSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/this_week"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:padding="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/fit_card">
+                <TextView
+                    android:id="@+id/weekWorkouts"
+                    style="@style/FitTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0"/>
+                <TextView
+                    style="@style/FitBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:text="@string/metric_workouts"/>
             </LinearLayout>
-            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_margin="3dp" android:padding="12dp" android:orientation="vertical" android:background="@drawable/fit_soft_card">
-                <TextView android:id="@+id/weekMinutes" style="@style/FitTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0"/>
-                <TextView style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="13sp" android:text="@string/metric_minutes"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:padding="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/fit_card">
+                <TextView
+                    android:id="@+id/weekMinutes"
+                    style="@style/FitTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0"/>
+                <TextView
+                    style="@style/FitBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:text="@string/metric_minutes"/>
             </LinearLayout>
-            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_margin="3dp" android:padding="12dp" android:orientation="vertical" android:background="@drawable/fit_soft_card">
-                <TextView android:id="@+id/weekMoves" style="@style/FitTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0"/>
-                <TextView style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="13sp" android:text="@string/metric_moves"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:padding="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/fit_card">
+                <TextView
+                    android:id="@+id/weekMoves"
+                    style="@style/FitTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0"/>
+                <TextView
+                    style="@style/FitBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:text="@string/metric_moves"/>
             </LinearLayout>
         </LinearLayout>
-        <LinearLayout android:id="@+id/weekDays" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="24dp"/>
-        <TextView android:id="@+id/achievement" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/first_workout_goal"/>
-        <TextView android:id="@+id/programTitle" style="@style/FitSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/program_progress"/>
-        <LinearLayout android:id="@+id/programProgress" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:background="@drawable/fit_card" android:layout_marginBottom="12dp"/>
-        <TextView android:id="@+id/progressNote" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/progress_note"/>
-        <TextView android:id="@+id/historyTitle" style="@style/FitSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/history_title"/>
-        <TextView android:id="@+id/emptyHistory" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/history_empty"/>
-        <LinearLayout android:id="@+id/history" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/showMore" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/show_more"/>
-        <TextView android:id="@+id/toolsTitle" style="@style/FitSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/tools_title"/>
-        <TextView android:id="@+id/toolsNote" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/tools_note"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/editEndeks" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/tool_bmi"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/editDayofCalorie" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/tool_calorie"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/editfatrate" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/tool_fat"/>
+        <LinearLayout
+            style="@style/FitCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+            <TextView
+                style="@style/FitSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_title"/>
+            <TextView
+                style="@style/FitCaption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_caption"
+                android:layout_marginTop="8dp"/>
+            <LinearLayout
+                android:id="@+id/weekBars"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:orientation="horizontal"
+                android:gravity="bottom"/>
+        </LinearLayout>
+        <TextView
+            style="@style/FitSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/calendar_title"
+            android:layout_marginBottom="16dp"/>
+        <LinearLayout
+            android:id="@+id/weekDays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp"/>
+        <TextView
+            android:id="@+id/achievement"
+            style="@style/FitBody"
+            android:background="@drawable/fit_achievement"
+            android:padding="16dp"
+            android:textColor="@color/fit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/first_workout_goal"/>
+        <TextView
+            android:id="@+id/programTitle"
+            style="@style/FitSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/program_progress"/>
+        <LinearLayout
+            android:id="@+id/programProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/fit_card"
+            android:layout_marginBottom="12dp"/>
+        <TextView
+            android:id="@+id/progressNote"
+            style="@style/FitCaption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/progress_note"/>
+        <TextView
+            android:id="@+id/historyTitle"
+            style="@style/FitSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/history_title"/>
+        <TextView
+            android:id="@+id/emptyHistory"
+            style="@style/FitBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/history_empty"/>
+        <LinearLayout
+            android:id="@+id/history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/showMore"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/show_more"/>
+        <TextView
+            android:id="@+id/toolsTitle"
+            style="@style/FitSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/tools_title"/>
+        <TextView
+            android:id="@+id/toolsNote"
+            style="@style/FitBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/tools_note"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editEndeks"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tool_bmi"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editDayofCalorie"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tool_calorie"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editfatrate"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tool_fat"/>
     </LinearLayout>
 </ScrollView>

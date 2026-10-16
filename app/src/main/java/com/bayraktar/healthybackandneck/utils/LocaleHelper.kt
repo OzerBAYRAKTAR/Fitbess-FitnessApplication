@@ -6,6 +6,7 @@ object LocaleHelper {
     fun wrap(context: Context): Context {
         val language = LanguagePreference.getLanguageCode(context) ?: return context
         val locale = Locale.forLanguageTag(language)
+        Locale.setDefault(locale)
         val config = Configuration(context.resources.configuration).apply { setLocale(locale) }
         return context.createConfigurationContext(config)
     }

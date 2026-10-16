@@ -2,6 +2,8 @@ package com.bayraktar.healthybackandneck.ui
 
 import com.bayraktar.healthybackandneck.utils.fitContentToSystemBars
 import android.os.Bundle
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -27,6 +29,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity(), homeFragmentListener {
 
+    @javax.inject.Inject lateinit var reminders: com.bayraktar.healthybackandneck.utils.ReminderCoordinator
+
     private lateinit var toolbar: Toolbar
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
@@ -47,6 +51,11 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         fitContentToSystemBars(binding.root)
+        lifecycleScope.launch {
+            try { reminders.reconcile() }
+            catch (cancelled: kotlinx.coroutines.CancellationException) { throw cancelled }
+            catch (error: Exception) { android.util.Log.e("Reminders", "Could not restore reminder schedule", error) }
+        }
 
 
 
