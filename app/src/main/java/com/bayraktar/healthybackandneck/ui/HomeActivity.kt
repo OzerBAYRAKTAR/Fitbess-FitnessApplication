@@ -1,5 +1,6 @@
 package com.bayraktar.healthybackandneck.ui
 
+import com.bayraktar.healthybackandneck.utils.fitContentToSystemBars
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
@@ -10,6 +11,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupWithNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.ActivityHomeBinding
 import com.bayraktar.healthybackandneck.utils.Interfaces.homeFragmentListener
@@ -36,10 +38,15 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
     }
 
 
+    override fun attachBaseContext(newBase: android.content.Context) {
+        super.attachBaseContext(com.bayraktar.healthybackandneck.utils.LocaleHelper.wrap(newBase))
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        fitContentToSystemBars(binding.root)
 
 
 
@@ -83,10 +90,7 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
     }
 
     private fun setUpBotMenu() = with(binding) {
-        val popupMenu = android.widget.PopupMenu(applicationContext, null)
-        popupMenu.inflate(R.menu.bottom_menu)
-        val menu = popupMenu.menu
-        binding.bottomBar.setupWithNavController(menu, navController)
+        bottomBar.setupWithNavController(navController)
     }
 
     override fun onSupportNavigateUp(): Boolean {

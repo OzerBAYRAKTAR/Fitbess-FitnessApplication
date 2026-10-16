@@ -51,9 +51,9 @@ class HomeViewpagerAdapter(
             }
 
             if (position == 3) {
-                newFavouriteBtn.text = context.getString(R.string.lbl_start)
+                newFavouriteBtn.text = context.getString(R.string.my_fav_list)
             } else {
-                newFavouriteBtn.text = context.getString(R.string.lbl_start)
+                newFavouriteBtn.text = context.getString(R.string.begin_training)
             }
 
         }

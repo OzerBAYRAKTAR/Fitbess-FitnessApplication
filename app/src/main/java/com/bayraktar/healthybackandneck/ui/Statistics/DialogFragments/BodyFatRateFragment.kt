@@ -41,9 +41,9 @@ class BodyFatRateFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        dataStoreManager = DataStoreManage.getInstance(requireContext())
         observeWeightAndHeight()
         checkBoxClicked()
-        dataStoreManager = DataStoreManage.getInstance(requireContext())
 
         btnClicked()
 
@@ -77,10 +77,26 @@ class BodyFatRateFragment : Fragment() {
     }
 
     private suspend fun saveHeigtAndWeight() = with(binding) {
-        val height = inputHeight.text.toString().toInt()
-        val neck = neckDesc.text.toString().toInt()
-        val belly = bellyDesc.text.toString().toInt()
-        val butt = buttDesc.text.toString().toInt()
+        val height = inputHeight.text.toString().toIntOrNull()?.takeIf { it > 0 } ?: run {
+            inputHeight.error = getString(R.string.label_inputattention)
+            return@with
+        }
+        val neck = neckDesc.text.toString().toIntOrNull()?.takeIf { it > 0 } ?: run {
+            neckDesc.error = getString(R.string.label_inputattention)
+            return@with
+        }
+        val belly = bellyDesc.text.toString().toIntOrNull()?.takeIf { it > 0 } ?: run {
+            bellyDesc.error = getString(R.string.label_inputattention)
+            return@with
+        }
+        val butt = buttDesc.text.toString().toIntOrNull()?.takeIf { it > 0 } ?: run {
+            buttDesc.error = getString(R.string.label_inputattention)
+            return@with
+        }
+        if (!checkMale.isChecked && !checkFemale.isChecked) {
+            showToast(requireContext(), getString(R.string.label_fillall), Gravity.CENTER, 0, 0)
+            return@with
+        }
         val gender = if (checkMale.isChecked)  getString(R.string.label_male) else getString(R.string.label_female)
 
 
@@ -98,10 +114,10 @@ class BodyFatRateFragment : Fragment() {
 
         val decimalFormat = DecimalFormat("#.###")
         val formattedRate = decimalFormat.format(bodyFatRate)
-        val errorMessage = "Yanlış değer girdiniz, Lütfen tekrar deneyiniz!"
+        val errorMessage = getString(R.string.label_inputattention)
 
-        val rate = formattedRate.replace(",", ".").toDouble()
-        if (rate < 3) {
+        val rate = bodyFatRate
+        if (!rate.isFinite() || rate !in 3.0..100.0) {
             showToast(requireContext(),errorMessage,Gravity.CENTER,0,0)
         }else {
 
@@ -137,24 +153,7 @@ class BodyFatRateFragment : Fragment() {
 
     private fun btnClicked() = with(binding) {
         btnSavee.setOnClickListener {
-            val height = inputHeight.text.toString()
-            val neck = neckDesc.text.toString()
-            val belly = bellyDesc.text.toString()
-            val butt = buttDesc.text.toString()
-
-            if (height.isNotEmpty() && neck.isNotEmpty() && belly.isNotEmpty() && butt.isNotEmpty()) {
-                try {
-                    lifecycleScope.launch {
-                        saveHeigtAndWeight()
-                    }
-                } catch (e: NumberFormatException) {
-                    val message = getString(R.string.label_inputattention)
-                    showToast(requireContext(), message, Gravity.CENTER, 0, 0)
-                }
-            } else {
-                val message = getString(R.string.label_fillall)
-                showToast(requireContext(), message, Gravity.CENTER, 0, 0)
-            }
+            viewLifecycleOwner.lifecycleScope.launch { saveHeigtAndWeight() }
         }
         goBack.setOnClickListener {
             val action = BodyFatRateFragmentDirections.actionBodyFatRateFragmentToIdStatisticsFragment()
@@ -164,7 +163,7 @@ class BodyFatRateFragment : Fragment() {
 
 
     private fun observeWeightAndHeight() = with(binding) {
-        lifecycleScope.launchWhenStarted {
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             combine(
                 dataStoreManager.getHeight(),
                 dataStoreManager.getNeck(),
@@ -188,7 +187,7 @@ class BodyFatRateFragment : Fragment() {
                 if (gender != "") {
                     if (gender == getString(R.string.label_male)) {
                         checkMale.isChecked = true
-                    }else {
+                    } else if (gender == getString(R.string.label_female)) {
                         checkFemale.isChecked = true
                     }
                 }
@@ -197,5 +196,9 @@ class BodyFatRateFragment : Fragment() {
             }
         }
 
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

@@ -1,200 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="7dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@drawable/image_bottomradius"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/txtTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
-                android:background="@drawable/textview_back"
-                android:fontFamily="@font/tahoma"
-                android:paddingVertical="2dp"
-                android:paddingStart="8dp"
-                android:paddingEnd="35dp"
-                android:text="@string/easy_program"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/labelTitle"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginBottom="15dp"
-                android:fontFamily="@font/tahoma"
-                android:paddingStart="10dp"
-                android:text="@string/easy_desc"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/txtTitle"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/txtTitle"
-                app:layout_constraintTop_toBottomOf="@+id/txtTitle"
-                app:layout_constraintVertical_bias="0.345" />
-
-            <ImageView
-                android:id="@+id/eg1"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginTop="14dp"
-                android:src="@drawable/energy"
-                android:visibility="gone"
-                app:layout_constraintStart_toStartOf="@+id/txtTitle"
-                app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
-
-            <ImageView
-                android:id="@+id/eg2"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/energy_empty"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/eg1"
-                app:layout_constraintStart_toEndOf="@+id/eg1" />
-
-            <ImageView
-                android:id="@+id/eg3"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/energy_empty"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/eg2"
-                app:layout_constraintStart_toEndOf="@+id/eg2" />
+<?xml version="1.0" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="8dp" android:orientation="vertical">
 
 
-            <TextView
-                android:id="@+id/labelgün"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
-                android:layout_marginBottom="6dp"
-                android:fontFamily="@font/tahoma"
-                android:text="Günler"
-                android:textSize="16sp"
-                android:visibility="gone"
-                app:layout_constraintBottom_toTopOf="@+id/progressHome"
-                app:layout_constraintStart_toStartOf="@+id/progressHome" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/fit_card" android:orientation="vertical" android:padding="20dp">
 
 
-            <TextView
-                android:id="@+id/txtDay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/tahoma"
-                android:text="5"
-                android:textSize="16sp"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/labelgün"
-                app:layout_constraintStart_toEndOf="@+id/labelgün" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/tahoma"
-                android:text="0%"
-                android:textSize="16sp"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/txtDay"
-                app:layout_constraintStart_toEndOf="@+id/txtDay" />
-
-            <ProgressBar
-                android:id="@+id/progressHome"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_width="180dp"
-                android:layout_height="11dp"
-                android:layout_marginStart="12dp"
-                android:max="100"
-                android:progress="31"
-                android:progressDrawable="@drawable/progresbar_background"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/eg2"
-                app:layout_constraintVertical_bias="0.827" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="65dp"
-                android:layout_height="50dp"
-                android:background="@drawable/bubble_background"
-                android:visibility="gone"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:layout_width="65dp"
-                android:layout_height="50dp"
-                android:background="@drawable/bubble_top"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imageMain"
-                android:layout_width="165dp"
-                android:layout_height="140dp"
-                android:layout_marginStart="24dp"
-                android:src="@drawable/removed4"
-                android:paddingEnd="-5dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/progressHome"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/newFavouriteBtn"
-                android:layout_width="145dp"
-                android:layout_height="42dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/butto_background"
-                android:drawablePadding="13dp"
-                android:fontFamily="@font/tahoma"
-                android:padding="5dp"
-                android:text="@string/lbl_start"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/imageMain"
-                app:layout_constraintHorizontal_bias="0.2"
-                app:layout_constraintStart_toStartOf="@+id/imageMain" />
+        <TextView android:id="@+id/txtTitle" style="@style/FitSection" android:layout_width="match_parent" android:layout_height="wrap_content"/>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical">
 
 
-    </androidx.cardview.widget.CardView>
+            <TextView android:id="@+id/labelTitle" style="@style/FitBody" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView android:id="@+id/imageMain" android:layout_width="112dp" android:layout_height="112dp" android:scaleType="fitCenter" android:importantForAccessibility="no"/>
+
+
+        </LinearLayout>
+
+
+        <ProgressBar android:id="@+id/progressHome" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone"/>
+
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/newFavouriteBtn" style="@style/FitButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/begin_training"/>
+
+
+    </LinearLayout>
+</LinearLayout>

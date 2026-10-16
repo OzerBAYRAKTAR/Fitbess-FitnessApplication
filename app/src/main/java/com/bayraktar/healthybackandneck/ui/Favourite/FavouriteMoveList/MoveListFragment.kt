@@ -54,12 +54,11 @@ class MoveListFragment : Fragment(), RecyclerViewClickListener, OnDeleteClicked 
 
 
 
-        transitionAd = PreloadedInterstitialAd(
-            requireActivity(), viewLifecycleOwner, "ca-app-pub-1896269552628731/7021476362"
-        )
+
         binding.btnCheck.setOnClickListener {
             view.findNavController().navigate(MoveListFragmentDirections.actionMoveListFragmentToIdHomepageFragment())
         }
+        binding.txtEmptyFav.setText(R.string.favorite_description)
         observeFavlist()
         viewModel.getFavExerciseList()
     }
@@ -112,7 +111,7 @@ class MoveListFragment : Fragment(), RecyclerViewClickListener, OnDeleteClicked 
         builder.setView(dialogView)
             .setPositiveButton(R.string.close) { dialog, _ ->
                 dialog.dismiss()
-                transitionAd?.showOrContinue {}
+
             }
         val dialog = builder.create()
         dialog.show()

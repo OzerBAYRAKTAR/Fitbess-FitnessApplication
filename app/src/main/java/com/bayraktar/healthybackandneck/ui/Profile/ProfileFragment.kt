@@ -6,18 +6,21 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat.recreate
 import androidx.fragment.app.viewModels
 import androidx.work.PeriodicWorkRequest
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.Constraints
+import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.NetworkType
 import java.util.concurrent.TimeUnit
 import com.bayraktar.healthybackandneck.R
@@ -34,14 +37,9 @@ import com.bayraktar.healthybackandneck.utils.WaterReminderWorker
 import com.bayraktar.healthybackandneck.utils.showToast
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
-import com.google.android.play.core.review.ReviewInfo
-import com.google.android.play.core.review.ReviewManager
-import com.google.android.play.core.review.ReviewManagerFactory
-import com.google.android.play.core.tasks.Task
 import dagger.hilt.android.AndroidEntryPoint
+import java.time.Duration
 import java.util.Locale
-import java.util.Timer
-import java.util.TimerTask
 
 
 @AndroidEntryPoint
@@ -52,8 +50,7 @@ class ProfileFragment : Fragment() {
     private val viewModel: ProfileViewModel by viewModels()
 
     private lateinit var notificationHelper: NotificationHelper
-    private var  reviewInfo: ReviewInfo?= null
-    private lateinit var reviewManager: ReviewManager
+
     private lateinit var mAdView: AdView
 
 
@@ -66,12 +63,13 @@ class ProfileFragment : Fragment() {
         return binding.root
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
 
-        // profile banner id => ca-app-pub-4754194669476617/7416253720
+        // profile banner id => ca-app-pub-1896269552628731/8170906506
         mAdView = binding.adView
         mAdView.loadForLifecycle(viewLifecycleOwner)
 
@@ -86,13 +84,20 @@ class ProfileFragment : Fragment() {
         viewModel.getWaterReminder()
 
         observe()
-        activateReviewInfo()
+       // activateReviewInfo()
         binding.consRateus.setOnClickListener {
             btnRateUsClicked()
         }
 
         notificationHelper = NotificationHelper(requireContext())
         setBindingThings()
+        binding.consPrivacy.setOnClickListener {
+            try {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Glovani/Glovani.github.io/blob/main/privacy-policy.txt")))
+            } catch (_: ActivityNotFoundException) {
+                showToast(requireContext(), getString(R.string.label_error), Gravity.CENTER, 0, 0)
+            }
+        }
         btnShareClicked()
 
 
@@ -122,39 +127,53 @@ class ProfileFragment : Fragment() {
             WorkManager.getInstance(requireContext()).enqueue(periodicWorkRequest)
         }
     }
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun handleMotivationSwitchChange(isChecked: Boolean) {
-        // Save notification reminder switch state to database
+        val context = requireContext()
+
         val motivateState = MotivationNotificationState(isSwitchChecked = isChecked)
         viewModel.insertMotiviateState(motivateState)
 
+        val workManager = WorkManager.getInstance(context)
+
         if (!isChecked) {
-            WorkManager.getInstance(requireContext()).cancelAllWorkByTag("motivateNotif")
+            workManager.cancelAllWorkByTag("motivateNotif")
         } else {
-            // If the switch is on, schedule the periodic WorkManager request
             val constraints = Constraints.Builder()
                 .setRequiredNetworkType(NetworkType.NOT_REQUIRED)
                 .build()
 
             val periodicWorkRequest = PeriodicWorkRequestBuilder<NotificationWorker>(
-                12, TimeUnit.HOURS
+                12, // repeat interval (long)
+                TimeUnit.HOURS, // time unit
+                15, // flex interval (long) - optional but recommended
+                TimeUnit.MINUTES // flex time unit
             )
                 .setConstraints(constraints)
                 .addTag("motivateNotif")
                 .build()
 
-            WorkManager.getInstance(requireContext()).enqueue(periodicWorkRequest)
+            workManager.enqueueUniquePeriodicWork(
+                "motivate_work",
+                ExistingPeriodicWorkPolicy.KEEP, // UPDATE yerine KEEP veya REPLACE
+                periodicWorkRequest
+            )
         }
     }
-
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun observe() = with(binding) {
         viewModel.waterReminder.observe(viewLifecycleOwner) { switchState ->
+            waterReminderSwitch.setOnCheckedChangeListener(null)
             waterReminderSwitch.isChecked = switchState?.isSwitchChecked ?: false
-            handleWaterReminderSwitchChange(waterReminderSwitch.isChecked)
+            waterReminderSwitch.setOnCheckedChangeListener { _, checked -> handleWaterReminderSwitchChange(checked) }
+
         }
 
         viewModel.motivateNotif.observe(viewLifecycleOwner) { swchMotiv ->
+            notificationSwitch.setOnCheckedChangeListener(null)
             notificationSwitch.isChecked = swchMotiv?.isSwitchChecked ?: false
-            handleMotivationSwitchChange(notificationSwitch.isChecked)
+            notificationSwitch.setOnCheckedChangeListener { _, checked -> handleMotivationSwitchChange(checked) }
+
         }
     }
 
@@ -165,15 +184,10 @@ class ProfileFragment : Fragment() {
         LocaleHelper.setLocale(requireContext(), languageCode)
         LanguagePreference.setLanguageCode(requireContext(), languageCode)
 
-        val configuration = resources.configuration
-        configuration.setLocale(Locale(languageCode))
-        val displayMetrics = resources.displayMetrics
-        resources.updateConfiguration(configuration, displayMetrics)
-
         requireActivity().recreate()
     }
 
-    private fun activateReviewInfo() {
+/*    private fun activateReviewInfo() {
         reviewManager = ReviewManagerFactory.create(requireContext())
         val managerInfoTask: Task<ReviewInfo> = reviewManager.requestReviewFlow()
         managerInfoTask.addOnCompleteListener { task ->
@@ -200,7 +214,7 @@ class ProfileFragment : Fragment() {
                 }
             }
         }
-    }
+    }*/
     private fun openGooglePlayStore() {
         val packageName = requireContext().packageName
         val uri = Uri.parse("market://details?id=$packageName")
@@ -215,6 +229,7 @@ class ProfileFragment : Fragment() {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun setBindingThings() = with(binding) {
 
         waterReminderSwitch.setOnCheckedChangeListener { _, isChecked ->
@@ -276,7 +291,7 @@ class ProfileFragment : Fragment() {
     }
 
     private fun btnLanguageClicked() {
-        val languages = arrayOf("Turkish", "English", "German", "Russian")
+        val languages = arrayOf("Türkçe", "English", "Deutsch", "Русский")
         val languageCodes = arrayOf("tr", "en", "de", "ru")
 
         val currentLanguage = Locale.getDefault().language
@@ -288,17 +303,16 @@ class ProfileFragment : Fragment() {
         val selectedIndex = if (currentLanguageIndex != -1) currentLanguageIndex else defaultLanguageIndex
 
         val alertDialog = AlertDialog.Builder(requireContext())
-            .setTitle("Select Language")
+            .setTitle(R.string.label_selectlanguage)
             .setIcon(R.drawable.translation)
             .setSingleChoiceItems(languages, selectedIndex) { dialog, which ->
                 // Change the language when the user selects a new language
                 val selectedLanguageCode = languageCodes[which]
                 changeLanguageAndSave(selectedLanguageCode)
-                restartActivity()
-                requireActivity().recreate()
+
                 dialog.dismiss()
             }
-            .setNegativeButton("Cancel") { dialog, _ ->
+            .setNegativeButton(android.R.string.cancel) { dialog, _ ->
                 dialog.dismiss()
             }
             .create()
@@ -352,8 +366,10 @@ class ProfileFragment : Fragment() {
     }
 
     private fun btnRateUsClicked() = with(binding) {
-        startReviewFlow()
+        openGooglePlayStore()
     }
+    override fun onDestroyView() { _binding = null; super.onDestroyView() }
+
     private fun restartActivity() {
         val intent = requireActivity().intent
         requireActivity().finish()

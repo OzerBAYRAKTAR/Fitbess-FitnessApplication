@@ -1,120 +1,30 @@
 package com.bayraktar.healthybackandneck.ui.FirstActivity
-
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
-import android.view.WindowManager
-import android.widget.ImageView
-import android.widget.LinearLayout
-import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
-import com.bayraktar.healthybackandneck.ui.Adapters.OnBoardingItemsAdapter
-import com.bayraktar.healthybackandneck.data.Models.OnBoardingItems
-import com.bayraktar.healthybackandneck.R
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.bayraktar.healthybackandneck.data.JetpackDataStore.DataStoreManage
 import com.bayraktar.healthybackandneck.databinding.ActivityMainBinding
-
-
+import com.bayraktar.healthybackandneck.ui.HomeActivity
+import com.bayraktar.healthybackandneck.utils.fitContentToSystemBars
+import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var boardAdapter: OnBoardingItemsAdapter
+    override fun attachBaseContext(newBase: android.content.Context) {
+        super.attachBaseContext(com.bayraktar.healthybackandneck.utils.LocaleHelper.wrap(newBase))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-      //  window.setFlags(
-      //      WindowManager.LayoutParams.FLAG_FULLSCREEN,
-      //      WindowManager.LayoutParams.FLAG_FULLSCREEN
-      //  )
-
-
-
-    }
-
-    /*private fun setOnBoardingItems() = with(binding) {
-        boardAdapter = OnBoardingItemsAdapter(
-            listOf(
-                OnBoardingItems(
-                    onBoardingImage = R.drawable.v11_removed,
-                    description = getString(R.string.desc1)
-                ),
-                OnBoardingItems(
-                    onBoardingImage = R.drawable.last_11,
-                    description = getString(R.string.desc2)
-                ),
-                OnBoardingItems(
-                    onBoardingImage = R.drawable.last2,
-                    description = getString(R.string.desc3)
-                ),
-            )
-        )
-        slideViewPager.adapter = boardAdapter
-        slideViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-                setCurrentIndicator(position)
-            }
-        })
-        (slideViewPager.getChildAt(0) as RecyclerView).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-        imageNext.setOnClickListener {
-            if (slideViewPager.currentItem + 1 < boardAdapter.itemCount) {
-                slideViewPager.currentItem += 1
-            }else {
-                navigateToHomeActivity()
-            }
-            skip.setOnClickListener {
-                navigateToHomeActivity()
-            }
-            getStart.setOnClickListener {
-                navigateToHomeActivity()
+        fitContentToSystemBars(binding.root)
+        binding.beginTraining.setOnClickListener {
+            binding.beginTraining.isEnabled = false
+            lifecycleScope.launch {
+                DataStoreManage.getInstance(applicationContext).saveLog(true)
+                startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+                finish()
             }
         }
     }
-    private fun navigateToHomeActivity(){
-        startActivity(Intent(this,HomeActivity::class.java))
-    }
-
-    private fun setUpIndicators() = with(binding) {
-        val indicators = arrayOfNulls<ImageView>(boardAdapter.itemCount)
-        val layoutParams: LinearLayout.LayoutParams =
-            LinearLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
-        layoutParams.setMargins(15, 0, 15, 0)
-        for (i in indicators.indices) {
-            indicators[i] = ImageView(applicationContext)
-            indicators[i]?.let {
-                it.setImageDrawable(
-                    ContextCompat.getDrawable(
-                        applicationContext, R.drawable.indicator_inactive_background
-                    )
-                )
-                it.layoutParams = layoutParams
-                indicatorsContainer.addView(it)
-            }
-        }
-    }
-
-    private fun setCurrentIndicator(position: Int) = with(binding) {
-        val childCount = indicatorsContainer.childCount
-        for (i in 0 until childCount) {
-            val imageView = indicatorsContainer.getChildAt(i) as ImageView
-            if (i == position) {
-                imageView.setImageDrawable(
-                    ContextCompat.getDrawable(
-                        applicationContext, R.drawable.indicator_active_background
-                    )
-                )
-            } else {
-                imageView.setImageDrawable(
-                    ContextCompat.getDrawable(
-                        applicationContext, R.drawable.indicator_inactive_background
-                    )
-                )
-            }
-        }
-    }*/
 }

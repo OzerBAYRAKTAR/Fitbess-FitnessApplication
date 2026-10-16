@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" android:padding="20dp" android:background="@drawable/fit_card" android:orientation="vertical">
+    <TextView android:id="@+id/historyTitle" style="@style/FitSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/history_title"/>
+    <TextView android:id="@+id/historyDate" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/history_title"/>
+    <TextView android:id="@+id/historyDetails" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/history_title"/>
+    <TextView android:id="@+id/historyStatus" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/session_complete" android:textColor="@color/fit_primary"/>
+</LinearLayout>

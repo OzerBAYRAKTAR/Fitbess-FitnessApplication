@@ -10,7 +10,7 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        LocaleHelper.setLocale(this, "tr")
+        com.bayraktar.healthybackandneck.utils.LanguagePreference.getLanguageCode(this)?.let { LocaleHelper.setLocale(this, it) }
         AdsSdk.initialize(this)
 
     }

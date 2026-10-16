@@ -104,23 +104,12 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
         val detailDay = args.exerciseLevel
         detaildayFirst.text = detailDay
 
-        if (exerciseDayModel != null) {
-            val time = exerciseDayModel?.exerciseTime.toString()
-            val formattedTime = "0$time:00"
-
-            txttime.text = formattedTime
-            txtexercise.text = exerciseDayModel?.exerciseCount.toString()
-            txtkcal.text = exerciseDayModel?.exerciseKcal.toString()
-            txtdaysecond.text = exerciseDayModel?.day.toString()
-        }else {
-            detaildaySecond.visibility = View.GONE
-            txtdaysecond.visibility = View.GONE
-
-            txttime.text = "07:30"
-            txtexercise.text = "7"
-            txtkcal.text = "300"
-        }
-
+        val activeSeconds = exerciseList.size * 30
+        txttime.text = String.format(java.util.Locale.getDefault(), "%d:%02d", activeSeconds / 60, activeSeconds % 60)
+        txtexercise.text = exerciseList.size.toString()
+        binding.root.findViewById<View>(R.id.cardView5)?.visibility = View.GONE
+        if (exerciseDayModel != null) txtdaysecond.text = exerciseDayModel?.day.toString()
+        else { detaildaySecond.visibility = View.GONE; txtdaysecond.visibility = View.GONE }
 
         rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
         detailDayAdapter = DetailDayAdapter(exerciseList, this@DetailDayFragment)

@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardWarmup"
         android:layout_width="wrap_content"
-        app:cardCornerRadius="20dp"
+        app:cardCornerRadius="16dp"
         android:layout_marginTop="9dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"

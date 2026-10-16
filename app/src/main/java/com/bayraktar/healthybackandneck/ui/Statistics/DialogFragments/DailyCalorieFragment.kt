@@ -51,15 +51,16 @@ class DailyCalorieFragment : Fragment() {
 
         dataStoreManager = DataStoreManage.getInstance(requireContext())
 
+        setSpinner()
         observeWeightAndHeight()
         checkBoxClicked()
 
         btnClicked()
-        setSpinner()
 
     }
 
     private fun setSpinner() = with(binding) {
+        activityLevelList.clear()
         val l1: String = getString(R.string.label_low)
         val l2: String = getString(R.string.label_middle)
         val l3: String = getString(R.string.label_high)
@@ -152,10 +153,23 @@ class DailyCalorieFragment : Fragment() {
 
     @SuppressLint("MissingInflatedId")
     private suspend fun saveHeigtAndWeight() = with(binding) {
-        val height = inputHeight.text.toString().toInt()
-        val weight = inputWeight.text.toString().toInt()
-        val age = inputAge.text.toString().toInt()
+        val height = inputHeight.text.toString().toIntOrNull()?.takeIf { it > 0 } ?: run {
+            inputHeight.error = getString(R.string.label_inputattention)
+            return@with
+        }
+        val weight = inputWeight.text.toString().toIntOrNull()?.takeIf { it > 0 } ?: run {
+            inputWeight.error = getString(R.string.label_inputattention)
+            return@with
+        }
+        val age = inputAge.text.toString().toIntOrNull()?.takeIf { it > 0 } ?: run {
+            inputAge.error = getString(R.string.label_inputattention)
+            return@with
+        }
         val activityPosition = spnrActivity.selectedItemPosition
+        if (!checkMale.isChecked && !checkFemale.isChecked) {
+            showToast(requireContext(), getString(R.string.label_fillall), Gravity.CENTER, 0, 0)
+            return@with
+        }
         val gender = if (checkMale.isChecked)  getString(R.string.label_male) else getString(R.string.label_female)
 
         shouldObserveData = false
@@ -182,8 +196,8 @@ class DailyCalorieFragment : Fragment() {
         val formattedRate = decimalFormat.format(dailyCalorieReq)
         val errorMessage = getString(R.string.label_tryagain)
 
-        val rate = formattedRate.replace(",", ".").toDouble()
-        if (rate < 3) {
+        val rate = dailyCalorieReq
+        if (!rate.isFinite() || rate < 3) {
             showToast(requireContext(), errorMessage, Gravity.CENTER, 0, 0)
         } else {
             val title = getString(R.string.label_dailyCalorieRequirement)
@@ -218,24 +232,7 @@ class DailyCalorieFragment : Fragment() {
 
     private fun btnClicked() = with(binding) {
         btnSavee.setOnClickListener {
-
-            val height = inputHeight.text.toString()
-            val weight = inputWeight.text.toString()
-            val age = inputAge.text.toString()
-
-            if (height.isNotEmpty() && weight.isNotEmpty() && age.isNotEmpty()) {
-                try {
-                    lifecycleScope.launch {
-                        saveHeigtAndWeight()
-                    }
-                } catch (e: NumberFormatException) {
-                    val message = getString(R.string.label_inputattention)
-                    showToast(requireContext(), message, Gravity.CENTER, 0, 0)
-                }
-            } else {
-                val message = getString(R.string.label_fillall)
-                showToast(requireContext(), message, Gravity.CENTER, 0, 0)
-            }
+            viewLifecycleOwner.lifecycleScope.launch { saveHeigtAndWeight() }
         }
         goBack.setOnClickListener {
             val action =
@@ -246,7 +243,7 @@ class DailyCalorieFragment : Fragment() {
 
 
     private fun observeWeightAndHeight() = with(binding) {
-        lifecycleScope.launch(Dispatchers.Main) {
+        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main) {
             combine(
                 dataStoreManager.getHeight(),
                 dataStoreManager.getWeight(),
@@ -265,11 +262,11 @@ class DailyCalorieFragment : Fragment() {
                     if (age != 0) {
                         inputAge.setText(age.toString())
                     }
-                    spnrActivity.setSelection(level-1)
+                    spnrActivity.setSelection((level - 1).coerceIn(0, 3))
                     if (gender != "") {
                         if (gender == getString(R.string.label_male)) {
                             checkMale.isChecked = true
-                        }else {
+                        } else if (gender == getString(R.string.label_female)) {
                             checkMale.isChecked = false
                             checkFemale.isChecked = true
                         }
@@ -280,5 +277,9 @@ class DailyCalorieFragment : Fragment() {
             }
         }
 
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

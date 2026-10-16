@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Fitbess</string>
+    <string name="app_name">Evde Fit: 21 Günlük Plan</string>
 
     <string name="skip">Пропустить</string>
     <string name="start">Начать</string>
@@ -21,7 +21,7 @@
     <string name="kcal">Калории</string>
     <string name="time">Время</string>
     <string name="heart">Пульс</string>
-    <string name="statistics">Статистика</string>
+    <string name="statistics">Прогресс</string>
     <string name="profile">Профиль</string>
     <string name="settings">Настройки</string>
     <string name="reach_us">Свяжитесь с нами</string>
@@ -126,7 +126,7 @@
     <!-- Exercise Fragment-->
     <string name="back_back">Спина-Шея</string>
     <string name="create_plan">Создать свой план</string>
-    <string name="create_plan_desc">Выберите упражнения и создайте свой план!</string>
+    <string name="create_plan_desc">Сохраняй упражнения с помощью сердечка и просматривай их здесь.</string>
 
     <!--Warm Up-->
     <string name="strech">Растяжка</string>
@@ -531,9 +531,9 @@
     <string name="lbl_exerciseattention">Пожалуйста, сначала завершите предыдущие упражнения!</string>
 
     <string name="lbl_item_day">.день</string>
-    <string name="rewarded_ad1">ca-app-pub-4754194669476617/7616538047</string>
-    <string name="rewarded_ad2">ca-app-pub-4754194669476617/9652039406</string>
-    <string name="rewarded_ad3">ca-app-pub-4754194669476617/8338957732</string>
+    <string name="rewarded_ad1">ca-app-pub-1896269552628731/5970466188</string>
+    <string name="rewarded_ad2">ca-app-pub-1896269552628731/8758612752</string>
+    <string name="rewarded_ad3">ca-app-pub-1896269552628731/8717701412</string>
     <string name="detail_day_ad">ca-app-pub-4754194669476617/8160142148</string>
     <string name="title_activity_splash_screen">Заставка</string>
     <string name="first_fragment_label">Первый фрагмент</string>

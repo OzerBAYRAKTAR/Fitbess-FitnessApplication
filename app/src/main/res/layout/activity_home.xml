@@ -36,18 +36,15 @@
             app:layout_constraintVertical_bias="0.0"
             app:navGraph="@navigation/nav_pragh" />
 
-        <me.ibrahimsn.lib.SmoothBottomBar
+        <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomBar"
             android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:elevation="3dp"
-            app:backgroundColor="#FDFCFC"
-            app:cornerRadius="5dp"
-            app:corners="top_left|top_right"
-            app:iconSize="25dp"
-            app:iconTint="@color/gray"
-            app:indicatorColor="@color/login_color"
-            app:itemPadding="5dp"
+            android:layout_height="wrap_content"
+            android:minHeight="64dp"
+            android:background="@android:color/white"
+            app:itemIconTint="@color/fit_navigation"
+            app:itemTextColor="@color/fit_navigation"
+            app:labelVisibilityMode="labeled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

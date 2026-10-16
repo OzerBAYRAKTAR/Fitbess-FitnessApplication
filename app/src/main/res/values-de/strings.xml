@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Fitbess</string>
+    <string name="app_name">Evde Fit: 21 Günlük Plan</string>
 
     <string name="skip">Überspringen</string>
     <string name="start">Start</string>
@@ -20,7 +20,7 @@
     <string name="kcal">Kalorien</string>
     <string name="time">Zeit</string>
     <string name="heart">Herzfrequenz</string>
-    <string name="statistics">Statistiken</string>
+    <string name="statistics">Fortschritt</string>
     <string name="profile">Profil</string>
     <string name="settings">Einstellungen</string>
     <string name="reach_us">Kontaktieren Sie uns</string>
@@ -125,7 +125,7 @@
     <!-- Exercise Fragment -->
     <string name="back_back">Rücken- und Nackenübungen</string>
     <string name="create_plan">Eigenen Plan erstellen</string>
-    <string name="create_plan_desc">Wähle deine Übungen aus und erstelle deinen eigenen Plan!</string>
+    <string name="create_plan_desc">Speichere Übungen mit dem Herzsymbol und sieh sie hier erneut an.</string>
 
     <!--Warm Up-->
     <string name="strech">Stretching</string>
@@ -516,7 +516,7 @@
     <string name="lbl_my_favourite">Meine Favoriten</string>
     <string name="lbl_fav_list_empty">Die Favoritenliste ist leer. Schauen Sie sich Trainingsprogramme an, um Favoriten hinzuzufügen.</string>
     <string name="btn_chec">Überprüfen</string>
-    <string name="next_move">Nächste Bewegung</string>
+    <string name="next_move">Nächste Übung</string>
     <string name="lbl_before">Vorherige</string>
     <string name="lbl_sonraki">Nächste</string>
     <string name="lbl_step">Schritt</string>
@@ -527,9 +527,9 @@
     <string name="lbl_levelmove_desc">Indem Sie Ihr Bewegungsniveau festlegen, ermöglichen Sie uns, Ihnen die am besten geeigneten Übungen zuzuweisen.</string>
     <string name="lbl_delete_favourite">Möchten Sie die Bewegung wirklich aus Ihren Favoriten entfernen?</string>
     <string name="lbl_exerciseattention">Bitte absolvieren Sie vorherige Trainingseinheiten!</string>
-    <string name="rewarded_ad1">ca-app-pub-4754194669476617/7616538047</string>
-    <string name="rewarded_ad2">ca-app-pub-4754194669476617/9652039406</string>
-    <string name="rewarded_ad3">ca-app-pub-4754194669476617/8338957732</string>
+    <string name="rewarded_ad1">ca-app-pub-1896269552628731/5970466188</string>
+    <string name="rewarded_ad2">ca-app-pub-1896269552628731/8758612752</string>
+    <string name="rewarded_ad3">ca-app-pub-1896269552628731/8717701412</string>
     <string name="detail_day_ad">ca-app-pub-4754194669476617/8160142148</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="first_fragment_label">First Fragment</string>

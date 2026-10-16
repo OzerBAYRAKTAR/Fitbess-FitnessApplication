@@ -48,7 +48,7 @@ class SecondFragment : Fragment() {
         btnClicks()
 
         binding.numberPickerYear.setOnValueChangedListener { _, _, newVal ->
-            selectedAge = 2023 - newVal
+            selectedAge = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR) - newVal
         }
 
     }
@@ -72,7 +72,8 @@ class SecondFragment : Fragment() {
     private fun observeCalculates(){
         dataStoreManager.getAge().asLiveData().observe(viewLifecycleOwner) { age ->
             if (age != 0 ) {
-                binding.numberPickerDay.value = age
+                binding.numberPickerYear.value = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR) - age
+                selectedAge = age
             }
         }
     }

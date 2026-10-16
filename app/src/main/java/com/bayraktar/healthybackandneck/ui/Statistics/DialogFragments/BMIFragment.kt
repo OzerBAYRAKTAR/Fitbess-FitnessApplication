@@ -44,15 +44,21 @@ class BMIFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        observeWeightAndHeight()
         dataStoreManager = DataStoreManage.getInstance(requireContext())
+        observeWeightAndHeight()
 
         btnClicked()
 
     }
     private suspend fun saveHeigtAndWeight() = with(binding) {
-        val height = inputHeight.text.toString().toInt()
-        val weight = inputWeightDesc.text.toString().toInt()
+        val height = inputHeight.text.toString().toIntOrNull()?.takeIf { it > 0 } ?: run {
+            inputHeight.error = getString(R.string.label_inputattention)
+            return@with
+        }
+        val weight = inputWeightDesc.text.toString().toIntOrNull()?.takeIf { it > 0 } ?: run {
+            inputWeightDesc.error = getString(R.string.label_inputattention)
+            return@with
+        }
 
 
         dataStoreManager.saveHeight(height)
@@ -113,23 +119,7 @@ class BMIFragment : DialogFragment() {
 
     private fun btnClicked() = with(binding) {
         btnSavee.setOnClickListener {
-
-            val height = inputHeight.text.toString()
-            val weight = inputWeightDesc.text.toString()
-
-            if (height.isNotEmpty() && weight.isNotEmpty()) {
-                try {
-                    lifecycleScope.launch {
-                        saveHeigtAndWeight()
-                    }
-                } catch (e: NumberFormatException) {
-                    val message = getString(R.string.label_inputattention)
-                    showToast(requireContext(), message, Gravity.CENTER, 0, 0)
-                }
-            } else {
-                val message = getString(R.string.label_fillall)
-                showToast(requireContext(), message, Gravity.CENTER, 0, 0)
-            }
+            viewLifecycleOwner.lifecycleScope.launch { saveHeigtAndWeight() }
         }
         goBack.setOnClickListener {
             val action = BMIFragmentDirections.actionBMIFragmentToIdStatisticsFragment()
@@ -139,7 +129,7 @@ class BMIFragment : DialogFragment() {
 
 
     private fun observeWeightAndHeight() = with(binding) {
-        lifecycleScope.launchWhenStarted {
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             combine(
                 dataStoreManager.getHeight(),
                 dataStoreManager.getWeight()
@@ -154,5 +144,9 @@ class BMIFragment : DialogFragment() {
             }
         }
 
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
