@@ -11,3 +11,13 @@ Read `project-context.md`, `.ai-playbook/core/engineering.md`, `.ai-playbook/cor
 - Do not modify signing files, release artifacts, user-specific IDE files or local SDK paths as part of routine implementation.
 - For playbook updates, follow `.ai-playbook/README.md`; preserve project-specific context and record the exact upstream commit.
 - Follow higher-priority instructions and explicit user intent when guidance conflicts; surface unresolved project-specific contradictions.
+
+
+## PO-manager workflow
+
+- The project owner enabled this workflow in project-context.md. For user-facing product implementation requests, use .agents/skills/product-owner/SKILL.md and delegate the scoped English brief to one technical-manager subagent. This instruction explicitly requests native delegation for this workflow.
+- Prefer the custom agent technical_manager. If that role is not available through the current tool, spawn an execution agent and have it read .agents/skills/technical-manager/SKILL.md. If delegation is unavailable, disclose the sequential fallback.
+- When already acting as the delegated technical manager or reviewer, execute the assignment directly; do not create another PO or recursively delegate the same role.
+- For meaningful changes the technical manager may delegate a separate read-only code review. Keep one implementation owner and serialize shared builds/emulator interactions.
+- Honor analysis-only and plan-only requests. Carry existing authorization through the brief; do not add repeated approval gates for routine implementation, verification or authorized working-branch Git.
+- Active sandbox, managed policy and tool approvals remain authoritative. Do not change security settings or bypass a denied operation to finish a product task.

@@ -1,0 +1,8 @@
+# Opt-in project configuration. Merge with existing settings; do not overwrite them.
+# Existing sandbox/profile boundaries and managed requirements still apply.
+approval_policy = "on-request"
+approvals_reviewer = "auto_review"
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 2
