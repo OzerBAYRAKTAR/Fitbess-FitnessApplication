@@ -13,11 +13,11 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.utils.loadForLifecycle
 import com.bayraktar.healthybackandneck.data.JetpackDataStore.DataStoreManage
 import com.bayraktar.healthybackandneck.databinding.FragmentStatisticsBinding
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
@@ -54,11 +54,9 @@ class StatisticsFragment : Fragment() {
 
         //statistics banner ıd => ca-app-pub-4754194669476617/2871909027 // şuanlık xml de id var, canlıya çıkarken değişecek
 
-        MobileAds.initialize(requireContext()) {}
 
         mAdView = binding.adView
-        val adRequest = AdRequest.Builder().build()
-        mAdView.loadAd(adRequest)
+        mAdView.loadForLifecycle(viewLifecycleOwner)
 
 
         observeCount()

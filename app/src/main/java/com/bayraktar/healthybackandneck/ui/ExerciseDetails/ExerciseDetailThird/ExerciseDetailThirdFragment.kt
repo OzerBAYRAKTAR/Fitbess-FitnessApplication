@@ -22,7 +22,6 @@ import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDetailThirdB
 import com.bayraktar.healthybackandneck.utils.Interfaces.ExerciseItemClickListener
 import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerClicked
 import com.bayraktar.healthybackandneck.utils.RewardedAds
-import com.google.android.gms.ads.MobileAds
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import org.json.JSONArray
@@ -59,14 +58,13 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
         setRecyclerview()
 
         //ca-app-pub-3940256099942544/5224354917 test
-        MobileAds.initialize(requireContext()) {}
 
         binding.prgressStart.visibility = View.VISIBLE
         handler.postDelayed({
             binding.prgressStart.visibility = View.GONE
         }, 300)
 
-        myRewardedAds = RewardedAds(requireActivity())
+        myRewardedAds = RewardedAds(requireActivity(), viewLifecycleOwner)
         myRewardedAds?.loadRewardedAds(R.string.rewarded_ad3)
         observeLevelThird()
         observeDayListLevelThird()
@@ -276,7 +274,7 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
                 dialog.dismiss()
             }
             positiveBtn.setOnClickListener {
-                myRewardedAds?.showRewardAds(R.string.rewarded_ad1) {
+                myRewardedAds?.showRewardAds {
                     selectedModel = detailList[position]
                     viewModel.updateIsCompletedToTrue(3, detailList[position].day)
                     val selectedDay = position + 1
@@ -294,4 +292,10 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
     }
 
 
+    override fun onDestroyView() {
+        handler.removeCallbacksAndMessages(null)
+        myRewardedAds = null
+        _binding = null
+        super.onDestroyView()
+    }
 }

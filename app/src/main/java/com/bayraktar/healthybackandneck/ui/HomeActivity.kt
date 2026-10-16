@@ -68,6 +68,7 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
             if (destination.id != R.id.id_homepage_fragment
                 && destination.id != R.id.id_profile_fragment
                 && destination.id != R.id.id_statistics_fragment
+                && destination.id != R.id.moveListFragment
                 && destination.id != R.id.id_food_fragment
                 && destination.id != R.id.foodDetailFragment) {
                 binding.bottomBar.visibility = View.GONE
