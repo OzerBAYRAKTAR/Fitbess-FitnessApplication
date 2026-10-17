@@ -17,4 +17,4 @@ Use the project's Git settings and explicit user authorization. This skill alone
 8. Verify local commit and remote branch agree. If CI exists, inspect its result using available tools. Pending/unavailable CI must be reported as such; do not label the milestone fully green. Fix introduced CI failures within scope using a new commit.
 9. Report branch, commit, remote link, verification and CI status in Turkish.
 
-A meaningful milestone is a completed bug fix, usable feature slice, or verified compatibility change—not elapsed time, arbitrary line counts or every edited file.
+A meaningful milestone is a substantial, cohesive completed outcome. Group small edits and intermediate steps; do not automatically commit/push every change. Follow the project's configured cadence. Do not create a pull request unless the user explicitly requests one; checkpoint authorization covers the designated working branch only.

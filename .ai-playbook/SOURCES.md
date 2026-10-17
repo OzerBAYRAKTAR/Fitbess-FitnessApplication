@@ -17,6 +17,7 @@ Son araştırma: 16 Ekim 2026. Özetler ve kararlar bu playbook'un tercihlerini 
 - [Codex review kuralları](https://developers.openai.com/blog/custom-code-review-rules-for-codex)
 - [Google code review](https://google.github.io/eng-practices/review/reviewer/looking-for.html)
 - [AI kodunun incelenmesi](https://docs.github.com/en/copilot/tutorials/review-ai-generated-code)
+- [PO–teknik yönetici araştırması ve resmî Codex kaynakları](integrations/codex/po-manager-research.md)
 
 ## Güncelleme yaklaşımı
 

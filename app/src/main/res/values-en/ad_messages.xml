@@ -1,0 +1,4 @@
+<resources>
+    <string name="nav_favorites">Favorites</string>
+    <string name="ad_not_ready">The ad is not ready right now. Please try again shortly.</string>
+</resources>

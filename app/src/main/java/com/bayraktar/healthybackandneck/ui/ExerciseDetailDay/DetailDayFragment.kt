@@ -1,195 +1,115 @@
 package com.bayraktar.healthybackandneck.ui.ExerciseDetailDay
 
-import android.content.ContentValues.TAG
+import android.app.AlertDialog
 import android.os.Bundle
-import android.os.Handler
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
-import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentDetailDayBinding
-import com.bayraktar.healthybackandneck.ui.HomeActivity.Companion.mInterstitialAd
 import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerViewClickListener
+import com.bayraktar.healthybackandneck.utils.MoveAccess
+import com.bayraktar.healthybackandneck.utils.MoveAccessViewModel
+import com.bayraktar.healthybackandneck.utils.PreloadedInterstitialAd
 import com.bayraktar.healthybackandneck.utils.RewardedAds
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.FullScreenContentCallback
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.MobileAds
-import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+import pl.droidsonroids.gif.GifImageView
 
 @AndroidEntryPoint
 class DetailDayFragment : Fragment(), RecyclerViewClickListener {
-
     private var _binding: FragmentDetailDayBinding? = null
     val binding get() = _binding!!
-
-    //private var mInterstitialAd: InterstitialAd? = null
-
+    private val access: MoveAccessViewModel by viewModels()
+    private var transitionAd: PreloadedInterstitialAd? = null
+    private var rewarded: RewardedAds? = null
     private var exerciseDayModel: ExerciseDay? = null
-    private var exerciseList = ArrayList<ExerciseDayExercise>()
-    private var subExerciseList = ArrayList<SubExerciseDayExercise>()
-    private var detailDayAdapter: DetailDayAdapter? = null
-    private var subDetailDayAdapter: DetailDaySubAdapter? = null
-    private var exerciseArray: Array<ExerciseDayExercise>? = null
-    private var subExerciseArray: Array<SubExerciseDayExercise>? = null
+    private var exerciseList = emptyList<ExerciseDayExercise>()
+    private var adapter: DetailDayAdapter? = null
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, state: Bundle?): View {
         _binding = FragmentDetailDayBinding.inflate(inflater, container, false)
-
-
-
-
-
         return binding.root
-
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-        //intersteallar test id => ca-app-pub-3940256099942544/1033173712
-        //intersteallar canlı id => ca-app-pub-4754194669476617/8160142148
-
-
-
-        adMOb()
-        getSetData()
-        //setRecyclerview()
-        backstack()
-
-
-    }
-    private fun adMOb() {
-        binding.startExercise.setOnClickListener {
-            binding.prgrsDetail.visibility = View.VISIBLE
-            requireActivity().runOnUiThread {
-                val adRequest = AdRequest.Builder().build()
-
-                InterstitialAd.load(
-                    requireContext(),
-                    "ca-app-pub-4754194669476617/8160142148",
-                    adRequest,
-                    object : InterstitialAdLoadCallback() {
-                        override fun onAdFailedToLoad(adError: LoadAdError) {
-                            println("yy")
-                            mInterstitialAd = null
-                        }
-
-                        override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                            mInterstitialAd = interstitialAd
-                            mInterstitialAd?.show(requireActivity())
-                            println("aaa")
-
-                            mInterstitialAd?.fullScreenContentCallback = object: FullScreenContentCallback() {
-                                override fun onAdClicked() {
-                                    // Called when a click is recorded for an ad.
-                                    println("ccc")
-                                }
-
-                                override fun onAdDismissedFullScreenContent() {
-                                    println("vvv")
-                                    mInterstitialAd = null
-                                    binding.prgrsDetail.visibility = View.GONE
-                                    // Called when ad is dismissed.
-                                    val action = DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment(
-                                        exerciseList.toTypedArray(), exerciseDayModel
-                                    )
-                                    view?.findNavController()?.navigate(action)
-                                }
-
-                                override fun onAdImpression() {
-                                    println("qqq")
-                                    // Called when an impression is recorded for an ad.
-                                    Log.d(TAG, "Ad recorded an impression.")
-                                }
-
-                                override fun onAdShowedFullScreenContent() {
-                                    println("fff")
-                                    // Called when ad is shown.
-                                    Log.d(TAG, "Ad showed fullscreen content.")
-                                }
-                            }
-
-                        }
-                    })
-            }
-        }
-
-
-    }
-
-    private fun setRecyclerview() = with(binding) {
-        rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
-        detailDayAdapter = DetailDayAdapter(exerciseList, this@DetailDayFragment)
-        rvdaydetail.adapter = detailDayAdapter
-    }
-
-    private fun getSetData() = with(binding) {
+    override fun onViewCreated(view: View, state: Bundle?) {
         val args = DetailDayFragmentArgs.fromBundle(requireArguments())
         exerciseDayModel = args.exerciseDayModel
-
-        exerciseArray = args.exerciseNewList
-
-
-        exerciseList = ArrayList(exerciseArray!!.asList())
-
-        val detailDay = args.exerciseLevel
-        detaildayFirst.text = detailDay
-
-        if (exerciseDayModel != null) {
-            val time = exerciseDayModel?.exerciseTime.toString()
-            val formattedTime = "0$time:00"
-
-            txttime.text = formattedTime
-            txtexercise.text = exerciseDayModel?.exerciseCount.toString()
-            txtkcal.text = exerciseDayModel?.exerciseKcal.toString()
-            txtdaysecond.text = exerciseDayModel?.day.toString()
-        }else {
-            detaildaySecond.visibility = View.GONE
-            txtdaysecond.visibility = View.GONE
-
-            txttime.text = "07:30"
-            txtexercise.text = "7"
-            txtkcal.text = "300"
-        }
-
-
-        rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
-        detailDayAdapter = DetailDayAdapter(exerciseList, this@DetailDayFragment)
-        rvdaydetail.adapter = detailDayAdapter
-
-
-    }
-
-    override fun recyclerviewListClicked(v: View, position: Int) {
-        val selectedModel = exerciseList[position]
-        println("xx")
-        //TODO("tıklayınca checkbox aktif veya pasif olacak, toast ile favoriye eklendi yazdırılacak")
-    }
-
-    private fun backstack() {
-        val callback = object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                val action = DetailDayFragmentDirections.actionDetailDayFragmentToIdHomepageFragment()
-                view?.findNavController()?.navigate(action)
+        exerciseList = args.exerciseNewList.orEmpty().toList()
+        binding.detaildayFirst.text = args.exerciseLevel
+        binding.detaildaySecond.visibility = if (exerciseDayModel == null) View.GONE else View.VISIBLE
+        binding.txtdaysecond.visibility = binding.detaildaySecond.visibility
+        binding.txtdaysecond.text = exerciseDayModel?.day?.toString().orEmpty()
+        adapter = DetailDayAdapter(exerciseList, this)
+        binding.rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvdaydetail.adapter = adapter
+        transitionAd = PreloadedInterstitialAd(requireActivity(), viewLifecycleOwner, "ca-app-pub-1896269552628731/3768357562")
+        rewarded = RewardedAds(requireActivity(), viewLifecycleOwner).also { it.loadRewardedAds(R.string.rewarded_ad1) }
+        binding.startExercise.setOnClickListener {
+            val list = available()
+            if (list.isEmpty()) return@setOnClickListener
+            transitionAd?.showOrContinue {
+                if (!isAdded || parentFragmentManager.isStateSaved) return@showOrContinue
+                val controller = view.findNavController()
+                if (controller.currentDestination?.id == R.id.detailDayFragment) controller.navigate(
+                    DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment(list.toTypedArray(), exerciseDayModel)
+                )
             }
         }
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
-
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                launch { access.earned.collect { render() } }
+                launch { access.failed.collect { render() } }
+            }
+        }
+        render()
     }
-
+    private fun available() = access.earned.value?.let { earned -> exerciseList.filter { MoveAccess.allowed(it, earned) } }.orEmpty()
+    private fun render() {
+        if (_binding == null) return
+        val list = available()
+        val loading = access.earned.value == null
+        adapter?.earned = access.earned.value
+        adapter?.notifyDataSetChanged()
+        binding.startExercise.isEnabled = !loading && list.isNotEmpty()
+        binding.startExercise.text = if (list.isEmpty()) getString(R.string.unlock_to_start) else getString(R.string.start_available, list.size)
+        binding.txtexercise.text = getString(R.string.available_moves, list.size, exerciseList.size)
+        val seconds = list.size * 30
+        binding.txttime.text = String.format(java.util.Locale.getDefault(), "%d:%02d", seconds / 60, seconds % 60)
+        binding.accessStatus.visibility = if (loading || access.failed.value) View.VISIBLE else View.GONE
+        binding.accessStatus.setText(if (access.failed.value) R.string.access_failed else R.string.access_loading)
+    }
+    override fun recyclerviewListClicked(v: View, position: Int) {
+        val model = exerciseList.getOrNull(position) ?: return
+        val earned = access.earned.value ?: return
+        if (!MoveAccess.allowed(model, earned)) {
+            AlertDialog.Builder(requireContext()).setTitle(R.string.unlock_move_title)
+                .setMessage(getString(R.string.unlock_move_message, model.exerciseName))
+                .setNegativeButton(android.R.string.cancel, null)
+                .setPositiveButton(R.string.watch_unlock) { _, _ -> rewarded?.showRewardAds(retainEarnedReward = true) { access.grant(model) } }.show()
+            return
+        }
+        val preview = layoutInflater.inflate(R.layout.info_favourite_layout, null)
+        preview.findViewById<TextView>(R.id.exerciseFavouriteTitle).text = model.exerciseName
+        preview.findViewById<TextView>(R.id.exerciseFavouriteDescription).text = model.exerciseDescription
+        preview.findViewById<GifImageView>(R.id.infoFavouriteGif).setImageResource(model.image)
+        AlertDialog.Builder(requireContext()).setView(preview).setPositiveButton(R.string.close, null).show()
+    }
+    override fun onDestroyView() {
+        binding.rvdaydetail.adapter = null
+        adapter = null
+        rewarded = null
+        transitionAd = null
+        _binding = null
+        super.onDestroyView()
+    }
 }

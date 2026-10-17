@@ -50,7 +50,8 @@ The following values describe the working checkout at installation on 2026-10-16
 - Automatic commit/push: enabled by the project owner in this conversation, 2026-10-16.
 - Authorized remote: `origin`, `https://github.com/OzerBAYRAKTAR/Fitbess-FitnessApplication.git`.
 - Working branches: `codex/` plus a task-specific name. Default branch: `main`.
-- Meaningful milestone: cohesive completed outcome with required checks and review complete. Runtime changes require the relevant emulator verification before automatic checkpoint.
+- Automatic checkpoint cadence: only substantial, cohesive completed milestones after required checks and review; do not commit/push every edit, small adjustment or intermediate step. Runtime changes require relevant emulator verification.
+- Pull requests: do not create a PR automatically. Commit/push only the authorized working branch; a PR requires a separate explicit user request.
 - Commit convention: concise imperative English subject, unless the repository establishes another convention.
 - Stage only owned task changes by explicit paths/hunks. Preserve pre-existing staged and unstaged changes. Generated APK/AAB files and local IDE configuration are excluded from routine checkpoints.
 - Default/protected branch writes, merge, release and deployment: separate explicit authorization.
@@ -59,10 +60,22 @@ The following values describe the working checkout at installation on 2026-10-16
 
 ## Playbook provenance
 
-- Version: 0.1.0.
+- Version: 0.2.0.
 - Source: `https://github.com/OzerBAYRAKTAR/ai-engineering-playbook`.
-- Source branch: `main`.
-- Pinned commit: `653d57d05071a26fa6451c17b8dc910b7757a150`.
+- Source branch: `codex/po-manager-workflow` (upstream PR #2 awaiting merge at installation).
+- Pinned commit: `84d5de5b81627c5b41589327e08f6a8c3e4cff76`.
 - Installed/reviewed: 2026-10-16.
-- Managed content: `.ai-playbook/core/`, `.ai-playbook/platforms/`, `.ai-playbook/workflows/`, `.ai-playbook/VERSION`, `.ai-playbook/SOURCES.md`, and the three directories in `.agents/skills/`.
+- Managed content: `.ai-playbook/core/`, `.ai-playbook/platforms/`, `.ai-playbook/workflows/`, `.ai-playbook/VERSION`, `.ai-playbook/SOURCES.md`, the five directories in `.agents/skills/`, and the copied Codex role/research templates under `.ai-playbook/integrations/codex/`.
 - Project-owned files: root `AGENTS.md`, this file and `.ai-playbook/README.md`; preserve their local decisions during upgrades.
+
+
+## PO-manager workflow
+
+- Enabled by the project owner on 2026-10-16: research first, then install.
+- User-facing coordinator: product-owner skill in the main conversation; English execution briefs and Turkish explanations.
+- Native delegation to one technical_manager subagent is authorized for scoped product implementation requests. A read-only reviewer may be used for meaningful changes. Keep one implementation writer and serialize builds/emulator use.
+- Delegated managers/reviewers execute their assignment directly; do not spawn another PO or recursively delegate the same role.
+- Automatic working-branch Git remains authorized as above. Product scope changes, merge/release, data deletion and security changes are not granted by a brief.
+- Project .codex/config.toml requests on-request approvals with auto_review. Existing sandbox/profile and managed requirements remain authoritative. This installation does not prove the current chat's permission selection changed; verify Approve for me in the active client.
+- Do not change global config, install allow-all hooks or enable Full Access for ordinary delegated work. Do not create/message separate sidebar chats or install a background service as part of this setup.
+- Model selection is inherited from the user's current session.

@@ -43,11 +43,11 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
     }
 
 
-    fun getMotivationNotificationState(): MotivationNotificationState {
+    fun getMotivationNotificationState(): MotivationNotificationState? {
         return movesDao.getMotivationNotificationState()
     }
 
-    fun getWaterReminderState(): WaterReminderState {
+    fun getWaterReminderState(): WaterReminderState? {
         return movesDao.getWaterReminderState()
     }
 

@@ -46,11 +46,11 @@ interface  MovesDao {
 
 
     @Query("SELECT * FROM water_reminder_state WHERE id = 1")
-    fun getWaterReminderState(): WaterReminderState
+    fun getWaterReminderState(): WaterReminderState?
 
 
     @Query("SELECT * FROM motivation_notification_state WHERE id = 1")
-    fun getMotivationNotificationState(): MotivationNotificationState
+    fun getMotivationNotificationState(): MotivationNotificationState?
 
 
     @Query("SELECT * FROM exercise_days WHERE level = 1")

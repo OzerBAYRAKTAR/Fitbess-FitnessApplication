@@ -11,9 +11,9 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:cardCornerRadius="15dp"
+        app:cardCornerRadius="16dp"
         android:layout_margin="7dp"
-        app:cardElevation="3dp"
+        app:cardElevation="1dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -58,7 +58,7 @@
                     android:id="@+id/txtDay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/robotslabrgular"
+                    android:fontFamily="sans-serif"
                     android:gravity="top"
                     android:text="1"
                     android:layout_marginStart="5dp"
@@ -72,7 +72,7 @@
                     android:id="@+id/txtDayLbl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/robotslabrgular"
+                    android:fontFamily="sans-serif"
                     android:gravity="top"
                     android:text="@string/lbl_item_day"
                     android:textColor="@color/white"
@@ -104,7 +104,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="15dp"
-                            android:fontFamily="@font/tahoma"
+                            android:fontFamily="sans-serif"
                             android:text="7"
                             android:textColor="@color/black"
                             android:textSize="18sp" />
@@ -114,7 +114,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="3dp"
-                            android:fontFamily="@font/tahoma"
+                            android:fontFamily="sans-serif"
                             android:text="@string/label_exercise"
                             android:textColor="@color/black"
                             android:textSize="17sp" />
@@ -132,7 +132,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
-                            android:fontFamily="@font/tahoma"
+                            android:fontFamily="sans-serif"
                             android:text="8"
                             android:textColor="@color/gray"
                             android:textSize="17sp" />
@@ -141,7 +141,7 @@
                             android:id="@+id/labelExerciseTime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/tahoma"
+                            android:fontFamily="sans-serif"
                             android:text="@string/label_minute"
                             android:layout_marginStart="4dp"
                             android:textColor="@color/gray"
@@ -152,7 +152,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
-                            android:fontFamily="@font/tahoma"
+                            android:fontFamily="sans-serif"
                             android:text="105"
                             android:textColor="@color/gray"
                             android:textSize="17sp" />
@@ -162,7 +162,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
-                            android:fontFamily="@font/tahoma"
+                            android:fontFamily="sans-serif"
                             android:text="kcal"
                             android:textColor="@color/gray"
                             android:textSize="16sp" />

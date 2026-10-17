@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="profile_subtitle">Kleine Gewohnheiten, passende Einstellungen.</string>
+    <string name="profile_reminders">Erinnerungen</string>
+    <string name="profile_preferences">App-Einstellungen</string>
+    <string name="profile_support">Gemeinsam besser</string>
+    <string name="water_cadence">Etwa alle 4 Stunden · Zeitpunkt kann variieren</string>
+    <string name="motivation_cadence">Etwa alle 12 Stunden · Zeitpunkt kann variieren</string>
+    <string name="reminder_off">Aus · Jederzeit aktivierbar</string>
+    <string name="notification_blocked">Benachrichtigungen blockiert. Berechtigung und Kanaleinstellungen prüfen.</string>
+    <string name="notification_settings">Benachrichtigungseinstellungen</string>
+    <string name="motivation_title">Trainingsmotivation</string>
+    <string name="profile_save_error">Einstellung nicht gespeichert. Erneut versuchen.</string>
+    <string name="share_message">Starte dein Training zu Hause mit %1$s.\n%2$s</string>
+    <string name="favorite_count">%1$d gespeicherte Übungen</string>
+    <string name="favorites_subtitle">Deine gespeicherten Übungen zum Wiederentdecken.</string>
+    <string name="chart_title">Tägliche aktive Zeit</string>
+    <string name="chart_caption">Minuten · Unter einer Minute wird als &lt;1 angezeigt</string>
+    <string name="chart_day_summary">%1$s: %2$d Minuten %3$d Sekunden</string>
+    <string name="calendar_title">Deine aktiven Tage diese Woche</string>
+    <string name="unlock_move_title">Diese Übung freischalten</string>
+    <string name="unlock_move_message">Sieh eine vollständige belohnte Anzeige an, um nur %1$s auf diesem Gerät dauerhaft freizuschalten.</string>
+    <string name="watch_unlock">Anzeige ansehen und öffnen</string>
+    <string name="move_locked">Gesperrt · Mit Anzeige freischalten</string>
+    <string name="move_unlocked">Freigeschaltet · Auf diesem Gerät gespeichert</string>
+    <string name="move_free">Kostenlose Übung</string>
+    <string name="available_moves">%1$d / %2$d Übungen verfügbar</string>
+    <string name="start_available">Verfügbare Übungen starten (%1$d)</string>
+    <string name="unlock_to_start">Zum Start eine Übung freischalten</string>
+    <string name="access_loading">Zugriff wird geladen…</string>
+    <string name="access_failed">Zugriff konnte nicht gelesen werden. Erneut versuchen.</string>
+    <string name="unlock_saved">Übung dauerhaft freigeschaltet</string>
+    <string name="hero_caption">21-TAGE-PLAN</string>
+    <string name="home_subtitle">Nimm dir heute etwas Zeit für dich.</string>
+</resources>

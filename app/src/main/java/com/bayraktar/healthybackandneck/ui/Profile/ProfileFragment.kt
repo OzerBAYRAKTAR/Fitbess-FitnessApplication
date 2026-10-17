@@ -1,364 +1,127 @@
 package com.bayraktar.healthybackandneck.ui.Profile
 
+import android.Manifest
 import android.app.AlertDialog
 import android.content.ActivityNotFoundException
-import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
+import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
-import android.view.Gravity
-import androidx.fragment.app.Fragment
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.app.ActivityCompat.recreate
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.Fragment
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
-import androidx.work.PeriodicWorkRequest
-import androidx.work.PeriodicWorkRequestBuilder
-import androidx.work.WorkManager
-import androidx.work.Constraints
-import androidx.work.NetworkType
-import java.util.concurrent.TimeUnit
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.bayraktar.healthybackandneck.R
-import com.bayraktar.healthybackandneck.data.Models.MotivationNotificationState
-import com.bayraktar.healthybackandneck.data.Models.WaterReminderState
 import com.bayraktar.healthybackandneck.databinding.FragmentProfileBinding
-import com.bayraktar.healthybackandneck.ui.HomeActivity
 import com.bayraktar.healthybackandneck.utils.LanguagePreference
 import com.bayraktar.healthybackandneck.utils.LocaleHelper
-import com.bayraktar.healthybackandneck.utils.NotificationHelper
-import com.bayraktar.healthybackandneck.utils.NotificationWorker
-import com.bayraktar.healthybackandneck.utils.WaterReminderWorker
-import com.bayraktar.healthybackandneck.utils.showToast
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
-import com.google.android.play.core.review.ReviewInfo
-import com.google.android.play.core.review.ReviewManager
-import com.google.android.play.core.review.ReviewManagerFactory
-import com.google.android.play.core.tasks.Task
+import com.bayraktar.healthybackandneck.utils.ProfileIntents
+import com.bayraktar.healthybackandneck.utils.ReminderKind
+import com.bayraktar.healthybackandneck.utils.loadForLifecycle
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import java.util.Locale
-import java.util.Timer
-import java.util.TimerTask
-
 
 @AndroidEntryPoint
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     val binding get() = _binding!!
-
     private val viewModel: ProfileViewModel by viewModels()
-
-    private lateinit var notificationHelper: NotificationHelper
-    private var  reviewInfo: ReviewInfo?= null
-    private lateinit var reviewManager: ReviewManager
-    private lateinit var mAdView: AdView
-
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    private var pendingPermission: ReminderKind? = null
+    private val permission = registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+        val kind = pendingPermission
+        pendingPermission = null
+        if (granted && kind != null && viewModel.allowed(kind)) viewModel.setEnabled(kind, true)
+        else { render(viewModel.state.value); Toast.makeText(context, R.string.notification_blocked, Toast.LENGTH_LONG).show() }
+    }
+    override fun onCreate(state: Bundle?) {
+        super.onCreate(state)
+        pendingPermission = state?.getString("pendingReminder")?.let { ReminderKind.valueOf(it) }
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        pendingPermission?.let { outState.putString("pendingReminder", it.name) }
+    }
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, state: Bundle?): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
         return binding.root
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-        MobileAds.initialize(requireContext()) {}
-
-        // profile banner id => ca-app-pub-4754194669476617/7416253720
-        mAdView = binding.adView
-        val adRequest = AdRequest.Builder().build()
-        mAdView.loadAd(adRequest)
-
-
-
-     //   val savedLanguageCode = LanguagePreference.getLanguageCode(requireContext())
-     //   savedLanguageCode?.let {
-     //       LocaleHelper.setLocale(requireContext(), it)
-     //   }
-
-        viewModel.getMovitivate()
-        viewModel.getWaterReminder()
-
-        observe()
-        activateReviewInfo()
+    override fun onViewCreated(view: View, state: Bundle?) {
+        binding.adView.loadForLifecycle(viewLifecycleOwner)
+        binding.consLanguage.setOnClickListener { chooseLanguage() }
         binding.consRateus.setOnClickListener {
-            btnRateUsClicked()
+            try { startActivity(ProfileIntents.store(requireContext())) }
+            catch (_: ActivityNotFoundException) { open(ProfileIntents.store(requireContext(), web = true)) }
         }
-
-        notificationHelper = NotificationHelper(requireContext())
-        setBindingThings()
-        btnShareClicked()
-
-
-    }
-
-    private fun handleWaterReminderSwitchChange(isChecked: Boolean) {
-        // Save water reminder switch state to database
-        val waterReminderState = WaterReminderState(isSwitchChecked = isChecked)
-        viewModel.insertWater(waterReminderState)
-
-        // Checking and canceling the periodic WorkManager request if the switch is turned off
-        if (!isChecked) {
-            WorkManager.getInstance(requireContext()).cancelAllWorkByTag("waterReminderWorkerTag")
-        } else {
-            // If the switch is on, schedule the periodic WorkManager request
-            val constraints = Constraints.Builder()
-                .setRequiredNetworkType(NetworkType.NOT_REQUIRED)
-                .build()
-
-            val periodicWorkRequest = PeriodicWorkRequestBuilder<WaterReminderWorker>(
-                4, TimeUnit.HOURS
-            )
-                .setConstraints(constraints)
-                .addTag("waterReminderWorkerTag")
-                .build()
-
-            WorkManager.getInstance(requireContext()).enqueue(periodicWorkRequest)
+        binding.consShare.setOnClickListener { open(Intent.createChooser(ProfileIntents.share(requireContext()), getString(R.string.label_sharevia))) }
+        binding.consPrivacy.setOnClickListener { open(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Glovani/Glovani.github.io/blob/main/privacy-policy.txt"))) }
+        binding.notificationSettings.setOnClickListener { openSettings(null) }
+        binding.waterStatus.setOnClickListener { if (!viewModel.allowed(ReminderKind.WATER)) openSettings(ReminderKind.WATER) }
+        binding.motivationStatus.setOnClickListener { if (!viewModel.allowed(ReminderKind.MOTIVATION)) openSettings(ReminderKind.MOTIVATION) }
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) { viewModel.state.collect(::render) }
         }
     }
-    private fun handleMotivationSwitchChange(isChecked: Boolean) {
-        // Save notification reminder switch state to database
-        val motivateState = MotivationNotificationState(isSwitchChecked = isChecked)
-        viewModel.insertMotiviateState(motivateState)
-
-        if (!isChecked) {
-            WorkManager.getInstance(requireContext()).cancelAllWorkByTag("motivateNotif")
-        } else {
-            // If the switch is on, schedule the periodic WorkManager request
-            val constraints = Constraints.Builder()
-                .setRequiredNetworkType(NetworkType.NOT_REQUIRED)
-                .build()
-
-            val periodicWorkRequest = PeriodicWorkRequestBuilder<NotificationWorker>(
-                12, TimeUnit.HOURS
-            )
-                .setConstraints(constraints)
-                .addTag("motivateNotif")
-                .build()
-
-            WorkManager.getInstance(requireContext()).enqueue(periodicWorkRequest)
+    private fun render(state: ProfileViewModel.State) {
+        if (_binding == null) return
+        listOf(ReminderKind.WATER to binding.waterReminderSwitch, ReminderKind.MOTIVATION to binding.notificationSwitch).forEach { (kind, toggle) ->
+            toggle.setOnCheckedChangeListener(null)
+            toggle.isChecked = state.enabled[kind] == true
+            toggle.isEnabled = !state.busy && pendingPermission == null
+            toggle.setOnCheckedChangeListener { _, enabled -> changeReminder(kind, enabled) }
+            val status = if (kind == ReminderKind.WATER) binding.waterStatus else binding.motivationStatus
+            status.setText(when {
+                !viewModel.allowed(kind) -> R.string.notification_blocked
+                state.enabled[kind] != true -> R.string.reminder_off
+                kind == ReminderKind.WATER -> R.string.water_cadence
+                else -> R.string.motivation_cadence
+            })
         }
+        binding.profileError.visibility = if (state.failed) View.VISIBLE else View.GONE
     }
-
-    private fun observe() = with(binding) {
-        viewModel.waterReminder.observe(viewLifecycleOwner) { switchState ->
-            waterReminderSwitch.isChecked = switchState?.isSwitchChecked ?: false
-            handleWaterReminderSwitchChange(waterReminderSwitch.isChecked)
-        }
-
-        viewModel.motivateNotif.observe(viewLifecycleOwner) { swchMotiv ->
-            notificationSwitch.isChecked = swchMotiv?.isSwitchChecked ?: false
-            handleMotivationSwitchChange(notificationSwitch.isChecked)
-        }
+    private fun changeReminder(kind: ReminderKind, enabled: Boolean) {
+        if (!enabled) { viewModel.setEnabled(kind, false); return }
+        if (Build.VERSION.SDK_INT >= 33 && ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            pendingPermission = kind
+            render(viewModel.state.value)
+            permission.launch(Manifest.permission.POST_NOTIFICATIONS)
+        } else if (!viewModel.allowed(kind)) {
+            render(viewModel.state.value)
+            AlertDialog.Builder(requireContext()).setMessage(R.string.notification_blocked)
+                .setNegativeButton(android.R.string.cancel, null)
+                .setPositiveButton(R.string.notification_settings) { _, _ -> openSettings(kind) }.show()
+        } else viewModel.setEnabled(kind, true)
     }
-
-
-
-
-    private fun changeLanguageAndSave(languageCode: String) {
-        LocaleHelper.setLocale(requireContext(), languageCode)
-        LanguagePreference.setLanguageCode(requireContext(), languageCode)
-
-        val configuration = resources.configuration
-        configuration.setLocale(Locale(languageCode))
-        val displayMetrics = resources.displayMetrics
-        resources.updateConfiguration(configuration, displayMetrics)
-
-        requireActivity().recreate()
+    private fun openSettings(kind: ReminderKind?) {
+        val intent = if (Build.VERSION.SDK_INT >= 26) Intent(if (kind == null) Settings.ACTION_APP_NOTIFICATION_SETTINGS else Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS).apply {
+            putExtra(Settings.EXTRA_APP_PACKAGE, requireContext().packageName)
+            kind?.let { putExtra(Settings.EXTRA_CHANNEL_ID, it.channel) }
+        } else Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:${requireContext().packageName}"))
+        open(intent)
     }
-
-    private fun activateReviewInfo() {
-        reviewManager = ReviewManagerFactory.create(requireContext())
-        val managerInfoTask: Task<ReviewInfo> = reviewManager.requestReviewFlow()
-        managerInfoTask.addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                reviewInfo = task.result
-            }else {
-                val reviewError = getString(R.string.label_reviewerror)
-                showToast(requireContext(),reviewError,Gravity.CENTER,0,0)
-            }
-        }
+    private fun open(intent: Intent) {
+        try { startActivity(intent) }
+        catch (_: ActivityNotFoundException) { Toast.makeText(context, R.string.label_error, Toast.LENGTH_LONG).show() }
     }
-
-    private fun startReviewFlow() {
-        if (reviewInfo != null) {
-            val flow: Task<Void> = reviewManager.launchReviewFlow(requireActivity(), reviewInfo!!)
-            flow.addOnCompleteListener { task ->
-                val successMessage = getString(R.string.label_ratingsuccess)
-
-                if (task.isSuccessful) {
-                    // If the review flow was successful, open the Google Play Store link
-                    openGooglePlayStore()
-                } else {
-                    showToast(requireContext(), successMessage, Gravity.CENTER, 0, 0)
-                }
-            }
-        }
-    }
-    private fun openGooglePlayStore() {
-        val packageName = requireContext().packageName
-        val uri = Uri.parse("market://details?id=$packageName")
-        val goToMarket = Intent(Intent.ACTION_VIEW, uri)
-        try {
-            startActivity(goToMarket)
-        } catch (e: ActivityNotFoundException) {
-            // If Google Play Store app is not available, open the link in a web browser
-            val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$packageName"))
-            startActivity(webIntent)
-        }
-    }
-
-
-    private fun setBindingThings() = with(binding) {
-
-        waterReminderSwitch.setOnCheckedChangeListener { _, isChecked ->
-            handleWaterReminderSwitchChange(isChecked)
-        }
-        notificationSwitch.setOnCheckedChangeListener { _, isChecked ->
-            handleMotivationSwitchChange(isChecked)
-        }
-
-        apply {
-            consLanguage.setOnClickListener {
-                btnLanguageClicked()
-            }
-            constRestart.setOnClickListener {
-                btnRestartClicked()
-            }
-            constTheme.setOnClickListener {
-                btnThemeclicked()
-            }
-        }
-
-    }
-
-    private fun btnThemeclicked() {
-        val languages = arrayOf("Light", "Dark Theme")
-        val languageCodes = arrayOf("en", "tr", "de")
-
-        val currentLanguage = Locale.getDefault().language
-        val currentLanguageIndex = languageCodes.indexOf(currentLanguage)
-
-        AlertDialog.Builder(requireContext())
-            .setTitle(getString(R.string.label_selectlanguage))
-            .setIcon(R.drawable.themee)
-            //which -> like a selected position of list
-            .setSingleChoiceItems(languages, currentLanguageIndex) { dialog, which ->
-                // Change the language when the user selects a new language
-                val selectedLanguageCode = languageCodes[which]
-                LocaleHelper.setLocale(requireContext(), selectedLanguageCode)
-                recreate(requireActivity()) // Restart the activity to apply the language change
+    private fun chooseLanguage() {
+        val codes = arrayOf("tr", "en", "de", "ru")
+        AlertDialog.Builder(requireContext()).setTitle(R.string.label_selectlanguage)
+            .setSingleChoiceItems(arrayOf("Türkçe", "English", "Deutsch", "Русский"), codes.indexOf(Locale.getDefault().language)) { dialog, index ->
+                LanguagePreference.setLanguageCode(requireContext(), codes[index])
+                LocaleHelper.setLocale(requireContext(), codes[index])
                 dialog.dismiss()
-            }
-            .setNegativeButton(getString(R.string.label_cancel)) { dialog, _ ->
-                dialog.dismiss()
-            }
-            .show()
-    }
-
-    private fun btnRestartClicked() {
-        AlertDialog.Builder(requireContext())
-            .setTitle(getString(R.string.label_attention))
-            .setMessage(getString(R.string.label_restartmessage))
-            .setIcon(R.drawable.restartt)
-            .setCancelable(false)
-            .setPositiveButton("Evet") { dialog, _ ->
-                dialog.dismiss()
-            }.setNegativeButton("Hayır") { dialog, _ ->
-                dialog.dismiss()
-            }.show()
-    }
-
-    private fun btnLanguageClicked() {
-        val languages = arrayOf("Turkish", "English", "German", "Russian")
-        val languageCodes = arrayOf("tr", "en", "de", "ru")
-
-        val currentLanguage = Locale.getDefault().language
-        val currentLanguageIndex = languageCodes.indexOf(currentLanguage)
-        val defaultLanguageIndex = 0
-
-
-
-        val selectedIndex = if (currentLanguageIndex != -1) currentLanguageIndex else defaultLanguageIndex
-
-        val alertDialog = AlertDialog.Builder(requireContext())
-            .setTitle("Select Language")
-            .setIcon(R.drawable.translation)
-            .setSingleChoiceItems(languages, selectedIndex) { dialog, which ->
-                // Change the language when the user selects a new language
-                val selectedLanguageCode = languageCodes[which]
-                changeLanguageAndSave(selectedLanguageCode)
-                restartActivity()
                 requireActivity().recreate()
-                dialog.dismiss()
-            }
-            .setNegativeButton("Cancel") { dialog, _ ->
-                dialog.dismiss()
-            }
-            .create()
-
-        alertDialog.show()
+            }.setNegativeButton(android.R.string.cancel, null).show()
     }
-
-    override fun onResume() {
-        super.onResume()
-        val savedLanguageCode = LanguagePreference.getLanguageCode(requireContext())
-        savedLanguageCode?.let {
-            LocaleHelper.setLocale(requireContext(), it)
-        }
-    }
-
-
-    private fun setNewLocale(context: Context, language: String) {
-        val newLocale = Locale(language)
-        Locale.setDefault(newLocale)
-
-        val resources = context.resources
-        val configuration = Configuration(resources.configuration)
-        configuration.setLocale(newLocale)
-        context.createConfigurationContext(configuration)
-        resources.updateConfiguration(configuration, resources.displayMetrics)
-
-        val intent = Intent(context, HomeActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        context.startActivity(intent)
-    }
-
-    private fun btnShareClicked() = with(binding) {
-        consShare.setOnClickListener {
-            val link = "App.link"
-            val selectedText = getString(R.string.label_shareus)
-            val shareIntent = Intent()
-            shareIntent.action = Intent.ACTION_SEND
-            shareIntent.putExtra(Intent.EXTRA_TEXT, selectedText)
-            shareIntent.type = "text/plain"
-
-            if (activity?.packageManager?.let { it2 ->
-                    shareIntent.resolveActivity(it2)
-                } != null) {
-                startActivity(Intent.createChooser(shareIntent, getString(R.string.label_sharevia)))
-            } else {
-                val shareError = getString(R.string.label_shareerror)
-                showToast(requireContext(), shareError, Gravity.CENTER, 0, 0)
-            }
-
-        }
-    }
-
-    private fun btnRateUsClicked() = with(binding) {
-        startReviewFlow()
-    }
-    private fun restartActivity() {
-        val intent = requireActivity().intent
-        requireActivity().finish()
-        startActivity(intent)
-    }
+    override fun onResume() { super.onResume(); if (_binding != null) render(viewModel.state.value) }
+    override fun onDestroyView() { _binding = null; super.onDestroyView() }
 }

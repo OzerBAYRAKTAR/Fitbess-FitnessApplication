@@ -1,54 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.SplashScreen.SplashScreen">
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageView12"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/splashimage"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:layout_width="5dp"
-        android:layout_height="110dp"
-        android:background="@color/red"
-        android:layout_marginStart="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/fit"
-        app:layout_constraintEnd_toStartOf="@+id/keep"
-        app:layout_constraintTop_toTopOf="@+id/keep" />
-    <TextView
-        android:id="@+id/keep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:fontFamily="@font/robotoslabmedium"
-        android:text="Keep"
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.718" />
-
-    <TextView
-        android:id="@+id/fit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:fontFamily="@font/robotoslabmedium"
-        android:text="Fit"
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/keep" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+<?xml version="1.0" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="24dp" android:background="@color/fit_background">
+    <TextView android:id="@+id/fit" style="@style/FitTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:text="@string/brand_short"/>
+    <TextView android:id="@+id/keep" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:gravity="center" android:text="@string/brand_tagline"/>
+</LinearLayout>

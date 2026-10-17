@@ -1,3 +1,4 @@
+// app/build.gradle (Module-level)
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -8,21 +9,18 @@ plugins {
 }
 
 android {
+    // Keep the published package identity so existing Fitbess installations can update.
     namespace 'com.bayraktar.healthybackandneck'
-    compileSdk 34
+    compileSdk 36
 
     defaultConfig {
         applicationId "com.bayraktar.healthybackandneck"
         minSdk 26
-        targetSdk 34
+        targetSdk 36
         versionCode 4
         versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildFeatures {
-        viewBinding = true
     }
 
     buildTypes {
@@ -31,100 +29,106 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
+        coreLibraryDesugaringEnabled true
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = '17'
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = '1.5.11'
     }
 }
 
 dependencies {
-
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.5'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
-    def room_version = "2.5.2"
-    def retrofit_version = "2.9.0"
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.8.4'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4'
+
+    def room_version = "2.7.2"
+    def retrofit_version = "2.11.0"
     def coroutines_version = "1.6.4"
-    def navigation_version = '2.7.4'
-    def material3_version = "1.1.2"
+    def navigation_version = '2.8.0'
+    def material3_version = "1.7.2"
     def viewpager_version = "1.0.0"
 
-    implementation 'androidx.core:core-ktx:1.10.1'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    implementation 'com.google.android.play:core:1.10.3'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 
-    //admob
-    implementation 'com.google.android.gms:play-services-ads:22.5.0'
+    // AdMob
+    implementation 'com.google.android.gms:play-services-ads:24.4.0'
 
-    //material3
-    implementation("androidx.compose.material3:material3:$material3_version")
-    implementation("androidx.compose.material3:material3-window-size-class:$material3_version")
+    // Material 3
+    //implementation("androidx.compose.material3:material3:$material3_version")
+    //implementation("androidx.compose.material3:material3-window-size-class:$material3_version")
 
+    implementation "androidx.work:work-runtime-ktx:2.7.1"
 
-    //Room
+    // Room
     implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
     kapt("androidx.room:room-compiler:$room_version")
     implementation("androidx.room:room-paging:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
 
-    //workmanager
-    implementation "androidx.work:work-runtime:2.9.0"
-
-    //retrofit
+    // Retrofit
     implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
     implementation("com.squareup.retrofit2:converter-gson:$retrofit_version")
     implementation("com.squareup.retrofit2:adapter-rxjava2:$retrofit_version")
-    implementation "com.squareup.okhttp3:okhttp:5.0.0-alpha.2"
-    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2"
+    implementation "com.squareup.okhttp3:okhttp:4.12.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.12.0"
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version")
 
     // Navigation
-    implementation("androidx.navigation:navigation-fragment-ktx:$navigation_version")
-    implementation("androidx.navigation:navigation-ui-ktx:$navigation_version")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.8.0")
+    implementation("androidx.navigation:navigation-ui-ktx:2.8.0")
 
-    //ViewPager
+    // ViewPager2
     implementation("androidx.viewpager2:viewpager2:$viewpager_version")
 
-    //Circle imageview
+    // Circle ImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
-    //jetpack datastore
-    implementation "androidx.datastore:datastore-preferences:1.0.0"
+    // DataStore
+    implementation "androidx.datastore:datastore-preferences:1.1.7"
 
+    // Hilt
+    implementation 'com.google.dagger:hilt-android:2.51.1'
+    kapt 'com.google.dagger:hilt-compiler:2.51.1'
+    kapt "androidx.hilt:hilt-compiler:1.2.0"
 
-    //Hilt
-    implementation 'com.google.dagger:hilt-android:2.46'
-    kapt 'com.google.dagger:hilt-compiler:2.46'
-    kapt 'com.google.dagger:hilt-android-compiler:2.46'
-    kapt "androidx.hilt:hilt-compiler:1.0.0"
-    annotationProcessor 'com.google.dagger:dagger-android-processor:2.46'
-
-    //glide
+    // Glide
     implementation 'com.github.bumptech.glide:glide:4.15.1'
 
-    //chart
+    // MPAndroidChart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
-    //datastore
+    // SmoothBottomBar
     implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
 
-
-    //number picker
+    // Number picker
     implementation 'io.github.ShawnLin013:number-picker:2.4.13'
-    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.27'
-    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
+    // GIF support
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.32'
 
+    // Logging (optional for debugging)
+    implementation 'com.jakewharton.timber:timber:5.0.1'
 }

@@ -18,6 +18,8 @@ class MoveListAdapter(
 
 
 
+    var earned: Set<Int>? = null
+
     inner class ItemHolder(
         val binding: ItemSubdetaildayBinding,
         private val recyclerViewClickListener: RecyclerViewClickListener
@@ -30,9 +32,10 @@ class MoveListAdapter(
         }
 
         override fun onClick(p0: View?) {
-            mRecyclerViewClickListener.recyclerviewListClicked(p0!!, adapterPosition)
             val position = adapterPosition
-
+            if (p0 != null && position != RecyclerView.NO_POSITION) {
+                mRecyclerViewClickListener.recyclerviewListClicked(p0, position)
+            }
         }
 
     }
@@ -57,9 +60,19 @@ class MoveListAdapter(
             val imageDrawable = ContextCompat.getDrawable(root.context, model.image)
             roundedImageView.setImageDrawable(imageDrawable)
             labelDay.text = model.exerciseName
+            lockBadge.visibility = if (earned != null && !com.bayraktar.healthybackandneck.utils.MoveAccess.allowed(model, earned.orEmpty())) View.VISIBLE else View.GONE
+            txtExerciseCount.visibility = View.VISIBLE
+            txtExerciseCount.setText(when {
+                earned == null -> com.bayraktar.healthybackandneck.R.string.access_loading
+                !com.bayraktar.healthybackandneck.utils.MoveAccess.allowed(model, earned.orEmpty()) -> com.bayraktar.healthybackandneck.R.string.move_locked
+                else -> com.bayraktar.healthybackandneck.R.string.move_unlocked
+            })
 
             deleteBtn.setOnClickListener {
-                onDeleteClicked.onDeleteClicked(position)
+                val currentPosition = holder.adapterPosition
+                if (currentPosition != RecyclerView.NO_POSITION) {
+                    onDeleteClicked.onDeleteClicked(currentPosition)
+                }
             }
         }
 

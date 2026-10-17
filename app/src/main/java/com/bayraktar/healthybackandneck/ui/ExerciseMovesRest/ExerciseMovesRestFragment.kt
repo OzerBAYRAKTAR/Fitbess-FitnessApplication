@@ -1,7 +1,10 @@
 package com.bayraktar.healthybackandneck.ui.ExerciseMovesRest
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.ViewModelProvider
+import com.bayraktar.healthybackandneck.utils.WorkoutNavigation
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
@@ -11,6 +14,7 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.utils.loadForLifecycle
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
@@ -21,12 +25,14 @@ import com.bayraktar.healthybackandneck.ui.ExerciseMoves.ExerciseMovesFragmentDi
 import com.bayraktar.healthybackandneck.ui.ExerciseMovesReady.ExerciseMovesReadyFragmentDirections
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ExerciseMovesRestFragment : Fragment() {
 
+    private lateinit var navigation: WorkoutNavigation
+    private var resumeTimer = false
+    private var exitDialogOpen = false
     private var _binding: FragmentExerciseMovesRestBinding? = null
     val binding get() = _binding!!
 
@@ -55,16 +61,23 @@ class ExerciseMovesRestFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        MobileAds.initialize(requireContext()) {}
+        timeProgress = 0
+        pauseOffSet = 0
+        isStart = true
+        resumeTimer = false
+        navigation = WorkoutNavigation(this, R.id.exerciseMovesRestFragment)
 
         //banner id => ca-app-pub-4754194669476617/7348843104
 
         mAdView = binding.adView
-        val adRequest = AdRequest.Builder().build()
-        mAdView.loadAd(adRequest)
+        mAdView.visibility = View.GONE
         binding.txtTimeLeft.text = "30"
         binding.pbTimer.max = timeSelected
 
+        binding.favoritebtn.visibility = View.GONE
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() { confirmExit() }
+        })
         getData()
         startTimerSetup()
 
@@ -74,9 +87,9 @@ class ExerciseMovesRestFragment : Fragment() {
                 ExerciseMovesRestFragmentDirections.actionExerciseMovesRestFragmentToExerciseMovesFragment2(
                     currentExerciseIndex + 1,
                     exerciseList.toTypedArray(),
-                    exerciseDayModel!!
+                    exerciseDayModel
                 )
-            view.findNavController().navigate(action)
+            navigation.navigate(action) { timePause() }
 
         }
     }
@@ -98,6 +111,26 @@ class ExerciseMovesRestFragment : Fragment() {
 
 
         }
+    }
+
+    private fun confirmExit() {
+        if (exitDialogOpen) return
+        exitDialogOpen = true
+        timePause()
+        var leaving = false
+        AlertDialog.Builder(requireContext()).setTitle(R.string.exit_workout_title)
+            .setMessage(R.string.exit_workout_message)
+            .setNegativeButton(R.string.resume_workout, null)
+            .setPositiveButton(R.string.exit_workout) { _, _ ->
+                leaving = true
+                navigation.navigate(ExerciseMovesRestFragmentDirections.actionExerciseMovesRestFragmentToExerciseMovesEndFragment(
+                    exerciseList.toTypedArray(), exerciseDayModel)) { timePause() }
+            }
+            .setOnDismissListener {
+                exitDialogOpen = false
+                if (!leaving && isResumed) startTimer(pauseOffSet)
+            }
+            .show()
     }
 
     private fun timePause() {
@@ -122,12 +155,14 @@ class ExerciseMovesRestFragment : Fragment() {
 
 
     private fun startTimer(pauseOffSetL: Long) {
+        timePause()
         val progressBar = binding.pbTimer
         progressBar.progress = timeProgress
         timecountDown = object : CountDownTimer(
-            (timeSelected * 1000).toLong() - pauseOffSetL * 1000, 1000
+            ((timeSelected * 1000).toLong() - pauseOffSetL * 1000).coerceAtLeast(1), 1000
         ) {
             override fun onTick(p0: Long) {
+                if (_binding == null) return
                 timeProgress++
                 pauseOffSet = timeSelected.toLong() - p0 / 1000
                 progressBar.progress = timeSelected - timeProgress
@@ -142,9 +177,9 @@ class ExerciseMovesRestFragment : Fragment() {
                     ExerciseMovesRestFragmentDirections.actionExerciseMovesRestFragmentToExerciseMovesFragment2(
                         currentExerciseIndex + 1,
                         exerciseList.toTypedArray(),
-                        exerciseDayModel!!
+                        exerciseDayModel
                     )
-                view?.findNavController()?.navigate(action)
+                navigation.navigate(action) { timePause() }
 
             }
 
@@ -152,11 +187,24 @@ class ExerciseMovesRestFragment : Fragment() {
     }
 
 
-    override fun onDestroy() {
-        super.onDestroy()
-        if (timecountDown != null) {
-            timecountDown?.cancel()
-            timeProgress = 0
+    override fun onPause() {
+        resumeTimer = !isStart
+        timePause()
+        super.onPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (resumeTimer && !exitDialogOpen) {
+            resumeTimer = false
+            startTimer(pauseOffSet)
         }
+    }
+
+    override fun onDestroyView() {
+        timePause()
+        timecountDown = null
+        _binding = null
+        super.onDestroyView()
     }
 }

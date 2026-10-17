@@ -2,6 +2,8 @@ package com.bayraktar.healthybackandneck.ui.HomePage
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -27,6 +29,7 @@ import com.bayraktar.healthybackandneck.data.Models.Exercise.NeckBackModel
 import com.bayraktar.healthybackandneck.data.Models.Exercise.WarmUpModel
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.HomeItem
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.utils.loadForLifecycle
 import com.bayraktar.healthybackandneck.data.Models.CountModel
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
@@ -41,7 +44,6 @@ import com.bayraktar.healthybackandneck.utils.LanguagePreference
 import com.bayraktar.healthybackandneck.utils.LocaleHelper
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
 import dagger.hilt.android.AndroidEntryPoint
 import org.json.JSONArray
 import java.nio.charset.Charset
@@ -114,11 +116,9 @@ class HomePageFragment : Fragment() {
 
 
 
-        MobileAds.initialize(requireContext()) {}
 
         mAdView = binding.adView
-        val adRequest = AdRequest.Builder().build()
-        mAdView.loadAd(adRequest)
+        mAdView.loadForLifecycle(viewLifecycleOwner)
 
 
         setOnBoardingItems()
@@ -335,23 +335,20 @@ class HomePageFragment : Fragment() {
                     0 -> {
                         val titleName = "stretch"
                         exerciseLevel = getString(R.string.warmup_desc1)
-                        viewModel.getExerciseListWithLevelAndTitle(titleName, 1)
-                        observeListWithLevelAndTitle()
+                        openCategory(titleName, 1)
                     }
 
                     1 -> {
                         val titleName = "stretch"
                         exerciseLevel = getString(R.string.warmup_desc2)
-                        viewModel.getExerciseListWithLevelAndTitle(titleName, 2)
-                        observeListWithLevelAndTitle()
+                        openCategory(titleName, 2)
 
                     }
 
                     2 -> {
                         val titleName = "stretch"
                         exerciseLevel = getString(R.string.warmup_desc3)
-                        viewModel.getExerciseListWithLevelAndTitle(titleName, 3)
-                        observeListWithLevelAndTitle()
+                        openCategory(titleName, 3)
                     }
 
                     else -> {
@@ -409,30 +406,26 @@ class HomePageFragment : Fragment() {
                     0 -> {
                         val titleName = "bellyneck"
                         exerciseLevel = getString(R.string.back_desc1)
-                        viewModel.getExerciseListWithLevelAndTitle(titleName, 1)
-                        observeListWithLevelAndTitle()
+                        openCategory(titleName, 1)
                     }
 
                     1 -> {
                         val titleName = "bellyneck"
                         exerciseLevel = getString(R.string.back_desc2)
-                        viewModel.getExerciseListWithLevelAndTitle(titleName, 2)
-                        observeListWithLevelAndTitle()
+                        openCategory(titleName, 2)
 
                     }
 
                     2 -> {
                         val titleName = "bellyneck"
                         exerciseLevel = getString(R.string.neck_desc1)
-                        viewModel.getExerciseListWithLevelAndTitle(titleName, 3)
-                        observeListWithLevelAndTitle()
+                        openCategory(titleName, 3)
                     }
 
                     3 -> {
                         val titleName = "bellyneck"
                         exerciseLevel = getString(R.string.neck_desc2)
-                        viewModel.getExerciseListWithLevelAndTitle(titleName, 4)
-                        observeListWithLevelAndTitle()
+                        openCategory(titleName, 4)
                     }
 
                     else -> {
@@ -487,23 +480,20 @@ class HomePageFragment : Fragment() {
                 0 -> {
                     val titleName = "arm"
                     exerciseLevel = getString(R.string.arm_desc1)
-                    viewModel.getExerciseListWithLevelAndTitle(titleName, 1)
-                    observeListWithLevelAndTitle()
+                    openCategory(titleName, 1)
                 }
 
                 1 -> {
                     val titleName = "arm"
                     exerciseLevel = getString(R.string.arm_desc2)
-                    viewModel.getExerciseListWithLevelAndTitle(titleName, 2)
-                    observeListWithLevelAndTitle()
+                    openCategory(titleName, 2)
 
                 }
 
                 2 -> {
                     val titleName = "arm"
                     exerciseLevel = getString(R.string.arm_desc3)
-                    viewModel.getExerciseListWithLevelAndTitle(titleName, 3)
-                    observeListWithLevelAndTitle()
+                    openCategory(titleName, 3)
                 }
 
                 else -> {
@@ -556,22 +546,19 @@ class HomePageFragment : Fragment() {
                 0 -> {
                     val titleName = "abs"
                     exerciseLevel = getString(R.string.abs_desc1)
-                    viewModel.getExerciseListWithLevelAndTitle(titleName, 1)
-                    observeListWithLevelAndTitle()
+                    openCategory(titleName, 1)
                 }
 
                 1 -> {
                     val titleName = "abs"
                     exerciseLevel = getString(R.string.abs_desc2)
-                    viewModel.getExerciseListWithLevelAndTitle(titleName, 2)
-                    observeListWithLevelAndTitle()
+                    openCategory(titleName, 2)
                 }
 
                 2 -> {
                     val titleName = "abs"
                     exerciseLevel = getString(R.string.abs_desc3)
-                    viewModel.getExerciseListWithLevelAndTitle(titleName, 3)
-                    observeListWithLevelAndTitle()
+                    openCategory(titleName, 3)
                 }
 
                 else -> {
@@ -625,29 +612,25 @@ class HomePageFragment : Fragment() {
                 0 -> {
                     val titleName = "legbutt"
                     exerciseLevel = getString(R.string.leg_desc1)
-                    viewModel.getExerciseListWithLevelAndTitle(titleName, 1)
-                    observeListWithLevelAndTitle()
+                    openCategory(titleName, 1)
                 }
 
                 1 -> {
                     val titleName = "legbutt"
                     exerciseLevel = getString(R.string.leg_desc2)
-                    viewModel.getExerciseListWithLevelAndTitle(titleName, 2)
-                    observeListWithLevelAndTitle()
+                    openCategory(titleName, 2)
                 }
 
                 2 -> {
                     val titleName = "legbutt"
                     exerciseLevel = getString(R.string.leg_desc3)
-                    viewModel.getExerciseListWithLevelAndTitle(titleName, 3)
-                    observeListWithLevelAndTitle()
+                    openCategory(titleName, 3)
                 }
 
                 3 -> {
                     val titleName = "legbutt"
                     exerciseLevel = getString(R.string.leg_desc4)
-                    viewModel.getExerciseListWithLevelAndTitle(titleName, 4)
-                    observeListWithLevelAndTitle()
+                    openCategory(titleName, 4)
                 }
 
                 else -> {
@@ -685,20 +668,19 @@ class HomePageFragment : Fragment() {
         })
     }
 
-    private fun observeListWithLevelAndTitle() {
-        viewModel.getExerciseListWithLevelAndTitle.observe(
-            viewLifecycleOwner,
-            Observer { exercise ->
-                if (exercise != null) {
-                    exerciseListSend.clear()
-                    exerciseListSend.addAll(exercise)
-                }
-                val action =
-                    HomePageFragmentDirections.actionIdHomepageFragmentToDetailDayFragment(
-                        exerciseListSend.toTypedArray(), dayModel, exerciseLevel
-                    )
-                view?.findNavController()?.navigate(action)
-            })
+    private var categoryJob: kotlinx.coroutines.Job? = null
+    private fun openCategory(title: String, level: Int) {
+        categoryJob?.cancel()
+        val displayTitle = exerciseLevel
+        categoryJob = viewLifecycleOwner.lifecycleScope.launch {
+            val exercises = viewModel.category(title, level)
+            val controller = view?.findNavController() ?: return@launch
+            if (viewLifecycleOwner.lifecycle.currentState.isAtLeast(androidx.lifecycle.Lifecycle.State.RESUMED) && !parentFragmentManager.isStateSaved && controller.currentDestination?.id == R.id.id_homepage_fragment) {
+                controller.navigate(HomePageFragmentDirections.actionIdHomepageFragmentToDetailDayFragment(
+                    exercises.toTypedArray(), null, displayTitle
+                ))
+            }
+        }
     }
 
     @SuppressLint("DiscouragedApi")

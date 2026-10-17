@@ -9,9 +9,9 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
-        mavenCentral() // Warning: this repository is going to shut down soon
+        mavenCentral()
         maven { url 'https://jitpack.io' } //Add this line in your settings.gradle
     }
 }
-rootProject.name = "HealthyBackandNeck"
+rootProject.name = "Fitbess"
 include ':app'

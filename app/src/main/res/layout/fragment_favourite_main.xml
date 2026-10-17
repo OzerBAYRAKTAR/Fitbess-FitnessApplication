@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:layout_marginStart="28dp"
-            android:fontFamily="@font/tahoma"
+            android:fontFamily="sans-serif"
             android:gravity="center_vertical"
             android:text="@string/all_exercies"
             android:textColor="@color/background"

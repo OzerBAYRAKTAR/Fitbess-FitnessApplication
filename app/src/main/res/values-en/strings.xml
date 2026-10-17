@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Fitbess</string>
+    <string name="app_name">Evde Fit: 21 Günlük Plan</string>
 
     <string name="skip">Skip</string>
     <string name="start">Lets Start</string>
@@ -20,7 +20,7 @@
     <string name="kcal">Calories</string>
     <string name="time">Time</string>
     <string name="heart">Heart Rate</string>
-    <string name="statistics">Statistics</string>
+    <string name="statistics">Progress</string>
     <string name="profile">Profile</string>
     <string name="settings">Settings</string>
     <string name="reach_us">Contact Us</string>
@@ -126,7 +126,7 @@
     <!-- Exercise Fragment -->
     <string name="back_back">Back-Neck</string>
     <string name="create_plan">Create Your Plan</string>
-    <string name="create_plan_desc">Choose exercises and create your own plan!</string>
+    <string name="create_plan_desc">Save moves with the heart icon and revisit them here.</string>
 
     <!-- Warm Up -->
     <string name="strech">Stretch</string>
@@ -143,7 +143,7 @@
 
     <!-- Neck-Back -->
     <string name="neck">Neck</string>
-    <string name="neckback_exercise">Back-Neck Movements</string>
+    <string name="neckback_exercise">Back &amp; Neck Exercises</string>
     <string name="back_desc1">Back Exercises</string>
     <string name="back_desc2">Back Strengthening</string>
     <string name="neck_desc1">Neck Exercises</string>
@@ -524,7 +524,7 @@
     <string name="lbl_my_favourite">My Favorites</string>
     <string name="lbl_fav_list_empty">Your favorite list is empty. Browse workout programs to create your favorite list.</string>
     <string name="btn_chec">Browse</string>
-    <string name="next_move">Next Movement</string>
+    <string name="next_move">Next move</string>
     <string name="lbl_before">Previous</string>
     <string name="lbl_sonraki">Next</string>
     <string name="lbl_step">Step</string>
@@ -535,9 +535,9 @@
     <string name="lbl_levelmove_desc">By determining your movement level, you enable us to adjust the most suitable workouts for you.</string>
     <string name="lbl_delete_favourite">Are you sure you want to remove the movement from your favorites list?</string>
     <string name="lbl_exerciseattention">Please complete previous exercises first!</string>
-    <string name="rewarded_ad1">ca-app-pub-4754194669476617/7616538047</string>
-    <string name="rewarded_ad2">ca-app-pub-4754194669476617/9652039406</string>
-    <string name="rewarded_ad3">ca-app-pub-4754194669476617/8338957732</string>
+    <string name="rewarded_ad1">ca-app-pub-1896269552628731/5970466188</string>
+    <string name="rewarded_ad2">ca-app-pub-1896269552628731/8758612752</string>
+    <string name="rewarded_ad3">ca-app-pub-1896269552628731/8717701412</string>
     <string name="detail_day_ad">ca-app-pub-4754194669476617/8160142148</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="first_fragment_label">First Fragment</string>

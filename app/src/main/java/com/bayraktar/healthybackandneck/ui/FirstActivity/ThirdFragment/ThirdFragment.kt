@@ -70,9 +70,10 @@ class ThirdFragment : Fragment() {
     }
 
     private fun observeCalculates() {
-        dataStoreManager.getWeight().asLiveData().observe(viewLifecycleOwner) { height ->
+        dataStoreManager.getHeight().asLiveData().observe(viewLifecycleOwner) { height ->
             if (height != 0 ) {
                 binding.numberPicker.value = height
+                selectedHeight = height
             }
         }
     }

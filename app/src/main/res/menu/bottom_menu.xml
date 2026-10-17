@@ -10,9 +10,9 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/id_food_fragment"
-        android:icon="@drawable/foody6"
-        android:title="@string/nutrition"
+        android:id="@+id/moveListFragment"
+        android:icon="@drawable/ic_favorite_outline"
+        android:title="@string/nav_favorites"
         android:padding="15dp"
         app:showAsAction="ifRoom" />
     <item

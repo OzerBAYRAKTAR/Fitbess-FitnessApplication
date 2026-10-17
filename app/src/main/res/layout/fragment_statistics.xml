@@ -1,1011 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Statistics.StatisticsFragment">
-
-    <ScrollView
+    android:fillViewport="true"
+    android:background="@color/fit_background">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+        <TextView
+            android:id="@+id/progressTitle"
+            style="@style/FitTitle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cnnm3"
-                android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/progress_title"/>
+        <TextView
+            android:id="@+id/progressSubtitle"
+            style="@style/FitBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/progress_subtitle"/>
+        <TextView
+            android:id="@+id/weekTitle"
+            style="@style/FitSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/this_week"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:background="#FDFCFC"
-                android:paddingBottom="4dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/fb_1"
-                    android:layout_marginStart="10dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <ImageView
-                    android:id="@+id/imageView9"
-                    android:layout_width="wrap_content"
+                android:layout_margin="3dp"
+                android:padding="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/fit_card">
+                <TextView
+                    android:id="@+id/weekWorkouts"
+                    style="@style/FitTitle"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="25dp"
-                    android:src="@drawable/settttng"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="parent" />
-
-                <ImageView
-                    android:id="@+id/btnAdBlock"
-                    android:layout_width="wrap_content"
+                    android:text="0"/>
+                <TextView
+                    style="@style/FitBody"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:layout_marginEnd="30dp"
-                    android:src="@drawable/adblock"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView9"
-                    app:layout_constraintTop_toTopOf="@+id/imageView9" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
+                    android:textSize="13sp"
+                    android:text="@string/metric_workouts"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:fontFamily="@font/robotoslabmedium"
-                android:text="@string/txt_record"
-                android:textColor="@color/black"
-                android:textSize="22sp"
-                app:layout_constraintStart_toStartOf="@+id/cnnm3"
-                app:layout_constraintTop_toBottomOf="@+id/cnnm3" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card1"
-                android:layout_width="160dp"
-                android:layout_height="130dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#F8F2EF"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="7dp"
-                app:layout_constraintEnd_toStartOf="@+id/card11"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView13">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_margin="3dp"
+                android:padding="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/fit_card">
+                <TextView
+                    android:id="@+id/weekMinutes"
+                    style="@style/FitTitle"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-
-                    <ImageView
-                        android:id="@+id/imageExercise"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_margin="15dp"
-                        android:src="@drawable/exercisemin"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/txtExerciseCount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:paddingStart="2dp"
-                        android:text="26"
-                        android:textColor="@color/black"
-                        android:textSize="19sp"
-                        android:textStyle="italic|bold"
-                        app:layout_constraintStart_toStartOf="@+id/textView27"
-                        app:layout_constraintTop_toBottomOf="@+id/textView27" />
-
-                    <TextView
-                        android:id="@+id/labelCount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:fontFamily="@font/tahoma"
-                        android:paddingStart="2dp"
-                        android:text="@string/exercise_move"
-                        android:textColor="@color/gray"
-                        android:textSize="13sp"
-                        app:layout_constraintStart_toStartOf="@+id/txtExerciseCount"
-                        app:layout_constraintTop_toBottomOf="@+id/txtExerciseCount" />
-
-                    <TextView
-                        android:id="@+id/textView27"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:fontFamily="@font/tahoma"
-                        android:gravity="center"
-                        android:text="@string/exercice"
-                        android:textColor="@color/buttontext"
-                        android:textSize="17sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageExercise"
-                        app:layout_constraintEnd_toStartOf="@+id/imageExercise"
-                        app:layout_constraintHorizontal_bias="0.262"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/imageExercise"
-                        app:layout_constraintVertical_bias="0.166" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card11"
-                android:layout_width="160dp"
-                android:layout_height="130dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#F1FAFB"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/card1"
-                app:layout_constraintTop_toBottomOf="@id/textView13">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_height="wrap_content"
+                    android:text="0"/>
+                <TextView
+                    style="@style/FitBody"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-
-                    <ImageView
-                        android:id="@+id/imageTime"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_margin="15dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:src="@drawable/clockmin"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/txtTimespent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:paddingStart="2dp"
-                        android:text="715"
-                        android:textColor="@color/black"
-                        android:textSize="19sp"
-                        android:textStyle="italic|bold"
-                        app:layout_constraintStart_toStartOf="@+id/textView28"
-                        app:layout_constraintTop_toBottomOf="@+id/textView28" />
-
-                    <TextView
-                        android:id="@+id/labelHour"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:fontFamily="@font/tahoma"
-                        android:paddingStart="2dp"
-                        android:text="@string/time_min"
-                        android:textColor="@color/gray"
-                        android:textSize="13sp"
-                        app:layout_constraintStart_toStartOf="@+id/txtTimespent"
-                        app:layout_constraintTop_toBottomOf="@+id/txtTimespent" />
-
-                    <TextView
-                        android:id="@+id/textView28"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:fontFamily="@font/tahoma"
-                        android:gravity="center"
-                        android:text="@string/time"
-                        android:textColor="@color/buttontext"
-                        android:textSize="17sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageTime"
-                        app:layout_constraintEnd_toStartOf="@+id/imageTime"
-                        app:layout_constraintHorizontal_bias="0.262"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/imageTime"
-                        app:layout_constraintVertical_bias="0.166" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card13"
-                android:layout_width="160dp"
-                android:layout_height="130dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="#F2F8EB"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="7dp"
-                app:layout_constraintStart_toStartOf="@+id/card1"
-                app:layout_constraintTop_toBottomOf="@+id/card1">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imagecalorie"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_margin="15dp"
-                        android:src="@drawable/kcalmin"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/txtKcal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:fontFamily="@font/tahoma"
-                        android:paddingStart="2dp"
-                        android:text="715"
-                        android:textColor="@color/black"
-                        android:textSize="19sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/textView29"
-                        app:layout_constraintTop_toBottomOf="@+id/textView29" />
-
-                    <TextView
-                        android:id="@+id/labelKcal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:fontFamily="@font/tahoma"
-                        android:paddingStart="2dp"
-                        android:text="@string/label_kcal"
-                        android:textColor="@color/gray"
-                        android:textSize="13sp"
-                        app:layout_constraintStart_toStartOf="@+id/txtKcal"
-                        app:layout_constraintTop_toBottomOf="@+id/txtKcal" />
-
-                    <TextView
-                        android:id="@+id/textView29"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:fontFamily="@font/tahoma"
-                        android:gravity="center"
-                        android:text="@string/kcal"
-                        android:textColor="@color/buttontext"
-                        android:textSize="17sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imagecalorie"
-                        app:layout_constraintEnd_toStartOf="@+id/imagecalorie"
-                        app:layout_constraintHorizontal_bias="0.262"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/imagecalorie"
-                        app:layout_constraintVertical_bias="0.166" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card23"
-                android:layout_width="160dp"
-                android:layout_height="130dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="#EEEDF6"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="7dp"
-                app:layout_constraintEnd_toEndOf="@+id/card11"
-                app:layout_constraintTop_toBottomOf="@+id/card11">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imageHeart"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_margin="15dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:src="@drawable/heartratemin"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/txtheart"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:fontFamily="@font/tahoma"
-                        android:paddingStart="2dp"
-                        android:text="75"
-                        android:textColor="@color/black"
-                        android:textSize="19sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/textView31"
-                        app:layout_constraintTop_toBottomOf="@+id/textView31" />
-
-                    <TextView
-                        android:id="@+id/labelheart"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:fontFamily="@font/tahoma"
-                        android:paddingStart="2dp"
-                        android:text="Bpm"
-                        android:textColor="@color/gray"
-                        android:textSize="13sp"
-                        app:layout_constraintStart_toStartOf="@+id/txtheart"
-                        app:layout_constraintTop_toBottomOf="@+id/txtheart" />
-
-                    <TextView
-                        android:id="@+id/textView31"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:fontFamily="@font/tahoma"
-                        android:gravity="center"
-                        android:text="@string/heart"
-                        android:textColor="@color/buttontext"
-                        android:textSize="17sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageHeart"
-                        app:layout_constraintEnd_toStartOf="@+id/imageHeart"
-                        app:layout_constraintHorizontal_bias="0.262"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/imageHeart"
-                        app:layout_constraintVertical_bias="0.166" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:text="@string/metric_minutes"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/tahoma"
-                android:text="@string/txt_bodyparameters"
-                android:textColor="@color/black"
-                android:textSize="22sp"
-                android:visibility="gone"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cnnm3" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card2"
+                android:layout_margin="3dp"
+                android:padding="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/fit_card">
+                <TextView
+                    android:id="@+id/weekMoves"
+                    style="@style/FitTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0"/>
+                <TextView
+                    style="@style/FitBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:text="@string/metric_moves"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/FitCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+            <TextView
+                style="@style/FitSection"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="5dp"
-                android:visibility="gone"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView15">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/iamge"
-                        android:layout_width="200dp"
-                        android:layout_height="220dp"
-                        android:paddingEnd="40dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/gagaga"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                    <TextView
-                        android:id="@+id/txtCm"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="-20dp"
-                        android:layout_marginTop="25dp"
-                        android:fontFamily="@font/tahoma"
-                        android:text="175"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toEndOf="@+id/iamge"
-                        app:layout_constraintTop_toTopOf="@+id/iamge" />
-
-                    <TextView
-                        android:id="@+id/labelCm"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:fontFamily="@font/tahoma"
-                        android:text="cm"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toEndOf="@+id/txtCm"
-                        app:layout_constraintTop_toTopOf="@+id/txtCm" />
-
-                    <TextView
-                        android:id="@+id/height"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/tahoma"
-                        android:text="@string/height_label"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        app:layout_constraintStart_toStartOf="@+id/txtCm"
-                        app:layout_constraintTop_toBottomOf="@+id/txtCm" />
-
-                    <TextView
-                        android:id="@+id/txtweight"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:fontFamily="@font/tahoma"
-                        android:text="70"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/labelAge"
-                        app:layout_constraintStart_toEndOf="@+id/labelCm"
-                        app:layout_constraintTop_toTopOf="@+id/labelCm" />
-
-                    <TextView
-                        android:id="@+id/labelweight"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:fontFamily="@font/tahoma"
-                        android:text="kg"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/txtweight"
-                        app:layout_constraintStart_toEndOf="@+id/txtweight" />
-
-                    <TextView
-                        android:id="@+id/weight"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/tahoma"
-                        android:text="@string/weight_label"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        app:layout_constraintStart_toStartOf="@+id/txtweight"
-                        app:layout_constraintTop_toBottomOf="@+id/txtweight" />
-
-                    <TextView
-                        android:id="@+id/txtAge"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/tahoma"
-                        android:text="25"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toTopOf="@+id/labelAge"
-                        app:layout_constraintStart_toStartOf="@+id/height" />
-
-                    <TextView
-                        android:id="@+id/labelAge"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="20dp"
-                        android:fontFamily="@font/tahoma"
-                        android:text="@string/label_age"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/txtAge"
-                        app:layout_constraintVertical_bias="0.906" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/tahoma"
-                android:text="@string/body_indeks"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card13" />
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card3"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView9">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-
-                    <LinearLayout
-                        android:id="@+id/linearKvi"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="13dp"
-                        android:layout_marginTop="10dp"
-                        android:orientation="horizontal"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/viewDown1"
-                                android:layout_width="30dp"
-                                android:visibility="invisible"
-                                android:layout_height="30dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/view_down" />
-
-                            <View
-                                android:layout_width="70dp"
-                                android:layout_height="12dp"
-                                android:layout_gravity="center"
-                                android:background="@drawable/view1_back" />
-
-                            <TextView
-                                style="@style/TextAppearance.AppCompat.Body2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="&lt;18,5"
-                                android:textColor="@color/black"
-                                android:textSize="12sp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="9dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/viewDown2"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:visibility="invisible"
-                                android:layout_gravity="center"
-                                android:src="@drawable/view_down" />
-
-                            <View
-                                android:layout_width="70dp"
-                                android:layout_height="12dp"
-                                android:layout_gravity="center"
-                                android:background="@drawable/view2_back" />
-
-                            <TextView
-                                style="@style/TextAppearance.AppCompat.Body2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="&lt;24.9"
-                                android:textColor="@color/black"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="9dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/viewDown3"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:visibility="invisible"
-                                android:layout_gravity="center"
-                                android:src="@drawable/view_down" />
-
-                            <View
-                                android:layout_width="70dp"
-                                android:layout_height="12dp"
-                                android:layout_gravity="center"
-                                android:background="@drawable/view3_back" />
-
-                            <TextView
-                                style="@style/TextAppearance.AppCompat.Body2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="&lt;29.9"
-                                android:textColor="@color/black"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="9dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/viewDown4"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:visibility="invisible"
-                                android:layout_gravity="center"
-                                android:src="@drawable/view_down" />
-
-                            <View
-                                android:layout_width="70dp"
-                                android:layout_height="12dp"
-                                android:layout_gravity="center"
-                                android:background="@drawable/view4_back" />
-
-                            <TextView
-                                style="@style/TextAppearance.AppCompat.Body2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="&lt;30"
-                                android:textColor="@color/black"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/linearKategori"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="30dp"
-                        android:layout_marginTop="15dp"
-                        android:orientation="horizontal"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/linearKvi">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/tahoma"
-                            android:text="@string/indeks"
-                            android:textColor="@color/black"
-                            android:textSize="17sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:fontFamily="@font/tahoma"
-                            android:text=":"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/bmiIndeks"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:fontFamily="@font/tahoma"
-                            android:text="\u003F"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/labelCategory"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="30dp"
-                        android:layout_marginTop="15dp"
-                        android:orientation="horizontal"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/linearKategori">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/tahoma"
-                            android:text="@string/categorie"
-                            android:textColor="@color/black"
-                            android:textSize="17sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:fontFamily="@font/tahoma"
-                            android:text=":"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/bmiKategori"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:fontFamily="@font/tahoma"
-                            android:text="\u003F"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
-
-                    </LinearLayout>
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/editEndeks"
-                        android:layout_width="match_parent"
-                        android:layout_height="37dp"
-                        android:layout_marginHorizontal="80dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/buttonfirst_background"
-                        android:fontFamily="@font/tahoma"
-                        android:text="@string/newTest"
-                        android:textColor="@color/white"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/labelCategory" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                app:adSize="BANNER"
-                android:layout_marginTop="5dp"
-                app:adUnitId="ca-app-pub-4754194669476617/2871909027"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card3"/>
+                android:text="@string/chart_title"/>
             <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
+                style="@style/FitCaption"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/tahoma"
-                android:text="@string/label_dayofcalorie"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/adView" />
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card5"
+                android:text="@string/chart_caption"
+                android:layout_marginTop="8dp"/>
+            <LinearLayout
+                android:id="@+id/weekBars"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView10">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:visibility="invisible"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/removedgunlukcalorie"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <LinearLayout
-                        android:id="@+id/linearCalorie"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_marginTop="20dp"
-                        android:orientation="horizontal"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:fontFamily="@font/tahoma"
-                            android:text="@string/label_dayofcalorie"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:fontFamily="@font/tahoma"
-                            android:text=":"
-                            android:textColor="@color/black"
-                            android:textSize="17sp" />
-
-                        <TextView
-                            android:id="@+id/txtCaloriOfDay"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:fontFamily="@font/tahoma"
-                            android:text="\u003F"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
-
-                    </LinearLayout>
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/editDayofCalorie"
-                        android:layout_width="match_parent"
-                        android:layout_height="37dp"
-                        android:layout_marginHorizontal="80dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/buttonfirst_background"
-                        android:fontFamily="@font/tahoma"
-                        android:text="@string/newTest"
-                        android:textColor="@color/white"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/linearCalorie" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/tahoma"
-                android:text="@string/label_fatrate"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card5" />
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card6"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView12">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-
-                    <ImageView
-                        android:layout_width="200dp"
-                        android:layout_height="100dp"
-                        android:scaleType="fitEnd"
-                        android:src="@drawable/daydaycalorie"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <LinearLayout
-                        android:id="@+id/linearfatrate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_marginTop="20dp"
-                        android:orientation="horizontal"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:fontFamily="@font/tahoma"
-                            android:text="@string/label_yourfaterate"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:fontFamily="@font/tahoma"
-                            android:text=":"
-                            android:textColor="@color/black"
-                            android:textSize="17sp" />
-
-                        <TextView
-                            android:id="@+id/txtfatrate"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:fontFamily="@font/tahoma"
-                            android:text="\u003F"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
-
-                    </LinearLayout>
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/editfatrate"
-                        android:layout_width="match_parent"
-                        android:layout_height="37dp"
-                        android:layout_marginHorizontal="80dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/buttonfirst_background"
-                        android:fontFamily="@font/tahoma"
-                        android:text="@string/newTest"
-                        android:textColor="@color/white"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/linearfatrate" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card6" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_height="180dp"
+                android:orientation="horizontal"
+                android:gravity="bottom"/>
+        </LinearLayout>
+        <TextView
+            style="@style/FitSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/calendar_title"
+            android:layout_marginBottom="16dp"/>
+        <LinearLayout
+            android:id="@+id/weekDays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp"/>
+        <TextView
+            android:id="@+id/achievement"
+            style="@style/FitBody"
+            android:background="@drawable/fit_achievement"
+            android:padding="16dp"
+            android:textColor="@color/fit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/first_workout_goal"/>
+        <TextView
+            android:id="@+id/programTitle"
+            style="@style/FitSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/program_progress"/>
+        <LinearLayout
+            android:id="@+id/programProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/fit_card"
+            android:layout_marginBottom="12dp"/>
+        <TextView
+            android:id="@+id/progressNote"
+            style="@style/FitCaption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/progress_note"/>
+        <TextView
+            android:id="@+id/historyTitle"
+            style="@style/FitSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/history_title"/>
+        <TextView
+            android:id="@+id/emptyHistory"
+            style="@style/FitBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/history_empty"/>
+        <LinearLayout
+            android:id="@+id/history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/showMore"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/show_more"/>
+        <TextView
+            android:id="@+id/toolsTitle"
+            style="@style/FitSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/tools_title"/>
+        <TextView
+            android:id="@+id/toolsNote"
+            style="@style/FitBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/tools_note"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editEndeks"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tool_bmi"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editDayofCalorie"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tool_calorie"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editfatrate"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tool_fat"/>
+    </LinearLayout>
+</ScrollView>

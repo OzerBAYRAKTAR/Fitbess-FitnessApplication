@@ -112,7 +112,7 @@
             app:destination="@id/detailDayFragment" />
         <action
             android:id="@+id/action_exerciseMovesFragment_to_exerciseMovesFragment2"
-            app:destination="@id/exerciseMovesFragment2" />
+            app:destination="@id/exerciseMovesFragment2" app:popUpTo="@id/exerciseMovesFragment" app:popUpToInclusive="true" />
         <argument
             android:name="exerciseNewList"
             app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise[]"
@@ -164,7 +164,7 @@
         tools:layout="@layout/fragment_exercise_moves" >
         <action
             android:id="@+id/action_exerciseMovesFragment2_to_exerciseMovesRestFragment"
-            app:destination="@id/exerciseMovesRestFragment" />
+            app:destination="@id/exerciseMovesRestFragment" app:popUpTo="@id/exerciseMovesFragment2" app:popUpToInclusive="true" />
         <argument android:name="exerciseIndex"
             app:argType="integer" />
         <argument
@@ -183,7 +183,7 @@
             app:destination="@id/exerciseMovesFragment2" />
         <action
             android:id="@+id/action_exerciseMovesFragment2_to_id_homepage_fragment"
-            app:destination="@id/id_homepage_fragment" />
+            app:destination="@id/id_homepage_fragment" app:popUpTo="@id/id_homepage_fragment" app:popUpToInclusive="false" app:launchSingleTop="true" />
 
     </fragment>
     <fragment
@@ -191,9 +191,11 @@
         android:name="com.bayraktar.healthybackandneck.ui.ExerciseMovesRest.ExerciseMovesRestFragment"
         android:label="fragment_exercise_moves_rest"
         tools:layout="@layout/fragment_exercise_moves_rest" >
+        <action android:id="@+id/action_exerciseMovesRestFragment_to_exerciseMovesEndFragment"
+            app:destination="@id/exerciseMovesEndFragment" app:popUpTo="@id/exerciseMovesRestFragment" app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_exerciseMovesRestFragment_to_exerciseMovesFragment2"
-            app:destination="@id/exerciseMovesFragment2" />
+            app:destination="@id/exerciseMovesFragment2" app:popUpTo="@id/exerciseMovesRestFragment" app:popUpToInclusive="true" />
         <argument android:name="exerciseIndex"
             app:argType="integer" />
         <argument
@@ -217,10 +219,10 @@
             app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise[]" />
         <argument
             android:name="exerciseDayModel"
-            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay" />
+            app:argType="com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay" app:nullable="true" />
         <action
             android:id="@+id/action_exerciseMovesEndFragment_to_id_homepage_fragment"
-            app:destination="@id/id_homepage_fragment" />
+            app:destination="@id/id_homepage_fragment" app:popUpTo="@id/id_homepage_fragment" app:popUpToInclusive="false" app:launchSingleTop="true" />
 
     </fragment>
     <fragment

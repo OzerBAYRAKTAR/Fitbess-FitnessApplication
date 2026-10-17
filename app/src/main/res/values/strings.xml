@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Fitbess</string>
+    <string name="app_name">Evde Fit: 21 Günlük Plan</string>
 
 
     <string name="skip">Atla</string>
@@ -21,7 +21,7 @@
     <string name="kcal">Kalori</string>
     <string name="time">Zaman</string>
     <string name="heart">Kalp Ritmi</string>
-    <string name="statistics">İstatistik</string>
+    <string name="statistics">İlerleme</string>
     <string name="profile">Profil</string>
     <string name="settings">Ayarlar</string>
     <string name="reach_us">Bize Ulaşın</string>
@@ -131,7 +131,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <!-- Exercise Fragment-->
     <string name="back_back">Bel-Boyun</string>
     <string name="create_plan">Kendi Planını Oluştur</string>
-    <string name="create_plan_desc">Egzersizlerini seç ve kendi planını oluştur!</string>
+    <string name="create_plan_desc">Sevdiğin hareketleri kalp simgesiyle kaydet. Buradan tekrar inceleyebilirsin.</string>
 
     <!--Warm Up-->
     <string name="strech">Esneme</string>
@@ -148,7 +148,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
 
     <!-- Neck-Back -->
     <string name="neck">Boyun</string>
-    <string name="neckback_exercise">Bel-Boyun Hareketleri</string>
+    <string name="neckback_exercise">Sırt ve Boyun Egzersizleri</string>
     <string name="back_desc1">Bel Egzersizleri</string>
     <string name="back_desc2">Bel Güçlendirme</string>
     <string name="neck_desc1">Boyun Egzersizleri</string>
@@ -523,7 +523,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="lbl_my_favourite">Favorilerim</string>
     <string name="lbl_fav_list_empty">Favori listen boş, favori listeni oluşturmak için antrenman programlarına göz at</string>
     <string name="btn_chec">Gözat</string>
-    <string name="next_move">Sıradaki Hareket</string>
+    <string name="next_move">Sıradaki hareket</string>
     <string name="lbl_before">Önceki</string>
     <string name="lbl_sonraki">Sonraki</string>
     <string name="lbl_step">Adım</string>
@@ -537,11 +537,11 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="lbl_exerciseattention">Lütfen önceki antrenmanları tamamlayınız!</string>
     <string name="food_detail_txt">100 Gram için besin değerleri</string>
     <string name="other_foods">Diğer Çeşitler</string>
+    <string name="rewarded_ad1test" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
     <string name="detail_day_ad">ca-app-pub-4754194669476617/8160142148</string>
-    <string name="rewarded_ad1">ca-app-pub-4754194669476617/7616538047</string>
-    <string name="rewarded_ad1test">ca-app-pub-3940256099942544/5224354917</string>
-    <string name="rewarded_ad2">ca-app-pub-4754194669476617/9652039406</string>
-    <string name="rewarded_ad3">ca-app-pub-4754194669476617/8338957732</string>
+    <string name="rewarded_ad1">ca-app-pub-1896269552628731/5970466188</string>
+    <string name="rewarded_ad2">ca-app-pub-1896269552628731/8758612752</string>
+    <string name="rewarded_ad3">ca-app-pub-1896269552628731/8717701412</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

@@ -14,19 +14,22 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import kotlinx.coroutines.launch
+import com.bayraktar.healthybackandneck.utils.MoveAccess
+import com.bayraktar.healthybackandneck.utils.MoveAccessViewModel
+import com.bayraktar.healthybackandneck.utils.RewardedAds
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
+import com.bayraktar.healthybackandneck.utils.PreloadedInterstitialAd
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentMoveListBinding
 import com.bayraktar.healthybackandneck.utils.Interfaces.OnDeleteClicked
 import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerViewClickListener
 import com.bayraktar.healthybackandneck.utils.showToast
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.FullScreenContentCallback
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import dagger.hilt.android.AndroidEntryPoint
 import pl.droidsonroids.gif.GifImageView
 
@@ -38,7 +41,10 @@ class MoveListFragment : Fragment(), RecyclerViewClickListener, OnDeleteClicked 
     val binding get() = _binding!!
 
     private val viewModel: MoveListViewModel by viewModels()
-    private var mInterstitialAd: InterstitialAd? = null
+    private val access: MoveAccessViewModel by viewModels()
+    private var rewarded: RewardedAds? = null
+    private var favoritesLoaded = false
+    private var rawFavorites = emptyList<ExerciseDayExercise>()
 
     private var favList = ArrayList<ExerciseDayExercise>()
     private var moveListAdapter: MoveListAdapter? = null
@@ -58,45 +64,55 @@ class MoveListFragment : Fragment(), RecyclerViewClickListener, OnDeleteClicked 
 
 
 
+
+        binding.btnCheck.setOnClickListener {
+            view.findNavController().navigate(MoveListFragmentDirections.actionMoveListFragmentToIdHomepageFragment())
+        }
+        binding.txtEmptyFav.setText(R.string.favorite_description)
+        rewarded = RewardedAds(requireActivity(), viewLifecycleOwner).also { it.loadRewardedAds(R.string.rewarded_ad1) }
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                access.earned.collect { renderFavorites() }
+            }
+        }
         observeFavlist()
         viewModel.getFavExerciseList()
     }
 
-    private fun observeFavlist() = with(binding) {
-        viewModel.getFavExercises.observe(viewLifecycleOwner, Observer { list ->
-            if (list != null) {
-                if (list.any()) {
-                    txtEmptyFav.visibility = View.GONE
-                    btnCheck.visibility = View.GONE
-                    favList = list.distinctBy { it.exerciseName } as ArrayList<ExerciseDayExercise>
-                }else {
-                    txtEmptyFav.visibility = View.VISIBLE
-                    btnCheck.visibility = View.VISIBLE
-
-                    btnCheck.setOnClickListener {
-                        val action = MoveListFragmentDirections.actionMoveListFragmentToIdHomepageFragment()
-                        view?.findNavController()?.navigate(action)
-                    }
-                }
-
-            }else {
-                showToast(requireContext(),getString(R.string.label_error),Gravity.CENTER,0,0)
-            }
-
-            txttime.text = "${favList.size}:00"
-            txtexercise.text = favList.size.toString()
-            txtkcal.text = "${favList.size}00"
-            rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
-            moveListAdapter = MoveListAdapter(favList,this@MoveListFragment,this@MoveListFragment)
-            rvdaydetail.adapter = moveListAdapter
+    private fun observeFavlist() {
+        viewModel.getFavExercises.observe(viewLifecycleOwner) { list ->
+            favoritesLoaded = true
+            rawFavorites = list.orEmpty()
+            renderFavorites()
+        }
+    }
+    private fun renderFavorites() {
+        if (_binding == null) return
+        val earned = access.earned.value
+        favList = ArrayList(rawFavorites.groupBy { it.exerciseId }.values.map { copies ->
+            copies.firstOrNull { earned != null && MoveAccess.allowed(it, earned) } ?: copies.first()
         })
+        binding.favoriteCount.text = if (favoritesLoaded) getString(R.string.favorite_count, favList.size) else getString(R.string.access_loading)
+        binding.rvdaydetail.visibility = if (favList.isEmpty()) View.GONE else View.VISIBLE
+        binding.txtEmptyFav.visibility = if (favoritesLoaded && favList.isEmpty()) View.VISIBLE else View.GONE
+        binding.btnCheck.visibility = binding.txtEmptyFav.visibility
+        binding.rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
+        moveListAdapter = MoveListAdapter(favList.toMutableList(), this, this).also { it.earned = earned }
+        binding.rvdaydetail.adapter = moveListAdapter
     }
 
     override fun recyclerviewListClicked(v: View, position: Int) {
+        val currentModel = favList.getOrNull(position) ?: return
+        val earned = access.earned.value ?: return
+        if (!MoveAccess.allowed(currentModel, earned)) {
+            AlertDialog.Builder(requireContext()).setTitle(R.string.unlock_move_title)
+                .setMessage(getString(R.string.unlock_move_message, currentModel.exerciseName))
+                .setNegativeButton(android.R.string.cancel, null)
+                .setPositiveButton(R.string.watch_unlock) { _, _ -> rewarded?.showRewardAds(retainEarnedReward = true) { access.grant(currentModel) } }.show()
+            return
+        }
         val inflater = layoutInflater
         val dialogView = inflater.inflate(R.layout.info_favourite_layout, null)
-
-        val currentModel = favList[position]
 
         val exerciseTitle: TextView = dialogView.findViewById(R.id.exerciseFavouriteTitle)
         val exerciseDescription: TextView = dialogView.findViewById(R.id.exerciseFavouriteDescription)
@@ -110,41 +126,7 @@ class MoveListFragment : Fragment(), RecyclerViewClickListener, OnDeleteClicked 
         val builder = AlertDialog.Builder(requireContext())
         builder.setView(dialogView)
             .setPositiveButton(R.string.close) { dialog, _ ->
-
-                var adRequest = AdRequest.Builder().build()
-
-
-                InterstitialAd.load(requireContext(),"ca-app-pub-4754194669476617/7348843104", adRequest, object : InterstitialAdLoadCallback() {
-                    override fun onAdFailedToLoad(adError: LoadAdError) {
-                        mInterstitialAd = null
-                    }
-
-                    override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                        mInterstitialAd = interstitialAd
-                        mInterstitialAd?.show(requireActivity())
-
-                        mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
-                            override fun onAdClicked() {
-                                // Called when a click is recorded for an ad.
-                                Log.d(ContentValues.TAG, "Ad was clicked.")
-                            }
-
-                            override fun onAdDismissedFullScreenContent() {
-                                mInterstitialAd = null
-                                dialog.dismiss()
-                            }
-                            override fun onAdImpression() {
-                                Log.d(ContentValues.TAG, "Ad recorded an impression.")
-                            }
-
-                            override fun onAdShowedFullScreenContent() {
-                                Log.d(ContentValues.TAG, "Ad showed fullscreen content.")
-                            }
-                        }
-                    }
-                })
-
-
+                dialog.dismiss()
 
             }
         val dialog = builder.create()
@@ -171,12 +153,8 @@ class MoveListFragment : Fragment(), RecyclerViewClickListener, OnDeleteClicked 
         }
         positiveBtn.setOnClickListener {
             viewModel.updateIsFavouriteToFalse(currentModel.exerciseId)
-            currentModel.isFavourite = !currentModel.isFavourite
-
-            val updatedList = moveListAdapter?.lsMenu?.toMutableList() ?: mutableListOf()
-            updatedList.removeAt(position)
-
-            moveListAdapter?.setData(updatedList)
+            rawFavorites = rawFavorites.filter { it.exerciseId != currentModel.exerciseId }
+            renderFavorites()
             dialog.dismiss()
         }
 
@@ -186,4 +164,11 @@ class MoveListFragment : Fragment(), RecyclerViewClickListener, OnDeleteClicked 
         btnCloseClicked(position)
     }
 
+    override fun onDestroyView() {
+        _binding?.rvdaydetail?.adapter = null
+        moveListAdapter = null
+        rewarded = null
+        _binding = null
+        super.onDestroyView()
+    }
 }
