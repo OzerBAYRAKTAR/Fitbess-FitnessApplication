@@ -127,7 +127,7 @@ dependencies {
     implementation 'io.github.ShawnLin013:number-picker:2.4.13'
 
     // GIF support
-    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.27'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.32'
 
     // Logging (optional for debugging)
     implementation 'com.jakewharton.timber:timber:5.0.1'
