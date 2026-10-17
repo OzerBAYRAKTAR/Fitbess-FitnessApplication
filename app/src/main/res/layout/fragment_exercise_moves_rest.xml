@@ -14,5 +14,5 @@
         <ImageView android:id="@+id/favoritebtn" android:layout_width="48dp" android:layout_height="48dp" android:padding="12dp" android:src="@drawable/favorite_selector" android:contentDescription="@string/add_favorite" android:background="?attr/selectableItemBackgroundBorderless"/>
     </LinearLayout>
     <com.google.android.material.button.MaterialButton android:id="@+id/skipRest" style="@style/FitButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/skip_Rest"/>
-    <com.google.android.gms.ads.AdView android:id="@+id/adView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" app:adSize="BANNER" app:adUnitId="ca-app-pub-3940256099942544/6300978111"/>
+    <com.google.android.gms.ads.AdView android:id="@+id/adView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" app:adSize="BANNER" app:adUnitId="@string/ad_banner_rest"/>
 </LinearLayout>

@@ -16,7 +16,7 @@
 
 The following values describe the working checkout at installation on 2026-10-16, including existing uncommitted changes. Read build files again before use; these values are not an instruction to overwrite other revisions.
 
-- Gradle wrapper: 8.11.1. AGP: 8.9.1. Kotlin declared in root build.gradle: 1.9.0; inspect resolved plugin versions before upgrades.
+- Gradle wrapper: 8.11.1. AGP: 8.9.1. Kotlin: 2.0.10, matching the previously resolved Safe Args plugin classpath; inspect resolved plugin versions before upgrades.
 - compileSdk/targetSdk: 36. minSdk: 24. Java/Kotlin bytecode target: 17.
 - Use a compatible JDK (17 minimum for this AGP). The prior successful local wrapper invocation used Android Studio's bundled JBR 21. Configure JAVA_HOME/Gradle JDK locally; do not commit an absolute machine path.
 - SDK: resolve from local.properties or Android SDK environment. In Android Studio use the Gradle wrapper.

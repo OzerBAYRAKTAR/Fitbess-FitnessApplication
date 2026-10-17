@@ -24,7 +24,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-4754194669476617~8912318160" />
+            android:value="ca-app-pub-1896269552628731~1292854570" />
         <meta-data
             android:name="android.app.notification.water_channel_id"
             android:value="WaterReminderChannel" />

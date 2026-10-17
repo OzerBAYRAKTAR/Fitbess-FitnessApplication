@@ -60,8 +60,6 @@ class MoveListFragment : Fragment(), RecyclerViewClickListener, OnDeleteClicked 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //interstealler canlı id => ca-app-pub-4754194669476617/1637237452
-
 
 
 

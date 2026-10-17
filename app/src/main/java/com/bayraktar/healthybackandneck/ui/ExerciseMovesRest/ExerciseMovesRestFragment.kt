@@ -67,8 +67,6 @@ class ExerciseMovesRestFragment : Fragment() {
         resumeTimer = false
         navigation = WorkoutNavigation(this, R.id.exerciseMovesRestFragment)
 
-        //banner id => ca-app-pub-4754194669476617/7348843104
-
         mAdView = binding.adView
         mAdView.visibility = View.GONE
         binding.txtTimeLeft.text = "30"

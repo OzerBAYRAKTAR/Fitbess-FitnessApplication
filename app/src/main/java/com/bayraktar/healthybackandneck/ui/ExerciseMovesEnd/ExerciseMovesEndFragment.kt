@@ -29,7 +29,7 @@ class ExerciseMovesEndFragment : Fragment() {
         return binding.root
     }
     override fun onViewCreated(view: View, state: Bundle?) {
-        transitionAd = PreloadedInterstitialAd(requireActivity(), viewLifecycleOwner, "ca-app-pub-1896269552628731/6394520905")
+        transitionAd = PreloadedInterstitialAd(requireActivity(), viewLifecycleOwner, getString(R.string.ad_interstitial_exercise_end))
         binding.btnEnd.setOnClickListener { transitionAd?.showOrContinue { goHome() } }
         binding.retrySave.setOnClickListener { session.finish() }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {

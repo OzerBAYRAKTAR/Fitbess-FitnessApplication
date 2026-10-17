@@ -144,6 +144,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             app:adSize="BANNER"
-            app:adUnitId="ca-app-pub-1896269552628731/8170906506"/>
+            app:adUnitId="@string/ad_banner_profile"/>
     </LinearLayout>
 </ScrollView>

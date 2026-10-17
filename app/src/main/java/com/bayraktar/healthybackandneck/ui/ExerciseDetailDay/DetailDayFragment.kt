@@ -52,7 +52,7 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
         adapter = DetailDayAdapter(exerciseList, this)
         binding.rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
         binding.rvdaydetail.adapter = adapter
-        transitionAd = PreloadedInterstitialAd(requireActivity(), viewLifecycleOwner, "ca-app-pub-1896269552628731/3768357562")
+        transitionAd = PreloadedInterstitialAd(requireActivity(), viewLifecycleOwner, getString(R.string.ad_interstitial_detail_day))
         rewarded = RewardedAds(requireActivity(), viewLifecycleOwner).also { it.loadRewardedAds(R.string.rewarded_ad1) }
         binding.startExercise.setOnClickListener {
             val list = available()

@@ -68,7 +68,6 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
         }, 300)
         myRewardedAds = RewardedAds(requireActivity(), viewLifecycleOwner)
         myRewardedAds?.loadRewardedAds(R.string.rewarded_ad1)  //canlı
-        //myRewardedAds?.loadRewardedAds(R.string.rewarded_ad1test)
         setRecyclerview()
         observeLevelOne()
         observeDayListLevelOne()

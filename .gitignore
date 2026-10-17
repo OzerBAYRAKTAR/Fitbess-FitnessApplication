@@ -13,3 +13,10 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Local Android Studio state and generated release output
+/.idea/
+/app/release/*.apk
+/app/release/*.aab
+/app/release/output-metadata.json
+/.kotlin/

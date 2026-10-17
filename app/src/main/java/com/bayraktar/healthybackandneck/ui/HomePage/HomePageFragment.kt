@@ -29,7 +29,6 @@ import com.bayraktar.healthybackandneck.data.Models.Exercise.NeckBackModel
 import com.bayraktar.healthybackandneck.data.Models.Exercise.WarmUpModel
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.HomeItem
 import com.bayraktar.healthybackandneck.R
-import com.bayraktar.healthybackandneck.utils.loadForLifecycle
 import com.bayraktar.healthybackandneck.data.Models.CountModel
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
@@ -42,8 +41,6 @@ import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.NeckBackAdapter
 import com.bayraktar.healthybackandneck.ui.HomePage.Adapters.WarmUpAdapter
 import com.bayraktar.healthybackandneck.utils.LanguagePreference
 import com.bayraktar.healthybackandneck.utils.LocaleHelper
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
 import dagger.hilt.android.AndroidEntryPoint
 import org.json.JSONArray
 import java.nio.charset.Charset
@@ -59,7 +56,6 @@ class HomePageFragment : Fragment() {
     val binding get() = _binding!!
     private val viewModel: HomeViewModel by viewModels()
 
-    private lateinit var mAdView: AdView
 
     private lateinit var homeAdapter: HomeViewpagerAdapter
 
@@ -109,16 +105,11 @@ class HomePageFragment : Fragment() {
         savedLanguageCode?.let {
             LocaleHelper.setLocale(requireContext(), it)
         }
-        //banner  ID => ca-app-pub-4754194669476617/5943389951
-        //banner testt ID => ca-app-pub-3940256099942544/9257395921
-
-        //interstealler tes ID => ca-app-pub-3940256099942544/1033173712
 
 
 
 
-        mAdView = binding.adView
-        mAdView.loadForLifecycle(viewLifecycleOwner)
+
 
 
         setOnBoardingItems()

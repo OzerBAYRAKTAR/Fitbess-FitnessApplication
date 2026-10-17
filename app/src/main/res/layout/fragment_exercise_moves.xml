@@ -21,5 +21,5 @@
         <ImageView android:id="@+id/playpause" android:layout_width="72dp" android:layout_height="72dp" android:padding="12dp" android:src="@drawable/fit_pause" android:contentDescription="@string/pause_workout" android:background="?attr/selectableItemBackgroundBorderless"/>
         <ImageView android:id="@+id/goNext" android:layout_width="64dp" android:layout_height="64dp" android:padding="12dp" android:src="@drawable/fit_next" android:contentDescription="@string/skip_move" android:background="?attr/selectableItemBackgroundBorderless"/>
     </LinearLayout>
-    <com.google.android.gms.ads.AdView android:id="@+id/adView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" app:adSize="BANNER" app:adUnitId="ca-app-pub-3940256099942544/6300978111"/>
+    <com.google.android.gms.ads.AdView android:id="@+id/adView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" app:adSize="BANNER" app:adUnitId="@string/ad_banner_exercise"/>
 </LinearLayout>

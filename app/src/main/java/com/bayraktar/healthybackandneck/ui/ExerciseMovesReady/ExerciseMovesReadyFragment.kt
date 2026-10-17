@@ -22,7 +22,6 @@ import androidx.activity.OnBackPressedCallback
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
-import com.bayraktar.healthybackandneck.utils.loadForLifecycle
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.SubExerciseDayExercise
@@ -31,8 +30,6 @@ import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayAdapter
 import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayFragmentArgs
 import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayFragmentDirections
 import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDaySubAdapter
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -44,7 +41,6 @@ class ExerciseMovesReadyFragment : Fragment() {
     private var resumeTimer = false
     private var _binding: FragmentExerciseMovesReadyBinding? = null
     val binding get() = _binding!!
-    private lateinit var mAdView: AdView
     private var timeSelected = 30
     private var timecountDown: CountDownTimer? = null
     private var timeProgress = 0
@@ -74,10 +70,6 @@ class ExerciseMovesReadyFragment : Fragment() {
         resumeTimer = false
         navigation = WorkoutNavigation(this, R.id.exerciseMovesFragment)
 
-        //bannder id => ca-app-pub-4754194669476617/5976831939
-
-        mAdView = binding.adView
-        mAdView.visibility = View.GONE
 
         binding.txtTimeleft.text = "30"
         binding.pbTimer.max = timeSelected
