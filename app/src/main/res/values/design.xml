@@ -2,6 +2,7 @@
 <resources>
     <color name="fit_background">#F4F7F5</color>
     <color name="fit_primary">#167348</color>
+    <color name="fit_splash_background">#104E38</color>
     <color name="fit_text">#172B23</color>
     <color name="fit_muted">#5F6F65</color>
     <color name="fit_soft">#E5F1E9</color>

@@ -47,7 +47,8 @@
             android:exported="false" />
         <activity
             android:name=".ui.SplashScreen.SplashScreen"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Fitbess.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

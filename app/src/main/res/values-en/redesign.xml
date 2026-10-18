@@ -5,6 +5,9 @@
     <string name="welcome_body">Three levels, full-body exercises and guided movements. Choose a program, work out and track your real progress.</string>
     <string name="welcome_privacy">Start right away. Body details are only needed if you choose to use the calculators.</string>
     <string name="begin_training">Start training</string>
+    <string name="welcome_hero_days">21 days</string>
+    <string name="welcome_hero_label">Move at your own pace</string>
+    <string name="welcome_image_description">A woman stretching before exercise</string>
     <string name="progress_title">Progress</string>
     <string name="progress_subtitle">Every workout is a step. Find your rhythm.</string>
     <string name="this_week">This week</string>
