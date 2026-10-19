@@ -11,6 +11,7 @@ class MyApplication : Application() {
         super.onCreate()
 
         com.bayraktar.healthybackandneck.utils.LanguagePreference.getLanguageCode(this)?.let { LocaleHelper.setLocale(this, it) }
+        com.bayraktar.healthybackandneck.utils.RevenueCatManager.initialize(this)
         AdsSdk.initialize(this)
 
     }

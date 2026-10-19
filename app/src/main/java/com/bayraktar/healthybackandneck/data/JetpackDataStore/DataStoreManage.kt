@@ -15,6 +15,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import java.io.IOException
 
@@ -24,8 +25,28 @@ class DataStoreManage(context: Context) {
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "RATE_KEY")
     private val dataStore = context.dataStore
 
+    suspend fun saveReminderIntervalHours(key: String, hours: Int) {
+        dataStore.edit { preferences -> preferences[intPreferencesKey(key)] = hours }
+    }
+
+    suspend fun getReminderIntervalHours(key: String, defaultHours: Int): Int =
+        dataStore.data.map { preferences -> preferences[intPreferencesKey(key)] ?: defaultHours }.first()
+
 
     private val unlockedMovesKey = androidx.datastore.preferences.core.stringSetPreferencesKey("earned_catalog_move_ids_v1")
+    private val firstRunAdFreeOfferShownKey = booleanPreferencesKey("first_run_ad_free_offer_shown_v1")
+
+    suspend fun claimFirstRunAdFreeOffer(): Boolean {
+        var shouldShow = false
+        dataStore.edit { preferences ->
+            if (preferences[firstRunAdFreeOfferShownKey] != true) {
+                preferences[firstRunAdFreeOfferShownKey] = true
+                shouldShow = true
+            }
+        }
+        return shouldShow
+    }
+
     fun unlockedMoveIds(): Flow<Set<Int>> = dataStore.data.map { preferences ->
         preferences[unlockedMovesKey].orEmpty().mapNotNull(String::toIntOrNull).toSet()
     }

@@ -5,6 +5,9 @@
     <string name="welcome_body">Üç seviye, tüm vücut bölgeleri ve adım adım hareketler. Bir program seç, egzersizini yap ve gerçek ilerlemeni takip et.</string>
     <string name="welcome_privacy">Hemen başlayabilirsin. Vücut bilgilerini yalnızca hesaplayıcıları kullanmak istersen girersin.</string>
     <string name="begin_training">Antrenmana başla</string>
+    <string name="welcome_hero_days">21 gün</string>
+    <string name="welcome_hero_label">Kendi hızında ilerle</string>
+    <string name="welcome_image_description">Esneme hareketi yapan bir kadın</string>
     <string name="progress_title">İlerleme</string>
     <string name="progress_subtitle">Her antrenman bir adım. Kendi ritmini bul.</string>
     <string name="this_week">Bu hafta</string>

@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
         android:name=".ui.MyApplication"
@@ -47,7 +48,8 @@
             android:exported="false" />
         <activity
             android:name=".ui.SplashScreen.SplashScreen"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Fitbess.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

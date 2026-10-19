@@ -13,13 +13,15 @@ import kotlinx.coroutines.launch
 object MoveAccess {
     private val categories = setOf("stretch", "bellyneck", "arm", "abs", "legbutt")
     fun requiresReward(move: ExerciseDayExercise) = move.dayId == 0 && move.titleName in categories && move.level > 1
-    fun allowed(move: ExerciseDayExercise, earned: Set<Int>) = !requiresReward(move) || move.id in earned
+    fun allowed(move: ExerciseDayExercise, earned: Set<Int>, adFree: Boolean = false) =
+        adFree || !requiresReward(move) || move.id in earned
 }
 
 class MoveAccessViewModel(application: Application) : AndroidViewModel(application) {
     private val store = DataStoreManage.getInstance(application)
     private val _earned = MutableStateFlow<Set<Int>?>(null)
     val earned = _earned.asStateFlow()
+    val adFree = RevenueCatManager.adFree
     private val _failed = MutableStateFlow(false)
     val failed = _failed.asStateFlow()
     init {

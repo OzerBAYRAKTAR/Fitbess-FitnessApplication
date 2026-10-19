@@ -22,7 +22,10 @@ class MainActivity : AppCompatActivity() {
             binding.beginTraining.isEnabled = false
             lifecycleScope.launch {
                 DataStoreManage.getInstance(applicationContext).saveLog(true)
-                startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+                startActivity(
+                    Intent(this@MainActivity, HomeActivity::class.java)
+                        .putExtra(HomeActivity.EXTRA_SHOW_FIRST_RUN_AD_FREE_OFFER, true)
+                )
                 finish()
             }
         }

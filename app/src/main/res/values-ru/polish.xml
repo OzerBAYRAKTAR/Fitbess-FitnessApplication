@@ -4,8 +4,12 @@
     <string name="profile_reminders">Напоминания</string>
     <string name="profile_preferences">Настройки приложения</string>
     <string name="profile_support">Вместе лучше</string>
-    <string name="water_cadence">Примерно каждые 4 часа · Время может меняться</string>
-    <string name="motivation_cadence">Примерно каждые 12 часов · Время может меняться</string>
+    <string name="water_cadence">Примерно %1$s · Время может меняться</string>
+    <string name="motivation_cadence">Примерно %1$s · Время может меняться</string>
+    <string name="reminder_interval_title">Частота напоминаний</string>
+    <string name="reminder_daily">Раз в день</string>
+    <string name="reminder_12_hours">Каждые 12 часов</string>
+    <string name="reminder_6_hours">Каждые 6 часов</string>
     <string name="reminder_off">Выключено · Можно включить в любое время</string>
     <string name="notification_blocked">Уведомления заблокированы. Проверьте разрешение и настройки канала.</string>
     <string name="notification_settings">Настройки уведомлений</string>
@@ -19,6 +23,7 @@
     <string name="chart_day_summary">%1$s: %2$d мин. %3$d сек.</string>
     <string name="calendar_title">Активные дни этой недели</string>
     <string name="unlock_move_title">Открыть это упражнение</string>
+    <string name="unlock_workout_title">Открыть эту тренировку</string>
     <string name="unlock_move_message">Посмотри рекламу с наградой до конца, чтобы навсегда открыть только %1$s на этом устройстве.</string>
     <string name="watch_unlock">Посмотреть рекламу и открыть</string>
     <string name="move_locked">Закрыто · Открой за просмотр рекламы</string>
@@ -32,4 +37,21 @@
     <string name="unlock_saved">Упражнение открыто навсегда</string>
     <string name="hero_caption">ПЛАН НА 21 ДЕНЬ</string>
     <string name="home_subtitle">Найди сегодня немного времени для себя.</string>
+    <string name="profile_purchases">Покупки</string>
+    <string name="remove_ads">Убрать рекламу</string>
+    <string name="remove_ads_description">Уберите рекламу и откройте все закрытые упражнения за разовую покупку.</string>
+    <string name="remove_ads_unavailable">Покупки пока не настроены.</string>
+    <string name="remove_ads_loading">Загрузка сведений о продукте…</string>
+    <string name="remove_ads_not_found">Покупка сейчас недоступна.</string>
+    <string name="remove_ads_active">Доступ без рекламы активен. Все упражнения открыты.</string>
+    <string name="remove_ads_price">Разовая покупка • %1$s</string>
+    <string name="remove_ads_buy">Купить</string>
+    <string name="restore_purchases">Восстановить покупки</string>
+    <string name="purchase_success">Покупка завершена. Доступ без рекламы активен.</string>
+    <string name="purchase_cancelled">Покупка отменена.</string>
+    <string name="purchase_error">Не удалось завершить покупку. Попробуйте ещё раз.</string>
+    <string name="restore_success">Покупка восстановлена.</string>
+    <string name="restore_empty">Для этого аккаунта Google Play покупок не найдено.</string>
+    <string name="restore_error">Не удалось восстановить покупки. Попробуйте ещё раз.</string>
+    <string name="purchase_processing">Обработка…</string>
 </resources>

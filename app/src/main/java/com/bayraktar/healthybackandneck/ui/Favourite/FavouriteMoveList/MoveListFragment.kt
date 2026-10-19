@@ -70,7 +70,8 @@ class MoveListFragment : Fragment(), RecyclerViewClickListener, OnDeleteClicked 
         rewarded = RewardedAds(requireActivity(), viewLifecycleOwner).also { it.loadRewardedAds(R.string.rewarded_ad1) }
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                access.earned.collect { renderFavorites() }
+                launch { access.earned.collect { renderFavorites() } }
+                launch { access.adFree.collect { renderFavorites() } }
             }
         }
         observeFavlist()
@@ -88,25 +89,32 @@ class MoveListFragment : Fragment(), RecyclerViewClickListener, OnDeleteClicked 
         if (_binding == null) return
         val earned = access.earned.value
         favList = ArrayList(rawFavorites.groupBy { it.exerciseId }.values.map { copies ->
-            copies.firstOrNull { earned != null && MoveAccess.allowed(it, earned) } ?: copies.first()
+            copies.firstOrNull { earned != null && MoveAccess.allowed(it, earned, access.adFree.value == true) } ?: copies.first()
         })
         binding.favoriteCount.text = if (favoritesLoaded) getString(R.string.favorite_count, favList.size) else getString(R.string.access_loading)
         binding.rvdaydetail.visibility = if (favList.isEmpty()) View.GONE else View.VISIBLE
         binding.txtEmptyFav.visibility = if (favoritesLoaded && favList.isEmpty()) View.VISIBLE else View.GONE
         binding.btnCheck.visibility = binding.txtEmptyFav.visibility
         binding.rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
-        moveListAdapter = MoveListAdapter(favList.toMutableList(), this, this).also { it.earned = earned }
+        moveListAdapter = MoveListAdapter(favList.toMutableList(), this, this).also {
+            it.earned = earned
+            it.adFree = access.adFree.value == true
+        }
         binding.rvdaydetail.adapter = moveListAdapter
     }
 
     override fun recyclerviewListClicked(v: View, position: Int) {
         val currentModel = favList.getOrNull(position) ?: return
         val earned = access.earned.value ?: return
-        if (!MoveAccess.allowed(currentModel, earned)) {
+        if (!MoveAccess.allowed(currentModel, earned, access.adFree.value == true)) {
             AlertDialog.Builder(requireContext()).setTitle(R.string.unlock_move_title)
-                .setMessage(getString(R.string.unlock_move_message, currentModel.exerciseName))
+                .setMessage(R.string.unlock_move_choice_message)
                 .setNegativeButton(android.R.string.cancel, null)
-                .setPositiveButton(R.string.watch_unlock) { _, _ -> rewarded?.showRewardAds(retainEarnedReward = true) { access.grant(currentModel) } }.show()
+                .setPositiveButton(R.string.watch_unlock) { _, _ -> rewarded?.showRewardAds(retainEarnedReward = true) { access.grant(currentModel) } }
+                .setNeutralButton(R.string.remove_ads) { _, _ ->
+                    view?.findNavController()?.navigate(R.id.action_global_adFreeOfferFragment)
+                }
+                .show()
             return
         }
         val inflater = layoutInflater

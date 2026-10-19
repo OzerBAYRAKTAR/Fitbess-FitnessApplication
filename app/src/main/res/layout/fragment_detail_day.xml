@@ -7,6 +7,19 @@
     android:orientation="vertical"
     android:background="@color/fit_background"
     android:padding="24dp">
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/back"
+        android:paddingStart="0dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="12dp"
+        android:src="@drawable/ic_arrow_back_aligned_24"
+        app:tint="@color/fit_text" />
     <TextView
         android:id="@+id/detaildayFirst"
         style="@style/FitTitle"

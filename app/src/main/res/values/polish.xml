@@ -4,8 +4,12 @@
     <string name="profile_reminders">Hatırlatıcılar</string>
     <string name="profile_preferences">Uygulama tercihleri</string>
     <string name="profile_support">Birlikte daha iyi</string>
-    <string name="water_cadence">Yaklaşık 4 saatte bir · Sistem zamanlaması değişebilir</string>
-    <string name="motivation_cadence">Yaklaşık 12 saatte bir · Sistem zamanlaması değişebilir</string>
+    <string name="water_cadence">Yaklaşık %1$s · Sistem zamanlaması değişebilir</string>
+    <string name="motivation_cadence">Yaklaşık %1$s · Sistem zamanlaması değişebilir</string>
+    <string name="reminder_interval_title">Hatırlatma sıklığı</string>
+    <string name="reminder_daily">Günde bir</string>
+    <string name="reminder_12_hours">12 saatte bir</string>
+    <string name="reminder_6_hours">6 saatte bir</string>
     <string name="reminder_off">Kapalı · İstediğinde açabilirsin</string>
     <string name="notification_blocked">Bildirimler engelli. İzinleri ve kanal ayarlarını kontrol et.</string>
     <string name="notification_settings">Bildirim ayarlarını aç</string>
@@ -19,6 +23,7 @@
     <string name="chart_day_summary">%1$s: %2$d dakika %3$d saniye</string>
     <string name="calendar_title">Bu haftaki hareket günlerin</string>
     <string name="unlock_move_title">Bu hareketin kilidini aç</string>
+    <string name="unlock_workout_title">Bu antrenmanın kilidini aç</string>
     <string name="unlock_move_message">Bir ödüllü reklamı tamamlayarak yalnızca %1$s hareketini bu cihazda kalıcı açabilirsin.</string>
     <string name="watch_unlock">Reklam izle ve aç</string>
     <string name="move_locked">Kilitli · Açmak için reklam izle</string>

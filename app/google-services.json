@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1029910722664",
+    "project_id": "fitbess-88cae",
+    "storage_bucket": "fitbess-88cae.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029910722664:android:61f5dc8015c7c9340de3dd",
+        "android_client_info": {
+          "package_name": "com.bayraktar.healthybackandneck"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB62cvwHOcvYsSu5ObhJ9Pa-scsajbQHZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

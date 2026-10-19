@@ -65,6 +65,12 @@ class ProfileAndCatalogTest {
         } finally { scheduler.apply(ReminderKind.WATER, false) }
     }
 
+    @Test fun reminderCadencesAreLimitedToDailyTwelveOrSixHours() {
+        assertEquals(listOf(24, 12, 6), ReminderInterval.entries.map { it.hours })
+        assertEquals(ReminderInterval.EVERY_6_HOURS, ReminderInterval.fromHours(4))
+        assertEquals(ReminderInterval.DAILY, ReminderInterval.fromHours(24))
+    }
+
     @Test fun deniedNotificationPermissionAndDisabledPreferenceAreSafeNoOps() {
         val database = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java).build()
         try {

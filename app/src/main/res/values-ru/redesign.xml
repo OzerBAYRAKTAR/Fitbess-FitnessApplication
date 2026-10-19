@@ -5,6 +5,9 @@
     <string name="welcome_body">Три уровня, упражнения для всего тела и пошаговые движения. Выбери план, тренируйся и отслеживай прогресс.</string>
     <string name="welcome_privacy">Начни сразу. Параметры тела нужны только для необязательных калькуляторов.</string>
     <string name="begin_training">Начать тренировку</string>
+    <string name="welcome_hero_days">21 день</string>
+    <string name="welcome_hero_label">В своём темпе</string>
+    <string name="welcome_image_description">Женщина выполняет растяжку перед тренировкой</string>
     <string name="progress_title">Прогресс</string>
     <string name="progress_subtitle">Каждая тренировка — шаг вперёд. Найди свой ритм.</string>
     <string name="this_week">На этой неделе</string>

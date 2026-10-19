@@ -537,4 +537,22 @@
     <string name="previous">предыдущий</string>
 
 
+    <string name="ad_free_brand">Fitbess</string>
+    <string name="view_ad_free_offer">Посмотреть предложение</string>
+    <string name="ad_free_headline">Тренируйтесь без перерывов</string>
+    <string name="ad_free_subtitle">Уберите рекламу и откройте все упражнения</string>
+    <string name="ad_free_benefit_no_ads">Пользуйтесь приложением без рекламы</string>
+    <string name="ad_free_benefit_moves">Откройте все упражнения</string>
+    <string name="ad_free_benefit_lifetime">Постоянный доступ за разовую покупку</string>
+    <string name="ad_free_benefit_no_ads_short">Использование без рекламы</string>
+    <string name="ad_free_benefit_moves_short">Все упражнения открыты</string>
+    <string name="ad_free_benefit_lifetime_short">Заплатите один раз — доступ навсегда</string>
+    <string name="ad_free_buy_once">Купить один раз</string>
+    <string name="ad_free_offer_price">Цена: %1$s</string>
+    <string name="ad_free_google_play_note">Цену предоставляет Google Play</string>
+    <string name="ad_free_hero_description">Иллюстрация зелёной гантели</string>
+    <string name="ad_free_one_time_disclaimer">Покупка оформляется через ваш аккаунт Google Play.</string>
+    <string name="ad_free_not_now">Не сейчас</string>
+    <string name="unlock_move_choice_message">Посмотрите рекламу с наградой, чтобы открыть это упражнение, или отключите рекламу и откройте все упражнения.</string>
+    <string name="unlock_workout_choice_message">Посмотрите рекламу с наградой, чтобы открыть эту тренировку, или отключите рекламу и откройте все упражнения.</string>
 </resources>

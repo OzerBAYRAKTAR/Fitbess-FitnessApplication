@@ -82,11 +82,14 @@ class SixthFragment : Fragment() {
 
             Handler(Looper.getMainLooper()).postDelayed({
 
-                lifecycleScope.launch {
+                viewLifecycleOwner.lifecycleScope.launch {
                     dataStoreManager.saveLog(true)
+                    startActivity(
+                        Intent(requireActivity(), HomeActivity::class.java)
+                            .putExtra(HomeActivity.EXTRA_SHOW_FIRST_RUN_AD_FREE_OFFER, true)
+                    )
+                    requireActivity().finish()
                 }
-                startActivity(Intent(requireActivity(), HomeActivity::class.java))
-                requireActivity().finish()
             }, 9000)
         }
     }

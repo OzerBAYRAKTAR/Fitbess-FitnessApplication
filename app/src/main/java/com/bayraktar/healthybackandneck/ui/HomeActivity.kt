@@ -16,6 +16,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.ActivityHomeBinding
+import com.bayraktar.healthybackandneck.data.JetpackDataStore.DataStoreManage
 import com.bayraktar.healthybackandneck.utils.Interfaces.homeFragmentListener
 import com.bayraktar.healthybackandneck.utils.LanguagePreference
 import com.bayraktar.healthybackandneck.utils.LocaleHelper
@@ -39,6 +40,7 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
 
     companion object {
        var mInterstitialAd: InterstitialAd? = null
+       const val EXTRA_SHOW_FIRST_RUN_AD_FREE_OFFER = "show_first_run_ad_free_offer"
     }
 
 
@@ -94,6 +96,16 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
         }
 
         setUpBotMenu()
+
+        if (savedInstanceState == null && intent.getBooleanExtra(EXTRA_SHOW_FIRST_RUN_AD_FREE_OFFER, false)) {
+            lifecycleScope.launch {
+                if (navController.currentDestination?.id == R.id.id_homepage_fragment &&
+                    DataStoreManage.getInstance(applicationContext).claimFirstRunAdFreeOffer()
+                ) {
+                    navController.navigate(R.id.action_global_adFreeOfferFragment)
+                }
+            }
+        }
 
 
     }

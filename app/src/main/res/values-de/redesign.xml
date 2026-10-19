@@ -5,6 +5,9 @@
     <string name="welcome_body">Drei Stufen, Ganzkörperübungen und angeleitete Bewegungen. Wähle einen Plan, trainiere und verfolge deinen Fortschritt.</string>
     <string name="welcome_privacy">Starte sofort. Körperdaten brauchst du nur für die optionalen Rechner.</string>
     <string name="begin_training">Training starten</string>
+    <string name="welcome_hero_days">21 Tage</string>
+    <string name="welcome_hero_label">In deinem Tempo</string>
+    <string name="welcome_image_description">Eine Frau beim Dehnen vor dem Training</string>
     <string name="progress_title">Fortschritt</string>
     <string name="progress_subtitle">Jedes Training ist ein Schritt. Finde deinen Rhythmus.</string>
     <string name="this_week">Diese Woche</string>

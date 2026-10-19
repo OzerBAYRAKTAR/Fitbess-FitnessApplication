@@ -105,7 +105,7 @@ class ExerciseMovesRestFragment : Fragment() {
             gifImageView2.setImageResource(currentModel.image)
             exerciceName.text = currentModel.exerciseName
             txtRank.text = (currentExerciseIndex + 2).toString()
-            albelRank.text = "/" + exerciseList.size.toString() + getString(R.string.lbl_step)
+            albelRank.text = "/" + exerciseList.size.toString()
 
 
         }

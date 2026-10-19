@@ -1,12 +1,171 @@
-<?xml version="1.0" ?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:background="@color/fit_background">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
-        <TextView android:id="@+id/brand" style="@style/FitTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/brand_short"/>
-        <TextView android:id="@+id/tagline" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/brand_tagline"/>
-        <Space android:layout_width="1dp" android:layout_height="64dp"/>
-        <TextView android:id="@+id/welcomeTitle" style="@style/FitTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/welcome_title"/>
-        <TextView android:id="@+id/welcomeBody" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/welcome_body"/>
-        <TextView android:id="@+id/welcomePrivacy" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/welcome_privacy"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/beginTraining" style="@style/FitButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/begin_training"/>
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fit_background"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/fit_brand_badge"
+                android:contentDescription="@null"
+                android:padding="8dp"
+                android:src="@drawable/fit_splash_icon" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/brand"
+                    style="@style/FitSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/brand_short" />
+
+                <TextView
+                    android:id="@+id/tagline"
+                    style="@style/FitCaption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/brand_tagline" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="264dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/fit_soft"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/fit_border"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/welcomeHeroImage"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.15"
+                    android:background="@color/fit_background"
+                    android:contentDescription="@string/welcome_image_description"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/splashimage" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.85"
+                    android:background="@color/fit_primary"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        style="@style/FitTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/welcome_hero_days"
+                        android:textColor="@color/white"
+                        android:textSize="32sp" />
+
+                    <View
+                        android:layout_width="32dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@color/fit_soft" />
+
+                    <TextView
+                        style="@style/FitCaption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/welcome_hero_label"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/welcomeTitle"
+            style="@style/FitTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:lineSpacingExtra="1dp"
+            android:text="@string/welcome_title"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/welcomeBody"
+            style="@style/FitBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/welcome_body" />
+
+        <TextView
+            android:id="@+id/welcomePrivacy"
+            style="@style/FitCaption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/welcome_privacy_card"
+            android:drawableStart="@drawable/fit_info"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:paddingStart="14dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="12dp"
+            android:text="@string/welcome_privacy" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/beginTraining"
+            style="@style/FitButton"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/begin_training"
+            android:gravity="center"
+            android:text="@string/begin_training"
+            android:textSize="17sp"
+            app:icon="@drawable/fit_forward_white"
+            app:iconGravity="textEnd"
+            app:iconPadding="12dp" />
     </LinearLayout>
 </ScrollView>

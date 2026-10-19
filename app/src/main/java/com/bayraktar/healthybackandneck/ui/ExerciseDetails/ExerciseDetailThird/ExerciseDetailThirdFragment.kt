@@ -3,12 +3,11 @@ package com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailThird
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.os.Bundle
-import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -22,6 +21,8 @@ import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDetailThirdB
 import com.bayraktar.healthybackandneck.utils.Interfaces.ExerciseItemClickListener
 import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerClicked
 import com.bayraktar.healthybackandneck.utils.RewardedAds
+import com.bayraktar.healthybackandneck.utils.RevenueCatManager
+import com.bayraktar.healthybackandneck.utils.AdFreePolicy
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import org.json.JSONArray
@@ -42,7 +43,6 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
     private lateinit var thirdAdapter: ExerciseDetailAdapterThird
     private var selectedModel: ExerciseDay? = null
     private var myRewardedAds: RewardedAds? = null
-    private val handler = Handler()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -56,13 +56,15 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         setRecyclerview()
+        viewLifecycleOwner.lifecycleScope.launch {
+            RevenueCatManager.adFree.collect {
+                thirdAdapter.adFree = it == true
+                thirdAdapter.notifyDataSetChanged()
+            }
+        }
 
         //ca-app-pub-3940256099942544/5224354917 test
 
-        binding.prgressStart.visibility = View.VISIBLE
-        handler.postDelayed({
-            binding.prgressStart.visibility = View.GONE
-        }, 300)
 
         myRewardedAds = RewardedAds(requireActivity(), viewLifecycleOwner)
         myRewardedAds?.loadRewardedAds(R.string.rewarded_ad3)
@@ -256,33 +258,28 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
     }
 
     override fun onExerciseItemClicked(position: Int, isLocked: Boolean) {
-        if (isLocked) {
-            val inflater = layoutInflater
-            val dialogView = inflater.inflate(R.layout.dialog_reward_ad, null)
-
-            val builder = AlertDialog.Builder(requireContext())
-            builder.setView(dialogView)
-            builder.setCancelable(false)
-
-            val dialog = builder.create()
-            dialog.show()
-
-            val positiveBtn: Button = dialogView.findViewById(R.id.dialogYes)
-            val negativeBtn: Button = dialogView.findViewById(R.id.dialogNo)
-
-            negativeBtn.setOnClickListener {
-                dialog.dismiss()
-            }
-            positiveBtn.setOnClickListener {
-                myRewardedAds?.showRewardAds {
-                    selectedModel = detailList[position]
-                    viewModel.updateIsCompletedToTrue(3, detailList[position].day)
-                    val selectedDay = position + 1
-                    viewModel.getExerciseListWithDayID(selectedDay, 1)
-                    observeListWithDayId()
+        if (AdFreePolicy.entitlementPendingForLockedMove(isLocked, RevenueCatManager.adFree.value)) {
+            Toast.makeText(requireContext(), R.string.access_loading, Toast.LENGTH_SHORT).show()
+            return
+        }
+        if (isLocked && RevenueCatManager.adFree.value != true) {
+            AlertDialog.Builder(requireContext())
+                .setTitle(R.string.unlock_workout_title)
+                .setMessage(R.string.unlock_workout_choice_message)
+                .setPositiveButton(R.string.watch_unlock) { _, _ ->
+                    myRewardedAds?.showRewardAds {
+                        selectedModel = detailList[position]
+                        viewModel.updateIsCompletedToTrue(3, detailList[position].day)
+                        val selectedDay = position + 1
+                        viewModel.getExerciseListWithDayID(selectedDay, 1)
+                        observeListWithDayId()
+                    }
                 }
-                dialog.dismiss()
-            }
+                .setNeutralButton(R.string.remove_ads) { _, _ ->
+                    view?.findNavController()?.navigate(R.id.action_global_adFreeOfferFragment)
+                }
+                .setNegativeButton(android.R.string.cancel, null)
+                .show()
         } else {
             selectedModel = detailList[position]
             val selectedDay = position + 1
@@ -293,7 +290,6 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
 
 
     override fun onDestroyView() {
-        handler.removeCallbacksAndMessages(null)
         myRewardedAds = null
         _binding = null
         super.onDestroyView()

@@ -19,6 +19,7 @@ class MoveListAdapter(
 
 
     var earned: Set<Int>? = null
+    var adFree: Boolean = false
 
     inner class ItemHolder(
         val binding: ItemSubdetaildayBinding,
@@ -60,11 +61,11 @@ class MoveListAdapter(
             val imageDrawable = ContextCompat.getDrawable(root.context, model.image)
             roundedImageView.setImageDrawable(imageDrawable)
             labelDay.text = model.exerciseName
-            lockBadge.visibility = if (earned != null && !com.bayraktar.healthybackandneck.utils.MoveAccess.allowed(model, earned.orEmpty())) View.VISIBLE else View.GONE
+            lockBadge.visibility = if (earned != null && !com.bayraktar.healthybackandneck.utils.MoveAccess.allowed(model, earned.orEmpty(), adFree)) View.VISIBLE else View.GONE
             txtExerciseCount.visibility = View.VISIBLE
             txtExerciseCount.setText(when {
                 earned == null -> com.bayraktar.healthybackandneck.R.string.access_loading
-                !com.bayraktar.healthybackandneck.utils.MoveAccess.allowed(model, earned.orEmpty()) -> com.bayraktar.healthybackandneck.R.string.move_locked
+                !com.bayraktar.healthybackandneck.utils.MoveAccess.allowed(model, earned.orEmpty(), adFree) -> com.bayraktar.healthybackandneck.R.string.move_locked
                 else -> com.bayraktar.healthybackandneck.R.string.move_unlocked
             })
 

@@ -531,4 +531,22 @@
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="previous">Previous</string>
+    <string name="ad_free_brand">Fitbess</string>
+    <string name="view_ad_free_offer">Angebot ansehen</string>
+    <string name="ad_free_headline">Trainiere ohne Unterbrechungen weiter</string>
+    <string name="ad_free_subtitle">Entferne Werbung und schalte alle Übungen frei</string>
+    <string name="ad_free_benefit_no_ads">Nutze die App ohne Werbung</string>
+    <string name="ad_free_benefit_moves">Schalte alle Übungsbewegungen frei</string>
+    <string name="ad_free_benefit_lifetime">Dauerhafter Zugriff mit einem einmaligen Kauf</string>
+    <string name="ad_free_benefit_no_ads_short">Werbefrei nutzen</string>
+    <string name="ad_free_benefit_moves_short">Alle Übungen freigeschaltet</string>
+    <string name="ad_free_benefit_lifetime_short">Einmal zahlen, dauerhaft nutzen</string>
+    <string name="ad_free_buy_once">Einmalig kaufen</string>
+    <string name="ad_free_offer_price">Preis: %1$s</string>
+    <string name="ad_free_google_play_note">Preis wird von Google Play bereitgestellt</string>
+    <string name="ad_free_hero_description">Illustration einer grünen Hantel</string>
+    <string name="ad_free_one_time_disclaimer">Der Kauf wird über dein Google-Play-Konto abgeschlossen.</string>
+    <string name="ad_free_not_now">Jetzt nicht</string>
+    <string name="unlock_move_choice_message">Sieh dir eine Prämienanzeige an, um diese Übung freizuschalten, oder entferne die Werbung und schalte alle Übungen frei.</string>
+    <string name="unlock_workout_choice_message">Sieh dir eine Prämienanzeige an, um dieses Training freizuschalten, oder entferne die Werbung und schalte alle Übungen frei.</string>
 </resources>

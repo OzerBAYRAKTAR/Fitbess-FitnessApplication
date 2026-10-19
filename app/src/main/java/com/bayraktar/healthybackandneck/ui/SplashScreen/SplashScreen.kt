@@ -2,14 +2,13 @@ package com.bayraktar.healthybackandneck.ui.SplashScreen
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
 import com.bayraktar.healthybackandneck.data.JetpackDataStore.DataStoreManage
-import com.bayraktar.healthybackandneck.databinding.ActivitySplashScreenBinding
 import com.bayraktar.healthybackandneck.ui.FirstActivity.MainActivity
 import com.bayraktar.healthybackandneck.ui.HomeActivity
 import com.bayraktar.healthybackandneck.utils.LanguagePreference
 import com.bayraktar.healthybackandneck.utils.LocaleHelper
-import com.bayraktar.healthybackandneck.utils.fitContentToSystemBars
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 class SplashScreen : AppCompatActivity() {
@@ -18,11 +17,10 @@ class SplashScreen : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
+        setTheme(com.bayraktar.healthybackandneck.R.style.Theme_HealthyBackandNeck)
         LanguagePreference.getLanguageCode(this)?.let { LocaleHelper.setLocale(this, it) }
-        val binding = ActivitySplashScreenBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        fitContentToSystemBars(binding.root)
         lifecycleScope.launch {
             val store = DataStoreManage.getInstance(applicationContext)
             store.initializeDataStore()

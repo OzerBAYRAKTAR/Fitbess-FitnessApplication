@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.lifecycleScope
 import com.bayraktar.healthybackandneck.BuildConfig
 import com.bayraktar.healthybackandneck.R
 import com.google.android.gms.ads.AdError
@@ -15,6 +16,7 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.rewarded.RewardItem
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
+import kotlinx.coroutines.launch
 
 class RewardedAds(
     private val activity: Activity,
@@ -32,10 +34,17 @@ class RewardedAds(
 
     init {
         owner.lifecycle.addObserver(this)
+        owner.lifecycleScope.launch {
+            RevenueCatManager.adFree.collect { status ->
+                if (status == true) rewardedAd = null
+                else if (status == false) configuredUnit?.let(::loadRewardedAds)
+            }
+        }
     }
 
     fun loadRewardedAds(adUnitId: Int) {
         configuredUnit = adUnitId
+        if (!RevenueCatManager.adsMayLoad()) return
         if (disposed || loading || showing) return
         if (rewardedAd != null && SystemClock.elapsedRealtime() - loadedAt < MAX_AGE_MS) return
         rewardedAd = null
@@ -57,6 +66,7 @@ class RewardedAds(
     }
 
     fun showRewardAds(retainEarnedReward: Boolean = false, onReward: (RewardItem) -> Unit): Boolean {
+        if (!RevenueCatManager.adsMayLoad()) return false
         if (disposed || showing || activity.isFinishing || activity.isDestroyed ||
             !owner.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) return false
         val ad = rewardedAd
