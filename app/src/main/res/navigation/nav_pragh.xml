@@ -41,6 +41,11 @@
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
+        android:id="@+id/adFreeOfferFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.Purchase.AdFreeOfferFragment"
+        android:label="@string/remove_ads"
+        tools:layout="@layout/fragment_ad_free_offer" />
+    <fragment
         android:id="@+id/id_statistics_fragment"
         android:name="com.bayraktar.healthybackandneck.ui.Statistics.StatisticsFragment"
         android:label="@string/statistics"
@@ -301,6 +306,10 @@
             android:id="@+id/action_moveListFragment_to_id_homepage_fragment"
             app:destination="@id/id_homepage_fragment" />
     </fragment>
+
+    <action
+        android:id="@+id/action_global_adFreeOfferFragment"
+        app:destination="@id/adFreeOfferFragment" />
 
 
 </navigation>

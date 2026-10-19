@@ -15,6 +15,8 @@ class ExerciseDetailFirstAdapter(
     private val exerciseItemClickListener: ExerciseItemClickListener
 ): RecyclerView.Adapter<ExerciseDetailFirstAdapter.ItemHolder>() {
 
+    var adFree = false
+
 
     inner class ItemHolder(val binding: ItemExercisedaysofweekBinding): RecyclerView.ViewHolder(binding.root) {
 
@@ -40,7 +42,7 @@ class ExerciseDetailFirstAdapter(
             txtExerciseKcal.text = model.exerciseKcal.toString()
 
 
-            if (model.isCompleted) {
+            if (model.isCompleted || adFree) {
                 lock.visibility = View.GONE
                 cardview1.setOnClickListener {
                     exerciseItemClickListener.onExerciseItemClicked(position, false)

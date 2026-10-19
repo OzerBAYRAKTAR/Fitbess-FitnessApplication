@@ -14,6 +14,7 @@ import androidx.fragment.app.viewModels
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesBinding
 import com.bayraktar.healthybackandneck.utils.WorkoutNavigation
+import com.bayraktar.healthybackandneck.utils.loadForLifecycle
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -40,7 +41,6 @@ class ExerciseMovesFragment : Fragment() {
         remaining = state?.getLong("remaining") ?: 30_000L
         paused = state?.getBoolean("paused") ?: false
         navigation = WorkoutNavigation(this, R.id.exerciseMovesFragment2)
-        binding.adView.visibility = View.GONE
         render()
         binding.goNext.setOnClickListener { advance(false) }
         binding.goBack.setOnClickListener {
@@ -69,6 +69,7 @@ class ExerciseMovesFragment : Fragment() {
             binding.favoritebtn.setImageResource(if (move.isFavourite) R.drawable.heartfill else R.drawable.heartempty)
             binding.favoritebtn.contentDescription = getString(if (move.isFavourite) R.string.remove_favorite else R.string.add_favorite)
         }
+        binding.adView.loadForLifecycle(viewLifecycleOwner)
         binding.quitExerciseToDetailDay.setOnClickListener { confirmExit() }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() { confirmExit() }

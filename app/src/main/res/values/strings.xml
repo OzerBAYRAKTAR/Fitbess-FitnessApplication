@@ -541,8 +541,40 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="previous">Previous</string>
-
-
-
+    <string name="profile_purchases">Satın alımlar</string>
+    <string name="remove_ads">Reklamları kaldır</string>
+    <string name="remove_ads_description">Tek seferlik satın alımla reklamları kaldır ve kilitli tüm hareketlere eriş.</string>
+    <string name="remove_ads_unavailable">Satın alma şu anda yapılandırılmadı.</string>
+    <string name="remove_ads_loading">Ürün bilgisi yükleniyor…</string>
+    <string name="remove_ads_not_found">Satın alma ürünü şu anda kullanılamıyor.</string>
+    <string name="remove_ads_active">Reklamsız erişim etkin. Tüm hareketler açık.</string>
+    <string name="remove_ads_price">Tek seferlik satın alım • %1$s</string>
+    <string name="ad_free_offer_price">Fiyat: %1$s</string>
+    <string name="remove_ads_buy">Satın al</string>
+    <string name="view_ad_free_offer">Teklifi incele</string>
+    <string name="ad_free_headline">Antrenmanına kesintisiz devam et</string>
+    <string name="ad_free_subtitle">Reklamları kaldır, tüm hareketlerin kilidini aç.</string>
+    <string name="ad_free_benefit_no_ads">Uygulamayı reklamsız kullan</string>
+    <string name="ad_free_benefit_moves">Tüm egzersiz hareketlerinin kilidini aç</string>
+    <string name="ad_free_benefit_lifetime">Tek seferlik satın alımla kalıcı erişim</string>
+    <string name="ad_free_benefit_no_ads_short">Reklamsız kullanım</string>
+    <string name="ad_free_benefit_moves_short">Tüm hareketler açık</string>
+    <string name="ad_free_benefit_lifetime_short">Tek sefer öde, kalıcı erişim</string>
+    <string name="ad_free_buy_once">Tek seferlik satın al</string>
+    <string name="ad_free_google_play_note">Fiyat Google Play’den alınır</string>
+    <string name="ad_free_hero_description">Yeşil dambıl çizimi</string>
+    <string name="ad_free_brand">Fitbess</string>
+    <string name="ad_free_one_time_disclaimer">Satın alma Google Play hesabınız üzerinden tamamlanır.</string>
+    <string name="ad_free_not_now">Şimdi değil</string>
+    <string name="unlock_move_choice_message">Bu hareketi açmak için ödüllü reklam izleyebilir veya reklamları kaldırıp tüm hareketlerin kilidini açabilirsin.</string>
+    <string name="unlock_workout_choice_message">Bu antrenmanı açmak için ödüllü reklam izleyebilir veya reklamları kaldırıp tüm hareketlerin kilidini açabilirsin.</string>
+    <string name="restore_purchases">Satın alımları geri yükle</string>
+    <string name="purchase_success">Satın alma tamamlandı. Reklamsız erişim etkin.</string>
+    <string name="purchase_cancelled">Satın alma iptal edildi.</string>
+    <string name="purchase_error">Satın alma tamamlanamadı. Lütfen tekrar deneyin.</string>
+    <string name="restore_success">Satın alım geri yüklendi.</string>
+    <string name="restore_empty">Bu Google Play hesabında geri yüklenecek satın alım bulunamadı.</string>
+    <string name="restore_error">Satın alımlar geri yüklenemedi. Lütfen tekrar deneyin.</string>
+    <string name="purchase_processing">İşleniyor…</string>
 </resources>
 

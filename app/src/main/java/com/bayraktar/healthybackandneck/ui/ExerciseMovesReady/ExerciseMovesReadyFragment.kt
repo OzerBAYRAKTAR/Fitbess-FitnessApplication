@@ -80,7 +80,8 @@ class ExerciseMovesReadyFragment : Fragment() {
             binding.goNextbtn.isEnabled = false
             viewLifecycleOwner.lifecycleScope.launch {
                 val earned = access.earned.first { it != null }.orEmpty()
-                exerciseList = ArrayList(exerciseList.filter { MoveAccess.allowed(it, earned) })
+                val adFree = access.adFree.first { it != null } == true
+                exerciseList = ArrayList(exerciseList.filter { MoveAccess.allowed(it, earned, adFree) })
                 binding.goNextbtn.isEnabled = exerciseList.isNotEmpty()
                 if (exerciseList.isNotEmpty()) {
                     if (viewLifecycleOwner.lifecycle.currentState.isAtLeast(androidx.lifecycle.Lifecycle.State.RESUMED)) startTimerSetup()

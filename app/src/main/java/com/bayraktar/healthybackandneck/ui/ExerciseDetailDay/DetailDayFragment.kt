@@ -49,6 +49,7 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
         binding.detaildaySecond.visibility = if (exerciseDayModel == null) View.GONE else View.VISIBLE
         binding.txtdaysecond.visibility = binding.detaildaySecond.visibility
         binding.txtdaysecond.text = exerciseDayModel?.day?.toString().orEmpty()
+        binding.backButton.setOnClickListener { view.findNavController().popBackStack() }
         adapter = DetailDayAdapter(exerciseList, this)
         binding.rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
         binding.rvdaydetail.adapter = adapter
@@ -68,17 +69,25 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch { access.earned.collect { render() } }
+                launch { access.adFree.collect { render() } }
                 launch { access.failed.collect { render() } }
             }
         }
         render()
     }
-    private fun available() = access.earned.value?.let { earned -> exerciseList.filter { MoveAccess.allowed(it, earned) } }.orEmpty()
+    private fun available(): List<ExerciseDayExercise> {
+        val earned = access.earned.value ?: return emptyList()
+        val adFree = access.adFree.value
+        if (adFree == null && exerciseList.any(MoveAccess::requiresReward)) return emptyList()
+        return exerciseList.filter { MoveAccess.allowed(it, earned, adFree == true) }
+    }
     private fun render() {
         if (_binding == null) return
         val list = available()
-        val loading = access.earned.value == null
+        val loading = access.earned.value == null ||
+                (access.adFree.value == null && exerciseList.any(MoveAccess::requiresReward))
         adapter?.earned = access.earned.value
+        adapter?.adFree = access.adFree.value == true
         adapter?.notifyDataSetChanged()
         binding.startExercise.isEnabled = !loading && list.isNotEmpty()
         binding.startExercise.text = if (list.isEmpty()) getString(R.string.unlock_to_start) else getString(R.string.start_available, list.size)
@@ -91,11 +100,15 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
     override fun recyclerviewListClicked(v: View, position: Int) {
         val model = exerciseList.getOrNull(position) ?: return
         val earned = access.earned.value ?: return
-        if (!MoveAccess.allowed(model, earned)) {
+        if (!MoveAccess.allowed(model, earned, access.adFree.value == true)) {
             AlertDialog.Builder(requireContext()).setTitle(R.string.unlock_move_title)
-                .setMessage(getString(R.string.unlock_move_message, model.exerciseName))
+                .setMessage(R.string.unlock_move_choice_message)
                 .setNegativeButton(android.R.string.cancel, null)
-                .setPositiveButton(R.string.watch_unlock) { _, _ -> rewarded?.showRewardAds(retainEarnedReward = true) { access.grant(model) } }.show()
+                .setPositiveButton(R.string.watch_unlock) { _, _ -> rewarded?.showRewardAds(retainEarnedReward = true) { access.grant(model) } }
+                .setNeutralButton(R.string.remove_ads) { _, _ ->
+                    view?.findNavController()?.navigate(R.id.action_global_adFreeOfferFragment)
+                }
+                .show()
             return
         }
         val preview = layoutInflater.inflate(R.layout.info_favourite_layout, null)

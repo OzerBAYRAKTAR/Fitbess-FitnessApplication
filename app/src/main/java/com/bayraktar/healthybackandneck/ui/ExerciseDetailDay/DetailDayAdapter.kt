@@ -18,6 +18,7 @@ class DetailDayAdapter(
 
 
     var earned: Set<Int>? = null
+    var adFree: Boolean = false
 
     inner class ItemHolder(val binding: ItemDetaildayBinding, recyclerViewClickListener: RecyclerViewClickListener): RecyclerView.ViewHolder(binding.root)
         , View.OnClickListener {
@@ -56,7 +57,7 @@ class DetailDayAdapter(
             }
             roundedImageView.setImageDrawable(imageDrawable)
             labelDay.text = model.exerciseName
-            val accessible = earned?.let { com.bayraktar.healthybackandneck.utils.MoveAccess.allowed(model, it) } == true
+            val accessible = earned?.let { com.bayraktar.healthybackandneck.utils.MoveAccess.allowed(model, it, adFree) } == true
             lockBadge.visibility = if (earned != null && !accessible) View.VISIBLE else View.GONE
             txtExerciseCount.visibility = View.VISIBLE
             txtExerciseCount.setText(when {

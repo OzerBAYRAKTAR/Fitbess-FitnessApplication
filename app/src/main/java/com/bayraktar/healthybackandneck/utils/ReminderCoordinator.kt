@@ -19,6 +19,7 @@ import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.MotivationNotificationState
 import com.bayraktar.healthybackandneck.data.Models.WaterReminderState
 import com.bayraktar.healthybackandneck.data.Room.AppDatabase
+import com.bayraktar.healthybackandneck.data.JetpackDataStore.DataStoreManage
 import com.bayraktar.healthybackandneck.ui.HomeActivity
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
@@ -32,22 +33,30 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 import javax.inject.Singleton
 
-enum class ReminderKind(val hours: Long, val channel: String, val notificationId: Int, val legacyTag: String) {
-    WATER(4, "WaterReminderChannel", 101, "waterReminderWorkerTag"),
-    MOTIVATION(12, "FitnessReminderChannel", 102, "motivateNotif")
+enum class ReminderInterval(val hours: Int) {
+    DAILY(24), EVERY_12_HOURS(12), EVERY_6_HOURS(6);
+
+    companion object {
+        fun fromHours(hours: Int) = entries.firstOrNull { it.hours == hours } ?: EVERY_6_HOURS
+    }
+}
+
+enum class ReminderKind(val defaultInterval: ReminderInterval, val preferenceKey: String, val channel: String, val notificationId: Int, val legacyTag: String) {
+    WATER(ReminderInterval.EVERY_6_HOURS, "water_reminder_interval_hours", "WaterReminderChannel", 101, "waterReminderWorkerTag"),
+    MOTIVATION(ReminderInterval.EVERY_12_HOURS, "motivation_reminder_interval_hours", "FitnessReminderChannel", 102, "motivateNotif")
 }
 
 /** Unique work prevents duplicate reminders; platform scheduling remains approximate. */
-class ReminderScheduler(private val manager: WorkManager, private val prefix: String = "reminder_v2_") {
+class ReminderScheduler(private val manager: WorkManager, private val prefix: String = "reminder_v3_") {
     fun name(kind: ReminderKind) = prefix + kind.name
-    suspend fun apply(kind: ReminderKind, enabled: Boolean) {
+    suspend fun apply(kind: ReminderKind, enabled: Boolean, interval: ReminderInterval = kind.defaultInterval) {
         if (!enabled) {
             manager.cancelUniqueWork(name(kind)).await()
             return
         }
         val worker = if (kind == ReminderKind.WATER) WaterReminderWorker::class.java else NotificationWorker::class.java
-        val request = PeriodicWorkRequest.Builder(worker, kind.hours, TimeUnit.HOURS)
-            .setInitialDelay(kind.hours, TimeUnit.HOURS).addTag(name(kind)).build()
+        val request = PeriodicWorkRequest.Builder(worker, interval.hours.toLong(), TimeUnit.HOURS)
+            .setInitialDelay(interval.hours.toLong(), TimeUnit.HOURS).addTag(name(kind)).build()
         manager.enqueueUniquePeriodicWork(name(kind), ExistingPeriodicWorkPolicy.KEEP, request).await()
     }
 }
@@ -60,9 +69,26 @@ class ReminderCoordinator @Inject constructor(
     private val mutex = Mutex()
     private val manager get() = WorkManager.getInstance(context)
     private val scheduler get() = ReminderScheduler(manager)
+    private val preferences get() = DataStoreManage.getInstance(context)
 
     suspend fun enabled(): Map<ReminderKind, Boolean> = withContext(Dispatchers.IO) {
         ReminderKind.values().associateWith(::isEnabled)
+    }
+
+    suspend fun intervals(): Map<ReminderKind, ReminderInterval> = withContext(Dispatchers.IO) {
+        ReminderKind.values().associateWith { kind ->
+            ReminderInterval.fromHours(preferences.getReminderIntervalHours(kind.preferenceKey, kind.defaultInterval.hours))
+        }
+    }
+
+    suspend fun setInterval(kind: ReminderKind, interval: ReminderInterval) = mutex.withLock {
+        withContext(Dispatchers.IO) {
+            preferences.saveReminderIntervalHours(kind.preferenceKey, interval.hours)
+            if (isEnabled(kind)) {
+                manager.cancelUniqueWork(scheduler.name(kind)).await()
+                scheduler.apply(kind, enabled = true, interval = interval)
+            }
+        }
     }
 
     suspend fun setEnabled(kind: ReminderKind, enabled: Boolean) = mutex.withLock {
@@ -72,7 +98,8 @@ class ReminderCoordinator @Inject constructor(
             else dao.saveMotivationNotificationState(MotivationNotificationState(isSwitchChecked = enabled))
             // Retire old non-unique jobs without cancelling the new unique request.
             manager.cancelAllWorkByTag(kind.legacyTag).await()
-            scheduler.apply(kind, enabled)
+            val interval = ReminderInterval.fromHours(preferences.getReminderIntervalHours(kind.preferenceKey, kind.defaultInterval.hours))
+            scheduler.apply(kind, enabled, interval)
             if (!enabled) NotificationManagerCompat.from(context).cancel(kind.notificationId)
         }
     }
@@ -82,7 +109,9 @@ class ReminderCoordinator @Inject constructor(
             NotificationManagerCompat.from(context).cancel(1)
             ReminderKind.values().forEach { kind ->
                 manager.cancelAllWorkByTag(kind.legacyTag).await()
-                scheduler.apply(kind, isEnabled(kind))
+                manager.cancelUniqueWork("reminder_v2_${kind.name}").await()
+                val interval = ReminderInterval.fromHours(preferences.getReminderIntervalHours(kind.preferenceKey, kind.defaultInterval.hours))
+                scheduler.apply(kind, isEnabled(kind), interval)
             }
         }
     }

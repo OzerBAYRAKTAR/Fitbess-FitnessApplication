@@ -41,6 +41,7 @@ internal class PreloadedInterstitialAd(
     }
 
     private fun preload() {
+        if (!RevenueCatManager.adsMayLoad()) return
         if (disposed || loading || showing) return
         if (cachedAd != null && now() - loadedAt < MAX_AGE_MS) return
         cachedAd = null
@@ -62,6 +63,10 @@ internal class PreloadedInterstitialAd(
     }
 
     fun showOrContinue(onContinue: () -> Unit) {
+        if (!RevenueCatManager.adsMayLoad()) {
+            onContinue()
+            return
+        }
         if (disposed || showing || activity.isFinishing || activity.isDestroyed ||
             !owner.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) return
 

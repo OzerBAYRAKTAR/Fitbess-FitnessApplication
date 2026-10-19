@@ -183,13 +183,6 @@ class HomePageFragment : Fragment() {
                     progress = (12 * 100 / 28),
                     dayOfProgram = 12
                 ),
-                HomeItem(
-                    imageMain = R.drawable.removed4,
-                    title = getString(R.string.my_fav_list),
-                    desc = getString(R.string.create_plan_desc),
-                    progress = (15 * 100 / 28),
-                    dayOfProgram = 12
-                )
             ), pageerHome
         ) { position ->
             when (position) {
@@ -211,12 +204,6 @@ class HomePageFragment : Fragment() {
                     // Navigate to Fragment 3
                     val action =
                         HomePageFragmentDirections.actionIdHomepageFragmentToExerciseDetailThirdFragment()
-                    findNavController().navigate(action)
-                }
-
-                3 -> {
-                    val action =
-                        HomePageFragmentDirections.actionIdHomepageFragmentToMoveListFragment()
                     findNavController().navigate(action)
                 }
 

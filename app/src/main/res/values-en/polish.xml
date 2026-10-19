@@ -4,8 +4,12 @@
     <string name="profile_reminders">Reminders</string>
     <string name="profile_preferences">App preferences</string>
     <string name="profile_support">Better together</string>
-    <string name="water_cadence">About every 4 hours · Timing may vary</string>
-    <string name="motivation_cadence">About every 12 hours · Timing may vary</string>
+    <string name="water_cadence">About %1$s · Timing may vary</string>
+    <string name="motivation_cadence">About %1$s · Timing may vary</string>
+    <string name="reminder_interval_title">Reminder frequency</string>
+    <string name="reminder_daily">Once a day</string>
+    <string name="reminder_12_hours">Every 12 hours</string>
+    <string name="reminder_6_hours">Every 6 hours</string>
     <string name="reminder_off">Off · Turn on whenever you like</string>
     <string name="notification_blocked">Notifications blocked. Check permission and channel settings.</string>
     <string name="notification_settings">Notification settings</string>
@@ -19,6 +23,7 @@
     <string name="chart_day_summary">%1$s: %2$d minutes %3$d seconds</string>
     <string name="calendar_title">Your active days this week</string>
     <string name="unlock_move_title">Unlock this move</string>
+    <string name="unlock_workout_title">Unlock this workout</string>
     <string name="unlock_move_message">Complete one rewarded ad to permanently unlock only %1$s on this device.</string>
     <string name="watch_unlock">Watch ad to unlock</string>
     <string name="move_locked">Locked · Watch an ad to unlock</string>
