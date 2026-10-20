@@ -43,6 +43,7 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
     private val exerciseListSend = ArrayList<ExerciseDayExercise>()
     private lateinit var thirdAdapter: ExerciseDetailAdapterThird
     private var selectedModel: ExerciseDay? = null
+    private var pendingDayId: Int? = null
     private var myRewardedAds: RewardedAds? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -71,6 +72,7 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
         myRewardedAds?.loadRewardedAds(R.string.rewarded_ad3)
         observeLevelThird()
         observeDayListLevelThird()
+        observeListWithDayId()
         binding.prgressStart.visibility = View.VISIBLE
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.sessions.collect { sessions ->
@@ -231,18 +233,23 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
     }
 
     private fun observeListWithDayId() {
-        viewModel.getExerciseListWithDay.observe(viewLifecycleOwner, Observer { exercise ->
-            if (exercise != null) {
-                exerciseListSend.clear()
-                exerciseListSend.addAll(exercise)
-            }
+        viewModel.getExerciseListWithDay.observe(viewLifecycleOwner, Observer { result ->
+            val selectedDay = selectedModel ?: return@Observer
+            if (result == null || pendingDayId != result.first) return@Observer
+            val navController = view?.findNavController() ?: return@Observer
+            if (navController.currentDestination?.id != R.id.exerciseDetailThirdFragment) return@Observer
+
+            exerciseListSend.clear()
+            exerciseListSend.addAll(result.second)
             val exerciseLevel = getString(R.string.hard_level)
             val exerciseArray = exerciseListSend.toTypedArray()
             val action =
                 ExerciseDetailThirdFragmentDirections.actionExerciseDetailThirdFragmentToDetailDayFragment(
-                    exerciseArray, selectedModel!!, exerciseLevel
+                    exerciseArray, selectedDay, exerciseLevel
                 )
-            view?.findNavController()?.navigate(action)
+            selectedModel = null
+            pendingDayId = null
+            navController.navigate(action)
         })
     }
 
@@ -260,8 +267,8 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
                         selectedModel = detailList[position]
                         viewModel.updateIsCompletedToTrue(3, detailList[position].day)
                         val selectedDay = position + 1
+                        pendingDayId = selectedDay
                         viewModel.getExerciseListWithDayID(selectedDay, 1)
-                        observeListWithDayId()
                     }
                 }
                 .setNeutralButton(R.string.remove_ads) { _, _ ->
@@ -272,8 +279,8 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
         } else {
             selectedModel = detailList[position]
             val selectedDay = position + 1
+            pendingDayId = selectedDay
             viewModel.getExerciseListWithDayID(selectedDay, 1)
-            observeListWithDayId()
         }
     }
 
