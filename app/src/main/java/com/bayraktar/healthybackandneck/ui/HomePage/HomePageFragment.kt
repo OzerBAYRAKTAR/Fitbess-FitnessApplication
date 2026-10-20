@@ -5,9 +5,11 @@ import android.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import android.os.Bundle
+import android.view.MotionEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewConfiguration
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -336,19 +338,7 @@ class HomePageFragment : Fragment() {
             }
 
             warmUpPager.adapter = warmAdapter
-            warmUpPager.clipChildren = false
-            warmUpPager.clipToPadding = false
-            warmUpPager.offscreenPageLimit = 2
-
-
-            warmUpPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-            val compost = CompositePageTransformer()
-            compost.addTransformer(MarginPageTransformer(20))
-            compost.addTransformer { page, position ->
-                val r = 1 - abs(position)
-                page.scaleY = 0.95f + r * 0.15f
-            }
-            warmUpPager.setPageTransformer(compost)
+            configureExerciseCarousel(warmUpPager)
 
         }
     }
@@ -412,22 +402,7 @@ class HomePageFragment : Fragment() {
                 }
             }
             neckBackViewPager.adapter = neckAdapter
-
-            neckBackViewPager.clipChildren = false
-            neckBackViewPager.clipToPadding = false
-            neckBackViewPager.offscreenPageLimit = 2
-            neckBackViewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-            val compost = CompositePageTransformer()
-            compost.addTransformer(MarginPageTransformer(20))
-            compost.addTransformer(object : ViewPager2.PageTransformer {
-                override fun transformPage(page: View, position: Float) {
-                    val r = 1 - abs(position)
-                    page.scaleY = 0.95f + r * 0.15f
-
-                }
-
-            })
-            neckBackViewPager.setPageTransformer(compost)
+            configureExerciseCarousel(neckBackViewPager)
         }
     }
 
@@ -480,22 +455,7 @@ class HomePageFragment : Fragment() {
             }
         }
         armViewPager.adapter = armAdapter
-
-        armViewPager.clipChildren = false
-        armViewPager.clipToPadding = false
-        armViewPager.offscreenPageLimit = 2
-        armViewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-        val compost = CompositePageTransformer()
-        compost.addTransformer(MarginPageTransformer(20))
-        compost.addTransformer(object : ViewPager2.PageTransformer {
-            override fun transformPage(page: View, position: Float) {
-                val r = 1 - abs(position)
-                page.scaleY = 0.95f + r * 0.15f
-
-            }
-
-        })
-        armViewPager.setPageTransformer(compost)
+        configureExerciseCarousel(armViewPager)
     }
 
     private fun absViewPager() = with(binding) {
@@ -546,18 +506,7 @@ class HomePageFragment : Fragment() {
         }
 
         absViewPager.adapter = absAdapter
-
-        absViewPager.clipChildren = false
-        absViewPager.clipToPadding = false
-        absViewPager.offscreenPageLimit = 2
-        absViewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-        val compost = CompositePageTransformer()
-        compost.addTransformer(MarginPageTransformer(20))
-        compost.addTransformer { page, position ->
-            val r = 1 - abs(position)
-            page.scaleY = 0.95f + r * 0.15f
-        }
-        absViewPager.setPageTransformer(compost)
+        configureExerciseCarousel(absViewPager)
     }
 
     private fun legViewPager() = with(binding) {
@@ -618,22 +567,58 @@ class HomePageFragment : Fragment() {
         }
 
         legViewPager.adapter = legAdapter
+        configureExerciseCarousel(legViewPager)
+    }
 
-        legViewPager.clipChildren = false
-        legViewPager.clipToPadding = false
-        legViewPager.offscreenPageLimit = 2
-        legViewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-        val compost = CompositePageTransformer()
-        compost.addTransformer(MarginPageTransformer(20))
-        compost.addTransformer(object : ViewPager2.PageTransformer {
-            override fun transformPage(page: View, position: Float) {
-                val r = 1 - abs(position)
-                page.scaleY = 0.95f + r * 0.15f
+    private fun configureExerciseCarousel(pager: ViewPager2) {
+        pager.clipChildren = false
+        pager.clipToPadding = false
+        pager.offscreenPageLimit = 2
 
+        val recyclerView = pager.getChildAt(0) as? RecyclerView ?: return
+        recyclerView.overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+
+        // The carousels live inside the home screen's vertical ScrollView. Keep vertical
+        // gestures available to it, while locking a recognized horizontal swipe to the pager.
+        val touchSlop = ViewConfiguration.get(pager.context).scaledTouchSlop
+        var downX = 0f
+        var downY = 0f
+        recyclerView.setOnTouchListener { view, event ->
+            when (event.actionMasked) {
+                MotionEvent.ACTION_DOWN -> {
+                    downX = event.x
+                    downY = event.y
+                }
+
+                MotionEvent.ACTION_MOVE -> {
+                    val dx = event.x - downX
+                    val dy = event.y - downY
+                    if (abs(dx) > touchSlop && abs(dx) > abs(dy)) {
+                        view.parent?.requestDisallowInterceptTouchEvent(true)
+                    }
+                }
+
+                MotionEvent.ACTION_UP,
+                MotionEvent.ACTION_CANCEL -> {
+                    view.parent?.requestDisallowInterceptTouchEvent(false)
+                }
             }
+            false
+        }
 
-        })
-        legViewPager.setPageTransformer(compost)
+        val transformer = CompositePageTransformer().apply {
+            addTransformer(
+                MarginPageTransformer(
+                    resources.getDimensionPixelSize(R.dimen.exercise_carousel_page_margin)
+                )
+            )
+            addTransformer { page, position ->
+                val centerProximity = 1f - abs(position).coerceIn(0f, 1f)
+                page.scaleX = 0.92f + centerProximity * 0.08f
+                page.scaleY = 0.95f + centerProximity * 0.10f
+            }
+        }
+        pager.setPageTransformer(transformer)
     }
 
     private fun observeSubExercises() {

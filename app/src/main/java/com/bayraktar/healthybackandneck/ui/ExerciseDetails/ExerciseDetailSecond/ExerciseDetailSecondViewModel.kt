@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Repository.RoomRepository
+import com.bayraktar.healthybackandneck.data.Repository.WorkoutRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -14,11 +15,14 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ExerciseDetailSecondViewModel @Inject constructor(
-    private val repo: RoomRepository
+    private val repo: RoomRepository,
+    workoutRepository: WorkoutRepository
 ):ViewModel() {
 
-    private val _exerciseDayExercisesLevelTwo: LiveData<List<ExerciseDayExercise>> = MutableLiveData()
+    private val _exerciseDayExercisesLevelTwo: MutableLiveData<Boolean> = MutableLiveData()
     val exerciseDayExercisesLevelTwo get() = _exerciseDayExercisesLevelTwo
+
+    val sessions = workoutRepository.sessions
 
 
 
@@ -53,8 +57,8 @@ class ExerciseDetailSecondViewModel @Inject constructor(
 
     fun fetchExerciseDayExercisesWithLevelTwo() {
         viewModelScope.launch(Dispatchers.IO) {
-            val exercises = repo.getExerciseDayExercisesWithLevelTwo(titleName = "noTitle")
-            (exerciseDayExercisesLevelTwo as MutableLiveData).postValue(exercises)
+            val exists = repo.hasExerciseDayExercisesWithLevelTwo(titleName = "noTitle")
+            exerciseDayExercisesLevelTwo.postValue(exists)
         }
     }
 

@@ -236,6 +236,7 @@
     <string name="exercise_move">Movement</string>
     <string name="time_min">Minutes</string>
     <string name="general_progress">General Progress</string>
+    <string name="progress_percentage">%1$d%%</string>
     <string name="splash_1">The information you entered is being reviewed...</string>
     <string name="splash_2">Suitable exercises are being searched for...</string>
     <string name="splash_3">A tailored plan is being prepared for you...</string>
@@ -565,7 +566,12 @@
     <string name="ad_free_one_time_disclaimer">Your purchase is completed through your Google Play account.</string>
     <string name="ad_free_not_now">Not now</string>
     <string name="unlock_move_choice_message">Watch a rewarded ad to unlock this move, or remove ads to unlock every exercise movement.</string>
-    <string name="unlock_workout_choice_message">Watch a rewarded ad to unlock this workout, or remove ads to unlock every exercise movement.</string>
+    <string name="unlock_level_title">Unlock this level</string>
+    <string name="unlock_level_choice_message">Watch one rewarded ad to permanently unlock the %1$d remaining locked moves in this category and level. Other levels stay locked.</string>
+    <string name="watch_unlock_level">Watch ad and unlock level</string>
+    <string name="unlock_level_to_start">Unlock all moves to start</string>
+    <string name="ad_preparing">Preparing ad…</string>
+    <string name="unlock_workout_choice_message">Complete the previous workout to unlock this day for free. For immediate access, watch a rewarded ad or choose ad-free access.</string>
     <string name="restore_purchases">Restore purchases</string>
     <string name="purchase_success">Purchase complete. Ad-free access is active.</string>
     <string name="purchase_cancelled">Purchase cancelled.</string>
@@ -574,5 +580,16 @@
     <string name="restore_empty">No purchase was found for this Google Play account.</string>
     <string name="restore_error">Purchases could not be restored. Please try again.</string>
     <string name="purchase_processing">Processing…</string>
+    <string name="update_ready_title">Update ready</string>
+    <string name="update_ready_message">The new version has been downloaded. Restart the app to install it.</string>
+    <string name="update_install_now">Install now</string>
+    <string name="update_later">Later</string>
+    <string name="update_required_title">Update required</string>
+    <string name="update_required_message">Install the new app version to continue. If the update does not complete, you can retry or exit the app.</string>
+    <string name="update_retry">Retry</string>
+    <string name="update_exit">Exit app</string>
+    <string name="update_available_title">A newer version is available</string>
+    <string name="update_available_message">A new version of Fitbess is available. Would you like to update now?</string>
+    <string name="update_now">Update</string>
 </resources>
 

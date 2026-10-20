@@ -60,10 +60,10 @@ The following values describe the working checkout at installation on 2026-10-16
 
 ## Playbook provenance
 
-- Version: 0.2.0.
+- Version: 0.3.0.
 - Source: `https://github.com/OzerBAYRAKTAR/ai-engineering-playbook`.
 - Source branch: `codex/po-manager-workflow` (upstream PR #2 awaiting merge at installation).
-- Pinned commit: `84d5de5b81627c5b41589327e08f6a8c3e4cff76`.
+- Pinned commit: `55622c9717b7e4292d72dac18fac57065dd19e6b`.
 - Installed/reviewed: 2026-10-16.
 - Managed content: `.ai-playbook/core/`, `.ai-playbook/platforms/`, `.ai-playbook/workflows/`, `.ai-playbook/VERSION`, `.ai-playbook/SOURCES.md`, the five directories in `.agents/skills/`, and the copied Codex role/research templates under `.ai-playbook/integrations/codex/`.
 - Project-owned files: root `AGENTS.md`, this file and `.ai-playbook/README.md`; preserve their local decisions during upgrades.

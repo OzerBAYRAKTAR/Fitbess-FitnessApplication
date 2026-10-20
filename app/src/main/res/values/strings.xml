@@ -243,6 +243,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="exercise_move">Hareket</string>
     <string name="time_min">Dakika</string>
     <string name="general_progress">Genel İlerleme</string>
+    <string name="progress_percentage">%1$d%%</string>
     <string name="splash_1">Girdiğin bilgiler inceleniyor… </string>
     <string name="splash_2">Uygun egzersizler aranıyor… </string>
     <string name="splash_3">Sana uygun plan hazırlanıyor…</string>
@@ -567,7 +568,12 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="ad_free_one_time_disclaimer">Satın alma Google Play hesabınız üzerinden tamamlanır.</string>
     <string name="ad_free_not_now">Şimdi değil</string>
     <string name="unlock_move_choice_message">Bu hareketi açmak için ödüllü reklam izleyebilir veya reklamları kaldırıp tüm hareketlerin kilidini açabilirsin.</string>
-    <string name="unlock_workout_choice_message">Bu antrenmanı açmak için ödüllü reklam izleyebilir veya reklamları kaldırıp tüm hareketlerin kilidini açabilirsin.</string>
+    <string name="unlock_level_title">Bu seviyeyi aç</string>
+    <string name="unlock_level_choice_message">Bu kategorinin bu seviyesinde kalan %1$d kilitli hareketin tamamını kalıcı açmak için bir ödüllü reklam izle. Diğer seviyeler kilitli kalır.</string>
+    <string name="watch_unlock_level">Reklam izle ve seviyeyi aç</string>
+    <string name="unlock_level_to_start">Seviyedeki tüm hareketleri aç ve başla</string>
+    <string name="ad_preparing">Reklam hazırlanıyor…</string>
+    <string name="unlock_workout_choice_message">Bu günü ücretsiz açmak için önceki günün antrenmanını tamamla. Hemen erişmek için ödüllü reklam izleyebilir veya reklamsız erişimi seçebilirsin.</string>
     <string name="restore_purchases">Satın alımları geri yükle</string>
     <string name="purchase_success">Satın alma tamamlandı. Reklamsız erişim etkin.</string>
     <string name="purchase_cancelled">Satın alma iptal edildi.</string>
@@ -576,5 +582,16 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="restore_empty">Bu Google Play hesabında geri yüklenecek satın alım bulunamadı.</string>
     <string name="restore_error">Satın alımlar geri yüklenemedi. Lütfen tekrar deneyin.</string>
     <string name="purchase_processing">İşleniyor…</string>
+    <string name="update_ready_title">Güncelleme hazır</string>
+    <string name="update_ready_message">Yeni sürüm indirildi. Yüklemek için uygulamayı yeniden başlatın.</string>
+    <string name="update_install_now">Şimdi yükle</string>
+    <string name="update_later">Daha sonra</string>
+    <string name="update_required_title">Güncelleme gerekli</string>
+    <string name="update_required_message">Devam etmek için uygulamanın yeni sürümünü yükleyin. Güncelleme tamamlanmazsa tekrar deneyebilir veya uygulamadan çıkabilirsiniz.</string>
+    <string name="update_retry">Tekrar dene</string>
+    <string name="update_exit">Uygulamadan çık</string>
+    <string name="update_available_title">Yeni sürüm mevcut</string>
+    <string name="update_available_message">Fitbess’in yeni bir sürümü mevcut. Şimdi güncellemek ister misiniz?</string>
+    <string name="update_now">Güncelle</string>
 </resources>
 

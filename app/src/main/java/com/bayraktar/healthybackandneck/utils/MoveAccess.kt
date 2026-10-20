@@ -15,6 +15,19 @@ object MoveAccess {
     fun requiresReward(move: ExerciseDayExercise) = move.dayId == 0 && move.titleName in categories && move.level > 1
     fun allowed(move: ExerciseDayExercise, earned: Set<Int>, adFree: Boolean = false) =
         adFree || !requiresReward(move) || move.id in earned
+
+    fun singleUnlockIds(move: ExerciseDayExercise): Set<Int> =
+        if (requiresReward(move)) setOf(move.id) else emptySet()
+
+    /** One ad unlocks every rewarded movement in only this catalog category and level. */
+    fun levelUnlockIds(moves: List<ExerciseDayExercise>): Set<Int> {
+        val selected = moves.firstOrNull(::requiresReward) ?: return emptySet()
+        return moves.asSequence()
+            .filter(::requiresReward)
+            .filter { it.titleName == selected.titleName && it.level == selected.level }
+            .map(ExerciseDayExercise::id)
+            .toSet()
+    }
 }
 
 class MoveAccessViewModel(application: Application) : AndroidViewModel(application) {
@@ -35,9 +48,22 @@ class MoveAccessViewModel(application: Application) : AndroidViewModel(applicati
     }
     // Earned rewards outlive the ad host view, including rotation during the ad.
     fun grant(move: ExerciseDayExercise) {
-        if (!MoveAccess.requiresReward(move)) return
+        val ids = MoveAccess.singleUnlockIds(move)
+        if (ids.isEmpty()) return
         rewardWrites.launch {
-            try { store.unlockMove(move.id); _failed.value = false }
+            try { store.unlockMoves(ids); _failed.value = false }
+            catch (error: Exception) {
+                if (error is CancellationException) throw error
+                _failed.value = true
+            }
+        }
+    }
+
+    fun grantLevel(moves: List<ExerciseDayExercise>) {
+        val ids = MoveAccess.levelUnlockIds(moves)
+        if (ids.isEmpty()) return
+        rewardWrites.launch {
+            try { store.unlockMoves(ids); _failed.value = false }
             catch (error: Exception) {
                 if (error is CancellationException) throw error
                 _failed.value = true

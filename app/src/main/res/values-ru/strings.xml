@@ -236,6 +236,7 @@
     <string name="exercise_move">Движение</string>
     <string name="time_min">Минута</string>
     <string name="general_progress">Общий Прогресс</string>
+    <string name="progress_percentage">%1$d%%</string>
     <string name="splash_1">Введённая информация анализируется…</string>
     <string name="splash_2">Подходящие упражнения ищутся…</string>
     <string name="splash_3">Готовится ваш персональный план…</string>
@@ -554,5 +555,21 @@
     <string name="ad_free_one_time_disclaimer">Покупка оформляется через ваш аккаунт Google Play.</string>
     <string name="ad_free_not_now">Не сейчас</string>
     <string name="unlock_move_choice_message">Посмотрите рекламу с наградой, чтобы открыть это упражнение, или отключите рекламу и откройте все упражнения.</string>
-    <string name="unlock_workout_choice_message">Посмотрите рекламу с наградой, чтобы открыть эту тренировку, или отключите рекламу и откройте все упражнения.</string>
+    <string name="unlock_level_title">Открыть этот уровень</string>
+    <string name="unlock_level_choice_message">Посмотрите одну рекламу с наградой, чтобы навсегда открыть оставшиеся %1$d закрытых упражнений этой категории и уровня. Остальные уровни останутся закрытыми.</string>
+    <string name="watch_unlock_level">Посмотреть рекламу и открыть уровень</string>
+    <string name="unlock_level_to_start">Откройте все упражнения уровня, чтобы начать</string>
+    <string name="ad_preparing">Подготовка рекламы…</string>
+    <string name="unlock_workout_choice_message">Завершите тренировку предыдущего дня, чтобы бесплатно открыть этот день. Для немедленного доступа посмотрите рекламу с наградой или выберите доступ без рекламы.</string>
+    <string name="update_ready_title">Обновление готово</string>
+    <string name="update_ready_message">Новая версия загружена. Перезапустите приложение, чтобы установить её.</string>
+    <string name="update_install_now">Установить сейчас</string>
+    <string name="update_later">Позже</string>
+    <string name="update_required_title">Требуется обновление</string>
+    <string name="update_required_message">Установите новую версию приложения, чтобы продолжить. Если обновление не завершится, попробуйте ещё раз или выйдите из приложения.</string>
+    <string name="update_retry">Повторить</string>
+    <string name="update_exit">Выйти из приложения</string>
+    <string name="update_available_title">Доступна новая версия</string>
+    <string name="update_available_message">Доступна новая версия Fitbess. Хотите обновить приложение сейчас?</string>
+    <string name="update_now">Обновить</string>
 </resources>

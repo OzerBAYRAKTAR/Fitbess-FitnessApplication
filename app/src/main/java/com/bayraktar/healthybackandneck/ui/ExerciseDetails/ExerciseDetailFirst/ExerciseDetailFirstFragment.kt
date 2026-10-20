@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
+import com.bayraktar.healthybackandneck.data.Models.completedProgramDays
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDaysOfWeekBinding
 import com.bayraktar.healthybackandneck.utils.Interfaces.ExerciseItemClickListener
 import com.bayraktar.healthybackandneck.utils.RewardedAds
@@ -75,6 +76,14 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
         }
         observeLevelOne()
         observeDayListLevelOne()
+        binding.prgressStart.visibility = View.VISIBLE
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.sessions.collect { sessions ->
+                val completedDays = completedProgramDays(sessions, level = 1)
+                binding.customProgressBar.progress = completedDays * 100 / 21
+                binding.txtProgress.text = getString(R.string.progress_percentage, completedDays * 100 / 21)
+            }
+        }
 
         backstack()
         viewModel.fetchExerciseDayExercisesWithLevelOne()
@@ -95,10 +104,8 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
 
     private fun observeLevelOne() {
         viewModel.exerciseDayExercisesLevelOne.observe(viewLifecycleOwner, Observer { exercises ->
-            if (exercises.isEmpty()) {
+            if (exercises == false) {
                 addToRoomExercises()
-            } else {
-                println("liste var")
             }
         })
     }
@@ -108,24 +115,11 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
             if (exercises.isEmpty()) {
                 addToRoomExerciseDayList()
             } else {
-                firstAdapter.setData(exercises)
+                val orderedDays = exercises.sortedBy { it.day }
+                firstAdapter.setData(orderedDays)
                 detailList.clear()
-                detailList.addAll(exercises)
-
-
-                var count = 0
-                for (item in exercises) {
-                    if (item.isCompleted) {
-                        count++
-                    }
-                }
-                if (count == 3) {
-                    binding.customProgressBar.progress = 0
-                    binding.txtProgress.text = "%0"
-                }else {
-                    binding.customProgressBar.progress = count * 100 / 21
-                    binding.txtProgress.text = "%${(count * 100 / 21).toInt()}"
-                }
+                detailList.addAll(orderedDays)
+                binding.prgressStart.visibility = View.GONE
 
             }
         })
@@ -157,20 +151,14 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
                 )
                 detailList.add(exercise)
             }
+            detailList.sortBy { it.day }
             viewModel.insertExerciseDaysList(detailList)
             firstAdapter.setData(detailList)
-
-            var count = 0
-            for (item in detailList) {
-                if (item.isCompleted) {
-                    count++
-                }
-            }
-            binding.customProgressBar.progress = count * 100 / 21
-            binding.txtProgress.text = "%${(count * 100 / 21).toInt()}"
+            binding.prgressStart.visibility = View.GONE
 
         } catch (e: Exception) {
             e.printStackTrace()
+            binding.prgressStart.visibility = View.GONE
         }
 
     }

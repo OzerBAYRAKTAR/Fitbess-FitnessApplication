@@ -7,6 +7,7 @@
     <dimen name="text_size">35dp</dimen>
     <dimen name="selected_text_size">47dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="exercise_carousel_page_margin">8dp</dimen>
 
 
 </resources>

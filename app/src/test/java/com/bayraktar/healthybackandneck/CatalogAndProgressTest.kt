@@ -2,6 +2,7 @@ package com.bayraktar.healthybackandneck
 
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.WorkoutSession
+import com.bayraktar.healthybackandneck.data.Models.completedProgramDays
 import com.bayraktar.healthybackandneck.ui.Statistics.WeeklyActivity
 import com.bayraktar.healthybackandneck.utils.MoveAccess
 import org.junit.Assert.*
@@ -24,6 +25,23 @@ class CatalogAndProgressTest {
         assertTrue(MoveAccess.allowed(move(category = "noTitle", day = 21), emptySet()))
     }
 
+    @Test fun oneLevelRewardUnlocksOnlyTheSelectedCategoryAndLevel() {
+        val selectedLevel = listOf(
+            move(id = 1, category = "arm", level = 2),
+            move(id = 2, category = "arm", level = 2),
+            move(id = 3, category = "arm", level = 3),
+            move(id = 4, category = "abs", level = 2),
+        )
+
+        assertEquals(setOf(1, 2), MoveAccess.levelUnlockIds(selectedLevel))
+        assertEquals(setOf(1), MoveAccess.singleUnlockIds(selectedLevel[0]))
+        assertEquals(setOf(2), MoveAccess.singleUnlockIds(selectedLevel[1]))
+        assertTrue(MoveAccess.singleUnlockIds(move(level = 1)).isEmpty())
+        assertTrue(MoveAccess.allowed(selectedLevel[0], MoveAccess.levelUnlockIds(selectedLevel)))
+        assertFalse(MoveAccess.allowed(selectedLevel[2], MoveAccess.levelUnlockIds(selectedLevel)))
+        assertFalse(MoveAccess.allowed(selectedLevel[3], MoveAccess.levelUnlockIds(selectedLevel)))
+    }
+
     @Test fun chartUsesLocalDayBoundariesIncludesPartialEffortAndExcludesFuture() {
         val previous = Locale.getDefault()
         try {
@@ -43,5 +61,22 @@ class CatalogAndProgressTest {
             assertEquals(0, days[4].activeMillis)
             assertEquals(90000, days.sumOf { it.activeMillis })
         } finally { Locale.setDefault(previous) }
+    }
+
+    @Test fun programProgressCountsOnlyDistinctFullyCompletedDaysUsingTheirPlannedMoveCount() {
+        fun session(id: String, done: Int, planned: Int, level: Int = 1, day: Int = 1) =
+            WorkoutSession(id, 1, 2, 1200, done, planned, level, day, "Test")
+
+        val sessions = listOf(
+            session("partial", 7, 8),
+            session("complete-eight-moves", 8, 8),
+            session("repeat-day", 8, 8),
+            session("other-level", 8, 8, level = 2),
+            session("outside-program", 8, 8, day = 22),
+        )
+
+        assertEquals(1, completedProgramDays(sessions, level = 1))
+        assertEquals(1, completedProgramDays(sessions, level = 2))
+        assertEquals(0, completedProgramDays(emptyList(), level = 3))
     }
 }

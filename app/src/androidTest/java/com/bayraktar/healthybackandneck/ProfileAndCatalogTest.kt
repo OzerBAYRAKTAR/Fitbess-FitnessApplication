@@ -32,22 +32,24 @@ class ProfileAndCatalogTest {
     private val instrumentation = InstrumentationRegistry.getInstrumentation()
     private val context get() = instrumentation.targetContext
 
-    @Test fun earnedModelIsPersistedIdempotentlyWithoutUnlockingAnotherModel() = runBlocking {
+    @Test fun earnedModelIdsArePersistedTogetherIdempotentlyWithoutUnlockingAnotherModel() = runBlocking {
         val manager = DataStoreManage.getInstance(context)
         val id = -10512
+        val siblingId = -10511
         val before = withTimeout(5000) { manager.unlockedMoveIds().first() }
         assertFalse(id in before)
+        assertFalse(siblingId in before)
         try {
-            manager.unlockMove(id); manager.unlockMove(id)
-            val restored = withTimeout(5000) { DataStoreManage.getInstance(context).unlockedMoveIds().first { id in it } }
-            assertEquals(before + id, restored)
+            manager.unlockMoves(setOf(id, siblingId)); manager.unlockMove(id)
+            val restored = withTimeout(5000) { DataStoreManage.getInstance(context).unlockedMoveIds().first { id in it && siblingId in it } }
+            assertEquals(before + id + siblingId, restored)
             assertFalse(-10513 in restored)
         } finally {
             @Suppress("UNCHECKED_CAST")
             val store = DataStoreManage::class.java.getDeclaredField("dataStore").apply { isAccessible = true }.get(manager) as DataStore<Preferences>
             store.edit { prefs ->
                 val key = stringSetPreferencesKey("earned_catalog_move_ids_v1")
-                prefs[key] = prefs[key].orEmpty() - id.toString()
+                prefs[key] = prefs[key].orEmpty() - id.toString() - siblingId.toString()
             }
         }
     }

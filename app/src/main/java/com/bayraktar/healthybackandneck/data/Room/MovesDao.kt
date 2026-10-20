@@ -53,7 +53,7 @@ interface  MovesDao {
     fun getMotivationNotificationState(): MotivationNotificationState?
 
 
-    @Query("SELECT * FROM exercise_days WHERE level = 1")
+    @Query("SELECT * FROM exercise_days WHERE level = 1 ORDER BY day ASC")
     fun getExerciseDaysLevel1(): List<ExerciseDay>
 
 
@@ -66,12 +66,21 @@ interface  MovesDao {
 
 
 
-    @Query("SELECT * FROM exercise_days WHERE level = 2")
+    @Query("SELECT * FROM exercise_days WHERE level = 2 ORDER BY day ASC")
     fun getExerciseDaysLevel2(): List<ExerciseDay>
 
 
-    @Query("SELECT * FROM exercise_days WHERE level = 3")
+    @Query("SELECT * FROM exercise_days WHERE level = 3 ORDER BY day ASC")
     fun getExerciseDaysLevel3(): List<ExerciseDay>
+
+    @Query("SELECT EXISTS(SELECT 1 FROM exercise_day_exercise WHERE level = 1 AND titleName = :titleName)")
+    fun hasExerciseDayExercisesWithLevelOne(titleName: String): Boolean
+
+    @Query("SELECT EXISTS(SELECT 1 FROM exercise_day_exercise WHERE level = 2 AND titleName = :titleName)")
+    fun hasExerciseDayExercisesWithLevelTwo(titleName: String): Boolean
+
+    @Query("SELECT EXISTS(SELECT 1 FROM exercise_day_exercise WHERE level = 3 AND titleName = :titleName)")
+    fun hasExerciseDayExercisesWithLevelThree(titleName: String): Boolean
 
 
     @Query("SELECT * FROM exercise_day_exercise where titleName != :titleName")
