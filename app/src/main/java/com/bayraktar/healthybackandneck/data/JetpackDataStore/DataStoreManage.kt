@@ -51,8 +51,12 @@ class DataStoreManage(context: Context) {
         preferences[unlockedMovesKey].orEmpty().mapNotNull(String::toIntOrNull).toSet()
     }
     suspend fun unlockMove(id: Int) {
+        unlockMoves(setOf(id))
+    }
+    suspend fun unlockMoves(ids: Set<Int>) {
+        if (ids.isEmpty()) return
         dataStore.edit { preferences ->
-            preferences[unlockedMovesKey] = preferences[unlockedMovesKey].orEmpty() + id.toString()
+            preferences[unlockedMovesKey] = preferences[unlockedMovesKey].orEmpty() + ids.map(Int::toString)
         }
     }
 

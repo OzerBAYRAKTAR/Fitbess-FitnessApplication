@@ -17,14 +17,6 @@
         android:scaleType="fitCenter"
         android:importantForAccessibility="no"
         app:shapeAppearanceOverlay="@style/roundedImageStyletwenty"/>
-    <ImageView
-        android:id="@+id/lockBadge"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="8dp"
-        android:src="@drawable/fit_lock"
-        android:visibility="gone"
-        android:importantForAccessibility="no"/>
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"

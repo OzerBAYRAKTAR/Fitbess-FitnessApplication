@@ -87,6 +87,15 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         return movesDao.getExerciseDayExercisesWithLevelThird(titleName)
     }
 
+    fun hasExerciseDayExercisesWithLevelOne(titleName: String) =
+        movesDao.hasExerciseDayExercisesWithLevelOne(titleName)
+
+    fun hasExerciseDayExercisesWithLevelTwo(titleName: String) =
+        movesDao.hasExerciseDayExercisesWithLevelTwo(titleName)
+
+    fun hasExerciseDayExercisesWithLevelThree(titleName: String) =
+        movesDao.hasExerciseDayExercisesWithLevelThree(titleName)
+
     fun getExerciseListWithDayID(dayID: Int, level: Int,titleName: String): List<ExerciseDayExercise> {
         return movesDao.getExerciseListWithDayID(dayID, level,titleName)
     }

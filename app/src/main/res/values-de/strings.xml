@@ -234,6 +234,7 @@
     <string name="exercise_move">Bewegung</string>
     <string name="time_min">Minute</string>
     <string name="general_progress">Allgemeiner Fortschritt</string>
+    <string name="progress_percentage">%1$d%%</string>
     <string name="splash_1">Die eingegebenen Informationen werden überprüft…</string>
     <string name="splash_2">Nach passenden Übungen wird gesucht…</string>
     <string name="splash_3">Ein maßgeschneiderter Plan wird für Sie vorbereitet…</string>
@@ -548,5 +549,21 @@
     <string name="ad_free_one_time_disclaimer">Der Kauf wird über dein Google-Play-Konto abgeschlossen.</string>
     <string name="ad_free_not_now">Jetzt nicht</string>
     <string name="unlock_move_choice_message">Sieh dir eine Prämienanzeige an, um diese Übung freizuschalten, oder entferne die Werbung und schalte alle Übungen frei.</string>
-    <string name="unlock_workout_choice_message">Sieh dir eine Prämienanzeige an, um dieses Training freizuschalten, oder entferne die Werbung und schalte alle Übungen frei.</string>
+    <string name="unlock_level_title">Diese Stufe freischalten</string>
+    <string name="unlock_level_choice_message">Sieh dir eine Prämienanzeige an, um die %1$d verbleibenden gesperrten Übungen dieser Kategorie und Stufe dauerhaft freizuschalten. Andere Stufen bleiben gesperrt.</string>
+    <string name="watch_unlock_level">Anzeige ansehen und Stufe freischalten</string>
+    <string name="unlock_level_to_start">Alle Übungen freischalten und starten</string>
+    <string name="ad_preparing">Anzeige wird vorbereitet…</string>
+    <string name="unlock_workout_choice_message">Schließe das Training des vorherigen Tages ab, um diesen Tag kostenlos freizuschalten. Für sofortigen Zugriff kannst du eine Prämienanzeige ansehen oder werbefreien Zugriff wählen.</string>
+    <string name="update_ready_title">Update bereit</string>
+    <string name="update_ready_message">Die neue Version wurde heruntergeladen. Starte die App neu, um sie zu installieren.</string>
+    <string name="update_install_now">Jetzt installieren</string>
+    <string name="update_later">Später</string>
+    <string name="update_required_title">Update erforderlich</string>
+    <string name="update_required_message">Installiere die neue App-Version, um fortzufahren. Wenn das Update nicht abgeschlossen wird, kannst du es erneut versuchen oder die App schließen.</string>
+    <string name="update_retry">Erneut versuchen</string>
+    <string name="update_exit">App schließen</string>
+    <string name="update_available_title">Eine neue Version ist verfügbar</string>
+    <string name="update_available_message">Eine neue Version von Fitbess ist verfügbar. Möchtest du jetzt aktualisieren?</string>
+    <string name="update_now">Aktualisieren</string>
 </resources>

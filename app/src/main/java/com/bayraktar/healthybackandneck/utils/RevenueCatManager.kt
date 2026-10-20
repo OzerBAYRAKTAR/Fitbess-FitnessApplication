@@ -19,7 +19,7 @@ import kotlinx.coroutines.flow.asStateFlow
 /** RevenueCat is the source of truth for purchase entitlements; local flags never grant access. */
 object RevenueCatManager {
     const val AD_FREE_ENTITLEMENT = "ad_free"
-    const val LIFETIME_PRODUCT_ID = "ad_free_lifetime"
+    const val LIFETIME_PRODUCT_ID = "remove_ads_lifetime"
 
     enum class Result { PURCHASED, RESTORED, NOTHING_TO_RESTORE, CANCELLED, ERROR, RESTORE_ERROR, UNAVAILABLE }
 

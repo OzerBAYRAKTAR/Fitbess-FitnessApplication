@@ -1,6 +1,8 @@
 # Kaynaklar ve güncellik
 
-Son araştırma: 16 Ekim 2026. Özetler ve kararlar bu playbook'un tercihlerini temsil eder; resmî tavsiyeler proje ihtiyacına göre uyarlanır.
+Son araştırma: 20 Ekim 2026. Playbook kararları proje ihtiyacına göre uyarlanır; resmi Android/Flutter referansları en son 16 Ekim'de, beceri depoları 20 Ekim'de gözden geçirildi.
+
+2026-10-20 tarihinde, görselde paylaşılan Eylül 2026 GitHub yıldız artışı sıralamasındaki 10 beceri deposu incelendi. Sıralama popülerlik göstergesidir; kalite, doğruluk veya projeye uygunluk kanıtı değildir. Kaynakların tam repo commit SHA'ları ve benimsenen/elenen ilkeler [araştırma raporunda](research/agent-skills-review-2026-10.md) kayıtlıdır. Bu kaynaklardan uygulama kodu, hook, script veya bağımlılık kopyalanmadı. Merkezi playbook 0.3.0 sürümünde `55622c9717b7e4292d72dac18fac57065dd19e6b` commit'indedir.
 
 - [Android mimari önerileri](https://developer.android.com/topic/architecture/recommendations)
 - [Android domain katmanı](https://developer.android.com/topic/architecture/domain-layer)

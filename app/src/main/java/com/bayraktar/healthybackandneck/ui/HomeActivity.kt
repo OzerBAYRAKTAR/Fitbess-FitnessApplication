@@ -25,6 +25,7 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.bayraktar.healthybackandneck.utils.AppUpdateCoordinator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -37,6 +38,7 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
     private lateinit var navController: NavController
     private lateinit var navControllerBar: NavController
     private lateinit var binding: ActivityHomeBinding
+    private lateinit var appUpdateCoordinator: AppUpdateCoordinator
 
     companion object {
        var mInterstitialAd: InterstitialAd? = null
@@ -50,6 +52,7 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        appUpdateCoordinator = AppUpdateCoordinator(this)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         fitContentToSystemBars(binding.root)
@@ -108,6 +111,16 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
         }
 
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (::appUpdateCoordinator.isInitialized) appUpdateCoordinator.onResume()
+    }
+
+    override fun onDestroy() {
+        if (::appUpdateCoordinator.isInitialized) appUpdateCoordinator.close()
+        super.onDestroy()
     }
 
     private fun setUpBotMenu() = with(binding) {

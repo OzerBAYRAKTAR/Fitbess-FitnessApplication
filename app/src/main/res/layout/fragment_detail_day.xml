@@ -81,5 +81,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/start_available"
+        app:iconGravity="textEnd"
         android:layout_marginTop="8dp"/>
 </LinearLayout>
