@@ -1,0 +1,67 @@
+INSTRUMENTATION_STATUS: class=com.bayraktar.healthybackandneck.TrainingDiscoveryNavigationTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+com.bayraktar.healthybackandneck.TrainingDiscoveryNavigationTest:
+INSTRUMENTATION_STATUS: test=realHomeRegionAndDayFlowsRetainSelectionAndData
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bayraktar.healthybackandneck.TrainingDiscoveryNavigationTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=realHomeRegionAndDayFlowsRetainSelectionAndData
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bayraktar.healthybackandneck.TrainingDiscoveryNavigationTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=localizedDiscoveryScreensRemainReadable
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bayraktar.healthybackandneck.TrainingDiscoveryNavigationTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=localizedDiscoveryScreensRemainReadable
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bayraktar.healthybackandneck.SubExerciseCatalogTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+com.bayraktar.healthybackandneck.SubExerciseCatalogTest:
+INSTRUMENTATION_STATUS: test=seedingIncludesEveryRegionAndPreservesExistingFavoriteAndCompletion
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bayraktar.healthybackandneck.SubExerciseCatalogTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=seedingIncludesEveryRegionAndPreservesExistingFavoriteAndCompletion
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bayraktar.healthybackandneck.WorkoutStartNavigationTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+com.bayraktar.healthybackandneck.WorkoutStartNavigationTest:
+INSTRUMENTATION_STATUS: test=startExerciseNavigatesDirectlyToMovesWithoutWaitingForInterstitial
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bayraktar.healthybackandneck.WorkoutStartNavigationTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=startExerciseNavigatesDirectlyToMovesWithoutWaitingForInterstitial
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 38.09
+
+OK (4 tests)
+
+
+INSTRUMENTATION_CODE: -1
