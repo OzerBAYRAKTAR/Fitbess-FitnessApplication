@@ -75,6 +75,7 @@
         android:name="com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailFirst.ExerciseDetailFirstFragment"
         android:label="fragment_exercise_days_of_week"
         tools:layout="@layout/fragment_exercise_days_of_week" >
+        <argument android:name="focusDay" app:argType="integer" android:defaultValue="0" />
         <action
             android:id="@+id/action_exerciseDetailFirstFragment_to_detailDayFragment"
             app:destination="@id/detailDayFragment" />
@@ -87,6 +88,7 @@
         android:name="com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailSecond.ExerciseDetailSecondFragment"
         android:label="fragment_exercise_detail_second"
         tools:layout="@layout/fragment_exercise_detail_second" >
+        <argument android:name="focusDay" app:argType="integer" android:defaultValue="0" />
         <action
             android:id="@+id/action_exerciseDetailSecondFragment_to_detailDayFragment"
             app:destination="@id/detailDayFragment" />
@@ -99,6 +101,7 @@
         android:name="com.bayraktar.healthybackandneck.ui.ExerciseDetails.ExerciseDetailThird.ExerciseDetailThirdFragment"
         android:label="fragment_exercise_detail_third"
         tools:layout="@layout/fragment_exercise_detail_third" >
+        <argument android:name="focusDay" app:argType="integer" android:defaultValue="0" />
         <action
             android:id="@+id/action_exerciseDetailThirdFragment_to_detailDayFragment"
             app:destination="@id/detailDayFragment" />
@@ -228,6 +231,18 @@
         <action
             android:id="@+id/action_exerciseMovesEndFragment_to_id_homepage_fragment"
             app:destination="@id/id_homepage_fragment" app:popUpTo="@id/id_homepage_fragment" app:popUpToInclusive="false" app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_exerciseMovesEndFragment_to_exerciseDetailFirstFragment"
+            app:destination="@id/exerciseDetailFirstFragment"
+            app:popUpTo="@id/exerciseDetailFirstFragment" app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_exerciseMovesEndFragment_to_exerciseDetailSecondFragment"
+            app:destination="@id/exerciseDetailSecondFragment"
+            app:popUpTo="@id/exerciseDetailSecondFragment" app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_exerciseMovesEndFragment_to_exerciseDetailThirdFragment"
+            app:destination="@id/exerciseDetailThirdFragment"
+            app:popUpTo="@id/exerciseDetailThirdFragment" app:popUpToInclusive="true" />
 
     </fragment>
     <fragment
@@ -312,4 +327,11 @@
         app:destination="@id/adFreeOfferFragment" />
 
 
+    <fragment android:id="@+id/bodyRegionFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.HomePage.BodyRegionFragment"
+        android:label="@string/discovery_choose_region"
+        tools:layout="@layout/fragment_body_region">
+        <argument android:name="regionKey" app:argType="string" android:defaultValue="back" />
+        <action android:id="@+id/action_bodyRegionFragment_to_detailDayFragment" app:destination="@id/detailDayFragment" />
+    </fragment>
 </navigation>

@@ -16,7 +16,10 @@ class ExerciseDetailAdapterThird(
     private val exerciseItemClickListener: ExerciseItemClickListener
 ): RecyclerView.Adapter<ExerciseDetailAdapterThird.ItemHolder>() {
 
+    var completedDays: Set<Int> = emptySet()
     var adFree = false
+    var rewardedWorkoutDayKeys: Set<String> = emptySet()
+    var exerciseCounts: Map<Int, Int>? = null
 
 
     inner class ItemHolder(val binding: ItemExercisedaysofweekBinding): RecyclerView.ViewHolder(binding.root) {
@@ -39,12 +42,23 @@ class ExerciseDetailAdapterThird(
         val model =lsMenu[position]
 
         holder.binding.apply {
+            val unlocked = model.isCompleted || adFree || "${model.level}:${model.day}" in rewardedWorkoutDayKeys
+            val currentDay = lsMenu.firstOrNull { it.day !in completedDays && (it.isCompleted || adFree || "${it.level}:${it.day}" in rewardedWorkoutDayKeys) }?.day
+            dayState.setText(when {
+                model.day in completedDays -> R.string.workout_day_complete
+                !unlocked -> R.string.workout_day_locked_hint
+                model.day == currentDay -> R.string.workout_day_continue
+                else -> R.string.workout_day_ready
+            })
+            cardview1.setCardBackgroundColor(androidx.core.content.ContextCompat.getColor(root.context, if (model.day == currentDay) R.color.fit_soft else android.R.color.white))
+
             txtDay.text = model.day.toString()
-            txtExerciseCount.text = model.exerciseCount.toString()
+            txtExerciseCount.text = (exerciseCounts?.get(model.dayId)
+                ?: if (exerciseCounts != null) 0 else model.exerciseCount).toString()
             txtExerciseTime.text = model.exerciseTime.toString()
             txtExerciseKcal.text = model.exerciseKcal.toString()
 
-            if (model.isCompleted || adFree) {
+            if (model.isCompleted || adFree || "${model.level}:${model.day}" in rewardedWorkoutDayKeys) {
             lock.visibility = View.GONE
             cardview1.setOnClickListener {
                 exerciseItemClickListener.onExerciseItemClicked(position, false)

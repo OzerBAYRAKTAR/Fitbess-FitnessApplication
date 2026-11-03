@@ -1,86 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/fit_background"
-    android:padding="24dp">
-    <ImageButton
-        android:id="@+id/backButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="8dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:contentDescription="@string/back"
-        android:paddingStart="0dp"
-        android:paddingTop="12dp"
-        android:paddingEnd="24dp"
-        android:paddingBottom="12dp"
-        android:src="@drawable/ic_arrow_back_aligned_24"
-        app:tint="@color/fit_text" />
-    <TextView
-        android:id="@+id/detaildayFirst"
-        style="@style/FitTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/exercices"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp">
-        <TextView
-            android:id="@+id/detaildaySecond"
-            style="@style/FitBody"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_day"/>
-        <TextView
-            android:id="@+id/txtdaysecond"
-            style="@style/FitBody"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"/>
-    </LinearLayout>
-    <LinearLayout
-        style="@style/FitCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginVertical="16dp">
-        <TextView
-            android:id="@+id/txtexercise"
-            style="@style/FitSection"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/exercices"/>
-        <TextView
-            android:id="@+id/txttime"
-            style="@style/FitBody"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/time"
-            android:layout_marginTop="8dp"/>
-    </LinearLayout>
-    <TextView
-        android:id="@+id/accessStatus"
-        style="@style/FitCaption"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/access_loading"/>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvdaydetail"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/startExercise"
-        style="@style/FitButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/start_available"
-        app:iconGravity="textEnd"
-        android:layout_marginTop="8dp"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/fit_background" android:paddingHorizontal="20dp" android:paddingTop="8dp" android:paddingBottom="12dp">
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:paddingBottom="12dp">
+  <ImageButton android:id="@+id/backButton" android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/discovery_icon_background" android:padding="12dp" android:src="@drawable/ic_arrow_back_aligned_24" android:contentDescription="@string/back" app:tint="@color/fit_text"/>
+  <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="14dp">
+   <TextView android:id="@+id/workoutTitle" style="@style/FitSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="22sp"/>
+   <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="4dp">
+    <TextView android:id="@+id/detaildaySecond" style="@style/FitBody" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_day"/>
+    <TextView android:id="@+id/txtdaysecond" style="@style/FitBody" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="4dp"/>
+   </LinearLayout>
+  </LinearLayout>
+ </LinearLayout>
+ <com.google.android.material.imageview.ShapeableImageView android:layout_width="match_parent" android:layout_height="100dp" android:src="@drawable/workout_detail_hero" android:scaleType="centerCrop" android:contentDescription="@null" app:shapeAppearanceOverlay="@style/roundedImageStyletwenty" android:layout_marginBottom="10dp"/>
+ <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="22dp" app:cardElevation="0dp" app:cardBackgroundColor="@color/fit_soft">
+  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="18dp" android:paddingHorizontal="8dp" android:orientation="horizontal" android:baselineAligned="false">
+   <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/fit_dumbbell" android:contentDescription="@null"/>
+    <TextView android:id="@+id/txtWorkoutCount" style="@style/FitTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textSize="24sp"/>
+    <TextView style="@style/FitCaption" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:layout_marginTop="2dp" android:text="@string/summary_moves"/>
+   </LinearLayout>
+   <View android:layout_width="1dp" android:layout_height="52dp" android:layout_gravity="center_vertical" android:background="#CADDD0"/>
+   <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_workout_clock" android:contentDescription="@null"/>
+    <TextView android:id="@+id/txttime" style="@style/FitTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textSize="24sp"/>
+    <TextView style="@style/FitCaption" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:layout_marginTop="2dp" android:text="@string/label_minute"/>
+   </LinearLayout>
+   <LinearLayout android:id="@+id/metricCalories" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_workout_flame" android:contentDescription="@null"/>
+    <TextView android:id="@+id/txtcalorie" style="@style/FitTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textSize="24sp"/>
+    <TextView style="@style/FitCaption" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:layout_marginTop="2dp" android:text="@string/discovery_estimated_kcal"/>
+   </LinearLayout>
+  </LinearLayout>
+ </com.google.android.material.card.MaterialCardView>
+ <TextView style="@style/FitSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:layout_marginBottom="12dp" android:text="@string/discovery_moves_heading"/>
+ <TextView android:id="@+id/accessStatus" style="@style/FitCaption" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/access_loading"/>
+ <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvdaydetail" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:clipToPadding="false" android:paddingBottom="8dp"/>
+ <com.google.android.material.button.MaterialButton android:id="@+id/startExercise" style="@style/FitButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/start_available" app:iconGravity="textEnd"/>
 </LinearLayout>

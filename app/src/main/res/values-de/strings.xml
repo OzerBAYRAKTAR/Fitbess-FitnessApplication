@@ -210,6 +210,7 @@
     <string name="label_exercise">Übung</string>
     <string name="label_minute">Min</string>
     <string name="label_kcal">kcal</string>
+    <string name="summary_moves">Üb.</string>
     <string name="label_tellus">Erzählen Sie uns von sich</string>
     <string name="label_tellus_desc">Um Ihnen einen besseren Service bieten zu können, müssen wir Sie besser kennenlernen.</string>
     <string name="label_continue">Fortsetzen</string>

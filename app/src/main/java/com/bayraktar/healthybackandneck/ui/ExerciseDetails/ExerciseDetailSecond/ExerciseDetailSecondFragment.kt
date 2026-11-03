@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
@@ -17,7 +18,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
-import com.bayraktar.healthybackandneck.data.Models.completedProgramDays
+import com.bayraktar.healthybackandneck.data.JetpackDataStore.DataStoreManage
+import com.bayraktar.healthybackandneck.data.Repository.WorkoutCatalogParser
 import com.bayraktar.healthybackandneck.databinding.FragmentExerciseDetailSecondBinding
 import com.bayraktar.healthybackandneck.utils.Interfaces.ExerciseItemClickListener
 import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerClicked
@@ -26,12 +28,14 @@ import com.bayraktar.healthybackandneck.utils.RevenueCatManager
 import com.bayraktar.healthybackandneck.utils.AdFreePolicy
 import kotlinx.coroutines.launch
 import dagger.hilt.android.AndroidEntryPoint
-import org.json.JSONArray
-import java.nio.charset.Charset
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import kotlinx.coroutines.CancellationException
 
 @AndroidEntryPoint
 class ExerciseDetailSecondFragment : Fragment(), ExerciseItemClickListener {
 
+    private val discovery: com.bayraktar.healthybackandneck.ui.HomePage.TrainingDiscoveryViewModel by viewModels()
     private var _binding: FragmentExerciseDetailSecondBinding? = null
     val binding get() = _binding!!
 
@@ -39,12 +43,16 @@ class ExerciseDetailSecondFragment : Fragment(), ExerciseItemClickListener {
     private lateinit var secondAdapter: ExerciseDetailSecondAdapter
 
     private val viewModel: ExerciseDetailSecondViewModel by viewModels()
+    private val moveAccess: com.bayraktar.healthybackandneck.utils.MoveAccessViewModel by activityViewModels()
 
-    private val exerciseDayExercise = mutableListOf<ExerciseDayExercise>()
     private val exerciseListSend = ArrayList<ExerciseDayExercise>()
     private var selectedModel: ExerciseDay? = null
     private var pendingDayId: Int? = null
     private var myRewardedAds: RewardedAds? = null
+    private var seedingDayList = false
+    private var seedingExercises = false
+    private var appliedFocusDay = false
+    private var dayMetadataRefreshStarted = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,24 +71,37 @@ class ExerciseDetailSecondFragment : Fragment(), ExerciseItemClickListener {
         myRewardedAds = RewardedAds(requireActivity(), viewLifecycleOwner)
         myRewardedAds?.loadRewardedAds(R.string.rewarded_ad2)
         setRecyclerview()
+        listOf(binding.week1, binding.week2, binding.week3).forEachIndexed { week, button ->
+            button.setOnClickListener {
+                (binding.listDaysOfWeek.layoutManager as? LinearLayoutManager)?.scrollToPositionWithOffset(week * 7, 0)
+            }
+        }
+        viewLifecycleOwner.lifecycleScope.launch {
+            discovery.sessions.collect { sessions ->
+                secondAdapter.completedDays = sessions.filter { it.level == 2 && it.isComplete }.map { it.day }.toSet()
+                secondAdapter.notifyDataSetChanged()
+            }
+        }
         viewLifecycleOwner.lifecycleScope.launch {
             RevenueCatManager.adFree.collect {
                 secondAdapter.adFree = it == true
                 secondAdapter.notifyDataSetChanged()
             }
         }
+        viewLifecycleOwner.lifecycleScope.launch {
+            DataStoreManage.getInstance(requireContext().applicationContext).rewardedWorkoutDayKeys().collect { unlocked ->
+                secondAdapter.rewardedWorkoutDayKeys = unlocked
+                secondAdapter.notifyDataSetChanged()
+            }
+        }
+        viewModel.exerciseCounts.observe(viewLifecycleOwner) { counts ->
+            secondAdapter.exerciseCounts = counts
+            secondAdapter.notifyDataSetChanged()
+        }
         observeLevelTwo()
         observeDayListLevelOne()
         observeListWithDayId()
         binding.prgressStart.visibility = View.VISIBLE
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.sessions.collect { sessions ->
-                val completedDays = completedProgramDays(sessions, level = 2)
-                binding.customProgressBar.progress = completedDays * 100 / 21
-                binding.txtProgress.text = getString(R.string.progress_percentage, completedDays * 100 / 21)
-            }
-        }
-
         backstack()
 
         binding.imageBack.setOnClickListener {
@@ -110,6 +131,8 @@ class ExerciseDetailSecondFragment : Fragment(), ExerciseItemClickListener {
         viewModel.exerciseDayExercisesLevelTwo.observe(viewLifecycleOwner, Observer { exercises ->
             if (exercises == false) {
                 addToRoomExercises()
+            } else if (exercises == true) {
+                viewModel.fetchExerciseCounts()
             }
         })
     }
@@ -123,253 +146,93 @@ class ExerciseDetailSecondFragment : Fragment(), ExerciseItemClickListener {
                 secondAdapter.setData(orderedDays)
                 detailList.clear()
                 detailList.addAll(orderedDays)
+                applyRequestedDayFocus()
                 binding.prgressStart.visibility = View.GONE
+                refreshDayMetadata(exercises)
             }
         })
+    }
+
+    private fun refreshDayMetadata(storedDays: List<ExerciseDay>) {
+        if (dayMetadataRefreshStarted) return
+        dayMetadataRefreshStarted = true
+        val parserContext = requireContext().applicationContext.createConfigurationContext(resources.configuration)
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val currentCatalog = withContext(Dispatchers.IO) {
+                    WorkoutCatalogParser.readDays(parserContext, "secondday.json")
+                }
+                val refreshed = WorkoutCatalogParser.mergeDayMetadata(currentCatalog, storedDays)
+                if (refreshed != storedDays) viewModel.publishRefreshedDayMetadata(refreshed)
+            } catch (error: CancellationException) {
+                dayMetadataRefreshStarted = false
+                throw error
+            } catch (error: Exception) {
+                dayMetadataRefreshStarted = false
+                error.printStackTrace()
+            }
+        }
     }
 
 
     @SuppressLint("DiscouragedApi")
     private fun addToRoomExerciseDayList() {
-        try {
-            val inputStream = context?.assets?.open("secondday.json")
-            val size = inputStream?.available() ?: 0
-            val buffer = ByteArray(size)
-            inputStream?.read(buffer)
-            inputStream?.close()
-            val jsonString = String(buffer, Charset.defaultCharset())
-
-            val jsonArray = JSONArray(jsonString)
-
-            for (i in 0 until jsonArray.length()) {
-                val item = jsonArray.getJSONObject(i)
-                val exercise = ExerciseDay(
-                    dayId = item.optInt("dayId"),
-                    level = item.optInt("level"),
-                    isCompleted = item.optBoolean("isCompleted"),
-                    exerciseCount = item.optInt("exerciseCount"),
-                    day = item.optInt("day"),
-                    exerciseTime = item.optInt("exerciseTime"),
-                    exerciseKcal = item.optInt("exerciseKcal"),
-                    homeId = item.optInt("homeId")
-                )
-                detailList.add(exercise)
+        if (seedingDayList) return
+        seedingDayList = true
+        val parserContext = requireContext().applicationContext.createConfigurationContext(resources.configuration)
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val days = withContext(Dispatchers.IO) { WorkoutCatalogParser.readDays(parserContext, "secondday.json") }
+                if (_binding == null) return@launch
+                detailList.clear()
+                detailList.addAll(days)
+                viewModel.insertExerciseDaysList(days)
+                secondAdapter.setData(days)
+                applyRequestedDayFocus()
+            } catch (error: CancellationException) {
+                throw error
+            } catch (error: Exception) {
+                error.printStackTrace()
+            } finally {
+                seedingDayList = false
+                _binding?.prgressStart?.visibility = View.GONE
             }
-            detailList.sortBy { it.day }
-            viewModel.insertExerciseDaysList(detailList)
-            secondAdapter.setData(detailList)
-            binding.prgressStart.visibility = View.GONE
-
-        } catch (e: Exception) {
-            e.printStackTrace()
-            binding.prgressStart.visibility = View.GONE
         }
-
     }
 
     @SuppressLint("DiscouragedApi")
     private fun addToRoomExercises() {
-        try {
-            val inputStream = context?.assets?.open("exercises.json")
-            val size = inputStream?.available() ?: 0
-            val buffer = ByteArray(size)
-            inputStream?.read(buffer)
-            inputStream?.close()
-            val jsonString = String(buffer, Charset.defaultCharset())
-
-            val jsonArray = JSONArray(jsonString)
-
-            for (i in 0 until jsonArray.length()) {
-                val item = jsonArray.getJSONObject(i)
-
-                val exerciseDescriptionId = resources.getIdentifier(
-                    item.optString("ExerciseDescription"), "string", requireContext().packageName
-                )
-                val exerciseDescription = if (exerciseDescriptionId != 0) {
-                    getString(exerciseDescriptionId)
-                } else {
-                    getString(R.string.not_found)
-                }
-                if (item.optInt("Level") == 2) {
-                    val exercise = ExerciseDayExercise(
-                        id = item.optInt("id"),
-                        dayId = item.optInt("DayId"),
-                        step = item.optInt("Step"),
-                        exerciseName = item.optString("ExerciseName"),
-                        exerciseDescription = exerciseDescription,
-                        image = resources.getIdentifier(
-                            item.optString("Image"),
-                            "drawable",
-                            requireContext().packageName
-                        ),
-                        isExerciseCompleted = item.optBoolean("IsExerciseCompleted"),
-                        exerciseId = item.optInt("ExerciseId"),
-                        level = item.optInt("Level"),
-                        titleName = "noTitle"
-                    )
-                    exerciseDayExercise.add(exercise)
-                }
+        if (seedingExercises) return
+        seedingExercises = true
+        val parserContext = requireContext().applicationContext.createConfigurationContext(resources.configuration)
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val exercises = withContext(Dispatchers.IO) { WorkoutCatalogParser.readExercises(parserContext, level = 2) }
+                viewModel.insertExerciseDayExercise(exercises)
+            } catch (error: CancellationException) {
+                throw error
+            } catch (error: Exception) {
+                error.printStackTrace()
+            } finally {
+                seedingExercises = false
             }
-            viewModel.insertExerciseDayExercise(exerciseDayExercise)
-        } catch (e: Exception) {
-            e.printStackTrace()
         }
-
-    }
-    @SuppressLint("DiscouragedApi")
-    private fun addToRoomExercises2() {
-        try {
-            val inputStream = context?.assets?.open("exercises.json")
-            val size = inputStream?.available() ?: 0
-            val buffer = ByteArray(size)
-            inputStream?.read(buffer)
-            inputStream?.close()
-            val jsonString = String(buffer, Charset.defaultCharset())
-
-            val jsonArray = JSONArray(jsonString)
-
-            for (i in 0 until jsonArray.length()) {
-                val item = jsonArray.getJSONObject(i)
-
-                val exerciseDescriptionId = resources.getIdentifier(
-                    item.optString("ExerciseDescription"), "string", requireContext().packageName
-                )
-                val exerciseDescription = if (exerciseDescriptionId != 0) {
-                    getString(exerciseDescriptionId)
-                } else {
-                    getString(R.string.not_found)
-                }
-                if (item.optInt("Level") == 2) {
-                    val exercise = ExerciseDayExercise(
-                        id = item.optInt("id"),
-                        dayId = item.optInt("DayId"),
-                        step = item.optInt("Step"),
-                        exerciseName = item.optString("ExerciseName"),
-                        exerciseDescription = exerciseDescription,
-                        image = resources.getIdentifier(
-                            item.optString("Image"),
-                            "drawable",
-                            requireContext().packageName
-                        ),
-                        isExerciseCompleted = item.optBoolean("IsExerciseCompleted"),
-                        exerciseId = item.optInt("ExerciseId"),
-                        level = item.optInt("Level"),
-                        titleName = "noTitle"
-                    )
-                    exerciseDayExercise.add(exercise)
-                }
-            }
-            viewModel.insertExerciseDayExercise(exerciseDayExercise)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-
-    }
-    private fun addToRoomExercises3() {
-        try {
-            val inputStream = context?.assets?.open("exercises.json")
-            val size = inputStream?.available() ?: 0
-            val buffer = ByteArray(size)
-            inputStream?.read(buffer)
-            inputStream?.close()
-            val jsonString = String(buffer, Charset.defaultCharset())
-
-            val jsonArray = JSONArray(jsonString)
-
-            for (i in 0 until jsonArray.length()) {
-                val item = jsonArray.getJSONObject(i)
-
-                val exerciseDescriptionId = resources.getIdentifier(
-                    item.optString("ExerciseDescription"), "string", requireContext().packageName
-                )
-                val exerciseDescription = if (exerciseDescriptionId != 0) {
-                    getString(exerciseDescriptionId)
-                } else {
-                    getString(R.string.not_found)
-                }
-                if (item.optInt("Level") == 2) {
-                    val exercise = ExerciseDayExercise(
-                        id = item.optInt("id"),
-                        dayId = item.optInt("DayId"),
-                        step = item.optInt("Step"),
-                        exerciseName = item.optString("ExerciseName"),
-                        exerciseDescription = exerciseDescription,
-                        image = resources.getIdentifier(
-                            item.optString("Image"),
-                            "drawable",
-                            requireContext().packageName
-                        ),
-                        isExerciseCompleted = item.optBoolean("IsExerciseCompleted"),
-                        exerciseId = item.optInt("ExerciseId"),
-                        level = item.optInt("Level"),
-                        titleName = "noTitle"
-                    )
-                    exerciseDayExercise.add(exercise)
-                }
-            }
-            viewModel.insertExerciseDayExercise(exerciseDayExercise)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-
     }
     private fun setRecyclerview() = with(binding) {
         listDaysOfWeek.layoutManager = LinearLayoutManager(requireContext())
         secondAdapter = ExerciseDetailSecondAdapter(detailList, this@ExerciseDetailSecondFragment)
         listDaysOfWeek.adapter = secondAdapter
     }
-    private fun addToRoomExercises4() {
-        try {
-            val inputStream = context?.assets?.open("exercises.json")
-            val size = inputStream?.available() ?: 0
-            val buffer = ByteArray(size)
-            inputStream?.read(buffer)
-            inputStream?.close()
-            val jsonString = String(buffer, Charset.defaultCharset())
 
-            val jsonArray = JSONArray(jsonString)
-
-            for (i in 0 until jsonArray.length()) {
-                val item = jsonArray.getJSONObject(i)
-
-                val exerciseDescriptionId = resources.getIdentifier(
-                    item.optString("ExerciseDescription"), "string", requireContext().packageName
-                )
-                val exerciseDescription = if (exerciseDescriptionId != 0) {
-                    getString(exerciseDescriptionId)
-                } else {
-                    getString(R.string.not_found)
-                }
-                if (item.optInt("Level") == 2) {
-                    val exercise = ExerciseDayExercise(
-                        id = item.optInt("id"),
-                        dayId = item.optInt("DayId"),
-                        step = item.optInt("Step"),
-                        exerciseName = item.optString("ExerciseName"),
-                        exerciseDescription = exerciseDescription,
-                        image = resources.getIdentifier(
-                            item.optString("Image"),
-                            "drawable",
-                            requireContext().packageName
-                        ),
-                        isExerciseCompleted = item.optBoolean("IsExerciseCompleted"),
-                        exerciseId = item.optInt("ExerciseId"),
-                        level = item.optInt("Level"),
-                        titleName = "noTitle"
-                    )
-                    exerciseDayExercise.add(exercise)
-                }
-            }
-            viewModel.insertExerciseDayExercise(exerciseDayExercise)
-        } catch (e: Exception) {
-            e.printStackTrace()
+    private fun applyRequestedDayFocus() {
+        if (appliedFocusDay || detailList.isEmpty()) return
+        appliedFocusDay = true
+        val requestedDay = requireArguments().getInt("focusDay", 0)
+        val position = detailList.indexOfFirst { it.day == requestedDay }
+        if (position >= 0) binding.listDaysOfWeek.post {
+            if (_binding != null) (binding.listDaysOfWeek.layoutManager as? LinearLayoutManager)
+                ?.scrollToPositionWithOffset(position, 0)
         }
-
-    }
-    private fun setRecyclerview2() = with(binding) {
-        listDaysOfWeek.layoutManager = LinearLayoutManager(requireContext())
-        secondAdapter = ExerciseDetailSecondAdapter(detailList, this@ExerciseDetailSecondFragment)
-        listDaysOfWeek.adapter = secondAdapter
     }
     private fun observeListWithDayId() {
         viewModel.getExerciseListWithDay.observe(viewLifecycleOwner, Observer { result ->
@@ -402,12 +265,16 @@ class ExerciseDetailSecondFragment : Fragment(), ExerciseItemClickListener {
                 .setTitle(R.string.unlock_workout_title)
                 .setMessage(R.string.unlock_workout_choice_message)
                 .setPositiveButton(R.string.watch_unlock) { _, _ ->
-                    myRewardedAds?.showRewardAds {
-                        selectedModel = detailList[position]
-                        viewModel.updateIsCompletedToTrue(2, detailList[position].day)
-                        val selectedDay = position + 1
-                        pendingDayId = selectedDay
-                        viewModel.getExerciseListWithDayID(selectedDay, 1)
+                    val rewardPersistence = moveAccess
+                    myRewardedAds?.showRewardAds(retainEarnedReward = true) {
+                        val selected = detailList.getOrNull(position) ?: return@showRewardAds
+                        rewardPersistence.grantWorkoutDay(selected.level, selected.day) {
+                            if (!isAdded || _binding == null) return@grantWorkoutDay
+                            selectedModel = selected
+                            val selectedDay = selected.dayId
+                            pendingDayId = selectedDay
+                            viewModel.getExerciseListWithDayID(selectedDay, selected.level)
+                        }
                     }
                 }
                 .setNeutralButton(R.string.remove_ads) { _, _ ->
@@ -417,15 +284,16 @@ class ExerciseDetailSecondFragment : Fragment(), ExerciseItemClickListener {
                 .show()
         } else {
             selectedModel = detailList[position]
-            val selectedDay = position + 1
+            val selectedDay = detailList[position].dayId
             pendingDayId = selectedDay
-            viewModel.getExerciseListWithDayID(selectedDay, 1)
+            viewModel.getExerciseListWithDayID(selectedDay, detailList[position].level)
         }
     }
 
 
     override fun onDestroyView() {
         myRewardedAds = null
+        dayMetadataRefreshStarted = false
         _binding = null
         super.onDestroyView()
     }

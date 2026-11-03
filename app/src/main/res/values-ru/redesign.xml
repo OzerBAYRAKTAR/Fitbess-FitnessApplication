@@ -36,6 +36,7 @@
     <string name="workout_no_session">Нет измеренной записи для этой тренировки.</string>
     <string name="retry_save">Сохранить снова</string>
     <string name="return_home">На главную</string>
+    <string name="continue_training">Продолжить тренировку</string>
     <string name="add_favorite">Добавить в избранное</string>
     <string name="remove_favorite">Убрать из избранного</string>
     <string name="pause_workout">Пауза</string>

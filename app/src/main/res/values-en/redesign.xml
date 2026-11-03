@@ -36,6 +36,7 @@
     <string name="workout_no_session">No measured session is available for this workout.</string>
     <string name="retry_save">Retry saving</string>
     <string name="return_home">Back to home</string>
+    <string name="continue_training">Continue training</string>
     <string name="add_favorite">Add to favorites</string>
     <string name="remove_favorite">Remove from favorites</string>
     <string name="pause_workout">Pause</string>

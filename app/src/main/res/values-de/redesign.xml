@@ -36,6 +36,7 @@
     <string name="workout_no_session">Für dieses Training liegt keine gemessene Sitzung vor.</string>
     <string name="retry_save">Erneut speichern</string>
     <string name="return_home">Zur Startseite</string>
+    <string name="continue_training">Weiter trainieren</string>
     <string name="add_favorite">Zu Favoriten hinzufügen</string>
     <string name="remove_favorite">Aus Favoriten entfernen</string>
     <string name="pause_workout">Pause</string>

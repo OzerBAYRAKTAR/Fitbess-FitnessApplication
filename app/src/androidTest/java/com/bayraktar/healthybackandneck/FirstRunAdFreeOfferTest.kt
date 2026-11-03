@@ -41,13 +41,13 @@ class FirstRunAdFreeOfferTest {
 
             ActivityScenario.launch(MainActivity::class.java).use {
                 onView(withId(R.id.beginTraining)).perform(click())
-                onView(withId(R.id.notNowButton)).check(matches(isDisplayed())).perform(click())
-                onView(withId(R.id.notNowButton)).check(doesNotExist())
+                onView(withId(R.id.backButton)).check(matches(isDisplayed())).perform(click())
+                onView(withId(R.id.backButton)).check(doesNotExist())
                 onView(withId(R.id.bottomBar)).check(matches(isDisplayed()))
             }
 
             ActivityScenario.launch(SplashScreen::class.java).use {
-                onView(withId(R.id.notNowButton)).check(doesNotExist())
+                onView(withId(R.id.backButton)).check(doesNotExist())
                 onView(withId(R.id.bottomBar)).check(matches(isDisplayed()))
             }
 

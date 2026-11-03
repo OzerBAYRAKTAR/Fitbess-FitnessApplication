@@ -21,18 +21,22 @@ class ExerciseDetailFirstVievModel @Inject constructor(
 ):ViewModel() {
 
 
-    private val _exerciseDayExercisesLevelOne: MutableLiveData<Boolean> = MutableLiveData()
+    private val _exerciseDayExercisesLevelOne = MutableLiveData<Boolean>()
     val exerciseDayExercisesLevelOne get() = _exerciseDayExercisesLevelOne
 
     val sessions = workoutRepository.sessions
 
 
-    private val _exerciseDayLevelOne: LiveData<List<ExerciseDay>> = MutableLiveData()
+    private val _exerciseDayLevelOne = MutableLiveData<List<ExerciseDay>>()
     val exerciseDayLevelOne get() = _exerciseDayLevelOne
 
+    private val _exerciseCounts = MutableLiveData<Map<Int, Int>>()
+    val exerciseCounts: LiveData<Map<Int, Int>> get() = _exerciseCounts
 
-    private val _getExerciseListWithDay: MutableLiveData<Pair<Int, List<ExerciseDayExercise>>> = MutableLiveData()
+
+    private val _getExerciseListWithDay = MutableLiveData<Pair<Int, List<ExerciseDayExercise>>>()
     val getExerciseListWithDay: LiveData<Pair<Int, List<ExerciseDayExercise>>> get() = _getExerciseListWithDay
+    private val dayExerciseCache = mutableMapOf<Int, List<ExerciseDayExercise>>()
 
 
 
@@ -42,20 +46,43 @@ class ExerciseDetailFirstVievModel @Inject constructor(
 
     fun insertExerciseDaysList(exerciseDayList: List<ExerciseDay>) = viewModelScope.launch(Dispatchers.IO) {
         repo.insertExerciseDaysList(exerciseDayList)
+        _exerciseDayLevelOne.postValue(exerciseDayList.sortedBy(ExerciseDay::day))
+    }
+
+    fun publishRefreshedDayMetadata(days: List<ExerciseDay>) {
+        _exerciseDayLevelOne.postValue(days.sortedBy(ExerciseDay::day))
     }
 
     fun insertExerciseDayExercise(exerciseDayExercise: List<ExerciseDayExercise>)= viewModelScope.launch(Dispatchers.IO) {
         repo.insertExerciseDayExercise(exerciseDayExercise)
+        _exerciseDayExercisesLevelOne.postValue(true)
+        loadExerciseCounts()
+    }
+
+    fun fetchExerciseCounts() {
+        if (_exerciseCounts.value != null) return
+        loadExerciseCounts()
+    }
+
+    private fun loadExerciseCounts() = viewModelScope.launch(Dispatchers.IO) {
+        _exerciseCounts.postValue(repo.getExerciseCountsByDay(level = 1, titleName = "noTitle")
+            .associate { it.dayId to it.exerciseCount })
     }
 
     fun getExerciseListWithDayID(dayId: Int,level: Int) {
+        synchronized(dayExerciseCache) { dayExerciseCache[dayId] }?.let {
+            _getExerciseListWithDay.value = dayId to it
+            return
+        }
         viewModelScope.launch(Dispatchers.IO){
             val exercises  = repo.getExerciseListWithDayID(dayID = dayId, level = level, titleName = "noTitle")
+            if (exercises.isNotEmpty()) synchronized(dayExerciseCache) { dayExerciseCache[dayId] = exercises }
             _getExerciseListWithDay.postValue(dayId to exercises)
         }
     }
 
     fun fetchExerciseDayExercisesWithLevelOne() {
+        if (_exerciseDayExercisesLevelOne.value != null) return
         viewModelScope.launch(Dispatchers.IO) {
             val exists = repo.hasExerciseDayExercisesWithLevelOne(titleName = "noTitle")
             exerciseDayExercisesLevelOne.postValue(exists)
@@ -63,9 +90,10 @@ class ExerciseDetailFirstVievModel @Inject constructor(
     }
 
     fun fetchExerciseDayListWithLevelOne() {
+        if (_exerciseDayLevelOne.value != null) return
         viewModelScope.launch(Dispatchers.IO) {
             val exercises = repo.getExerciseDaysLevel1()
-            (_exerciseDayLevelOne as MutableLiveData).postValue(exercises)
+            _exerciseDayLevelOne.postValue(exercises)
         }
     }
 

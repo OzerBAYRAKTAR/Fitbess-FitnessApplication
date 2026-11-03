@@ -9,6 +9,7 @@ import androidx.room.Transaction
 import com.bayraktar.healthybackandneck.data.Models.CountModel
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExerciseCount
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.Relations.ExerciseDayWithExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.MotivationNotificationState
 import com.bayraktar.healthybackandneck.data.Models.WaterReminderState
@@ -17,8 +18,19 @@ import com.bayraktar.healthybackandneck.data.Models.WaterReminderState
 @Dao
 interface  MovesDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertExerciseDay(day: ExerciseDay)
+    @Transaction
+    fun insertExerciseDay(day: ExerciseDay) {
+        insertMissingDay(day)
+        refreshDay(day.level, day.dayId, day.day, day.exerciseCount, day.exerciseTime,
+            day.exerciseKcal, day.homeId, day.isCompleted)
+    }
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun insertMissingDay(day: ExerciseDay)
+
+    // Catalog refreshes must never revoke access earned after an earlier list read.
+    @Query("UPDATE exercise_days SET day = :day, exerciseCount = :count, exerciseTime = :time, exerciseKcal = :kcal, homeId = :homeId, isCompleted = (isCompleted OR :unlocked) WHERE level = :level AND dayId = :dayId")
+    fun refreshDay(level: Int, dayId: Int, day: Int, count: Int, time: Int, kcal: Int, homeId: Int, unlocked: Boolean)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertCounTable(id: CountModel  )
@@ -37,12 +49,16 @@ interface  MovesDao {
     fun insertExerciseDayExercise(dayExercise: List<ExerciseDayExercise>)
 
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertExerciseDaysList(exerciseDay: List<ExerciseDay>)
-
+    @Transaction
+    fun insertExerciseDaysList(exerciseDay: List<ExerciseDay>) {
+        exerciseDay.forEach { insertExerciseDay(it) }
+    }
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertSubExerciseDayExercise(exercise: List<ExerciseDayExercise>)
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun insertMissingCatalogExercises(exercises: List<ExerciseDayExercise>)
 
 
     @Query("SELECT * FROM water_reminder_state WHERE id = 1")
@@ -100,6 +116,9 @@ interface  MovesDao {
     @Transaction
     @Query("Select * from exercise_day_exercise where dayId = :dayId and level = :level and titleName = :titleName")
     fun getExerciseListWithDayID(dayId: Int,level:Int,titleName: String): List<ExerciseDayExercise>
+
+    @Query("SELECT dayId, COUNT(*) AS exerciseCount FROM exercise_day_exercise WHERE level = :level AND titleName = :titleName GROUP BY dayId")
+    fun getExerciseCountsByDay(level: Int, titleName: String): List<ExerciseDayExerciseCount>
 
 
     @Transaction

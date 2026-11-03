@@ -6,6 +6,6 @@
         <TextView android:id="@+id/endSummary" style="@style/FitSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/workout_saving" android:background="@drawable/fit_soft_card" android:padding="24dp"/>
         <TextView android:id="@+id/saveStatus" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="@string/workout_saving"/>
         <com.google.android.material.button.MaterialButton android:id="@+id/retrySave" style="@style/FitButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/retry_save"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/btnEnd" style="@style/FitButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/return_home"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnEnd" style="@style/FitButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/continue_training"/>
     </LinearLayout>
 </ScrollView>

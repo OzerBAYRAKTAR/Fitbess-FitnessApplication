@@ -57,8 +57,9 @@ class DetailDayAdapter(
             }
             roundedImageView.setImageDrawable(imageDrawable)
             labelDay.text = model.exerciseName
+            movementNumber.text = String.format(java.util.Locale.getDefault(), "%02d", position + 1)
             val accessible = earned?.let { com.bayraktar.healthybackandneck.utils.MoveAccess.allowed(model, it, adFree) } == true
-            txtExerciseCount.visibility = View.VISIBLE
+            txtExerciseCount.visibility = if (earned == null || !accessible) View.VISIBLE else View.GONE
             txtExerciseCount.setText(when {
                 earned == null -> R.string.access_loading
                 !accessible -> R.string.move_locked

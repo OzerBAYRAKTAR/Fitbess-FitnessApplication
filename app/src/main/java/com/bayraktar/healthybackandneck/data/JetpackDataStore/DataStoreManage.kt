@@ -34,6 +34,7 @@ class DataStoreManage(context: Context) {
 
 
     private val unlockedMovesKey = androidx.datastore.preferences.core.stringSetPreferencesKey("earned_catalog_move_ids_v1")
+    private val rewardedWorkoutDaysKey = androidx.datastore.preferences.core.stringSetPreferencesKey("rewarded_workout_day_unlocks_v1")
     private val firstRunAdFreeOfferShownKey = booleanPreferencesKey("first_run_ad_free_offer_shown_v1")
 
     suspend fun claimFirstRunAdFreeOffer(): Boolean {
@@ -60,8 +61,19 @@ class DataStoreManage(context: Context) {
         }
     }
 
-    companion object {
+    fun rewardedWorkoutDayKeys(): Flow<Set<String>> = dataStore.data.map { preferences ->
+        preferences[rewardedWorkoutDaysKey].orEmpty()
+    }
 
+    suspend fun unlockWorkoutDay(level: Int, day: Int) {
+        if (level !in 1..3 || day !in 1..21) return
+        dataStore.edit { preferences ->
+            preferences[rewardedWorkoutDaysKey] = preferences[rewardedWorkoutDaysKey].orEmpty() + workoutDayKey(level, day)
+        }
+    }
+
+    companion object {
+        fun workoutDayKey(level: Int, day: Int) = "$level:$day"
         @Volatile
         private var INSTANCE: DataStoreManage? = null
 

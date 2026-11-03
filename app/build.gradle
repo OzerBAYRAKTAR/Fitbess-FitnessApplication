@@ -19,8 +19,8 @@ android {
         applicationId "com.bayraktar.healthybackandneck"
         minSdk 24
         targetSdk 36
-        versionCode 9
-        versionName "1.5"
+        versionCode 11
+        versionName "1.7"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def revenueCatAndroidKey = providers.gradleProperty('REVENUECAT_ANDROID_API_KEY')

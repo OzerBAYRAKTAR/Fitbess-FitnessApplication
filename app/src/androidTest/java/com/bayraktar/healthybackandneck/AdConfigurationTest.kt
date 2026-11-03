@@ -3,7 +3,7 @@ package com.bayraktar.healthybackandneck
 import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.view.View
-import android.widget.ScrollView
+import androidx.core.widget.NestedScrollView
 import java.io.File
 import androidx.navigation.fragment.NavHostFragment
 import androidx.test.core.app.ActivityScenario
@@ -23,7 +23,8 @@ class AdConfigurationTest {
         ActivityScenario.launch(HomeActivity::class.java).use { scenario ->
             scenario.onActivity { activity ->
                 assertNull("Home must not retain an advertising slot", activity.findViewById<AdView>(R.id.adView))
-                val scroll = activity.findViewById<View>(R.id.legViewPager).parent.parent as ScrollView
+                val host = activity.supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+                val scroll = host.childFragmentManager.primaryNavigationFragment!!.requireView() as NestedScrollView
                 scroll.isSmoothScrollingEnabled = false
                 scroll.fullScroll(View.FOCUS_DOWN)
             }

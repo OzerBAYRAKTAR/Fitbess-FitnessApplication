@@ -36,6 +36,7 @@
     <string name="workout_no_session">Bu antrenman için ölçülmüş kayıt bulunamadı.</string>
     <string name="retry_save">Yeniden kaydet</string>
     <string name="return_home">Ana sayfaya dön</string>
+    <string name="continue_training">Antrenman listesine dön</string>
     <string name="add_favorite">Favorilere ekle</string>
     <string name="remove_favorite">Favorilerden çıkar</string>
     <string name="pause_workout">Duraklat</string>

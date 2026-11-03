@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import com.bayraktar.healthybackandneck.data.Models.CountModel
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDay
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
+import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExerciseCount
 import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.Relations.ExerciseDayWithExerciseDayExercise
 import com.bayraktar.healthybackandneck.data.Models.MotivationNotificationState
 import com.bayraktar.healthybackandneck.data.Models.WaterReminderState
@@ -11,7 +12,10 @@ import com.bayraktar.healthybackandneck.data.Room.MovesDao
 import javax.inject.Inject
 
 
-class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
+class RoomRepository @Inject constructor(
+    private val movesDao: MovesDao,
+    private val subExerciseCatalog: SubExerciseCatalog,
+) {
 
 
     fun insertExerciseDay(exerciseDays: ExerciseDay) {
@@ -100,7 +104,11 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         return movesDao.getExerciseListWithDayID(dayID, level,titleName)
     }
 
+    fun getExerciseCountsByDay(level: Int, titleName: String): List<ExerciseDayExerciseCount> =
+        movesDao.getExerciseCountsByDay(level, titleName)
+
     fun getExerciseListByTitleName(titleName: String): List<ExerciseDayExercise> {
+        subExerciseCatalog.ensureSeeded()
         return movesDao.getExerciseListByTitleName(titleName)
     }
 
@@ -108,6 +116,7 @@ class RoomRepository @Inject constructor(private val movesDao: MovesDao) {
         titleName: String,
         level: Int
     ): List<ExerciseDayExercise> {
+        subExerciseCatalog.ensureSeeded()
         return movesDao.getExerciseListWithTitleAndLEvel(titleName, level)
     }
 

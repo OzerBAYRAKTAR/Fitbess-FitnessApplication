@@ -43,7 +43,7 @@ class RedesignFlowTest {
     }
     private val database by lazy {
         androidx.room.Room.databaseBuilder(instrumentation.targetContext, AppDatabase::class.java, "fitness_db")
-            .addMigrations(AppDatabase.MIGRATION_11_12).build()
+            .addMigrations(AppDatabase.MIGRATION_11_12, com.bayraktar.healthybackandneck.data.Room.AppDatabase.MIGRATION_12_13).build()
     }
 
     @org.junit.Before fun cleanExplicitInterruptedTestRecords() {

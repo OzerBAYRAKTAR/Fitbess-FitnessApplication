@@ -219,6 +219,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="label_exercise">Egzersiz</string>
     <string name="label_minute">dk</string>
     <string name="label_kcal">kcal</string>
+    <string name="summary_moves">Hareket</string>
     <string name="label_tellus">Bize kendinden bahset</string>
     <string name="label_tellus_desc">Size daha iyi bir hizmet sunabilmemiz için, sizi yakından tanımalıyız</string>
     <string name="label_continue">İleri</string>

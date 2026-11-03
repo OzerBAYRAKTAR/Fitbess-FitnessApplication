@@ -212,6 +212,7 @@
     <string name="label_exercise">Exercise</string>
     <string name="label_minute">min</string>
     <string name="label_kcal">kcal</string>
+    <string name="summary_moves">Moves</string>
     <string name="label_tellus">Tell Us About Yourself</string>
     <string name="label_tellus_desc">To provide you with better service, we need to get to know you better.</string>
     <string name="label_continue">Continue</string>

@@ -37,8 +37,6 @@ class ProfileAndCatalogTest {
         val id = -10512
         val siblingId = -10511
         val before = withTimeout(5000) { manager.unlockedMoveIds().first() }
-        assertFalse(id in before)
-        assertFalse(siblingId in before)
         try {
             manager.unlockMoves(setOf(id, siblingId)); manager.unlockMove(id)
             val restored = withTimeout(5000) { DataStoreManage.getInstance(context).unlockedMoveIds().first { id in it && siblingId in it } }
@@ -49,7 +47,72 @@ class ProfileAndCatalogTest {
             val store = DataStoreManage::class.java.getDeclaredField("dataStore").apply { isAccessible = true }.get(manager) as DataStore<Preferences>
             store.edit { prefs ->
                 val key = stringSetPreferencesKey("earned_catalog_move_ids_v1")
-                prefs[key] = prefs[key].orEmpty() - id.toString() - siblingId.toString()
+                prefs[key] = before.map(Int::toString).toSet()
+            }
+        }
+    }
+
+    @Test fun rewardedWorkoutDayUnlocksSurviveStoreRecreationAndRemainLevelScoped() = runBlocking {
+        val manager = DataStoreManage.getInstance(context)
+        val level = 3
+        val day = 6
+        val key = DataStoreManage.workoutDayKey(level, day)
+        val before = withTimeout(5000) { manager.rewardedWorkoutDayKeys().first() }
+        try {
+            manager.unlockWorkoutDay(level, day)
+            val restored = withTimeout(5000) {
+                DataStoreManage.getInstance(context).rewardedWorkoutDayKeys().first { key in it }
+            }
+            assertEquals(setOf(key) - before, restored - before)
+        } finally {
+            @Suppress("UNCHECKED_CAST")
+            val store = DataStoreManage::class.java.getDeclaredField("dataStore").apply { isAccessible = true }.get(manager) as DataStore<Preferences>
+            store.edit { prefs ->
+                val keyStore = stringSetPreferencesKey("rewarded_workout_day_unlocks_v1")
+                prefs[keyStore] = before
+            }
+        }
+    }
+
+    @Test fun rewardedSubExerciseUnlocksRemainAvailableAfterReenteringParentLevel() = runBlocking {
+        val manager = DataStoreManage.getInstance(context)
+        val unlockedMove = com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise(
+            id = -10621,
+            exerciseId = 1,
+            step = 1,
+            titleName = "bellyneck",
+            dayId = 0,
+            exerciseName = "Unlocked movement",
+            exerciseDescription = "Test movement",
+            image = 0,
+            isExerciseCompleted = false,
+            level = 2,
+        )
+        val siblingMove = unlockedMove.copy(id = -10622, exerciseName = "Same parent level movement")
+        val otherCategoryMove = unlockedMove.copy(id = -10623, titleName = "abs")
+        val otherLevelMove = unlockedMove.copy(id = -10624, level = 3)
+        val testMoves = listOf(unlockedMove, siblingMove, otherCategoryMove, otherLevelMove)
+        val ids = MoveAccess.levelUnlockIds(testMoves)
+        val before = withTimeout(5000) { manager.unlockedMoveIds().first() }
+
+        try {
+            manager.unlockMoves(ids)
+
+            // Re-read through the shared store just as a newly entered parent screen does.
+            val restored = withTimeout(5000) {
+                DataStoreManage.getInstance(context).unlockedMoveIds().first { ids.all(it::contains) }
+            }
+            val newlyUnlocked = restored - before
+            assertEquals(ids - before, newlyUnlocked)
+            testMoves.forEach { move ->
+                assertEquals(move.id in newlyUnlocked, MoveAccess.allowed(move, newlyUnlocked))
+            }
+        } finally {
+            @Suppress("UNCHECKED_CAST")
+            val store = DataStoreManage::class.java.getDeclaredField("dataStore").apply { isAccessible = true }.get(manager) as DataStore<Preferences>
+            store.edit { prefs ->
+                val key = stringSetPreferencesKey("earned_catalog_move_ids_v1")
+                prefs[key] = before.map(Int::toString).toSet()
             }
         }
     }

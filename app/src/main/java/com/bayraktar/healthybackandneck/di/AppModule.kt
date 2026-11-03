@@ -23,7 +23,7 @@ object AppModule {
     @Singleton
     fun providesDatabase(@ApplicationContext context: Context):AppDatabase =
         Room.databaseBuilder(context,AppDatabase::class.java,"fitness_db")
-            .addMigrations(AppDatabase.MIGRATION_11_12)
+            .addMigrations(AppDatabase.MIGRATION_11_12, com.bayraktar.healthybackandneck.data.Room.AppDatabase.MIGRATION_12_13)
             .build()
 
 
@@ -32,6 +32,6 @@ object AppModule {
         appDb.moveDao()
 
     @Provides
-    fun providesPostRepository(moveDao: MovesDao):RoomRepository =
-        RoomRepository(moveDao)
+    fun providesPostRepository(moveDao: MovesDao, catalog: com.bayraktar.healthybackandneck.data.Repository.SubExerciseCatalog):RoomRepository =
+        RoomRepository(moveDao, catalog)
 }

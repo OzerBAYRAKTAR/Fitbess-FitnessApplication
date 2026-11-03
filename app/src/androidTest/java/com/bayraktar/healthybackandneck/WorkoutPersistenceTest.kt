@@ -38,7 +38,7 @@ class WorkoutPersistenceTest {
                 it.version = 11
             }
             database = Room.databaseBuilder(context, AppDatabase::class.java, name)
-                .addMigrations(AppDatabase.MIGRATION_11_12).build()
+                .addMigrations(AppDatabase.MIGRATION_11_12, com.bayraktar.healthybackandneck.data.Room.AppDatabase.MIGRATION_12_13).build()
             assertEquals("Synthetic", database.moveDao().getIsFavouriteTrue().single().exerciseName)
             val session = WorkoutSession("unique", 10, 20, 500, 1, 2, 1, 1, "Test")
             database.workoutDao().insert(session)

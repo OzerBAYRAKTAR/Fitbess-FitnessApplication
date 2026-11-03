@@ -70,6 +70,19 @@ class MoveAccessViewModel(application: Application) : AndroidViewModel(applicati
             }
         }
     }
+
+    fun grantWorkoutDay(level: Int, day: Int, onPersisted: () -> Unit = {}) {
+        rewardWrites.launch {
+            try {
+                store.unlockWorkoutDay(level, day)
+                _failed.value = false
+                kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Main) { onPersisted() }
+            } catch (error: Exception) {
+                if (error is CancellationException) throw error
+                _failed.value = true
+            }
+        }
+    }
     companion object {
         private val rewardWrites = kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.SupervisorJob() + kotlinx.coroutines.Dispatchers.IO)
     }

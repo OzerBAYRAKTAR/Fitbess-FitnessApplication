@@ -30,10 +30,13 @@ class ExerciseMovesEndFragment : Fragment() {
     }
     override fun onViewCreated(view: View, state: Bundle?) {
         transitionAd = PreloadedInterstitialAd(requireActivity(), viewLifecycleOwner, getString(R.string.ad_interstitial_exercise_end))
-        binding.btnEnd.setOnClickListener { transitionAd?.showOrContinue { goHome() } }
+        binding.btnEnd.setOnClickListener {
+            val ad = transitionAd
+            if (ad == null) returnToProgram() else ad.showOrContinue { returnToProgram() }
+        }
         binding.retrySave.setOnClickListener { session.finish() }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() { goHome() }
+            override fun handleOnBackPressed() { returnToProgram() }
         })
         session.finish()
         viewLifecycleOwner.lifecycleScope.launch {
@@ -58,6 +61,32 @@ class ExerciseMovesEndFragment : Fragment() {
     private fun goHome() {
         if (isAdded && !parentFragmentManager.isStateSaved && findNavController().currentDestination?.id == R.id.exerciseMovesEndFragment)
             findNavController().navigate(ExerciseMovesEndFragmentDirections.actionExerciseMovesEndFragmentToIdHomepageFragment())
+    }
+
+    private fun returnToProgram() {
+        if (!isAdded || parentFragmentManager.isStateSaved) return
+        val navController = findNavController()
+        if (navController.currentDestination?.id != R.id.exerciseMovesEndFragment) return
+        val day = ExerciseMovesEndFragmentArgs.fromBundle(requireArguments()).exerciseDayModel
+        if (day == null) {
+            goHome()
+            return
+        }
+        when (day.level) {
+            1 -> navController.navigate(
+                ExerciseMovesEndFragmentDirections.actionExerciseMovesEndFragmentToExerciseDetailFirstFragment()
+                    .setFocusDay(day.day)
+            )
+            2 -> navController.navigate(
+                ExerciseMovesEndFragmentDirections.actionExerciseMovesEndFragmentToExerciseDetailSecondFragment()
+                    .setFocusDay(day.day)
+            )
+            3 -> navController.navigate(
+                ExerciseMovesEndFragmentDirections.actionExerciseMovesEndFragmentToExerciseDetailThirdFragment()
+                    .setFocusDay(day.day)
+            )
+            else -> goHome()
+        }
     }
     override fun onDestroyView() { transitionAd = null; _binding = null; super.onDestroyView() }
 }

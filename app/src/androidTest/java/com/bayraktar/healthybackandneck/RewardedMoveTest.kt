@@ -50,6 +50,73 @@ class RewardedMoveTest {
         ad.fullScreenContentCallback!!.onAdFailedToShowFullScreenContent(AdError(0, "Synthetic failure", "test"))
         assertEquals(0, grants)
     }
+
+    @Test fun failedLoadReportsUnavailableAndCanBeRetried() = onMain {
+        val owner = Owner()
+        val callbacks = mutableListOf<RewardedAdLoadCallback>()
+        val controller = RewardedAds(
+            Activity(),
+            owner,
+            loadAd = { _, callback -> callbacks += callback },
+            showUnavailableToast = {},
+        )
+        val states = mutableListOf<RewardedAds.ShowState>()
+
+        assertTrue(controller.showRewardAds(onStateChanged = states::add) {})
+        assertEquals(1, callbacks.size)
+        callbacks[0].onAdFailedToLoad(LoadAdError(3, "No fill", "test", null, null))
+
+        assertEquals(listOf(RewardedAds.ShowState.PREPARING, RewardedAds.ShowState.UNAVAILABLE), states)
+        assertTrue(controller.showRewardAds {})
+        assertEquals("A later tap starts a fresh request", 2, callbacks.size)
+    }
+
+    @Test fun hungLoadTimesOutAndLateCallbackCannotStealRetry() {
+        val owner = Owner()
+        val callbacks = mutableListOf<RewardedAdLoadCallback>()
+        val controller = RewardedAds(
+            Activity(),
+            owner,
+            loadAd = { _, callback -> callbacks += callback },
+            loadTimeoutMs = 50,
+            showUnavailableToast = {},
+        )
+        val states = mutableListOf<RewardedAds.ShowState>()
+        onMain {
+            assertTrue(controller.showRewardAds(onStateChanged = { state -> states.add(state) }) {})
+        }
+
+        Thread.sleep(200)
+        InstrumentationRegistry.getInstrumentation().waitForIdleSync()
+        assertEquals(listOf(RewardedAds.ShowState.PREPARING, RewardedAds.ShowState.UNAVAILABLE), states)
+
+        val stale = FakeAd()
+        onMain { callbacks[0].onAdLoaded(stale) }
+        onMain { assertTrue(controller.showRewardAds {}) }
+        assertEquals("The timed-out request must not block a new attempt", 2, callbacks.size)
+        assertEquals("A late response from the old request must not be shown", 0, stale.shows)
+    }
+
+    @Test fun backgroundPreloadTimeoutDoesNotShowAnUnrequestedError() {
+        val owner = Owner()
+        val callbacks = mutableListOf<RewardedAdLoadCallback>()
+        var toasts = 0
+        val controller = RewardedAds(
+            Activity(),
+            owner,
+            loadAd = { _, callback -> callbacks += callback },
+            loadTimeoutMs = 50,
+            showUnavailableToast = { toasts++ },
+        )
+
+        onMain { controller.loadRewardedAds(R.string.rewarded_ad1) }
+        assertEquals(1, callbacks.size)
+        Thread.sleep(200)
+        InstrumentationRegistry.getInstrumentation().waitForIdleSync()
+
+        assertEquals(0, toasts)
+    }
+
     private fun onMain(block: () -> Unit) = InstrumentationRegistry.getInstrumentation().runOnMainSync(block)
     private class Owner : LifecycleOwner {
         val registry = LifecycleRegistry(this).apply { currentState = Lifecycle.State.RESUMED }
@@ -75,6 +142,7 @@ class RewardedMoveTest {
         override fun getResponseInfo(): ResponseInfo = error("Not used by reward policy")
         override fun setServerSideVerificationOptions(value: ServerSideVerificationOptions?) = Unit
         override fun setImmersiveMode(value: Boolean) = Unit
-        override fun show(activity: Activity, value: OnUserEarnedRewardListener) { listener = value }
+        var shows = 0
+        override fun show(activity: Activity, value: OnUserEarnedRewardListener) { shows++; listener = value }
     }
 }

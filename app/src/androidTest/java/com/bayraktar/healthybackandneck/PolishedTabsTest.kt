@@ -34,7 +34,7 @@ class PolishedTabsTest {
         val previous = prefs.getString("pref_language_code", null)
         val previousLocale = Locale.getDefault()
         val database = androidx.room.Room.databaseBuilder(context, com.bayraktar.healthybackandneck.data.Room.AppDatabase::class.java, "fitness_db")
-            .addMigrations(com.bayraktar.healthybackandneck.data.Room.AppDatabase.MIGRATION_11_12).build()
+            .addMigrations(com.bayraktar.healthybackandneck.data.Room.AppDatabase.MIGRATION_11_12, com.bayraktar.healthybackandneck.data.Room.AppDatabase.MIGRATION_12_13).build()
         val beforeFavorites = database.moveDao().getIsFavouriteTrue().map { it.id }.toSet()
         val favorite = move(-30505, 1).copy(exerciseName = "Verification favorite", isFavourite = true)
         try {

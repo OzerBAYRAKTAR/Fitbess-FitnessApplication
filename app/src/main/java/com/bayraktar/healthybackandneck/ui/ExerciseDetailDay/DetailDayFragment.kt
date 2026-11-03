@@ -22,7 +22,6 @@ import com.bayraktar.healthybackandneck.databinding.FragmentDetailDayBinding
 import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerViewClickListener
 import com.bayraktar.healthybackandneck.utils.MoveAccess
 import com.bayraktar.healthybackandneck.utils.MoveAccessViewModel
-import com.bayraktar.healthybackandneck.utils.PreloadedInterstitialAd
 import com.bayraktar.healthybackandneck.utils.RewardedAds
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -33,7 +32,6 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
     private var _binding: FragmentDetailDayBinding? = null
     val binding get() = _binding!!
     private val access: MoveAccessViewModel by viewModels()
-    private var transitionAd: PreloadedInterstitialAd? = null
     private var rewarded: RewardedAds? = null
     private var exerciseDayModel: ExerciseDay? = null
     private var exerciseList = emptyList<ExerciseDayExercise>()
@@ -47,15 +45,18 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
         val args = DetailDayFragmentArgs.fromBundle(requireArguments())
         exerciseDayModel = args.exerciseDayModel
         exerciseList = args.exerciseNewList.orEmpty().toList()
-        binding.detaildayFirst.text = args.exerciseLevel
+        binding.workoutTitle.text = args.exerciseLevel.trim()
         binding.detaildaySecond.visibility = if (exerciseDayModel == null) View.GONE else View.VISIBLE
         binding.txtdaysecond.visibility = binding.detaildaySecond.visibility
         binding.txtdaysecond.text = exerciseDayModel?.day?.toString().orEmpty()
+        binding.txtWorkoutCount.text = exerciseList.size.toString()
+        binding.txttime.text = (exerciseDayModel?.exerciseTime ?: ((exerciseList.size * 30 + 59) / 60)).toString()
+        binding.metricCalories.visibility = if (exerciseDayModel != null) View.VISIBLE else View.GONE
+        binding.txtcalorie.text = exerciseDayModel?.exerciseKcal?.toString().orEmpty()
         binding.backButton.setOnClickListener { view.findNavController().popBackStack() }
         adapter = DetailDayAdapter(exerciseList, this)
         binding.rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
         binding.rvdaydetail.adapter = adapter
-        transitionAd = PreloadedInterstitialAd(requireActivity(), viewLifecycleOwner, getString(R.string.ad_interstitial_detail_day))
         rewarded = RewardedAds(requireActivity(), viewLifecycleOwner).also { it.loadRewardedAds(R.string.rewarded_ad1) }
         binding.startExercise.setOnClickListener {
             val list = available()
@@ -63,13 +64,11 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
                 if (canUnlockCurrentLevel()) confirmLevelUnlock()
                 return@setOnClickListener
             }
-            transitionAd?.showOrContinue {
-                if (!isAdded || parentFragmentManager.isStateSaved) return@showOrContinue
-                val controller = view.findNavController()
-                if (controller.currentDestination?.id == R.id.detailDayFragment) controller.navigate(
-                    DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment(list.toTypedArray(), exerciseDayModel)
-                )
-            }
+            if (!isAdded || parentFragmentManager.isStateSaved) return@setOnClickListener
+            val controller = view.findNavController()
+            if (controller.currentDestination?.id == R.id.detailDayFragment) controller.navigate(
+                DetailDayFragmentDirections.actionDetailDayFragmentToExerciseMovesFragment(list.toTypedArray(), exerciseDayModel)
+            )
         }
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -117,9 +116,6 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
             binding.startExercise.setTextColor(ContextCompat.getColorStateList(requireContext(), R.color.fit_button_text))
             binding.startExercise.iconTint = ContextCompat.getColorStateList(requireContext(), R.color.fit_button_text)
         }
-        binding.txtexercise.text = getString(R.string.available_moves, list.size, exerciseList.size)
-        val seconds = list.size * 30
-        binding.txttime.text = String.format(java.util.Locale.getDefault(), "%d:%02d", seconds / 60, seconds % 60)
         binding.accessStatus.visibility = if (loading || access.failed.value) View.VISIBLE else View.GONE
         binding.accessStatus.setText(if (access.failed.value) R.string.access_failed else R.string.access_loading)
     }
@@ -186,7 +182,6 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
         binding.rvdaydetail.adapter = null
         adapter = null
         rewarded = null
-        transitionAd = null
         _binding = null
         super.onDestroyView()
     }

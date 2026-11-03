@@ -2,15 +2,13 @@ package com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel
 
 import android.os.Parcelable
 import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.google.gson.Gson
 import kotlinx.android.parcel.Parcelize
 
 
 @Parcelize
-@Entity(tableName = "exercise_days")
+@Entity(tableName = "exercise_days", primaryKeys = ["level", "dayId"])
 data class ExerciseDay(
-    @PrimaryKey(autoGenerate = false)
     val dayId: Int = 0,
     val day: Int,
     val level: Int,

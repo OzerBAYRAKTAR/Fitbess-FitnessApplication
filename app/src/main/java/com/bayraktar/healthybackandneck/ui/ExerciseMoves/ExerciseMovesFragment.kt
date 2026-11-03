@@ -81,6 +81,9 @@ class ExerciseMovesFragment : Fragment() {
         index = index.coerceIn(moves.indices)
         binding.moveGif.setImageResource(moves[index].image)
         binding.exerciceName.text = moves[index].exerciseName
+        binding.sessionTitle.text = com.bayraktar.healthybackandneck.utils.workoutSessionTitle(requireContext(), args.exerciseDayModel)
+        binding.sessionProgress.max = moves.size
+        binding.sessionProgress.progress = index + 1
         binding.txtRank.text = (index + 1).toString()
         binding.albelRank.text = "/${moves.size}"
         binding.goBack.isEnabled = index > 0
@@ -90,7 +93,7 @@ class ExerciseMovesFragment : Fragment() {
         renderTimer()
     }
     private fun renderTimer() {
-        binding.txtTimeLeft.text = ((remaining + 999) / 1000).toString()
+        binding.txtTimeLeft.text = com.bayraktar.healthybackandneck.utils.workoutClock(remaining)
         binding.pbTimer.progress = ((remaining + 999) / 1000).toInt()
         binding.playpause.setImageResource(if (paused) R.drawable.fit_play else R.drawable.fit_pause)
         binding.playpause.contentDescription = getString(if (paused) R.string.resume_workout else R.string.pause_workout)

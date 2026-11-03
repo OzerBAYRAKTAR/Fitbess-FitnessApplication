@@ -212,6 +212,7 @@
     <string name="label_exercise">Упражнение</string>
     <string name="label_minute">мин</string>
     <string name="label_kcal">ккал</string>
+    <string name="summary_moves">Упр.</string>
     <string name="label_tellus">Расскажите о себе</string>
     <string name="label_tellus_desc">Для предоставления вам более качественного сервиса, нам нужно узнать о вас больше</string>
     <string name="label_continue">Далее</string>

@@ -2,6 +2,7 @@ package com.bayraktar.healthybackandneck.utils
 
 import android.app.Activity
 import android.os.SystemClock
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.Lifecycle
@@ -16,6 +17,8 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.rewarded.RewardItem
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class RewardedAds(
@@ -23,6 +26,10 @@ class RewardedAds(
     private val owner: LifecycleOwner,
     private val loadAd: (String, RewardedAdLoadCallback) -> Unit = { id, callback ->
         AdsSdk.whenReady(owner) { RewardedAd.load(activity.applicationContext, id, AdRequest.Builder().build(), callback) }
+    },
+    private val loadTimeoutMs: Long = DEFAULT_LOAD_TIMEOUT_MS,
+    private val showUnavailableToast: (Activity) -> Unit = { host ->
+        Toast.makeText(host, R.string.ad_not_ready, Toast.LENGTH_SHORT).show()
     },
 ) : DefaultLifecycleObserver {
     enum class ShowState { PREPARING, SHOWING, UNAVAILABLE }
@@ -37,6 +44,8 @@ class RewardedAds(
     private var configuredUnit: Int? = null
     private var loadedAt = 0L
     private var loading = false
+    private var loadRequestId = 0L
+    private var loadTimeout: Job? = null
     private var showing = false
     private var disposed = false
     private var pendingShow: PendingShow? = null
@@ -46,6 +55,7 @@ class RewardedAds(
         owner.lifecycleScope.launch {
             RevenueCatManager.adFree.collect { status ->
                 if (status == true) {
+                    invalidateLoad()
                     rewardedAd = null
                     pendingShow?.onStateChanged?.invoke(ShowState.UNAVAILABLE)
                     pendingShow = null
@@ -62,9 +72,27 @@ class RewardedAds(
         if (rewardedAd != null && SystemClock.elapsedRealtime() - loadedAt < MAX_AGE_MS) return
         rewardedAd = null
         loading = true
+        val requestId = ++loadRequestId
+        loadTimeout?.cancel()
+        loadTimeout = owner.lifecycleScope.launch {
+            delay(loadTimeoutMs)
+            if (requestId != loadRequestId || !loading) return@launch
+            loading = false
+            Log.w(TAG, "Rewarded ad load request timed out")
+            rewardedAd = null
+            val pending = pendingShow
+            if (pending != null) {
+                pendingShow = null
+                pending.onStateChanged?.invoke(ShowState.UNAVAILABLE)
+                showUnavailableToast(activity)
+            }
+        }
         val id = if (BuildConfig.DEBUG) TEST_AD_UNIT_ID else activity.getString(adUnitId)
         loadAd(id, object : RewardedAdLoadCallback() {
             override fun onAdLoaded(ad: RewardedAd) {
+                if (requestId != loadRequestId) return
+                loadTimeout?.cancel()
+                loadTimeout = null
                 loading = false
                 if (disposed) return
                 rewardedAd = ad
@@ -73,12 +101,16 @@ class RewardedAds(
             }
 
             override fun onAdFailedToLoad(error: LoadAdError) {
+                if (requestId != loadRequestId) return
+                Log.w(TAG, "Rewarded ad load failed (code=${error.code}, domain=${error.domain}): ${error.message}")
+                loadTimeout?.cancel()
+                loadTimeout = null
                 loading = false
                 rewardedAd = null
                 pendingShow?.let { pending ->
                     pendingShow = null
                     pending.onStateChanged?.invoke(ShowState.UNAVAILABLE)
-                    if (!disposed) Toast.makeText(activity, R.string.ad_not_ready, Toast.LENGTH_SHORT).show()
+                    if (!disposed) showUnavailableToast(activity)
                 }
             }
         })
@@ -91,6 +123,7 @@ class RewardedAds(
     ): Boolean {
         if (!RevenueCatManager.adsMayLoad()) {
             onStateChanged?.invoke(ShowState.UNAVAILABLE)
+            showUnavailableToast(activity)
             return false
         }
         if (disposed || showing || pendingShow != null || activity.isFinishing || activity.isDestroyed) {
@@ -140,8 +173,9 @@ class RewardedAds(
 
             override fun onAdFailedToShowFullScreenContent(error: AdError) {
                 showing = false
+                Log.w(TAG, "Rewarded ad failed to show (code=${error.code}, domain=${error.domain}): ${error.message}")
                 pending.onStateChanged?.invoke(ShowState.UNAVAILABLE)
-                if (!disposed) Toast.makeText(activity, R.string.ad_not_ready, Toast.LENGTH_SHORT).show()
+                if (!disposed) showUnavailableToast(activity)
                 configuredUnit?.let(::loadRewardedAds)
             }
         }
@@ -163,6 +197,7 @@ class RewardedAds(
 
     override fun onDestroy(owner: LifecycleOwner) {
         disposed = true
+        invalidateLoad()
         rewardedAd = null
         pendingShow?.onStateChanged?.invoke(ShowState.UNAVAILABLE)
         pendingShow = null
@@ -170,7 +205,16 @@ class RewardedAds(
     }
 
     private companion object {
+        const val TAG = "RewardedAds"
+        const val DEFAULT_LOAD_TIMEOUT_MS = 20_000L
         const val MAX_AGE_MS = 55 * 60 * 1000L
         const val TEST_AD_UNIT_ID = "ca-app-pub-3940256099942544/5224354917"
+    }
+
+    private fun invalidateLoad() {
+        loadRequestId++
+        loadTimeout?.cancel()
+        loadTimeout = null
+        loading = false
     }
 }
