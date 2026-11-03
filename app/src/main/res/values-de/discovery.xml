@@ -1,0 +1,23 @@
+<resources>
+ <string name="discovery_greeting">Wie möchtest du dich heute bewegen?</string>
+ <string name="discovery_program_badge">21 TAGE TRAINING</string>
+ <string name="discovery_program_title">Dein Tempo. Jeden Tag.</string>
+ <string name="discovery_new_program">Starte mit Tag eins. Finde deinen Rhythmus.</string>
+ <string name="discovery_resume">%1$s · Tag %2$d</string>
+ <string name="discovery_continue">Programm fortsetzen</string>
+ <string name="discovery_choose_region">Wähle deine Körperregion</string>
+ <string name="discovery_all">Alle</string>
+ <string name="discovery_more">Ergänze deine Routine</string>
+ <string name="discovery_nutrition">Ernährung</string>
+ <string name="discovery_breath">Atemübung</string>
+ <string name="discovery_view_moves">Übungen ansehen</string>
+ <string name="discovery_load_failed">Übungen konnten nicht geladen werden. Versuche es erneut.</string>
+ <string name="discovery_moves_heading">Übungen</string>
+ <string name="discovery_estimated_kcal">geschätzte kcal</string>
+ <string name="region_neck">Nacken</string><string name="region_arms">Arme</string><string name="region_back">Rücken</string><string name="region_abs">Bauch</string><string name="region_legs">Beine</string><string name="region_glutes">Po</string><string name="region_warmup">Aufwärmen und Dehnen</string>
+ <string name="discovery_level_beginner">Anfänger</string>
+ <string name="discovery_level_intermediate">Mittel</string>
+ <string name="discovery_level_advanced">Fortgeschritten</string>
+<string name="region_back_neck">Rücken &amp; Nacken</string>
+<string name="region_legs_glutes">Beine &amp; Gesäß</string>
+</resources>

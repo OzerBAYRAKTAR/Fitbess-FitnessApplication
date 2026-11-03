@@ -1,0 +1,23 @@
+<resources>
+ <string name="discovery_greeting">Как будем двигаться сегодня?</string>
+ <string name="discovery_program_badge">ПРОГРАММА НА 21 ДЕНЬ</string>
+ <string name="discovery_program_title">В своём темпе. Каждый день.</string>
+ <string name="discovery_new_program">Начни с первого дня. Найди свой ритм.</string>
+ <string name="discovery_resume">%1$s · День %2$d</string>
+ <string name="discovery_continue">Продолжить программу</string>
+ <string name="discovery_choose_region">Выбери зону</string>
+ <string name="discovery_all">Все</string>
+ <string name="discovery_more">Дополни тренировку</string>
+ <string name="discovery_nutrition">Питание</string>
+ <string name="discovery_breath">Дыхательное упражнение</string>
+ <string name="discovery_view_moves">Посмотреть упражнения</string>
+ <string name="discovery_load_failed">Не удалось загрузить упражнения. Попробуй ещё раз.</string>
+ <string name="discovery_moves_heading">Упражнения</string>
+ <string name="discovery_estimated_kcal">примерно ккал</string>
+ <string name="region_neck">Шея</string><string name="region_arms">Руки</string><string name="region_back">Спина</string><string name="region_abs">Пресс</string><string name="region_legs">Ноги</string><string name="region_glutes">Ягодицы</string><string name="region_warmup">Разминка и растяжка</string>
+ <string name="discovery_level_beginner">Начальный</string>
+ <string name="discovery_level_intermediate">Средний</string>
+ <string name="discovery_level_advanced">Продвинутый</string>
+<string name="region_back_neck">Спина и шея</string>
+<string name="region_legs_glutes">Ноги и ягодицы</string>
+</resources>

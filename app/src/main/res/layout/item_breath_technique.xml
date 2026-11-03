@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" android:background="@drawable/fit_card" android:orientation="vertical">
+ <LinearLayout android:id="@+id/techniqueHeader" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="76dp" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+  <TextView android:id="@+id/techniqueNumber" style="@style/FitBody" android:layout_width="40dp" android:layout_height="40dp" android:gravity="center" android:background="@drawable/discovery_icon_background" android:textColor="@color/fit_primary" android:importantForAccessibility="no"/>
+  <TextView android:id="@+id/techniqueTitle" style="@style/FitSection" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginHorizontal="14dp" android:textSize="17sp" android:importantForAccessibility="no"/>
+  <ImageView android:id="@+id/techniqueChevron" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/discovery_chevron" android:contentDescription="@null"/>
+ </LinearLayout>
+ <TextView android:id="@+id/techniqueDescription" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="20dp" android:paddingBottom="20dp" android:lineSpacingExtra="5dp" android:textColor="@color/fit_muted"/>
+</LinearLayout>

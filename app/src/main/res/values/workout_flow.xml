@@ -1,0 +1,11 @@
+<resources>
+<string name="workout_week_1">1. Hafta</string>
+<string name="workout_week_2">2. Hafta</string>
+<string name="workout_week_3">3. Hafta</string>
+<string name="workout_day_complete">Tamamlandı</string>
+<string name="workout_day_locked_hint">Önceki günü bitir veya reklamla aç</string>
+<string name="workout_day_continue">Devam et</string>
+<string name="workout_day_ready">Antrenmana hazır</string>
+<string name="workout_rest_heading">Kısa bir mola</string>
+<string name="workout_program_length">21 günlük program</string>
+</resources>

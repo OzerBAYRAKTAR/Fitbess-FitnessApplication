@@ -1,0 +1,11 @@
+<resources>
+<string name="workout_week_1">Неделя 1</string>
+<string name="workout_week_2">Неделя 2</string>
+<string name="workout_week_3">Неделя 3</string>
+<string name="workout_day_complete">Завершено</string>
+<string name="workout_day_locked_hint">Заверши предыдущий день или открой за рекламу</string>
+<string name="workout_day_continue">Продолжить</string>
+<string name="workout_day_ready">Готово к тренировке</string>
+<string name="workout_rest_heading">Небольшой перерыв</string>
+<string name="workout_program_length">Программа на 21 день</string>
+</resources>

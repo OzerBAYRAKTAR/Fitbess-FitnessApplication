@@ -1,0 +1,7 @@
+<resources>
+ <string name="breath_pause_title">Bir nefeslik mola</string>
+ <string name="breath_pause_intro">Kendi ritminde ilerle. Nefesine odaklanmak için kısa bir ara ver.</string>
+ <string name="breath_choose_technique">Nasıl uygulandığını görmek için bir tekniğe dokun.</string>
+ <string name="breath_expanded">Açık</string>
+ <string name="breath_collapsed">Kapalı</string>
+</resources>

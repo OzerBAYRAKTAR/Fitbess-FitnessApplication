@@ -1,0 +1,7 @@
+<resources>
+ <string name="breath_pause_title">Zeit zum Durchatmen</string>
+ <string name="breath_pause_intro">In deinem eigenen Tempo. Nimm dir einen Moment, um dich auf deinen Atem zu konzentrieren.</string>
+ <string name="breath_choose_technique">Tippe auf eine Technik, um die Anleitung zu lesen.</string>
+ <string name="breath_expanded">Ausgeklappt</string>
+ <string name="breath_collapsed">Eingeklappt</string>
+</resources>

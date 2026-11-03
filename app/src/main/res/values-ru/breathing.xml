@@ -1,0 +1,7 @@
+<resources>
+ <string name="breath_pause_title">Время для дыхания</string>
+ <string name="breath_pause_intro">В своём темпе. Сделай небольшую паузу и сосредоточься на дыхании.</string>
+ <string name="breath_choose_technique">Нажми на технику, чтобы прочитать инструкцию.</string>
+ <string name="breath_expanded">Развёрнуто</string>
+ <string name="breath_collapsed">Свёрнуто</string>
+</resources>

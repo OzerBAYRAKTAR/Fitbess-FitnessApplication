@@ -1,0 +1,23 @@
+<resources>
+ <string name="discovery_greeting">Bugün nasıl hareket etmek istersin?</string>
+ <string name="discovery_program_badge">21 GÜNLÜK PROGRAM</string>
+ <string name="discovery_program_title">Kendi hızında, her gün.</string>
+ <string name="discovery_new_program">İlk gününle başla. Ritmini sen belirle.</string>
+ <string name="discovery_resume">%1$s · Gün %2$d</string>
+ <string name="discovery_continue">Programa devam et</string>
+ <string name="discovery_choose_region">Bölgeni seç</string>
+ <string name="discovery_all">Tümü</string>
+ <string name="discovery_more">Rutinini tamamla</string>
+ <string name="discovery_nutrition">Beslenme</string>
+ <string name="discovery_breath">Nefes egzersizi</string>
+ <string name="discovery_view_moves">Hareketleri görüntüle</string>
+ <string name="discovery_load_failed">Hareketler yüklenemedi. Tekrar dene.</string>
+ <string name="discovery_moves_heading">Hareketler</string>
+ <string name="discovery_estimated_kcal">tahmini kcal</string>
+ <string name="region_neck">Boyun</string><string name="region_arms">Kollar</string><string name="region_back">Sırt</string><string name="region_abs">Karın</string><string name="region_legs">Bacaklar</string><string name="region_glutes">Kalça</string><string name="region_warmup">Isınma ve esneme</string>
+ <string name="discovery_level_beginner">Başlangıç</string>
+ <string name="discovery_level_intermediate">Orta</string>
+ <string name="discovery_level_advanced">İleri</string>
+<string name="region_back_neck">Bel ve Boyun</string>
+<string name="region_legs_glutes">Bacak ve Kalça</string>
+</resources>

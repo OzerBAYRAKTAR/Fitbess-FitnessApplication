@@ -1,0 +1,23 @@
+<resources>
+ <string name="discovery_greeting">How will you move today?</string>
+ <string name="discovery_program_badge">21-DAY PROGRAM</string>
+ <string name="discovery_program_title">Your pace. Every day.</string>
+ <string name="discovery_new_program">Start with day one. Find your rhythm.</string>
+ <string name="discovery_resume">%1$s · Day %2$d</string>
+ <string name="discovery_continue">Continue program</string>
+ <string name="discovery_choose_region">Choose your focus</string>
+ <string name="discovery_all">View all</string>
+ <string name="discovery_more">Complete your routine</string>
+ <string name="discovery_nutrition">Nutrition</string>
+ <string name="discovery_breath">Breathing exercise</string>
+ <string name="discovery_view_moves">View exercises</string>
+ <string name="discovery_load_failed">Could not load exercises. Please try again.</string>
+ <string name="discovery_moves_heading">Exercises</string>
+ <string name="discovery_estimated_kcal">estimated kcal</string>
+ <string name="region_neck">Neck</string><string name="region_arms">Arms</string><string name="region_back">Back</string><string name="region_abs">Abs</string><string name="region_legs">Legs</string><string name="region_glutes">Glutes</string><string name="region_warmup">Warm-up and stretch</string>
+ <string name="discovery_level_beginner">Beginner</string>
+ <string name="discovery_level_intermediate">Intermediate</string>
+ <string name="discovery_level_advanced">Advanced</string>
+<string name="region_back_neck">Back &amp; Neck</string>
+<string name="region_legs_glutes">Legs &amp; Glutes</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+ <string name="breath_pause_title">A moment to breathe</string>
+ <string name="breath_pause_intro">Go at your own pace. Take a short pause to focus on your breath.</string>
+ <string name="breath_choose_technique">Tap a technique to read its instructions.</string>
+ <string name="breath_expanded">Expanded</string>
+ <string name="breath_collapsed">Collapsed</string>
+</resources>

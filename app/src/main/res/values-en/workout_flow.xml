@@ -1,0 +1,11 @@
+<resources>
+<string name="workout_week_1">Week 1</string>
+<string name="workout_week_2">Week 2</string>
+<string name="workout_week_3">Week 3</string>
+<string name="workout_day_complete">Completed</string>
+<string name="workout_day_locked_hint">Finish the previous day or unlock with an ad</string>
+<string name="workout_day_continue">Continue</string>
+<string name="workout_day_ready">Ready to train</string>
+<string name="workout_rest_heading">Take a breath</string>
+<string name="workout_program_length">21-day program</string>
+</resources>
