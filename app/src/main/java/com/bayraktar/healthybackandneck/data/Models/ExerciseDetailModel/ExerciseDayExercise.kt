@@ -24,6 +24,7 @@ data class ExerciseDayExercise(
     @SerializedName("ExerciseDescription")
     val exerciseDescription: String,
     @SerializedName("Image")
+    // Legacy persisted resource ID. Render with ExerciseMedia using the stable catalog id.
     val image: Int,
     @SerializedName("IsExerciseCompleted")
     var isExerciseCompleted: Boolean,

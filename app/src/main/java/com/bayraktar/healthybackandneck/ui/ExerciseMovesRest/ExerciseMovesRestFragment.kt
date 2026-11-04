@@ -36,7 +36,7 @@ class ExerciseMovesRestFragment : Fragment() {
   navigation = WorkoutNavigation(this, R.id.exerciseMovesRestFragment)
   val moves = args.exerciseNewList.orEmpty()
   val next = moves.getOrNull(args.exerciseIndex + 1) ?: return
-  binding.gifImageView2.setImageResource(next.image)
+  binding.gifImageView2.setImageResource(com.bayraktar.healthybackandneck.utils.ExerciseMedia.drawable(next))
   binding.exerciceName.text = next.exerciseName
   binding.txtRank.text = (args.exerciseIndex + 2).toString()
   binding.albelRank.text = "/${moves.size}"

@@ -545,7 +545,7 @@
     "DayId": 7,
     "ExerciseName": "Standing Bend Over",
     "ExerciseDescription": "e100_b11_standing_bend_over",
-    "Image": "e100_b11_standing_bend_over",
+    "Image": "e100_b11_stndng_bndover",
     "IsExerciseCompleted": false,
     "Level": 1
   },
@@ -1942,7 +1942,7 @@
     "DayId": 2,
     "ExerciseName": "Standing Bend Over",
     "ExerciseDescription": "e100_b11_standing_bend_over",
-    "Image": "e100_b11_standing_bend_over",
+    "Image": "e100_b11_stndng_bndover",
     "IsExerciseCompleted": false,
     "Level": 2
   },
@@ -2393,7 +2393,7 @@
     "DayId": 7,
     "ExerciseName": "Standing Bend Over",
     "ExerciseDescription": "e100_b11_standing_bend_over",
-    "Image": "e100_b11_standing_bend_over",
+    "Image": "e100_b11_stndng_bndover",
     "IsExerciseCompleted": false,
     "Level": 2
   },
@@ -2745,7 +2745,7 @@
     "DayId": 11,
     "ExerciseName": "Standing Bend Over",
     "ExerciseDescription": "e100_b11_standing_bend_over",
-    "Image": "e100_b11_standing_bend_over",
+    "Image": "e100_b11_stndng_bndover",
     "IsExerciseCompleted": false,
     "Level": 2
   },
@@ -4153,7 +4153,7 @@
     "DayId": 6,
     "ExerciseName": "Standing Bend Over",
     "ExerciseDescription": "e100_b11_standing_bend_over",
-    "Image": "e100_b11_standing_bend_over",
+    "Image": "e100_b11_stndng_bndover",
     "IsExerciseCompleted": false,
     "Level": 3
   },

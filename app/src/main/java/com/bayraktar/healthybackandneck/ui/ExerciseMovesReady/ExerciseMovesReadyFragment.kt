@@ -29,7 +29,7 @@ import com.bayraktar.healthybackandneck.databinding.FragmentExerciseMovesReadyBi
 import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayAdapter
 import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayFragmentArgs
 import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDayFragmentDirections
-import com.bayraktar.healthybackandneck.ui.ExerciseDetailDay.DetailDaySubAdapter
+
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

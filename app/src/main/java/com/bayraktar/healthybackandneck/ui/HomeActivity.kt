@@ -8,7 +8,7 @@ import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.constraintlayout.widget.ConstraintLayout
+
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -17,7 +17,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.ActivityHomeBinding
 import com.bayraktar.healthybackandneck.data.JetpackDataStore.DataStoreManage
-import com.bayraktar.healthybackandneck.utils.Interfaces.homeFragmentListener
+
 import com.bayraktar.healthybackandneck.utils.LanguagePreference
 import com.bayraktar.healthybackandneck.utils.LocaleHelper
 import com.google.android.gms.ads.AdRequest
@@ -29,7 +29,7 @@ import com.bayraktar.healthybackandneck.utils.AppUpdateCoordinator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeActivity : AppCompatActivity(), homeFragmentListener {
+class HomeActivity : AppCompatActivity() {
 
     @javax.inject.Inject lateinit var reminders: com.bayraktar.healthybackandneck.utils.ReminderCoordinator
 
@@ -89,9 +89,7 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
             if (destination.id != R.id.id_homepage_fragment
                 && destination.id != R.id.id_profile_fragment
                 && destination.id != R.id.id_statistics_fragment
-                && destination.id != R.id.moveListFragment
-                && destination.id != R.id.id_food_fragment
-                && destination.id != R.id.foodDetailFragment) {
+                && destination.id != R.id.moveListFragment) {
                 binding.bottomBar.visibility = View.GONE
             } else {
                 binding.bottomBar.visibility = View.VISIBLE
@@ -131,9 +129,6 @@ class HomeActivity : AppCompatActivity(), homeFragmentListener {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    override fun hideConstraintLayout() {
-        val constraintLayout = findViewById<ConstraintLayout>(R.id.cnnm3)
-        constraintLayout?.visibility = View.GONE
-    }
+
 
 }

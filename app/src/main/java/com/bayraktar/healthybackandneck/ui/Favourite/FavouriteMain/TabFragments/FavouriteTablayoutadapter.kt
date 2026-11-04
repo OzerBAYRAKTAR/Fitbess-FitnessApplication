@@ -59,7 +59,7 @@ class FavouriteTablayoutadapter(
             favoritebtn.isClickable = false
             favoritebtn.isChecked = model.isFavourite
 
-            val imageDrawable = ContextCompat.getDrawable(root.context, model.image)
+            val imageDrawable = ContextCompat.getDrawable(root.context, com.bayraktar.healthybackandneck.utils.ExerciseMedia.drawable(model))
             roundedImageView.setImageDrawable(imageDrawable)
             labelDay.text = model.exerciseName
 

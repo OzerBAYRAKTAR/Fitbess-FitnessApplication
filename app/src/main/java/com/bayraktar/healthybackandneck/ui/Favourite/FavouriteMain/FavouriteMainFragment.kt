@@ -11,7 +11,7 @@ import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
 import com.bayraktar.healthybackandneck.R
 import com.bayraktar.healthybackandneck.databinding.FragmentFavouriteMainBinding
-import com.bayraktar.healthybackandneck.ui.Food.FoodAdapter
+
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint

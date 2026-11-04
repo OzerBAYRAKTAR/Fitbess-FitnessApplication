@@ -31,7 +31,6 @@ class HomePageFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, state: Bundle?) {
-        binding.profileButton.setOnClickListener { navigate(R.id.id_profile_fragment) }
         binding.heroAction.setOnClickListener { openProgram(resumeTarget ?: ProgramResumeTarget(1, 1)) }
         binding.programBeginner.setOnClickListener { openProgram(ProgramResumeTarget(1, 1)) }
         binding.programIntermediate.setOnClickListener { openProgram(ProgramResumeTarget(2, 1)) }

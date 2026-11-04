@@ -79,7 +79,7 @@ class ExerciseMovesFragment : Fragment() {
         val moves = args.exerciseNewList ?: return
         if (moves.isEmpty()) return
         index = index.coerceIn(moves.indices)
-        binding.moveGif.setImageResource(moves[index].image)
+        binding.moveGif.setImageResource(com.bayraktar.healthybackandneck.utils.ExerciseMedia.drawable(moves[index]))
         binding.exerciceName.text = moves[index].exerciseName
         binding.sessionTitle.text = com.bayraktar.healthybackandneck.utils.workoutSessionTitle(requireContext(), args.exerciseDayModel)
         binding.sessionProgress.max = moves.size

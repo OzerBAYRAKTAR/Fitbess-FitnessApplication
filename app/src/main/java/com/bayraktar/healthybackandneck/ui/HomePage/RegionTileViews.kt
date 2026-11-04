@@ -2,6 +2,7 @@ package com.bayraktar.healthybackandneck.ui.HomePage
 
 import android.view.LayoutInflater
 import android.widget.GridLayout
+import androidx.core.view.doOnLayout
 import com.bayraktar.healthybackandneck.databinding.ItemRegionTileBinding
 
 fun populateRegionGrid(grid: GridLayout, regions: List<TrainingRegion>, onClick: (TrainingRegion) -> Unit) {
@@ -21,5 +22,10 @@ fun populateRegionGrid(grid: GridLayout, regions: List<TrainingRegion>, onClick:
             setMargins(gap, gap, gap, gap)
         }
         grid.addView(item.root)
+    }
+    // Reserve enough space for the longest localized label, also with large fonts.
+    grid.doOnLayout {
+        val height = (0 until grid.childCount).maxOfOrNull { grid.getChildAt(it).measuredHeight } ?: 0
+        for (index in 0 until grid.childCount) grid.getChildAt(index).minimumHeight = height
     }
 }

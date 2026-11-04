@@ -58,7 +58,7 @@ class MoveListAdapter(
         val model = lsMenu[position]
 
         holder.binding.apply {
-            val imageDrawable = ContextCompat.getDrawable(root.context, model.image)
+            val imageDrawable = ContextCompat.getDrawable(root.context, com.bayraktar.healthybackandneck.utils.ExerciseMedia.drawable(model))
             roundedImageView.setImageDrawable(imageDrawable)
             labelDay.text = model.exerciseName
             lockBadge.visibility = if (earned != null && !com.bayraktar.healthybackandneck.utils.MoveAccess.allowed(model, earned.orEmpty(), adFree)) View.VISIBLE else View.GONE

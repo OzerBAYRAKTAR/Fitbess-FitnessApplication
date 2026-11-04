@@ -72,7 +72,7 @@ class BackFragment : Fragment(), RecyclerViewClickListener {
                             val exerciseGif: GifImageView = dialogView.findViewById(R.id.infoFavouriteGif)
 
                             exerciseTitle.text = currentModel.exerciseName
-                            exerciseGif.setImageResource(currentModel.image)
+                            exerciseGif.setImageResource(com.bayraktar.healthybackandneck.utils.ExerciseMedia.drawable(currentModel))
                             exerciseDescription.text = currentModel.exerciseDescription
 
 

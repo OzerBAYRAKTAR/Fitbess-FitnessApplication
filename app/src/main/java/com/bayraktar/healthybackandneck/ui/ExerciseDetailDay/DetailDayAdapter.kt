@@ -51,7 +51,7 @@ class DetailDayAdapter(
 
         holder.binding.apply {
             val imageDrawable = try {
-                ContextCompat.getDrawable(root.context, model.image)
+                ContextCompat.getDrawable(root.context, com.bayraktar.healthybackandneck.utils.ExerciseMedia.drawable(model))
             } catch (e: Resources.NotFoundException) {
                 ContextCompat.getDrawable(root.context, R.drawable.placehlder)
             }

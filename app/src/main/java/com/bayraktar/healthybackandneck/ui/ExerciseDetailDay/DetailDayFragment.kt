@@ -147,7 +147,7 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
         val preview = layoutInflater.inflate(R.layout.info_favourite_layout, null)
         preview.findViewById<TextView>(R.id.exerciseFavouriteTitle).text = model.exerciseName
         preview.findViewById<TextView>(R.id.exerciseFavouriteDescription).text = model.exerciseDescription
-        preview.findViewById<GifImageView>(R.id.infoFavouriteGif).setImageResource(model.image)
+        preview.findViewById<GifImageView>(R.id.infoFavouriteGif).setImageResource(com.bayraktar.healthybackandneck.utils.ExerciseMedia.drawable(model))
         AlertDialog.Builder(requireContext()).setView(preview).setPositiveButton(R.string.close, null).show()
     }
 
