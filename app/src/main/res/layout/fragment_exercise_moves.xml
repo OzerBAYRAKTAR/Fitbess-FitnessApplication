@@ -33,7 +33,7 @@
             </LinearLayout>
             <ProgressBar android:id="@+id/sessionProgress" style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent" android:layout_height="4dp" android:progressTint="@color/fit_primary" android:progressBackgroundTint="@color/fit_soft"/>
-            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="32dp">
                 <pl.droidsonroids.gif.GifImageView android:id="@+id/moveGif" android:layout_width="0dp" android:layout_height="0dp"
                     app:layout_constraintWidth_max="440dp" app:layout_constraintDimensionRatio="3:2"
                     app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
                     android:scaleType="fitCenter" android:importantForAccessibility="no"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
             <FrameLayout android:id="@+id/timerContainer" android:layout_width="144dp" android:layout_height="144dp"
-                android:layout_gravity="center_horizontal" android:layout_marginTop="16dp">
+                android:layout_gravity="center_horizontal" android:layout_marginTop="32dp">
                 <ProgressBar android:id="@+id/pbTimer" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent"
                     android:layout_height="match_parent" android:progressDrawable="@drawable/workout_timer_ring" android:max="30"/>
                 <androidx.appcompat.widget.AppCompatTextView android:id="@+id/txtTimeLeft" tools:viewBindingType="android.widget.TextView" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center"
