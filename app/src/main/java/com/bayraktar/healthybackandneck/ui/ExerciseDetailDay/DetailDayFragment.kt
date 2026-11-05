@@ -45,13 +45,14 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
         val args = DetailDayFragmentArgs.fromBundle(requireArguments())
         exerciseDayModel = args.exerciseDayModel
         exerciseList = args.exerciseNewList.orEmpty().toList()
-        binding.workoutTitle.text = args.exerciseLevel.trim()
-        binding.detaildaySecond.visibility = if (exerciseDayModel == null) View.GONE else View.VISIBLE
+        binding.workoutTitle.text = if (exerciseDayModel == null) args.exerciseLevel.trim() else com.bayraktar.healthybackandneck.utils.workoutSessionTitle(requireContext(), exerciseDayModel)
+        binding.detaildaySecond.visibility = View.GONE
         binding.txtdaysecond.visibility = binding.detaildaySecond.visibility
         binding.txtdaysecond.text = exerciseDayModel?.day?.toString().orEmpty()
         binding.txtWorkoutCount.text = exerciseList.size.toString()
         binding.txttime.text = (exerciseDayModel?.exerciseTime ?: ((exerciseList.size * 30 + 59) / 60)).toString()
         binding.metricCalories.visibility = if (exerciseDayModel != null) View.VISIBLE else View.GONE
+        binding.calorieDivider.visibility = binding.metricCalories.visibility
         binding.txtcalorie.text = exerciseDayModel?.exerciseKcal?.toString().orEmpty()
         binding.backButton.setOnClickListener { view.findNavController().popBackStack() }
         adapter = DetailDayAdapter(exerciseList, this)
@@ -104,7 +105,8 @@ class DetailDayFragment : Fragment(), RecyclerViewClickListener {
             list.isEmpty() -> getString(R.string.unlock_to_start)
             else -> getString(R.string.start_available, list.size)
         }
-        binding.startExercise.icon = if (unlockAction) ContextCompat.getDrawable(requireContext(), R.drawable.fit_lock) else null
+        binding.startExercise.icon = ContextCompat.getDrawable(requireContext(), if (unlockAction) R.drawable.fit_lock else R.drawable.fit_play)
+        binding.startExercise.iconGravity = if (unlockAction) com.google.android.material.button.MaterialButton.ICON_GRAVITY_TEXT_END else com.google.android.material.button.MaterialButton.ICON_GRAVITY_TEXT_START
         if (unlockAction) {
             val lockedTint = ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.fit_border))
             val lockedContentTint = ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.fit_text))

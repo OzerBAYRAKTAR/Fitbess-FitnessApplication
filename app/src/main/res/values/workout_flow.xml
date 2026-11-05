@@ -8,4 +8,5 @@
 <string name="workout_day_ready">Antrenmana hazır</string>
 <string name="workout_rest_heading">Kısa bir mola</string>
 <string name="workout_program_length">21 günlük program</string>
+<string name="workout_continue_day">%1$d. güne devam et</string>
 </resources>

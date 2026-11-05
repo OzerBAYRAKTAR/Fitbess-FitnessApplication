@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="10dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/fit_card" android:foreground="?attr/selectableItemBackground" android:focusable="true" android:padding="10dp" android:minHeight="96dp">
- <com.google.android.material.imageview.ShapeableImageView android:id="@+id/roundedImageView" android:layout_width="72dp" android:layout_height="72dp" android:scaleType="fitCenter" android:importantForAccessibility="no" app:shapeAppearanceOverlay="@style/roundedImageStyletwenty"/>
- <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:paddingHorizontal="14dp" android:importantForAccessibility="noHideDescendants">
-  <TextView android:id="@+id/movementNumber" style="@style/FitCaption" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/fit_primary"/>
-  <TextView android:id="@+id/labelDay" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:textColor="@color/fit_text" android:fontFamily="sans-serif-medium"/>
-  <TextView android:id="@+id/txtExerciseCount" style="@style/FitCaption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="10dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/fit_card" android:foreground="?attr/selectableItemBackground" android:focusable="true" android:padding="10dp" android:minHeight="80dp">
+ <TextView android:id="@+id/movementNumber" style="@style/FitSection" android:layout_width="32dp" android:layout_height="wrap_content" android:textColor="@color/fit_primary" android:importantForAccessibility="no"/>
+ <com.google.android.material.imageview.ShapeableImageView android:id="@+id/roundedImageView" android:layout_width="84dp" android:layout_height="64dp" android:scaleType="fitCenter" android:importantForAccessibility="no" app:shapeAppearanceOverlay="@style/roundedImageStyletwenty"/>
+ <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:paddingHorizontal="10dp" android:importantForAccessibility="noHideDescendants">
+  <TextView android:id="@+id/labelDay" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/fit_text" android:fontFamily="sans-serif-medium"/>
+  <TextView android:id="@+id/txtExerciseCount" style="@style/FitCaption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp"/>
  </LinearLayout>
- <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/discovery_chevron" android:contentDescription="@null"/>
+ <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/fit_info" android:contentDescription="@null" app:tint="@color/fit_text"/>
 </LinearLayout>

@@ -1,66 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical" android:background="@color/fit_background">
-    <androidx.core.widget.NestedScrollView android:id="@+id/playerScroll"
-        android:layout_width="match_parent" android:layout_height="0dp"
-        android:layout_weight="1" android:fillViewport="true" android:clipToPadding="false">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="vertical" android:padding="16dp">
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
-                <ImageView android:id="@+id/quitExerciseToDetailDay" android:layout_width="48dp" android:layout_height="48dp"
-                    android:padding="12dp" android:src="@drawable/fit_close" android:contentDescription="@string/exit_workout"
-                    android:background="?attr/selectableItemBackgroundBorderless" android:clickable="true" android:focusable="true" app:tint="@color/fit_primary"/>
-                <TextView android:id="@+id/exerciceName" style="@style/FitTitle" android:layout_width="0dp" android:layout_weight="1"
-                    android:layout_height="wrap_content" android:gravity="center" android:textSize="24sp"/>
-                <ImageView android:id="@+id/favoritebtn" android:layout_width="48dp" android:layout_height="48dp" android:padding="12dp"
-                    android:src="@drawable/favorite_selector" android:contentDescription="@string/add_favorite"
-                    android:background="?attr/selectableItemBackgroundBorderless" android:clickable="true" android:focusable="true" app:tint="@color/fit_primary"/>
-            </LinearLayout>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
-                <Space android:layout_width="48dp" android:layout_height="1dp"/>
-                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical">
-                    <TextView android:id="@+id/sessionTitle" style="@style/FitCaption" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center"/>
-                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center">
-                        <TextView android:id="@+id/txtRank" style="@style/FitCaption" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                        <TextView android:id="@+id/albelRank" style="@style/FitCaption" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                </LinearLayout>
-                <ImageView android:id="@+id/exerciseInfo" android:layout_width="48dp" android:layout_height="48dp" android:padding="12dp"
-                    android:src="@drawable/fit_info" android:contentDescription="@string/desc" android:background="?attr/selectableItemBackgroundBorderless"
-                    android:clickable="true" android:focusable="true" app:tint="@color/fit_primary"/>
-            </LinearLayout>
-            <ProgressBar android:id="@+id/sessionProgress" style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent" android:layout_height="4dp" android:progressTint="@color/fit_primary" android:progressBackgroundTint="@color/fit_soft"/>
-            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="32dp">
-                <pl.droidsonroids.gif.GifImageView android:id="@+id/moveGif" android:layout_width="0dp" android:layout_height="0dp"
-                    app:layout_constraintWidth_max="440dp" app:layout_constraintDimensionRatio="3:2"
-                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-                    android:scaleType="fitCenter" android:importantForAccessibility="no"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <FrameLayout android:id="@+id/timerContainer" android:layout_width="144dp" android:layout_height="144dp"
-                android:layout_gravity="center_horizontal" android:layout_marginTop="32dp">
-                <ProgressBar android:id="@+id/pbTimer" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:progressDrawable="@drawable/workout_timer_ring" android:max="30"/>
-                <androidx.appcompat.widget.AppCompatTextView android:id="@+id/txtTimeLeft" tools:viewBindingType="android.widget.TextView" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center"
-                    android:textSize="40sp" android:maxLines="1" app:autoSizeTextType="uniform" app:autoSizeMinTextSize="24sp" app:autoSizeMaxTextSize="40sp" app:autoSizeStepGranularity="1sp" android:textColor="@color/fit_text" android:fontFamily="sans-serif-medium"/>
-            </FrameLayout>
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-    <LinearLayout android:id="@+id/playerControls" android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:gravity="center" android:paddingHorizontal="24dp" android:paddingVertical="16dp">
-        <ImageView android:id="@+id/goBack" android:layout_width="56dp" android:layout_height="56dp" android:padding="12dp"
-            android:src="@drawable/fit_previous" android:contentDescription="@string/previous_move" android:background="?attr/selectableItemBackgroundBorderless"
-            android:clickable="true" android:focusable="true" app:tint="@color/fit_primary"/>
-        <ImageView android:id="@+id/playpause" android:layout_width="0dp" android:layout_weight="1" android:layout_height="60dp"
-            android:layout_marginHorizontal="20dp" android:padding="16dp" android:src="@drawable/fit_pause" android:background="@drawable/fit_play_button_bg"
-            android:contentDescription="@string/pause_workout" android:clickable="true" android:focusable="true" app:tint="@android:color/white"/>
-        <ImageView android:id="@+id/goNext" android:layout_width="56dp" android:layout_height="56dp" android:padding="12dp"
-            android:src="@drawable/fit_next" android:contentDescription="@string/skip_move" android:background="?attr/selectableItemBackgroundBorderless"
-            android:clickable="true" android:focusable="true" app:tint="@color/fit_primary"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+ android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@drawable/workout_wave">
+ <androidx.core.widget.NestedScrollView android:id="@+id/playerScroll" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true" android:clipToPadding="false">
+  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+   <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+    <ImageView android:id="@+id/quitExerciseToDetailDay" android:layout_width="48dp" android:layout_height="48dp" android:padding="12dp" android:src="@drawable/fit_close" android:contentDescription="@string/exit_workout" android:background="?attr/selectableItemBackgroundBorderless" android:clickable="true" android:focusable="true" app:tint="@color/fit_text"/>
+    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical">
+     <TextView android:id="@+id/sessionTitle" style="@style/FitSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:textSize="18sp"/>
+     <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center">
+      <TextView android:id="@+id/txtRank" style="@style/FitBody" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+      <TextView android:id="@+id/albelRank" style="@style/FitBody" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+     </LinearLayout>
     </LinearLayout>
-    <com.google.android.gms.ads.AdView android:id="@+id/adView" android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal" app:adSize="BANNER" app:adUnitId="@string/ad_banner_exercise"/>
+    <ImageView android:id="@+id/exerciseInfo" android:layout_width="48dp" android:layout_height="48dp" android:padding="12dp" android:src="@drawable/fit_info" android:contentDescription="@string/desc" android:background="?attr/selectableItemBackgroundBorderless" android:clickable="true" android:focusable="true" app:tint="@color/fit_text"/>
+   </LinearLayout>
+   <com.bayraktar.healthybackandneck.ui.views.WorkoutSegmentProgress android:id="@+id/sessionProgress" tools:viewBindingType="android.widget.ProgressBar" android:layout_width="match_parent" android:layout_height="8dp" android:layout_marginHorizontal="12dp" android:layout_marginTop="16dp"/>
+   <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp">
+    <pl.droidsonroids.gif.GifImageView android:id="@+id/moveGif" android:layout_width="0dp" android:layout_height="0dp" app:layout_constraintWidth_max="440dp" app:layout_constraintDimensionRatio="3:2" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:scaleType="fitCenter" android:importantForAccessibility="no"/>
+   </androidx.constraintlayout.widget.ConstraintLayout>
+   <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:gravity="center_vertical">
+    <Space android:layout_width="48dp" android:layout_height="1dp"/>
+    <TextView android:id="@+id/exerciceName" style="@style/FitTitle" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:textSize="26sp" android:textStyle="bold"/>
+    <ImageView android:id="@+id/favoritebtn" android:layout_width="48dp" android:layout_height="48dp" android:padding="12dp" android:src="@drawable/favorite_selector" android:contentDescription="@string/add_favorite" android:background="?attr/selectableItemBackgroundBorderless" android:clickable="true" android:focusable="true" app:tint="@color/fit_text"/>
+   </LinearLayout>
+   <FrameLayout android:id="@+id/timerContainer" android:layout_width="200dp" android:layout_height="112dp" android:layout_gravity="center_horizontal" android:layout_marginTop="16dp">
+    <com.bayraktar.healthybackandneck.ui.views.WorkoutArcProgress android:id="@+id/pbTimer" tools:viewBindingType="android.widget.ProgressBar" android:layout_width="match_parent" android:layout_height="match_parent" android:max="30"/>
+    <androidx.appcompat.widget.AppCompatTextView android:id="@+id/txtTimeLeft" tools:viewBindingType="android.widget.TextView" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="bottom|center_horizontal" android:paddingBottom="4dp" android:textSize="40sp" android:maxLines="1" app:autoSizeTextType="uniform" app:autoSizeMinTextSize="24sp" app:autoSizeMaxTextSize="40sp" app:autoSizeStepGranularity="1sp" android:textColor="@color/fit_text" android:fontFamily="sans-serif-black"/>
+   </FrameLayout>
+  </LinearLayout>
+ </androidx.core.widget.NestedScrollView>
+ <LinearLayout android:id="@+id/playerControls" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:paddingHorizontal="20dp" android:paddingVertical="16dp">
+  <ImageView android:id="@+id/goBack" android:layout_width="52dp" android:layout_height="52dp" android:padding="14dp" android:src="@drawable/fit_previous" android:contentDescription="@string/previous_move" android:background="@drawable/workout_control_outline" android:clickable="true" android:focusable="true" app:tint="@color/fit_primary"/>
+  <LinearLayout android:id="@+id/pauseControl" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="56dp" android:layout_marginHorizontal="8dp" android:paddingHorizontal="8dp" android:paddingVertical="8dp" android:gravity="center" android:background="@drawable/workout_pause_background" android:clickable="true" android:focusable="true" android:contentDescription="@string/pause_workout">
+   <ImageView android:id="@+id/playpause" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/fit_pause" android:contentDescription="@string/pause_workout" android:importantForAccessibility="no" app:tint="@android:color/white"/>
+   <TextView android:id="@+id/pauseLabel" android:minLines="2" android:maxLines="2" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="@string/pause_workout" android:textSize="16sp" android:textStyle="bold" android:textColor="@android:color/white" android:importantForAccessibility="no"/>
+  </LinearLayout>
+  <ImageView android:id="@+id/goNext" android:layout_width="52dp" android:layout_height="52dp" android:padding="14dp" android:src="@drawable/fit_next" android:contentDescription="@string/skip_move" android:background="@drawable/workout_control_outline" android:clickable="true" android:focusable="true" app:tint="@color/fit_primary"/>
+ </LinearLayout>
+ <com.google.android.gms.ads.AdView android:id="@+id/adView" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:visibility="gone" app:adSize="BANNER" app:adUnitId="@string/ad_banner_exercise"/>
 </LinearLayout>

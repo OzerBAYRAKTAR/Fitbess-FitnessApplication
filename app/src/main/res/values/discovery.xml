@@ -20,4 +20,9 @@
  <string name="discovery_level_advanced">İleri</string>
 <string name="region_back_neck">Bel ve Boyun</string>
 <string name="region_legs_glutes">Bacak ve Kalça</string>
+ <string name="discovery_choose_level">3 seviyeden birini seç</string>
+ <string name="discovery_choose_level_hint">Günleri görmek için bir seviyeye dokun.</string>
+    <string name="discovery_program_beginner">1 · Başlangıç</string>
+    <string name="discovery_program_intermediate">2 · Orta</string>
+    <string name="discovery_program_advanced">3 · İleri</string>
 </resources>

@@ -20,4 +20,9 @@
  <string name="discovery_level_advanced">Продвинутый</string>
 <string name="region_back_neck">Спина и шея</string>
 <string name="region_legs_glutes">Ноги и ягодицы</string>
+ <string name="discovery_choose_level">Выбери один из 3 уровней</string>
+ <string name="discovery_choose_level_hint">Нажми на уровень, чтобы посмотреть дни тренировок.</string>
+    <string name="discovery_program_beginner">1 · Начальный</string>
+    <string name="discovery_program_intermediate">2 · Средний</string>
+    <string name="discovery_program_advanced">3 · Продвинутый</string>
 </resources>

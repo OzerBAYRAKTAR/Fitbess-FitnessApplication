@@ -17,6 +17,7 @@ class ExerciseDetailSecondAdapter(
 ): RecyclerView.Adapter<ExerciseDetailSecondAdapter.ItemHolder>() {
 
     var completedDays: Set<Int> = emptySet()
+    var resumeDay: Int? = null
     var adFree = false
     var rewardedWorkoutDayKeys: Set<String> = emptySet()
     var exerciseCounts: Map<Int, Int>? = null
@@ -44,7 +45,7 @@ class ExerciseDetailSecondAdapter(
 
         holder.binding.apply {
             val unlocked = model.isCompleted || adFree || "${model.level}:${model.day}" in rewardedWorkoutDayKeys
-            val currentDay = lsMenu.firstOrNull { it.day !in completedDays && (it.isCompleted || adFree || "${it.level}:${it.day}" in rewardedWorkoutDayKeys) }?.day
+            val currentDay = lsMenu.getOrNull(continuePosition())?.day
             dayState.setText(when {
                 model.day in completedDays -> R.string.workout_day_complete
                 !unlocked -> R.string.workout_day_locked_hint
@@ -52,6 +53,7 @@ class ExerciseDetailSecondAdapter(
                 else -> R.string.workout_day_ready
             })
             cardview1.setCardBackgroundColor(androidx.core.content.ContextCompat.getColor(root.context, if (model.day == currentDay) R.color.fit_soft else android.R.color.white))
+            cardview1.strokeColor = androidx.core.content.ContextCompat.getColor(root.context, if (model.day == currentDay) R.color.fit_primary else R.color.fit_border)
             txtDay.text = model.day.toString()
             txtExerciseCount.text = (exerciseCounts?.get(model.dayId)
                 ?: if (exerciseCounts != null) 0 else model.exerciseCount).toString()
@@ -59,13 +61,15 @@ class ExerciseDetailSecondAdapter(
             txtExerciseKcal.text = model.exerciseKcal.toString()
 
             if (model.isCompleted || adFree || "${model.level}:${model.day}" in rewardedWorkoutDayKeys) {
-                lock.visibility = View.GONE
+                lock.visibility = View.VISIBLE
+                lock.setImageResource(if (model.day in completedDays) R.drawable.fit_check_circle else R.drawable.discovery_chevron)
                 cardview1.setOnClickListener {
                     exerciseItemClickListener.onExerciseItemClicked(position, false)
 
                 }
             }else {
                 lock.visibility = View.VISIBLE
+                lock.setImageResource(R.drawable.fit_lock)
                 cardview1.setOnClickListener {
                     exerciseItemClickListener.onExerciseItemClicked(position, true)
 
@@ -75,5 +79,7 @@ class ExerciseDetailSecondAdapter(
         }
     }
 
+    fun continuePosition(): Int = com.bayraktar.healthybackandneck.utils.continueDayPosition(lsMenu, completedDays, rewardedWorkoutDayKeys, adFree, resumeDay)
+    fun continueTarget(): Pair<Int, Int>? { val position = continuePosition(); return lsMenu.getOrNull(position)?.let { position to it.day } }
     override fun getItemCount(): Int = lsMenu.size
 }

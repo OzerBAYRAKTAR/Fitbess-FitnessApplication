@@ -66,12 +66,15 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         setRecyclerview()
-        listOf(binding.week1, binding.week2, binding.week3).forEachIndexed { week, button ->
-            button.setOnClickListener { (binding.listDaysOfWeek.layoutManager as? LinearLayoutManager)?.scrollToPositionWithOffset(week * 7, 0) }
-        }
+        com.bayraktar.healthybackandneck.utils.bindWorkoutDayControls(
+            viewLifecycleOwner, binding.listDaysOfWeek, listOf(binding.week1, binding.week2, binding.week3), binding.continueDay,
+            target = { thirdAdapter.continueTarget() },
+            onContinue = { position -> onExerciseItemClicked(position, false) }
+        )
         viewLifecycleOwner.lifecycleScope.launch {
             discovery.sessions.collect { sessions ->
                 thirdAdapter.completedDays = sessions.filter { it.level == 3 && it.isComplete }.map { it.day }.toSet()
+                thirdAdapter.resumeDay = sessions.filter { it.level == 3 && !it.isComplete && it.day !in thirdAdapter.completedDays }.maxByOrNull { it.endedAt }?.day
                 thirdAdapter.notifyDataSetChanged()
             }
         }

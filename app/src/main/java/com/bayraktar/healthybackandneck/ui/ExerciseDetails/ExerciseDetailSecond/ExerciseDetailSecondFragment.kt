@@ -71,14 +71,15 @@ class ExerciseDetailSecondFragment : Fragment(), ExerciseItemClickListener {
         myRewardedAds = RewardedAds(requireActivity(), viewLifecycleOwner)
         myRewardedAds?.loadRewardedAds(R.string.rewarded_ad2)
         setRecyclerview()
-        listOf(binding.week1, binding.week2, binding.week3).forEachIndexed { week, button ->
-            button.setOnClickListener {
-                (binding.listDaysOfWeek.layoutManager as? LinearLayoutManager)?.scrollToPositionWithOffset(week * 7, 0)
-            }
-        }
+        com.bayraktar.healthybackandneck.utils.bindWorkoutDayControls(
+            viewLifecycleOwner, binding.listDaysOfWeek, listOf(binding.week1, binding.week2, binding.week3), binding.continueDay,
+            target = { secondAdapter.continueTarget() },
+            onContinue = { position -> onExerciseItemClicked(position, false) }
+        )
         viewLifecycleOwner.lifecycleScope.launch {
             discovery.sessions.collect { sessions ->
                 secondAdapter.completedDays = sessions.filter { it.level == 2 && it.isComplete }.map { it.day }.toSet()
+                secondAdapter.resumeDay = sessions.filter { it.level == 2 && !it.isComplete && it.day !in secondAdapter.completedDays }.maxByOrNull { it.endedAt }?.day
                 secondAdapter.notifyDataSetChanged()
             }
         }

@@ -20,4 +20,9 @@
  <string name="discovery_level_advanced">Advanced</string>
 <string name="region_back_neck">Back &amp; Neck</string>
 <string name="region_legs_glutes">Legs &amp; Glutes</string>
+ <string name="discovery_choose_level">Choose from 3 levels</string>
+ <string name="discovery_choose_level_hint">Tap a level to view its workout days.</string>
+    <string name="discovery_program_beginner">1 · Beginner</string>
+    <string name="discovery_program_intermediate">2 · Intermediate</string>
+    <string name="discovery_program_advanced">3 · Advanced</string>
 </resources>

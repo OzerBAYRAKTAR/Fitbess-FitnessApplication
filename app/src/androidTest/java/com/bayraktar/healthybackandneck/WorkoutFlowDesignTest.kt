@@ -52,6 +52,10 @@ class WorkoutFlowDesignTest {
     await(s){it.findViewById<View>(id)!=null}; s.onActivity{it.findViewById<View>(id).performClick()}
     await(s){it.findViewById<RecyclerView>(R.id.listDaysOfWeek)?.adapter?.itemCount==21}
     shot("level-${index+1}")
+    s.onActivity { assertTrue(it.findViewById<View>(R.id.continueDay).isEnabled); it.findViewById<View>(R.id.continueDay).performClick() }
+    await(s){nav(it).currentDestination?.id==R.id.detailDayFragment}
+    s.onActivity{it.findViewById<View>(R.id.backButton).performClick()}
+    await(s){it.findViewById<View>(R.id.week3)!=null}
     s.onActivity{it.findViewById<View>(R.id.week3).performClick()}
     await(s){(it.findViewById<RecyclerView>(R.id.listDaysOfWeek).layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()==14}
     s.onActivity{it.findViewById<View>(R.id.week1).performClick()}
@@ -73,7 +77,7 @@ class WorkoutFlowDesignTest {
   ActivityScenario.launch(HomeActivity::class.java).use { s ->
    s.onActivity{nav(it).navigate(R.id.exerciseMovesFragment2,Bundle().apply{putInt("exerciseIndex",0);putParcelableArray("exerciseNewList",moves.toTypedArray());putParcelable("exerciseDayModel",day)})}
    await(s){it.findViewById<View>(R.id.playpause)!=null}
-   s.onActivity{it.findViewById<View>(R.id.playpause).performClick()}
+   s.onActivity{it.findViewById<View>(R.id.pauseControl).performClick()}
    var paused=""; s.onActivity{paused=it.findViewById<TextView>(R.id.txtTimeLeft).text.toString()}
    s.recreate(); inst.waitForIdleSync(); android.os.SystemClock.sleep(1100)
    s.onActivity{assertEquals(paused,it.findViewById<TextView>(R.id.txtTimeLeft).text.toString());assertEquals(it.getString(R.string.resume_workout),it.findViewById<View>(R.id.playpause).contentDescription)}
@@ -92,5 +96,32 @@ class WorkoutFlowDesignTest {
    await(s){nav(it).currentDestination?.id==R.id.exerciseMovesFragment2}
    s.onActivity{assertEquals("2",it.findViewById<TextView>(R.id.txtRank).text.toString());it.findViewById<View>(R.id.playpause).performClick();it.findViewById<View>(R.id.goBack).performClick();assertEquals("1",it.findViewById<TextView>(R.id.txtRank).text.toString())}
   }
+ }
+ @Test fun adFreePlayerHasNoReservedBannerSpace() {
+  val manager = com.bayraktar.healthybackandneck.utils.RevenueCatManager
+  val field = manager.javaClass.getDeclaredField("_adFree").apply { isAccessible = true }
+  @Suppress("UNCHECKED_CAST")
+  val entitlement = field.get(manager) as kotlinx.coroutines.flow.MutableStateFlow<Boolean?>
+  val previous = entitlement.value
+  try {
+   ActivityScenario.launch(HomeActivity::class.java).use { s ->
+    val day = WorkoutCatalogParser.readDays(inst.targetContext,"firstday.json").first()
+    val moves = WorkoutCatalogParser.readExercises(inst.targetContext,1).filter { it.dayId == day.dayId }
+    s.onActivity {
+     entitlement.value = true // In-memory presentation fixture only; no purchase/persistent entitlement is changed.
+     nav(it).navigate(R.id.exerciseMovesFragment2, Bundle().apply {
+      putInt("exerciseIndex",0); putParcelableArray("exerciseNewList",moves.toTypedArray()); putParcelable("exerciseDayModel",day)
+     })
+    }
+    await(s){it.findViewById<View>(R.id.playerControls)?.height?.let { h -> h > 0 } == true}
+    s.onActivity {
+     val controls = it.findViewById<View>(R.id.playerControls)
+     assertEquals(View.GONE, it.findViewById<View>(R.id.adView).visibility)
+     assertEquals("No ad placeholder after controls", (controls.parent as View).height, controls.bottom)
+     it.findViewById<View>(R.id.pauseControl).performClick()
+    }
+    shot("adfree-player")
+   }
+  } finally { entitlement.value = previous }
  }
 }

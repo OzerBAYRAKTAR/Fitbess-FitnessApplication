@@ -53,6 +53,7 @@ class ExerciseMovesFragment : Fragment() {
             if (paused) { paused = false; startClock() } else { paused = true; stopClock() }
             renderTimer()
         }
+        binding.pauseControl.setOnClickListener { binding.playpause.performClick() }
         binding.exerciseInfo.setOnClickListener {
             val wasPaused = paused
             paused = true; stopClock()
@@ -97,6 +98,8 @@ class ExerciseMovesFragment : Fragment() {
         binding.pbTimer.progress = ((remaining + 999) / 1000).toInt()
         binding.playpause.setImageResource(if (paused) R.drawable.fit_play else R.drawable.fit_pause)
         binding.playpause.contentDescription = getString(if (paused) R.string.resume_workout else R.string.pause_workout)
+        binding.pauseControl.contentDescription = binding.playpause.contentDescription
+        binding.pauseLabel.text = binding.playpause.contentDescription
     }
     private fun startClock() {
         if (timecountDown != null || paused || !isResumed) return

@@ -8,4 +8,5 @@
 <string name="workout_day_ready">Bereit fürs Training</string>
 <string name="workout_rest_heading">Eine kurze Pause</string>
 <string name="workout_program_length">21-Tage-Programm</string>
+<string name="workout_continue_day">Weiter mit Tag %1$d</string>
 </resources>

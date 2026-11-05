@@ -20,4 +20,9 @@
  <string name="discovery_level_advanced">Fortgeschritten</string>
 <string name="region_back_neck">Rücken &amp; Nacken</string>
 <string name="region_legs_glutes">Beine &amp; Gesäß</string>
+ <string name="discovery_choose_level">Wähle aus 3 Levels</string>
+ <string name="discovery_choose_level_hint">Tippe auf ein Level, um die Trainingstage zu sehen.</string>
+    <string name="discovery_program_beginner">1 · Anfänger</string>
+    <string name="discovery_program_intermediate">2 · Mittel</string>
+    <string name="discovery_program_advanced">3 · Fortgeschritten</string>
 </resources>

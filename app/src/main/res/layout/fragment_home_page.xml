@@ -21,10 +21,12 @@
    </LinearLayout>
   </LinearLayout>
  </com.google.android.material.card.MaterialCardView>
- <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal" android:baselineAligned="false">
-  <com.google.android.material.button.MaterialButton android:id="@+id/programBeginner" style="@style/DiscoveryLevelChip" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/discovery_level_beginner" android:contentDescription="@string/hometitle1"/>
-  <com.google.android.material.button.MaterialButton android:id="@+id/programIntermediate" style="@style/DiscoveryLevelChip" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginHorizontal="5dp" android:text="@string/discovery_level_intermediate" android:contentDescription="@string/hometitle2"/>
-  <com.google.android.material.button.MaterialButton android:id="@+id/programAdvanced" style="@style/DiscoveryLevelChip" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/discovery_level_advanced" android:contentDescription="@string/hometitle3"/>
+ <TextView style="@style/FitSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/discovery_choose_level" android:accessibilityHeading="true"/>
+ <TextView style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/discovery_choose_level_hint"/>
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="vertical">
+  <com.google.android.material.button.MaterialButton android:id="@+id/programBeginner" style="@style/DiscoveryProgramButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/discovery_program_beginner"/>
+  <com.google.android.material.button.MaterialButton android:id="@+id/programIntermediate" style="@style/DiscoveryProgramButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/discovery_program_intermediate"/>
+  <com.google.android.material.button.MaterialButton android:id="@+id/programAdvanced" style="@style/DiscoveryProgramButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/discovery_program_advanced"/>
  </LinearLayout>
  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:gravity="center_vertical" android:orientation="horizontal">
   <TextView style="@style/FitSection" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/discovery_choose_region"/>

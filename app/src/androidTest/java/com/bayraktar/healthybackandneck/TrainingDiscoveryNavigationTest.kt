@@ -55,6 +55,17 @@ class TrainingDiscoveryNavigationTest {
                 ActivityScenario.launch(HomeActivity::class.java).use { scenario ->
                     await(scenario) { it.findViewById<View>(R.id.heroAction) != null }
                     capture("${prefix}home-$language")
+                    scenario.onActivity { a ->
+                        val group = a.findViewById<View>(R.id.programBeginner).parent as View
+                        group.requestRectangleOnScreen(android.graphics.Rect(0, -180, group.width, group.height), true)
+                        for (id in listOf(R.id.programBeginner, R.id.programIntermediate, R.id.programAdvanced)) {
+                            val button = a.findViewById<TextView>(id)
+                            assertTrue(button.isClickable && button.height >= 48 * a.resources.displayMetrics.density)
+                            assertTrue(button.height >= button.layout.height)
+                            for (line in 0 until button.lineCount) assertEquals(0, button.layout.getEllipsisCount(line))
+                        }
+                    }
+                    capture("${prefix}selector-$language")
                     scenario.onActivity { it.findViewById<View>(R.id.allRegions).performClick() }
                     await(scenario) { nav(it).currentDestination?.id == R.id.bodyRegionFragment && it.findViewById<View>(R.id.bodyMap) != null }
                     capture("${prefix}body-$language")
@@ -93,7 +104,7 @@ class TrainingDiscoveryNavigationTest {
                 assertEquals(1, args.exerciseDayModel!!.day)
                 assertTrue(args.exerciseNewList!!.isNotEmpty())
                 assertEquals(args.exerciseNewList!!.size.toString(), it.findViewById<TextView>(R.id.txtWorkoutCount).text.toString())
-                assertEquals(args.exerciseLevel.trim(), it.findViewById<TextView>(R.id.workoutTitle).text.toString())
+                assertEquals(com.bayraktar.healthybackandneck.utils.workoutSessionTitle(it, args.exerciseDayModel), it.findViewById<TextView>(R.id.workoutTitle).text.toString())
             }
             capture("day-detail")
             scenario.onActivity { nav(it).popBackStack(R.id.id_homepage_fragment, false) }
