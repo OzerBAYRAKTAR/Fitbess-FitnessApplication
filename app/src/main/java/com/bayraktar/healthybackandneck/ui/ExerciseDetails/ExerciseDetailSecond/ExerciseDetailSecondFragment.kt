@@ -106,9 +106,7 @@ class ExerciseDetailSecondFragment : Fragment(), ExerciseItemClickListener {
         backstack()
 
         binding.imageBack.setOnClickListener {
-            val action =
-                ExerciseDetailSecondFragmentDirections.actionExerciseDetailSecondFragmentToIdHomepageFragment()
-            view.findNavController().navigate(action)
+            view?.findNavController()?.navigateUp()
         }
 
         viewModel.fetchExerciseDayExercisesWithLevelTwo()
@@ -119,9 +117,7 @@ class ExerciseDetailSecondFragment : Fragment(), ExerciseItemClickListener {
     private fun backstack() {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                val action =
-                    ExerciseDetailSecondFragmentDirections.actionExerciseDetailSecondFragmentToIdHomepageFragment()
-                view?.findNavController()?.navigate(action)
+                view?.findNavController()?.navigateUp()
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)

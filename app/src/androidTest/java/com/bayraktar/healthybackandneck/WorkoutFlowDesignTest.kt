@@ -48,6 +48,8 @@ class WorkoutFlowDesignTest {
  }
  @Test fun levelWeeksAndDayData() {
   ActivityScenario.launch(HomeActivity::class.java).use { s ->
+   await(s){it.findViewById<View>(R.id.heroAction)!=null}
+   s.onActivity{it.findViewById<View>(R.id.heroAction).performClick()}
    for((index,id) in listOf(R.id.programBeginner,R.id.programIntermediate,R.id.programAdvanced).withIndex()) {
     await(s){it.findViewById<View>(id)!=null}; s.onActivity{it.findViewById<View>(id).performClick()}
     await(s){it.findViewById<RecyclerView>(R.id.listDaysOfWeek)?.adapter?.itemCount==21}

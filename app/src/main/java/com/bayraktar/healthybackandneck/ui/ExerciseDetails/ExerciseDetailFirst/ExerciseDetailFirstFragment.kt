@@ -118,9 +118,7 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
 
 
         binding.imageBack.setOnClickListener {
-            val action =
-                ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToIdHomepageFragment()
-            view.findNavController().navigate(action)
+            view?.findNavController()?.navigateUp()
         }
 
     }
@@ -200,9 +198,7 @@ class ExerciseDetailFirstFragment : Fragment(), ExerciseItemClickListener {
     private fun backstack() {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                val action =
-                    ExerciseDetailFirstFragmentDirections.actionExerciseDetailFirstFragmentToIdHomepageFragment()
-                view?.findNavController()?.navigate(action)
+                view?.findNavController()?.navigateUp()
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)

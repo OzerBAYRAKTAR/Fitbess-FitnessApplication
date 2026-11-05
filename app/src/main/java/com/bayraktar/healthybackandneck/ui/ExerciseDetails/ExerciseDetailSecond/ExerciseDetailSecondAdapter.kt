@@ -52,7 +52,9 @@ class ExerciseDetailSecondAdapter(
                 model.day == currentDay -> R.string.workout_day_continue
                 else -> R.string.workout_day_ready
             })
+            dayState.setTextColor(androidx.core.content.ContextCompat.getColor(root.context, if (unlocked || model.day in completedDays) R.color.fit_primary else R.color.fit_text))
             cardview1.setCardBackgroundColor(androidx.core.content.ContextCompat.getColor(root.context, if (model.day == currentDay) R.color.fit_soft else android.R.color.white))
+            lock.imageTintList = if (model.day in completedDays) null else android.content.res.ColorStateList.valueOf(androidx.core.content.ContextCompat.getColor(root.context, R.color.fit_primary))
             cardview1.strokeColor = androidx.core.content.ContextCompat.getColor(root.context, if (model.day == currentDay) R.color.fit_primary else R.color.fit_border)
             txtDay.text = model.day.toString()
             txtExerciseCount.text = (exerciseCounts?.get(model.dayId)
@@ -62,7 +64,7 @@ class ExerciseDetailSecondAdapter(
 
             if (model.isCompleted || adFree || "${model.level}:${model.day}" in rewardedWorkoutDayKeys) {
                 lock.visibility = View.VISIBLE
-                lock.setImageResource(if (model.day in completedDays) R.drawable.fit_check_circle else R.drawable.discovery_chevron)
+                lock.setImageResource(if (model.day in completedDays) R.drawable.workout_day_complete_badge else R.drawable.discovery_chevron)
                 cardview1.setOnClickListener {
                     exerciseItemClickListener.onExerciseItemClicked(position, false)
 

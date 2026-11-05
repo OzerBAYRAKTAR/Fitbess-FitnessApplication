@@ -284,6 +284,11 @@
         app:destination="@id/adFreeOfferFragment" />
 
 
+    <fragment android:id="@+id/programLevelFragment"
+        android:name="com.bayraktar.healthybackandneck.ui.HomePage.ProgramLevelFragment"
+        android:label="@string/discovery_choose_level"
+        tools:layout="@layout/fragment_program_level" />
+
     <fragment android:id="@+id/bodyRegionFragment"
         android:name="com.bayraktar.healthybackandneck.ui.HomePage.BodyRegionFragment"
         android:label="@string/discovery_choose_region"

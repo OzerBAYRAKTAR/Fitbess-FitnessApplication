@@ -1,0 +1,11 @@
+<resources>
+    <string name="level_hub_start">Antrenmana başla</string>
+    <string name="level_hub_home_hint">21 günlük programın için seviyeni seç.</string>
+    <string name="level_hub_toolbar">21 günlük program</string>
+    <string name="level_hub_subtitle">Sana uygun seviyeyi seç. Kendi hızında ilerle.</string>
+    <string name="level_hub_number">SEVİYE %1$d</string>
+    <string name="level_hub_beginner_hint">Temel hareketlerle başla.</string>
+    <string name="level_hub_intermediate_hint">Rutinini bir adım ileri taşı.</string>
+    <string name="level_hub_advanced_hint">Daha yoğun bir akışa geç.</string>
+    <string name="level_hub_accessibility">%1$s. %2$s. 21 günlük programı aç.</string>
+</resources>

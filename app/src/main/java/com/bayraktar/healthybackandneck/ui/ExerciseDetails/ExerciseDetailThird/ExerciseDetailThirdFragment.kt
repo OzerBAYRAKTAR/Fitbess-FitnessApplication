@@ -107,9 +107,7 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
         binding.prgressStart.visibility = View.VISIBLE
         backstack()
         binding.imageBack.setOnClickListener {
-            val action =
-                ExerciseDetailThirdFragmentDirections.actionExerciseDetailThirdFragmentToIdHomepageFragment()
-            view.findNavController().navigate(action)
+            view?.findNavController()?.navigateUp()
         }
 
 
@@ -122,9 +120,7 @@ class ExerciseDetailThirdFragment : Fragment(), ExerciseItemClickListener {
     private fun backstack() {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                val action =
-                    ExerciseDetailThirdFragmentDirections.actionExerciseDetailThirdFragmentToIdHomepageFragment()
-                view?.findNavController()?.navigate(action)
+                view?.findNavController()?.navigateUp()
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)

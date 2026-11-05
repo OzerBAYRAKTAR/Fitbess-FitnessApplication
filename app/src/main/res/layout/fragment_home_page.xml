@@ -16,18 +16,11 @@
     </LinearLayout>
    </androidx.constraintlayout.widget.ConstraintLayout>
    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="vertical">
-    <TextView android:id="@+id/heroContext" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/discovery_new_program" android:textColor="@color/fit_text"/>
-    <com.google.android.material.button.MaterialButton android:id="@+id/heroAction" style="@style/FitButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/start_now"/>
+    <TextView android:id="@+id/heroContext" style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/level_hub_home_hint" android:textColor="@color/fit_text"/>
+    <com.google.android.material.button.MaterialButton android:id="@+id/heroAction" style="@style/FitButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/level_hub_start" app:icon="@drawable/discovery_chevron" app:iconGravity="end"/>
    </LinearLayout>
   </LinearLayout>
  </com.google.android.material.card.MaterialCardView>
- <TextView style="@style/FitSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/discovery_choose_level" android:accessibilityHeading="true"/>
- <TextView style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/discovery_choose_level_hint"/>
- <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="vertical">
-  <com.google.android.material.button.MaterialButton android:id="@+id/programBeginner" style="@style/DiscoveryProgramButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/discovery_program_beginner"/>
-  <com.google.android.material.button.MaterialButton android:id="@+id/programIntermediate" style="@style/DiscoveryProgramButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/discovery_program_intermediate"/>
-  <com.google.android.material.button.MaterialButton android:id="@+id/programAdvanced" style="@style/DiscoveryProgramButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/discovery_program_advanced"/>
- </LinearLayout>
  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:gravity="center_vertical" android:orientation="horizontal">
   <TextView style="@style/FitSection" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/discovery_choose_region"/>
   <com.google.android.material.button.MaterialButton android:id="@+id/allRegions" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/discovery_all" android:textColor="@color/fit_primary"/>

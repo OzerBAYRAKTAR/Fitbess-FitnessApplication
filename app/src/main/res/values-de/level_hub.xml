@@ -1,0 +1,11 @@
+<resources>
+    <string name="level_hub_start">Training starten</string>
+    <string name="level_hub_home_hint">Wähle dein Level für dein 21-Tage-Programm.</string>
+    <string name="level_hub_toolbar">21-Tage-Programm</string>
+    <string name="level_hub_subtitle">Wähle dein Level. Trainiere in deinem Tempo.</string>
+    <string name="level_hub_number">LEVEL %1$d</string>
+    <string name="level_hub_beginner_hint">Beginne mit den Grundlagen.</string>
+    <string name="level_hub_intermediate_hint">Bringe deine Routine weiter.</string>
+    <string name="level_hub_advanced_hint">Steigere die Intensität.</string>
+    <string name="level_hub_accessibility">%1$s. %2$s. 21-Tage-Programm öffnen.</string>
+</resources>

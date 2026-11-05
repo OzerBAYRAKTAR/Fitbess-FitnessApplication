@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/fit_background">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical" android:paddingHorizontal="12dp" android:paddingTop="8dp">
+        <ImageButton android:id="@+id/backButton" android:layout_width="48dp" android:layout_height="48dp"
+            android:src="@drawable/ic_arrow_back_aligned_24" android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="12dp" app:tint="@color/fit_primary" android:contentDescription="@string/back" />
+        <TextView style="@style/FitBody" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+            android:text="@string/level_hub_toolbar" android:textColor="@color/fit_primary" android:textStyle="bold" android:layout_marginStart="8dp" />
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:fillViewport="true" android:clipToPadding="false">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="20dp">
+            <TextView style="@style/FitTitle" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="@string/discovery_choose_level" android:textSize="28sp" android:accessibilityHeading="true" />
+            <TextView style="@style/FitBody" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="@string/level_hub_subtitle" android:layout_marginTop="8dp" android:layout_marginBottom="20dp" />
+            <include android:id="@+id/programBeginner" layout="@layout/item_program_level_card" />
+            <include android:id="@+id/programIntermediate" layout="@layout/item_program_level_card"
+                android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" />
+            <include android:id="@+id/programAdvanced" layout="@layout/item_program_level_card"
+                android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

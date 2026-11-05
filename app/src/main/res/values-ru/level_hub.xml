@@ -1,0 +1,11 @@
+<resources>
+    <string name="level_hub_start">Начать тренировку</string>
+    <string name="level_hub_home_hint">Выбери уровень программы на 21 день.</string>
+    <string name="level_hub_toolbar">Программа на 21 день</string>
+    <string name="level_hub_subtitle">Выбери свой уровень. Занимайся в своём темпе.</string>
+    <string name="level_hub_number">УРОВЕНЬ %1$d</string>
+    <string name="level_hub_beginner_hint">Начни с основ.</string>
+    <string name="level_hub_intermediate_hint">Сделай следующий шаг.</string>
+    <string name="level_hub_advanced_hint">Повысь интенсивность.</string>
+    <string name="level_hub_accessibility">%1$s. %2$s. Открыть программу на 21 день.</string>
+</resources>

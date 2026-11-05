@@ -1,0 +1,11 @@
+<resources>
+    <string name="level_hub_start">Start workout</string>
+    <string name="level_hub_home_hint">Choose your level for a 21-day program.</string>
+    <string name="level_hub_toolbar">21-day program</string>
+    <string name="level_hub_subtitle">Choose your level. Move at your own pace.</string>
+    <string name="level_hub_number">LEVEL %1$d</string>
+    <string name="level_hub_beginner_hint">Start with the basics.</string>
+    <string name="level_hub_intermediate_hint">Take your routine further.</string>
+    <string name="level_hub_advanced_hint">Step up the intensity.</string>
+    <string name="level_hub_accessibility">%1$s. %2$s. Open the 21-day program.</string>
+</resources>

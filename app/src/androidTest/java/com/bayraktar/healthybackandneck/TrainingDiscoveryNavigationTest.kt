@@ -55,21 +55,26 @@ class TrainingDiscoveryNavigationTest {
                 ActivityScenario.launch(HomeActivity::class.java).use { scenario ->
                     await(scenario) { it.findViewById<View>(R.id.heroAction) != null }
                     capture("${prefix}home-$language")
+                    scenario.onActivity { it.findViewById<View>(R.id.heroAction).performClick() }
+                    await(scenario) { nav(it).currentDestination?.id == R.id.programLevelFragment }
                     scenario.onActivity { a ->
-                        val group = a.findViewById<View>(R.id.programBeginner).parent as View
-                        group.requestRectangleOnScreen(android.graphics.Rect(0, -180, group.width, group.height), true)
                         for (id in listOf(R.id.programBeginner, R.id.programIntermediate, R.id.programAdvanced)) {
-                            val button = a.findViewById<TextView>(id)
-                            assertTrue(button.isClickable && button.height >= 48 * a.resources.displayMetrics.density)
-                            assertTrue(button.height >= button.layout.height)
-                            for (line in 0 until button.lineCount) assertEquals(0, button.layout.getEllipsisCount(line))
+                            val card = a.findViewById<View>(id)
+                            val title = card.findViewById<TextView>(R.id.levelTitle)
+                            assertTrue(card.isClickable && card.height >= 48 * a.resources.displayMetrics.density)
+                            assertTrue(title.height >= title.layout.height)
+                            for (line in 0 until title.lineCount) assertEquals(0, title.layout.getEllipsisCount(line))
                         }
                     }
                     capture("${prefix}selector-$language")
+                    scenario.onActivity { nav(it).popBackStack() }
+                    await(scenario) { it.findViewById<View>(R.id.allRegions) != null }
                     scenario.onActivity { it.findViewById<View>(R.id.allRegions).performClick() }
                     await(scenario) { nav(it).currentDestination?.id == R.id.bodyRegionFragment && it.findViewById<View>(R.id.bodyMap) != null }
                     capture("${prefix}body-$language")
                     scenario.onActivity { nav(it).popBackStack() }
+                    await(scenario) { it.findViewById<View>(R.id.heroAction) != null }
+                    scenario.onActivity { it.findViewById<View>(R.id.heroAction).performClick() }
                     await(scenario) { it.findViewById<View>(R.id.programBeginner) != null }
                     scenario.onActivity { it.findViewById<View>(R.id.programBeginner).performClick() }
                     await(scenario) { it.findViewById<RecyclerView>(R.id.listDaysOfWeek)?.findViewHolderForAdapterPosition(0) != null }
@@ -91,8 +96,7 @@ class TrainingDiscoveryNavigationTest {
             await(scenario) { it.findViewById<View>(R.id.heroAction) != null }
             capture("home")
             scenario.onActivity { it.findViewById<View>(R.id.heroAction).performClick() }
-            await(scenario) { nav(it).currentDestination?.id in setOf(R.id.exerciseDetailFirstFragment, R.id.exerciseDetailSecondFragment, R.id.exerciseDetailThirdFragment) }
-            scenario.onActivity { nav(it).popBackStack() }
+            await(scenario) { nav(it).currentDestination?.id == R.id.programLevelFragment }
             await(scenario) { it.findViewById<View>(R.id.programBeginner) != null }
             scenario.onActivity { it.findViewById<View>(R.id.programBeginner).performClick() }
             await(scenario) { (it.findViewById<RecyclerView>(R.id.listDaysOfWeek)?.adapter?.itemCount ?: 0) == 21 }
