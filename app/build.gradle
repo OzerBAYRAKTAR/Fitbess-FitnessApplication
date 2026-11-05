@@ -19,8 +19,8 @@ android {
         applicationId "com.bayraktar.healthybackandneck"
         minSdk 24
         targetSdk 36
-        versionCode 12
-        versionName "1.8"
+        versionCode 13
+        versionName "1.8.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def revenueCatAndroidKey = providers.gradleProperty('REVENUECAT_ANDROID_API_KEY')
@@ -31,7 +31,8 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
