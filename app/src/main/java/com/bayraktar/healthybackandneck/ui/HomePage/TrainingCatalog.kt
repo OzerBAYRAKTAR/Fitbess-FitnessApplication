@@ -8,20 +8,20 @@ data class TrainingRegion(val key: String, val title: Int, val icon: Int, val si
 
 object TrainingCatalog {
     val regions = listOf(
-        TrainingRegion("arms", R.string.region_arms, R.drawable.region_arms, R.drawable.body_map_arms, listOf(
+        TrainingRegion("arms", R.string.region_arms, R.drawable.focus_arms_photo, R.drawable.body_map_arms, listOf(
             RegionWorkout(R.string.arm_desc1, "arm", 1, R.drawable.kol11),
             RegionWorkout(R.string.arm_desc2, "arm", 2, R.drawable.kol2),
             RegionWorkout(R.string.arm_desc3, "arm", 3, R.drawable.kol4))),
-        TrainingRegion("back", R.string.region_back_neck, R.drawable.region_back, R.drawable.body_map_back, listOf(
+        TrainingRegion("back", R.string.region_back_neck, R.drawable.focus_back_photo, R.drawable.body_map_back, listOf(
             RegionWorkout(R.string.back_desc1, "bellyneck", 1, R.drawable.back2),
             RegionWorkout(R.string.back_desc2, "bellyneck", 2, R.drawable.back1),
             RegionWorkout(R.string.neck_desc1, "bellyneck", 3, R.drawable.neck1),
             RegionWorkout(R.string.neck_desc2, "bellyneck", 4, R.drawable.neck2))),
-        TrainingRegion("abs", R.string.region_abs, R.drawable.region_abs, R.drawable.body_map_abs, listOf(
+        TrainingRegion("abs", R.string.region_abs, R.drawable.focus_abs_photo, R.drawable.body_map_abs, listOf(
             RegionWorkout(R.string.abs_desc1, "abs", 1, R.drawable.abs1),
             RegionWorkout(R.string.abs_desc2, "abs", 2, R.drawable.abs2),
             RegionWorkout(R.string.abs_desc3, "abs", 3, R.drawable.abs3))),
-        TrainingRegion("legs", R.string.region_legs_glutes, R.drawable.region_legs, R.drawable.body_map_legs, listOf(
+        TrainingRegion("legs", R.string.region_legs_glutes, R.drawable.focus_legs_photo, R.drawable.body_map_legs, listOf(
             RegionWorkout(R.string.leg_desc1, "legbutt", 1, R.drawable.bacak2),
             RegionWorkout(R.string.leg_desc2, "legbutt", 2, R.drawable.popo2),
             RegionWorkout(R.string.leg_desc3, "legbutt", 3, R.drawable.popo1),

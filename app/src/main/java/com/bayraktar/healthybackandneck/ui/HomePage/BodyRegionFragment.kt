@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -37,16 +38,14 @@ class BodyRegionFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, state: Bundle?) {
+        binding.bodyMap.clipToOutline = true
         binding.backButton.setOnClickListener { findNavController().popBackStack() }
         if (resources.configuration.screenWidthDp < 360 || resources.configuration.fontScale > 1.2f) {
-            binding.regionPicker.orientation = android.widget.LinearLayout.VERTICAL
-            binding.bodyMap.layoutParams = android.widget.LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, (160 * resources.displayMetrics.density).toInt())
-            binding.regionGrid.layoutParams = android.widget.LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-            binding.regionGrid.columnCount = 2
+            binding.regionSplit.layoutParams = (binding.regionSplit.layoutParams as androidx.constraintlayout.widget.ConstraintLayout.LayoutParams).apply {
+                guidePercent = 0.38f
+            }
         }
-        populateRegionGrid(binding.regionGrid, TrainingCatalog.regions.filter { it.key != "warmup" }) { selectRegion(it.key) }
+        populateRegionGrid(binding.regionGrid, TrainingCatalog.regions.filter { it.key != "warmup" }, compact = true) { selectRegion(it.key) }
         binding.warmupChip.visibility = View.GONE
         selectRegion(selectedKey)
     }
@@ -56,14 +55,15 @@ class BodyRegionFragment : Fragment() {
         openJob?.cancel()
         binding.loading.visibility = View.GONE
         val region = TrainingCatalog.regions.firstOrNull { it.key == key } ?: TrainingCatalog.regions.first()
-        binding.bodyMap.setImageResource(region.silhouette)
-        binding.bodyMap.contentDescription = getString(region.title)
         binding.regionTitle.setText(region.title)
         binding.regionTitle.visibility = if (region.key == "warmup") View.GONE else View.VISIBLE
         binding.regionPicker.visibility = if (region.key == "warmup") View.GONE else View.VISIBLE
         binding.screenTitle.setText(if (region.key == "warmup") R.string.region_warmup else R.string.discovery_choose_region)
         for (index in 0 until binding.regionGrid.childCount) {
-            binding.regionGrid.getChildAt(index).isSelected = binding.regionGrid.getChildAt(index).tag == region.key
+            binding.regionGrid.getChildAt(index).apply {
+                isSelected = tag == region.key
+                ViewCompat.setStateDescription(this, if (isSelected) getString(R.string.focus_selected) else null)
+            }
         }
         binding.workoutList.removeAllViews()
         region.workouts.forEach { workout ->

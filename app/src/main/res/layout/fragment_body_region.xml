@@ -5,10 +5,11 @@
   <ImageButton android:id="@+id/backButton" android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/discovery_icon_background" android:src="@drawable/ic_arrow_back_aligned_24" android:padding="12dp" android:contentDescription="@string/back" app:tint="@color/fit_text"/>
   <TextView android:id="@+id/screenTitle" style="@style/FitSection" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="@string/discovery_choose_region"/>
  </LinearLayout>
- <LinearLayout android:id="@+id/regionPicker" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:orientation="horizontal" android:gravity="center_vertical" android:baselineAligned="false">
-  <ImageView android:id="@+id/bodyMap" android:layout_width="0dp" android:layout_weight="0.8" android:layout_height="280dp" android:paddingEnd="12dp" android:scaleType="fitCenter"/>
-  <GridLayout android:id="@+id/regionGrid" android:layout_width="0dp" android:layout_weight="1.2" android:layout_height="wrap_content" android:columnCount="2"/>
- </LinearLayout>
+ <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/regionPicker" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp">
+  <androidx.constraintlayout.widget.Guideline android:id="@+id/regionSplit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.44"/>
+  <ImageView android:id="@+id/bodyMap" android:layout_width="0dp" android:layout_height="0dp" android:layout_marginEnd="8dp" android:src="@drawable/focus_woman_photo" android:scaleType="fitCenter" android:background="@drawable/focus_hero_background" android:importantForAccessibility="no" android:contentDescription="@null" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toStartOf="@id/regionSplit" app:layout_constraintTop_toTopOf="@id/regionGrid" app:layout_constraintBottom_toBottomOf="@id/regionGrid"/>
+  <GridLayout android:id="@+id/regionGrid" android:layout_width="0dp" android:layout_height="wrap_content" android:columnCount="1" app:layout_constraintStart_toEndOf="@id/regionSplit" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
+ </androidx.constraintlayout.widget.ConstraintLayout>
  <TextView android:id="@+id/regionTitle" style="@style/FitTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:textSize="26sp"/>
 
  <ProgressBar android:id="@+id/loading" android:layout_width="32dp" android:layout_height="32dp" android:layout_gravity="center_horizontal" android:visibility="gone" android:contentDescription="@string/access_loading"/>
