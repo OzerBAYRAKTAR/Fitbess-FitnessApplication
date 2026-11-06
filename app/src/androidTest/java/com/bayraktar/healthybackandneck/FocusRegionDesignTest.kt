@@ -111,11 +111,16 @@ class FocusRegionDesignTest {
                     await(scenario) { nav(it).currentDestination?.id == R.id.bodyRegionFragment && (it.findViewById<GridLayout>(R.id.regionGrid)?.height ?: 0) > 0 }
                     scenario.onActivity { a ->
                         assertCards(a)
+                        assertEquals(a.getString(R.string.region_back), a.findViewById<TextView>(R.id.regionTitle).text.toString())
                         val hero = a.findViewById<View>(R.id.bodyMap)
                         val grid = a.findViewById<GridLayout>(R.id.regionGrid)
                         assertTrue("Hero remains on the left", hero.right <= grid.left)
                         assertEquals(1, grid.columnCount)
                         assertTrue(hero.width > 0 && hero.height > 0)
+                    }
+                    capture("back-$language")
+                    scenario.onActivity { a ->
+                        val grid = a.findViewById<GridLayout>(R.id.regionGrid)
                         grid.findViewWithTag<View>("legs").performClick()
                         assertTrue(grid.findViewWithTag<View>("legs").isSelected)
                         assertFalse(grid.findViewWithTag<View>("back").isSelected)

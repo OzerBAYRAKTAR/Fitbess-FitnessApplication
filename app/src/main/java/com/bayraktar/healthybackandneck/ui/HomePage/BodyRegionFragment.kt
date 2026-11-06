@@ -55,7 +55,7 @@ class BodyRegionFragment : Fragment() {
         openJob?.cancel()
         binding.loading.visibility = View.GONE
         val region = TrainingCatalog.regions.firstOrNull { it.key == key } ?: TrainingCatalog.regions.first()
-        binding.regionTitle.setText(region.title)
+        binding.regionTitle.setText(if (region.key == "back") R.string.region_back else region.title)
         binding.regionTitle.visibility = if (region.key == "warmup") View.GONE else View.VISIBLE
         binding.regionPicker.visibility = if (region.key == "warmup") View.GONE else View.VISIBLE
         binding.screenTitle.setText(if (region.key == "warmup") R.string.region_warmup else R.string.discovery_choose_region)
