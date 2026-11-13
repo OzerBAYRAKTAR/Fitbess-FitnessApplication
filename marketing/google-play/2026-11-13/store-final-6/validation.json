@@ -1,0 +1,326 @@
+[
+  {
+    "locale": "tr",
+    "order": 1,
+    "source": "../../2026-11-06/phone-revisions-v2/tr/01-store.png",
+    "output": "tr/01-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "894eb6f4b90c5f79157d3772bc39bb646110e567fd41340fe2c8844280a4d6c6",
+    "outputSHA256": "b1a65a54a94b231a603e20ef070f7efa31fdf0c7a0210e25ae3bbd0f29d2c1b8",
+    "changedPixels": 9442,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  },
+  {
+    "locale": "tr",
+    "order": 2,
+    "source": "../home-region-refresh/tr/01-home.png",
+    "output": "tr/02-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "949819476d8d3fb0e069cdbb837d85962ab08d8f4c1e423b271ca7b432ae4d1f",
+    "outputSHA256": "949819476d8d3fb0e069cdbb837d85962ab08d8f4c1e423b271ca7b432ae4d1f",
+    "changedPixels": 0,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  },
+  {
+    "locale": "tr",
+    "order": 3,
+    "source": "../../2026-11-06/phone-revisions-v2/tr/02-store.png",
+    "output": "tr/03-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "49d1d5b4ce93b0c388069cf3b172c2312f8c9689aa7d34fd6cfc77be001ee534",
+    "outputSHA256": "1a22d3b740c440ce7f02a8b9ca001447ad65e1126d79752d38d8fe7074d7a3e1",
+    "changedPixels": 9515,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  },
+  {
+    "locale": "tr",
+    "order": 4,
+    "source": "../home-region-refresh/tr/04-store.png",
+    "output": "tr/04-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "69526f9f7afd01a88e526cbc96704ebb335855e5996fc392ae52b82b13ae8262",
+    "outputSHA256": "781ef5c32462d13fb65bf75df2f5f3c799160bc5bc8438c4450de94e96bf1122",
+    "changedPixels": 9428,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  },
+  {
+    "locale": "tr",
+    "order": 5,
+    "source": "../../2026-11-05/phone-final-6/tr/05-store.png",
+    "output": "tr/05-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "ebd5dca11af435bf31c103e5bc2f0df9f402bdc3431bdde4c7f4f92b70315a75",
+    "outputSHA256": "3755b12162975b2a40829b916c3d15a028fca1e99f9defec8afdb11548c1b5dc",
+    "changedPixels": 538272,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  },
+  {
+    "locale": "tr",
+    "order": 6,
+    "source": "../../2026-11-05/phone-final-6/tr/06-store.png",
+    "output": "tr/06-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "7c78f653e5a57924cbdaac2ad19e0d78fc80d251fc0b9645e1f1597a03445641",
+    "outputSHA256": "0dae0267a38b8a8bb252dd614edbca026884190950ae33d9f6ba2e40f052f87b",
+    "changedPixels": 7360,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  },
+  {
+    "locale": "en",
+    "order": 1,
+    "source": "../../2026-11-06/phone-revisions-v2/en/01-store.png",
+    "output": "en/01-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "1d64ff0c189f1772fe4d3a79ee0d50e6cba84daf7c1dea98b3a7d20e984083c3",
+    "outputSHA256": "8949ae0447e02c11a2f7f4481c81b86033020b6d3d954ca9146e97225f1ca654",
+    "changedPixels": 9311,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  },
+  {
+    "locale": "en",
+    "order": 2,
+    "source": "../home-region-refresh/en/01-home.png",
+    "output": "en/02-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "e134c4e25356ddf002f38cef353074cd1d5a60f1b1d73d198ac8f8e32aa7b4c0",
+    "outputSHA256": "e134c4e25356ddf002f38cef353074cd1d5a60f1b1d73d198ac8f8e32aa7b4c0",
+    "changedPixels": 0,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  },
+  {
+    "locale": "en",
+    "order": 3,
+    "source": "../../2026-11-06/phone-revisions-v2/en/02-store.png",
+    "output": "en/03-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "2e5facefbdcc7641243e8c848c876402e6f0c311037dc5522af2048d63da9bb2",
+    "outputSHA256": "921192a90b8ac711ef5e05c426be74bfeb6e78f79ff0b57e5d341149071d6aec",
+    "changedPixels": 9589,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  },
+  {
+    "locale": "en",
+    "order": 4,
+    "source": "../home-region-refresh/en/04-store.png",
+    "output": "en/04-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "73dc795d263a5450dc3a4320c1875ecece1f960ce0b9a63adb4c6dceaf0f72f7",
+    "outputSHA256": "2848e98e7858d3eaf9b52719ed803fb48b10f306b9841e303b51844a884c57fb",
+    "changedPixels": 7460,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      850,
+      43,
+      976,
+      102
+    ]
+  },
+  {
+    "locale": "en",
+    "order": 5,
+    "source": "../../2026-11-05/phone-final-6/en/05-store.png",
+    "output": "en/05-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "75932922b0089bc493bb94f71ddcf651637680bf202cb7a22700909ad8c08e2a",
+    "outputSHA256": "1538e4f39e0a02adc50bc3f1823674683ed5c4116741269ae6f60f5d43dd4169",
+    "changedPixels": 538272,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  },
+  {
+    "locale": "en",
+    "order": 6,
+    "source": "../../2026-11-05/phone-final-6/en/06-store.png",
+    "output": "en/06-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "e7b6feb94f47fb1e8313715481256d8d37881bb6dd70998a4f29f00f967aa1e9",
+    "outputSHA256": "b24b772d7892bc4da466fffa244dc36310796fff129e2ca6efb6458991912b5e",
+    "changedPixels": 7360,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  },
+  {
+    "locale": "de",
+    "order": 1,
+    "source": "../../2026-11-06/phone-revisions-v2/de/01-store.png",
+    "output": "de/01-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "6c19f5143d27be4fd8a532a429d9907d8d148dcc71f8c36402855fc035bebdb6",
+    "outputSHA256": "e46aeb65d91407dbea4d24c3917d6fde34d123ae4b992d991e8753134c8749d0",
+    "changedPixels": 9371,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  },
+  {
+    "locale": "de",
+    "order": 2,
+    "source": "../home-region-refresh/de/01-home.png",
+    "output": "de/02-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "25772a78c06188e7227bd3cadcc95d5ccf289acb2ce5ca5748c447df4a437625",
+    "outputSHA256": "25772a78c06188e7227bd3cadcc95d5ccf289acb2ce5ca5748c447df4a437625",
+    "changedPixels": 0,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  },
+  {
+    "locale": "de",
+    "order": 3,
+    "source": "../../2026-11-06/phone-revisions-v2/de/02-store.png",
+    "output": "de/03-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "bcbc5b6bbbde37eabdacbe6c3e4fc3d1f12a7952916d7165624c0cb6f2da2861",
+    "outputSHA256": "e11b3ec5cbed2360e9efd74e67f6ee74cf9a8e97425252c52dfed540ddfe33f6",
+    "changedPixels": 9595,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  },
+  {
+    "locale": "de",
+    "order": 4,
+    "source": "../home-region-refresh/de/04-store.png",
+    "output": "de/04-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "3f5f789882443a3c2bcea63f4f2e196601ea91587a1cc9bf845fe68dfede4f08",
+    "outputSHA256": "6db62a0221a31aa23a948056c092ba6e5f4a144239549d7f435e779c966fd691",
+    "changedPixels": 9347,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  },
+  {
+    "locale": "de",
+    "order": 5,
+    "source": "../../2026-11-05/phone-final-6/de/05-store.png",
+    "output": "de/05-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "13b14c4c0600745698bd65938e4a4d8ebc5cec534e85ad2404f26adfc63535d8",
+    "outputSHA256": "805843872dc9d25750952e5812138e5cc5ff0bfebb7d41287d61a22dead80211",
+    "changedPixels": 538233,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  },
+  {
+    "locale": "de",
+    "order": 6,
+    "source": "../../2026-11-05/phone-final-6/de/06-store.png",
+    "output": "de/06-store.png",
+    "width": 1080,
+    "height": 1920,
+    "sourceSHA256": "eea8d51e1c2b0a03a608ab79708c6548b4d06fc06b7638886c89495d5152cd84",
+    "outputSHA256": "e93a1c02b0d9834c5599c644195198319afa36c7c91668c04878b8eaba001a21",
+    "changedPixels": 7360,
+    "pixelsOutsideAllowedRegions": 0,
+    "badgeRegion": [
+      888,
+      46,
+      1024,
+      116
+    ]
+  }
+]
