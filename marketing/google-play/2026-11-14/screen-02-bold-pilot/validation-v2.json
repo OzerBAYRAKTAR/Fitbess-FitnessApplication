@@ -1,0 +1,19 @@
+{
+  "v1": "02-store-tr.png",
+  "v1SHA256": "2b368f8aaedb50370d989c497d4920c1443f2eec6f4c4ec58aeb893e39d35115",
+  "v1Unchanged": true,
+  "generatedDimensions": {
+    "width": 941,
+    "height": 1672
+  },
+  "finalDimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "finalSHA256": "2125d9be6260d8f69bd6f629787f4587b99f8815ca6bfdbd5fa49d12dd354df4",
+  "resize": "proportional contain with sampled cream padding if needed; no crop or text repaint",
+  "locale": "tr",
+  "editTool": "built-in image_gen",
+  "prompt": "PROMPT-v2.md",
+  "note": "AI raster edit; preservation assessed visually, no pixel-identity claim for regenerated areas"
+}
