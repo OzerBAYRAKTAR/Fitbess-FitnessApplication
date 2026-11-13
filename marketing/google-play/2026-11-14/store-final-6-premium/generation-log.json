@@ -1,0 +1,90 @@
+[
+  {
+    "output": "generated/en-02.png",
+    "tool": "built-in image_gen",
+    "generationId": "exec-acaf13ba-4ec2-42ad-b81e-9ef4b30f4971.png",
+    "prompt": "prompts/en-02.txt",
+    "reference": "../screen-02-bold-pilot/02-store-tr-v2.png"
+  },
+  {
+    "output": "generated/de-02.png",
+    "tool": "built-in image_gen",
+    "generationId": "exec-3041a3fd-5f38-461c-ba98-42a56ecb268f.png",
+    "prompt": "prompts/de-02.txt",
+    "reference": "../screen-02-bold-pilot/02-store-tr-v2.png"
+  },
+  {
+    "output": "generated/tr-03.png",
+    "tool": "built-in image_gen",
+    "generationId": "exec-34979033-f979-4a74-a5ff-4db2d3b612b6.png",
+    "prompt": "prompts/tr-03.txt",
+    "reference": [
+      "../../2026-11-13/store-final-6/tr/03-store.png",
+      "../screen-02-bold-pilot/02-store-tr-v2.png"
+    ]
+  },
+  {
+    "output": "generated/tr-04.png",
+    "tool": "built-in image_gen",
+    "generationId": "exec-e9a9c785-37d0-49ff-ac40-5ccf17458167.png",
+    "prompt": "prompts/tr-04.txt",
+    "reference": [
+      "../../2026-11-13/store-final-6/tr/04-store.png",
+      "../screen-02-bold-pilot/02-store-tr-v2.png"
+    ]
+  },
+  {
+    "output": "generated/tr-05.png",
+    "tool": "built-in image_gen",
+    "generationId": "exec-c8549f15-1760-4f0d-bde2-2ad4a0bd17bf.png",
+    "prompt": "prompts/tr-05.txt",
+    "reference": [
+      "generated/tr-05-content-reference.png",
+      "../screen-02-bold-pilot/02-store-tr-v2.png",
+      "assets/fire-hydrants.png",
+      "assets/bird-dog.png"
+    ]
+  },
+  {
+    "output": "generated/en-03.png",
+    "tool": "built-in image_gen",
+    "generationId": "exec-e29b62a5-8183-457a-a2f7-c5e03be8e668.png",
+    "prompt": "prompts/en-03.txt",
+    "reference": "generated/tr-03.png"
+  },
+  {
+    "output": "generated/de-03.png",
+    "tool": "built-in image_gen",
+    "generationId": "exec-2c4846f0-3362-4209-b369-44c962ee5a75.png",
+    "prompt": "prompts/de-03.txt",
+    "reference": "generated/tr-03.png"
+  },
+  {
+    "output": "generated/en-04.png",
+    "tool": "built-in image_gen",
+    "generationId": "exec-711ce85c-4ab7-4d22-96fa-88821a63963c.png",
+    "prompt": "prompts/en-04.txt",
+    "reference": "generated/tr-04.png"
+  },
+  {
+    "output": "generated/de-04.png",
+    "tool": "built-in image_gen",
+    "generationId": "exec-e07a5751-5803-4c1c-aca2-b2eace58f322.png",
+    "prompt": "prompts/de-04.txt",
+    "reference": "generated/tr-04.png"
+  },
+  {
+    "output": "generated/en-05.png",
+    "tool": "built-in image_gen",
+    "generationId": "exec-d85fdf73-daf7-487d-80a8-117a22926ee3.png",
+    "prompt": "prompts/en-05.txt",
+    "reference": "generated/tr-05.png"
+  },
+  {
+    "output": "generated/de-05.png",
+    "tool": "built-in image_gen",
+    "generationId": "exec-25a27757-0f5f-4e1a-95b2-5d593856a8b9.png",
+    "prompt": "prompts/de-05.txt",
+    "reference": "generated/tr-05.png"
+  }
+]

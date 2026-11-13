@@ -1,0 +1,311 @@
+[
+  {
+    "locale": "tr",
+    "order": 1,
+    "output": "tr/01-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/tr/01-store.png",
+    "sourceSHA256": "b1a65a54a94b231a603e20ef070f7efa31fdf0c7a0210e25ae3bbd0f29d2c1b8",
+    "outputSHA256": "b1a65a54a94b231a603e20ef070f7efa31fdf0c7a0210e25ae3bbd0f29d2c1b8",
+    "method": "byte-copy",
+    "generationReferences": [],
+    "byteIdentical": true
+  },
+  {
+    "locale": "tr",
+    "order": 2,
+    "output": "tr/02-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../screen-02-bold-pilot/02-store-tr-v2.png",
+    "sourceSHA256": "2125d9be6260d8f69bd6f629787f4587b99f8815ca6bfdbd5fa49d12dd354df4",
+    "outputSHA256": "2125d9be6260d8f69bd6f629787f4587b99f8815ca6bfdbd5fa49d12dd354df4",
+    "method": "byte-copy-approved-pilot-v2",
+    "generationReferences": [],
+    "byteIdentical": true
+  },
+  {
+    "locale": "tr",
+    "order": 3,
+    "output": "tr/03-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/tr/03-store.png",
+    "sourceSHA256": "1a22d3b740c440ce7f02a8b9ca001447ad65e1126d79752d38d8fe7074d7a3e1",
+    "outputSHA256": "9577079925830bc4cea548ad74d59419d15eb617e778d1fd5923def011b9db17",
+    "method": "built-in-imagegen",
+    "generationReferences": [
+      {
+        "path": "../../2026-11-13/store-final-6/tr/03-store.png",
+        "SHA256": "1a22d3b740c440ce7f02a8b9ca001447ad65e1126d79752d38d8fe7074d7a3e1"
+      },
+      {
+        "path": "../screen-02-bold-pilot/02-store-tr-v2.png",
+        "SHA256": "2125d9be6260d8f69bd6f629787f4587b99f8815ca6bfdbd5fa49d12dd354df4"
+      }
+    ],
+    "byteIdentical": false
+  },
+  {
+    "locale": "tr",
+    "order": 4,
+    "output": "tr/04-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/tr/04-store.png",
+    "sourceSHA256": "781ef5c32462d13fb65bf75df2f5f3c799160bc5bc8438c4450de94e96bf1122",
+    "outputSHA256": "e62aa50b5e7852e4b313443c139d2f3d49d648098e8f71cbcbac5b592302a906",
+    "method": "built-in-imagegen",
+    "generationReferences": [
+      {
+        "path": "../../2026-11-13/store-final-6/tr/04-store.png",
+        "SHA256": "781ef5c32462d13fb65bf75df2f5f3c799160bc5bc8438c4450de94e96bf1122"
+      },
+      {
+        "path": "../screen-02-bold-pilot/02-store-tr-v2.png",
+        "SHA256": "2125d9be6260d8f69bd6f629787f4587b99f8815ca6bfdbd5fa49d12dd354df4"
+      }
+    ],
+    "byteIdentical": false
+  },
+  {
+    "locale": "tr",
+    "order": 5,
+    "output": "tr/05-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/tr/05-store.png",
+    "sourceSHA256": "3755b12162975b2a40829b916c3d15a028fca1e99f9defec8afdb11548c1b5dc",
+    "outputSHA256": "8c0598f908873a6fafa19107c01f2f0311d04bd4928ee8f23d4790e7f4ab2255",
+    "method": "built-in-imagegen",
+    "generationReferences": [
+      {
+        "path": "generated/tr-05-content-reference.png",
+        "SHA256": "1342f1d48ac00c71cc26ac145ea37b963e33de701414a9763ae70b0dc48bf44b"
+      },
+      {
+        "path": "../screen-02-bold-pilot/02-store-tr-v2.png",
+        "SHA256": "2125d9be6260d8f69bd6f629787f4587b99f8815ca6bfdbd5fa49d12dd354df4"
+      },
+      {
+        "path": "assets/fire-hydrants.png",
+        "SHA256": "faa3cd8e5371269d6f6d8c15ce4a72e4372961d8b1efca96ad18c5d7af674c83"
+      },
+      {
+        "path": "assets/bird-dog.png",
+        "SHA256": "c10d2dfc23a8612a783a483fb7ef4b11c8ec11a1a1a3ae609348aed366877706"
+      }
+    ],
+    "byteIdentical": false
+  },
+  {
+    "locale": "tr",
+    "order": 6,
+    "output": "tr/06-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/tr/06-store.png",
+    "sourceSHA256": "0dae0267a38b8a8bb252dd614edbca026884190950ae33d9f6ba2e40f052f87b",
+    "outputSHA256": "0dae0267a38b8a8bb252dd614edbca026884190950ae33d9f6ba2e40f052f87b",
+    "method": "byte-copy",
+    "generationReferences": [],
+    "byteIdentical": true
+  },
+  {
+    "locale": "en",
+    "order": 1,
+    "output": "en/01-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/en/01-store.png",
+    "sourceSHA256": "8949ae0447e02c11a2f7f4481c81b86033020b6d3d954ca9146e97225f1ca654",
+    "outputSHA256": "8949ae0447e02c11a2f7f4481c81b86033020b6d3d954ca9146e97225f1ca654",
+    "method": "byte-copy",
+    "generationReferences": [],
+    "byteIdentical": true
+  },
+  {
+    "locale": "en",
+    "order": 2,
+    "output": "en/02-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/en/02-store.png",
+    "sourceSHA256": "e134c4e25356ddf002f38cef353074cd1d5a60f1b1d73d198ac8f8e32aa7b4c0",
+    "outputSHA256": "259610a7eb782ae20e5034c9b9b797fae0363bec33fdbb1e7b55bead8e8b7199",
+    "method": "built-in-imagegen",
+    "generationReferences": [
+      {
+        "path": "../screen-02-bold-pilot/02-store-tr-v2.png",
+        "SHA256": "2125d9be6260d8f69bd6f629787f4587b99f8815ca6bfdbd5fa49d12dd354df4"
+      }
+    ],
+    "byteIdentical": false
+  },
+  {
+    "locale": "en",
+    "order": 3,
+    "output": "en/03-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/en/03-store.png",
+    "sourceSHA256": "921192a90b8ac711ef5e05c426be74bfeb6e78f79ff0b57e5d341149071d6aec",
+    "outputSHA256": "bcdcc52abce6c93638540656e251d752ceba67f2d74010aafe1b28ba53554078",
+    "method": "built-in-imagegen",
+    "generationReferences": [
+      {
+        "path": "generated/tr-03.png",
+        "SHA256": "3d7b7d580586f6c242d6d35c7e6ab6ae9d46468cfcb0378d7456977262700931"
+      }
+    ],
+    "byteIdentical": false
+  },
+  {
+    "locale": "en",
+    "order": 4,
+    "output": "en/04-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/en/04-store.png",
+    "sourceSHA256": "2848e98e7858d3eaf9b52719ed803fb48b10f306b9841e303b51844a884c57fb",
+    "outputSHA256": "29027800cc53ffa7769e19ff9a78684f7264ffd2ef927c7c2a4a529882daca0a",
+    "method": "built-in-imagegen",
+    "generationReferences": [
+      {
+        "path": "generated/tr-04.png",
+        "SHA256": "ea7352c85e7b93a1750c0b789cf7bc8b57eff6ad9d517d362beca2739cb5f98c"
+      }
+    ],
+    "byteIdentical": false
+  },
+  {
+    "locale": "en",
+    "order": 5,
+    "output": "en/05-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/en/05-store.png",
+    "sourceSHA256": "1538e4f39e0a02adc50bc3f1823674683ed5c4116741269ae6f60f5d43dd4169",
+    "outputSHA256": "e25a8b84b8c09d048f1858b0956fb445f60f8b3d801fd5be19f8b82dbcc935ca",
+    "method": "built-in-imagegen",
+    "generationReferences": [
+      {
+        "path": "generated/tr-05.png",
+        "SHA256": "ed6880f0fee3c240b30425cd78830b0a9534f1abb5cf81ca94b78f03778de6a1"
+      }
+    ],
+    "byteIdentical": false
+  },
+  {
+    "locale": "en",
+    "order": 6,
+    "output": "en/06-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/en/06-store.png",
+    "sourceSHA256": "b24b772d7892bc4da466fffa244dc36310796fff129e2ca6efb6458991912b5e",
+    "outputSHA256": "b24b772d7892bc4da466fffa244dc36310796fff129e2ca6efb6458991912b5e",
+    "method": "byte-copy",
+    "generationReferences": [],
+    "byteIdentical": true
+  },
+  {
+    "locale": "de",
+    "order": 1,
+    "output": "de/01-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/de/01-store.png",
+    "sourceSHA256": "e46aeb65d91407dbea4d24c3917d6fde34d123ae4b992d991e8753134c8749d0",
+    "outputSHA256": "e46aeb65d91407dbea4d24c3917d6fde34d123ae4b992d991e8753134c8749d0",
+    "method": "byte-copy",
+    "generationReferences": [],
+    "byteIdentical": true
+  },
+  {
+    "locale": "de",
+    "order": 2,
+    "output": "de/02-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/de/02-store.png",
+    "sourceSHA256": "25772a78c06188e7227bd3cadcc95d5ccf289acb2ce5ca5748c447df4a437625",
+    "outputSHA256": "7448566b226bd93832f98d562f0d0b2311ac0c4ff254530350100b2b1b4eb6da",
+    "method": "built-in-imagegen",
+    "generationReferences": [
+      {
+        "path": "../screen-02-bold-pilot/02-store-tr-v2.png",
+        "SHA256": "2125d9be6260d8f69bd6f629787f4587b99f8815ca6bfdbd5fa49d12dd354df4"
+      }
+    ],
+    "byteIdentical": false
+  },
+  {
+    "locale": "de",
+    "order": 3,
+    "output": "de/03-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/de/03-store.png",
+    "sourceSHA256": "e11b3ec5cbed2360e9efd74e67f6ee74cf9a8e97425252c52dfed540ddfe33f6",
+    "outputSHA256": "a01335c8fe24bba5b1998dd47bff050ac85014fe0ebbe83cbf4069b3827e5aa2",
+    "method": "built-in-imagegen",
+    "generationReferences": [
+      {
+        "path": "generated/tr-03.png",
+        "SHA256": "3d7b7d580586f6c242d6d35c7e6ab6ae9d46468cfcb0378d7456977262700931"
+      }
+    ],
+    "byteIdentical": false
+  },
+  {
+    "locale": "de",
+    "order": 4,
+    "output": "de/04-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/de/04-store.png",
+    "sourceSHA256": "6db62a0221a31aa23a948056c092ba6e5f4a144239549d7f435e779c966fd691",
+    "outputSHA256": "15a992a15249256b6e2abeb1f11a3d070876f522134f01e8727610c9facff2b2",
+    "method": "built-in-imagegen",
+    "generationReferences": [
+      {
+        "path": "generated/tr-04.png",
+        "SHA256": "ea7352c85e7b93a1750c0b789cf7bc8b57eff6ad9d517d362beca2739cb5f98c"
+      }
+    ],
+    "byteIdentical": false
+  },
+  {
+    "locale": "de",
+    "order": 5,
+    "output": "de/05-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/de/05-store.png",
+    "sourceSHA256": "805843872dc9d25750952e5812138e5cc5ff0bfebb7d41287d61a22dead80211",
+    "outputSHA256": "c9d6447e3aac0dad1ab4c0f876d8366cb969368251b47d85f99f70cd22cf4c80",
+    "method": "built-in-imagegen",
+    "generationReferences": [
+      {
+        "path": "generated/tr-05.png",
+        "SHA256": "ed6880f0fee3c240b30425cd78830b0a9534f1abb5cf81ca94b78f03778de6a1"
+      }
+    ],
+    "byteIdentical": false
+  },
+  {
+    "locale": "de",
+    "order": 6,
+    "output": "de/06-store.png",
+    "width": 1080,
+    "height": 1920,
+    "source": "../../2026-11-13/store-final-6/de/06-store.png",
+    "sourceSHA256": "e93a1c02b0d9834c5599c644195198319afa36c7c91668c04878b8eaba001a21",
+    "outputSHA256": "e93a1c02b0d9834c5599c644195198319afa36c7c91668c04878b8eaba001a21",
+    "method": "byte-copy",
+    "generationReferences": [],
+    "byteIdentical": true
+  }
+]
