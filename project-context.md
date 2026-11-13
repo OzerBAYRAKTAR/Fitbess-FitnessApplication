@@ -60,22 +60,32 @@ The following values describe the working checkout at installation on 2026-10-16
 
 ## Playbook provenance
 
-- Version: 0.3.0.
+- Version: 0.4.0.
 - Source: `https://github.com/OzerBAYRAKTAR/ai-engineering-playbook`.
 - Source branch: `codex/po-manager-workflow` (upstream PR #2 awaiting merge at installation).
-- Pinned commit: `55622c9717b7e4292d72dac18fac57065dd19e6b`.
-- Installed/reviewed: 2026-10-16.
-- Managed content: `.ai-playbook/core/`, `.ai-playbook/platforms/`, `.ai-playbook/workflows/`, `.ai-playbook/VERSION`, `.ai-playbook/SOURCES.md`, the five directories in `.agents/skills/`, and the copied Codex role/research templates under `.ai-playbook/integrations/codex/`.
+- Pinned commit: `58c2c108e4b15d1e0b7ce22745c519ac558fc597`.
+- Installed/reviewed: 2026-11-13.
+- Managed content and exact source provenance: `.ai-playbook-manifest.json`; seven project-local skills in `.agents/skills/`. Explicit preserved overrides remain project-owned.
 - Project-owned files: root `AGENTS.md`, this file and `.ai-playbook/README.md`; preserve their local decisions during upgrades.
 
 
 ## PO-manager workflow
 
-- Enabled by the project owner on 2026-10-16: research first, then install.
+- Native PO-manager fallback was enabled on 2026-10-16. As of 2026-11-13 use it only when the user explicitly selects it instead of the separate owner-orchestrator topology.
 - User-facing coordinator: product-owner skill in the main conversation; English execution briefs and Turkish explanations.
 - Native delegation to one technical_manager subagent is authorized for scoped product implementation requests. A read-only reviewer may be used for meaningful changes. Keep one implementation writer and serialize builds/emulator use.
 - Delegated managers/reviewers execute their assignment directly; do not spawn another PO or recursively delegate the same role.
 - Automatic working-branch Git remains authorized as above. Product scope changes, merge/release, data deletion and security changes are not granted by a brief.
 - Project .codex/config.toml requests on-request approvals with auto_review. Existing sandbox/profile and managed requirements remain authoritative. This installation does not prove the current chat's permission selection changed; verify Approve for me in the active client.
-- Do not change global config, install allow-all hooks or enable Full Access for ordinary delegated work. Do not create/message separate sidebar chats or install a background service as part of this setup.
+- Do not change global config, install allow-all hooks or enable Full Access for ordinary delegated work. The legacy PO-manager fallback does not create separate sidebar chats or a background service.
 - Model selection is inherited from the user's current session.
+
+## Separate owner-orchestrator topology
+
+- Enabled by the user's integration request on 2026-11-13; this is the selected topology on explicit owner/orchestrator designation.
+- The owner uses `.agents/skills/owner/SKILL.md` and the shared `.ai-playbook/workflows/owner-orchestrator.md`; the orchestrator uses `.agents/skills/orchestrator/SKILL.md`.
+- The user's requested workflow authorizes finding/creating one orchestrator chat for this project, exchanging scoped coordination messages with the owner, and delegating scoped execution/review to subagents. Do not start a competing PO-manager coordinator for the same outcome.
+- Activating a role alone establishes coordination and waits for an objective. This integration did not create or pair live chats; verify exact identities, source provenance and readiness when activating.
+- Owner resolves in-scope product/architecture decisions. Existing Git cadence, external-action boundaries, active runtime permissions and current human direction remain authoritative.
+- Synchronize through `.ai-playbook/scripts/sync_playbook.py`; the manifest owns source version/hash tracking. Preserve the five listed local overrides and project-specific instructions.
+- No daemon, email bridge, global permission changes, publication or unlimited-runtime guarantee is installed.

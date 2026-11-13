@@ -13,11 +13,26 @@ Read `project-context.md`, `.ai-playbook/core/engineering.md`, `.ai-playbook/cor
 - Follow higher-priority instructions and explicit user intent when guidance conflicts; surface unresolved project-specific contradictions.
 
 
-## PO-manager workflow
+## PO-manager workflow (optional fallback)
 
-- The project owner enabled this workflow in project-context.md. For user-facing product implementation requests, use .agents/skills/product-owner/SKILL.md and delegate the scoped English brief to one technical-manager subagent. This instruction explicitly requests native delegation for this workflow.
+- Use this topology only when the user explicitly selects the native PO-manager fallback instead of the separate owner-orchestrator topology. For user-facing product implementation requests, use .agents/skills/product-owner/SKILL.md and delegate the scoped English brief to one technical-manager subagent. This instruction explicitly requests native delegation for this workflow.
 - Prefer the custom agent technical_manager. If that role is not available through the current tool, spawn an execution agent and have it read .agents/skills/technical-manager/SKILL.md. If delegation is unavailable, disclose the sequential fallback.
 - When already acting as the delegated technical manager or reviewer, execute the assignment directly; do not create another PO or recursively delegate the same role.
 - For meaningful changes the technical manager may delegate a separate read-only code review. Keep one implementation owner and serialize shared builds/emulator interactions.
 - Honor analysis-only and plan-only requests. Carry existing authorization through the brief; do not add repeated approval gates for routine implementation, verification or authorized working-branch Git.
 - Active sandbox, managed policy and tool approvals remain authoritative. Do not change security settings or bypass a denied operation to finish a product task.
+
+<!-- ai-playbook:begin -->
+## AI playbook (managed integration)
+
+Read `project-context.md` when present and `.ai-playbook/core/engineering.md`,
+`.ai-playbook/core/architecture.md`, and `.ai-playbook/workflows/development.md`
+before implementation. Discover project skills in `.agents/skills/`; read a
+relevant SKILL.md explicitly if automatic discovery is unavailable.
+On an explicit owner/orchestrator designation, use the corresponding skill and
+`.ai-playbook/workflows/owner-orchestrator.md` instead of the default PO-manager
+topology for that outcome. Role names do not grant tool or Git permissions.
+Preserve project-specific decisions and locally retained overrides recorded in
+`.ai-playbook-manifest.json`. Use the sync command documented in
+`.ai-playbook/integrations/codex/README.md` for updates.
+<!-- ai-playbook:end -->

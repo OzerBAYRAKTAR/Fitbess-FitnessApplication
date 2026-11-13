@@ -2,7 +2,7 @@
 
 Bu projede [AI Engineering Playbook](https://github.com/OzerBAYRAKTAR/ai-engineering-playbook) kullanılır. Kurallar ve skill talimatları İngilizce, kullanıcıya açıklamalar Türkçedir.
 
-Kaynak sürüm: **0.3.0**. GitHub `codex/po-manager-workflow` dalından çekilen sabit commit: `55622c9717b7e4292d72dac18fac57065dd19e6b`. Kaynak bilgisi [project-context.md](../project-context.md) içinde de kayıtlıdır.
+Kaynak sürüm: **0.4.0**. GitHub `codex/po-manager-workflow` dalındaki sabit commit: `58c2c108e4b15d1e0b7ce22745c519ac558fc597`. Kaynak bilgisi [project-context.md](../project-context.md) içinde de kayıtlıdır.
 
 - [AGENTS.md](../AGENTS.md): Codex'in proje giriş talimatları.
 - [Proje bağlamı](../project-context.md): gerçek komutlar, mimari, emülatör ve Git yetkilendirmesi.
@@ -11,7 +11,7 @@ Kaynak sürüm: **0.3.0**. GitHub `codex/po-manager-workflow` dalından çekilen
 - [Kaynaklar](SOURCES.md): resmî referanslar ve güncelleme yaklaşımı.
 - [Ajan becerileri araştırması](research/agent-skills-review-2026-10.md): 20 Ekim 2026'da incelenen on açık kaynak depodan seçilen, projeye uyarlanmış ilkeler ve kesin kaynak commitleri.
 
-Yeni Codex oturumları proje AGENTS.md dosyasını kullanır. Beş skill mevcut oturumun kataloğunda görünmüyorsa talimatları açıkça okunabilir; otomatik keşfi yeni oturumda kontrol edin.
+Yeni Codex oturumları proje AGENTS.md dosyasını kullanır. Yedi skill mevcut oturumun kataloğunda görünmüyorsa talimatları açıkça okunabilir; otomatik keşfi yeni oturumda kontrol edin.
 
 ## Otomatik kullanım ve taşınabilirlik
 
@@ -35,3 +35,11 @@ PO–teknik yönetici kurulumu için [kullanım rehberini](../docs/po-manager-wo
 ## Yerel Git politikası uyarlaması
 
 17 Ekim 2026 kullanıcı tercihi: otomatik commit/push yalnız büyük, anlamlı ve doğrulanmış iş bütünlerinde yapılır; her düzenlemede yapılmaz. PR kendiliğinden açılmaz. `workflows/development.md` ve Git checkpoint skill'i bu tercihe göre yerel olarak uyarlanmıştır. Merkezi kaynak şimdi 0.3.0 sürümünde `55622c9717b7e4292d72dac18fac57065dd19e6b` commit'indedir; sonraki merkezi güncellemelerde bu yerel Git politikası korunmalıdır.
+
+## Otomatik senkronizasyon ve owner kullanımı
+
+13 Kasım 2026 kurulumu: kaynak commit ve yönetilen dosyaların hash kayıtları [manifestte](../.ai-playbook-manifest.json) bulunur. Bu manifest, yukarıdaki tarihsel kaynak notlarının yerine güncel sürüm kaydıdır. Projeye özel bu README, SOURCES, önceki araştırma raporu, development workflow ve aktif git-checkpoint skill yerel uyarlama olarak korunur.
+
+Güncelleme için proje kökünden `python .ai-playbook/scripts/sync_playbook.py update --project . --ref <reviewed-commit-or-tag> --check`, ardından aynı komutu `--check` olmadan çalıştırın. Salt `git pull` kurucuyu çalıştırmaz; update komutu indirme ve doğru skill dizinine eşitlemeyi birlikte yapar. [Ayrıntılı rehber](integrations/codex/README.md).
+
+[Owner-orchestrator kullanım rehberi](../docs/owner-orchestrator.md). Kurulum gerçek sohbet çifti açmadı; rol aktivasyonunda hazır yanıtı ve kaynak doğrulaması ayrıca gözlenir.

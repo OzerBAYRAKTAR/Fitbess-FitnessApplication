@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "source": {
+    "repository": "https://github.com/OzerBAYRAKTAR/ai-engineering-playbook.git",
+    "commit": "58c2c108e4b15d1e0b7ce22745c519ac558fc597",
+    "dirty": false
+  },
+  "version": "0.4.0",
+  "preserved": [
+    ".agents/skills/git-checkpoint/SKILL.md",
+    ".ai-playbook/README.md",
+    ".ai-playbook/SOURCES.md",
+    ".ai-playbook/research/agent-skills-review-2026-10.md",
+    ".ai-playbook/workflows/development.md"
+  ],
+  "files": {
+    ".agents/skills/android-verification/SKILL.md": "01ea0d037920714cd17bdd4d427d14e65dfe0e533b53516cd376866ae9de58a5",
+    ".agents/skills/code-review/SKILL.md": "d6a974b846f0fd7e7965b9cd6fec01817e93f01ec3f680c741449b20d862e328",
+    ".agents/skills/orchestrator/SKILL.md": "d45c894bbec6183dd3f236378d546f994f69c93ced0614da7c28f17a8837d5dc",
+    ".agents/skills/owner/SKILL.md": "9d97c032a734b2a35c1c28294a1360e961d98c8e6ad465ad982590db34e28a58",
+    ".agents/skills/product-owner/SKILL.md": "6bff8cfc0831d01b902ed63ad121cc838cb6c4e763bd80857d33cbbaf04940f8",
+    ".agents/skills/technical-manager/SKILL.md": "65fb812177eb7365ac659540b249b78b0ddf228d2dda1b9635f833917158b6c3",
+    ".ai-playbook/VERSION": "40b8eb4000a913a7791090535f291d3d369874162a89ef3c9e3d4e887a1b9e79",
+    ".ai-playbook/core/architecture.md": "0ec0792cd4f9e5afd23a60b9a417bfcb1daea288446025fed0445cf37d6236e0",
+    ".ai-playbook/core/engineering.md": "9afcdc3a891254ee00b2e77824a94b1257f0e67727281f7f74c4e8384f17d737",
+    ".ai-playbook/examples/evaluation-scenarios.md": "d7ffe396bffa61dde0c57ce495dfba0ba9d5f9517f99a848c65c53111499e3ef",
+    ".ai-playbook/integrations/codex/AGENTS.template.md": "7f9e08e6784eeaa67bd41766d9fb060ae0d21c3a1a5d4bdb8331a89cd9367939",
+    ".ai-playbook/integrations/codex/README.md": "6c6b6b9b1569284e7706bb1bd222d26fca6396ff631c426d3a81ddbe0095e520",
+    ".ai-playbook/integrations/codex/po-manager-research.md": "c55c3af262e50ae85d9f7ccf92aad540d1a32096f80e3ae451c14ad7548d50f9",
+    ".ai-playbook/integrations/codex/po-manager.config.toml": "bebbac5272f5a8fbc9a5fe64f872e4f4cb9bba482134ea799b2faf60c3fd6aab",
+    ".ai-playbook/integrations/codex/project-context.template.md": "8b987517887e36c48e8542a9b59b753234c5f829e380a4f18689748bf021a42e",
+    ".ai-playbook/integrations/codex/technical-manager.toml": "85b648706975856524d70829535dc7bfef19a46b6042500c97622db9dc23a47d",
+    ".ai-playbook/integrations/github/validate.yml": "21b0842e3b56dc426fae54a0d72427ca62c0e45e93f10898d6b8ca1aa7108ba6",
+    ".ai-playbook/platforms/android-kotlin.md": "f8362921ba160dd388c43ce6f61993f7bceb8701b2502029b7659f025a5a102a",
+    ".ai-playbook/research/owner-orchestrator-review-2026-11.md": "873baa71b9b48c937967d0170f9ba52dea3c4edb212bc0a5460cfded37eef8b0",
+    ".ai-playbook/scripts/sync_playbook.py": "f1ab82cdd9d9929e6e43e4dceb09e683b2f20ec3e1acf27ebe063bc798a7e9ca",
+    ".ai-playbook/scripts/test_sync_playbook.py": "2fe362f88cf14ce22505015954f3321bc8859291edb78849a2599a5f7e7fe4e3",
+    ".ai-playbook/scripts/test_validate.py": "1b82d042e5932a60e38def80398c948da7e10be12ff4f16e9bd8a951336b0866",
+    ".ai-playbook/scripts/validate.py": "bfb5ddedc046af63c0520bba6beebe4a321c713d17c27b4c1ea7717822169ffa",
+    ".ai-playbook/skills/android-verification/SKILL.md": "01ea0d037920714cd17bdd4d427d14e65dfe0e533b53516cd376866ae9de58a5",
+    ".ai-playbook/skills/code-review/SKILL.md": "d6a974b846f0fd7e7965b9cd6fec01817e93f01ec3f680c741449b20d862e328",
+    ".ai-playbook/skills/git-checkpoint/SKILL.md": "e30d5ae7095046dde309406321a35c40b17a8a35dd6563f00ca19d0760b44d8f",
+    ".ai-playbook/skills/orchestrator/SKILL.md": "d45c894bbec6183dd3f236378d546f994f69c93ced0614da7c28f17a8837d5dc",
+    ".ai-playbook/skills/owner/SKILL.md": "9d97c032a734b2a35c1c28294a1360e961d98c8e6ad465ad982590db34e28a58",
+    ".ai-playbook/skills/product-owner/SKILL.md": "6bff8cfc0831d01b902ed63ad121cc838cb6c4e763bd80857d33cbbaf04940f8",
+    ".ai-playbook/skills/technical-manager/SKILL.md": "65fb812177eb7365ac659540b249b78b0ddf228d2dda1b9635f833917158b6c3",
+    ".ai-playbook/workflows/owner-orchestrator.md": "be5a32d1425d3d11b656f1e6737a2f46d9335d74e7978146a39baef57b68e3d5",
+    ".ai-playbook/workflows/po-manager.md": "b56cfa33d07b50c3d62629d4e85451de03bb10db16841011bf56d65c1e8ec277"
+  }
+}
