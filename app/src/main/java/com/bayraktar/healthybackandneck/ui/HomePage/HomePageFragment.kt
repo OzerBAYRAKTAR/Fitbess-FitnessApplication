@@ -25,9 +25,9 @@ class HomePageFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, state: Bundle?) {
+        adaptForReadableText()
         binding.heroAction.setOnClickListener { navigate(R.id.programLevelFragment) }
         binding.allRegions.setOnClickListener { openRegion("back") }
-        populateRegionGrid(binding.regionGrid, TrainingCatalog.regions.filter { it.key != "warmup" }) { openRegion(it.key) }
         binding.warmupAction.setOnClickListener { openRegion("warmup") }
         binding.breathAction.setOnClickListener { navigate(R.id.breathFragment) }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
@@ -37,6 +37,26 @@ class HomePageFragment : Fragment() {
                     .setNegativeButton(R.string.no, null).show()
             }
         })
+    }
+
+    private fun adaptForReadableText() {
+        if (resources.configuration.screenWidthDp >= 360 && resources.configuration.fontScale <= 1.15f) return
+        val inset = (20 * resources.displayMetrics.density).toInt()
+        listOf(binding.headerSplit, binding.programSplit, binding.regionCardSplit, binding.wellnessSplit)
+            .forEach { it.setGuidelinePercent(0.96f) }
+        listOf(binding.programIcon, binding.regionIcon, binding.wellnessIcon).forEach { it.visibility = View.GONE }
+        listOf(binding.headerPhoto, binding.programPhoto, binding.regionPhoto, binding.wellnessPhoto)
+            .forEach { it.alpha = 0.18f }
+        listOf(binding.programCopy, binding.regionCopy, binding.wellnessCopy, binding.allRegions).forEach {
+            val params = it.layoutParams as ViewGroup.MarginLayoutParams
+            params.marginStart = inset
+            it.layoutParams = params
+        }
+        binding.wellnessActions.orientation = android.widget.LinearLayout.VERTICAL
+        listOf(binding.warmupAction, binding.breathAction).forEach {
+            it.layoutParams = android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+                .apply { topMargin = inset / 2 }
+        }
     }
 
     private fun openRegion(key: String) = navigate(R.id.bodyRegionFragment, bundleOf("regionKey" to key))

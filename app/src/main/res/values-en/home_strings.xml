@@ -1,0 +1,15 @@
+<resources>
+    <string name="home_brand_title">Get Fit at Home</string>
+    <string name="home_motivation">Take a step for yourself today.</string>
+    <string name="home_intro">Move at home with your 21-day plan.</string>
+    <string name="home_program_title">21-Day Program</string>
+    <string name="home_program_description">Choose your level, follow your daily plan.</string>
+    <string name="home_program_action">Choose level</string>
+    <string name="home_region_title">Targeted Workouts</string>
+    <string name="home_region_description">Focus on the area you want to train.</string>
+    <string name="home_region_action">Choose area</string>
+    <string name="home_wellness_title">Warm-up &amp; Breathing</string>
+    <string name="home_wellness_description">Get ready to move, focus on your breath.</string>
+    <string name="home_warmup_action">Warm-up</string>
+    <string name="home_breath_action">Breathe</string>
+</resources>

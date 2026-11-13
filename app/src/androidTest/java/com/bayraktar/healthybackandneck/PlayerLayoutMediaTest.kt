@@ -45,6 +45,9 @@ class PlayerLayoutMediaTest {
         ActivityScenario.launch(HomeActivity::class.java).use { scenario ->
             inst.waitForIdleSync()
             android.os.SystemClock.sleep(700)
+            scenario.onActivity { it.findViewById<View>(R.id.allRegions).performClick() }
+            inst.waitForIdleSync()
+            android.os.SystemClock.sleep(700)
             scenario.onActivity { activity ->
                 val grid = activity.findViewById<GridLayout>(R.id.regionGrid)
                 assertTrue(grid.childCount > 1)

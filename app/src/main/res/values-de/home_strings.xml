@@ -1,0 +1,15 @@
+<resources>
+    <string name="home_brand_title">Fit zu Hause</string>
+    <string name="home_motivation">Tu heute etwas für dich.</string>
+    <string name="home_intro">Werde zu Hause aktiv mit deinem 21-Tage-Plan.</string>
+    <string name="home_program_title">21-Tage\nProgramm</string>
+    <string name="home_program_description">Wähle dein Level und folge deinem Tagesplan.</string>
+    <string name="home_program_action">Level wählen</string>
+    <string name="home_region_title">Gezieltes Training</string>
+    <string name="home_region_description">Trainiere die Körperregion deiner Wahl.</string>
+    <string name="home_region_action">Bereich wählen</string>
+    <string name="home_wellness_title">Aufwärmen &amp; Atmung</string>
+    <string name="home_wellness_description">Bereite dich vor und konzentriere dich auf deinen Atem.</string>
+    <string name="home_warmup_action">Warm-up</string>
+    <string name="home_breath_action">Atmung</string>
+</resources>

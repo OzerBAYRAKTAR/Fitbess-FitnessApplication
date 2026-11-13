@@ -1,0 +1,15 @@
+<resources>
+    <string name="home_brand_title">Фитнес дома</string>
+    <string name="home_motivation">Сделай сегодня шаг для себя.</string>
+    <string name="home_intro">Тренируйся дома по плану на 21 день.</string>
+    <string name="home_program_title">Программа на 21 день</string>
+    <string name="home_program_description">Выбери уровень и следуй плану на день.</string>
+    <string name="home_program_action">Выбрать уровень</string>
+    <string name="home_region_title">Тренировка зон</string>
+    <string name="home_region_description">Сосредоточься на нужной части тела.</string>
+    <string name="home_region_action">Выбрать зону</string>
+    <string name="home_wellness_title">Разминка и дыхание</string>
+    <string name="home_wellness_description">Подготовься к движению и сосредоточься на дыхании.</string>
+    <string name="home_warmup_action">Разминка</string>
+    <string name="home_breath_action">Дыхание</string>
+</resources>

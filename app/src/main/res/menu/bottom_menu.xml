@@ -4,26 +4,26 @@
 
     <item
         android:id="@+id/id_homepage_fragment"
-        android:icon="@drawable/homescreen"
+        android:icon="@drawable/nav_home"
         android:title="@string/home"
         android:padding="15dp"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/moveListFragment"
-        android:icon="@drawable/ic_favorite_outline"
+        android:icon="@drawable/nav_heart"
         android:title="@string/nav_favorites"
         android:padding="15dp"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/id_statistics_fragment"
-        android:icon="@drawable/pie_chart"
+        android:icon="@drawable/nav_progress"
         android:title="@string/statistics"
         android:padding="15dp"
         app:showAsAction="always" />
     <item
         android:id="@+id/id_profile_fragment"
-        android:icon="@drawable/profile"
+        android:icon="@drawable/nav_profile"
         android:title="@string/profile"
         android:padding="15dp"
         app:showAsAction="always" />

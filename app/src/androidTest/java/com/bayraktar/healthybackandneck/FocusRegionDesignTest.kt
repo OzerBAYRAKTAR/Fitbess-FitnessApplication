@@ -65,6 +65,8 @@ class FocusRegionDesignTest {
         ActivityScenario.launch(HomeActivity::class.java).use { scenario ->
             await(scenario) { it.findViewById<View>(R.id.allRegions) != null }
             for ((key, mapping) in mappings) {
+                scenario.onActivity { it.findViewById<View>(R.id.allRegions).performClick() }
+                await(scenario) { nav(it).currentDestination?.id == R.id.bodyRegionFragment }
                 scenario.onActivity { a ->
                     a.findViewById<GridLayout>(R.id.regionGrid).findViewWithTag<View>(key).performClick()
                 }
@@ -98,15 +100,7 @@ class FocusRegionDesignTest {
             for (language in listOf("tr", "en", "de", "ru")) {
                 prefs.edit().putString("pref_language_code", language).commit()
                 ActivityScenario.launch(HomeActivity::class.java).use { scenario ->
-                    await(scenario) { it.findViewById<GridLayout>(R.id.regionGrid)?.height ?: 0 > 0 }
-                    scenario.onActivity { a ->
-                        assertCards(a)
-                        val grid = a.findViewById<GridLayout>(R.id.regionGrid)
-                        var parent = grid.parent
-                        while (parent !is NestedScrollView) parent = parent.parent
-                        (parent as NestedScrollView).scrollTo(0, grid.top - (56 * a.resources.displayMetrics.density).toInt())
-                    }
-                    capture("home-$language")
+                    await(scenario) { it.findViewById<View>(R.id.allRegions) != null }
                     scenario.onActivity { it.findViewById<View>(R.id.allRegions).performClick() }
                     await(scenario) { nav(it).currentDestination?.id == R.id.bodyRegionFragment && (it.findViewById<GridLayout>(R.id.regionGrid)?.height ?: 0) > 0 }
                     scenario.onActivity { a ->

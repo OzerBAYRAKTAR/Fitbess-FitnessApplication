@@ -1,0 +1,15 @@
+<resources>
+    <string name="home_brand_title">Evde Fit Ol</string>
+    <string name="home_motivation">Bugün kendin için bir adım at.</string>
+    <string name="home_intro">21 günlük planınla evde harekete geç.</string>
+    <string name="home_program_title">21 Günlük Program</string>
+    <string name="home_program_description">Seviyeni seç, günlük planını takip et.</string>
+    <string name="home_program_action">Seviyeni seç</string>
+    <string name="home_region_title">Bölgesel Çalışma</string>
+    <string name="home_region_description">Çalışmak istediğin bölgeye odaklan.</string>
+    <string name="home_region_action">Bölgeni seç</string>
+    <string name="home_wellness_title">Isınma ve Nefes Egzersizi</string>
+    <string name="home_wellness_description">Harekete hazırlan, nefesine odaklan.</string>
+    <string name="home_warmup_action">Isınma</string>
+    <string name="home_breath_action">Nefes</string>
+</resources>
