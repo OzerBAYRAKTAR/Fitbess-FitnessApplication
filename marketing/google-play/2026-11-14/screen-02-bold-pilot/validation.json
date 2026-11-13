@@ -1,0 +1,18 @@
+{
+  "source": "../../2026-11-13/store-final-6/tr/02-store.png",
+  "sourceSHA256": "949819476d8d3fb0e069cdbb837d85962ab08d8f4c1e423b271ca7b432ae4d1f",
+  "expectedSourceSHA256": "949819476d8d3fb0e069cdbb837d85962ab08d8f4c1e423b271ca7b432ae4d1f",
+  "sourceUnchanged": true,
+  "generatedDimensions": {
+    "width": 916,
+    "height": 1717
+  },
+  "finalDimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "finalSHA256": "2b368f8aaedb50370d989c497d4920c1443f2eec6f4c4ec58aeb893e39d35115",
+  "resize": "proportional contain; sampled cream corner padding; no crop, text repaint or perspective adjustment",
+  "locale": "tr",
+  "imagegenOutputId": "exec-2b0996fa-1235-401a-8c9e-1da7f53e545a.png"
+}
