@@ -37,4 +37,3 @@ Yerleşik image_gen aracı kullanıldı; CLI/API fallback kullanılmadı. Tam pr
 İki örnek kullanıcı tarafından beğenildi ve uygulamaya entegrasyonu istendi. Yeni kabul koşulu: kaydedilen hareket kartlarında kilit/erişim etiketi veya “Kilidi aç” düğmesi bulunmayacak; tüm kartlar “İncele” ile mevcut salt okunur görsel/açıklamayı açacak. İlk PNG, önceki değerlendirmeyi saklayan tarihsel referanstır; içindeki erişim etiketleri son entegrasyon için geçerli değildir. Favoriye ekleme herhangi bir kullanım hakkı yazmayacak; katalog ve antrenman yürütme kuralları korunacaktır.
 
 Google Play için istenen yeni Favoriler görselleri her üç dilde de örnek hareket görselleriyle dolu listeyi gösterecek. Boş durum mağaza görseli olarak kullanılmayacak.
-

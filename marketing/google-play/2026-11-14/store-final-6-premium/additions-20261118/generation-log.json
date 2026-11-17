@@ -1,0 +1,201 @@
+{
+  "created": "2026-11-18",
+  "calls": [
+    {
+      "id": "tr-07",
+      "prompt": "Create a polished Google Play marketing image, vertical 9:16, intended 1080x1920. References 1 and 2 are STYLE ONLY: premium cream, forest green, electric lime, sculpted floating dimensional UI with perspective, realistic studio shadows, glowing edge highlights, athlete breakout. New theme FAVORITES, not a screenshot. Huge clear Turkish headline at top: 'Sevdiğin hareketler, tek yerde.' Lime underline. Small brand 'Get Fit at Home'. Build a dramatic slightly diagonal deep forest floating board and THREE populated cream exercise cards floating in front at staggered depths, substantial readable text. Heading 'Favorilerin' and '3 kayıtlı hareket'. Each card has a genuine photorealistic fit adult woman in olive sportswear doing an exercise in a bright cream studio, like the reference athletes, with one athlete partially breaking her card's edge. Card1 'Full crunch' (woman lying on mat with knees bent doing abdominal crunch), card2 'Chair squat' (woman squatting back toward chair), card3 'Plank extension' (woman in plank). Each has a prominent solid heart and EXACT action 'İncele'. Distinct images with coherent anatomy. This must be a FULL populated list, NEVER an empty state. Do NOT include ANY lock, padlock, access/locked/unlocked status, Kilidi aç, duration, calorie, workout start, collections, search/filter, page number or navigation. Keep the 3 cards and all letters inside safe margins. Large premium feature art, not flat boxes or literal phone UI. Sparse footer 'Sevdiğin hareketlere kolayca dön.' All text accurate Turkish, no extra claims.",
+      "generatedSource": "exec-a9a88d94-82ca-493b-88dc-6d247c7050e3.png",
+      "references": [
+        "../tr/04-store.png",
+        "../tr/05-store.png"
+      ],
+      "method": "built-in image_gen"
+    },
+    {
+      "id": "tr-08",
+      "prompt": "Generate a new premium Google Play store marketing image in Turkish, vertical 9:16 intended1080x1920. References STYLE ONLY: cream/forest/electriclime, very dimensional elevated dashboard modules, perspective, photorealistic olive-clad athlete breakout, soft warm studio light and rich grounding shadows. Huge headline top exactly 'Her hareketinin karşılığını gör.' small brand 'Get Fit at Home'. Hero forest-green floating sculpted dashboard, diagonal but text readable. Its dominant elevated lime metric is '42' and 'aktif dakika'. Two separate smaller dimensional cream modules: '3' 'tamamlanan antrenman' and '24' 'yapılan hareket'. Under these, a gorgeous cream floating BAR CHART labeled 'Son 7 gün' and 'Aktif süre · dakika'. EXACTLY7bars left-right values0,8,0,12,7,0,15, each value printed aboveitsbar; zero bars as tiny baseline dashes, nonzero heights proportional, last15bar lime/selectedlimepill, othersforest. Chart axis0,3,6,9,12,15. Day labels11,12,13,14,15,16,17. Separate large sculpted cream floating program-progress card with a lime ring visibly filled4/21 (roughly19%), center '4 / 21', heading '21 günlük yolculuğun', sub '4 farklı gün tamamlandı'. Photorealistic adult female athlete in olive outfit placed behind/alongside dashboard edge, breaks frame naturally but hides no metrics/chart. Premium layered physical objects not flat screenshot, generous cream whitespace; lime light ribbons optional. Discreet readable footer 'Örnek veriler'. NO calorie, bodytransformation, healthscore, streak, goalpromise, page number, claims or extra stats. All metrics must be exactly coherent:42min equals8+12+7+15,3completedworkouts pluspartialtime,24moves; ring4distinctdays independently. Safe margins, excellent accurate Turkish text.",
+      "generatedSource": "exec-f1f38197-258d-4e4a-91c9-55e6bdcd9829.png",
+      "references": [
+        "../tr/05-store.png",
+        "../tr/04-store.png"
+      ],
+      "method": "built-in image_gen"
+    },
+    {
+      "id": "tr-09",
+      "prompt": "Create a NEW Turkish GooglePlay premium marketing image vertical9:16 intended1080x1920. STYLE references only: sculpted dimensionalcream/forestgreen/electriclime floating dashboard, physicallyextruded roundedcards, lush shadows, highlights, subtle perspective and warm cream background. Brand 'Get Fit at Home', huge headline 'Vücudunu daha iyi tanı.' limeunderline. Theme bodycalculatorhub, three distinct beautiful floating oversized calculatorcards staggered in depth over a diagonalforest supportboard. Rich dimensionaliconography scale/tapemeasure/flame and lime details, elegant not simpleflatboxes. Can feature one tasteful photorealistic adult woman in olive sportswear beside/behind cards but must not hide anytext. Card1 title 'Vücut kitle indeksi' big result '24,69' and unit 'kg/m²', iconbodyweightscale. Card2 title 'Günlük enerji ihtiyacı' small 'Tahmini', big '2.236' unit 'kcal / gün', dimensionalflameicon. Card3 title 'Vücut yağ oranı' small 'Tahmini', big '18,4' unit '%', dimensionaltapemeasureicon. Eachcard includesbutton 'Hesapla'. These are THREE DIFFERENT calculators not exercise/workoutmetrics. Readable small label 'Örnek sonuçlar' clearly present. Bottom conciseinfonote exactly 'Sonuçlar tahminidir; tanı değildir.' All text impeccableTurkish and numbers exact. Spare airycreamcomposition, great hierarchy, polished3Dproductrender with actualdepth, premiumstudio shadows and limeedgeglow like references. Nohealthpromise, weightlossclaim, medicaldiagnosis, progressrings, pagepagination, bottomnavigation or extrametrics. Preserve safemargins allletters insidecanvas.",
+      "generatedSource": "exec-b4ac3b7f-c63d-48b9-adf7-0833ce7050d7.png",
+      "references": [
+        "../tr/05-store.png",
+        "../tr/04-store.png"
+      ],
+      "method": "built-in image_gen"
+    },
+    {
+      "id": "tr-09-repair",
+      "prompt": "Edit this exact image minimally. REMOVE the entire top-right 'Google Play PREMIUM' plaque, crown and Play triangle. Replace ONLY that plaque region with the same uninterrupted cream background. It is an invented unsupported badge and must be completely absent. Preserve EVERYTHING else exactly: headline, brand, athlete, all3cards, numbers24,69/2.236/18,4, samplelabel,footer, composition, depth, lighting. Do not add any badges/certifications/storelogos or additional text. Keep portrait aspect ratio.",
+      "generatedSource": "exec-7083c534-edb3-4402-94db-fe5046307525.png",
+      "references": [
+        "tr-09-draft.png"
+      ],
+      "method": "built-in image_gen"
+    },
+    {
+      "id": "en-07",
+      "prompt": "Localize this EXACT approved Turkish populated Favorites marketing art to ENGLISH. Preserve composition, all3exercisephotos, athlete, geometry, creamforestlime, shadows, hearts, cards, count and dimensions. Replace text ONLY with this exactcopy: mainheadline 'Your favorite moves, all in one place.'; board 'Your favorites'; count '3 saved moves'; all3buttons 'Explore'; footer 'Return to the moves you love.' Brand stays 'Get Fit at Home'. Exercise names stay 'Full crunch','Chair squat','Plank extension'. Fit all text elegantly in existing areas, natural clearEnglish, no cropping. No padlocks, locked/unlocked/accesslabels, emptystate, start, duration, calories, collection, newclaim, badge or pagination. Keep all3cards populated. New image sameportrait9:16.",
+      "generatedSource": "exec-e080aeb3-4f0f-477f-bda1-cea060d830c9.png",
+      "references": [
+        "tr-07.png"
+      ],
+      "method": "built-in image_gen"
+    },
+    {
+      "id": "de-07",
+      "prompt": "Localize this exact Turkish Favorites marketing image to GERMAN, preserving ALL composition,3populatedexercisephotos,athlete,hearts,depth,paletteandgeometry. ReplaceONLYtext: headline 'Deine Lieblingsübungen. Alles an einem Ort.'; boardheading 'Deine Favoriten'; count '3 gespeicherte Übungen'; all3buttons 'Ansehen'; footer 'Kehre zu deinen Lieblingsübungen zurück.' Brand 'Get Fit at Home' unchanged. Exercise labels 'Full Crunch','Stuhlkniebeuge','Plank mit Armstreckung' (split line naturally). AccurateGerman umlauts, alltextsafeinsidecanvas. Do not addANYpadlock/accessstatus/lockedlabels/emptystate/start/duration/calorie/collections/pagination/badges. Sameportrait9:16, preservepremiumcreamforestlimephysicalcardart.",
+      "generatedSource": "exec-5ed384dd-0623-4054-ad86-334cba98c8b0.png",
+      "references": [
+        "tr-07.png"
+      ],
+      "method": "built-in image_gen"
+    },
+    {
+      "id": "tr-08-brand",
+      "prompt": "Targetedbrandonlyedit. Image1 is edit targetProgressmarketing. Image2 Favorites is BRANDREFERENCEONLY. Replace Image1's invented darksquareplaytriangleicon with exactly the limegreenleafmark treatment and 'Get Fit at Home' wordmark seen at upperleft ofImage2. Keep brand same smallposition and preserve allotherpixels/composition/text/athlete/metrics42/3/24/chart0,8,0,12,7,0,15/ring4/21/samplelabel. No other creativechanges. No playicon,no additionalbadges.",
+      "generatedSource": "exec-7820d5ca-9581-43cd-ba05-933bb6109dbb.png",
+      "references": [
+        "tr-08.png",
+        "tr-07.png"
+      ],
+      "method": "built-in image_gen"
+    },
+    {
+      "id": "tr-09-brand",
+      "prompt": "Targetedbrandonlyedit. Image1 isedit targetbodycalculator marketing. Image2Favorites isBRANDREFERENCEONLY. Replace Image1's invented house/runnerlogo+verticalseparator with EXACT same limegreenleafmark and 'Get Fit at Home' wordmarktreatment fromImage2 upperleft. Allotherart MUST stay: composition,3calculatorcards,athlete,headlinetext,24,69kg/m²/2.236kcal/gün/18,4%,samplelabel,infonote. No GooglePlayPREMIUMbadge/crown/playtriangle anywhere. Keepportraitratio. Onlybrandregionchanges,noothercreativechange.",
+      "generatedSource": "exec-bf4a4f8b-bf2f-44d7-9e28-4b806dc3603f.png",
+      "references": [
+        "tr-09.png",
+        "tr-07.png"
+      ],
+      "method": "built-in image_gen"
+    },
+    {
+      "id": "en-08",
+      "prompt": "Localize exactapprovedTurkishProgressmarketing to ENGLISH. PreserveALLphysicalcomposition,leafbrandGetFitatHome,athlete,artgeometry,lighting,depthandALLnumbers. TextONLY: headline 'See every move count.';42 'active minutes';3 'completed workouts';24 'moves completed';chart 'Last 7 days', 'Active time · minutes';ring 'Your 21-day journey','4 distinct days completed';footer 'Sample data'. Keep42/3/24; EXACT7barvalues0,8,0,12,7,0,15;dates11..17;axis0,3,6,9,12,15;ring4/21. Last15selectedlime. AccurateEnglish, readableallletters insidesafemargins. DoNOTaddhealthclaims,calories,newstats,playlogos,badges,pagination. Sameportrait9:16.",
+      "generatedSource": "exec-a201fcdf-0f25-45f5-b762-f402c12b56ed.png",
+      "references": [
+        "tr-08-brand.png"
+      ],
+      "method": "built-in image_gen"
+    },
+    {
+      "id": "de-08",
+      "prompt": "Localize exactapprovedTurkishProgressmarketing to GERMAN. PreserveALLcomposition,leafbrandGetFitatHome,athlete,geometry,lighting,3Ddepthandnumbers. ReplaceONLYtext: headline 'Sieh, was jede Bewegung bewirkt.';42 'aktive Minuten';3 'abgeschlossene Workouts';24 'absolvierte Bewegungen';chart 'Letzte 7 Tage', 'Aktive Zeit · Minuten';ring 'Deine 21-Tage-Reise','4 verschiedene Tage abgeschlossen';footer 'Beispieldaten'. FitlongGermantextgracefullywithoutclipping. Keep42/3/24;exact7bar0,8,0,12,7,0,15;days11..17;axis0,3,6,9,12,15;ring4/21(~19%). Nohealthclaims/calories/newstats/badges/pagination. Sameportrait9:16, alltextcorrectGerman.",
+      "generatedSource": "exec-d7c62d6f-78ce-4f47-b16f-43fc2ddb421a.png",
+      "references": [
+        "tr-08-brand.png"
+      ],
+      "method": "built-in image_gen"
+    },
+    {
+      "id": "en-09",
+      "prompt": "Localize EXACTTurkishbodycalculator marketing to ENGLISH, preservecomposition/3cards/icons/athlete/leafbrand/colors/depth/shadowsandgeometry. TextONLY: mainheadline 'Get to know your body better.'; subtitle 'Practical tools for your body measurements.'; samplepill 'Sample results';card1 'Body mass index', result '24.69' unit 'kg/m²';card2 'Daily energy needs', qualifier 'Estimated', result '2,236', unit 'kcal / day';card3 'Body fat percentage', qualifier 'Estimated', result '18.4', unit '%'. All3buttons 'Calculate'. Footer exactly 'Results are estimates, not a diagnosis.' Brand 'Get Fit at Home' same. AccurateEnglish, fullyreadable and no clipping. No GooglePlayPremium/plaque/badges/crown/newlogo/healthpromise/extraclaims. Sameportrait9:16.",
+      "generatedSource": "exec-b4e75032-9a4d-4e43-875b-9d1e58786942.png",
+      "references": [
+        "tr-09-brand.png"
+      ],
+      "method": "built-in image_gen"
+    },
+    {
+      "id": "de-09",
+      "prompt": "Localize exactapprovedTurkishbodycalculator marketing to GERMAN. PreserveALLphysicalartcomposition,threecards,icons,athlete,leafbrandGetFitatHome,geometry,depth,creamforestlime. ReplaceONLYtext: headline 'Lerne deinen Körper besser kennen.'; subtitle 'Praktische Rechner für deine Körpermaße.';samplepill 'Beispielergebnisse';card1 'Body-Mass-Index' result '24,69' unit 'kg/m²';card2 'Täglicher Energiebedarf', qualifier 'Geschätzt', result '2.236', unit 'kcal / Tag';card3 'Körperfettanteil', qualifier 'Geschätzt', result '18,4', unit '%'. All3buttons 'Berechnen'. Footer 'Ergebnisse sind Schätzwerte, keine Diagnose.' ExactcorrectGermanumlauts, natural linebreaks, no clippingallletters. NoGooglePlaybadges/Premium/crown/newlogo/healthclaim/extrastats/pagination. Sameportrait9:16.",
+      "generatedSource": "exec-a24b2165-65bb-4c57-b7a5-99b8d62a23ba.png",
+      "references": [
+        "tr-09-brand.png"
+      ],
+      "method": "built-in image_gen"
+    },
+    {
+      "id": "en-09-decimals",
+      "prompt": "MINIMALpreciseEnglishnumberpunctuationrepairONLY. InfirstBodymassindexcard change '24,69' to '24.69' (DECIMALPOINT, aROUND DOT ON BASELINE WITH NO DESCENDING COMMA TAIL). InthirdBodyfatcard change '18,4' to '18.4' (decimalROUND DOT, NOTcomma). These two English decimals MUST be dots. Keep middle '2,236' exactlywithcomma(thousands). Preserve allotherpixels/text/art/brand/athlete/cards/samplefooter/layout. Do not translateanyothertext or redesign. Sameportrait.",
+      "generatedSource": "exec-b3458c34-9063-4727-8fc7-593797cec9f0.png",
+      "references": [
+        "prior EN09 output, source ID en-09"
+      ],
+      "method": "built-in image_gen"
+    }
+  ],
+  "finals": [
+    {
+      "locale": "tr",
+      "order": "07",
+      "sourceID": "tr-07",
+      "generatedSource": "exec-a9a88d94-82ca-493b-88dc-6d247c7050e3.png",
+      "sourceFile": "tr-07-selected.png",
+      "output": "../tr/07-store.png"
+    },
+    {
+      "locale": "tr",
+      "order": "08",
+      "sourceID": "tr-08-brand",
+      "generatedSource": "exec-7820d5ca-9581-43cd-ba05-933bb6109dbb.png",
+      "sourceFile": "tr-08-selected.png",
+      "output": "../tr/08-store.png"
+    },
+    {
+      "locale": "tr",
+      "order": "09",
+      "sourceID": "tr-09-brand",
+      "generatedSource": "exec-bf4a4f8b-bf2f-44d7-9e28-4b806dc3603f.png",
+      "sourceFile": "tr-09-selected.png",
+      "output": "../tr/09-store.png"
+    },
+    {
+      "locale": "en",
+      "order": "07",
+      "sourceID": "en-07",
+      "generatedSource": "exec-e080aeb3-4f0f-477f-bda1-cea060d830c9.png",
+      "sourceFile": "en-07-selected.png",
+      "output": "../en/07-store.png"
+    },
+    {
+      "locale": "en",
+      "order": "08",
+      "sourceID": "en-08",
+      "generatedSource": "exec-a201fcdf-0f25-45f5-b762-f402c12b56ed.png",
+      "sourceFile": "en-08-selected.png",
+      "output": "../en/08-store.png"
+    },
+    {
+      "locale": "en",
+      "order": "09",
+      "sourceID": "en-09-decimals",
+      "generatedSource": "exec-b3458c34-9063-4727-8fc7-593797cec9f0.png",
+      "sourceFile": "en-09-selected-v2.png",
+      "output": "../en/09-store.png"
+    },
+    {
+      "locale": "de",
+      "order": "07",
+      "sourceID": "de-07",
+      "generatedSource": "exec-5ed384dd-0623-4054-ad86-334cba98c8b0.png",
+      "sourceFile": "de-07-selected.png",
+      "output": "../de/07-store.png"
+    },
+    {
+      "locale": "de",
+      "order": "08",
+      "sourceID": "de-08",
+      "generatedSource": "exec-d7c62d6f-78ce-4f47-b16f-43fc2ddb421a.png",
+      "sourceFile": "de-08-selected.png",
+      "output": "../de/08-store.png"
+    },
+    {
+      "locale": "de",
+      "order": "09",
+      "sourceID": "de-09",
+      "generatedSource": "exec-a24b2165-65bb-4c57-b7a5-99b8d62a23ba.png",
+      "sourceFile": "de-09-selected.png",
+      "output": "../de/09-store.png"
+    }
+  ]
+}
