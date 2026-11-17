@@ -1,180 +1,70 @@
 package com.bayraktar.healthybackandneck.ui.Favourite.FavouriteMoveList
 
-import android.annotation.SuppressLint
-import android.app.AlertDialog
-import android.content.ContentValues
 import android.os.Bundle
-import android.util.Log
-import android.view.Gravity
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
-import kotlinx.coroutines.launch
-import com.bayraktar.healthybackandneck.utils.MoveAccess
-import com.bayraktar.healthybackandneck.utils.MoveAccessViewModel
-import com.bayraktar.healthybackandneck.utils.RewardedAds
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayraktar.healthybackandneck.R
-import com.bayraktar.healthybackandneck.utils.PreloadedInterstitialAd
-import com.bayraktar.healthybackandneck.data.Models.ExerciseDetailModel.ExerciseDayExercise
 import com.bayraktar.healthybackandneck.databinding.FragmentMoveListBinding
-import com.bayraktar.healthybackandneck.utils.Interfaces.OnDeleteClicked
-import com.bayraktar.healthybackandneck.utils.Interfaces.RecyclerViewClickListener
-import com.bayraktar.healthybackandneck.utils.showToast
+import com.bayraktar.healthybackandneck.utils.ExerciseMedia
 import dagger.hilt.android.AndroidEntryPoint
 import pl.droidsonroids.gif.GifImageView
 
-
 @AndroidEntryPoint
-class MoveListFragment : Fragment(), RecyclerViewClickListener, OnDeleteClicked {
-
-    private var _binding: FragmentMoveListBinding? = null
-    val binding get() = _binding!!
-
+class MoveListFragment : Fragment() {
+    private var binding: FragmentMoveListBinding? = null
     private val viewModel: MoveListViewModel by viewModels()
-    private val access: MoveAccessViewModel by viewModels()
-    private var rewarded: RewardedAds? = null
-    private var favoritesLoaded = false
-    private var rawFavorites = emptyList<ExerciseDayExercise>()
+    private var dialog: AlertDialog? = null
 
-    private var favList = ArrayList<ExerciseDayExercise>()
-    private var moveListAdapter: MoveListAdapter? = null
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentMoveListBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, state: Bundle?): View {
+        return FragmentMoveListBinding.inflate(inflater, container, false).also { binding = it }.root
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-
-
-        binding.btnCheck.setOnClickListener {
-            view.findNavController().navigate(MoveListFragmentDirections.actionMoveListFragmentToIdHomepageFragment())
-        }
-        binding.txtEmptyFav.setText(R.string.favorite_description)
-        rewarded = RewardedAds(requireActivity(), viewLifecycleOwner).also { it.loadRewardedAds(R.string.rewarded_ad1) }
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                launch { access.earned.collect { renderFavorites() } }
-                launch { access.adFree.collect { renderFavorites() } }
-            }
-        }
-        observeFavlist()
+    override fun onViewCreated(view: View, state: Bundle?) {
+        val adapter = MoveListAdapter(::inspect, ::confirmRemove, ::discover, viewModel::getFavExerciseList)
+        binding!!.rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
+        binding!!.rvdaydetail.adapter = adapter
+        viewModel.state.observe(viewLifecycleOwner, adapter::submit)
         viewModel.getFavExerciseList()
     }
-
-    private fun observeFavlist() {
-        viewModel.getFavExercises.observe(viewLifecycleOwner) { list ->
-            favoritesLoaded = true
-            rawFavorites = list.orEmpty()
-            renderFavorites()
-        }
+    private fun discover() {
+        findNavController().navigate(MoveListFragmentDirections.actionMoveListFragmentToIdHomepageFragment())
     }
-    private fun renderFavorites() {
-        if (_binding == null) return
-        val earned = access.earned.value
-        favList = ArrayList(rawFavorites.groupBy { it.exerciseId }.values.map { copies ->
-            copies.firstOrNull { earned != null && MoveAccess.allowed(it, earned, access.adFree.value == true) } ?: copies.first()
-        })
-        binding.favoriteCount.text = if (favoritesLoaded) getString(R.string.favorite_count, favList.size) else getString(R.string.access_loading)
-        binding.rvdaydetail.visibility = if (favList.isEmpty()) View.GONE else View.VISIBLE
-        binding.txtEmptyFav.visibility = if (favoritesLoaded && favList.isEmpty()) View.VISIBLE else View.GONE
-        binding.btnCheck.visibility = binding.txtEmptyFav.visibility
-        binding.rvdaydetail.layoutManager = LinearLayoutManager(requireContext())
-        moveListAdapter = MoveListAdapter(favList.toMutableList(), this, this).also {
-            it.earned = earned
-            it.adFree = access.adFree.value == true
-        }
-        binding.rvdaydetail.adapter = moveListAdapter
+    private fun inspect(exerciseId: Int) {
+        val model = viewModel.state.value?.uniqueRecords?.firstOrNull { it.exerciseId == exerciseId } ?: return
+        // Saved-item preview is read-only, including old locked favorites. It never grants access or starts a workout.
+        dialog?.dismiss()
+        val content = layoutInflater.inflate(R.layout.info_favourite_layout, null)
+        content.findViewById<TextView>(R.id.exerciseFavouriteTitle).text = model.exerciseName
+        content.findViewById<TextView>(R.id.exerciseFavouriteDescription).text = model.exerciseDescription
+        content.findViewById<GifImageView>(R.id.infoFavouriteGif).setImageResource(ExerciseMedia.drawable(model))
+        dialog = AlertDialog.Builder(requireContext()).setView(content)
+            .setPositiveButton(R.string.close, null).create().also { it.show() }
     }
-
-    override fun recyclerviewListClicked(v: View, position: Int) {
-        val currentModel = favList.getOrNull(position) ?: return
-        val earned = access.earned.value ?: return
-        if (!MoveAccess.allowed(currentModel, earned, access.adFree.value == true)) {
-            AlertDialog.Builder(requireContext()).setTitle(R.string.unlock_move_title)
-                .setMessage(R.string.unlock_move_choice_message)
-                .setNegativeButton(android.R.string.cancel, null)
-                .setPositiveButton(R.string.watch_unlock) { _, _ -> rewarded?.showRewardAds(retainEarnedReward = true) { access.grant(currentModel) } }
-                .setNeutralButton(R.string.remove_ads) { _, _ ->
-                    view?.findNavController()?.navigate(R.id.action_global_adFreeOfferFragment)
-                }
-                .show()
-            return
+    private fun confirmRemove(exerciseId: Int) {
+        if (viewModel.state.value?.removing != null) return
+        if (viewModel.state.value?.uniqueRecords?.none { it.exerciseId == exerciseId } != false) return
+        dialog?.dismiss()
+        val content = layoutInflater.inflate(R.layout.dialog_delete_favourite, null)
+        val confirmation = AlertDialog.Builder(requireContext()).setView(content).setCancelable(false).create()
+        dialog = confirmation
+        content.findViewById<View>(R.id.dialogNoFV).setOnClickListener { confirmation.dismiss() }
+        content.findViewById<View>(R.id.dialogYesFV).setOnClickListener {
+            viewModel.updateIsFavouriteToFalse(exerciseId)
+            confirmation.dismiss()
         }
-        val inflater = layoutInflater
-        val dialogView = inflater.inflate(R.layout.info_favourite_layout, null)
-
-        val exerciseTitle: TextView = dialogView.findViewById(R.id.exerciseFavouriteTitle)
-        val exerciseDescription: TextView = dialogView.findViewById(R.id.exerciseFavouriteDescription)
-        val exerciseGif: GifImageView = dialogView.findViewById(R.id.infoFavouriteGif)
-
-        exerciseTitle.text = currentModel.exerciseName
-        exerciseGif.setImageResource(com.bayraktar.healthybackandneck.utils.ExerciseMedia.drawable(currentModel))
-        exerciseDescription.text = currentModel.exerciseDescription
-
-
-        val builder = AlertDialog.Builder(requireContext())
-        builder.setView(dialogView)
-            .setPositiveButton(R.string.close) { dialog, _ ->
-                dialog.dismiss()
-
-            }
-        val dialog = builder.create()
-        dialog.show()
+        confirmation.show()
     }
-    @SuppressLint("MissingInflatedId")
-    private fun btnCloseClicked(position: Int) {
-        val currentModel = favList[position]
-        val inflater = layoutInflater
-        val dialogView = inflater.inflate(R.layout.dialog_delete_favourite, null)
-
-        val builder = AlertDialog.Builder(requireContext())
-        builder.setView(dialogView)
-        builder.setCancelable(false)
-
-        val dialog = builder.create()
-        dialog.show()
-
-        val positiveBtn: Button = dialogView.findViewById(R.id.dialogYesFV)
-        val negativeBtn: Button = dialogView.findViewById(R.id.dialogNoFV)
-
-        negativeBtn.setOnClickListener {
-            dialog.dismiss()
-        }
-        positiveBtn.setOnClickListener {
-            viewModel.updateIsFavouriteToFalse(currentModel.exerciseId)
-            rawFavorites = rawFavorites.filter { it.exerciseId != currentModel.exerciseId }
-            renderFavorites()
-            dialog.dismiss()
-        }
-
-    }
-
-    override fun onDeleteClicked(position: Int) {
-        btnCloseClicked(position)
-    }
-
     override fun onDestroyView() {
-        _binding?.rvdaydetail?.adapter = null
-        moveListAdapter = null
-        rewarded = null
-        _binding = null
+        dialog?.dismiss()
+        dialog = null
+        binding?.rvdaydetail?.adapter = null
+        binding = null
         super.onDestroyView()
     }
 }

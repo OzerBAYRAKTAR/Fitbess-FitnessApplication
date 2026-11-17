@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/pc_card" android:padding="22dp" android:elevation="2dp" android:gravity="center_horizontal">
+    <ImageView android:layout_width="match_parent" android:layout_height="160dp" android:src="@drawable/fs_empty_art" android:importantForAccessibility="no"/>
+    <TextView android:id="@+id/emptyFavoriteTitle" style="@style/PcTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/fs_empty_title" android:gravity="center" android:textSize="26sp" android:layout_marginTop="12dp"/>
+    <TextView android:id="@+id/txtEmptyFav" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/fs_empty_body" android:gravity="center" android:layout_marginTop="12dp"/>
+    <com.google.android.material.button.MaterialButton android:id="@+id/btnCheck" style="@style/FitButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="52dp" android:layout_marginTop="20dp" android:text="@string/fs_discover" android:backgroundTint="@color/pc_forest" app:cornerRadius="16dp"/>
+    <TextView android:id="@+id/emptyFavoriteFootnote" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/fs_empty_footnote" android:gravity="center" android:layout_marginTop="12dp"/>
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingBottom="16dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+        <ImageView android:layout_width="30dp" android:layout_height="40dp" android:src="@drawable/home_leaf" android:importantForAccessibility="no"/>
+        <TextView style="@style/AcBrand" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="@string/ac_brand"/>
+    </LinearLayout>
+    <TextView android:id="@+id/favoritesTitle" style="@style/PcTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/fs_title" android:layout_marginTop="18dp"/>
+    <TextView android:id="@+id/favoritesSubtitle" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/fs_subtitle" android:layout_marginTop="6dp"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/ac_hero" android:clipToOutline="true" android:padding="20dp">
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView android:id="@+id/favoriteCount" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="20sp" android:fontFamily="sans-serif-black" android:textColor="@color/white" android:visibility="gone"/>
+            <TextView android:id="@+id/heroTitle" style="@style/PcSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/fs_empty_hero" android:textColor="@color/white"/>
+            <TextView android:id="@+id/heroSubtitle" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/fs_empty_hero_body" android:layout_marginTop="6dp" android:textColor="#E0ECDF"/>
+        </LinearLayout>
+        <ImageView android:layout_width="60dp" android:layout_height="68dp" android:layout_marginStart="12dp" android:src="@drawable/fs_heart_outline" app:tint="@color/ac_lime" android:importantForAccessibility="no"/>
+    </LinearLayout>
+    <TextView android:id="@+id/favoriteError" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/fs_load_error" android:layout_marginTop="16dp" android:accessibilityLiveRegion="polite" android:visibility="gone"/>
+    <com.google.android.material.button.MaterialButton android:id="@+id/retryFavorites" style="@style/FitButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/fs_retry" android:visibility="gone"/>
+    <ProgressBar android:id="@+id/favoritesLoading" android:layout_width="32dp" android:layout_height="32dp" android:layout_gravity="center_horizontal" android:layout_marginTop="16dp"/>
+    <TextView android:id="@+id/favoritesSection" style="@style/PcSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/fs_saved_section" android:layout_marginTop="20dp" android:visibility="gone"/>
+</LinearLayout>
