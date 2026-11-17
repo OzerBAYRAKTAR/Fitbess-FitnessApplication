@@ -205,6 +205,38 @@ class DataStoreManage(context: Context) {
             pref[TXT_INDEKS] = data
         }
     }
+
+    /** Commit a validated result with its measurements, using the existing persisted keys. */
+    suspend fun saveBmiCalculation(height: Int, weight: Int, result: String, category: String) {
+        dataStore.edit { preferences ->
+            preferences[TXT_HEIGHT] = height
+            preferences[TXT_WEIGHT] = weight
+            preferences[TXT_INDEKS] = result
+            preferences[TXT_CATEGORY] = category
+        }
+    }
+
+    suspend fun saveCalorieCalculation(height: Int, weight: Int, age: Int, activity: Int, gender: String, result: String) {
+        dataStore.edit { preferences ->
+            preferences[TXT_HEIGHT] = height
+            preferences[TXT_WEIGHT] = weight
+            preferences[TXT_AGE] = age
+            preferences[TXT_ACTIVITY_LEVEL] = activity
+            preferences[TXT_GENDER] = gender
+            preferences[TXT_CALORIE] = result
+        }
+    }
+
+    suspend fun saveFatCalculation(height: Int, neck: Int, waist: Int, hip: Int?, gender: String, result: String) {
+        dataStore.edit { preferences ->
+            preferences[TXT_HEIGHT] = height
+            preferences[TXT_NECK] = neck
+            preferences[TXT_BELLY] = waist
+            if (hip != null) preferences[TXT_BOOTY] = hip
+            preferences[TXT_GENDER] = gender
+            preferences[TXT_FATRATE] = result
+        }
+    }
     suspend fun saveCategory(data: String) {
         dataStore.edit { pref ->
             pref[TXT_CATEGORY] = data

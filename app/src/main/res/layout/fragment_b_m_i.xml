@@ -1,150 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.Statistics.DialogFragments.BMIFragment">
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif"
-        android:text="@string/body_indeks"
-        android:textColor="@color/black"
-        android:textSize="21sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView124"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:fontFamily="sans-serif"
-        android:text="@string/height"
-        android:textColor="@color/black"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@id/usernameLayout2"
-        app:layout_constraintStart_toStartOf="@+id/usernameLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/usernameLayout2"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_marginHorizontal="30dp"
-        android:layout_height="55dp"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView124">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputHeight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawablePadding="15dp"
-            android:maxLength="3"
-            android:inputType="number"
-            android:drawableStart="@drawable/label_selector"
-            android:maxLines="1"
-            android:textSize="15sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/textView126"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:fontFamily="sans-serif"
-        android:text="@string/weight"
-        android:textColor="@color/black"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="@+id/usernameLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/usernameLayout2" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/usernameLayout3"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="5dp"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:layout_constraintStart_toStartOf="@+id/textView126"
-        app:layout_constraintTop_toBottomOf="@+id/textView126">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputWeightDesc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/label_selector"
-            android:drawablePadding="15dp"
-            android:inputType="number"
-            android:maxLength="3"
-            android:maxLines="1"
-            android:textSize="15sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnSavee"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="27dp"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/buttonfirst_background"
-        android:fontFamily="sans-serif"
-        android:text="@string/label_calculate"
-        android:textColor="@color/white"
-        android:textSize="21sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.314"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameLayout3"
-        app:layout_constraintVertical_bias="0.17" />
-
-    <TextView
-        android:id="@+id/textView125"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:fontFamily="sans-serif"
-        android:textColor="@color/black"
-        android:textSize="17sp"
-        app:layout_constraintTop_toBottomOf="@+id/btnSavee"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/goBack"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:clickable="true"
-        android:contentDescription="@string/back"
-        android:focusable="true"
-        android:padding="12dp"
-        android:src="@drawable/ic_arrow_back_24"
-        android:scaleType="center"
-        app:tint="@color/fit_text"
-        app:layout_constraintBottom_toBottomOf="@+id/textView12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/calculatorScroll" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:background="@color/pc_cream" android:clipToPadding="false">
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="56dp" android:gravity="center_vertical">
+   <ImageButton android:id="@+id/goBack" android:layout_width="48dp" android:layout_height="48dp" android:background="?attr/selectableItemBackgroundBorderless" android:padding="12dp" android:src="@drawable/ic_arrow_back_24" android:contentDescription="@string/back" app:tint="@color/pc_forest"/>
+   <TextView style="@style/PcSection" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:textSize="17sp" android:text="@string/tools_title"/>
+  </LinearLayout>
+  <TextView android:id="@+id/textView12" style="@style/PcTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/tool_bmi"/>
+  <TextView style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/pc_bmi_intro"/>
+  <LinearLayout style="@style/PcCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="24dp">
+   <TextView style="@style/PcSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/pc_measurements"/>
+   <TextView style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/pc_whole_numbers"/>
+   <com.google.android.material.textfield.TextInputLayout style="@style/PcInput" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/pc_height" app:suffixText="@string/pc_cm"><com.google.android.material.textfield.TextInputEditText android:id="@+id/inputHeight" style="@style/PcEdit" android:layout_width="match_parent" android:layout_height="wrap_content"/></com.google.android.material.textfield.TextInputLayout><com.google.android.material.textfield.TextInputLayout style="@style/PcInput" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/pc_weight" app:suffixText="@string/pc_kg"><com.google.android.material.textfield.TextInputEditText android:id="@+id/inputWeightDesc" style="@style/PcEdit" android:layout_width="match_parent" android:layout_height="wrap_content"/></com.google.android.material.textfield.TextInputLayout>
+  </LinearLayout>
+  <TextView android:id="@+id/formError" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:textColor="#A13B32" android:accessibilityLiveRegion="polite" android:visibility="gone"/>
+  <com.google.android.material.button.MaterialButton android:id="@+id/btnSavee" style="@style/FitButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/label_calculate" android:textSize="18sp" android:minHeight="56dp" app:cornerRadius="28dp"/>
+  <LinearLayout android:id="@+id/resultCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="24dp" android:background="@drawable/pc_hero" android:padding="24dp" android:visibility="gone">
+   <TextView style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/pc_lime" android:text="@string/pc_result"/>
+   <TextView android:id="@+id/resultValue" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textSize="44sp" android:fontFamily="sans-serif-black" android:textColor="@color/white" android:accessibilityLiveRegion="polite"/>
+   <TextView android:id="@+id/resultUnit" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/pc_lime"/>
+   <TextView android:id="@+id/resultDetail" style="@style/PcSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:textColor="@color/white"/>
+   <TextView android:id="@+id/resultStatus" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:textColor="#D8E9DC"/>
+  </LinearLayout>
+  <TextView android:id="@+id/resultContext" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_marginBottom="16dp" android:padding="16dp" android:background="@drawable/pc_soft" android:text="@string/pc_bmi_context"/>
+ </LinearLayout>
+</androidx.core.widget.NestedScrollView>

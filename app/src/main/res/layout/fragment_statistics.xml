@@ -1,229 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="@color/fit_background">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
-        <TextView
-            android:id="@+id/progressTitle"
-            style="@style/FitTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/progress_title"/>
-        <TextView
-            android:id="@+id/progressSubtitle"
-            style="@style/FitBody"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/progress_subtitle"/>
-        <TextView
-            android:id="@+id/weekTitle"
-            style="@style/FitSection"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/this_week"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:padding="12dp"
-                android:orientation="vertical"
-                android:background="@drawable/fit_card">
-                <TextView
-                    android:id="@+id/weekWorkouts"
-                    style="@style/FitTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="0"/>
-                <TextView
-                    style="@style/FitBody"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="13sp"
-                    android:text="@string/metric_workouts"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:padding="12dp"
-                android:orientation="vertical"
-                android:background="@drawable/fit_card">
-                <TextView
-                    android:id="@+id/weekMinutes"
-                    style="@style/FitTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="0"/>
-                <TextView
-                    style="@style/FitBody"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="13sp"
-                    android:text="@string/metric_minutes"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:padding="12dp"
-                android:orientation="vertical"
-                android:background="@drawable/fit_card">
-                <TextView
-                    android:id="@+id/weekMoves"
-                    style="@style/FitTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="0"/>
-                <TextView
-                    style="@style/FitBody"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="13sp"
-                    android:text="@string/metric_moves"/>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            style="@style/FitCard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="24dp">
-            <TextView
-                style="@style/FitSection"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/chart_title"/>
-            <TextView
-                style="@style/FitCaption"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/chart_caption"
-                android:layout_marginTop="8dp"/>
-            <LinearLayout
-                android:id="@+id/weekBars"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:orientation="horizontal"
-                android:gravity="bottom"/>
-        </LinearLayout>
-        <TextView
-            style="@style/FitSection"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/calendar_title"
-            android:layout_marginBottom="16dp"/>
-        <LinearLayout
-            android:id="@+id/weekDays"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="24dp"/>
-        <TextView
-            android:id="@+id/achievement"
-            style="@style/FitBody"
-            android:background="@drawable/fit_achievement"
-            android:padding="16dp"
-            android:textColor="@color/fit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/first_workout_goal"/>
-        <TextView
-            android:id="@+id/programTitle"
-            style="@style/FitSection"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/program_progress"/>
-        <LinearLayout
-            android:id="@+id/programProgress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:background="@drawable/fit_card"
-            android:layout_marginBottom="12dp"/>
-        <TextView
-            android:id="@+id/progressNote"
-            style="@style/FitCaption"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/progress_note"/>
-        <TextView
-            android:id="@+id/historyTitle"
-            style="@style/FitSection"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/history_title"/>
-        <TextView
-            android:id="@+id/emptyHistory"
-            style="@style/FitBody"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/history_empty"/>
-        <LinearLayout
-            android:id="@+id/history"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"/>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/showMore"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/show_more"/>
-        <TextView
-            android:id="@+id/toolsTitle"
-            style="@style/FitSection"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/tools_title"/>
-        <TextView
-            android:id="@+id/toolsNote"
-            style="@style/FitBody"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/tools_note"/>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/editEndeks"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/tool_bmi"/>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/editDayofCalorie"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/tool_calorie"/>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/editfatrate"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/tool_fat"/>
-    </LinearLayout>
-</ScrollView>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/progressScroll" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:background="@color/pc_cream" android:clipToPadding="false">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+ <TextView android:id="@+id/progressTitle" style="@style/PcTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/progress_title"/>
+ <TextView android:id="@+id/progressSubtitle" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/pc_hero"/>
+ <com.google.android.material.button.MaterialButtonToggleGroup android:id="@+id/periodGroup" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" app:singleSelection="true" app:selectionRequired="true" app:checkedButton="@id/periodSeven">
+  <com.google.android.material.button.MaterialButton android:id="@+id/periodSeven" style="@style/PcPeriod" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/pc_period_seven"/>
+  <com.google.android.material.button.MaterialButton android:id="@+id/periodFourWeeks" style="@style/PcPeriod" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/pc_period_four"/>
+ </com.google.android.material.button.MaterialButtonToggleGroup>
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/pc_hero" android:padding="22dp" android:layout_marginTop="16dp">
+  <TextView android:id="@+id/weekTitle" style="@style/PcSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/pc_period_seven" android:textColor="@color/pc_lime"/>
+  <TextView android:id="@+id/periodDate" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textColor="#DFEBDC"/>
+  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:orientation="horizontal"><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:paddingEnd="8dp"><TextView android:id="@+id/weekWorkouts" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0" android:textSize="32sp" android:fontFamily="sans-serif-black" android:textColor="@color/white"/><TextView style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/pc_workouts" android:textColor="#DFEBDC" android:textSize="13sp"/></LinearLayout><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:paddingEnd="8dp"><TextView android:id="@+id/weekMinutes" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0" android:textSize="32sp" android:fontFamily="sans-serif-black" android:textColor="@color/white"/><TextView style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/pc_minutes" android:textColor="#DFEBDC" android:textSize="13sp"/></LinearLayout><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:paddingEnd="8dp"><TextView android:id="@+id/weekMoves" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0" android:textSize="32sp" android:fontFamily="sans-serif-black" android:textColor="@color/white"/><TextView style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/pc_moves" android:textColor="#DFEBDC" android:textSize="13sp"/></LinearLayout></LinearLayout>
+  <TextView style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:textColor="#DFEBDC" android:textSize="12sp" android:text="@string/pc_partial_note"/>
+ </LinearLayout>
+ <LinearLayout style="@style/PcCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="vertical">
+  <TextView android:id="@+id/chartTitle" style="@style/PcSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/pc_daily_activity"/>
+  <TextView android:id="@+id/chartCaption" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/pc_daily_unit"/>
+  <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:fillViewport="true" android:scrollbars="none"><LinearLayout android:id="@+id/weekBars" android:layout_width="wrap_content" android:minWidth="336dp" android:layout_height="210dp" android:orientation="horizontal" android:gravity="bottom" android:layout_marginTop="12dp"/></HorizontalScrollView>
+  <TextView android:id="@+id/chartSelection" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:padding="12dp" android:background="@drawable/pc_soft" android:accessibilityLiveRegion="polite"/>
+  <TextView android:id="@+id/chartEmpty" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/pc_no_activity" android:visibility="gone"/>
+ </LinearLayout>
+ <TextView android:id="@+id/programTitle" style="@style/PcSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="28dp" android:text="@string/program_progress"/>
+ <TextView style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/pc_program_note"/>
+ <LinearLayout android:id="@+id/programProgress" style="@style/PcCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="vertical"/>
+ <TextView android:id="@+id/toolsTitle" style="@style/PcSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="28dp" android:text="@string/tools_title"/>
+ <TextView android:id="@+id/toolsNote" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/pc_tools_intro"/>
+ <com.google.android.material.card.MaterialCardView android:id="@+id/editEndeks" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:clickable="true" android:focusable="true" app:cardCornerRadius="24dp" app:cardElevation="0dp" app:strokeColor="@color/pc_border" app:strokeWidth="1dp" app:cardBackgroundColor="@color/white">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="18dp" android:gravity="center_vertical"><ImageView android:layout_width="48dp" android:layout_height="48dp" android:padding="10dp" android:layout_marginEnd="14dp" android:background="@drawable/pc_soft" android:src="@drawable/pc_bmi" android:importantForAccessibility="no"/><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical"><TextView style="@style/PcSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="18sp" android:text="@string/tool_bmi"/><TextView style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/pc_bmi_inputs"/><TextView android:id="@+id/bmiSaved" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/pc_open_calculator" android:textColor="@color/fit_primary" android:textStyle="bold"/></LinearLayout></LinearLayout></com.google.android.material.card.MaterialCardView>
+ <com.google.android.material.card.MaterialCardView android:id="@+id/editDayofCalorie" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:clickable="true" android:focusable="true" app:cardCornerRadius="24dp" app:cardElevation="0dp" app:strokeColor="@color/pc_border" app:strokeWidth="1dp" app:cardBackgroundColor="@color/white">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="18dp" android:gravity="center_vertical"><ImageView android:layout_width="48dp" android:layout_height="48dp" android:padding="10dp" android:layout_marginEnd="14dp" android:background="@drawable/pc_soft" android:src="@drawable/pc_calorie" android:importantForAccessibility="no"/><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical"><TextView style="@style/PcSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="18sp" android:text="@string/tool_calorie"/><TextView style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/pc_calorie_inputs"/><TextView android:id="@+id/calorieSaved" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/pc_open_calculator" android:textColor="@color/fit_primary" android:textStyle="bold"/></LinearLayout></LinearLayout></com.google.android.material.card.MaterialCardView>
+ <com.google.android.material.card.MaterialCardView android:id="@+id/editfatrate" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:clickable="true" android:focusable="true" app:cardCornerRadius="24dp" app:cardElevation="0dp" app:strokeColor="@color/pc_border" app:strokeWidth="1dp" app:cardBackgroundColor="@color/white">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="18dp" android:gravity="center_vertical"><ImageView android:layout_width="48dp" android:layout_height="48dp" android:padding="10dp" android:layout_marginEnd="14dp" android:background="@drawable/pc_soft" android:src="@drawable/pc_fat" android:importantForAccessibility="no"/><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical"><TextView style="@style/PcSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="18sp" android:text="@string/tool_fat"/><TextView style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/pc_fat_inputs"/><TextView android:id="@+id/fatSaved" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/pc_open_calculator" android:textColor="@color/fit_primary" android:textStyle="bold"/></LinearLayout></LinearLayout></com.google.android.material.card.MaterialCardView>
+ <TextView style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/tools_note"/>
+ <TextView style="@style/PcSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="28dp" android:text="@string/pc_recent"/>
+ <TextView android:id="@+id/emptyHistory" style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/history_empty"/>
+ <LinearLayout android:id="@+id/history" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="vertical"/>
+ <com.google.android.material.button.MaterialButton android:id="@+id/showMore" style="@style/FitAction" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:text="@string/show_more"/>
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>

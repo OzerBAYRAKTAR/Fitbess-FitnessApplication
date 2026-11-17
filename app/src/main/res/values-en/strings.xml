@@ -364,8 +364,8 @@
     <string name="label_bmi">Body Mass Index</string>
     <string name="label_dailyCalorieRequirement">Daily Calorie Need</string>
     <string name="label_zayif">Underweight</string>
-    <string name="label_fat">Overweight</string>
-    <string name="label_weighted">Obese</string>
+    <string name="label_fat">Obesity</string>
+    <string name="label_weighted">Overweight</string>
     <string name="label_normal">Normal</string>
     <string name="label_tryagain">Try Again</string>
     <string name="label_yourfatrate">Your Body Fat Percentage</string>
