@@ -1,6 +1,7 @@
 <resources>
  <color name="pc_cream">#FAF8F0</color><color name="pc_forest">#133F31</color><color name="pc_lime">#C9ED8C</color><color name="pc_border">#DFE7DC</color>
  <style name="PcTitle" parent="FitTitle"><item name="android:textSize">30sp</item><item name="android:fontFamily">sans-serif-black</item><item name="android:textColor">@color/pc_forest</item></style>
+ <style name="AcBrand" parent="PcTitle"><item name="android:textSize">24sp</item></style>
  <style name="PcSection" parent="FitSection"><item name="android:textSize">20sp</item><item name="android:textColor">@color/pc_forest</item></style>
  <style name="PcBody" parent="FitBody"><item name="android:textSize">14sp</item><item name="android:lineSpacingExtra">2dp</item></style>
  <style name="PcCard"><item name="android:background">@drawable/pc_card</item><item name="android:padding">20dp</item></style>

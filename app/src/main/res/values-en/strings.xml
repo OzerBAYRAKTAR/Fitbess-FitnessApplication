@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Evde Fit: 21 Günlük Plan</string>
+    <string name="app_name">Get Fit at Home</string>
 
     <string name="skip">Skip</string>
     <string name="start">Lets Start</string>
@@ -563,7 +563,7 @@
     <string name="ad_free_buy_once">Buy once</string>
     <string name="ad_free_google_play_note">Price provided by Google Play</string>
     <string name="ad_free_hero_description">Green dumbbell illustration</string>
-    <string name="ad_free_brand">Fitbess</string>
+    <string name="ad_free_brand">Get Fit at Home</string>
     <string name="ad_free_one_time_disclaimer">Your purchase is completed through your Google Play account.</string>
     <string name="ad_free_not_now">Not now</string>
     <string name="unlock_move_choice_message">Watch a rewarded ad to unlock this move, or remove ads to unlock every exercise movement.</string>
@@ -590,7 +590,7 @@
     <string name="update_retry">Retry</string>
     <string name="update_exit">Exit app</string>
     <string name="update_available_title">A newer version is available</string>
-    <string name="update_available_message">A new version of Fitbess is available. Would you like to update now?</string>
+    <string name="update_available_message">A new version of Get Fit at Home is available. Would you like to update now?</string>
     <string name="update_now">Update</string>
 </resources>
 

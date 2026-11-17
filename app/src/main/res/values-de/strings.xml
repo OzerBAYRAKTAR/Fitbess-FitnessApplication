@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Evde Fit: 21 Günlük Plan</string>
+    <string name="app_name">Get Fit at Home</string>
 
     <string name="skip">Überspringen</string>
     <string name="start">Start</string>
@@ -533,7 +533,7 @@
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="previous">Previous</string>
-    <string name="ad_free_brand">Fitbess</string>
+    <string name="ad_free_brand">Get Fit at Home</string>
     <string name="view_ad_free_offer">Angebot ansehen</string>
     <string name="ad_free_headline">Trainiere ohne Unterbrechungen weiter</string>
     <string name="ad_free_subtitle">Entferne Werbung und schalte alle Übungen frei</string>
@@ -565,6 +565,6 @@
     <string name="update_retry">Erneut versuchen</string>
     <string name="update_exit">App schließen</string>
     <string name="update_available_title">Eine neue Version ist verfügbar</string>
-    <string name="update_available_message">Eine neue Version von Fitbess ist verfügbar. Möchtest du jetzt aktualisieren?</string>
+    <string name="update_available_message">Eine neue Version von Get Fit at Home ist verfügbar. Möchtest du jetzt aktualisieren?</string>
     <string name="update_now">Aktualisieren</string>
 </resources>

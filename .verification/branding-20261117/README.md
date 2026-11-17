@@ -1,0 +1,19 @@
+# Visible branding verification
+
+Visible app naming is now **Get Fit at Home**. Source checks cover default/TR, EN, DE and RU: app_name, shared approved-screen brand, Home brand, offer brand resource and update messages. Manifest package/theme identifiers and historical documents were preserved. Five approved-screen headers use a scoped24sp style and weighted width; other typography is unchanged. Project context's current App label was updated.
+
+## Checks and evidence
+
+- `final-build.log`: `gradlew.bat :app:assembleDebug :app:lintDebug :app:assembleDebugAndroidTest --console=plain` passed (1m16s), including corrected Turkish update copy. No new tests, full suite or unit execution for this text/layout change.
+- Existing `ProgressCalculatorsDesignTest#realPeriodTotalsEmptyStateChartSelectionAndProminentCalculatorHub`: normal1/1 passed (39.577s), `runtime-normal.log`. TR body text and full new brand are visible in `pc-brand-normal-progress-recorded-seven.jpg`.
+- The same older broad chart test at compact/font1.3 failed waiting for chartSelection to be laid out after switching4weeks (`runtime-compact.log`,44.656s). This is retained as a failed check, not represented as passed. A subsequent launcher attempt produced a SplashScreen focus-event ANR; trace showed main thread runnable in nativeApplyStyle/Home layout inflation. A causal relationship to the branding change was not established. No test was weakened or changed. The app recovered after a process-only force-stop and real launcher start; no clear/uninstall/wipe/security change.
+- A separate focused manual compact branding pass then navigated Home→Progress→hub→BMI using actual observed view IDs/bounds. Full brand text and actual pixels were checked. `brand-progress-compact-header.jpg`, `brand-hub-compact-header.jpg`, `brand-bmi-compact-header.jpg` show the EN headers at945x1680/density420/font1.3; `brand-home-compact-header.jpg` is additional local proof. Header crops intentionally omit calculator measurements. The manual UI dump briefly returned null during a transition; final screenshots were visually inspected as the intended screens.
+- `aapt2 dump badging app-debug.apk` resolves application-label, -tr, -en, -de and -ru to **Get Fit at Home** (`compiled-labels.txt`). This is compiled package-label verification, not a claim of four-locale launcher UI screenshots. Four-locale source review plus TR normal and EN compact actual header pixels were performed.
+- Intended debug app installed with install-r only. APK SHA256 `30A590F55AC1643F9F9B1A97B5067973E50F9DEB148E0C7FC403E5A15CC66B2E`; pre-existing version15/1.8.3 and firstInstallTime2026-11-13 21:04:03 remain. Package identity unchanged.
+- `finally` restored physical1080x2424, density420, font1.0 (`restored-settings.txt`). Existing single test restores previous nullable language preference/default Locale and uses in-memory Room fixtures; manual branding navigation did not edit measurements, favorites or entitlements. No byte-identical user-data claim is made.
+
+## Owned source
+
+`res/values{,-en,-de,-ru}/strings.xml`, three changed `home_strings.xml` (default/TR, DE, RU; EN already used Get Fit at Home), `values/approved_concepts.xml`, `values/progress_calculator_styles.xml`; five brand-header layouts (`fragment_statistics`, `fragment_body_calculators_hub`, `fragment_b_m_i`, `fragment_daily_calorie`, `fragment_body_fat_rate`); current App label line in `project-context.md`.
+
+Prior engagement/version/reward/ad XML/Kotlin and unrelated marketing work were preserved. Current offer layout does not render ad_free_brand; its unused/future resource was updated consistently without changing that dirty XML. No Git writes by implementation agent. Proposed curated proof: this README plus normal Progress JPEG and3 compact header JPEGs. Logs/PNG/script/ANR details stay local. Favorites implementation is a subsequent separate assignment.

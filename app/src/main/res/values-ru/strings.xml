@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Evde Fit: 21 Günlük Plan</string>
+    <string name="app_name">Get Fit at Home</string>
 
     <string name="skip">Пропустить</string>
     <string name="start">Начать</string>
@@ -539,7 +539,7 @@
     <string name="previous">предыдущий</string>
 
 
-    <string name="ad_free_brand">Fitbess</string>
+    <string name="ad_free_brand">Get Fit at Home</string>
     <string name="view_ad_free_offer">Посмотреть предложение</string>
     <string name="ad_free_headline">Тренируйтесь без перерывов</string>
     <string name="ad_free_subtitle">Уберите рекламу и откройте все упражнения</string>
@@ -571,6 +571,6 @@
     <string name="update_retry">Повторить</string>
     <string name="update_exit">Выйти из приложения</string>
     <string name="update_available_title">Доступна новая версия</string>
-    <string name="update_available_message">Доступна новая версия Fitbess. Хотите обновить приложение сейчас?</string>
+    <string name="update_available_message">Доступна новая версия Get Fit at Home. Хотите обновить приложение сейчас?</string>
     <string name="update_now">Обновить</string>
 </resources>

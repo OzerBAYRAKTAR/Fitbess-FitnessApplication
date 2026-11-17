@@ -8,7 +8,7 @@
 - Dependency injection: Hilt. Navigation: AndroidX Navigation and Safe Args. Background work: WorkManager. Networking: Retrofit/OkHttp. Preferences: DataStore and existing legacy preferences.
 - Preserve the existing architecture during scoped changes; introduce domain policies or additional modules only for concrete needs.
 - Namespace and published application ID: `com.bayraktar.healthybackandneck`.
-- App label: Fitbess. Debug variant: `debug`; debug package currently has no applicationIdSuffix.
+- App label: Get Fit at Home. Debug variant: `debug`; debug package currently has no applicationIdSuffix.
 - Launcher activity declared in the manifest: `com.bayraktar.healthybackandneck.ui.SplashScreen.SplashScreen`.
 - Preserve Room data and the `fitness_db` database, persistence keys, navigation argument contracts and published app identity. Inspect actual database versions before migrations.
 

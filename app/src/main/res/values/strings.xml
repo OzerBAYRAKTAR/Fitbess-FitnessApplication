@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Evde Fit: 21 Günlük Plan</string>
+    <string name="app_name">Get Fit at Home</string>
 
 
     <string name="skip">Atla</string>
@@ -565,7 +565,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="ad_free_buy_once">Tek seferlik satın al</string>
     <string name="ad_free_google_play_note">Fiyat Google Play’den alınır</string>
     <string name="ad_free_hero_description">Yeşil dambıl çizimi</string>
-    <string name="ad_free_brand">Fitbess</string>
+    <string name="ad_free_brand">Get Fit at Home</string>
     <string name="ad_free_one_time_disclaimer">Satın alma Google Play hesabınız üzerinden tamamlanır.</string>
     <string name="ad_free_not_now">Şimdi değil</string>
     <string name="unlock_move_choice_message">Bu hareketi açmak için ödüllü reklam izleyebilir veya reklamları kaldırıp tüm hareketlerin kilidini açabilirsin.</string>
@@ -592,7 +592,7 @@ Gerçekleştirilen çalışmalar sonucunda C vitamininin stres nedeniyle bağı�
     <string name="update_retry">Tekrar dene</string>
     <string name="update_exit">Uygulamadan çık</string>
     <string name="update_available_title">Yeni sürüm mevcut</string>
-    <string name="update_available_message">Fitbess’in yeni bir sürümü mevcut. Şimdi güncellemek ister misiniz?</string>
+    <string name="update_available_message">Get Fit at Home için yeni bir sürüm mevcut. Şimdi güncellemek ister misiniz?</string>
     <string name="update_now">Güncelle</string>
 </resources>
 
