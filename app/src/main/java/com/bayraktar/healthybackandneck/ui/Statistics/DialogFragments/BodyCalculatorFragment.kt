@@ -55,8 +55,31 @@ abstract class BodyCalculatorFragment(private val kind: Kind) : Fragment() {
         initializing = state != null
         measurementsLoaded = state?.getBoolean("measurementsLoaded") ?: false
         draftEdited = state?.getBoolean("draftEdited") ?: false
+        if (kind == Kind.BMI && (resources.configuration.screenWidthDp < 360 || resources.configuration.fontScale >= 1.2f)) {
+            val first = root.findViewById<View>(R.id.inputHeight).parent.parent as View
+            val second = root.findViewById<View>(R.id.inputWeightDesc).parent.parent as View
+            val row = first.parent as android.widget.LinearLayout
+            row.orientation = android.widget.LinearLayout.VERTICAL
+            listOf(first, second).forEach { field ->
+                field.layoutParams = android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply { topMargin = (14 * resources.displayMetrics.density).toInt() }
+            }
+        }
+        androidx.core.widget.TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(
+            root.findViewById(R.id.resultValue), 24, 52, 1, android.util.TypedValue.COMPLEX_UNIT_SP)
+        if (resources.configuration.screenWidthDp < 360 || resources.configuration.fontScale >= 1.2f) {
+            root.findViewById<android.widget.LinearLayout>(R.id.resultMetrics).orientation = android.widget.LinearLayout.VERTICAL
+            root.findViewById<TextView>(R.id.resultValue).layoutParams = android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+            root.findViewById<View>(R.id.resultIcon).visibility = View.GONE
+        }
         store = DataStoreManage.getInstance(requireContext().applicationContext)
         root.findViewById<View>(R.id.goBack).setOnClickListener { findNavController().popBackStack() }
+        root.findViewById<View>(R.id.returnHub).setOnClickListener {
+            val nav = findNavController()
+            if (!nav.popBackStack(R.id.bodyCalculatorsHubFragment, false)) {
+                nav.navigate(R.id.bodyCalculatorsHubFragment, null, androidx.navigation.NavOptions.Builder()
+                    .setPopUpTo(R.id.id_statistics_fragment, false).build())
+            }
+        }
         root.findViewById<View>(R.id.btnSavee).setOnClickListener { calculate() }
         if (kind == Kind.CALORIES) {
             val spinner = root.findViewById<Spinner>(R.id.spnrActivity)
@@ -218,6 +241,7 @@ abstract class BodyCalculatorFragment(private val kind: Kind) : Fragment() {
     }
     private fun showResult(value: Double, previous: Boolean) {
         activeResult = value
+        root.findViewById<TextView>(R.id.btnSavee).setText(R.string.ac_recalculate)
         val digits = when (kind) { Kind.BMI -> 2; Kind.CALORIES -> 0; Kind.FAT -> 1 }
         root.findViewById<TextView>(R.id.resultValue).text = NumberFormat.getNumberInstance().apply { maximumFractionDigits = digits }.format(value)
         root.findViewById<TextView>(R.id.resultUnit).setText(when (kind) {

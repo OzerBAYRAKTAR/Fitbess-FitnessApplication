@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/hubScroll" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:background="@color/pc_cream">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="18dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+            <ImageButton android:id="@+id/goBack" android:layout_width="48dp" android:layout_height="48dp" android:background="?attr/selectableItemBackgroundBorderless" android:padding="12dp" android:src="@drawable/ic_arrow_back_24" android:contentDescription="@string/back" app:tint="@color/pc_forest"/>
+            <ImageView android:layout_width="32dp" android:layout_height="40dp" android:src="@drawable/home_leaf" android:importantForAccessibility="no"/>
+            <TextView style="@style/PcTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/ac_brand" android:layout_marginStart="8dp"/>
+        </LinearLayout>
+        <TextView style="@style/PcTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/ac_discover" android:id="@+id/toolsTitle" android:layout_marginTop="20dp"/>
+        <TextView style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/ac_hub_subtitle" android:layout_marginTop="6dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/ac_hero" android:clipToOutline="true" android:padding="20dp" android:layout_marginTop="20dp">
+            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView style="@style/PcSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/ac_hub_hero" android:textColor="@color/white"/>
+                <TextView style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/ac_three_tools" android:layout_marginTop="8dp" android:textColor="#DCE9DC"/>
+            </LinearLayout>
+            <ImageView android:layout_width="58dp" android:layout_height="68dp" android:layout_marginStart="8dp" android:src="@drawable/ac_tape" android:importantForAccessibility="no" app:tint="@color/ac_lime"/>
+        </LinearLayout>
+        <com.google.android.material.card.MaterialCardView android:id="@+id/editEndeks" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:clickable="true" android:focusable="true" app:cardCornerRadius="24dp" app:cardElevation="2dp" app:strokeColor="@color/pc_border" app:strokeWidth="1dp" app:cardBackgroundColor="@color/white">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <ImageView android:layout_width="50dp" android:layout_height="58dp" android:padding="10dp" android:background="@drawable/pc_soft" android:src="@drawable/ac_scale" android:importantForAccessibility="no" android:layout_marginEnd="12dp"/>
+                    <View android:layout_width="3dp" android:layout_height="50dp" android:background="@color/ac_lime" android:layout_marginEnd="10dp"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/tool_bmi" android:textSize="18sp" style="@style/PcSection"/>
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/ac_bmi_benefit" android:textSize="13sp" style="@style/PcBody"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="12dp">
+                    <TextView android:id="@+id/bmiSaved" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:background="@drawable/pc_soft" android:padding="10dp" android:text="@string/ac_no_saved" android:textSize="15sp" android:textColor="@color/pc_forest" android:textStyle="bold"/>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/bmiAction" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:minHeight="48dp" android:minWidth="98dp" android:text="@string/label_calculate" android:textSize="14sp" android:backgroundTint="@color/pc_forest" app:cornerRadius="14dp" style="@style/FitButton"/>
+                </LinearLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/pc_bmi_inputs" android:textSize="11sp" style="@style/PcBody"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView android:id="@+id/editDayofCalorie" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:clickable="true" android:focusable="true" app:cardCornerRadius="24dp" app:cardElevation="2dp" app:strokeColor="@color/pc_border" app:strokeWidth="1dp" app:cardBackgroundColor="@color/white">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <ImageView android:layout_width="50dp" android:layout_height="58dp" android:padding="10dp" android:background="@drawable/pc_soft" android:src="@drawable/pc_calorie" android:importantForAccessibility="no" android:layout_marginEnd="12dp"/>
+                    <View android:layout_width="3dp" android:layout_height="50dp" android:background="@color/ac_lime" android:layout_marginEnd="10dp"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/tool_calorie" android:textSize="18sp" style="@style/PcSection"/>
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/ac_calorie_benefit" android:textSize="13sp" style="@style/PcBody"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="12dp">
+                    <TextView android:id="@+id/calorieSaved" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:background="@drawable/pc_soft" android:padding="10dp" android:text="@string/ac_no_saved" android:textSize="15sp" android:textColor="@color/pc_forest" android:textStyle="bold"/>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/calorieAction" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:minHeight="48dp" android:minWidth="98dp" android:text="@string/label_calculate" android:textSize="14sp" android:backgroundTint="@color/pc_forest" app:cornerRadius="14dp" style="@style/FitButton"/>
+                </LinearLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/pc_calorie_inputs" android:textSize="11sp" style="@style/PcBody"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView android:id="@+id/editfatrate" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:clickable="true" android:focusable="true" app:cardCornerRadius="24dp" app:cardElevation="2dp" app:strokeColor="@color/pc_border" app:strokeWidth="1dp" app:cardBackgroundColor="@color/white">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <ImageView android:layout_width="50dp" android:layout_height="58dp" android:padding="10dp" android:background="@drawable/pc_soft" android:src="@drawable/ac_tape" android:importantForAccessibility="no" android:layout_marginEnd="12dp"/>
+                    <View android:layout_width="3dp" android:layout_height="50dp" android:background="@color/ac_lime" android:layout_marginEnd="10dp"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/tool_fat" android:textSize="18sp" style="@style/PcSection"/>
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/ac_fat_benefit" android:textSize="13sp" style="@style/PcBody"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="12dp">
+                    <TextView android:id="@+id/fatSaved" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:background="@drawable/pc_soft" android:padding="10dp" android:text="@string/ac_no_saved" android:textSize="15sp" android:textColor="@color/pc_forest" android:textStyle="bold"/>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/fatAction" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:minHeight="48dp" android:minWidth="98dp" android:text="@string/label_calculate" android:textSize="14sp" android:backgroundTint="@color/pc_forest" app:cornerRadius="14dp" style="@style/FitButton"/>
+                </LinearLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/pc_fat_inputs" android:textSize="11sp" style="@style/PcBody"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <TextView style="@style/PcBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/tools_note" android:layout_marginTop="18dp" android:padding="16dp" android:background="@drawable/pc_soft"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

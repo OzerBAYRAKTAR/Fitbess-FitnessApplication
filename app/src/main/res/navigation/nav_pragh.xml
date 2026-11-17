@@ -237,6 +237,7 @@
             app:popUpTo="@id/exerciseDetailThirdFragment" app:popUpToInclusive="true" />
 
     </fragment>
+    <fragment android:id="@+id/bodyCalculatorsHubFragment" android:name="com.bayraktar.healthybackandneck.ui.Statistics.BodyCalculatorsHubFragment" android:label="@string/tools_title" />
     <fragment
         android:id="@+id/BMIFragment"
         android:name="com.bayraktar.healthybackandneck.ui.Statistics.DialogFragments.BMIFragment"

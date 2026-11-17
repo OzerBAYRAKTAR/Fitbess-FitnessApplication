@@ -88,6 +88,7 @@ class HomeActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id != R.id.id_homepage_fragment
                 && destination.id != R.id.id_profile_fragment
+                && destination.id != R.id.bodyCalculatorsHubFragment
                 && destination.id != R.id.id_statistics_fragment
                 && destination.id != R.id.moveListFragment) {
                 binding.bottomBar.visibility = View.GONE
@@ -123,6 +124,11 @@ class HomeActivity : AppCompatActivity() {
 
     private fun setUpBotMenu() = with(binding) {
         bottomBar.setupWithNavController(navController)
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.bodyCalculatorsHubFragment) {
+                bottomBar.menu.findItem(R.id.id_statistics_fragment).isChecked = true
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import android.widget.ProgressBar
+import android.widget.FrameLayout
+import android.widget.ArrayAdapter
+import android.widget.AdapterView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -33,6 +35,7 @@ class StatisticsFragment : Fragment() {
     private var historyLimit = 5
     private var latestSessions = emptyList<WorkoutSession>()
     private var selectedBucket = -1
+    private var programLevel = 1
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, state: Bundle?): View {
         _binding = FragmentStatisticsBinding.inflate(inflater, container, false)
@@ -51,28 +54,29 @@ class StatisticsFragment : Fragment() {
                 render(latestSessions)
             }
         }
-        binding.editEndeks.setOnClickListener { findNavController().navigate(StatisticsFragmentDirections.actionIdStatisticsFragmentToBMIFragment()) }
-        binding.editDayofCalorie.setOnClickListener { findNavController().navigate(StatisticsFragmentDirections.actionIdStatisticsFragmentToDailyCalorieFragment()) }
-        binding.editfatrate.setOnClickListener { findNavController().navigate(StatisticsFragmentDirections.actionIdStatisticsFragmentToBodyFatRateFragment()) }
+        binding.openCalculators.setOnClickListener { findNavController().navigate(R.id.bodyCalculatorsHubFragment) }
+        programLevel = state?.getInt("programLevel", 1)?.coerceIn(1, 3) ?: 1
+        binding.programLevel.adapter = ArrayAdapter(requireContext(), R.layout.pc_spinner_item,
+            listOf(R.string.easy_level, R.string.middle_level, R.string.hard_level).map { getString(it).replace("\n", " ") }).apply {
+            setDropDownViewResource(R.layout.pc_spinner_item)
+        }
+        binding.programLevel.setSelection(programLevel - 1)
+        binding.programLevel.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, selected: View?, position: Int, id: Long) {
+                programLevel = position + 1
+                renderProgram(ProgressSummary.trustworthy(latestSessions, System.currentTimeMillis()))
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) = Unit
+        }
         binding.showMore.setOnClickListener { historyLimit += 5; renderHistory(latestSessions) }
         viewModel.sessions.observe(viewLifecycleOwner) { latestSessions = it; render(it) }
-        viewModel.calculators.observe(viewLifecycleOwner) { snapshot ->
-            renderSaved(binding.bmiSaved, snapshot.validSavedBmi, R.string.pc_bmi_unit, 2)
-            renderSaved(binding.calorieSaved, snapshot.validSavedCalories, R.string.pc_kcal_unit, 0)
-            renderSaved(binding.fatSaved, snapshot.validSavedFat, R.string.pc_percent_unit, 1)
-        }
-    }
-
-    private fun renderSaved(label: TextView, value: Double?, unit: Int, digits: Int) {
-        label.text = if (value == null) getString(R.string.pc_open_calculator) else
-            getString(R.string.pc_saved_estimate, NumberFormat.getNumberInstance().apply { maximumFractionDigits = digits }.format(value) + " " + getString(unit))
     }
 
     private fun render(sessions: List<WorkoutSession>) {
         val now = System.currentTimeMillis()
         val trustworthy = ProgressSummary.trustworthy(sessions, now)
         val summary = ProgressSummary.from(trustworthy, now, period)
-        binding.weekTitle.setText(if (period == ProgressPeriod.LAST_SEVEN) R.string.pc_period_seven else R.string.pc_period_four)
+        binding.weekTitle.setText(R.string.ac_effort)
         binding.periodDate.text = dateRange(summary.start, summary.end)
         binding.weekWorkouts.text = NumberFormat.getIntegerInstance().format(summary.completedWorkouts)
         binding.weekMinutes.text = minuteLabel(summary.activeMillis)
@@ -82,26 +86,16 @@ class StatisticsFragment : Fragment() {
         binding.chartEmpty.visibility = if (summary.activeMillis == 0L) View.VISIBLE else View.GONE
         binding.chartEmpty.setText(if (summary.recordedSessions == 0) R.string.pc_no_activity else R.string.pc_zero_activity)
         renderChart(summary.buckets)
-        binding.programProgress.removeAllViews()
-        for (level in 1..3) {
-            val count = completedProgramDays(trustworthy, level)
-            val label = TextView(requireContext()).apply {
-                text = getString(R.string.program_progress_format, level, count)
-                textSize = 15f
-                setTextColor(ContextCompat.getColor(context, R.color.pc_forest))
-                setPadding(0, if (level == 1) 0 else dp(16), 0, dp(6))
-            }
-            val progress = ProgressBar(requireContext(), null, android.R.attr.progressBarStyleHorizontal).apply {
-                max = 21; this.progress = count
-                progressTintList = ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fit_primary))
-                progressBackgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(context, R.color.fit_soft))
-                layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(14))
-                contentDescription = label.text
-            }
-            binding.programProgress.addView(label)
-            binding.programProgress.addView(progress)
-        }
+        renderProgram(trustworthy)
         renderHistory(sessions)
+    }
+
+    private fun renderProgram(records: List<WorkoutSession>) {
+        val count = completedProgramDays(records, programLevel)
+        binding.programRing.progress = count
+        binding.programRing.contentDescription = getString(R.string.program_progress_format, programLevel, count)
+        binding.programCount.text = getString(R.string.ac_ring_count, count)
+        binding.programDescription.text = getString(R.string.ac_program_days, programLevel, count)
     }
 
     private fun renderHistory(records: List<WorkoutSession>) {
@@ -127,13 +121,15 @@ class StatisticsFragment : Fragment() {
 
     private fun renderChart(buckets: List<ActivityBucket>) {
         binding.weekBars.removeAllViews()
-        val max = buckets.maxOfOrNull { it.activeMillis }?.coerceAtLeast(60000L) ?: 60000L
+        val max = (kotlin.math.ceil((buckets.maxOfOrNull { it.activeMillis } ?: 0L) / 300000.0).toLong().coerceAtLeast(1) * 300000L)
+        binding.chartGrid.maximumMinutes = max / 60000.0
         if (selectedBucket !in buckets.indices) selectedBucket = buckets.lastIndex
         val columns = mutableListOf<LinearLayout>()
         fun select(index: Int) {
             selectedBucket = index
             columns.forEachIndexed { i, column ->
-                column.setBackgroundResource(if (i == index) R.drawable.pc_soft else android.R.color.transparent)
+                (column.getChildAt(1) as FrameLayout).getChildAt(0).backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(requireContext(), if (i == index && buckets[i].activeMillis > 0) R.color.ac_lime else if (buckets[i].activeMillis == 0L) R.color.pc_border else R.color.pc_forest))
+                (column.getChildAt(0) as TextView).setBackgroundResource(if (i == index) R.drawable.ac_pill else android.R.color.transparent)
                 column.isSelected = i == index
             }
             val bucket = buckets[index]
@@ -142,21 +138,23 @@ class StatisticsFragment : Fragment() {
         buckets.forEachIndexed { index, bucket ->
             val column = LinearLayout(requireContext()).apply {
                 orientation = LinearLayout.VERTICAL
-                gravity = Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
-                layoutParams = LinearLayout.LayoutParams(dp(48), ViewGroup.LayoutParams.MATCH_PARENT, 1f)
+                gravity = Gravity.TOP or Gravity.CENTER_HORIZONTAL
+                layoutParams = LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1f)
                 isClickable = true; isFocusable = true
                 contentDescription = getString(R.string.pc_chart_access, bucketDate(bucket), bucket.activeMillis / 60000, bucket.activeMillis / 1000 % 60)
                 setPadding(dp(2), dp(8), dp(2), dp(8))
                 setOnClickListener { select(index) }
             }
             val value = TextView(requireContext()).apply {
-                text = minuteLabel(bucket.activeMillis); textSize = 12f
+                text = minuteLabel(bucket.activeMillis); textSize = 11f
+                gravity = Gravity.CENTER
+                layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(24))
                 setTextColor(ContextCompat.getColor(context, R.color.pc_forest))
                 importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
             }
             val bar = View(requireContext()).apply {
-                val height = if (bucket.activeMillis == 0L) 2 else (104.0 * bucket.activeMillis / max).toInt().coerceAtLeast(4)
-                layoutParams = LinearLayout.LayoutParams(dp(16), dp(height)).apply { topMargin = dp(8); bottomMargin = dp(8) }
+                val height = if (bucket.activeMillis == 0L) 2 else (128.0 * bucket.activeMillis / max).toInt().coerceAtLeast(4)
+                layoutParams = FrameLayout.LayoutParams(dp(28), dp(height), Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL)
                 setBackgroundResource(if (bucket.activeMillis == 0L) R.drawable.fit_soft_card else R.drawable.pc_bar)
                 importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
             }
@@ -167,7 +165,12 @@ class StatisticsFragment : Fragment() {
                 setTextColor(ContextCompat.getColor(context, R.color.fit_muted))
                 importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
             }
-            column.addView(value); column.addView(bar); column.addView(label)
+            val plot = FrameLayout(requireContext()).apply {
+                layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(128))
+                addView(bar)
+            }
+            label.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(40))
+            column.addView(value); column.addView(plot); column.addView(label)
             columns += column
             binding.weekBars.addView(column)
         }
@@ -176,9 +179,9 @@ class StatisticsFragment : Fragment() {
 
     private fun bucketDate(bucket: ActivityBucket): String = if (period == ProgressPeriod.LAST_SEVEN)
         DateFormat.getDateInstance(DateFormat.MEDIUM).format(Date(bucket.start)) else dateRange(bucket.start, bucket.endExclusive - 1)
-    private fun dateRange(start: Long, end: Long) = DateFormat.getDateInstance(DateFormat.MEDIUM).let { it.format(Date(start)) + " – " + it.format(Date(end)) }
+    private fun dateRange(start: Long, end: Long) = DateFormat.getDateInstance(DateFormat.MEDIUM).let { it.format(Date(start)) + " \u2013 " + it.format(Date(end)) }
     private fun minuteLabel(millis: Long) = if (millis in 1..59999) "<1" else NumberFormat.getIntegerInstance().format(millis / 60000)
     private fun dp(value: Int) = (value * resources.displayMetrics.density).toInt()
-    override fun onSaveInstanceState(outState: Bundle) { outState.putString("period", period.name); outState.putInt("historyLimit", historyLimit); outState.putInt("selectedBucket", selectedBucket); super.onSaveInstanceState(outState) }
+    override fun onSaveInstanceState(outState: Bundle) { outState.putInt("programLevel", programLevel); outState.putString("period", period.name); outState.putInt("historyLimit", historyLimit); outState.putInt("selectedBucket", selectedBucket); super.onSaveInstanceState(outState) }
     override fun onDestroyView() { _binding = null; super.onDestroyView() }
 }
